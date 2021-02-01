@@ -1,0 +1,135 @@
+library(nlme)
+data(Wheat2)
+names(Wheat2)
+Wheat2[1:8,]
+plot(latitude~longitude,data=Wheat2,col=Block)
+dist1<-dist(cbind(Wheat2$latitude,Wheat2$longitude))
+class(dist1)
+as.matrix(dist1)[1:4,1:4]
+dist2<-dist(Wheat2$yield)
+library(vegan)
+
+#spatial correlation of yield with geographic location
+mantel(dist1,dist2)
+model2 <- lm(yield~variety+Block,data=Wheat2)
+anova(model2)
+
+#spatial correlation of residuals
+dist3<-dist(residuals(model2))
+mantel(dist1,dist3)
+
+##### account for the correlation using the mean process #####
+
+model4 <- lm(yield~variety+Block+latitude+longitude,data=Wheat2)
+anova(model4)
+
+#spatial correlation of residuals from additive model of geography
+dist3<-dist(residuals(model4))
+mantel(dist1,dist3)
+model5 <- lm(yield~variety+Block+latitude+longitude+I(latitude^2)+I(longitude^2)+latitude*longitude,data=Wheat2)
+
+#spatial correlation of residuals from response surface model of geography
+dist3<-dist(residuals(model5))
+mantel(dist1,dist3)
+
+#display the response surface
+
+#find values for the grid--sorted unique values of geographic coordinates
+myx<-sort(unique(Wheat2$longitude))
+myy<-sort(unique(Wheat2$latitude))
+#obtain the coefficient estimates
+length(coef(model5))
+coef(model5)[60:64]
+my.func1 <- function(y,x) drop(cbind(y,x,y^2,x^2,x*y) %*% coef(model5)[60:64])
+out.z <- outer(myy,myx,my.func1)
+dim(out.z)
+out.z[1:4,1:4]
+
+#graph
+persp(myy,myx,out.z)
+persp(myy,myx,out.z,ticktype="detailed")
+#rotate graph
+persp(myy,myx,out.z,ticktype="detailed",theta=30,phi=30)
+
+#instead of a response surface do a GAM
+library(mgcv)
+
+#separate smooths GAM
+ model6 <- gam(yield~variety+Block+s(latitude)+s(longitude),data=Wheat2)
+dist3<-dist(residuals(model6))
+mantel(dist1,dist3)
+plot(model6,pages=1)
+
+#two-dimensional smooth
+ model7 <- gam(yield~variety+Block+s(latitude,longitude),data=Wheat2)
+plot(model7)
+plot(model7,scheme=1,ticktype='detailed')
+dist3<-dist(residuals(model7))
+mantel(dist1,dist3)
+
+### account for correlation using the error process #####
+
+gmodel2 <- gls(yield~variety+Block,data=Wheat2, method="ML")
+library(geoR)
+newdat<-data.frame(Wheat2$latitude,Wheat2$longitude,residuals(gmodel2,type='n'))
+#create a geodata object
+geodat<-as.geodata(newdat)
+
+#need to choose bins for the semivariogram calculation
+range(Wheat2$latitude)
+range(Wheat2$longitude)
+variog(geodat,uvec=1:30,max.dist=30,option='bin')->geodat.v1
+plot(geodat.v1)
+
+#components of variog object
+names(geodat.v1)
+#bin locations
+geodat.v1$u
+#semivariances
+geodat.v1$v
+#number of observations per bin
+geodat.v1$n
+#increase the range for the bins
+variog(geodat,uvec=1:50,max.dist=50,option='bin')->geodat.v2
+plot(geodat.v2)
+geodat.v2$n
+
+#decrease the width of the bins and increase the number of bins
+variog(geodat,uvec=seq(0,30,.25),max.dist=30,option='bin')->geodat.v2
+plot(geodat.v2)
+geodat.v2$n
+
+
+#add theoretical models to the curve
+plot(geodat.v1)
+ols2<-variofit(geodat.v1,c(.6,20),nugget=0.4, cov.model="exponential")
+names(ols2)
+lines(ols2,col=2)
+ols3<-variofit(geodat.v1,c(.6,20),nugget=0.4, cov.model="gaussian")
+lines(ols3,col=4)
+ols4<-variofit(geodat.v1,c(.6,20),nugget=0.4, cov.model="spherical")
+lines(ols4,col=3)
+ols5<-variofit(geodat.v1,c(.6,20),nugget=0.4, cov.model="linear")
+lines(ols5,col='grey70')
+
+#compare models using SSE
+sapply(list(ols2,ols3,ols4,ols5),function(x) x$value)
+
+# add semivariogram models to the error process
+out1a<-update(gmodel2,corr=corSpher(c(20,.4),form=~latitude+longitude,nugget=T))
+out1b<-update(gmodel2,corr=corExp(c(20,.4),form=~latitude+longitude,nugget=T))
+out1c<-update(gmodel2,corr=corGaus(c(20,.4),form=~latitude+longitude,nugget=T))
+out1d<-update(gmodel2,corr=corLin(c(20,.4),form=~latitude+longitude,nugget=T))
+out1d<-update(gmodel2,corr=corLin(c(50,.4),form=~latitude+longitude,nugget=T))
+AIC(gmodel2,out1a,out1b,out1c,out1d)
+
+#check to see if correlation has been removed
+newdat2<-data.frame(Wheat2$latitude,Wheat2$longitude,residuals(out1c,type='n'))
+geodat<-as.geodata(newdat2)
+variog(geodat,uvec=1:30,max.dist=30,option='bin')->geodat.v2
+plot(geodat.v2)
+
+#can also display semivariograms using nlme package
+plot(Variogram(gmodel2,form=~latitude+longitude,maxDist=30,resType='n'))
+plot(Variogram(out1c,form=~latitude+longitude,maxDist=30,resType='n'))
+

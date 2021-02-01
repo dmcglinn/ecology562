@@ -1,0 +1,79 @@
+burn <- read.csv('ecol 562/burn.csv') 
+library(gee)
+gee.un <- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr="unstructured", scale.fix=T)
+library(geepack)
+geeglm.un <- geeglm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr="unstructured", scale.fix=T)
+
+#read in NC shape file
+library(maptools)
+nc1<-readShapePoly( "ecol 562/NC_State_County_Boundary_NAD83HARN/NC_State_County_Boundary_NAD83HARN.shp")
+#connvert meters to feet
+mult<-3.28083989501312
+#select one value from each PolyFID
+x.un<-tapply(burn$X,burn$PolyFID,function(x) x[1])
+y.un<-tapply(burn$Y,burn$PolyFID,function(x) x[1])
+range(x.un)
+range(y.un)
+
+#plot NC map
+plot(nc1)
+plot(nc1,xlim=range(x.un)*mult+c(-100,100),ylim=range(y.un)*mult+c(-100,100))
+#add PolyFID locations
+points(x.un*mult,y.un*mult,col=2,cex=.5)
+
+#add distance scale to graph
+segments(2500000,234000,2610000,234000)
+text(2500000+seq(0,33000,2500)*mult,234000, '|',cex=.5,col='grey50')
+text(2500000+seq(0,30000,10000)*mult, 234000,'|')
+text(2500000+seq(0,30000,10000)*mult,234000, c(0,'10','20','30'), cex=.7,pos=1)
+text(2610000,234000,'km',pos=4,cex=.7)
+
+#calculate geoghraphic distances
+out.d<-dist(cbind(x.un,y.un))
+range(out.d)
+
+#display distribution of distances
+dist.mat<-as.matrix(out.d)
+unique.d<-as.vector(dist.mat[lower.tri(dist.mat)])
+hist(unique.d,probability=T,xlab='distance')
+
+#add kernel density estimate by reflecting data across y-axis
+out.ker<-density(c(-unique.d,unique.d))
+names(out.ker)
+#throw away negative values and rescale density
+new.x<-out.ker$x[out.ker$x>0]
+new.y<-2*out.ker$y[out.ker$x>0]
+lines(new.x,new.y,col=2)
+
+#restrict data and results to 2004
+burn04<-burn[burn$year==2004,]
+#residuals from 2004
+res04<-residuals(geeglm.un,type='pearson')[burn$year==2004]
+newdat<-data.frame(x=burn04$X,y=burn04$Y,r=res04)
+
+#Mantel test
+dist.g<-dist(newdat[,1:2])
+dist.r<-dist(newdat[,3])
+library(vegan)
+mantel(dist.g,dist.r)
+
+#obtain empirical semivariogram of residuals
+library(geoR)
+geodat<-as.geodata(newdat)
+geodat.v1<-variog(geodat,uvec=seq(50,4950,100),max.dist=5000,option='bin')
+plot(geodat.v1)
+geodat.v1$n
+#move center of first bin so it has more data
+geodat.v1<-variog(geodat,uvec=seq(75,4950,100),max.dist=3500,option='bin')
+geodat.v1$n
+
+#extend the distances out further
+geodat.v2<-variog(geodat,uvec=seq(75,14950,100),max.dist=10000,option='bin')
+plot(geodat.v2)
+
+#cut calculations off at 3500
+geodat.v1<-variog(geodat,uvec=seq(75,4950,100),max.dist=3500,option='bin')
+plot(geodat.v1)
+
+
+

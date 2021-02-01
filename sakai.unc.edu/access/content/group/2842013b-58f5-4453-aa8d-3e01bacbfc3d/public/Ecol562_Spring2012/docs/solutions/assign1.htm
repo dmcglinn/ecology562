@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 1&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+.style8 {color: #CC0033}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="assign1" id="assign1"></a>Assignment 1&mdash; Solution</h1>
+<h2>Question 1 </h2>
+<p>I read in the data and calculate the Simpson's diversity index. The species data lie in columns 2 through 76 of the data frame so I select only those columns to calculate the diversity index.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(vegan)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  rikz$simpson &lt;- diversity(rikz[,2:76], 'simpson', 1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  rikz$simpson</div>
+<span class="style24">  &nbsp;[1] 0.77451220 0.73742604 0.79428571 0.62225701 0.76409000 0.11177418 0.44365627 0.27403429<br>
+  &nbsp;[9] 0.87720402 0.83940972 0.68408163 0.00000000 0.19737438 0.34210526 0.58000000 0.00000000<br>
+  [17] 0.51244907 0.07956465 0.00000000 0.53645833 0.50000000 0.92403628 0.70868014 1.00000000<br>
+  [25] 0.36235803 0.44260790 0.46539792 0.00000000 0.67202268 0.72000000 0.24489796 0.00000000<br>
+  [33] 0.00000000 0.12898885 0.07197508 0.61111111 0.66687073 0.79012346 0.19709343 1.00000000<br>
+[41] 0.68144044 0.74048443 0.63516068 1.00000000 0.39669421</span>
+<h2>Question 2 </h2>
+<h3>Effect of NAP on diversity</h3>
+<p>I start by testing if Simpson's diversity index is linearly related to NAP by fitting the following model for mean diversity.</p>
+<p align="center"><img src="../../images/assignments/assignment1/eqn1.gif" width="133" height="27" alt="model 1"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model1 &lt;- lm(simpson~NAP, data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model1)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: simpson<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Sum Sq Mean Sq F value&nbsp; Pr(&gt;F)&nbsp; <br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 0.5072 0.50715&nbsp; 5.6106 </span><span class="style25">0.02242</span><span class="style24"> *<br>
+  Residuals 43 3.8868 0.09039&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>The ANOVA table carries out a test of</p>
+<p align="center"><img src="../../images/assignments/assignment1/hypothesis1.gif" width="88" height="58" alt="hypothesis 1"></p>
+<p>From the reported <em>p</em>-value in the ANOVA table (<em>p</em> = 0.022) we reject the null hypothesis and conclude that the coefficient of NAP is significantly different from zero. If we examine the estimated coefficient we see that the relationship between diversity and NAP is  negative.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model1)</div>
+<span class="style24">(Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;NAP <br>
+&nbsp; 0.5293331&nbsp; -0.1079740 </span>
+<h3>Is week a confounder of the relationship between diversity and NAP?</h3>
+<p>I next add week to the model. I treat week as a categorical variable and represent it in the model as three dummy regressors that indicate weeks 2, 3, and 4, respectively. Week 1 serves as the reference group.</p>
+<p align="center"><img src="../../images/assignments/assignment1/eqn2.gif" width="290" height="27" alt="model 2"></p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2 &lt;- lm(simpson~NAP+factor(week), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model2)</div>
+<span class="style24">  Analysis of Variance Table</span>
+<p><span class="style24">Response: simpson<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df&nbsp; Sum Sq Mean Sq F value&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 0.50715 0.50715&nbsp; 8.5782 0.005593 ** <br>
+  factor(week)&nbsp; 3 1.52201 0.50734&nbsp; 8.5813 </span><span class="style25">0.000161</span><span class="style24"> ***<br>
+  Residuals&nbsp;&nbsp;&nbsp; 40 2.36484 0.05912&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>The middle line of the ANOVA table carries out a test of</p>
+<p align="center"><img src="../../images/assignments/assignment1/hypothesis2.gif" width="340" height="58" alt="hypothesis 2"></p>
+<p>From the reported <em>p</em>-value in the ANOVA table (<em>p</em> &lt; 0.001) we reject the null hypothesis and conclude  that  after controlling for NAP, diversity still varies by week. If we compare the coefficient of NAP in this model with the coefficient of NAP in the model without week, we see that the coefficient has barely changed: &ndash;0.098 (with week) versus &ndash;0.108 (without week). </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model1)</div>
+<span class="style24">  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;NAP <br>
+  &nbsp; 0.5293331&nbsp; </span><span class="style25">-0.1079740
+  </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model2)</div>
+<span class="style24">  &nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP factor(week)2 factor(week)3 factor(week)4 <br>
+&nbsp;&nbsp; 0.61380923&nbsp;&nbsp; </span><span class="style25">-0.09829633</span><span class="style24">&nbsp;&nbsp; -0.34204341&nbsp;&nbsp;&nbsp; 0.03030200&nbsp;&nbsp;&nbsp; 0.14465528 </span>
+<p>Given such a trivial change in the coefficient of NAP we  conclude that although week is a statistically significant predictor of Simpson diversity, it is <u><strong>not</strong></u> a confounder of NAP. We obtain roughly the same estimate of the relationship between diversity and NAP whether we include week in the model or not. </p>
+<p>We can assess this more formally by constructing a confidence interval for the coefficient of NAP in the NAP-only model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> confint(model1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  (Intercept)&nbsp; 0.4334627&nbsp; 0.62520340<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">-0.1999033 -0.01604475
+  </span>
+  <p> The 95% confidence interval of the slope in the model containing only NAP is (–0.200, –0.016). Observe that when we add week to the model the estimated slope changes to –0.098, a value that lies entirely within this 95% confidence interval. Consequently we would not declare the coefficients of NAP in these two models to be significantly different from each other. </p>
+<h3>Do week and NAP interact in their effects on diversity?</h3>
+<p>Technically we should address interaction before we consider confounding. The interaction model is the following.</p>
+<p align="center"><img src="../../images/assignments/assignment1/eqn3.gif" width="623" height="27" alt="model 3"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model3 &lt;- lm(simpson~NAP*factor(week), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(model3)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: simpson<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df&nbsp; Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;1 0.50715 0.50715 10.1683&nbsp; 0.002906 ** <br>
+  factor(week)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 1.52201 0.50734 10.1720 5.045e-05 ***<br>
+  NAP:factor(week)&nbsp; 3 0.51943 0.17314&nbsp; 3.4715&nbsp; </span><span class="style25">0.025599</span><span class="style24"> *&nbsp; <br>
+  Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37 1.84541 0.04988&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>The third line of the ANOVA table carries out a test of</p>
+<p align="center"><img src="../../images/assignments/assignment1/hypothesis3.gif" width="340" height="58" alt="hypothesis 3"></p>
+<p>Because the reported <em>p</em>-value (.026) is less than .05, we conclude that NAP and week do interact. Apparently the nature of the relationship between diversity and NAP changes depending on the week. This also means the question of confounding is irrelevant here.</p>
+<h2>Question 3 </h2>
+<p>Having concluded that there is a significant interaction between week and NAP, I graph that model. In the interaction model there is a separate linear relationship between diversity and NAP in each week. I first graph the model using base graphics and then using lattice (although only one of these plots is required here).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(simpson~NAP, data=rikz, col=as.numeric(factor(week)), pch=as.numeric(factor(week))+14)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(coef(model3)[1], coef(model3)[2], col=1, lty=2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(coef(model3)[1]+coef(model3)[3], coef(model3)[2]+coef(model3)[6], col=2, lty=2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(coef(model3)[1]+coef(model3)[4], coef(model3)[2]+coef(model3)[7], col=3, lty=2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(coef(model3)[1]+coef(model3)[5], coef(model3)[2]+coef(model3)[8], col=4, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomleft', paste('week ', 1:4), col=1:4, pch=15:18, lty=2, cex=.8, bty='n')</div><br>
+<p align="center"><img src="../../images/assignments/assignment1/fig1.png" width="440" height="295" alt="fig. 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;&nbsp;Plot of the interaction model using base graphics</p>
+<p align="left">The three sites with diversity = 1 in weeks 3 and 4  clearly look anomalous. In fact they are. These  three sites are ones in which no animals were collected at all, yet the <span class="style4">diversity</span> function of the <span class="style19">vegan</span> package has assigned them a Simpson's diversity of 1! This would appear to be a bug.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xyplot(simpson~NAP|factor(week, levels=1:4, labels=paste('week ',1:4)), data=rikz, layout=c(2,2), panel=function(x,y) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.xyplot(x, y)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.lmline(x, y ,lty=2)})</div>
+<p align="center"><img src="../../images/assignments/assignment1/fig2.png" width="462" height="335" alt="fig 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2</strong>&nbsp;&nbsp; Plot of the interaction model using lattice</p>
+<p>Using the graphs the nature of the interaction between NAP and week is clear. In weeks 1 and 2 diversity has a negative relationship with NAP, but in weeks 3 and 4 there is no relationship between diversity and NAP (week 3) or at best a weakly positive one (week 4). It appears though that these last two relationships are being driven perhaps entirely by the three anomalous diversity values of 1.</p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment1/HW1.png" width="410" height="220" alt="hw1"><br>
+</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--January 26, 2012<br>
+      URL: <a href="assign1.htm#assign1" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign1.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

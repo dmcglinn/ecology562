@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 5&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="assign5" id="assign5"></a>Assignment 5&mdash;Solution</h1>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">insec &lt;- read.table( 'http://www.bio.ic.ac.uk/research/mjcraw/statcomp/data/logistic.txt', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(insec)</div>
+
+<span class="style24">  [1] &quot;logdose&quot; &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&quot;dead&quot;&nbsp;&nbsp;&nbsp; &quot;product&quot;</span> 
+<h2>Question 1</h2>
+<p>These are binomial data where we are given the number of successes (<span class="style8">dead</span>) out of a total (<span class="style8">n</span>). To fit this model in R the response variable needs to be a matrix in which the first column is the number of successes and the second column is the number of failures. Hence we use <span class="style1">cbind(dead, n-dead)</span> as the response. To address the question, &quot;Does the dose-response relationship vary by product?&quot; we need to fit a model in which <span class="style8">logdose</span> and <span class="style8">product</span> interact.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1 &lt;- glm(cbind(dead, n-dead)~logdose*product, data=insec, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: binomial, link: logit</span>
+<p><span class="style24">Response: cbind(dead, n - dead)</span>
+<p><span class="style24">Terms added sequentially (first to last)
+</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50&nbsp;&nbsp;&nbsp; 311.241&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  logdose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 238.854&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp; 72.387 &lt; 2.2e-16 ***<br>
+  product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 0.206&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp; 72.181&nbsp;&nbsp;&nbsp; 0.9022&nbsp;&nbsp;&nbsp; <br>
+  logdose:product&nbsp; 2&nbsp;&nbsp; 29.876&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp; 42.305 </span><span class="style25">3.255e-07</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>The analysis of deviance table reveals a statistically significant interaction between log dose and product. So we conclude that the dose-response relationship varies by product.</p>
+<h2>Question 2</h2>
+<p>To determine if  the residual deviance is suitable here as a goodness of fit statistic we need to examine the expected counts. If no more than 20% of the expected counts are less than 5, the chi-squared distribution of the deviance is reasonable. I use the <span class="style4">fitted</span> function to obtain the estimated probabilities and use them to calculate the expected number of successes and failures.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pred.counts &lt;- cbind(fitted(out1)*insec$n, insec$n - fitted(out1) * insec$n)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(pred.counts&lt;5)/length(as.vector(pred.counts))</div>
+<span class="style24">[1] 0.245098</span>
+<p>So 24.5% of the counts are less than 5. The use of the residual deviance as as a goodness of fit statistic  is suspect here.</p>
+<h2>Question 3</h2>
+<p>To determine if the model can be simplified I examine the summary table for the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out1)</div>
+<span class="style24">Call:<br>
+  glm(formula = cbind(dead, n - dead) ~ logdose * product, family = binomial, <br>
+  &nbsp;&nbsp;&nbsp; data = insec)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max&nbsp; <br>
+  -2.39800&nbsp; -0.60734&nbsp;&nbsp; 0.09695&nbsp;&nbsp; 0.65920&nbsp;&nbsp; 1.69300&nbsp; </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.0410&nbsp;&nbsp;&nbsp;&nbsp; 0.3034&nbsp; -6.728 1.72e-11 ***<br>
+  logdose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.8768&nbsp;&nbsp;&nbsp;&nbsp; 0.3432&nbsp;&nbsp; 8.383&nbsp; &lt; 2e-16 ***<br>
+  productB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2920&nbsp;&nbsp;&nbsp;&nbsp; 0.3845&nbsp;&nbsp; 3.360&nbsp; 0.00078 ***<br>
+  productC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.3079&nbsp;&nbsp;&nbsp;&nbsp; 0.4308&nbsp; -0.715&nbsp; 0.47469&nbsp;&nbsp;&nbsp; <br>
+  logdose:productB&nbsp; -1.6457&nbsp;&nbsp;&nbsp;&nbsp; 0.4220&nbsp; -3.899 9.65e-05 ***<br>
+  logdose:productC&nbsp;&nbsp; 0.4318&nbsp;&nbsp;&nbsp;&nbsp; 0.4898&nbsp;&nbsp; 0.882&nbsp; </span><span class="style25">0.37793</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for binomial family taken to be 1)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp; Null deviance: 311.241&nbsp; on 50&nbsp; degrees of freedom<br>
+  Residual deviance:&nbsp; 42.305&nbsp; on 45&nbsp; degrees of freedom<br>
+  AIC: 201.31</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 4</span>
+<p>From the output we see that the dose response relationship for product C is not different than it is for product A , the reference group (<em>p</em> = .038). On the other hand the dose-response relationship of products A and B are clearly different (<em>p</em> &lt; .001). This suggests we might collapse products A and C together and refit the model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">insec$newprod &lt;- factor(ifelse(insec$product=='B', 'B', 'AC'))</div>
+<p>There are two new models we can fit. We can force products A and C to have the same slopes (on a logit scale) but different intercepts. If this model holds, the dose effect is the same but one of the products consistently kills more bugs than the other. We can also force them to have both the same slopes and intercepts so that the products are not different at all.
+</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #same slopes, different intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out2 &lt;- glm(cbind(dead,n-dead) ~ logdose+product+logdose:newprod, data=insec, family=binomial)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #same slopes, same intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out3 &lt;- glm(cbind(dead,n-dead) ~ logdose*newprod, data=insec, family=binomial)</div>
+<h2>Question 4</h2>
+<p>The three-product model fits the following regression model.</p>
+<p align="center"><img src="../../images/assignments/assignment5/logit.gif" width="380" height="58" alt="logit"></p>
+<p>To see if A and C should have the same slopes (same dose-response relationship)  we carry out the test</p>
+<blockquote>
+  <p>H<sub>0</sub>: &beta;<sub>5</sub> = 0<br>
+    H<sub>1</sub>:  &beta;<sub>5</sub> &ne; 0
+  </p>
+</blockquote>
+<p>I compare <span class="style8">out2</span> with <span class="style8">out1</span> with a likelihood ratio test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out2, out1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: cbind(dead, n - dead) ~ logdose + product + logdose:newprod<br>
+  Model 2: cbind(dead, n - dead) ~ logdose * product<br>
+  &nbsp; Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 46&nbsp;&nbsp;&nbsp;&nbsp; 43.083&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp; 42.305&nbsp; 1&nbsp; 0.77817&nbsp;&nbsp; </span><span class="style25">0.3777
+</span>
+<p>The models are not significantly different so we can use the simpler model in which the slopes of A and C are the same. Said differently we fail to reject that &beta;<sub>5</sub> = 0. Hence we don't need to include this term in the model. Our model is now the following.</p>
+<p align="center"><img src="../../images/assignments/assignment5/logit2.gif" width="532" height="27" alt="logit 2"></p>
+<p>I next test whether the intercepts are also the same (meaning that the two products are identical). Formally we carry out the following hypothesis test.</p>
+<blockquote>
+  <p>H<sub>0</sub>: &beta;<sub>3</sub> = 0<br>
+    H<sub>1</sub>:  &beta;<sub>3</sub> &ne; 0 </p>
+</blockquote>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out3, out2, test='Chisq')</div>
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: cbind(dead, n - dead) ~ logdose * newprod<br>
+  Model 2: cbind(dead, n - dead) ~ logdose + product + logdose:newprod<br>
+  &nbsp; Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp; 43.111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 46&nbsp;&nbsp;&nbsp;&nbsp; 43.083&nbsp; 1&nbsp;&nbsp; 0.0273&nbsp;&nbsp; </span><span class="style25">0.8688
+  </span>
+<p>So we fail to reject the null hypothesis. Therefore the intercepts of A and C are not different. We conclude that products A and C are not different in their killing power.  &nbsp;</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out3)</div>
+<span class="style24">Call:<br>
+  glm(formula = cbind(dead, n - dead) ~ logdose * newprod, family = binomial, <br>
+  &nbsp;&nbsp;&nbsp; data = insec)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max&nbsp; <br>
+  -2.2507&nbsp; -0.6634&nbsp;&nbsp; 0.1382&nbsp;&nbsp; 0.7080&nbsp;&nbsp; 1.6930&nbsp; </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.1997&nbsp;&nbsp;&nbsp;&nbsp; 0.2152 -10.223&nbsp; &lt; 2e-16 ***<br>
+  logdose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.0988&nbsp;&nbsp;&nbsp;&nbsp; 0.2444&nbsp; 12.679&nbsp; &lt; 2e-16 ***<br>
+  newprodB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.4507&nbsp;&nbsp;&nbsp;&nbsp; 0.3196&nbsp;&nbsp; 4.539 5.64e-06 ***<br>
+  logdose:newprodB&nbsp; -1.8677&nbsp;&nbsp;&nbsp;&nbsp; 0.3465&nbsp; -5.390 </span><span class="style25">7.06e-08</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for binomial family taken to be 1)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp; Null deviance: 311.241&nbsp; on 50&nbsp; degrees of freedom<br>
+  Residual deviance:&nbsp; 43.111&nbsp; on 47&nbsp; degrees of freedom<br>
+  AIC: 198.11</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 4</span>
+</p>
+<p>From the summary table of the final model we see that product B has a significantly lower slope than do products A and C together. </p>
+<p>Alternatively we could jump over the intermediate model and test whether we need do distinguish product C from product A at all.</p>
+<blockquote>
+  <p>H<sub>0</sub>: &beta;<sub>3</sub> = &beta;<sub>5</sub> = 0<br>
+    H<sub>1</sub>:  at least one of &beta;<sub>3</sub> and &beta;<sub>5</sub> are not zero</p>
+</blockquote>
+<p>We carry out analysis of deviance on out1 and out3.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out3, out1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: cbind(dead, n - dead) ~ logdose * newprod<br>
+  Model 2: cbind(dead, n - dead) ~ logdose * product<br>
+  &nbsp; Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp; 43.111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp; 42.305&nbsp; 2&nbsp; 0.80547&nbsp;&nbsp; 0.6685</span>
+<p>So we fail to reject the null hypothesis and conclude that we do not need to distinguish products A and C.<br>
+</p>
+<h2>Question 5</h2>
+<p> The intercepts and slopes of the two products are given in the table below</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Slopes and intercepts for individual products</td>
+  </tr>
+</table>
+<table width="500" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td><strong>Product</strong></td>
+    <td><strong>Intercept</strong></td>
+    <td><strong>Slope</strong></td>
+  </tr>
+  <tr>
+    <td>A and C</td>
+    <td>coef(out3)[1]</td>
+    <td>coef(out3)[2]</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>coef(out3)[1] + coef(out3)[3]</td>
+    <td>coef(out3)[2] + coef(out3)[4]</td>
+  </tr>
+</table>
+<p>I use different symbols to indicate the three original products, but different colors that distinguish B from A and C. The graph is shown below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(dead/n ~ logdose, pch=c(21,16,22)[as.numeric(product)], data=insec, col=as.numeric(newprod), xlab='Log dose', ylab='Proportion dying')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">   inv.logit &lt;- function(b0,b1,x) exp(b0 + b1*x)/(1+exp(b0+b1*x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">   curve(inv.logit(coef(out3)[1],coef(out3)[2],x), add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">   curve(inv.logit(coef(out3)[1]+coef(out3)[3], coef(out3)[2]+coef(out3)[4], x), add=T, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topleft', c(levels(insec$product), 'A and C', 'B'), pch=c(21,16,22,NA,NA), col=c(1,2,1,1,2), lty=c(NA,NA,NA,1,2), bty='n')</div>
+<p align="center"><img src="../../images/assignments/assignment5/fig1.png" width="500" height="400" alt="fig 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> Dose response models for product B and products A and C together</p>
+<h2>Question 6</h2>
+<p>To find the odds ratios for the effect of dosage we need to exponentiate the slopes that are shown in Table 1.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #odds ratio for dose products A and C</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(coef(out3)[2])</div>
+<span class="style24">  &nbsp;logdose <br>
+  22.17092 </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #odds ratio for dose product B</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(coef(out3)[2] + coef(out3)[4])</div>
+<span class="style24">  &nbsp;logdose <br>
+3.425076</span>
+<p>So for every one unit increase in log dose, the odds of dying increases by a factor of 22.17 for products A and C, but only by a factor of 3.43 for product B. </p>
+<h2>Question 7</h2>
+<p>To obtain a confidence interval for an odds ratio we first calculate the confidence interval for the log odds ratio and then exponentiate the endpoints. To obtain this for product B we need the variance of a sum, <span class="style1">coef(out3)[2] + coef(out3)[4]</span>. The method for doing this was explained in <a href="../lectures/lecture5.htm#dotprodvariance">lecture 5</a> and involves extracting the variance-covariance matrix of the parameter estimates and then constructing a quadratic form.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sqrt(c(0,1,0,1)%*%vcov(out3)%*%c(0,1,0,1))</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]<br>
+[1,] 0.2456689</span>
+<p>A shortcut method for doing this was also given in <a href="../lectures/lecture5.htm#shortcut">lecture 5</a>. We fit the model without the <span class="style8">logdose</span> main effect and remove the intercept. When there is a factor in the model, R reports the actual estimates at each level of the factor rather than reporting the  estimates of the effects as it normally does.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #fit model without logdose and remove intercept explicitly</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out3a &lt;- glm(cbind(dead,n-dead) ~ newprod + logdose:newprod - 1, data=insec, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(out3a)$coefficients)</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error&nbsp; z value&nbsp; Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  newprodAC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.19970&nbsp;&nbsp;&nbsp; 0.21518 -10.2228 &lt; 2.2e-16 ***<br>
+  newprodB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.74900&nbsp;&nbsp;&nbsp; 0.23628&nbsp; -3.1699&nbsp; 0.001525 ** <br>
+newprodAC:logdose&nbsp; 3.09878&nbsp;&nbsp;&nbsp; </span><span class="style25">0.24440</span><span class="style24">&nbsp; 12.6793 &lt; 2.2e-16 ***<br>
+newprodB:logdose&nbsp;&nbsp; 1.23112&nbsp;&nbsp;&nbsp; </span><span class="style25">0.24567</span><span class="style24">&nbsp;&nbsp; 5.0113 5.406e-07 ***<br>
+---<br>
+Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>Using this output the Wald-based confidence intervals are obtained as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logOR.AC &lt;- summary(out3a)$coefficients[3,1] + c(qnorm(.025), qnorm(.975)) * summary(out3a)$coefficients[3,2]</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">logOR.B &lt;- summary(out3a)$coefficients[4,1] + c(qnorm(.025), qnorm(.975)) * summary(out3a)$coefficients[4,2]
+</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Wald.results &lt;- rbind(exp(logOR.AC),exp(logOR.B))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(Wald.results) &lt;- c('2.5%','97.5%')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(Wald.results) &lt;- c('Wald: AC','Wald: B')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Wald.results</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5%&nbsp;&nbsp;&nbsp;&nbsp; 97.5%<br>
+  Wald: AC 13.732618 35.794305<br>
+Wald: B&nbsp;&nbsp; 2.116199&nbsp; 5.543498</span>
+<p>The likelihood-based confidence intervals can be obtained by using the <span class="style4">confint</span> function on this last model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.loglik &lt;- confint(out3a)</div>
+
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(out.loglik)[3:4,]</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  newprodAC:logdose 13.945322 36.399553<br>
+newprodB:logdose&nbsp;&nbsp; 2.134199&nbsp; 5.601245</span>
+<p>The two types of intervals are quite similar.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment5/hwscores.png" width="350" height="200" alt="hw scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 23, 2012<br>
+      URL: <a href="assign5.htm#assign5" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign5.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

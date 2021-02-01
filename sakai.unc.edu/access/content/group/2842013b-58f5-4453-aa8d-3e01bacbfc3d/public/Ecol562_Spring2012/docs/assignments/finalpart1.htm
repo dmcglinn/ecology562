@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Final Exam&mdash;Part 1</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style33 {font-size: smaller}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="finalpart1" id="finalpart1"></a>Final Exam&mdash;Part 1</h1>
+<h2>Due Date </h2>
+
+  <p>Friday, April 13, 2012</p>
+
+<h2>Instructions</h2>
+<p align="left">Same rules and policies apply to this &quot;exam&quot; as apply to ordinary assignments. Part 2 of the final will be assigned around the last day of class and will be due on the day of the scheduled final exam.</p>
+<h2>Data Source </h2>
+
+  <p>The file <a href="../../data/lakes.txt">lakes.txt</a> contains the data shown in Table 1.1, pp 8&ndash;9 of Manly (2001), sulfate (SO<span class="style33"><sub>4</sub></span>) concentrations over several years for a number of lakes in Norway. It is a tab-delimited text file. Missing values are blank.</p>
+<h2 align="left">Overview</h2>
+<p align="left">Manly (2001), p. 7, describes the data as follows.</p>
+<blockquote>
+  <p align="left" class="styleArial">A Norwegian research programme was started in 1972 in response to widespread concern in Scandinavian countries about the effects of acid precipitation (Overrein et al., 1980). As part of this study, regional surveys of small lakes were carried out in 1974 to 1978, with some extra sampling done in 1981. Data were recorded for pH, sulphate (SO<span class="style33"><sub>4</sub></span>) concentration, nitrate (NO<span class="style33"><sub>3</sub></span>) concentration, and calcium (Ca) at each sampled lake.</p>
+</blockquote>
+<p align="left">Only the SO<span class="style33"><sub>4</sub></span> data are contained in the file <a href="../../data/lakes.txt">lakes.txt</a>. The columns labeled 1976, 1977, 1978, and 1981 contain the recorded sulfate concentrations in those years for the various lakes.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li> In this first part ignore the structure of the data set and find the best model you can that relates SO<span class="style33"><sub>4</sub></span> concentration to year. List all models you considered and provide a statistical argument(s) for why your best model took the form it did. </li>
+  <li> Produce a graph that accurately displays the structure of the data set. Your graphical display should include for each lake both a scatter plot of the data and a superimposed regression line (curve). </li>
+  <li> Find the best model you can that relates SO<span class="style33"><sub>4</sub></span> concentration to year but this time also correctly accounts for the structure in the data set. </li>
+  <li> Interpret the best model you found in part 3. What does the model actually say? Be as specific as possible. Express your answer in terms of concentration units.</li>
+  <li> Produce suitable graph(s) to demonstrate that in addition to being structurally invalid your best model in Question 1 failed to adequately account for the spatial correlation in the data set. </li>
+  <li> Produce suitable graph(s) to demonstrate that your best model in Question 3 has probably  accounted for the spatial correlation in the data set. </li>
+  <li>Use formal statistical tests to check your answer to Question 6.</li>
+  <li>If your answer to Question 7 indicates there is a problem try to &quot;fix&quot; your model to account for it.</li>
+</ol>
+<h2>Hints</h2>
+<h3><strong>Question 1</strong></h3>
+<p>There are two parts to this question. </p>
+<ol>
+  <li>Find an appropriate probability model for the response. </li>
+  <li>Determine the best way to include the predictor in the model. </li>
+</ol>
+<p>There are three common probability distributions that you might consider here. To get full credit you must consider all three. No credit will be given for using probability models that can be dismissed as obviously bad choices without even looking at the data. The three probability models I'm thinking of could be reasonable choices for modeling SO<span class="style33"><sub>4</sub></span> concentration at least for some data sets, if not for this one. </p>
+<p>According to the assumptions of simple linear regression, a probability model must hold separately at each level of the predictor, not for the data set as a whole. You might examine histograms or kernel densities of the distribution of the response by year to  suggest possible  distributions. Also keep in mind that it is possible to obtain a different probability distribution for the response in regression without changing the probability distribution of the errors.</p>
+<p>There two and perhaps three reasonable ways to include the predictor year in the model. Together then you should consider at least (at most) nine different models relating sulfate concentration to year.</p>
+<h3><strong>Questions 2 &amp; 3</strong></h3>
+<p>There are two forms of structure to these data&mdash;a deliberate structure that is imposed by the way the data were collected and a second structure that I would call incidental whose importance will need to be investigated. The problem sets out to  account for the deliberate structure directly and then at the very end checks to see if the incidental structure has also been inadvertently accounted for. To understand what the deliberate structure here is ask yourself the following question. Was a random sample of lakes obtained at each time period? Since it appears that a random sample was only taken at the beginning of the study what's the structure?</p>
+<h3><strong>Question  3</strong></h3>
+<p>It is not necessary to redo Question 1 here. You may start with your best model from Question 1 and incorporate the data set's structure.</p>
+<h3><strong>Questions 5 &amp; 6</strong></h3>
+<p>I'm not asking you to fit any formal models in parts 5 and 6. The empirical estimate should be enough to answer the question. You will need to answer this question separately by year. Also keep in mind that the residuals from your regression models will have the missing observations removed. You will need to account for this when you match up the residuals with their geographic coordinates.</p>
+<h2>Cited references</h2>
+<ul>
+  <li>Manly, Bryan F. J. 2001. <em>Statistics for Environmental Science and Management</em>. Chapman &amp; Hall/CRC Press: Boca Raton, FL.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 31, 2012<br>
+      URL: <a href="finalpart1.htm#finalpart1" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/finalpart1.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

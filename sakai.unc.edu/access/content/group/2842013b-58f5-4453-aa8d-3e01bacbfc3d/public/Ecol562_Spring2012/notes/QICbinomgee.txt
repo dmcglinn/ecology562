@@ -1,0 +1,21 @@
+QIC.binom.gee<-function(model.R,model.independence)
+{
+#calculates binomial QAIC of Pan (2001)
+#obtain trace term of QAIC
+AIinverse<-solve(model.independence$naive.variance)
+V.msR<-model.R$robust.variance
+trace.term<-sum(diag(AIinverse%*%V.msR))
+
+#estimated mean and observed values
+mu.R<-model.R$fitted.values
+y<-model.R$y
+#scale for binary data
+scale <- 1
+#quasilikelihood for binomial model
+quasi.R<-sum(y*log(mu.R/(1-mu.R))+log(1-mu.R))/scale
+
+QIC<-(-2)*quasi.R + 2*trace.term
+output <- c(QIC,trace.term)
+names(output)<-c('QIC','CIC')
+output
+}

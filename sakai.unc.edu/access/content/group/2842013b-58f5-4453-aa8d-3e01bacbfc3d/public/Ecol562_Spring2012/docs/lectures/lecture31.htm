@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 31&mdash;Wednesday, March 28, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+
+.style2 {
+	color: #CC0000;
+	font-size:large;
+}
+
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style102 {color: #000000;
+	font-size: small;}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture31" id="lecture31"></a>Lecture 31&mdash;Wednesday, March 28, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture31.htm#graphing">Graphing the semivariogram</a> </li>
+  <li><a href="lecture31.htm#semivariogram">Semivariogram models</a> </li>
+  <li><a href="lecture31.htm#theoretical">The theoretical geospatial model</a> </li>
+  <li><a href="lecture31.htm#moran">Moran's I for lattice data</a> </li>
+  <li><a href="lecture31.htm#mantel">Mantel test</a></li>
+  <li><a href="lecture31.htm#point">Point process data</a> <span class="style102">[not covered]</span></li>
+<li><a href="lecture31.htm#cited">Cited reference</a></li>
+</ul>
+<h2><strong><a name="graphing"></a>Graphing the semivariogram </strong></h2>
+<p name="variogram">Fig. 1 displays a theoretical (exponential) semivariogram for an isotropic process (so that the displacement vector <strong>h</strong> is replaced by a scalar <em>h</em>). Some of the standard terminology of semivariograms is shown in the figure.
+</p>
+<ol>
+  <li><font color="#CC0000"><strong>sill</strong></font>: the upper asymptote in the figure.</li>
+  <li><font color="#CC0000"><strong>range</strong></font>: the distance at which sill is reached or for a  sill that is approached asymptotically, the distance at which the semivariance is 95% of  the sill.</li>
+  <li><strong><font color="#CC0000">nugget</font></strong>: the magnitude of the discontinuity that occurs at the origin. Theoretically the semivariogram should pass through the origin but it can fail to do so with real data. The nugget represents measurement error or  variation whose range is beneath the resolution of the data (less than the smallest distance between observations).</li>
+  <li><span class="style1">partial sill</span>: the difference between the sill and the nugget.</li>
+</ol>
+<table width="450" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture31/fig1d.png" width="400" height="315" alt="fig. 1"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 1</strong>&nbsp;&nbsp;Typical semivariogram of a stationary spatial process </td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>Fig. 2 connects the semivariogram of Fig. 1 to its matching covariogram, which exists if the spatial process is both intrinsic and second-order stationary. Using the theoretical formula given last time it follows that C(<em>h</em>) = sill &ndash; &gamma;(<em>h</em>). In Fig. 2 the  sill corresponds to the variance of the process, C(0). (The sill is the total variance and includes the contribution from the nugget.) As the separation <em>h</em> between points increases, the covariance decreases. Consequently as the semivariogram approaches the sill, the covariogram approaches 0, i.e., C(<em>h</em>) &rarr; 0. To generate the graph of the covariogram from the graph of the semivariogram just reflect the semivariogram across the <em>x</em>-axis and then translate the graph vertically a distance equal to the sill.</p>
+<table width="450" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture31/fig2c.png" width="400" height="315" alt="fig. 2"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2 </strong>&nbsp;Corresponding covariogram for the second-order stationary process of Fig. 1</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>A first step toward constructing a theoretical model of the semivariogram is to calculate the  empirical semivariogram defined as follows.</p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture31/image033.gif" width="313" height="60" alt="empirical semivariogram"></p>
+</blockquote>
+<p>Here <em>N</em>(<strong>h</strong>) is the set of location pairs that are separated by a lag <strong>h</strong> and <img src="../../images/lectures/lecture31/image036.gif" width="53" height="30" align="absmiddle">&nbsp;is the number of unique pairs in that set. Notice that this formula closely resembles the alternative variance formula for non-spatial data given in <a href="lecture30.htm#nonspatial">lecture 30</a>. To calculate the semivariance we bin pairs of observations based on their separation distance and then calculate the variability of the attributes of those observations assigned to that bin. </p>
+<h2><a name="semivariogram"></a>Semivariogram models</h2>
+<p>Typically we plot <img src="../../images/lectures/lecture31/image039.gif" width="45" height="30" align="absmiddle">&nbsp;versus <strong>h</strong> (or <em>h</em> for an isotropic process) to assess how the process decays over space. Sometimes we use the empirical semivariogram as a jumping off point for fitting a formal semivariogram model to the data. Generally it is not a good idea to use nonparametric smoothers to fit a curve to a semivariogram scatter plot because of the difficulty in converting a semivariogram smoother curve into a model for the covariance. The covariance model is used to create a covariance matrix of the observations  that then gets used  in GLS or GEE. Covariance matrices are very special  mathematically. They  must be both invertible and positive definite, the latter property being the matrix equivalent of being positive. (Note: being positive definite does not mean the entries of the matrix are all positive.) Not every curve that can be fit to a semivariogram scatter plot will yield an invertible, positive definite covariance matrix, but standard semivariogram models will.</p>
+<p>There are many  possible semivariogram models but the three models described below generally prove to be adequate for assessing the spatial correlation in regression residuals. To simplify the formulas in each of the models it is assumed the nugget = 0. Different software packages introduce the nugget into these formulas in different ways. In most the nugget contributes an additive term but  the <span class="style19">nlme</span> package introduces the nugget into these formulas multiplicatively. The notation used here follows the <span class="style19">nlme</span> package where <em>s</em> denotes distance, &rho; is a model parameter, and C(0) is the variance. </p>
+<ul>
+  <li><strong>Exponential model.</strong> The exponential model of a semivariogram looks roughly linear near the origin and approaches the sill asymptotically.</li>
+</ul>
+<p align="center"><img src="../../images/lectures/lecture31/clip_image003.gif" width="253" height="35" alt="exponential"></p>
+<ul>
+  <li><strong>Gaussian model.</strong> The Gaussian model of a semivariogram looks roughly quadratic near the origin and approaches the sill asymptotically.</li>
+</ul>
+<p align="center"><img src="../../images/lectures/lecture31/clip_image006.gif" width="277" height="47" alt="Gaussian"></p>
+<ul>
+  <li><strong>Spherical model.</strong> The spherical model of a semivariogram looks roughly linear near the origin and actually reaches the sill at a distance &rho;, the range, after which it is  constant and equal to C(0).</li>
+</ul>
+<p align="center"><img src="../../images/lectures/lecture31/clip_image015.gif" width="372" height="88" alt="spherical"></p>
+<p>Different criteria (least squares, maximum likelihood, etc.) are used to fit these curves to data but in the end we tend to choose between them subjectively by visually judging the  fit.</p>
+<h2><a name="theoretical"></a>The theoretical geospatial model</h2>
+<p>The concepts discussed thus far can be expressed as a single model that attempts to decompose the variability of a spatially-referenced attribute <em>Z</em>(<strong>s</strong>) into a sum of variance components from various sources.</p>
+<p align="center"><img src="../../images/lectures/lecture31/spatialmodel.gif" width="267" height="30" alt="spatial model"></p>
+<ul>
+  <li>&mu;(<strong>s</strong>) denotes the mean process and represents large-scale variation. In practice this is our regression model.</li>
+  <li><em>W</em>(<strong>s</strong>) is  the stationary process that we have attempted to model with a semivariogram. It represents smooth small-scale variation.</li>
+  <li>&eta;(<strong>s</strong>) represents microscale variation. Its semivariogram has a range that is less than the smallest lag in the data set and thus it cannot be modeled.</li>
+  <li><em>e</em>(<strong>s</strong>) is a white noise process and represents measurement error.</li>
+</ul>
+<p>The geospatial model is a theoretical construct and is primarily used as an organizing principle. In regression models the last three terms are generally lumped together as the error process which we then describe with a semivariogram.</p>
+<h2><strong><a name="moran"></a>Moran&rsquo;s <em>I</em> for lattice data</strong></h2>
+<p>Although a semivariogram can be estimated for lattice data, doing so typically doesn't make theoretical or practical sense because of the shortage of observations at intermediate distances. An alternative measure of spatial association for lattice data is Moran's <em>I</em>. Moran's <em>I</em> generalizes the Pearson correlation to observations with neighborhoods. The usual Pearson formula is shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture31/image009.gif" width="487" height="162" alt="pearson"></p>
+<p>Let <img src="../../images/lectures/lecture31/image042.gif" alt="center" width="87" height="27" align="absmiddle">&nbsp;and let <img src="../../images/lectures/lecture31/image045.gif" alt="weight" width="27" height="30" align="absmiddle">&nbsp;be the  neighborhood connectivity between sites <strong>s</strong><sub>i</sub> and <strong>s</strong><sub>j</sub>, such that <img src="../../images/lectures/lecture31/image048.gif" alt="weight" width="58" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture31/image045.gif" alt="wij" width="27" height="30" align="absmiddle"> &gt; 0 if sites <strong>s</strong><sub>i</sub> and <strong>s</strong><sub>j</sub> are connected and 0 otherwise.  For lattice data arranged in rectangular grids  connectivity rules are typically borrowed from the game of chess. Thus we can have rook neighborhoods and queen neighborhoods, referencing the legal moves of these  pieces in chess. In truth any neighborhood structure is possible. With a neighborhood of each point defined Moran&rsquo;s <em>I</em> modifies the Pearson correlation formula as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture31/image051.gif" width="430" height="178" alt="Moran"></p>
+<p>Here <strong>1</strong> is a column vector of ones and <strong>W</strong> is the connectivity matrix. So we see that Moran's <em>I</em> is just the weighted Pearson correlation of a variable with itself measured at different locations. In the numerator instead of dividing by <em>n</em> we divide by the sum of the weights (which would equal <em>n</em> in the unweighted case).</p>
+<p>Moran's <em>I</em> is often expressed in terms of distance classes so that we get a separate value <em>I</em>(<em>d</em>) for each choice of <em>d</em>.</p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture31/image054.gif" width="432" height="113" alt="moran"></p>
+</blockquote>
+<p>Here </p>
+<p align="center">&nbsp;<img src="../../images/lectures/lecture31/image057.gif" width="288" height="78" alt="weight"></p>
+<p>where <em>N</em>(<em>d</em>) is the set of location pairs that are separated by a lag <em>d</em>. Typically <em>I</em>(<em>d</em>) is plotted against <em>d</em> producing a plot very reminiscent of the semivariogram of Fig. 1. </p>
+<h2><a name="mantel"></a>Mantel test </h2>
+<p>A Mantel test is commonly  used as an initial assessment of spatial correlation for both lattice and geostatistical data. The Mantel test is appealing because  it works with all kinds of data and is easy to perform. Its limitation is that it is only a significance test. It provides evidence for a spatial association but is incapable of determining the nature of that association. </p>
+<p>A Mantel test works directly with  distance matrices and tests whether the entries of the two matrices are correlated. Typically one matrix records the absolute value of the difference in attribute values, Z(s), between pairs of points. The second matrix is the geographic distance between the observation locations.  Let</p>
+<p align="center"><img src="../../images/lectures/lecture31/Dmatrix.gif" width="212" height="132" alt="D matrix"></p>
+<p>be the matrix of all pairwise geographic distances between pairs of observations. Typically this is Euclidean distance. Let</p>
+<p align="center"><img src="../../images/lectures/lecture31/Cmatrix.gif" width="205" height="132" alt="C matrix"></p>
+<p>be the pairwise distance matrix based on an attribute of each observation. For instance, the attribute could be the regression residual of an observation in which case <img src="../../images/lectures/lecture31/cij.gif" alt="cij" width="97" height="37" align="absmiddle">, the absolute value of the difference in residuals between observations <em>i</em> and <em>j</em>. The distances used in the C matrix can be more elaborate, e.g., the Bray Curtis distance in comparing species composition of pairs of sites. </p>
+<p>The statistic used in the Mantel test, Mantel's <em>r</em>, is  the  Pearson correlation coefficient applied to the lower triangles of the distance matrices after stacking the entries to form a single vector. Given this set-up the question of interest is whether the correlation between the pairs of distances </p>
+<p align="center"><img src="../../images/lectures/lecture31/distances.gif" width="302" height="38" alt="distances"></p>
+<p>is unusually large. Because the <img src="../../images/lectures/lecture31/numpairs.gif" alt="numpairs" width="52" height="42" align="absmiddle"> elements of each distance matrix  are constructed from only <em>n</em> observations they are not independent and the theoretical distribution of the Mantel correlation can only be approximated. Instead of using this approximation, the usual approach is to construct a significance test  from the permutation distribution of Mantel's <em>r</em>. A permutation distribution is the set of Pearson correlations  of geographic distance and attribute distance obtained after randomly assigning observations to geographic coordinates in all possible ways. Because the number of possible permutations is often prohibitively large we  instead draw a large sample from the set of permutations and use that set as the reference distribution for what's called a randomization test. </p>
+<p>The protocol is as follows. We randomly assign attribute values to geographic locations in the original map, calculate the distance matrix for the random assignment of attributes, and then calculate the Pearson correlation between the randomized attribute distance matrix and the original geographic distance matrix. A shortcut to performing the randomization is to  randomly permute the rows and   columns of one of the distance matrices. It is important that the same permutation is applied to both the rows and columns so as to preserve the triangle inequality of distance metrics.</p>
+<p>As an illustration of carrying out a Mantel test by hand, here's a data set from Manly (2001), p. 224. What's reported are the counts of the shellfish <em>Paphies australis</em> in a 200 m by 70 m stretch of beach divided up into 10 m &times; 20 m quadrats.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.loc &lt;- data.frame(x=rep(seq(0,70,10), 11), y=rep(seq(0,200,20), rep(8,11)))</div> 
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.val &lt;- c(1, 0, 7, 20, 20, rep(0,5), 24, rep(0,5), 4, 0, 0, 0, 2, 11, 7, rep(0,5), 4, rep(0,4), 104, 240, rep(0,4), 89, rep(0,4), 222, 126, 0, 0, 3, 0, 0, 3, rep(0,6), 103, 250, 174, 62, 0, 7, 2, 1, 1, 7, 4, 7, 23, 8, rep(0,5), 6, 7, rep(0,5), 58, 29, 29, 30)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> xtabs(my.val ~ my.loc$x + my.loc$y)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; my.loc$y<br>
+my.loc$x&nbsp;&nbsp; 0&nbsp; 20&nbsp; 40&nbsp; 60&nbsp; 80 100 120 140 160 180 200<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 4&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 3&nbsp;&nbsp; 0&nbsp;&nbsp; 2&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0 104&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp; 7&nbsp; 24&nbsp;&nbsp; 0&nbsp;&nbsp; 0 240&nbsp;&nbsp; 0&nbsp;&nbsp; 0 103&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30&nbsp; 20&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 3 250&nbsp;&nbsp; 7&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp; 20&nbsp;&nbsp; 0&nbsp;&nbsp; 2&nbsp;&nbsp; 4&nbsp;&nbsp; 0 222&nbsp;&nbsp; 0 174&nbsp;&nbsp; 4&nbsp;&nbsp; 0&nbsp; 58<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 11&nbsp;&nbsp; 0&nbsp;&nbsp; 0 126&nbsp;&nbsp; 0&nbsp; 62&nbsp;&nbsp; 7&nbsp;&nbsp; 6&nbsp; 29<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 7&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 23&nbsp;&nbsp; 7&nbsp; 29<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 89&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 7&nbsp;&nbsp; 8&nbsp;&nbsp; 0&nbsp; 30</span>
+<p>I use the <span class="style1">dist</span> function to obtain the pairwise geographic and attribute distances for all pairs of observations and then calculate the correlation of the entries in the lower triangles of the two distance matrices.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.d &lt;- as.matrix(dist(my.loc))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out.c &lt;- as.matrix(dist(my.val))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">r.actual &lt;- cor(out.d[lower.tri(out.d)], out.c[lower.tri(out.c)])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> r.actual</div>
+<span class="style24">[1] -0.10893264</span>
+<p>We wish to determine if a correlation of  &ndash;0.11 is  unusual, greater in magnitude than  would be expected by chance for these data. The Mantel  test functions that are available in various R packages all perform one-sided upper-tailed tests (tests of positive association) and  won't work here, so we have to carry out the test by hand. I write a function that permutes the rows and columns of one of the distance matrices and then calculates the Pearson correlation of the permuted matrix with the other unmodified matrix. Because the assignment of observation to geographic location is  randomized, any correlation we obtain represents purely chance association.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.func&lt;-function(c,d) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">   myperm &lt;- sample(1:nrow(c))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">   new.c &lt;- c[myperm, myperm]</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> cor(d[lower.tri(d)], new.c[lower.tri(new.c)])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>I repeat this 9999 times each time calculating the Pearson correlation to obtain the  randomization distribution of the Mantel statistic under the null hypothesis of no association. I append the actual Mantel correlation to this vector to yield a total of 10,000 correlations. Counting up  the number of correlations that are equal to or greater in magnitude than the observed correlation and dividing the result by 10,000  yields the two-tailed <em>p</em>-value for the randomization test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">set.seed(10)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out.sims &lt;- sapply(1:9999, function(x) my.func(out.c, out.d))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(abs(c(out.sims, r.actual)) &gt; abs(r.actual))/10000</div>
+<span class="style24">[1] 0.0191</span>
+<p>Since  <em>p</em> = 0.0191 &lt; .05 we reject the null hypothesis of no association and conclude that the shellfish counts are spatially correlated (although negatively!). </p>
+<p>Fig. 3 is a graphical depiction of the Mantel test just carried out. The histogram (and corresponding kernel density estimate) represent the randomization distribution. The asterisk locates the observed value of the Mantel correlation with respect to the randomization distribution. The shaded area under the kernel density curve is the two-tailed <em>p</em>-value of our test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">hist(out.sims, probability=T, xlab='Mantel r' ,main='')</div>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px"> #kernel density</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.k &lt;- density(out.sims)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(out.k,col=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #upper tail</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">stuff.x &lt;- out.k$x[out.k$x&gt;abs(r.actual)]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> stuff.y &lt;- out.k$y[out.k$x&gt;abs(r.actual)]</div>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px">polygon(x=c(stuff.x, rev(stuff.x)), y=c(rep(0, length(stuff.x)), rev(stuff.y)), col='lightcyan2') </div>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px"> #lower tail</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  stuff.x2 &lt;- out.k$x[out.k$x&lt;r.actual]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  stuff.y2 &lt;- out.k$y[out.k$x&lt;r.actual]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  polygon(x=c(stuff.x2, rev(stuff.x2)), y=c(rep(0, length(stuff.x2)), rev(stuff.y2)), col='lightcyan2')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">points(r.actual, 0, pch=8, col=4)</div>
+<br>
+<table width="450" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture31/permdist.png" width="400" height="315" alt="randomization distribution"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3 </strong>&nbsp;Randomization distribution for the Mantel test. <span class="style2">*</span> denotes the observed Mantel correlation. The shaded areas together yield the p-value for a two-tailed test.</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<h2 align="left"><strong><a name="point"></a>Point Process Data</strong></h2>
+<p>With point process data it is the locations themselves that are random. Thus a typical first step is to examine the distances between pairs of points to look for evidence of clustering. One can examine average distance to nearest neighbors, distance to next nearest neighbors, etc., and compare the statistics calculated to the same values obtained from  a known spatial process, such as a spatial Poisson process, which is consistent with the hypothesis of complete spatial randomness (CSR).</p>
+<p>A popular and more efficient way of examining clustering at different scales is to calculate a quantity called Ripley's <em>K.</em> Unlike nearest neighbor metrics, Ripley's <em>K</em> can describe point processes at many different scales simultaneously. The quantity <em>K</em> is defined such that</p>
+<p align="center"><img src="../../images/lectures/lecture31/image060.gif" width="433" height="30" alt="Ripley K"></p>
+<p>Here &lambda; is called the intensity of the spatial process and is equal to the mean number of events per unit area, a value that is assumed constant over the region of interest. <em>E</em> is the expectation operator and so the right hand side is the average number of events in the neighborhood of a given event. </p>
+<p>If the region in question has area <em>R</em>, we would expect on average &lambda;<em>R</em> events to occur in that region. So if there are <img src="../../images/lectures/lecture31/lambdaK.gif" width="58" height="26" align="absmiddle"> additional events within a distance <em>h</em> of each single event and a total of &lambda;<em>R</em> events overall, we would expect <img src="../../images/lectures/lecture31/image063.gif" alt="expectation" width="78" height="30" align="absmiddle">&nbsp;to be the number of ordered pairs a distance of at most <em>h</em> apart. Define the indicator function <img src="../../images/lectures/lecture31/indicatorfunc.gif" alt="indicator" width="58" height="37" align="absmiddle"> to be </p>
+<p align="center">&nbsp;<img src="../../images/lectures/lecture31/image066.gif" width="215" height="72" alt="indicator"></p>
+<p>where <img src="../../images/lectures/lecture31/image069.gif" alt="dij" width="23" height="30" align="absmiddle">&nbsp;is the distance between the i<sup>th</sup> and j<sup>th</sup> observed events. If we sum  this function over all events <em>i</em> &ne; <em>j</em> we obtain the number of ordered pairs a distance of at most <em>h</em> apart. Thus we have </p>
+<blockquote>
+  <p align="center"><br>
+    <img src="../../images/lectures/lecture31/image072.gif" width="420" height="57" alt="ripley k"></p>
+</blockquote>
+<p align="left">The latter expression is the formula typically used to estimate Ripley's <em>K</em>.</p>
+<p>There is one complication not addressed by this formula. For points near the edge of <em>R</em>, the indicator function will underestimate the number of neighbors. Thus the estimator needs to be adjusted in some fashion to account for this. To account for edge effects Ripley's <em>K</em> is modified as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture31/image075.gif" width="205" height="67" alt="estimate"></p>
+<p>where <img src="../../images/lectures/lecture31/image045.gif" alt="wij" width="27" height="30" align="absmiddle"> is the proportion of the neighborhood of a given event <em>i</em> with radius <img src="../../images/lectures/lecture31/image069.gif" alt="dij" width="23" height="30" align="absmiddle"> that lies within <em>R</em>. </p>
+<p>CSR refers to a homogeneous process with no spatial dependence. A homogeneous Poisson process is an example. Under CSR we expect to see  roughly the same number of pairs of events in any region. For a given event the number of additional events within a distance<em> h</em> is proportional to the area of a circle of radius <em>h</em> where the proportionality constant is &lambda;, the intensity. Thus under CSR we expect <img src="../../images/lectures/lecture31/image078.gif" alt="CSR" width="120" height="30" align="absmiddle">. This suggests constructing a statistic <em>L</em>(<em>h</em>) defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture31/image081.gif" width="148" height="62" alt="L"></p>
+<p><img src="../../images/lectures/lecture31/Lh.gif" alt="Lh" width="43" height="32" align="absmiddle"> should be equal to zero under CSR. In a plot of <img src="../../images/lectures/lecture31/Lh.gif" alt="Lh" width="43" height="32" align="absmiddle"> versus <em>h</em> positive peaks will correspond to clustering and negative troughs to uniformity. Statistical significance is assessed by generating data from a process exhibiting CSR and plotting the extremes of the simulated process to generate a probability envelope. Places where <img src="../../images/lectures/lecture31/Lh.gif" alt="Lh" width="43" height="32" align="absmiddle">  pokes out of the envelope are places where the clustering or uniformity are statistically significant.</p>
+<h2><a name="cited"></a>Cited Reference</h2>
+<p>Manly, Bryan F. J. 2001. <em>Statistics for Environmental Science and Management</em>. Chapman &amp; Hall/CRC Press: Boca Raton, FL</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 29, 2012<br>
+      URL: <a href="lecture31.htm#lecture31" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture31.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

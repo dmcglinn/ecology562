@@ -1,0 +1,156 @@
+sm<-read.table('ecol 562/sm003.txt', header=T, sep=',')
+sm[1:14,]
+#different nest sites have different numbers of observations
+table(sm$strtno)
+sm[sm$strtno==86,]
+#There are missing values in the response
+(1:nrow(sm))[is.na(sm$nesting2)]
+sm[148:152,]
+#indepedent logistic regression model
+out.glm<-glm(nesting2~factor(year)+factor(period)+factor(deply)+rblval+ factor(year):factor(period)+ rblval*factor(period)+ size+I(size^2) family=binomial, data=sm)
+summary(out.glm)
+anova(out.glm,test='Chisq')
+
+#gee package
+library(gee)
+#independence model
+gee.in<-gee(nesting2~factor(year)+factor(period)+factor(deply)+rblval+ factor(year):factor(period)+ rblval*factor(period)+size+I(size^2),family=binomial, data=sm, id=strtno, corstr="independence", scale.fix=T)
+names(gee.in)
+summary(gee.in)
+#exchangeable correlation
+gee.ex<-gee(nesting2~factor(year)+factor(period)+factor(deply)+rblval+ factor(year):factor(period)+ rblval*factor(period)+size+I(size^2), family=binomial, data=sm, id=strtno, corstr="exchangeable", scale.fix=T)
+
+names(gee.ex)
+#estimated correlation matrix
+round(gee.ex$working.correlation,3)
+#scale parameter is fixed at 1
+gee.ex$scale
+#summary table
+round(summary(gee.ex)$coefficients,3)
+#p-value for reported z-statistic
+round(2*(1-pnorm(abs(summary(gee.ex)$coefficients[,5]))),4)
+summary(gee.in)
+#independence model provides both naive and robust standard errors
+round(summary(gee.in)$coefficients,3)
+
+#function to calculate for Pan QIC for binary data
+QIC.binom.gee<-function(model.R,model.independence)
+{
+#calculates binomial QAIC of Pan (2001)
+#obtain trace term of QAIC
+AIinverse<-solve(model.independence$naive.variance)
+V.msR<-model.R$robust.variance
+trace.term<-sum(diag(AIinverse%*%V.msR))
+#estimated mean and observed values
+mu.R<-model.R$fitted.values
+y<-model.R$y
+#scale for binary data
+scale <- 1
+#quasilikelihood for binomial model
+quasi.R<-sum(y*log(mu.R/(1-mu.R))+log(1-mu.R))/scale
+QIC<-(-2)*quasi.R + 2*trace.term
+output <- c(QIC,trace.term)
+names(output)<-c('QIC','CIC')
+output
+}
+#QIC for exchangeable correlation
+QIC.binom.gee(gee.ex,gee.in)
+#QIC for independence model
+QIC.binom.gee(gee.in,gee.in)
+
+#compare robust and naive standard errors
+sum(abs(summary(gee.in)$coefficients[,2]-summary(gee.in)$coefficients[,4]))
+#there is no anova function in gee package
+anova(gee.ex)
+
+### geepack package #####
+library(geepack)
+#need a variable to uniquely identify order of the observations within a group
+sm$wave<-paste(sm$year,sm$period,sep='.')
+#convert character data to consecutive numbers
+sm$wave<-as.numeric(factor(paste(sm$year,sm$period,sep='.')))
+
+#exchangeable correlation
+geeglm.ex<-geeglm(nesting2~factor(year)+factor(period)+factor(deply)+rblval+factor(year):factor(period)+ rblval*factor(period)+size+I(size^2),family=binomial, data=sm, id=strtno, corstr="exchangeable", scale.fix=T, waves=wave)
+#independence correlation
+geeglm.in<-geeglm(nesting2~factor(year)+factor(period)+factor(deply)+rblval+factor(year):factor(period)+ rblval*factor(period)+size+I(size^2),family=binomial, data=sm, id=strtno, corstr="independence", scale.fix=T, waves=wave)
+#AR(1) correlation
+geeglm.ar1<-geeglm(nesting2~factor(year)+factor(period)+factor(deply)+rblval+factor(year):factor(period)+ rblval*factor(period)+size+I(size^2), family=binomial, data=sm, id=strtno, corstr="ar1", scale.fix=T, waves=wave)
+names(geeglm.ar1)
+summary(geeglm.ar1)
+names(geeglm.ar1$geese)
+#coefficient estimates
+geeglm.ar1$geese$beta
+#variance-covariance matrix of estimates
+dim(geeglm.ar1$geese$vbeta.naiv)
+#naive standard errors
+sqrt(diag(geeglm.ar1$geese$vbeta.naiv))
+#z-statistic using naive standard errors
+coef(geeglm.ar1)/sqrt(diag(geeglm.ar1$geese$vbeta.naiv))
+
+#geepack has an anova function for multivariate Wald tests
+anova(geeglm.ar1)
+
+#Pan QIC for geeglm model
+QIC.binom.geeglm<-function(model.geeglm,model.independence)
+{
+#calculates binomial QAIC of Pan (2001)
+#obtain trace term of QAIC
+AIinverse<-solve(model.independence$geese$vbeta.naiv)
+V.msR<-model.geeglm$geese$vbeta
+trace.term<-sum(diag(AIinverse%*%V.msR))
+#estimated mean and observed values
+mu.R<-model.geeglm$fitted.values
+y<-model.geeglm$y
+#scale for binary data
+scale <- 1
+#quasilikelihood for binomial model
+quasi.R<-sum(y*log(mu.R/(1-mu.R))+log(1-mu.R))/scale
+QIC<-(-2)*quasi.R + 2*trace.term
+output <- c(QIC,trace.term)
+names(output)<-c('QIC','CIC')
+output
+}
+
+#compare QIC and CIC of three correlation models
+sapply(list(geeglm.in,geeglm.ex,geeglm.ar1),function(x) QIC.binom.geeglm(x,geeglm.in))
+
+### Mixed effects logistic regression: random intercepts
+library(lme4)
+lmerfit<-lmer(nesting2~factor(year)+factor(period)+factor(deply)+rblval+ factor(year):factor(period)+ rblval*factor(period)+size+I(size^2)+(1|strtno), family=binomial, data=sm)
+slotNames(lmerfit)
+lmerfit@deviance
+summary(lmerfit)
+#AIC of mixed effects model is lower
+AIC(out.glm,lmerfit)
+
+#compare coefficient estimates from GLM,GEE, and GLMM
+out.comp<-round(cbind(coef(out.glm),coef(geeglm.ex),fixef(lmerfit)),3)
+colnames(out.comp)<-c('GLM','GEE','GLMM')
+out.comp
+
+#draw subject-specific and marginal models versus rblval
+#for Year 1999, period 1, area = 0
+
+#marginal model
+logit.ex<-function(x) {
+lin.model<-coef(geeglm.ex)[1]+coef(geeglm.ex)[3]+coef(geeglm.ex)[8]*x
+exp(lin.model)/(1+exp(lin.model)) }
+
+#subject-specific model
+logit.ss<-function(x,u=0) {
+lin.model<-fixef(lmerfit)[1]+fixef(lmerfit)[3]+fixef(lmerfit)[8]*x+u
+exp(lin.model)/(1+exp(lin.model)) }
+
+
+range(sm$rblval)
+#plot marginal model
+curve(logit.ex,from=.05,to=2.3,xlab='rblval',ylab='Probability',ylim=c(0,1))
+#add all subject-specific curves
+sapply(ranef(lmerfit)[[1]][,1],function(y) curve(logit.ss(x,y),add=T,col='grey70',lty=2))->junk
+#add typical subject-specific curve for u = 0
+curve(logit.ss(x,0),add=T,col=1,lwd=2)
+#add marginal model
+curve(logit.ex,add=T,col=2,lwd=2)
+
+

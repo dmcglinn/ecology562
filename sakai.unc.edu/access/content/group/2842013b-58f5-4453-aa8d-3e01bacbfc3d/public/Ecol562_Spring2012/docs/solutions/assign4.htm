@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 4&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+.style8 {color: #CC0033}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="assign4" id="assign4"></a>Assignment 4&mdash;Solution</h1>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">isles &lt;- read.table('islands.txt', header=TRUE, sep=',')</div>
+<h3 class="style16">Fitting the  models</h3>
+<p class="style6">#Gleason Model </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">gleason &lt;- lm(sp.richness~log(island.area), data=isles)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(gleason)</div>
+<span class="style24">(Intercept) log(island.area) <br>
+  &nbsp;&nbsp;-171.0272 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;109.4431 </span></p>
+<p>The estimated model is &mu; = &ndash;171.03 + 109.44 &times; log(area), where &mu; is the mean of species richness. </p>
+<p class="style6">#log-Arrhenius Model</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">log.arrhen &lt;- lm(log(sp.richness)~log(island.area), data=isles)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(log.arrhen)</div>
+<span class="style24">(Intercept) log(island.area) <br>
+  &nbsp;&nbsp;3.8389781 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3283347</span></p>
+<p>The estimated model is &mu; = 3.84 + 0.33 &times; log(area), where &mu; is the mean of log(species richness). Alternatively we can interpret exp(&mu;) as either the median or the geometric mean of species richness (see lecture 7). </p>
+<p class="style6">#Arrhenius model</p>
+<p>I exponentiate the estimates obtained from the log-Arrhenius model for use as  initial estimates to the <strong class="style4">nls</strong> function for the Arrhenius model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> arrhen &lt;- nls(sp.richness~b0*island.area^b1, data=isles, start=list(b0=exp(coef(log.arrhen)[1]), b1=coef(log.arrhen)[2]))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">arrhen</div>
+<span class="style24">Nonlinear regression model<br>
+    model: sp.richness ~ b0 * island.area^b1 <br>
+    data: isles <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b1 <br>
+    83.4789648 0.2549076 <br>
+    residual sum-of-squares: 451062.6 </span></p>
+<p>The estimated model is &mu; = 83.48 &times; area<sup>0.26</sup>, where &mu; is the mean of species richness.</p>
+<p class="style6">#Poisson model</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> poisson.glim &lt;- glm(sp.richness~log(island.area), data=isles, family=poisson)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(poisson.glim)</div>
+<span class="style24">(Intercept) log(island.area) <br>
+  &nbsp;&nbsp;4.1925024 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.2835591 </span><p>
+The estimated model is log &mu; = 4.19 + 0.28 &times; log(area), where &mu; is the mean of species richness.<br>
+<p class="style6">#Negative binomial model</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(MASS)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">negbin.glim &lt;- glm.nb(sp.richness~log(island.area), data=isles)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(negbin.glim)</div>
+<span class="style24">(Intercept) log(island.area) <br>
+  &nbsp;&nbsp;3.9729777 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.3172363 </span><p>
+The estimated model is log &mu; = 3.97 + 0.32 &times; log(area), where &mu; is the mean of species richness.
+<p>Summarizing we have the following results.  
+&mu; denotes mean richness except in the log-Arrhenius model where it denotes mean log richness.<div align="center">
+    <table width="600" border="1" cellpadding="5" cellspacing="0" bordercolor="#000000">
+      <tr bgcolor="#C5E9EB">
+        <td><strong>Model</strong></td>
+        <td><strong>Fitted equation</strong></td>
+      </tr>
+      <tr>
+        <td>Gleason</td>
+        <td>&mu; = &ndash;171.03 + 109.44 &times; log(area)</td>
+      </tr>
+      <tr>
+        <td>log-Arrhenius</td>
+        <td>&mu;(log richness) = 3.84 + 0.33 &times; log(area)</td>
+      </tr>
+      <tr>
+        <td>Arrhenius</td>
+        <td>&mu; = 83.48 &times; area<sup>0.26</sup></td>
+      </tr>
+      <tr>
+        <td>Poisson</td>
+        <td>log &mu; = 4.19 + 0.28 &times; log(area)</td>
+      </tr>
+      <tr>
+        <td>negative binomial</td>
+        <td> log &mu; = 3.97 + 0.32 &times; log(area)</td>
+      </tr>
+      </table>
+  </div>
+  <h3 class="style16">Graphing the Models</h3>
+<p>The log-Arrhenius model, because it models the log of species richness, stands alone and I plot it by itself. The Gleason model and Arrhenius model are also graphically incompatible. But the Poisson model and negative binomial model are of the same form. They can be plotted together with the Gleason model, or together with the Arrhenius model, as I show below.</p>
+<p align="center"><img src="../../images/assignments/assignment4/PoissonNB&#32;form.gif" width="501" height="138"></p>
+<p class="style6">#Log-Arrhenius model </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(log(isles$island.area), log(isles$sp.richness), xlab='log(Area)', ylab='log(Species)')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(log.arrhen, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mtext('log-Arrhenius model', side=3, line=.5)</div>
+<p class="style6">#Arrhenius model </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">arrhenius.func&lt;-function(x) coef(arrhen)[1]*x^(coef(arrhen)[2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(isles$island.area, isles$sp.richness, xlab='Area', ylab='Species')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(arrhenius.func, lty=2, col=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mtext('Arrhenius model', side=3, line=.5)</div><br>
+<table width="700" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/assignments/assignment4/fig1a.png" width="335" height="330" alt="fig1a"></td>
+    <td scope="col">(b) <img src="../../images/assignments/assignment4/fig1b.png" width="335" height="330" alt="fig1b"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 1&nbsp;</strong>&nbsp;Mean log(richness) and mean richness predicted by the log-Arrhenius and Arrhenius models, respectively.</td></tr></table><table width="700" border="0" align="center" cellpadding="3"><tr>
+  </tr>
+</table>
+<p class="style6">#Gleason, Poisson, and negative binomial models </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(log(isles$island.area), isles$sp.richness, xlab='log(Area)', ylab='Species')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(gleason, col=2, lty=2, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> generic.func &lt;- function(model,x) coef(model)[1] + coef(model)[2]*x </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(exp(generic.func(poisson.glim,x)), lty=3, col=3, lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(exp(generic.func(negbin.glim,x)), lty=6, col=4, lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('topleft', c('Gleason', 'Poisson', 'negative binomial'), col=c(2,3,4), lty=c(2,3,6), bty='n', lwd=c(3,3,3))</div>
+<p align="center"><img src="../../images/assignments/assignment4/fig2.png" width="335" height="320" alt="fig 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2 </strong>&nbsp;&nbsp;Mean richness as a function of log area as predicted by the Gleason, Poisson, and negative binomial models</p>
+<h3 class="style16">Other arrangements of the graphs</h3>
+<p>As explained above the Arrhenius, negative binomial, and Poisson models can be grouped together.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Fig. 3</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  arrhenius.func&lt;-function(x) coef(arrhen)[1]*x^(coef(arrhen)[2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(isles$island.area, isles$sp.richness, xlab='Area', ylab='Species')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(arrhenius.func, lty=2, col=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  alt.func &lt;- function(model,x) exp(coef(model)[1])*x^coef(model)[2]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(alt.func(poisson.glim,x), lty=3, col=3, lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(alt.func(negbin.glim,x), lty=6, col=4, lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c('Arrhenius', 'Poisson', 'negative binomial'), col=c(2,3,4), lty=c(2,3,6), bty='n', lwd=c(2,2,2), cex=.9)</div><br>
+<table width="550" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/assignments/assignment4/fig3.png" width="500" height="355" alt="fig 3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 3&nbsp;</strong>&nbsp;Mean richness as a function of  area as predicted by the Arrhenius, Poisson, and negative binomial models</td>
+  </tr>
+</table>
+<p>The log-Arrhenius model can be added to the negative binomial, Poisson, and Gleason models either as the median or the mean, which are not the same here. Exponentiating the lognormal model does not return the mean, but instead   returns the median on the raw scale.  The lognormal distribution is typically positively skewed so that the median and mean are very different. The mean of the lognormal distribution can be expressed in terms of &mu; and &sigma;<sup>2</sup>, the mean and variance of the log-transformed variables. </p>
+<div align="center"><img src="../../images/assignments/assignment4/lognormalmean.gif" width="237" height="62" alt="lognormal mean"></div><br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Fig. 4</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(log(isles$island.area), isles$sp.richness, xlab='log(Area)', ylab='Species')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(gleason, col=2, lty=2, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">generic.func &lt;- function(model,x) coef(model)[1] + coef(model)[2]*x </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(exp(generic.func(poisson.glim,x)), lty=3, col=3, lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(generic.func2(log.arrhen,x), lty=2, lwd=2, col='grey70', add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(exp(generic.func(negbin.glim,x)), lty=6, col=4, lwd=2, add=T)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(generic.func(log.arrhen,x)), lty=1, col='grey70', lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  legend('topleft', c('Gleason', 'Poisson', 'negative binomial', 'lognormal (median)', 'lognormal (mean)'), col=c(2,3,4,'grey70','grey70'), lty=c(2,3,6,1,2), bty='n', lwd=c(2,2,2), cex=.9)</div><br>
+<table width="550" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/assignments/assignment4/fig4.png" width="505" height="355" alt="fig 4"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 4&nbsp;</strong>&nbsp;Modeled richness as a function of  log(area) as predicted by the Gleason, Poisson,  negative binomial, and lognormal models</td>
+  </tr>
+</table>
+<h3 class="style16">Comparing the Models</h3>
+<p>The log-likelihood for the log-Arrhenius model needs to be calculated separately since the response is log-transformed in this model. We have two versions of this function from lecture 11 which here yield barely different results. There is no additive constant in our model so I set <em>k</em> = 0 when using the functions.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#log-likelihood for a log transformed response and discrete data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike4 &lt;- function(model, k, y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #MLE of sigma^2 </div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> # probability at y = 0 is calculated differently</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- ifelse(y==0, pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2)), 
+  pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2))
+  - pnorm(log(y+k-.5), mean=predict(model), sd=sqrt(sigma2)))</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#log-likelihood for a log transformed response using density</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike5 &lt;- function(model, k, y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #MLE of sigma^2 </div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- dnorm(log(y+k), mean=predict(model), sd=sqrt(sigma2)) * 1/(y+k)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike5(log.arrhen, 0, isles$sp.richness)</div>
+<span class="style24">  [1] -133.1472</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike4(log.arrhen, 0, isles$sp.richness)</div>
+<span class="style24">[1] -133.147</span>
+<p>I create a list of model names,  string together the log-likelihoods,  list the number of estimated parameters in each model, and calculate the AIC values. Three parameters are estimated in each model (two regression parameters and an auxiliary parameter&mdash;the variance for normal models and the dispersion for the negative binomial), except the Poisson model in which only two parameters were estimated.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model.names &lt;- c('Gleason', 'Arrhenius', 'Log-Arrhenius', 'Poisson', 'Neg Binom')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">loglike &lt;- c(logLik(gleason), logLik(arrhen), norm.loglike4(log.arrhen, 0, isles$sp.richness), logLik(poisson.glim), logLik(negbin.glim))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">numparms &lt;- c(3,3,3,2,3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC.vals &lt;- -2*loglike + 2*numparms</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.models &lt;- data.frame(model=model.names, LL=loglike, k=numparms, AIC=AIC.vals)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.models</div>
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LL k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gleason -141.4406 3&nbsp; 288.8813<br>
+  2 &nbsp;&nbsp;&nbsp;&nbsp;Arrhenius -140.4282 3&nbsp; 286.8563<br>
+  3 Log-Arrhenius -133.1470 3&nbsp; 272.2941<br>
+  4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Poisson -542.1834 2 1088.3668<br>
+  5&nbsp;&nbsp;&nbsp;&nbsp; Neg Binom -133.6894 3&nbsp; 273.3788</span>
+<p>From the reported AIC values only the log-Arrhenius and negative binomial models are reasonable models for these data. </p>
+<p>It's worth reflecting on the fact that in Fig. 2, the graphs of the worst model (the Poisson) and one of the best models (negative binomial) are virtually identical. In a least squares sense these two models would be found to be nearly indistinguishable, but of course we didn't use least squares to fit these models. We used maximum likelihood. In maximum likelihood we're not evaluating fit by how close the mean trajectory comes to the observations. Instead we're trying to maximize the probability of obtaining the observed data. Thus when we compare models using log-likelihood or AIC we're evaluating probability generating mechanisms. From the log-likelihood (or the AIC) reported in the above table we would conclude that it is very unlikely that a Poisson model generated these data. It is far more likely for a negative binomial model to have generated these data.</p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment4/hw4scores.png" width="365" height="205" alt="hw 4 scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 16, 2012<br>
+      URL: <a href="assign4.htm#assign4" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign4.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

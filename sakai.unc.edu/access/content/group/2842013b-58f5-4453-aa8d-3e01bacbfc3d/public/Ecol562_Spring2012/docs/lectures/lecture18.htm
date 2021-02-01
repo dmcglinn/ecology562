@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 18&mdash;Monday, February 20, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture18" id="lecture18"></a>Lecture 18&mdash;Monday, February 20, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture18.htm#overview">Overview of the problem of observational heterogeneity</a></li>
+  <li><a href="lecture18.htm#approaches">Approaches for dealing with observational heterogeneity</a>
+    <ul>
+      <li><a href="lecture18.htm#common">Common pooling model</a></li>
+      <li><a href="lecture18.htm#fixed">Fixed effects approach to dealing with observational heterogeneity</a></li>
+      <li><a href="lecture18.htm#random">Random effects approach to dealing with observational heterogeneity</a></li>
+    </ul>
+  </li>
+</ul>
+<h2><a name="overview" id="overview"></a>Overview</h2>
+<p>Observational heterogeneity occurs when some observations resemble others purely because of the way the data were collected. </p>
+<ul>
+  <li>Suppose we have a random sample of individuals that we then follow over time obtaining multiple measurements from each individual. This is the classic repeated measures design. The sampling scheme has induced a structure in the data set. We expect that the different measurements coming from the same individual to be more similar to each other than to observations coming from different individuals. The coral core data we examined on Friday are data of this type.</li>
+  <li>Suppose in  an agricultural experiment we  choose a number of different fields to which we randomly assign  one of two fertilizer applications (I or II). Each individual field is then divided into four parts and four different crops (A, B, C, or D) are randomly assigned to the four quarters. Thus we have two &quot;treatments&quot;, type of crop and type of fertilizer, applied to different sized units. The crop treatment is applied to quarters within a field while the fertilizer treatment is applied to fields (so that all the quarters in that field automatically get the same fertilizer treatment).  Quarters are replicates of the crop treatment while fields are replicates of the fertilizer treatment. This is the classic split plot design in which we have different &quot;sized&quot; experimental units one of which is nested inside the other.</li>
+</ul>
+<p align="center"><img src="../../images/lectures/lecture18/fig1.png" width="360" height="190" alt="fig 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong>&nbsp;  Split plot design</p>
+<p>Any time we have a lack of equivalence between the observational or experimental units used in a study, we have observational heterogeneity. Last week we discussed one specific approach for dealing with such heterogeneity&mdash;generalized least squares (GLS). We focused on the specific case of repeated measures data in which there is a long time series of data, but generalized least squares can be used any time data are organized in a hierarchical fashion. Unfortunately generalized least squares has some limitations.</p>
+<ul>
+  <li>Because it generalizes ordinary least squares it is largely restricted to situations in which a normal distribution makes sense as a probability model for the response. </li>
+  <li>Generalized least squares requires that we have a specific model in mind for the variances and covariances of our observations. With temporal data there some obvious choices which is why we focused on such data in our discussion of GLS. For other kinds of data the choice is not so obvious.</li>
+</ul>
+<p>Today we discuss a second approach for dealing with observational heterogeneity in regression models&mdash;introducing random effects to produce what's called a mixed effects model. Mixed effects models are an omnibus way to account for observational heterogeneity. To set up a mixed model we  just need to know  how the data are structured, i.e., be able to identify the different sized units in the analysis. We don't actually have to understand the precise nature of the relationships (correlations) of the observations that make up the different sized units. Thus mixed effects models are a convenient way of addressing data structure especially in situations where the structure is a nuisance and is of little interest to us by itself. On the other hand if we fit a mixed effects model to temporal data it may still be necessary to account for lingering residual temporal correlation.</p>
+<h2><a name="approaches" id="common2"></a>Approaches for dealing with observational heterogeneity</h2>
+<p>As an illustration of these basic ideas we return to the coral core data set we analyzed using generalized least squares last time. The basic goal was to model how coral extension rates (the widths of annual rings in coral cores) vary over time. The question of interest is whether extension rates have shown a linear trend over time that depends upon the location of the coral colony in the reef complex (nearshore, forereef, and backreef locations). We assume  that  extension rates are normally distributed with a mean that may be changing with time. Thus our basic assumption is <img src="../../images/lectures/lecture18/y&#32;distrib.gif" alt="y" width="133" height="37" align="absmiddle"> where <em>i</em> denotes a coral core and <em>j</em> denotes an individual observation (annual ring) from that coral core.</p>
+<h3><a name="common" id="common"></a>Common pooling model</h3>
+<p>In the common pooling model we ignore the structure of the data entirely. We treat all of the observations as coming from a single population from which we've drawn a single random sample. For the coral core data set we would start by assuming that the mean <img src="../../images/lectures/lecture18/muij.gif" alt="muij" width="25" height="30" align="absmiddle">is a linear function of calendar year.</p>
+<p align="center"><img src="../../images/lectures/lecture18/common&#32;pooling.gif" width="347" height="48" alt="common pool"></p>
+<p>where again <em>i</em> = core and <em>j</em> = individual observation from that core. The problem with the common pooling model is that it is almost certainly false. The errors are  not independent  as we saw last time. By ignoring data structure and treating the individual rings as being a random sample from the population of coral core annual rings we are guilty of pseudo-replication, claiming that we have an effective sample size that is much larger than the one we really have.</p>
+<h3><a name="fixed" id="fixed2"></a>Fixed effects approach to dealing with observational heterogeneity</h3>
+<p>In the fixed effects approach to structured data, we include the structural variable as a predictor in the model. In the current example that translates into specifying dummy variables for individual cores and including them as additive terms and as interaction terms with year. This yields a separate intercept and slope for each core.</p>
+<p align="center"><img src="../../images/lectures/lecture18/fixed&#32;effects.gif" width="543" height="83" alt="fixed effects"></p>
+<p>where <em>g</em> is the number of cores. As before, <img src="../../images/lectures/lecture18/epsilon.gif" alt="epsilon" width="123" height="35" align="absmiddle">. The parameters &beta;<sub>0</sub> and &beta;<sub>1</sub> are the intercept and slope for core 1.  &beta;<sub>i</sub> and &gamma;<sub>i</sub> are the deviations that the intercept and slope of core <em>i</em> exhibit from the intercept and slope of  core 1. This single model is comparable to fitting separate regression models to each core except that when we do it using dummy variables in a single regression model we  use all of the data to estimate the residual variance &sigma;<sup>2</sup>. </p>
+<p>Although this approach gets the structure of the data set correct, something that was ignored in the common pooling model, it has other problems.</p>
+<ol>
+  <li>This model has the potential of severely overfitting the data. For instance, cores with only two observations (there are none in this data set) are fit perfectly.</li>
+  <li>We end up estimating a lot of different parameters, the individual core intercepts and slopes, that we really don't care about.</li>
+  <li>The model hampers our ability to test the hypothesis of interest, namely that the trend over time varies by reef type.
+    <ol type=a>
+      <li>We can't included reef type in this model because reef type is completely collinear with core. We can estimate a fixed effects model with reef type alone, or core alone, but not with both in the same model.</li>
+      <li>If we fit a model with reef type alone or a model with core alone, the model with cores will certainly fit the data better than a model with just reef type. If we're lucky (as we were in <a href="lecture17.htm#accounting">lecture 17</a>), the core model might not be a significant improvement over the reef type model and so we can argue that the reef type model is the more parsimonious one. This rarely occurs in practice.</li>
+    </ol>
+  </li>
+</ol>
+<p>Even though in <a href="lecture17.htm#accounting">lecture 17</a> we were able to simplify the separate slopes and intercepts model so that we needed to estimate only three slopes, one for each reef type, we were still  left with estimating separate intercepts for each core. If there had been more cores used in the analysis it is unlikely we would have been able to make even this simplification. Fitting separate models to individual natural groups will nearly always provide a significantly better fit to data than will any simpler model that we can construct. The basic problem with the fixed effects approach  is that it typically leads to overfitting the data.</p>
+<h3><a name="random" id="random"></a>Random effects approach to dealing with observational heterogeneity</h3>
+<p>The random effects analog of the separate slopes and intercepts regression model  is the random slopes and intercepts model. </p>
+<p align="center"><img src="../../images/lectures/lecture18/random&#32;slope.gif" width="280" height="58" alt="random slope"></p>
+<p>with <img src="../../images/lectures/lecture18/epsilon.gif" alt="epsilon" width="123" height="35" align="absmiddle">. In this model &beta;<sub>0</sub> and &beta;<sub>1</sub> represent the population-average coefficients while <img src="../../images/lectures/lecture18/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture18/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> are the deviations from this population average for coral core <em>i</em>. &beta;<sub>0</sub> and &beta;<sub>1</sub> can also be interpreted as the regression coefficients for a typical core, i.e., one  corresponding to the middle of the distribution of random effects. The intercept for core <em>i</em> is <img src="../../images/lectures/lecture18/beta0i&#32;eq.gif" alt="beta0i" width="110" height="27" align="absmiddle"> and the slope is <img src="../../images/lectures/lecture18/beta1i&#32;eq.gif" width="105" height="27" align="absmiddle">. Thus the random slopes and intercepts formulation of this model is also the following.</p>
+<p align="center"><img src="../../images/lectures/lecture18/random&#32;slopeandints.gif" alt="random slopes" width="192" height="30" align="absmiddle"></p>
+<p>What makes this model different from the fixed effects model is that <img src="../../images/lectures/lecture18/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture18/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> are not directly estimated but instead are assumed to be drawn from a multivariate normal distribution.</p>
+<p align="center"><img src="../../images/lectures/lecture18/random&#32;dist2.gif" width="290" height="83" alt="multivariate 1"></p>
+<p>The diagonal entries of the multivariate normal covariance matrix are the individual variances of the intercept and slope random effects and the off-diagonal entry is their covariance. Because the correlation coefficient is defined by <img src="../../images/lectures/lecture18/correlation.gif" alt="rho" width="75" height="57" align="absmiddle">, an equivalent way of writing this distribution (and the one used by R) is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture18/random&#32;dist.gif" width="335" height="83"></p>
+<p>Rather than estimate the individual <img src="../../images/lectures/lecture18/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture18/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> we instead estimate the parameters of the covariance matrix of the multivariate normal distribution: &rho;, &tau;<sub>0</sub>, and &tau;<sub>1</sub>. </p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 20, 2012<br>
+      URL: <a href="lecture18.htm#lecture18" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture18.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

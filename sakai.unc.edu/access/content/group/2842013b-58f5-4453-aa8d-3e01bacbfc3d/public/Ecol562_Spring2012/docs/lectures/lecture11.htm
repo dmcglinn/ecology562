@@ -1,0 +1,805 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 11&mdash;Friday, February 3, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style191 {font-size: smaller}
+.style23 {	color: #336633;
+	font-weight: bold;
+}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {	color: #660099;
+	font-weight: bold;
+}
+.style171 {	color: #993399;
+	font-weight: bold;
+}
+.style91 {	color: #3333CC;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture11" id="lecture11"></a>Lecture 11&mdash;Friday, February 3, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture11.htm#overview">Overview</a></li>
+  <li><a href="lecture11.htm#examining">Examining the data</a></li>
+  <li><a href="lecture11.htm#normal">Normal model</a>
+<ul>
+      <li><a href="lecture11.htm#assessing">Assessing the fit of the normal model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture11.htm#Poisson">Poisson model</a></li>
+  <li><a href="lecture11.htm#negative">Negative binomial model</a>
+<ul>
+      <li><a href="lecture11.htm#basic">Basic characteristics</a></li>
+      <li><a href="lecture11.htm#fitting">Fitting the model</a></li>
+      <li><a href="lecture11.htm#checking">Checking the fit of the negative binomial model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture11.htm#lognormal">Lognormal model</a>
+<ul>
+      <li><a href="lecture11.htm#choosing">Choosing a value for the additive constant</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture11.htm#comparing">Comparing the four models</a>
+<ul>
+      <li><a href="lecture11.htm#graphing">Graphing the four models together</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture11.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture11.htm#curve">curve</a> is a higher level graphics function that can be used to draw a curve or add a curve to an existing scatter plot.</li>
+  <li><a href="lecture11.htm#glmnb">glm.nb</a> extends generalized linear models to the negative binomial distribution (<span class="style19">MASS</span> package). </li>
+  <li><a href="lecture11.htm#I">I</a> is the identity function in R. It allows one to carry out arithmetic in formula expressions. </li>
+  <li><a href="lecture11.htm#lowess">lowess</a> fits a locally weighted regression model.</li>
+  <li><a href="lecture11.htm#order">order</a> is used to sort the values one variable according to the order specified by a second variable.</li>
+  <li><a href="lecture11.htm#readcsv">read.csv</a> is a function that calls <span class="style4">read.table</span> and sets <span class="style22">sep=','</span> for comma-delimited files.</li>
+  <li><a href="lecture11.htm#residuals">residuals</a> returns the residuals from a fitted model.</li>
+  <li><a href="lecture11.htm#rnbinom">rnbinom</a> returns  randomly generated values from a negative binomial distribution.</li>
+  <li><a href="lecture11.htm#rnorm">rnorm</a> returns  randomly generated values from a normal distribution.</li>
+  <li><a href="lecture11.htm#rpois">rpois</a> returns  randomly generated values from a Poisson distribution.</li>
+  <li><a href="lecture11.htm#sample">sample</a> permutes the elements of a vector.</li>
+  <li><a href="lecture11.htm#setseed">set.seed</a> allows the user to specify a seed for the random number generator so that the same random sample can be obtained again.</li>
+  <li><a href="lecture11.htm#unique">unique</a> returns the unique values of a variable in the order they occur.</li>
+  <li><a href="lecture11.htm#whichmax">which.max </a>returns the position of the maximum value of a vector.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture11.htm#curve">add</a>= (argument to <span class="style102">curve</span>) can be assigned values TRUE or FALSE. Use TRUE if the curve should be added to the current graph. </li>
+  <li><a href="lecture11.htm#curve">from=</a> (argument to <span class="style102">curve</span>) specifies the <em>x</em>-coordinate at which the curve should begin.</li>
+  <li><a href="lecture11.htm#mfrow">mfrow</a>= (argument to <span class="style102">par</span>) species the number of rows and columns in the graphics window for displaying graphs. </li>
+  <li><a href="lecture11.htm#curve">to=</a> (argument to <span class="style102">curve</span>) specifies the <em>x</em>-coordinate at which the curve should end.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture11.htm#mass">MASS</a> (for <span class="style102">glm.nb</span>) is used to fit negative binomial regression models.</li>
+</ul>
+<h2>Data </h2>
+<p><a href="../../data/corals.csv">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/data/corals.csv</a></p>
+<h2><a name="overview" id="overview"></a>Overview</h2>
+<p>This is a portion of the data set  analyzed by Bruno <em>et al.</em> (2007). The abstract of their paper is given below.</p>
+<blockquote>
+  <p class="style191">Very little is known about how environmental changes such as increasing temperature affect disease dynamics in the ocean, especially at large spatial scales. We asked whether the frequency of warm temperature anomalies is positively related to the frequency of coral disease across 1,500 km of Australia's Great Barrier Reef. We used a new high-resolution satellite data set of ocean temperature and 6 yr of coral disease and coral cover data from annual surveys of 48 reefs to answer this question. We found a highly significant relationship between the frequencies of warm temperature anomalies and of white syndrome, an emergent disease, or potentially, a group of diseases, of Pacific reef- building corals. The effect of temperature was highly dependent on coral cover because white syndrome outbreaks followed warm years, but only on high (&gt; 50%) cover reefs, suggesting an important role of host density as a threshold for outbreaks. Our results indicate that the frequency of temperature anomalies, which is predicted to increase in most tropical oceans, can increase the susceptibility of corals to disease, leading to outbreaks where corals are abundant. </p>
+</blockquote>
+<p>The variables of interest in the data set are the following.</p>
+<ol type="a">
+  <li><span class="style23">PREV_1</span>: the number of coral colonies infected with white syndrome</li>
+  <li><span class="style23">CORAL_COVE</span>: the percentage of the bottom covered by living coral</li>
+  <li><span class="style23">WSSTA</span>: a thermal stress metric developed by the authors</li>
+</ol>
+<p>The data arise from repeated surveys of 48 reefs using 50-meter permanent transects. Although the selected reefs exhibit a marked spatial structure with a high degree of clustering and the data were collected repeatedly over time, we will ignore the issue of spatial and temporal correlation in our analysis.</p>
+<h2><a name="examining"></a>Examining the data</h2>
+<p>The data file was saved from Excel as a comma-delimited text file. Such a file can be read into R using the <span class="style102">read.table</span> function by specifying the argument <span class="style22">sep=','</span> to indicate that variable fields are separated by commas. I stored the file in the <span class="style1">'ecol 562'</span> folder in my Documents folder. The Documents folder is my default R working directory so I only need to specify <span class="style1">'ecol 562/corals.csv'</span> to reference the file</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#using read.table</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">corals &lt;- read.table('ecol 562/corals.csv', header=T, sep=',')</div>
+<p><a name="readcsv"></a>Alternatively there is another R function <span class="style102">read.csv</span> that automatically assumes  the file is comma-delimited and doesn't require the <span class="style22">sep</span> argument.<br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #using read.csv</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">corals &lt;- read.csv('ecol 562/corals.csv', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(corals)</div>
+ <span class="style24">  &nbsp;[1] &quot;REEF_NAME&quot;&nbsp; &quot;SECTOR&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;SHELF&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LAT_DD&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LON_DD&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DATE&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;YEAR&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;[8] &quot;YEARII&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;WEEK&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;WSSTA&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;TSASUMS_SM&quot; &quot;PREV_1&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CORAL_COVE&quot; &quot;INC&quot;</span>
+<p><a name="lowess"></a>The response variable of interest is PREV_1. To assess the nature of its relationship to coral cover and WSSTA, I plot it against each of these variables in turn. To better see the nature of the relationship I superimpose a &quot;locally weighted smooth&quot;. This is a non-parametric regression model that responds to local patterns in the data. We'll discuss non-parametric regression in detail later in the course so I'll spare you the details until then. I use the R <span class="style102">lowess</span> function to estimate the smooth and the <span class="style102">lines</span> function to draw the regression curve. (The <span class="style102">lowess</span> function returns a set of <em>x</em>- and <em>y</em>-coordinates of points that can then be connected with line segments.) I limit the <em>y</em>-range of the data so that the lowess curve is more visible. The <span class="style102">lowess</span> function doesn't have a data argument so I have to reference the data frame as part of the variable name.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #plot response versus coral cover</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(PREV_1~CORAL_COVE, data=corals, ylim=c(0,50), cex=.8)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #add regression smoother</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(corals$PREV_1~corals$CORAL_COVE), col=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #plot response versus WSSTA</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(PREV_1~WSSTA, data=corals, ylim=c(0,20), cex=.8)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #add regression smoother</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(corals$PREV_1~corals$WSSTA), col=2)</div>
+<p>The plot against coral cover suggests a segmented or even a quadratic relationship. The plot against WSSTA suggests a weak quadratic relationship. Of course these are just bivariate relationships. It is possible that when we control for  other variables in the regression model the nature of the relationship with the response may change.</p>
+<table width="600" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/lectures/lecture11/fig1a.png" alt="fig. 1a" width="250" height="250" align="texttop"></td>
+    <td scope="col">(b) <img src="../../images/lectures/lecture11/fig1b.png" alt="fig. 1b" width="250" height="250" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 1&nbsp;</strong>&nbsp;Plots of disease prevalence against (a) coral cover and  (b) WSSTA. A locally weighted regression smoother is shown to better indicate the nature of the relationship between the variables.</td>
+  </tr>
+</table>
+<h2><a name="normal"></a>Normal model</h2>
+<p>I start by assuming the response is normally distributed and based on Fig. 1 I model the mean as quadratic in WSSTA, linear in coral cover, with an interaction between coral cover and WSSTA.</p>
+<p align="center"><img src="../../images/lectures/lecture11/normalmodel.gif" width="620" height="68" alt="normal model"></p>
+<p><a name="I"></a>To include a quadratic term in the model we could create a variable directly in the corals data frame that is the square of WSSTA. Alternatively we can just square WSSTA within the model call. For that we need to use the <span class="style102">I</span> function of R, which permits one to perform arithmetic on variables in a model. Without the <span class="style102">I</span> function the arithmetic calculations would be ignored.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model1 &lt;- lm(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals)</div>
+<p>Because all of the predictors are continuous, the output from the <span class="style102">anova</span> and <span class="style102">summary</span> functions here are similar. The <span class="style102">anova</span> function is still useful because it does variables-added-in-order tests  in a logical fashion so that WSSTA is added before WSSTA<sup>2</sup> and the interaction term is added last.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model1)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: PREV_1<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 60212&nbsp; &nbsp;60212&nbsp; 47.449 3.839e-11 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 127&nbsp;&nbsp;&nbsp;&nbsp; 127&nbsp;&nbsp; 0.100 0.7520837&nbsp;&nbsp;&nbsp; <br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 19690&nbsp;&nbsp; 19690&nbsp; 15.516 0.0001038 ***<br>
+  CORAL_COVE:WSSTA&nbsp;&nbsp; 1&nbsp; 14746&nbsp;&nbsp; 14746&nbsp; 11.620 0.0007500 ***<br>
+  Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 275 348972&nbsp;&nbsp;&nbsp; 1269&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>Because this is a variables-added-in-order table, all the tests make sense. First we see there is a significant effect due to coral cover. Controlling for coral cover there is no linear effect of WSSTA, but there is a quadratic effect. Finally the interaction between coral cover and WSSTA is statistically significant.</p>
+<p>The summary table provides variables-added-last tests so all but the tests of WSSTA<sup>2</sup> and the interaction are silly. (For instance, it doesn't make sense to test the significance of WSSTA with both the quadratic term and the interaction term already in the model.) From the estimates we see that disease prevalence increases with coral cover and that the coral cover effect on disease prevalence is further increased by WSSTA (the interaction term). The quadratic effect of WSSTA is  in the form of a parabola opening down. Without plotting the model we can't tell if the vertex of the parabola occurs at a value of WSSTA within the range of the data, but from Fig. 1b we would suspect that it does.</p>
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(model1)</div>
+<p><span class="style24">Call:<br>
+lm(formula = PREV_1 ~ CORAL_COVE * WSSTA + I(WSSTA^2), data = corals)</span>
+<p><span class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -86.716 -11.684&nbsp; -2.682&nbsp;&nbsp; 4.856 263.366 </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -10.71376&nbsp;&nbsp;&nbsp; 6.28473&nbsp; -1.705&nbsp; 0.08937 .&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.45081&nbsp;&nbsp;&nbsp; 0.17105&nbsp;&nbsp; 2.636&nbsp; 0.00888 ** <br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.32007&nbsp;&nbsp;&nbsp; 1.19505&nbsp;&nbsp; 1.105&nbsp; 0.27029&nbsp;&nbsp;&nbsp; <br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.16345&nbsp;&nbsp;&nbsp; 0.04140&nbsp; -3.948&nbsp; 0.00010 ***<br>
+  CORAL_COVE:WSSTA&nbsp;&nbsp; 0.07528&nbsp;&nbsp;&nbsp; 0.02208&nbsp;&nbsp; 3.409&nbsp; 0.00075 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 35.62 on 275 degrees of freedom<br>
+  Multiple R-squared: 0.2136,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.2021 <br>
+  F-statistic: 18.67 on 4 and 275 DF,&nbsp; p-value: 1.365e-13</span>
+<h3><a name="assessing"></a>Assessing the fit of the normal model</h3>
+<p><a name="unique"></a>To assess the fit of the model we can   plot the estimated model superimposed on the data. Because there are two continuous predictors in the model we really need three dimensions to fully visualize things, but it is possible to obtain a crude picture  in two dimensions. Each  observation in the data set has a different value of coral cover. The <span class="style102">unique</span> function extracts the unique values of a variable minus the duplicates.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # each observation has a different value of coral cover</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(unique(corals$CORAL_COVE))</div>
+<span class="style24">  [1] 280</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(corals)</div>
+<span class="style24">[1] 280&nbsp; 14</span>
+<p>We can use this to our advantage by  sorting the data frame by coral cover and refitting the model. The model predictions we obtain are now ordered by increasing coral cover so that we can plot the predicted mean against coral cover and connect the predictions by line segments. The result will be a jagged line with the jags corresponding to adjustments in the predicted mean due to an observation's value of WSSTA.</p>
+<p> <a name="sample"></a><a name="setseed"></a>The <span class="style102">order</span> function can be used to sort a data frame by one of its variables. To illustrate how <span class="style102">order</span> works I create a vector of the first 10 positive integers and then randomly permute them with the <span class="style102">sample</span> function. By default the <span class="style102">sample</span> function uses the internal clock seed to initialize its random number generator. I set the seed explicitly with the <span class="style102">set.seed</span> function so that I can generate the same &quot;random&quot; permutation again if desired. To use<span class="style102"> set.seed</span> enter a positive integer of any size as its argument. Different choices of the integer will yield different seeds and hence different permutations.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #explanation of the order function</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> set.seed(20)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x &lt;- sample(1:10)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> x</div>
+<span class="style24">[1]  9  7  3  4  6  5  1 10  8  2</span>
+<p><a name="order"></a>The <span class="style102">order</span> function returns the positions of the entries that would appear first, second, etc. if the vector was sorted. So, we see that the element at position 7 would be first, the element at position 10 would be second, etc.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> order(x)</div>
+<span class="style24">  [1]  7 10  3  4  6  5  2  9  1  8</span>
+<p>The output of the <span class="style102">order</span> function can then be used to sort the elements of <em>x</em>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> x[order(x)]</div>
+ <span class="style24"> [1]  1  2  3  4  5  6  7  8  9 10</span>
+<p>With a data frame we use the <span class="style102">order</span> function to sort the rows of the data frame. The following call sorts the rows of the data frame by coral cover and stores the result in a new data frame.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#sort data in coral cover order</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">corals.sort &lt;- corals[order(corals$CORAL_COVE),]</div>
+<p>I now refit the regression model using this new data frame.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#refit model to sorted data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model1 &lt;- lm(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort) </div>
+<p>Next I plot prevalence against coral cover and then superimpose the predicted means connected by line segments.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#plot raw data and normal mean</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(PREV_1~CORAL_COVE, data=corals.sort, ylim=c(-25,350), cex=.6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(corals.sort$CORAL_COVE, predict(model1), col=2)</div>
+
+<br>
+<table width="600" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig2.png" width="520" height="335" alt="fig. 2"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 2&nbsp;</strong>&nbsp;Plot of the predicted normal mean for each observation (red). The jags are due to variations in WSSTA for individual observations.</td>
+  </tr>
+</table>
+
+<p>Notice that in a number of places the predicted mean prevalence is negative! We can get a slightly more informative picture if we include the likely range for observations that could be generated by this model. I construct confidence bounds within which we expect 95% of the observations to lie. For this we need the standard deviation of the estimated normal curve. This value is contained in the <span class="stylecayenne">sigma</span> component of the object created by the <span class="style102">summary</span> function. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add 95% confidence interval for mean</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(PREV_1~CORAL_COVE, data=corals.sort, ylim=c(-100,350), cex=.6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(corals.sort$CORAL_COVE, predict(model1) + qnorm(.025) * summary(model1)$sigma, col=4, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(corals.sort$CORAL_COVE, predict(model1) + qnorm(.975) * summary(model1)$sigma, col=4, lty=2)</div><br>
+<table width="550" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig3.png" width="470" height="335" alt="fig 3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 3&nbsp;</strong>&nbsp;Repeat of Fig. 1 but with 95% confidence bands for individual observations shown (blue).</td>
+  </tr>
+</table>
+
+<p>Notice that although there are some obvious outliers, most of the observations do fall within the 95% bands.  Yet it's quite obvious given that the lower confidence band is almost entirely negative that this is a terrible model. </p>
+<p><a name="rnorm"></a>We can get a better sense of that by using the model to generate data and then assessing whether the data generated by the model look at all like the data we actually obtained. To do this I use the <span class="style102">rnorm</span> function to generate one observation from a normal distribution for each of the predicted means. In the call below, <em>x</em> corresponds to the mean that is obtained from the <span class="style102">predict</span> function applied to the model. In order to get a single value for each mean we need to use the <span class="style102">sapply</span> function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#simulate data from normal model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  set.seed(10)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">test.data &lt;- sapply(predict(model1), function(x) rnorm(1, x, summary(model1)$sigma))</div>
+<p><a name="mfrow"></a>We plot the simulated data and compare it against the actual data. To facilitate the comparison the graphs are placed one above the other in a single graphics window using the <span class="style22">mfrow</span> argument of the global graphics function <span class="style102">par</span>. In <span class="style22">mfrow</span> we need to specify the dimensions of the graph matrix we wish to create: the number of rows followed by the number of columns. After creating the graphs we  then reset <span class="style22">mfrow</span> back to its default of 1 row and 1 column.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#display two graphs in same window</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  par(mfrow=c(2,1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(PREV_1~CORAL_COVE, data=corals.sort, ylim=c(-100,350), cex=.6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(test.data~corals.sort$CORAL_COVE, cex=.6, ylim=c(-100,350))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  abline(h=0 ,col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">par(mfrow=c(1,1))</div><br>
+
+<table width="600" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig4.png" width="530" height="470" alt="fig. 4"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 4&nbsp;</strong>&nbsp;Display of actual data (top) and one realization of data generated from the estimated normal model. Clearly the two do not look at all alike.</td>
+  </tr>
+</table>
+
+<p>It's pretty clear that the simulated data don't look anything like the actual data. Not only are there a lot of negative values in the simulated data set, the data form a wide band around the  predicted mean. The actual data form a very narrow band with most of the observations having a prevalence of zero. Furthermore the normal model seems incapable of generating the large outliers that we see in the raw data. </p>
+<h2><a name="Poisson"></a>Poisson model</h2>
+<p>The Poisson distribution is a natural choice for count data so we try fitting it next. The default choice is to use a log link for the mean.</p>
+<p align="center"><img src="../../images/lectures/lecture11/poissonmodel.gif" alt="Poisson model" width="648" height="65" align="absmiddle"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2 &lt;- glm(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort, family=poisson)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model2, test='Chisq')</div>
+
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model: poisson, link: log</span>
+<p><span class="style24">Response: PREV_1</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 279&nbsp;&nbsp;&nbsp; 11827.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 36.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 278&nbsp;&nbsp;&nbsp; 11790.4 1.417e-09 ***<br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 4632.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 277&nbsp;&nbsp;&nbsp;&nbsp; 7158.0 &lt; 2.2e-16 ***<br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 1967.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 276&nbsp;&nbsp;&nbsp;&nbsp; 5190.4 &lt; 2.2e-16 ***<br>
+  WSSTA:CORAL_COVE&nbsp; 1&nbsp;&nbsp;&nbsp; 278.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 275&nbsp;&nbsp;&nbsp;&nbsp; 4912.3 &lt; 2.2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(WSSTA^2) WSSTA:CORAL_COVE <br>
+&nbsp;&nbsp;&nbsp; -0.034946574&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.305609888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.033218444&nbsp;&nbsp;&nbsp;&nbsp; -0.027039714&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;0.003803533 
+</span>
+<p><a name="rpois"></a>From the  <span class="style102">anova</span> output we see that each variable added in order is statistically significant, agreeing with our conclusions from the normal model. The coefficient estimates have the same sign as in the normal model indicating the direction of the effects is also the same. We next try simulating data from the fitted Poisson model to see if the results more closely resemble what we observed. The <span class="style102">rpois</span> function generates random values from a specified Poisson distribution. Because we used a log link we have to exponentiate the predicted values to get the means.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mfrow=c(2,1))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #simulate data from Poisson model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> set.seed(12)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> test.data2 &lt;- sapply(exp(predict(model2)), function(x) rpois(1,x))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(PREV_1~CORAL_COVE, data=corals.sort, ylim=c(-100,350), cex=.6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(h=0, lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(test.data2~corals.sort$CORAL_COVE, cex=.6, ylim=c(-100,350))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(h=0, lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mfrow=c(1,1))</div><br>
+<table width="600" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig5.png" width="530" height="470" alt="fig. 5"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 5&nbsp;</strong>&nbsp;Display of actual data (top) and one realization of data generated from the estimated Poisson model (bottom). </td>
+  </tr>
+</table>
+<p>The Poisson model appears to do a lot better than the normal in producing data that resemble what we actually observed. The Poisson model respects the lower bound of zero and is even able to generate a couple of the outliers. One noteworthy deficiency is that the spread in the Poisson data is too regular when compared to the actual data. In particular at low values of coral cover the variability in the predictions is extremely low whereas the actual data show far more spread. The regularity in the simulated data is a consequence of the fact that in the Poisson distribution the mean is equal to the variance.  </p>
+<p>We can compare the Poisson and normal models using log-likelihood and AIC. Because the Poisson estimates one less parameter than does the normal, AIC provides a fairer comparison.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #compare log-likelihood and AIC of Poisson and normal model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(model1)</div>
+<span class="style24">  'log Lik.' -1395.217 (df=6)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(model2)</div>
+<span class="style24">  'log Lik.' -2758.778 (df=5)</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(model1, model2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model1&nbsp; 6 2802.434<br>
+model2&nbsp; 5 5527.556</span>
+<p><a name="residuals"></a>Using either AIC or log-likelihood we  conclude that the Poisson is a far worse model than  the normal. Given what we saw in Figs. 4 and 5 this is somewhat surprising. Because we're comparing a density with a probability, perhaps  the midpoint approximation of the normal probability is doing a poor job here. To check this we can write our own functions to calculate the log-likelihood and compare  the midpoint approximation against using the actual area under the normal curve. Because the maximum likelihood estimate of &sigma;<sup>2</sup> uses a denominator of <em>n</em> rather than <em>n</em> &ndash; <em>p</em>, we need to calculate it explicitly in the function and use a denominator of <em>n</em>. The <span class="style102">residuals</span> function  extracts  estimates of the model errors that can then be used to construct the sum of squared errors (SEE).</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #log-likelihood function for normal model using midpoint approximation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike1 &lt;- function(model,y) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- dnorm(y, mean=predict(model), sd=sqrt(sigma2))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div>
+<br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #log-likelihood function for normal model using exact probability calculation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike2 &lt;- function(model,y) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- pnorm(y+.5, mean=predict(model), sd=sqrt(sigma2)) - pnorm(y-.5, mean=predict(model),sd=sqrt(sigma2))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div><br>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike1(model1,corals.sort$PREV_1)</div
+><span class="style24">[1] -1395.217</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike2(model1,corals.sort$PREV_1)</div>
+ <span class="style24"> [1] -1395.222</span>
+
+<p>The log-likelihood using the actual probabilities and the log-likelihood using the density approximation are nearly identical, so the poor performance must have to do with the Poisson model itself. The source of the problem is the inflexibility of the Poisson distribution. To see this I examine some of the large values predicted by the Poisson distribution here.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#simulated values</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> test.data2[test.data2&gt;70]</div>
+<span class="style24">  &nbsp;53 210&nbsp; 56&nbsp; 55 227 154 226 <br>
+  &nbsp;74&nbsp; 79&nbsp; 96&nbsp; 81 133 300 307</span>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px">#corresponding observed values</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> corals.sort$PREV_1[test.data2&gt;70]</div>
+<span class="style24">  [1] 315&nbsp;&nbsp; 3&nbsp; 18&nbsp;&nbsp; 6&nbsp; 20 343 336</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #Poisson means </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(predict(model2)[test.data2&gt;70])</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 210&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 227&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 154&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 226 <br>
+  &nbsp;72.94906&nbsp; 85.16031 101.85071&nbsp; 87.97483 129.71265 288.82104 287.66155 <br>
+</span>
+<p>The second observation shown   had a predicted mean of 85.2 that yielded a simulated random count of 79. The observed value for this observation was a count of 3. What's the probability of obtaining such a count under the Poisson model?</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dpois(3,exp(predict(model2)[test.data2&gt;70])[2])</div>
+ <span class="style24">  [1] 1.066368e-32</span>
+<p>It's astronomically low. In fact the total probability of obtaining counts  69 or less is less than .05.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ppois(69,exp(predict(model2)[test.data2&gt;70])[2])</div>
+ <span class="style24">[1] 0.04139172</span>
+<p>Under the normal model the predicted mean of this observation is 51.7, quite a bit lower than the Poisson, but still much larger than the observed value of 3. The probability of realizing a count of 3 under the normal model is 0.004, roughly 10<sup>29</sup> times higher than for the Poisson. The probability of seeing a value of 3 or smaller is 0.088 (of course this includes negative values too). Extreme values are much more likely under the normal model than under the Poisson.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(model1)[test.data2&gt;70][2]</div>
+ <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; 211 <br>
+51.68266 </span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> pnorm(3.5, predict(model1)[test.data2&gt;70][2], summary(model1)$sigma) - pnorm(2.5, predict(model1)[test.data2&gt;70][2], summary(model1)$sigma)</div>
+ <span class="style24">[1] 0.004401928</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pnorm(3.5, predict(model1)[test.data2&gt;70][2], summary(model1)$sigma)</div>
+ <span class="style24">[1] 0.08809547</span>
+<h2><a name="negative"></a>Negative binomial model</h2>
+<h3><a name="basic"></a>Basic characteristics</h3>
+<p>A negative binomial (NB) distribution is  discrete  and, like the Poisson distribution,  is bounded  below by 0 but is theoretically unbounded above. The negative binomial distribution is a two-parameter distribution, written <img src="../../images/lectures/lecture11/Xdistribnegbin.gif" alt="X distr NB" width="155" height="32" align="absmiddle">, where the only restriction on <em>&mu;</em> and <em>&theta;</em> is that they are positive. Here <em>&mu;</em> is the mean of the distribution and <em>&theta;</em> is called the <span class="style91">size</span> parameter (in the R documentation), or more usually  the <strong class="style91">dispersion parameter</strong> (or <strong class="style91">overdispersion parameter</strong>).</p>
+<p>A Poisson random variable can be viewed as the limit of a negative binomial random variable when the parameter <em>&theta;</em> is allowed to become infinite. So, in a sense <em>&theta;</em> is a measure of deviation from a Poisson distribution.  Given that there are infinitely many other choices for <em>&theta;</em>, this is further evidence of the flexibility of the negative binomial distribution over the Poisson distribution. </p>
+<p>The variance of the negative binomial distribution is a quadratic function of the mean.</p>
+<p align="center"><img src="../../images/lectures/lecture11/variance2.gif" width="142" height="55" alt="variance"></p>
+<p>Since <img src="../../images/lectures/lecture11/parabola1.gif" alt="parabola" width="162" height="58" align="absmiddle">, this represents a parabola opening up that crosses the <em>&mu;</em>-axis at the origin and at the point &mu; = &ndash;&theta;. As <img src="../../images/lectures/lecture11/thetagoestoinfinity.gif" width="60" height="23" align="absmiddle">, <img src="../../images/lectures/lecture11/poisson&#32;variance2.gif" width="108" height="30" align="absmiddle">, and we have the variance of a Poisson random variable. <em>&theta;</em> affects the rate at which the parabola grows. For large <em>&theta;</em>, the parabola is very flat while for small <em>&theta;</em> the parabola is narrow. Thus <em>&theta;</em> can be used to describe a whole range of heteroscedastic behavior.</p>
+<h3><a name="fitting" id="fitting"></a>Fitting the negative binomial model</h3>
+<p><a name="glmnb"></a><a name="mass"></a>Regression models with a negative binomial distribution can be fit using the <span class="style102">glm.nb</span> function of the <span class="style19">MASS</span> package. The <span class="style19">MASS</span> package is part of the standard installation of R but it does need to be loaded into memory  with the <span class="style102">library</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(MASS)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model3 &lt;- glm.nb(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort)</div>
+<p>The <span class="style102">glm.nb</span> function uses a log link by default, so we're fitting the following model.</p>
+<p align="center"><img src="../../images/lectures/lecture11/NBmodel.gif" width="648" height="65" alt="NB model"></p>
+<p>The <span class="style102">anova</span> function carries out likelihood ratio tests on <span class="style102">glm.nb</span> models without the need for a <span class="style22">test</span> argument.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model3)</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: Negative Binomial(0.3699), link: log</span>
+<p><span class="style24">Response: PREV_1</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 279&nbsp;&nbsp;&nbsp;&nbsp; 456.84&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 108.066&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 278&nbsp;&nbsp;&nbsp;&nbsp; 348.77 &lt; 2.2e-16 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 2.518&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 277&nbsp;&nbsp;&nbsp;&nbsp; 346.26&nbsp;&nbsp;&nbsp; 0.1126&nbsp;&nbsp;&nbsp; <br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 64.895&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 276&nbsp;&nbsp;&nbsp;&nbsp; 281.36 7.899e-16 ***<br>
+  CORAL_COVE:WSSTA&nbsp; 1&nbsp;&nbsp;&nbsp; 2.161&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 275&nbsp;&nbsp;&nbsp;&nbsp; 279.20&nbsp;&nbsp;&nbsp; </span><span class="style25">0.1415</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 <br>
+  Warning message:<br>
+  In anova.negbin(model3) : tests made without re-estimating 'theta'<br>
+  </span>
+<p>The statistical tests lead us to a  final model that is different from before. The interaction of WSSTA and coral cover is not statistically significant in the negative binomial model. The Wald test of the interaction in the output of the <span class="style102">summary</span> function agrees with the likelihood ratio test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(model3)</div>
+<span class="style24">Call:<br>
+  glm.nb(formula = PREV_1 ~ CORAL_COVE * WSSTA + I(WSSTA^2), data = corals.sort, <br>
+&nbsp;&nbsp;&nbsp; init.theta = 0.3699352907, link = log)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max&nbsp; <br>
+  -1.8883&nbsp; -1.1822&nbsp; -0.6006&nbsp; -0.0013&nbsp;&nbsp; 3.7642&nbsp; </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.436147&nbsp;&nbsp; 0.321700&nbsp; -1.356&nbsp;&nbsp; 0.1752&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.039771&nbsp;&nbsp; 0.008451&nbsp;&nbsp; 4.706 2.53e-06 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.372167&nbsp;&nbsp; 0.065724&nbsp;&nbsp; 5.663 1.49e-08 ***<br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.022375&nbsp;&nbsp; 0.002847&nbsp; -7.861 3.82e-15 ***<br>
+  CORAL_COVE:WSSTA&nbsp; 0.001884&nbsp;&nbsp; 0.001139&nbsp;&nbsp; 1.654&nbsp;&nbsp; </span><span class="style25">0.0982</span><span class="style24"> .&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for Negative Binomial(0.3699) family taken to be 1)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp; Null deviance: 456.84&nbsp; on 279&nbsp; degrees of freedom<br>
+  Residual deviance: 279.20&nbsp; on 275&nbsp; degrees of freedom<br>
+  AIC: 1427.9</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 1</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Theta:&nbsp; 0.3699 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Std. Err.:&nbsp; 0.0379 </span>
+<p><span class="style24">&nbsp;2 x log-likelihood:&nbsp; -1415.8520 </span>
+
+<p>Comparing the coefficient estimates of the three models fit thus far, the Poisson and negative binomial fits return fairly similar estimates but different from the normal model. Both use a log link, while the normal model uses an identity link.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out &lt;- t(sapply(list(model1, model2, model3), coef))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  rownames(out) &lt;- c('Normal', 'Poisson', 'NB')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp; WSSTA&nbsp; I(WSSTA^2) CORAL_COVE:WSSTA<br>
+Normal&nbsp; -10.71376258 0.45081235 1.3200721 -0.16344627&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.075282215<br>
+Poisson&nbsp; -0.03494657 0.03321844 0.3056099 -0.02703971&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.003803533<br>
+NB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.43614714 0.03977101 0.3721673 -0.02237514&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.001883727</span>
+<p>According to AIC, the negative binomial model is the clear winner.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #compare AIC of models</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model1,model2,model3)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model1&nbsp; 6 2802.434<br>
+  model2&nbsp; 5 5527.556<br>
+model3&nbsp; 6 1427.852</span>
+<h3><a name="checking"></a>Checking the fit of the negative binomial model</h3>
+<p>The dispersion parameter is called <span class="stylecayenne">theta</span> and is returned as a component of the <span class="style102">glm.nb</span> model object.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #dispersion parameter is called theta</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(model3)</div>
+<span class="style24">  &nbsp;[1] &quot;coefficients&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;residuals&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;fitted.values&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;effects&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[5] &quot;R&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;rank&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;qr&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;family&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[9] &quot;linear.predictors&quot; &quot;deviance&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;aic&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;null.deviance&quot;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;iter&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weights&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;prior.weights&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;df.residual&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [17] &quot;df.null&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;converged&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;boundary&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [21] &quot;terms&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;model&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;theta&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [25] &quot;SE.theta&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;twologlik&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;xlevels&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;method&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[29] &quot;control&quot;</span>
+<p><a name="rnbinom"></a>Using it we can simulate data from our model using the <span class="style102">rnbinom</span> function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#simulate data from negative binomial model</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> set.seed(12)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">test.data3 &lt;- sapply(fitted(model3), function(x) rnbinom(1, mu=x, size=model3$theta))</div>
+<p>I graph the generated data and compare it to both the raw data and the simulated data  from the Poisson model.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#graph raw data, Poisson data, and NB data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  par(mfrow=c(3,1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(PREV_1~CORAL_COVE, data=corals.sort, ylim=c(0,350), cex=.6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(test.data2~corals.sort$CORAL_COVE, cex=.6, ylim=c(0,350))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(test.data3~corals.sort$CORAL_COVE, cex=.6, ylim=c(0,350))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">par(mfrow=c(1,1))</div><br>
+<table width="600" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig6.png" width="500" height="610" alt="fig. 6"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><p><strong>Fig. 6</strong><strong>&nbsp;</strong>&nbsp;Display of actual data (top) and one realization of data generated from the estimated Poisson model (middle) and negative binomial model (bottom). </p></td>
+  </tr>
+</table>
+<p>Notice that the data generated from the negative binomial model more closely resembles the actual data than does the Poisson. In particular the negative binomial data show a good deal of variability even at low coral cover values just like the actual data does.</p>
+<h2><a name="lognormal"></a>Log-normal model</h2>
+<p>The log-transformation has long been  recommended for analyzing count data particularly when the counts are highly skewed. The usual assumption that is made is that the log counts are normally distributed.</p>
+<p align="center"><img src="../../images/lectures/lecture11/normallogmodel.gif" width="645" height="68" alt="normal log"></p>
+<p>By definition, if a log-transformed response is normally distributed the original variable is said to have a lognormal distribution. </p>
+<p>If we try to fit a normal model to log-transformed prevalence we obtain an error message.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #because of zeros log is undefined</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model4 &lt;- lm(log(PREV_1)~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort)</div>
+ <span class="style24"> Error in lm.fit(x, y, offset = offset, singular.ok = singular.ok, ...) : <br>
+  &nbsp; NA/NaN/Inf in foreign function call (arg 4)</span>
+
+<p>The problem is that are some zero values for the response in the data set and the logarithm of zero is undefined. The usual fix is to add a small constant, a number between 0 and 1, to each of the response values. I refit the model by adding 0.5 to each value of prevalence.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #add a small constant</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model4 &lt;- lm(log(PREV_1+.5)~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #AIC of this model is not comparable to previous models</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model4)</div>
+<span class="style24">[1] 964.7565</span>
+<p>Recall that because the response variable has been transformed, the reported AIC is not comparable to the AIC of models fit to the raw response.</p>
+<h3><a name="choosing"></a>Choosing a value for the additive constant</h3>
+<p>The choice of additive constant in a lognormal model can affect the results. We can formulate this as a   maximum likelihood estimation problem and choose the value for the constant that maximizes the likelihood. I write a function that takes two arguments: the value of the constant and the response variable. The first line of  the function shown below fits the model for the specified value of the constant. As was explained in <a href="lecture10.htm#caveat2">lecture 10</a>, the exact count probabilities when using a  density are calculated as the area under the curve over the interval (log(<em>y</em> + <em>k</em> &ndash; 0.5), log(<em>y</em> + <em>k</em> + 0.5)). When  <em>y</em> = 0, the boundary value, the interval is (&ndash;&infin;, log(<em>y</em> + <em>k</em> + 0.5)). Because the log-transformed response is assumed to be normally distributed, these probabilities are easily calculated with the <span class="style102">pnorm</span> function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#function to determine optimal constant to use</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  norm.loglike3 &lt;- function(k,y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #fit model</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  model &lt;- lm(log(PREV_1+k)~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #MLE of sigma^2
+</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  # probability at y = 0 is calculated differently</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- ifelse(y==0, pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2)), 
+  pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2))
+- pnorm(log(y+k-.5), mean=predict(model), sd=sqrt(sigma2)))</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  loglike &lt;- sum(log(prob))</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>I test the function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike3(.5, corals.sort$PREV_1)</div>
+ <span class="style24"> [1] -714.3271</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike3(.7, corals.sort$PREV_1)</div>
+<span class="style24">  [1] -718.6262</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike3(.4, corals.sort$PREV_1)</div>
+<span class="style24">  [1] -711.9158<br>
+  Warning message:<br>
+In log(y + k - 0.5) : NaNs produced</span>
+<p>The warning message occurs because of the way <span class="style102">ifelse</span> is evaluated. Although in the function we choose the value of <span class="stylecayenne">prob</span> depending on whether <span class="style1">y==0</span> or not,  both alternatives are evaluated each time. So when <em>k</em> &lt; 0.5 the evaluation of log(<em>y</em> + <em>k</em> &ndash; 0.5)  is undefined. The message is annoying but it doesn't affect the results. I calculate the log-likelihood for a range of values for <em>k</em> and plot the results.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #evaluate function on a range of values</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.L &lt;- sapply(seq(.1,1,.01), function(x) norm.loglike3(x, corals.sort$PREV_1))</div>
+<span class="style24">  There were 40 warnings (use warnings() to see them)</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #plot log-likelihood</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(seq(.1,1,.01), out.L, type='l', ylab='Log-likelihood', xlab='k')</div>
+
+<p>From the graph (Fig. 7a) the maximum appears to be occurring near <em>k</em> = 0.1. I recalculate things and plot over a smaller range.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #evaluate function on a range of values</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.L &lt;- sapply(seq(.01,.4,.01), function(x) norm.loglike3(x, corals.sort$PREV_1))</div>
+ <span class="style24"> There were 40 warnings (use warnings() to see them)</span>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #plot log-likelihood</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(seq(.01,.4,.01), out.L, type='l', ylab='Log-likelihood', xlab='k')</div>
+<br>
+<table width="670" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/lectures/lecture11/fig7a.png" alt="fig. 7a" width="300" height="255" align="texttop"></td>
+    <td scope="col">(b) <img src="../../images/lectures/lecture11/fig7b.png" alt="fig. 7b" width="300" height="255" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 7&nbsp;</strong>&nbsp;Normal log-likelihood for different choices of the additive constant k in log(y + k).</td>
+  </tr>
+</table>
+<p><a name="whichmax"></a>We can use the <span class="style102">which.max</span> function to locate the value of <em>k</em> that yields the maximum. The <span class="style102">which.max</span> function returns the position in a vector that corresponds to the maximum value.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> max(out.L)</div>
+ <span class="style24"> [1] -706.0813</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #which value gave rise to the max?</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> which.max(out.L)</div>
+ <span class="style24"> [1] 13</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> seq(.01,4,.01)[which.max(out.L)]</div>
+<span class="style24">[1] 0.13</span>
+<p>So we should use <em>k</em> = 0.13. I refit the model with this choice of constant.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #refit the model using this constant</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model4 &lt;- lm(log(PREV_1+.13)~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model4)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: log(PREV_1 + 0.13)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 262.96 262.964 80.9313 &lt; 2.2e-16 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 14.83&nbsp; 14.826&nbsp; 4.5630&nbsp;&nbsp; 0.03355 *&nbsp; <br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 97.32&nbsp; 97.317 29.9509 9.978e-08 ***<br>
+  CORAL_COVE:WSSTA&nbsp;&nbsp; 1&nbsp;&nbsp; 0.15&nbsp;&nbsp; 0.152&nbsp; 0.0468&nbsp;&nbsp; 0.82881&nbsp;&nbsp;&nbsp; <br>
+  Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 275 893.54&nbsp;&nbsp; 3.249&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>The results are in agreement with the negative binomial model. The interaction between coral cover and WSSTA is not significant.</p>
+<h2><a name="comparing"></a>Comparing the four models</h2>
+<p> I compare the estimates of the regression parameters for all the models we've considered.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #compare coefficients of all the models we fit</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef &lt;- t(sapply(list(model1, model2, model3, model4), coef))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.coef) &lt;- c('normal', 'Poisson', 'NB', 'lognormal')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp; WSSTA&nbsp; I(WSSTA^2) CORAL_COVE:WSSTA<br>
+  normal&nbsp;&nbsp;&nbsp; -10.71376258 0.45081235 1.3200721 -0.16344627&nbsp;&nbsp;&nbsp;&nbsp; 0.0752822152<br>
+  Poisson&nbsp;&nbsp;&nbsp; -0.03494657 0.03321844 0.3056099 -0.02703971&nbsp;&nbsp;&nbsp;&nbsp; 0.0038035330<br>
+  NB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.43614714 0.03977101 0.3721673 -0.02237514&nbsp; &nbsp;&nbsp;&nbsp;0.0018837266<br>
+lognormal&nbsp; -1.92097350 0.05825755 0.2289075 -0.01146323&nbsp;&nbsp;&nbsp; -0.0002418559</span>
+<p>There are differences in some of the magnitudes but the signs of the estimates are in agreement except for the interaction term which is not significant in the negative binomial and lognormal models.</p>
+<p>I  collect the log-likelihoods, AIC values, and number of estimated parameters of all four of the models in a single data frame. So that we have a general function for this purpose, I rewrite the log-likelihood function for a log transformation so that the fitted model is one of the arguments.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#log-likelihood for a log transformed response and discrete data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike4 &lt;- function(model, k, y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #MLE of sigma^2 </div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> # probability at y = 0 is calculated differently</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- ifelse(y==0, pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2)), 
+  pnorm(log(y+k+.5), mean=predict(model), sd=sqrt(sigma2))
+  - pnorm(log(y+k-.5), mean=predict(model), sd=sqrt(sigma2)))</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>It's worth noting that using the density version of the log-likelihood here gives a different answer. This is because the probability of the zero category is poorly approximated by the midpoint approximation. The density used here is the one obtained from the change of variables formula for integration (<a href="lecture10.htm#caveat2">lecture 10</a>).</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#log-likelihood for a log transformed response using density</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike5 &lt;- function(model, k, y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #MLE of sigma^2 </div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- dnorm(log(y+k), mean=predict(model), sd=sqrt(sigma2)) * 1/(y+k)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># using midpoint approximation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike5(model4, .13, corals.sort$PREV_1)</div>
+ <span class="style24"> [1] -625.7064</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # using exact probability
+  </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike4(model4, .13, corals.sort$PREV_1)</div>
+<span class="style24">[1] -706.0813</span>
+<p>For the lognormal model the estimated parameters consist of the five regression coefficients, the variance &sigma;<sup>2</sup>, and the additive constant <em>k</em> that we estimated separately making a total of 7 parameters. The Poisson has 5 estimated parameters, while the negative binomial and normal model have six parameters. (The negative binomial model has the additional dispersion parameter &theta; while the normal model has the normal variance &sigma;<sup>2</sup>.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> LL &lt;- c(logLik(model1), logLik(model2), logLik(model3), norm.loglike4(model4, .13, corals.sort$PREV_1))</div>
+<span class="style24">  Warning message:<br>
+  In log(y + k - 0.5) : NaNs produced</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> k &lt;- c(AIC(model1, model2, model3)[,1], 7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> aic.model &lt;- c(AIC(model1, model2, model3)[,2], -2*LL[4]+2*k[4])</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.results &lt;- data.frame(LL, k, AIC=aic.model)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(my.results) &lt;- c('normal', 'Poisson', 'NB', 'lognormal')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.results</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LL k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  normal&nbsp;&nbsp;&nbsp; -1395.2168 6 2802.434<br>
+  Poisson&nbsp;&nbsp; -2758.7781 5 5527.556<br>
+  NB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -707.9261 6 1427.852<br>
+  lognormal&nbsp; -706.0813 7 1426.163</span>
+
+<p>So the lognormal model narrowly edges out the negative binomial model using AIC. The Poisson and normal models are not even in the race.</p>
+<h3><a name="graphing"></a>Graphing the four models together</h3>
+<p>The final model contains two predictors, coral cover and WSSTA, so to fully fully visualize the model we need three dimensions. Because WSSTA is the variable of interest while coral cover is just a control variable, we can choose a convenient value for coral cover and plot the model prediction as a function of  WSSTA in two dimension. The mean coral cover in the data set is 30.8%, </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mean(corals.sort$CORAL_COVE)</div>
+<span class="style24">[1] 30.81672</span>
+<p>so a convenient value to use is 30%. I use the interaction model for all four probability distributions even though the interaction term was not significant in the negative binomial and lognormal models. I start by writing a function that returns the regression equation for a given model at a specified value of WSSTA and coral cover.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">linfunc &lt;- function(model,wssta,cover) coef(model)[1] + coef(model)[2]*cover + coef(model)[3]*wssta + 
+coef(model)[4]*wssta^2 + coef(model)[5]*wssta*cover</div>
+<p><a name="curve"></a>To draw the models I use the <span class="style4">curve</span> function. The <span class="style4">curve</span> function accepts a function of a single variable <em>x</em> as its first argument and draws the function over a range specified by the arguments <span class="style22">from</span> and <span class="style22">to</span>. Because <span class="style4">curve</span> is a high-level function it will erase the contents of the graphics window when it is used a second time. To prevent that I include the <span class="style22">add=T</span> argument to the subsequent calls to <span class="style4">curve</span>. The equations for the Poisson, negative binomial, and lognormal models are all exponentiated to place things on the scale of the raw response.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(linfunc(model1,x,30), from=0, to=30, ylim=c(0,25) ,xlab='WSSTA', ylab='Prevalence')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model4,x,30)), add=T, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model2,x,30)), add=T, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model3,x,30)), add=T, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('normal', 'lognormal', 'Poisson', 'negative binomial'), col=c(1,1,2,2), lty=c(1,2,1,2), cex=.9, bty='n')</div>
+<br>
+
+<table width="510" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig8.png" width="435" height="330" alt="fig. 8"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 8&nbsp;</strong>&nbsp;Plot of predicted regression means for the normal, Poisson, and negative binomial models. The curve for the lognormal model represents its median, not its mean.</td>
+  </tr>
+</table>
+
+<p>The graph of the lognormal model looks unusual. That's because exponentiating the lognormal model has not returned the mean, but instead  has returned the median on the raw scale. (We'll discuss the reason for this next time.) The lognormal distribution is typically positively skewed so that the median and mean are very different. The mean of the lognormal distribution can be expressed in terms of &mu; and &sigma;<sup>2</sup>, the mean and variance of the log-transformed variables. </p>
+<div align="center"><img src="../../images/lectures/lecture11/lognormalmean.gif" width="237" height="62" alt="lognormal mean">
+</div>
+<p>I redraw Fig. 8 replacing the graph of the lognormal median with the graph of the lognormal mean.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(linfunc(model1,x,30), from=0, to=30, ylim=c(0,25), xlab='WSSTA', ylab='Prevalence')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model4,x,30) + summary(model4)$sigma^2/2), add=T, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model2,x,30)), add=T, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(linfunc(model3,x,30)), add=T, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('normal', 'lognormal', 'Poisson', 'negative binomial'), col=c(1,1,2,2), lty=c(1,2,1,2), cex=.9, bty='n')</div>
+<br>
+<table width="550" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/lectures/lecture11/fig9.png" width="475" height="340" alt="fig 9"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 9&nbsp;</strong>&nbsp;Plot of predicted regression means for the normal, lognormal, Poisson,  and negative binomial models.</td>
+  </tr>
+</table>
+<h2><a name="cited"></a>Cited reference</h2>
+<ul>
+  <li>Bruno, John F., Selig, Elizabeth R., Casey, Kenneth S., Page, Cathie A., Willis, Bette L., Harvell, C. Drew, Sweatman, Hugh, and Melendy, Amy M. 2007. Thermal stress and coral cover as drivers of coral disease outbreaks. <em>PLOS Biology</em> <strong>5</strong>(6): 1220&ndash;1227.&nbsp;</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 7, 2012<br>
+      URL: <a href="lecture11.htm#lecture11" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture11.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

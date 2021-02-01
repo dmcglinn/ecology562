@@ -1,0 +1,42 @@
+#### lecture 4 ######
+#function to draw normal curves on regression lines
+plot.norm<-function(x,mymodel,mult=1,sd.mult=3,mycol='gray60',howmany=150) {
+yvar<-mymodel$model[,1]
+xvar<-mymodel$model[,2]
+sigma<-summary(mymodel)$sigma
+stick.val<-rep(xvar[x],howmany)+mult*dnorm(seq(predict(mymodel)[x]-sd.mult*sigma, predict(mymodel)[x]+sd.mult*sigma, length=howmany), mean=predict(mymodel)[x],sd=sigma)
+steps<-seq(predict(mymodel)[x]-sd.mult*sigma,predict(mymodel)[x]+sd.mult*sigma,length=howmany)
+for(i in 1:length(steps)) {
+   curstep<-steps[i]
+   curdnorm<-stick.val[i]
+   segments(xvar[x],curstep,curdnorm,curstep,lty=1,col=mycol)
+}
+}
+
+#generate data
+set.seed(10)
+x1<-runif(90)
+x2<-rbinom(90,10,.5)
+x3<-rgamma(90,.1,.1)
+#organize predictors in data frame
+mydata<-data.frame(x1,x2,x3)
+#create noise
+epsilon<-rnorm(90,0,3)
+#generate response: additive model plus noise, intercept=0 
+mydata$y<-2*x1+x2+3*x3+epsilon
+mydata1<-mydata[mydata$x3<25,]
+
+#fit model and plot it
+lm(y~x3,data=mydata1)->model1
+plot(y~x3,data=mydata1,pch=16,cex=.6)
+abline(model1,lty=2)
+#add normal curves with +- 3 sdev
+plot.norm(12,model1,4)
+plot.norm(8,model1,4)
+plot.norm(15,model1,4)
+plot.norm(84,model1,4)
+#show only 2 standard deviations
+plot.norm(12,model1,4,2,'pink')
+#redraw points
+points(mydata1$x3,mydata1$y,pch=16,cex=.6)
+

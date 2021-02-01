@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 3&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+.style8 {color: #CC0033}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="assign3" id="assign3"></a>Assignment 3&mdash;Solution</h1>
+<h2>Question 1 </h2>
+<p>I read in the data and calculate the Simpson's diversity index. The species data lie in columns 2 through 76 of the data frame so I select only those columns to calculate the diversity index.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table('ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(vegan)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  rikz$simpson &lt;- diversity(rikz[,2:76], 'simpson', 1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<p>I next recode diversity so that the current values of 1 are reassigned to zero.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz$simpson2 &lt;- ifelse(rikz$simpson==1, 0, rikz$simpson)</div>
+<h2>Question 2 </h2>
+<p>Since we previously found the best model to be the interaction model, I start there.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model4 &lt;- lm(simpson2~factor(week)*NAP, data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(model4)</div>
+
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: simpson2<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df&nbsp; Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  factor(week)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 1.04936 0.34979&nbsp; 9.9617 5.971e-05 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 1.75753 1.75753 50.0537 2.253e-08 ***<br>
+  factor(week):NAP&nbsp; 3 0.03869 0.01290&nbsp; 0.3673&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.777</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37 1.29918 0.03511&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 <br>
+  </span>
+<p>We see that the interaction is not statistically significant. We also see that when week is added to a model containing NAP, the variable week is significant (<em>p</em> &lt; .001).  I drop the interaction term and fit the additive model. I change the order of the variables so we get a test of week in the presence of NAP, the opposite of the test given in the above table.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model5 &lt;- lm(simpson2~NAP+factor(week), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model5)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: simpson2<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df&nbsp; Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 2.11324 2.11324 63.1824 9.278e-10 ***<br>
+  factor(week)&nbsp; 3 0.69364 0.23121&nbsp; 6.9129 0.0007383 ***<br>
+  Residuals&nbsp;&nbsp;&nbsp; 40 1.33787 0.03345&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>From this table we see that week is significant in the presence of NAP and from the previous table we know that NAP is significant in the presence of week. Thus we should retain both week and NAP in the model and report the additive model.</p>
+<h2>Question 3 </h2>
+<p>The summary table is shown below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(model5)</div>
+<span class="style24">Call:<br>
+  lm(formula = simpson2 ~ NAP + factor(week), data = rikz)</span>
+<p><span class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -0.32603 -0.13247&nbsp; 0.01124&nbsp; 0.10730&nbsp; 0.39956 </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp; 0.60263&nbsp;&nbsp;&nbsp; 0.05791&nbsp; 10.407 6.04e-13 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.20757&nbsp;&nbsp;&nbsp; 0.02863&nbsp; -7.249 8.46e-09 ***<br>
+  factor(week)2 -0.27909&nbsp;&nbsp;&nbsp; 0.07646&nbsp; -3.650 0.000751 ***<br>
+  factor(week)3 -0.04422&nbsp;&nbsp;&nbsp; 0.07624&nbsp; -0.580 </span><span class="style25">0.565122</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  factor(week)4&nbsp; 0.02193&nbsp;&nbsp;&nbsp; 0.10220&nbsp;&nbsp; 0.215 </span><span class="style25">0.831216</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 0.1829 on 40 degrees of freedom<br>
+  Multiple R-squared: 0.6772,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.6449 <br>
+  F-statistic: 20.98 on 4 and 40 DF,&nbsp; p-value: 2.193e-09</span>
+<p>The three &quot;factor(week)&quot; lines in the coefficients table test whether the intercepts in weeks 2, 3, and 4 are different from the intercept in week 1. What we see is that the intercepts in weeks 1 and 2 are significantly different (<em>p</em> = 0.00075), but intercepts in weeks 1 and 3 are not (<em>p</em> = 0.565), nor are the intercepts in weeks 1 and 4 (<em>p</em> = 0.831).</p>
+<p>Technically there are three additional comparisons that could be made by reordering the levels of the factor variable, but you were only asked to report what you could learn from the above single summary table.</p>
+<h2>Question 4 </h2>
+<p>I recode the week variable so that it is a 0-1 variable where 1 denotes week 2 and 0 denotes the remaining weeks.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rikz$week2 &lt;- ifelse(rikz$week==2, 1, 0)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  model6 &lt;- lm(simpson2~NAP+factor(week2), data=rikz)</div>
+
+<p>It's also possible to do the recoding without using an ifelse statement. I add 0 to the result of the Boolean expression in order to convert the TRUE-FALSE values that are returned to numeric 1-0 values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> (rikz$week==2)</div>
+ <span class="style24">  &nbsp;[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE&nbsp; TRUE&nbsp; TRUE<br>
+  [13]&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE FALSE FALSE FALSE FALSE<br>
+  [25] FALSE FALSE FALSE FALSE FALSE FALSE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE&nbsp; TRUE FALSE<br>
+[37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> (rikz$week==2)+0</div>
+
+<span class="style24">  &nbsp;[1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0<br>
+  [37] 0 0 0 0 0 0 0 0 0</span> 
+<h2>Question 5 </h2>
+<p>The dummy variables for week are shown below.</p>
+<p align="center"><img src="../../images/assignments/assignment3/z1.gif" width="197" height="70" alt="z1">&nbsp;&nbsp;<img src="../../images/assignments/assignment3/z2.gif" width="195" height="70" alt="z2">&nbsp;&nbsp;<img src="../../images/assignments/assignment3/z3.gif" width="198" height="70" alt="z4"></p>
+<p>The regression equations for the models of Questions 3 and 4 are shown below.</p>
+<p align="center"><img src="../../images/assignments/assignment3/models.gif" width="367" height="58" alt="models"></p>
+<p>We see that the model of Question 3 (<span class="style8">model 5</span>) can be reduced to the model of Question 4 (<span class="style8">model 6</span>) by setting &beta;<sub>3</sub> = &beta;<sub>4</sub> = 0. Thus the models are nested. The corresponding hypothesis test is shown below.</p>
+<p align="center"><img src="../../images/assignments/assignment3/hypothesis.gif" width="277" height="58" alt="null hypothesis"></p>
+<p>The anova function applied to model 5 and model 6 carries out this test. The reduced model should be entered first followed by the larger model, otherwise the degrees of freedom and sum of squares for the test are given negative values in the output table.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model6, model5)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Model 1: simpson2 ~ NAP + factor(week2)<br>
+  Model 2: simpson2 ~ NAP + factor(week)<br>
+  &nbsp; Res.Df&nbsp;&nbsp;&nbsp; RSS Df Sum of Sq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 42 1.3593&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 40 1.3379&nbsp; 2&nbsp; 0.021419 0.3202 </span><span class="style25">0.7278
+  </span>
+<p>We fail to reject the null hypothesis (<em>p</em> = 0.728) and conclude that there is insufficient evidence to claim that the intercepts in weeks 3 and 4 are different from the intercept in week 1. Consequently we should use <span class="style8">model 6</span>. Stated differently, we have found that the two models are not significantly different from each other. Given this result we might as well choose the simpler of the two models.</p>
+<h2>Question 6 </h2>
+<p>The coefficient estimates from the final model are shown below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model6)</div>
+
+<span class="style24">  &nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP factor(week2)1 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 0.5846036&nbsp;&nbsp;&nbsp;&nbsp; -0.2090851&nbsp;&nbsp;&nbsp;&nbsp; -0.2603461</span>
+
+<p>I plot the data using different symbols and symbol types for the two models. I use different symbols for the four original weeks but use different colors to denote the recoded weeks.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#plotting symbols</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mypch &lt;- c(15, 1, 16, 17)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(simpson2~NAP, data=rikz, col=week2+1, pch=mypch[week], ylab=&quot;Simpson's Diversity&quot;)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#weeks 1, 3, and 4</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  abline(coef(model6)[1], coef(model6)[2], lty=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#week 2</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  abline(coef(model6)[1]+coef(model6)[3], coef(model6)[2], lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomleft', c('weeks 1, 3, and 4', 'week 2'), col=c(1,2), pch=c(16,1), lty=2, bty='n', cex=.9)</div>
+<br>
+<table width="520" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td><img src="../../images/assignments/assignment3/fig1.png" width="475" height="335" alt="fig. 1"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"  style="padding-left: 47px; text-indent:-47px"><strong>Fig. 1&nbsp;</strong>&nbsp;The effect of week and NAP on Simpson's diversity. The vertical distance between the two lines is the &quot;week effect&quot;.</td>
+  </tr>
+</table>
+<h2>Question 7 </h2>
+<p>The first thing to observe is that week is not a confounder of the diversity versus NAP relationship. To demonstrate this I fit a model that contains only NAP and compare the coefficient estimate of NAP to what I obtain in a model with both NAP and week.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model0.5 &lt;- lm(simpson2~NAP, data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model0.5)</div>
+<span class="style24">  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP <br>
+&nbsp; 0.5017579&nbsp; -0.2204063</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model6)</div>
+<span class="style24"> &nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP factor(week2)1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp; 0.5846036&nbsp;&nbsp;&nbsp;&nbsp; -0.2090851&nbsp;&nbsp;&nbsp;&nbsp; -0.2603461 </span>
+<p>Observe that the coefficient of NAP is only slightly different with week in the model in <span class="style8">model6</span>, so week is at best only a weak confounder. That's the case here because the distributions of NAP in the two weeks are not that different. </p>
+<p>To explain the role that week plays in the final model you need to also explain the role that NAP plays in the model. In the hint I suggested that you contrast this model, a model that has both week and NAP in it, with a model that just has week in it. If week is the variable of interest and NAP is considered a nuisance variable, then a model with only week in it is what's called an analysis of variance model (it tests for  differences between the week means) whereas the current model is called an analysis of covariance model (it examines the difference in the week means while controlling for the continuous variable NAP). I compare the estimates from these two models below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model0 &lt;- lm(simpson2~factor(week2), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model0)</div>
+<span class="style24">  &nbsp;&nbsp; (Intercept) factor(week2)1 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.525091&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.299898 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model6)</div>
+<span class="style24"> &nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP factor(week2)1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp; 0.5846036&nbsp;&nbsp;&nbsp;&nbsp; -0.2090851&nbsp;&nbsp;&nbsp;&nbsp; -0.2603461</span>
+<p>In the analysis of variance model, <span class="style8">model0</span>, the week effect corresponds to the difference in the mean diversities between week 2 and the remaining weeks. From the output we see that the mean in the other 3 weeks is 0.525 and the mean is week 2 is &ndash;0.300 lower than this. In the analysis of covariance model, <span class="style8">model6</span>, the mean diversity in week 2 is again lower than it is in the other three weeks, this time by 0.260. The difference now though is that there is no single mean diversity that is being compared across the two weeks because the mean diversity changes with NAP. The week effect instead corresponds to the vertical distance between the two regression lines shown in Fig. 1. So once we specify the value of NAP we can calculate the mean diversity in weeks 1, 3, and 4. Then to obtain the diversity in week 2 we just have to lower this value by 0.260. </p>
+<p>The formal way of describing this is as follows. &quot;After controlling for NAP we find that mean diversity in week 2 is 0.260 lower than it is in weeks 1, 3, and 4.&quot; Another way to say this is the following. &quot;After adjusting for  the effect of NAP, mean diversity in week 2 is 0.260 lower than it is in weeks 1, 3, and 4.&quot;</p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment3/HW3.png" width="400" height="200" alt="HW 3 scores"><br>
+</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 9, 2012<br>
+      URL: <a href="assign3.htm#assign3" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign3.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

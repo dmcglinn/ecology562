@@ -1,0 +1,823 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 14&mdash;Friday, February 10, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style191 {font-size: smaller}
+.style23 {	color: #336633;
+	font-weight: bold;
+}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {	color: #660099;
+	font-weight: bold;
+}
+.style171 {	color: #993399;
+	font-weight: bold;
+}
+.style91 {	color: #3333CC;
+	font-weight: bold;
+}
+.style231 {color: #339933;
+	font-weight: bold;
+}
+.style331 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style362 {color: #3333CC;
+	font-weight: bold;
+}
+.style1911 {color: #009900; font-weight: bold; }
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style26 {font-family: "Courier New", Courier, mono}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture14" id="lecture14"></a>Lecture 14&mdash;Friday, February 10, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture14.htm#logit1">Logistic regression with grouped binary data</a>
+  <ul>
+    <li><a href="lecture14.htm#reading">Reading data from the clipboard</a></li>
+    <li><a href="lecture14.htm#fitting">Fitting the model</a></li>
+    <li><a href="lecture14.htm#goodness">Goodness of fit test</a></li>
+    <li><a href="lecture14.htm#graphing">Graphing the model</a></li>
+    <li><a href="lecture14.htm#confidence">Confidence intervals for odds ratios</a></li>
+    </ul>
+    
+<li><a href="lecture14.htm#logistic">Logistic regression with binary data </a>
+
+
+  <ul>
+    <li><a href="lecture14.htm#L1interpret">Interpreting the coefficients of logistic regression</a></li>
+    <li><a href="lecture14.htm#L1stats">Statistical tests and confidence intervals</a></li>
+    <li><a href="lecture14.htm#Lgraph">Graphing the logistic regression model on a probability scale</a>
+      <ul>
+        <li><a href="lecture14.htm#LM1">Method 1: Plotting the predictions of individual observations</a></li>
+        <li><a href="lecture14.htm#LM2">Method 2: Plotting the fitted model as a function</a></li>
+        <li><a href="lecture14.htm#LM3">Method 3: The plot.logi.hist function of de la Cruz Rot (2005)</a></li>
+      </ul>
+    </li>
+    <li><a href="lecture14.htm#L2interpret">Interpreting the coefficients of more complicated logistic regression</a></li>
+    <li><a href="lecture14.htm#L2stats">Statistical tests for more complicated models</a></li>
+    <li><a href="lecture14.htm#measures">Assessing
+      model performance</a>
+      <ul>
+        <li><a href="lecture14.htm#confusion"> Classification tables</a></li>
+        <li><a href="lecture14.htm#ROCcurve">ROC curves</a></li>
+        <li><a href="lecture14.htm#AUC">Area under the ROC curve (AUC) </a></li>
+      </ul>
+    </li>
+  </ul>
+
+<li><a href="lecture14.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture14.htm#cbind">cbind</a> is used in the construction of the response variable for  regression with grouped binary data. In the notation <span class="style1">cbind(Y,N)</span> Y denotes the variable that records the number of successes and N is the variable that records the number of failures. </li>
+  <li><a href="lecture14.htm#fitted">fitted</a> returns the fitted value for each observation in a data set. If <em>g</em>(&mu;<sub>i</sub>) is the link function for the generalized linear model that was fit, then <span class="style4">fitted</span> returns &mu;<sub>i</sub> for each observation <em>i</em>.</li>
+  <li><a href="lecture14.htm#order">order</a> is used to sort the values of one variable according to the order specified by a second variable.</li>
+  <li><a href="lecture14.htm#performance">performance</a> (from <span class="style19">ROCR</span>) calculates model calibration statistics from a prediction object.</li>
+  <li><a href="lecture14.htm#pipe">pipe</a> is a UNIX command used in  Mac OS X for reading in data from the clipboard.</li>
+  <li><a href="lecture14.htm#predict">predict</a> when applied to a model object returns the value of the regression equation for each observation in a data set. This is the value <em>g</em>(&mu;<sub>i</sub>). When <span class="style4">predict</span> is given a regression model object and a list of values for the model regressors it  evaluates the regression equation at those values.</li>
+  <li><a href="lecture14.htm#prediction">prediction</a> (from <span class="style19">ROCR</span>) creates a prediction object from which calibration statistics can be calculated.</li>
+  <li><a href="lecture14.htm#rug">rug</a> adds a rug plot to a margin of an already created graph.</li>
+  <li><a href="lecture14.htm#S4">slotNames</a> displays the names of the slots of an S4 object.</li>
+  <li><a href="lecture14.htm#update">update</a> is used to add or subtract terms from a  model that was previously fit.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture14.htm#rug">side=</a> (argument to <span class="style22">rug</span>) specifies the side of the graph to add the rug plot. The choices are 1 (bottom), 2 (left side), 3 (top), and 4 (right side).</li>
+</ul>
+<h2>Special symbols and characters in R</h2>
+<ul>
+  <li><a href="lecture14.htm#at">@</a> is used to specify components of S4 objects.</li>
+  <li><a href="lecture14.htm#doublebrack">[[ ]]</a> is used to access components of a list object in R</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture14.htm#ROCR">ROCR</a> for the functions <span class="style3">prediction</span> and <span class="style3">performance</span>. The <span class="style19">ROCR</span> package generates statistics associated with classification (confusion) matrices and ROC curves.</li>
+</ul>
+<h2>Data </h2>
+<ul>
+  <li>Grouped binary data: <a href="../../data/bliss.txt">bliss.txt</a></li>
+  <li>Binary data: <a href="../../data/Solea.txt">Solea.txt</a></li>
+</ul>
+<h2><a name="logit1"></a>Logistic regression with a grouped binary response</h2>
+<p name="faraway"><a name="faraway"></a>Grouped binary data is not the norm in ecology. When it does arise it typically does so in an experimental setting. As an example we look at a toxicity data set first analyzed by <a href="lecture14.htm#bliss">Bliss (1935)</a>. Bliss reported the number of beetles dying (<span class="stylecayenne">dead</span>) after five hours of exposure at various levels of gaseous carbon disulfide (<span class="stylecayenne">conc</span>) measured on a log base 2 scale. The data are available in the file <a href="../../data/bliss.txt">bliss.txt</a> and are also shown below<span class="style22"></span>. </p>
+<p class="style1" name="faraway">&quot;dead&quot; &quot;alive&quot; &quot;conc&quot;<br>
+  2 28 0<br>
+  8 22 1<br>
+  15 15 2<br>
+  23 7 3<br>
+27 3 4</p>
+<h3 name="faraway"><a name="pipe"></a><a name="reading"></a>Reading data from the clipboard</h3>
+<p name="faraway">We could read this data into R from the file but because the data set is so small it's easier to copy it to the clipboard and then read it into R from there. The protocol for doing this is different on Windows and Mac OS X. With the data copied to the clipboard enter the appropriate line shown below.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Windows: read data from clipboard</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  bliss &lt;- read.table('clipboard', header=T)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #mac: read data from clipboard</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bliss &lt;- read.table(pipe(&quot;pbpaste&quot;), header=T)</div>
+
+<h3 name="cbind"><a name="fitting"></a>Fitting the model</h3>
+<p name="cbind"><a name="cbind"></a>These are grouped binary data because what is recorded are not the 0-1 outcomes for individual beetles but the summarized result, the number of dead beetles and alive beetles at various dosage levels. In R we analyze these data by using  a matrix as the response in which the number of successes appears as the first column and the number of failures occurs as the second column. We can create this matrix on the fly with the <span class="style4">cbind</span> function. The argument <span class="style22">family=binomial</span> is used to specify the binomial random component. We model the number of dead beetles as a function of concentration as follows. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1 &lt;- glm(cbind(dead,alive)~conc, data=bliss, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out1)</div>
+<span class="style24">Call:<br>
+    glm(formula = cbind(dead, alive) ~ conc, family = binomial, data = bliss)</span>
+<p><span class="style24">Deviance Residuals: <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 <br>
+    -0.4510 0.3597 0.0000 0.0643 -0.2045 </span>
+<p><span class="style24">Coefficients:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error z value Pr(&gt;|z|) <br>
+    (Intercept)&nbsp; -2.3238 &nbsp;&nbsp;&nbsp;&nbsp;0.4179 &nbsp;-5.561 2.69e-08 ***<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conc &nbsp;&nbsp;1.1619 &nbsp;&nbsp;&nbsp;&nbsp;0.1814 &nbsp;&nbsp;6.405 </span><span class="style25">1.51e-10</span><span class="style24"> ***<br>
+    ---<br>
+    Signif. codes: 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for binomial family taken to be 1)</span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;Null deviance: 64.76327 on 4 degrees of freedom<br>
+    Residual deviance: &nbsp;0.37875 on 3 degrees of freedom<br>
+    AIC: 20.854</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 4</span>
+
+<p>In the summary table the column <span class="style331">Pr(&gt;|z|)</span> contains the <em>p</em>-values for individual Wald tests. The row labeled <span class="stylecayenne">conc</span> is a test of whether the regression coefficient of concentration is significantly different from zero. Since the <em>p</em>-value is small we conclude that there is a significant linear relationship on the log odds scale between the proportion dying and the log concentration of carbon disulfide </p>
+<p>A more intuitive way to interpret the regression coefficients of a logistic regression is in terms of odds ratios. The logistic regression model we've fit, written generically, is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture14/logit.gif" width="387" height="62" alt="logit"></p>
+<p>If we increment the value of the predictor by 1 in this equation we obtain the following.</p>
+<p align="center"><img src="../../images/lectures/lecture14/logit2.gif" width="515" height="63" alt="logit2"></p>
+<p>Subtracting the first equation from the second equation yields the following.</p>
+<p align="center"><img src="../../images/lectures/lecture14/logit&#32;difference.gif" width="472" height="62" alt="logit difference"></p>
+<p>Using properties of logarithms, the left hand side of this equation can be written as the log of a ratio.</p>
+<p align="center"><img src="../../images/lectures/lecture14/log&#32;OR.gif" width="447" height="92" alt="log OR"></p>
+<p>where OR is used to denote an odds ratio, a ratio of odds, in this case the odds of death at <em>x</em> + 1 over the odds of death at <em>x</em>. Exponentiating this expression yields</p>
+<p align="center"><img src="../../images/lectures/lecture14/odds&#32;ratio.gif" width="245" height="32" alt="odds ratio"></p>
+<p>So, when we exponentiate the regression coefficient of a continuous variable in a logistic regression we obtain an odds ratio. An odds ratio tells us the  factor by which the odds of  dying changes when the continuous variable is increased by one unit.</p>
+<p>To obtain the odds ratio for concentration in the current model we exponentiate the coefficient of <span class="stylecayenne">conc</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(coef(out1)[2])</div>
+<span class="style24">conc <br>
+  3.195984 </span>
+    <p>The odds ratio is 3.196. It is the multiplicative increase in the odds of dying due to a one unit increase (on a log scale) in carbon disulfide Since the log scale is base two, each one unit increase corresponds to a doubling of the concentration. Thus when the concentration is doubled, the odds of dying increases by a factor of 3.196.</p>
+    <p name="test"><a name="test"></a>To obtain a likelihood ratio test of the concentration effect we can use the <span class="style4">anova</span> function with the <span class="style4">test='Chisq'</span> option.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+  <p><span class="style24">Model: binomial, link: logit</span>
+  <p><span class="style24">Response: cbind(dead, alive)</span>
+  <p><span class="style24">Terms added sequentially (first to last)</span>
+
+  <p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+    NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; 64.763&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    conc&nbsp; 1&nbsp;&nbsp; 64.385&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.379 1.024e-15 ***<br>
+    ---<br>
+    Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>The LR test finds a statistically significant effect on the log odds of death due to concentration. Although this result is consistent with the Wald test above, the reported significance level is very different. </p>
+
+<h3><a name="goodness"></a>Goodness of fit test</h3>
+<p>As was explained in <a href="lecture13.htm#goodness">lecture 13</a>, the residual deviance from a generalized linear model fit to grouped binary data can be used as a goodness of fit statistic if the expected cell frequencies meet certain minimum cell size requirements. Specifically, no more than 20% of the expected counts should be less than 5. We examine this requirement for the current model.</p>
+<p><a name="predict"></a><a name="fitted"></a>The <span class="style102">predict</span> function returns predictions on the scale of the link function while the <span class="style102">fitted</span> function returns predictions on the scale of the raw response. For a logistic regression model, <span class="style102">predict</span> returns the estimated logits while <span class="style102">fitted</span> returns the estimated probabilities.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #predicted logits</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(out1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 <br>
+  -2.323790e+00 -1.161895e+00&nbsp; 1.332268e-15&nbsp; 1.161895e+00&nbsp; 2.323790e+00 </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #predicted probabilities</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fitted(out1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 <br>
+  0.08917177 0.23832314 0.50000000 0.76167686 0.91082823 </span>
+
+<p>The number of trials is the same at each concentration value.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> n &lt;- apply(bliss[,1:2], 1, sum)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> n</div>
+<span class="style24">[1] 30 30 30 30 30</span>
+<p>The expected counts are <em>np</em> for successes and <em>n</em>(1 &ndash; <em>p</em>) for failures.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #calculate predicted counts to check minimum cell size</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cbind(fitted(out1), 1-fitted(out1))*n</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,2]<br>
+  1&nbsp; 2.675153 27.324847<br>
+  2&nbsp; 7.149694 22.850306<br>
+  3 15.000000 15.000000<br>
+  4 22.850306&nbsp; 7.149694<br>
+5 27.324847&nbsp; 2.675153</span>
+<p>From the output we see that two of the expected counts are less than 5. With 10 total categories, 2 out of 10 is 20% so we meet the minimum cell size criterion. The residual deviance and its degrees of freedom are stored as components of the model object.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out1)</div>
+<span class="style24">  &nbsp;[1] &quot;coefficients&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;residuals&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;fitted.values&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;effects&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[5] &quot;R&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;rank&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;qr&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;family&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[9] &quot;linear.predictors&quot; </span><span class="style25">&quot;deviance&quot;</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;aic&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;null.deviance&quot;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;iter&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weights&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;prior.weights&quot;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">&quot;df.residual&quot;</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [17] &quot;df.null&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;converged&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;boundary&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [21] &quot;model&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;formula&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;terms&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [25] &quot;data&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;offset&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;control&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;method&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [29] &quot;contrasts&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;xlevels&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1$deviance</div>
+<span class="style24">  [1] 0.3787483</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1$df.residual</div>
+<span class="style24">[1] 3</span>
+<p>The null hypothesis is the following.</p>
+<blockquote>
+  <p>H<sub>0</sub>: model fits the data<br>
+    H<sub>1</sub>: model does not fit the data
+  </p>
+</blockquote>
+<p>The residual deviance has a chi-squared distribution with <span class="stylecayenne">out1$df.residual</span> degrees of freedom. We reject the null hypothesis if the residual deviance is too big (a one-sided, upper-tailed test).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">1-pchisq(out1$deviance, out1$df.residual)</div>
+<span class="style24">[1] 0.9445968</span>
+<p>The calculated <em>p</em>-value is large so we fail to reject the null hypothesis. The model is not significantly different from a saturated model. Because a saturated model fits the data perfectly, we have no evidence of lack of fit.</p>
+<h3><a name="graphing"></a>Graphing the model</h3>
+<p name="empiricallogit"><a name="empiricallogit"></a>To examine the assumption of linearity on the log odds scale we can plot the  logit against the predictor, in this case concentration. Let <em>p<sub>i</sub></em> denote the observed success probability in group <em>i</em>, let<em> n<sub>i</sub></em> be the total number of observations in group <em>i</em>, and let <em>y<sub>i</sub></em> be the observed number of successes in group <em>i</em>. Then the logit can be written as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture14/emp&#32;logit1.gif" width="605" height="98" alt="logit"></p>
+<p>If it turns out that any of the groupings yield 100% successes or 100% failures then the logit is undefined. To correct for this possibility the <span class="style362">empirical logit </span>is usually defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture14/emp&#32;logit2.gif" width="278" height="63"></p>
+<p>The empirical logit is plotted (as points) below and  the estimated logit from the regression model is superimposed. The fit is clearly outstanding. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(bliss$conc, log((bliss$dead+1/2)/(bliss$alive+1/2)), xlab='concentration', ylab='logit')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(coef(out1), col=2)</div>
+<br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><img src="../../images/lectures/lecture14/fig1.png" width="455" height="300" alt="fig. 1"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 1</strong> &nbsp;Estimated (line) and empirical logits (points)</td>
+  </tr>
+</table>
+<p><a name="algebraically"></a>Another way to graphically assess fit is to plot the logistic curve superimposed on a scatter plot of the observed probabilities of dying as a function of concentration. The probability function is obtained by inverting the logit function as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture14/probability.gif" width="488" height="287" alt="probability"></p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#inverse logit function for this model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">inv.logit &lt;- function(x) exp(coef(out1)[1] + coef(out1)[2]*x) / (1+exp(coef(out1)[1] + coef(out1)[2]*x))</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#plot empirical probabilities</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(bliss$conc, bliss$dead/(bliss$dead+bliss$alive), xlab='concentration', ylab='probability')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #logit curve</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(inv.logit, add=T, lty=2)</div>
+<br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><img src="../../images/lectures/lecture14/fig2.png" width="455" height="300" alt="fig. 2"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2</strong> &nbsp;Estimated (curve) and raw probabilities (points)</td>
+  </tr>
+</table>
+
+<h3><a name="confidence"></a>Confidence intervals for odds ratios</h3>
+<p>We can calculate Wald confidence intervals or profile likelihood confidence intervals for odd ratios. The point estimate of the odds ratio for concentration is 3.20.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #coefficients</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(out1)</div>
+<span class="style24">  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conc <br>
+  &nbsp; -2.323790&nbsp;&nbsp;&nbsp; 1.161895 </span>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #odds ratio for concentration</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(coef(out1)[2])</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; conc <br>
+3.195984 </span>
+<p>Maximum likelihood theory tells us that  maximum likelihood estimates have an asymptotic normal distribution. The  formula for a 95% normal-based confidence interval for a parameter &theta; is the following.</p>
+<p align="center"> <img src="../../images/lectures/lecture14/confint.gif" alt="conf int" width="153" height="40" align="absmiddle"></p>
+<p align="left">Using this we can construct a normal-based confidence interval for the    coefficient of concentration using the point estimate and its standard error as reported in the summary table of the model. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #Wald confidence intervals for the concentration coefficient</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> low95 &lt;- summary(out1)$coefficients[2,1] + qnorm(.025) * summary(out1)$coefficients[2,2]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> hi95 &lt;- summary(out1)$coefficients[2,1] + qnorm(.975) * summary(out1)$coefficients[2,2]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> c(low95, hi95)</div>
+<span class="style24">[1] 0.8063266 1.5174633</span>
+<p>To obtain 95% confidence intervals for the odds ratio, exp(&beta;<sub>1</sub>), we just exponentiate the 95% confidence interval for &beta;<sub>1</sub>. <br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #Wald confidence interval for the odds ratio</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(c(low95, hi95))</div>
+<span class="style24">  [1] 2.239666 4.560641</span>
+
+<p>The Wald 95% confidence interval for the odds ratio is (2.24, 4.56). </p>
+<p>We can also obtain confidence intervals based on the likelihood ratio statistic. The <span class="style102">confint</span> function applied to a <span class="style102">glm</span> model returns profile likelihood confidence intervals for all the regression parameters in our model.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #profile likelihood confidence interval</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lik &lt;- confint(out1)</div>
+<span class="style24">  Waiting for profiling to be done...</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lik</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  (Intercept) -3.2060617 -1.557314<br>
+conc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.8301789&nbsp; 1.546129</span>
+<p>To obtain a 95% profile likelihood confidence interval for the odds ratio with respect to concentration, we just exponentiate the 95% confidence interval for the concentration regression parameter.</p>
+
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #profile likelihood confidence interval for OR</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(lik[2,])</div>
+<span class="style24">  &nbsp;&nbsp; 2.5 %&nbsp;&nbsp; 97.5 % <br>
+2.293729 4.693269 </span>
+<p>The profile likelihood 95% confidence interval for the odds ratio is (2.29, 4.69). The Wald and profile likelihood confidence intervals are quite close.</p>
+<h2><a name="logistic" id="logistic"></a>Logistic regression with a binary response</h2>
+<p>Chapters 6 and 21 of <a href="lecture14.htm#Zuur">Zuur et al. (2007)</a> analyze some presence-absence data for the flatfish <em>Solea solea</em>. Their goal is to characterize the habitat requirements of the species. I download the data into the ecol 562 folder of my computer, read  the data into R, and examine the first few observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">solea &lt;- read.table('ecol 562/Solea.txt', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">solea[1:4,]</div>
+<span class="style24">&nbsp;&nbsp;Sample season month Area depth temperature salinity transparency gravel<br>
+1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;5    &nbsp;&nbsp;&nbsp;2   &nbsp;&nbsp;3.0          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15   &nbsp;&nbsp;3.74<br>
+2      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;5    &nbsp;&nbsp;&nbsp;2   &nbsp;&nbsp;2.6          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15   &nbsp;&nbsp;1.94<br>
+3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;5    &nbsp;&nbsp;&nbsp;2   &nbsp;&nbsp;2.6          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15   &nbsp;&nbsp;2.88<br>
+4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;5    &nbsp;&nbsp;&nbsp;4   &nbsp;&nbsp;2.1          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15  &nbsp;11.06<br>
+&nbsp;&nbsp;large_sand med_fine_sand   &nbsp;&nbsp;mud Solea_solea<br>
+1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.15         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.93 71.18           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+2       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.99          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.43 87.63           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+3       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.98         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16.85 71.29           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.96         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21.95 55.03           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(solea)</div>
+<span class="style24">&nbsp;[1] &quot;Sample&quot;        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;season&quot;        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;month&quot;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Area&quot; <br>
+&nbsp;[5] &quot;depth&quot;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;temperature&quot;   &quot;salinity&quot;      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;transparency&quot; <br>
+&nbsp;[9] &quot;gravel&quot;        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;large_sand&quot;    &nbsp;&quot;med_fine_sand&quot; &quot;mud&quot; <br>
+[13] &quot;Solea_solea&quot; </span>
+<p>The variable <span class="style1">Solea_solea</span> is a binary variable that records whether the species is present (<span class="style1">Solea_solea</span> = 1) or absent (<span class="style1">Solea_solea</span> = 0) at a location. Our goal today is not to find a best model but just to use these data to illustrate some of the issues that arise when fitting a regression model to  binary data. Having said that I do want to point out a bit of silliness on the part of the authors in the way that they treat four of the variables in this data set. The variables occurring in columns 9 through 12 are obviously related. If we sum over their values in a row they sum to 100 (ignoring round off error).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">apply(solea[,9:12], 1, sum)</div>
+<span class="style24">&nbsp;[1] 100.00  &nbsp;99.99 100.00 100.00 100.00  &nbsp;99.99 100.00 100.01 100.00 100.00 100.01<br>
+[12] 100.00 100.01 100.00  &nbsp;99.99 100.00 100.00 100.00 100.00 100.00 100.00 100.00<br>
+[23] 100.00 100.01 100.00 100.00 100.00 100.00 100.00 100.00 100.00 100.00 100.00<br>
+[34] 100.00 100.00 100.00 100.00 100.00 100.00 100.00 100.01  &nbsp;99.99 100.00 100.00<br>
+[45] 100.00 100.01 100.00  &nbsp;99.99 100.01 100.00 100.00 100.00  &nbsp;99.99 100.00 100.00<br>
+[56] 100.01 100.00 100.00 100.00 100.00 100.00  &nbsp;99.99 100.01 100.00 100.00</span>
+<p><a href="lecture14.htm#zuur">Zuur et al. (2007)</a> treat these as ordinary variables that just happened to be highly correlated. This is completely inappropriate. Variables that act to partition a whole into components are called compositional data. While rare in most disciplines, compositional data are extremely common in geology and statistical geologists have developed a rigorous protocol called log-ratio analysis for dealing with them. I don't wish to get into the details except to say that the best way to think of compositional data is as the continuous analog of a factor (categorical) variable. When we work with factors in regression models we don't treat the individual dummy regressors as variables in their own right, but instead view them as part of  a single construct. Similarly the variables that define the components of compositional data should be treated in concert, not separately. Their values  have relative not absolute meaning. Just as with categorical data the proper approach with compositional data is to choose a baseline level and then measure everything relative to that level. The main reference for the analysis of compositional data is <a href="lecture14.htm#Aitchison">Aitchison (1986)</a>. For applications of his approach in ecology see <a href="lecture14.htm#Elston">Elston et al. (1996)</a>.</p>
+<h3><a name="L1interpret"></a>Interpreting the coefficients of logistic regression</h3>
+<p>We start by fitting a logistic regression to the presence-absence data using the single predictor salinity. We fit the model using the <span class="style4">glm</span> function and specifying <span class="style1">binomial</span> for the <span class="style22">family</span> argument.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1 &lt;- glm(Solea_solea~salinity, data=solea, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out1)</div>
+<span class="style24">Call:<br>
+glm(formula = Solea_solea ~ salinity, family = binomial, data = solea)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Min       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1Q   &nbsp;Median       &nbsp;&nbsp;&nbsp;&nbsp;3Q      &nbsp;&nbsp;&nbsp;Max <br>
+  -2.0674  -0.7146  -0.6362   0.7573   1.8996 </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error z value Pr(&gt;|z|) <br>
+  (Intercept)  &nbsp;2.66071    &nbsp;&nbsp;&nbsp;0.90167   &nbsp;&nbsp;2.951 0.003169 ** <br>
+  salinity    &nbsp;&nbsp;&nbsp;-0.12985    &nbsp;&nbsp;&nbsp;0.03494  &nbsp;-3.716 0.000202 ***<br>
+  ---<br>
+  Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for binomial family taken to be 1)</span>
+<p><span class="style24"> Null deviance: 87.492  on 64  degrees of freedom<br>
+  Residual deviance: 68.560  on 63  degrees of freedom<br>
+  AIC: 72.56</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 4</span>
+<p>The summary display reports parameter estimates, their standard errors, and Wald tests. The default link function for logistic regression is the logit link, also called the log odds. Let <em>p</em> denote the probability that <em>Solea solea</em> is present at a given location. Then the displayed coefficient estimate for salinity indicates how much  logit(<em>p</em>) is expected to change for a one unit change in the salinity variable. We see that the logit is expected to decrease by 0.12985 units. Like log, the logit function is a monotone increasing function, hence the direction of the change for <em>p</em> is the same as the direction of change for logit(<em>p</em>). Because the coefficient of salinity is negative, the model predicts that as salinity increases it becomes less likely that <em>Solea solea</em> will be present.</p>
+<p>For the current data set we can calculate the odds ratio for a one unit increase in salinity as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(out1)</div>
+<span class="style24"> (Intercept)    &nbsp;&nbsp;salinity <br>
+&nbsp;&nbsp;2.6607127  -0.1298550 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(coef(out1)[2])</div>
+<span class="style24">salinity <br>
+0.8782228 </span>
+<p>Thus a one unit increase in salinity decreases the odds of finding <em>Solea solea</em> present by a factor of 0.878. Alternatively we can flip the odds over by changing the sign of the coefficient.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(-coef(out1)[2])</div>
+<span class="style24"> salinity <br>
+1.138663</span>
+<p>So  a one unit decrease in salinity makes the odds of <em>Solea solea</em> being present  1.14 times greater.</p>
+<h3><a name="L1stats"></a>Statistical tests and confidence intervals</h3>
+<p>To obtain confidence intervals for odds ratios we calculate normal-based confidence intervals for the regression parameters on the scale of the logit and exponentiate the result. The standard errors of the estimates are located in the coefficient table of the summary output. The formula for a 95% normal-based confidence interval for a parameter &theta; is <img src="../../images/lectures/lecture14/confint.gif" alt="conf int" width="153" height="40" align="absmiddle">.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out1)$coefficients</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error   &nbsp;&nbsp;z value     &nbsp;&nbsp;&nbsp;&nbsp;Pr(&gt;|z|)<br>
+(Intercept)  &nbsp;2.6607127 0.90166619  &nbsp;2.950884 0.0031686547<br>
+salinity    &nbsp;&nbsp;&nbsp;-0.1298550 0.03494068 -3.716441 0.0002020491</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out1)$coefficients[2,2]</div>
+<span class="style24">[1] 0.03494068</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.limits &lt;- coef(out1)[2] + summary(out1)$coefficients[2,2] * c(qnorm(.025), qnorm(.975))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(ci.limits)</div>
+<span class="style24">[1] 0.8200931 0.9404729</span>
+<p>The residual deviance statistic from a logistic regression with a binary response is not an appropriate lack of fit statistic, but we can still use the <span class="style4">anova</span> function to carry out a likelihood ratio test to compare nested models. When we give a single generalized linear model object to the <span class="style4">anova</span> function of R, it carries out sequential likelihood ratio tests.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(out1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: binomial, link: logit</span>
+<p><span class="style24">Response: Solea_solea</span>
+<p><span class="style24">Terms added sequentially (first to last)<br>
+  </span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Df Deviance Resid. Df Resid. Dev P(&gt;|Chi|)<br>
+  NULL                        &nbsp;&nbsp;&nbsp;&nbsp;64     &nbsp;&nbsp;87.492 <br>
+  salinity  &nbsp;1   &nbsp;&nbsp;18.932        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63     &nbsp;&nbsp;&nbsp;&nbsp;68.560 1.355e-05</span>
+<p>The likelihood ratio statistic is 18.932 and compares the current model with a model containing only an intercept. Observe that the reported <em>p</em>-value, while significant, differs from the <em>p</em>-value reported in the summary table for salinity. The <em>p</em>-value in the summary table is  from a Wald test and the Wald  and likelihood ratio tests are only approximately equivalent.</p>
+<h3><a name="Lgraph"></a>Graphing the logistic regression model on a probability scale</h3>
+<p><strong><a name="LM1"></a>Method 1: Plotting the individual fitted values</strong></p>
+<p><a name="fitted"></a>As with any regression model, a logistic regression model with only one continuous predictor can be plotted in two dimensions. When there are no  other regressors in the model, we can use model predictions to draw the graph. We've already seen that the <span class="style4">predict</span> function can be used to return predictions on the scale of the link function. Hence</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">predict(out1)</div>
+<p>will return the estimated logits for individual observations. The <span class="style4">fitted</span> function can be used to return predictions on the scale of the raw response, in this case the probabilities <em>p</em>. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fitted(out1)</div>
+<p><a name="order"></a>To be useful in plotting we need to sort these probabilities by salinity. The way to do this in R is with the <span class="style4">order</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">order(solea$salinity)</div>
+<span class="style24">&nbsp;[1] 13 12 23 39 52 65 24 51 36 62 10 25 37 38 49 50 26 63 11 64 30 34 35 31 33<br>
+[26] 53  &nbsp;8 14 16  &nbsp;2  &nbsp;4  &nbsp;7  &nbsp;9 15 27 28 32  &nbsp;1  &nbsp;3  &nbsp;5 17 18 19 20 21 29 40 43 46 47<br>
+[51] 48 54 56 22 55 60 61  &nbsp;6 41 42 44 58 59 45 57</span>
+<p>The output tells us that if salinity were to be sorted then observation 13 would appear first, followed by observation 12, then 23, etc. We can use this vector of positions to reorder the fitted values in salinity order.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fitted(out1)[order(solea$salinity)]</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;39        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;52        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;65        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24 <br>
+0.9169037 0.9064592 0.8948523 0.8948523 0.8819928 0.8819928 0.8521706 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;51        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;36        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;62        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38 <br>
+0.8521706 0.7961110 0.7961110 0.7507195 0.7507195 0.7507195 0.6990427 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;49        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30 <br>
+0.6990427 0.6710391 0.6417651 0.6417651 0.6113947 0.5482168 0.3576310 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;35        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;53         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 <br>
+0.3576310 0.3576310 0.3004048 0.3004048 0.3004048 0.2738401 0.2738401 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27 <br>
+0.2738401 0.2487891 0.2487891 0.2487891 0.2487891 0.2487891 0.2487891 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 <br>
+0.2487891 0.2487891 0.2253187 0.2253187 0.2253187 0.2253187 0.2253187 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;43        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;46 <br>
+0.2253187 0.2253187 0.2253187 0.2253187 0.2253187 0.2253187 0.2253187 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;47        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;48        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;56        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 <br>
+0.2253187 0.2253187 0.2253187 0.2253187 0.2034628 0.2034628 0.2034628 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;41        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59 <br>
+0.2034628 0.1832254 0.1832254 0.1832254 0.1832254 0.1645851 0.1645851 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57 <br>
+0.1474986 0.1474986 </span>
+<p>All that's left to do is to plot these values against sorted salinity values and connect the points with line segments. With enough observations spread out over the range of the predictor, the resulting curve should be reasonably smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(sort(solea$salinity), fitted(out1)[order(solea$salinity)], type='l', xlab='salinity', ylab='probability', ylim=c(0,1))</div>
+<p><strong><a name="LM2"></a>Method 2: Use the formula for the invert logit</strong></p>
+<p>The logit is an invertible function so that we can solve for <em>p</em> <a href="lecture14.htm#algebraically">algebraically</a>.</p>
+<p align="center"><img src="../../images/lectures/lecture14/invlogit.gif" width="473" height="63" alt="inverse logit"></p>
+<p>This expression for <em>p</em> can be written  as a function in R and then  plotted using the <span class="style4">curve</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">inv.logit &lt;- function(x) exp(coef(out1)[1] + coef(out1)[2]*x) / (1+exp(coef(out1)[1] + coef(out1)[2]*x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(inv.logit, from=0, to=35, ylim=c(0,1), xlab='salinity', ylab='probability')</div>
+
+<p><a name="rug"></a>The observed response values are zeros and ones. To see at what salinities they occur we can use the <span class="style102">rug</span> function to add a rug plot at the bottom and top of the graph, corresponding to the zeroes and ones respectively. The <span class="style22">side</span> argument of <span class="style102">rug</span> takes the numbers 1 (bottom), 2 (left side), 3 (top), and 4 (right side).<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rug(solea$salinity[solea$Solea_solea==0], side=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rug(solea$salinity[solea$Solea_solea==1], side=3)</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture14/fig3.png" width="455" height="300" alt="fig 3"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p align="left" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3</strong> &nbsp;Fitted logistic curve obtained using either methods 1 or 2</p></td>
+  </tr>
+</table>
+<p><strong><a name="LM3"></a>Method 3: Function published in the <em>Bulletin of the ESA</em></strong></p>
+<p>One problem with the rug plot is that only unique values of salinity are displayed. We can't see the frequencies of the displayed observations. A function, <span class="style1">plot.logi.hist</span>, due to <a href="lecture14.htm#delacruzrot">de la Cruz Rot (2005)</a> adds some additional distributional information to the plot we just produced. It has two required arguments: the predictor variable followed by the response variable. I've modified some of the defaults of his function and use it below to plot the current model.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot.logi.hist(solea$salinity, solea$Solea_solea, x.label=&quot;Salinity&quot;)</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture14/fig4.png" width="383" height="348" alt="fig. 4"></div></td>
+  </tr>
+  <tr>
+    <td><p align="left" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4 </strong>&nbsp;Logistic plot using code due to <a href="lecture14.htm#delacruzrot">de la Cruz Rot (2005)</a>. In addition to the logistic curve the separate marginal distributions of  salinity for the presence and absence observations are shown.</p></td>
+  </tr>
+</table>
+<h3><a name="L2interpret"></a>Interpreting the coefficients in more complicated logistic regression models</h3>
+<p><a name="update"></a>One of the final models considered by <a href="lecture14.htm#Zuur">Zuur et al. (2007)</a> includes salinity, temperature, and month treated as a factor. Rather than re-enter all the details of the model again, we can use the <span class="style102">update</span> function. The first argument to <span class="style102">update</span> is the model to be modified. The expression <span class="style1">.~.</span> in the second argument means that we want both the response and the predictor set to be the same as in that model. After this we  add the new terms that we desire.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out2 &lt;- update(out1, .~. + temperature + factor(month))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out2)</div>
+<span class="style24">Call:<br>
+glm(formula = Solea_solea ~ salinity + temperature + factor(month), <br>
+&nbsp;&nbsp;&nbsp;family = binomial, data = solea)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Min       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1Q   &nbsp;Median       &nbsp;&nbsp;&nbsp;&nbsp;3Q      &nbsp;&nbsp;&nbsp;Max <br>
+  -1.7874  -0.7212  -0.3118   0.6137   2.3357 </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error z value Pr(&gt;|z|) <br>
+  (Intercept)    &nbsp;&nbsp;&nbsp;20.85344    &nbsp;&nbsp;&nbsp;8.70430   &nbsp;&nbsp;2.396 0.016586 * <br>
+  salinity       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.22497    &nbsp;&nbsp;&nbsp;0.06054  &nbsp;-3.716 0.000202 ***<br>
+  temperature    &nbsp;&nbsp;&nbsp;-0.78950    &nbsp;&nbsp;&nbsp;0.38382  &nbsp;-2.057 0.039690 * <br>
+  factor(month)6  &nbsp;1.82657    &nbsp;&nbsp;&nbsp;1.16532   &nbsp;&nbsp;1.567 0.117011 <br>
+  factor(month)7  &nbsp;2.95498    &nbsp;&nbsp;&nbsp;1.96393   &nbsp;&nbsp;1.505 0.132420 <br>
+  factor(month)8  &nbsp;3.53542    &nbsp;&nbsp;&nbsp;1.89188   &nbsp;&nbsp;1.869 0.061659 . <br>
+  factor(month)9 -1.87826    &nbsp;&nbsp;&nbsp;1.25102  &nbsp;-1.501 0.133256 <br>
+  ---<br>
+  Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for binomial family taken to be 1)</span>
+<p><span class="style24"> Null deviance: 87.492  on 64  degrees of freedom<br>
+  Residual deviance: 57.081  on 58  degrees of freedom<br>
+  AIC: 71.08</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 5</span>
+<p>If we exponentiate the coefficients of salinity and temperature  we obtain the corresponding odds ratios. I take the negative of the coefficients so that the odds ratios are for decreasing temperature and salinity.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(coef(out2)[2:3])</div>
+<span class="style24">&nbsp;salinity temperature <br>
+0.7985364   &nbsp;&nbsp;0.4540698 </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#odds ratio for a decrease in salinity</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(-coef(out2)[2:3])</div>
+<span class="style24">salinity temperature <br>
+1.252291    &nbsp;&nbsp;&nbsp;2.202305 </span>
+<p>Thus for each increment in salinity the odds of finding <em>Solea solea</em> present is decreased by a factor 0.80. Similarly a one unit increase in temperature causes the odds of finding <em>Solea solea</em> to fall by more than half. Flipping things around, a one unit <u>decrease</u> in salinity increases the odds of finding <em>Solea solea</em> by 1.25 times, while a one unit <u>decrease</u> in temperature increases the odds of finding <em>Solea solea</em> by 2.20 times.</p>
+<p>The coefficients of the dummy variables require a more careful interpretation. Consider the log odds for two locations that happen to have the same values of salinity and temperature, but one was observed in month 5 and the other in month 6.</p>
+<p align="center"><img src="../../images/lectures/lecture14/logodds&#32;categorical.gif" width="517" height="125" alt="log odds"></p>
+<p>I subtract the log odds for month 5 from the log odds for month 6.</p>
+<p align="center"><img src="../../images/lectures/lecture14/log&#32;OR&#32;cat.gif" width="360" height="123" alt="log OR"></p>
+<p>Exponentiating we have</p>
+<p align="center"><img src="../../images/lectures/lecture14/OR&#32;categorical.gif" width="327" height="32"></p>
+<p>A similar formula holds for the other dummy effects. Month 5 is always the baseline group. If we exponentiate a month coefficient we obtain an odds ratio that compares the odds of finding <em>Solea solea</em> in that month relative to month 5. Applying this to the model we find the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp(coef(out2)[4:7])</div>
+<span class="style24"> factor(month)6 factor(month)7 factor(month)8 factor(month)9 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2125301     &nbsp;&nbsp;&nbsp;&nbsp;19.2012884     &nbsp;&nbsp;&nbsp;&nbsp;34.3094084      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1528556 </span>
+<p>So, the odds of finding <em>Solea solea</em> in month 6 is six times the odds of finding it in month 5. This grows to 19 times in month 7 and 34 times in month 8. On the other hand in month 9 the odds of finding the sole present is only 15% of what it was in month 5.</p>
+<p>We can construct Wald confidence intervals for the parameters and then exponentiate them to obtain confidence intervals for the odds ratios. The profile likelihood confidence intervals for the odds ratios are constructed below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci &lt;- confint(out2)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp; 5.39994821 40.09149288<br>
+  salinity&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;-0.36118003 -0.12048324<br>
+  temperature&nbsp;&nbsp;&nbsp; -1.63031754 -0.09924252<br>
+  factor(month)6 -0.38004581&nbsp; 4.27979734<br>
+  factor(month)7 -0.77462200&nbsp; 7.07366407<br>
+  factor(month)8&nbsp; 0.04812915&nbsp; 7.62766682<br>
+  factor(month)9 -4.64335095&nbsp; 0.40332153</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(ci[2:7,])</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;2.5 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  salinity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.696853533&nbsp;&nbsp;&nbsp; 0.8864919<br>
+  temperature&nbsp;&nbsp;&nbsp; 0.195867369&nbsp;&nbsp;&nbsp; 0.9055231<br>
+  factor(month)6 0.683830085&nbsp;&nbsp; 72.2258011<br>
+  factor(month)7 0.460877958 1180.4654266<br>
+  factor(month)8 1.049306164 2054.2514783<br>
+factor(month)9 0.009625389&nbsp;&nbsp;&nbsp; 1.4967881</span>
+<p>Notice that the confidence intervals for the odds ratios for the month comparisons are extremely wide indicating that this effect has not been very accurately measured in the model.</p>
+<h3><a name="L2stats"></a>Statistical tests for  more complicated logistic regression models</h3>
+<p>If we use R's <span class="style4">anova</span> function on a single logistic regression model it carries out sequential likelihood ratio tests testing the terms in the order they were entered in the model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out2, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: binomial, link: logit</span>
+<p><span class="style24">Response: Solea_solea</span>
+<p><span class="style24">Terms added sequentially (first to last)<br>
+  </span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Df Deviance Resid. Df Resid. Dev P(&gt;|Chi|)<br>
+  NULL                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64     &nbsp;&nbsp;&nbsp;&nbsp;87.492 <br>
+  salinity       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1   &nbsp;&nbsp;18.932        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63     &nbsp;&nbsp;&nbsp;&nbsp;68.560 1.355e-05<br>
+  temperature    &nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;0.584        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;62     &nbsp;&nbsp;&nbsp;&nbsp;67.976     &nbsp;&nbsp;&nbsp;&nbsp;0.445<br>
+  factor(month)  &nbsp;4   &nbsp;&nbsp;10.895        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58     &nbsp;&nbsp;&nbsp;&nbsp;57.081     &nbsp;&nbsp;&nbsp;&nbsp;0.028</span>
+<p>The column labeled &quot;Deviance&quot; contains the likelihood ratio statistics. Reading from the top down we see that when salinity is added to a model with only an intercept, the new model is a significant improvement over the old. Thus salinity is a significant predictor of presence-absence. If we then add temperature to a model that already has salinity in it we see that temperature is not significant. Finally when month treated as a factor is added to a model that already contains temperature and salinity, month is a significant predictor of presence-absence. </p>
+<p>Based on the sequential likelihood ratio tests we might conclude that temperature is not important, but we've already seen from the summary table above that the Wald test for temperature indicates that its coefficient is significantly different from zero. Is this just a case of the likelihood ratio test and the Wald test disagreeing? No, it's a matter of context. The Wald test is a test of the &quot;importance&quot; of temperature given that salinity and factor(month) are already in the model. In the sequential likelihood ratio test above, the reference model was one that contained salinity, but not month. If we change the order the variables are entered into the model, the sequential likelihood ratio tests will  change.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out2 &lt;- update(out1, .~. + factor(month) + temperature)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out2, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: binomial, link: logit</span>
+<p><span class="style24">Response: Solea_solea</span>
+<p><span class="style24">Terms added sequentially (first to last)<br>
+  </span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Df Deviance Resid. Df Resid. Dev P(&gt;|Chi|)<br>
+  NULL                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;64     &nbsp;&nbsp;&nbsp;&nbsp;87.492 <br>
+  salinity       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1   &nbsp;&nbsp;18.932        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;63     &nbsp;&nbsp;&nbsp;&nbsp;68.560 1.355e-05<br>
+  factor(month)  &nbsp;4    &nbsp;&nbsp;&nbsp;6.350        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59     &nbsp;&nbsp;&nbsp;&nbsp;62.210     &nbsp;&nbsp;&nbsp;&nbsp;0.175<br>
+  temperature    &nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;5.130        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58     &nbsp;&nbsp;&nbsp;&nbsp;57.081     &nbsp;&nbsp;&nbsp;&nbsp;0.024</span>
+<p>Now the Wald tests and the likelihood ratio test for temperature agree, but notice that our conclusion about month has changed. When month is added to a model containing only salinity month is not significant, but  when temperature is in the model too then month becomes significant. This too agrees with the Wald test results. To convince ourselves that a model with month and temperature together is a better model, we can compare this model to a model with salinity and month (but no temperature) and a model with salinity and temperature (but no month) using AIC.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out3a &lt;- update(out1, .~. + temperature)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out3b &lt;- update(out1, .~. + factor(month))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(out1, out2, out3a, out3b), AIC)</div>
+<span class="style24">[1] 72.55999 71.08068 73.97552 74.21035</span>
+<div class="figureR1">
+  <p align="center"><img src="../../images/lectures/lecture14/fig5.png" width="291" height="249" alt="fig. 5">
+  <p align="center"> <strong>Fig. 5</strong> &nbsp;Temperatures by month</p>
+</div>
+<p>The new models actually rank worse than a model with just salinity alone, but when month and temperature are present together with salinity the resulting model ranks better than a model with salinity alone.</p>
+<p>If we examine the coefficient estimates of temperature and month in models where they occur alone (<span class="stylecayenne">out3a</span> and <span class="stylecayenne">out3b</span>) to a model in which they appear together (<span class="stylecayenne">out2</span>), we see that they change markedly. When the presence of one variable in a model affects our interpretation of another, we say that the first variable is a confounder of the second. The situation is slightly more complicated here in that both month and temperature are confounders of each other. Confounding is a common occurrence with observational data. When present it may indicate that a more complicated causal mechanism is present, but it could also mean that some important causal variable is missing from the analysis, one that is associated with temperature and month. </p>
+<p>Not too surprisingly the variables temperature and month show a strong relationship with each other in these data.</p>
+<p class="style10" style="padding-left: 30px; text-indent:-30px">plot(jitter(temperature)~jitter(month), xlab='month', data=solea, ylab='temperature')</p>
+<p>Coefficient estimates from the model tell us that the odds of finding sole decrease with temperature. On the other hand the coefficients for the month categories tell us that the odds of finding sole are highest in the warmest months of the study, apparently contradicting the overall temperature results. The model results if taken literally mean that in each month there is a negative relationship with temperature (like the pattern shown for salinity in Fig. 3) but that the entire relationship is shifted up as we move from month 5 to 6 to 7 and to 8. Clearly these results requires additional investigation. The &quot;month effect&quot; may be a natural seasonality pattern that has little to do with temperature. The &quot;temperature effect&quot; could simply reflect nocturnal activity patterns if samples happened to be taken both at night and during the day.</p>
+<h2><a name="measures"></a>Measures of  performance for a logistic regression model</h2>
+<p>Model comparison protocols such as significance testing and AIC allow us to rank models but tell us nothing about how good the final model is. If two models differ in AIC it will usually not be clear what the practical gains are in choosing the model with the lower AIC. For general model assessment we can carry out predictive simulation in which we use the model to generate pseudo-data to see whether the model is able to produce  data that are similar to the data that were actually observed. (See <a href="lecture7.htm#visualizing">lecture 7</a> for an example of doing this for a normal model and <a href="lecture8.htm#datagenerating">lecture 8</a> for  a Poisson model.) With logistic regression there are many additional tools available for assessing model quality.</p>
+<h3><a name="confusion"></a>Classification tables</h3>
+<p>A common use of logistic regression is to classify new observations as successes or failures based on the values of their predictors. Because logistic regression estimates a probability (through the logit), we need to choose a cut-off value <em>c</em> such that if <img src="../../images/lectures/lecture14/cutoff.gif" width="53" height="28" align="absmiddle"> we classify the observation to be a success, <img src="../../images/lectures/lecture14/yihat1.gif" alt="yihat 1" width="48" height="32" align="absmiddle">, otherwise we classify it as a failure, <img src="../../images/lectures/lecture14/yihat0.gif" alt="yihat 0" width="52" height="32" align="absmiddle">. Here <img src="../../images/lectures/lecture14/prob.gif" width="21" height="28" align="absmiddle"> is the probability estimated by the logistic regression model. Once we decide on a cut-off, the results can be organized into what's called a classification table (also called a confusion matrix). It records the number of observations that were correctly classified (true negatives and true positives) as well as the number of observations that were misclassified (false negatives and false positives). The fraction of true positives (out of the total number of observed positives) is called the <span class="style31">sensitivity</span> of the classification rule, while the fraction of true negatives (out of the total number of observed negatives) is called the <span class="style31">specificity</span> of the rule.</p>
+<p align="center"><img src="../../images/lectures/lecture14/fig6.png" width="361" height="82" alt="fig 6"></p>
+<p align="center" class="styleArial"><strong>Fig. 6 </strong>&nbsp;Classification table for a logistic regression model</p>
+<p>One obvious choice for a cut-off is <em>c</em> = 0.5. This essentially treats the false positives and false negatives as being equally bad. I use <em>c</em> = 0.5 as a cut-off and obtain the classification table for a logistic regression model with  salinity as the only predictor, <span class="stylecayenne">out1</span>, and the classification table for a logistic regression model with salinity, temperature, and factor(month) as predictors, <span class="stylecayenne">out2</span>. The R output is arranged to match what is shown in Fig. 6. (The vector <span class="style1">out1$y</span> that appears in the code contains the response, but I could just as well have used <span class="style1">solea$Solea_solea</span> here.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">table(as.numeric(fitted(out1)&gt;.5), out1$y)</div>
+<span class="style24"> <br>
+&nbsp;&nbsp;&nbsp;0  &nbsp;1<br>
+0 34 11<br>
+1  &nbsp;5 15</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">table(as.numeric(fitted(out2)&gt;.5), out1$y)</div>
+<span class="style24"><br>
+&nbsp;&nbsp;&nbsp;0  &nbsp;1<br>
+0 34  &nbsp;8<br>
+1  &nbsp;5 18</span>
+<p>The two models return the same number of true negatives and false positives. They differ in how they classify the positives (locations where <em>Solea solea</em> was found to be present). The more complicated model has three fewer false negatives than does the simpler model.</p>
+<h3><a name="ROCcurve" id="ROCcurve"></a>ROC curves</h3>
+<p>One problem with using a classification table to compare models is that we have to specify a choice for the cut-off <em>c</em>. Choosing a value other than <em>c</em> = 0.5 means you're willing to treat one misclassification error as being more important than the other. It's ordinarily the case that the conclusions will change when a different choice is made for <em>c</em>. The standard way around this is to use all possible cut-offs <em>c</em> simultaneously  by generating what's called a ROC curve. ROC stands for &quot;receiver operating characteristic&quot; and is a concept derived from signal detection theory. In a ROC curve we plot a model's true positive rate (TPR), the number of observations correctly classified positive divided by the observed number of positives, against its false positive rate (FPR), the number of observations incorrectly classified as positive divided by the observed number of negatives. This is a plot of sensitivity versus 1 &ndash; specificity. Even though <em>c</em> is not plotted directly, its presence is implicit in the plot and it varies continuously from 0 to 1.</p>
+<p><a name="ROCR"></a>There are many ways to produce a ROC curve in R. I've chosen to use functions from the <span class="style1911">ROCR</span> package. The <span class="style1911">ROCR</span> package is not part of the standard R installation and so it must first be downloaded from the CRAN site on the web. <a name="prediction" id="prediction"></a>Various functions in the <span class="style19">ROCR</span> package can be used to  draw ROC curves. The process begins by creating what's called a <span class="style102">prediction</span> object. For this the <span class="style102">prediction</span> function in the <span class="style19">ROCR</span> package should be supplied with the fitted values from the model and a vector of presence/absence information.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(ROCR)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">pred1 &lt;- prediction(fitted(out1), solea$Solea_solea)</div>
+<p name="performance"><a name="performance"></a>The <span class="style4">performance</span> function is then used to extract the statistics of interest from the <span class="style102">prediction</span> object. For a ROC curve we need <span class="style1">'tpr'</span>, the true positive rate, and <span class="style1">'fpr'</span>, the false positive rate.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">perf1 &lt;- performance(pred1, 'tpr', 'fpr')</div>
+<p name="S4"><a name="S4"></a>If you print the contents of the performance object <span class="stylecayenne">perf1</span> you'll see that the elements occupy locations called &quot;slots&quot; and the elements of the slots are actually list elements. The ROCR package is written using the conventions of the S4 language. All of the functions we've dealt with in the course up until this point were written using the S3 language. A major difference manifests itself in the way we need to access information from S4 objects. For instance, the <span class="style4">names</span> function no longer lists the list components of the object created by the function. Instead we need to use the <span class="style4">slotNames</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">slotNames(perf1)</div>
+
+<span class="style24">  [1] &quot;x.name&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y.name&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;alpha.name&quot;&nbsp;&nbsp; &quot;x.values&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y.values&quot;&nbsp;&nbsp;&nbsp; <br>
+[6] &quot;alpha.values&quot;</span>
+<p><a name="at"></a>The <span class="style4">slotNames</span> function returns the names of the slots. To access the elements of the slots of an S4 object you need to use R's <span class="style3">@</span> notation. I examine each component in turn.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> perf1@x.name</div>
+<span class="style24">[1] &quot;False positive rate&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">perf1@y.name</div>
+<span class="style24">[1] &quot;True positive rate&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> perf1@alpha.name</div>
+<span class="style24">[1] &quot;Cutoff&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> perf1@alpha.values</div>
+<span class="style24">[[1]]<br>
+&nbsp;[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inf 0.9169037 0.9064592 0.8948523 0.8819928 0.8521706 0.7961110 0.7507195<br>
+&nbsp;[9] 0.6990427 0.6710391 0.6417651 0.6113947 0.5482168 0.3576310 0.3004048 0.2738401<br>
+[17] 0.2487891 0.2253187 0.2034628 0.1832254 0.1645851 0.1474986</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> perf1@x.values</div>
+<span class="style24">  [[1]]<br>
+  &nbsp;[1] 0.00000000 0.00000000 0.00000000 0.00000000 0.02564103 0.02564103 0.02564103<br>
+  &nbsp;[8] 0.05128205 0.05128205 0.05128205 0.07692308 0.10256410 0.12820513 0.17948718<br>
+  [15] 0.25641026 0.28205128 0.41025641 0.71794872 0.82051282 0.92307692 0.94871795<br>
+  [22] 1.00000000</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> perf1@y.values</div>
+<span class="style24">  [[1]]<br>
+  &nbsp;[1] 0.00000000 0.03846154 0.07692308 0.15384615 0.19230769 0.26923077 0.34615385<br>
+  &nbsp;[8] 0.42307692 0.50000000 0.53846154 0.57692308 0.57692308 0.57692308 0.61538462<br>
+  [15] 0.61538462 0.69230769 0.80769231 0.96153846 0.96153846 0.96153846 1.00000000<br>
+  [22] 1.00000000</span>
+<p>From the printout we see the slots are called <span class="style22">@x.values</span>, <span class="style22">@y.values</span>, and <span class="style22">@alpha.values</span> referring respectively to &quot;False positive rate&quot;, &quot;True positive rate&quot;, and &quot;Cutoff&quot;. The cut-off begins at 1 (denoted <span class="stylecayenne">Inf</span> in the output) and decreases to zero. The FPR and TPR at the reported cut-offs are shown. The only cut-offs that are displayed are those that correspond to a change in the confusion matrix.</p>
+<p><a name="doublebrack"></a>To access the individual elements of the slots you need to use R's @ notation and then to extract the list elements of each slot you need to use the double bracket notation. For example, to access the false positive rates we need to specify the following.</p>
+<p align="center"><span class="style26">perf1@x.values[[1]]</span></p>
+<p>I obtain the false positive rate and true positive rate of the more complicated model, <span class="stylecayenne">out2</span>, and then generate the ROC curves for both models.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">pred2 &lt;- prediction(fitted(out2), solea$Solea_solea)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">perf2 &lt;- performance(pred2, 'tpr', 'fpr')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(perf1@x.values[[1]], perf1@y.values[[1]], type='s', ylab='True positive rate (TPR)', xlab='False positive rate (FPR)', col=1) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(perf2@x.values[[1]], perf2@y.values[[1]], type='s', col=2, lwd=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c('salinity only', 'salinity, temperature, month'), lty=1, col=1:2, bty='n', cex=.9)</div>
+<br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><img src="../../images/lectures/lecture14/fig8.png" width="364" height="323" alt="fig 8"></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 8</strong> &nbsp;ROC curves from two logistic regression models</td>
+  </tr>
+</table>
+<p>The cut-off <em>c</em> = 1 corresponds to the bottom left corner of the graph while <em>c</em> = 0 corresponds to the top right corner of the graph. A ROC curve that lies near the 45&deg; line corresponds to a model that is no better than random guessing. Better models have ROC curves that are closer to the left and top edges of the unit square. If one curve always lies above or to the left of another, then the model that generated that curve is the better model in a classification sense. If the ROC curves of models cross  then the ranking can be ambiguous depending on the choice of <em>c</em>. In Fig. 8 we see that <span class="stylecayenne">out2</span>, the model that corresponds to the red curve, does as well as or better than <span class="style1">out1</span> everywhere except in one place in the top right corner of the plot. It turns out that this reversal occurs  approximately with the cut-off <em>c</em> = 0.2.</p>
+<h3><a name="AUC"></a>Area under the ROC curve (AUC)</h3>
+<p>Even though the ROC curves of these two models do reverse themselves briefly, it would be reasonable to conclude that <span class="stylecayenne">out2</span>, the more complicated model, does an overall better job of classifying observations. In other cases the situation could be far more ambiguous. Typically the ROC curves of different models will cross repeatedly making it difficult to say which model is best. A  solution to this problem lies in the  observation that better models have ROC curves that are closer to the left and top edges of the unit square. Put another way, the area under a ROC curve for a good model should be close to 1 (the area of the unit square). So, the area under the ROC curve (AUC) is a useful single number summary for comparing the ROC curves of different models. Although the ROC curves may cross, the ROC curve of the better model will enclose on average a greater area.</p>
+<p>AUC can also be given a probabilistic interpretation.
+  Suppose we have a data set in which the presence-absence variable consists of <em>n</em><sub>1</sub> ones and <em>n</em><sub>0</sub> zeros. Imagine constructing all possible <em>n</em><sub>1</sub> &times; <em>n</em><sub>0</sub> pairs of zeros and ones. Define the random variable <em>U<sub>i</sub></em> as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture14/Ui.gif" width="198" height="72" alt="Ui"></p>
+<p>Here <img src="../../images/lectures/lecture14/prob1.gif" width="26" height="28" align="absmiddle"> and <img src="../../images/lectures/lecture14/probzero.gif" width="28" height="28" align="absmiddle"> are the estimated probabilities (obtained from the logistic regression model) for the &quot;presence&quot; and &quot;absence&quot; observations in the i<sup>th</sup> pair. Thus <em>U<sub>i</sub></em> = 1 if the model assigns a higher probability to the current &quot;presence&quot; observation than it does to the current absence observation of the pair. When this happens the observations are said to be concordant, i.e., the ranking based on the model matches the data. From this we can calculate the concordance index of the model.</p>
+<p align="center"><img src="../../images/lectures/lecture14/concordance.gif" width="230" height="87" alt="concordance"></p>
+<p>It turns out the concordance index is equal to the AUC. Thus the AUC can be interpreted as giving the fraction of 0-1 pairs correctly classified by the model. If AUC = 0.5 then our model is doing no better than random guessing.</p>
+<p>The <span class="style19">ROCR</span> package can be used to obtain AUC. We can extract the AUC from a <span class="style102">predict</span> object using the <span class="style102">performance</span> function and specifying <span class="style1">'auc'</span> as the desired statistic. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">auc2 &lt;- performance(pred2, 'auc')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> slotNames(auc2)</div>
+<span class="style24">  [1] &quot;x.name&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y.name&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;alpha.name&quot;&nbsp;&nbsp; &quot;x.values&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y.values&quot;&nbsp;&nbsp;&nbsp; <br>
+  [6] &quot;alpha.values&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> auc2@x.name</div>
+<span class="style24">  [1] &quot;None&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> auc2@y.name</div>
+<span class="style24">  [1] &quot;Area under the ROC curve&quot;</span>
+<p>From the output  we see that the AUC value is stored in the <span class="style22">@y.values</span> slot.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">auc2@y.values[[1]]</div>
+<span class="style24">[1] 0.8594675</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">auc1 &lt;- performance(pred1, 'auc')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">auc1@y.values[[1]]</div>
+<span class="style24">[1] 0.7948718
+</p>
+</span>
+<p>The AUC for model <span class="stylecayenne">out2</span>, 0.859 exceeds that of model <span class="stylecayenne">out1</span>, 0.795, suggesting that <span class="stylecayenne">out2</span> is the better model in terms of its ability to correctly classify observations. </p>
+<h2><a name="cited"></a>Cited references</h2>
+<ul>
+  <li><a name="Aitchison"></a>Aitchison, J. 1986. <em>The Statistical Analysis of Compositional Data</em>. Chapman and Hall, London, England.</li>
+  
+  <li><a name="bliss"></a>Bliss, C. I. 1935. The calculation of the dosage-mortality curve. <em>Annals of Applied Biology</em> <strong>22</strong>: 134&ndash;167.</li>
+  <li><a name="delacruzrot"></a>de la Cruz Rot, Marcelino. 2005. Improving the presentation of results of logistic regression with R. <em>Bulletin of the Ecological Society of America</em> <strong>86</strong>(1): 41&ndash;48. <a href="http://www.esapubs.org/bulletin/backissues/086-1/bulletinjan2005.htm#et">http://www.esapubs.org/bulletin/backissues/086-1/bulletinjan2005.htm#et</a></li>
+  <li><a name="Elston"></a>Elston, D. A., A. W. Illius, I. J. Gordon. 1996. Assessment of preference among a range of options using log ratio analysis. <em>Ecology</em> <strong>77</strong>(8): 2538&ndash;2548.</li>
+  <li><a name="Zuur"></a>Zuur, Alain F., Elena N. Ieno, and Graham M. Smith. 2007. <em>Analysing Ecological Data.</em> Springer, New York. <a href="http://www.springerlink.com/content/g6632j/">UNC e-book</a></li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 14, 2012<br>
+      URL: <a href="lecture14.htm#lecture14" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture14.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

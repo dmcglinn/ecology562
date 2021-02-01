@@ -1,0 +1,126 @@
+seedlings <- read.csv('ecol 562/seedlings.csv')
+seedlings[1:4,]
+class(seedlings$Start.Date)
+
+#create the time to event variable
+seedlings$Age<-as.Date(seedlings$Last.Observed,"%m/%d/%Y")-as.Date(seedlings$Start.Date,"%m/%d/%Y")
+
+class(seedlings$Age)
+#convert date differences to a number to work with survival package
+seedlings$Age <- as.numeric(as.Date(seedlings$Last.Observed,"%m/%d/%Y")-as.Date(seedlings$Start.Date,"%m/%d/%Y"))
+class(seedlings$Age)
+
+
+library(survival)
+survfit(Surv(Age,SdlgCensor)~1, data=seedlings)->out0
+names(out0)
+methods(plot)
+plot(out0,ylab="S(t)",xlab="t")
+survfit(Surv(Age,SdlgCensor)~HabitCode, data=seedlings)->out1
+
+#separate KM estimates of survivor function by habitat
+survfit(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings)->out1
+plot(out1,col=1:3,ylab="S(t)", xlab="t")
+names(out1)
+out1$strata
+out1$surv
+
+#indicator variable for each habitat
+habitat<-rep(1:3,out1$strata)
+
+#graph separate KM survivor functions by habitat with confidence bands
+plot(out1,col=1:3,ylab="S(t)", xlab="t")
+
+#confidence bands for habitat 1
+lines(out1$time[habitat==1],out1$lower[habitat==1],col='grey40',lty=2,type='s')
+lines(out1$time[habitat==1],out1$upper[habitat==1],col='grey40',lty=2,type='s')
+#confidence bands for habitat 2
+lines(out1$time[habitat==2],out1$lower[habitat==2],col='tomato',lty=2,type='s')
+lines(out1$time[habitat==2],out1$upper[habitat==2],col='tomato',lty=2,type='s')
+#confidence bands for habitat 3
+lines(out1$time[habitat==3],out1$upper[habitat==3],col='seagreen',lty=2,type='s')
+lines(out1$time[habitat==3],out1$lower[habitat==3],col='seagreen',lty=2,type='s')
+legend('topright',legend=1:3,title='Habitat',col=1:3,lty=1,cex=.9,bty='n')
+
+
+#logrank test: emphasizes late survival
+survdiff(Surv(Age,SdlgCensor)~HabitCode,data=seedlings)->out1.diff1
+out1.diff1
+survdiff(Surv(Age,SdlgCensor)~HabitCode,data=seedlings,rho=0)->out1.diff1
+out1.diff1
+
+#Gehan-Wilcoxon variation of logrank test: emphasizes early survival
+survdiff(Surv(Age,SdlgCensor)~HabitCode,data=seedlings,rho=1)->out1.diff2
+out1.diff2
+
+#weights intermediate survival times the most
+survdiff(Surv(Age,SdlgCensor)~HabitCode,data=seedlings,rho=.5)->out1.diff3
+out1.diff3
+
+
+#cox model with habitat code as predictor
+coxph(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings)->out1.cox
+summary(out1.cox)
+coef(out1.cox)
+
+#hazard ratio for habitat 1 versus habitat 2
+exp(-coef(out1.cox))
+
+#sequential likelihood ratio test
+anova(out1.cox)
+
+
+#estimate survivor function from Cox model by habitat
+survfit(out1.cox,newdata=list(HabitCode=1))->cox1
+survfit(out1.cox,newdata=list(HabitCode=2))->cox2
+survfit(out1.cox,newdata=list(HabitCode=3))->cox3
+
+
+
+#display KM estimates of survivor function based on Cox model
+plot(out1,col=1:3,ylab="S(t)",xlab="t")
+lines(cox1$time,cox1$surv,lty=2,type='s')
+lines(cox2$time,cox2$surv,lty=2,type='s',col=2)
+lines(cox3$time,cox3$surv,lty=2,type='s',col=3)
+
+#use cluster function to obtain GEE model with robust variance estimate
+out2.cox<-coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+cluster(Parent),data=seedlings)
+summary(out2.cox)
+
+#add additional predictor: amount of light around parent
+out3.cox<-coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+cluster(Parent)+parentlight,data=seedlings)
+summary(out3.cox)
+coef(out1.cox)
+
+#check proportional hazards assumption graphically: plot log(-log(S(t))) for KM estimate
+plot(out1$time,log(-log(out1$surv)),type='n',ylab='log(-log(S(t)))',xlab='t')
+lines(out1$time[habitat==1],log(-log(out1$surv[habitat==1])),type='s',col=1)
+lines(out1$time[habitat==2],log(-log(out1$surv[habitat==2])),type='s',col=2)
+lines(out1$time[habitat==3],log(-log(out1$surv[habitat==3])),type='s',col=3)
+
+#formal test of proportional hazards assumption
+cox.zph(out3.cox)->out.zph
+out.zph
+
+#see if coefficients vary with time
+par(mfrow=c(2,2))
+plot(out.zph[1],ylim=c(-2,2))
+plot(out.zph[2],ylim=c(-2,2))
+plot(out.zph[3],ylim=c(-.05,.05))
+par(mfrow=c(1,1))
+
+
+# try quadratic light model
+out4.cox<-coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+cluster(Parent)+parentlight+I(parentlight^2),data=seedlings)
+summary(out4.cox)
+cox.zph(out4.cox)
+
+#stratify by habitat--separate baseline hazards
+out5.cox<-coxph(Surv(Age,SdlgCensor)~strata(HabitCode)+cluster(Parent)+parentlight+I(parentlight^2),data=seedlings)
+summary(out5.cox)
+
+#parametric survival model
+survreg(Surv(Age,SdlgCensor)~factor(HabitCode),data=seedlings,dist='weibull')->out.weib
+summary(out.weib)
+
+

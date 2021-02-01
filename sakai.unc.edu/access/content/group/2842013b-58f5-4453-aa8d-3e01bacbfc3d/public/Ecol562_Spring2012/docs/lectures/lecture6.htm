@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 6&mdash;Monday, January 23, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture6" id="lecture6"></a>Lecture 6&mdash;Monday, January 23, 2012</h1>
+<h3>Topics</h3>
+<ul>
+  <li><a href="lecture6.htm#error">An error bar plot for pairwise comparisons</a></li>
+  <li><a href="lecture6.htm#theoretical">Theoretical derivation</a></li>
+  <li><a href="lecture6.htm#implementing">Implementing the calculations in R</a></li>
+  <li><a href="lecture6.htm#producing">Producing the error bar plot</a></li>
+  <li><a href="lecture6.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture6.htm#diag">diag</a> extracts the diagonal elements of a matrix.</li>
+  <li><a href="lecture6.htm#for">for</a> defines a for loop, a programming tool that allows a set of instructions to be executed repeatedly, once for each value of a specified index vector. In R for loops are useful for short calculations but should never be used when the operations can otherwise be vectorized.</li>
+  <li><a href="lecture6.htm#numeric">numeric</a> constructs a numeric vector.</li>
+  <li><a href="lecture6.htm#qt">qt</a> is the quantile function for a <em>t</em>-distribution.</li>
+  <li><a href="lecture6.htm#uniroot">uniroot</a> is used to find a root (zero) of a function over a specified interval.</li>
+</ul>
+<h2><a name="error" id="error"></a>An error bar plot for pairwise comparisons</h2>
+<p>You should recall from your elementary statistics course that a one-sample &alpha;-level significance test that tests  whether the true value of a parameter is equal to zero is equivalent to determining whether the (1 &ndash; &alpha;)%-level confidence interval for that parameter contains zero. When we consider the two-sample case, testing the hypothesis that the two parameters are equal to each other, the two approaches are no longer equivalent. Using individual confidence intervals to carry out the two-sample hypothesis test leads to overly conservative results: one fails to reject the null hypothesis  too often. The individual 95% confidence intervals can overlap even though a hypothesis test would conclude that the parameter values are significantly different at &alpha; = .05. This lack of equivalence is  well-known  and has been discussed repeatedly in the literature (<a href="lecture6.htm#cumming">Cumming 2009</a>, <a href="lecture6.htm#schenker">Schenker and Gentleman 2001</a>). The bottom line is that error bar displays of individual parameter estimates and their 95% confidence intervals cannot reliably be used to assess the statistical significance of  differences between pairs of  parameters.</p>
+<p>A &quot;solution&quot; to this problem is to choose a confidence level for the individual confidence intervals that guarantees that non-overlapping pairs of confidence intervals do indicate statistically significant differences at &alpha; = .05. For independent parameters with roughly the same standard errors, the choice of 83.5% confidence intervals accomplishes this (<a href="lecture6.htm#goldstein">Goldstein and Healy 1995</a>, <a href="lecture6.htm#payton">Payton et al. 2000, 2003</a>). The more general case of dependent parameters has been discussed by <a href="lecture6.htm#afshartous">Afshartous and Preston (2010)</a> and their method can be adapted to our regression problem as I now demonstrate.</p>
+<h2><a name="theoretical"></a>Theoretical derivation</h2>
+<p>The basic idea is simple. Under the null hypothesis of no significant difference between the parameters, we wish to choose a confidence level &alpha; for the individual confidence intervals such that the probability that they overlap is 0.95 (for a 5% test). Now,</p>
+<p align="center"><img src="../../images/lectures/lecture6/overlap.gif" width="428" height="30" alt="overlap"></p>
+<p> The two individual confidence intervals can fail to overlap in two distinct ways. Let <em>b</em><sub>1</sub> and <em>b</em><sub>2</sub> be two slopes from two different weeks that we wish to compare, let <em>s</em><sub>1</sub> and <em>s</em><sub>2</sub> be their respective standard errors, and let <img src="../../images/lectures/lecture6/tquantile.gif" alt="t quantile" width="35" height="32" align="absmiddle"> be the <img src="../../images/lectures/lecture6/alphalevel.gif" alt="alpha level" width="48" height="25" align="absmiddle"> quantile of a <em>t</em>-distribution with degrees of freedom equal to the residual degrees of freedom of the regression model. </p>
+<p align="center"><img src="../../images/lectures/lecture6/fig1c.png" width="367" height="95" alt="fig 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;<em>b</em><sub>1</sub> &lt; <em>b</em><sub>2</sub> and the confidence intervals do not overlap</p>
+<p>Fig. 1 shows the case when <em>b</em><sub>1</sub> &lt; <em>b</em><sub>2</sub> and the confidence intervals fail to overlap. As the figure indicates the confidence intervals for the slopes from the two weeks don't overlap if the upper confidence limit of <em>b</em><sub>1</sub> is strictly less than the lower confidence limit of <em>b</em><sub>2</sub>, i.e., </p>
+<p align="center"><img src="../../images/lectures/lecture6/eq1.gif" alt="inequality 1" width="180" height="32" align="absmiddle">.</p>
+<p>The roles of <em>b</em><sub>1</sub> and <em>b</em><sub>2</sub> could be reverse with <em>b</em><sub>2</sub> &lt; <em>b</em><sub>1</sub>. In that case the confidence intervals don't overlap if the upper limit of <em>b</em><sub>2</sub> is strictly less than the lower limit of <em>b</em><sub>1</sub> so that </p>
+<p align="center"><img src="../../images/lectures/lecture6/eq2.gif" alt="inequality 2" width="180" height="32" align="absmiddle">. </p>
+<p>Thus we can write</p>
+<p align="center"><img src="../../images/lectures/lecture6/overlap2.gif" width="642" height="40" alt="overlap"></p>
+<p>I next carry out some algebra on these two inequalities starting by moving the parameters to the left side of the inequality.</p>
+<p align="center"><img src="../../images/lectures/lecture6/overlap3.gif" width="642" height="167" alt="overlap"></p>
+<p>In the last step I multiply both sides of the second inequality by minus one (thereby reversing the inequality).</p>
+<p>Recall from <a href="lecture5.htm#expressing">lecture 5</a> that <em>b</em><sub>1</sub> &ndash; <em>b</em><sub>2</sub> can be written as vector dot product.</p>
+<p align="center"><img src="../../images/lectures/lecture6/dotprod.gif" width="297" height="32" alt="dot product"></p>
+<p>In <a href="lecture5.htm#dotprodvariance">lecture 5</a> we also saw that the variance of this dot product is given by </p>
+<p align="center"><img src="../../images/lectures/lecture6/variance.gif" width="148" height="37" alt="variance"></p>
+<p>where &Sigma;<sub>b</sub> is the variance-covariance matrix of <em>b</em><sub>1</sub> and <em>b</em><sub>2</sub>. Under the null hypothesis that the mean difference of <em>b</em><sub>1</sub> and <em>b</em><sub>2</sub> is zero, the statistic,</p>
+<p align="center"><img src="../../images/lectures/lecture6/zstat.gif" alt="z-statistic" width="102" height="65" align="absmiddle">,</p>
+<p>the parameter estimate minus its mean divided by its standard error,  is a <em>z</em>-statistic. When ordinary least squares is used to obtain the parameter estimates of a regression model, the difference <em>b</em><sub>1</sub> &ndash;<em>b</em><sub>2</sub> will have a normal distribution.  Hence this <em>z</em>-statistic will have a <em>t</em>-distribution with degrees of freedom given by the residual degrees of freedom of the regression model. Using this fact  the probability that the intervals overlap can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture6/overlap4.gif" width="712" height="147" alt="overlap"></p>
+<p>where <em>T</em> is a <em>t</em>-statistic. The only unknown in this expression is &alpha; which controls the confidence level of our individual confidence intervals. We need to choose &alpha; so that the probability that the intervals overlap is equal to 0.95.</p>
+<h2><a name="implementing"></a>Implementing the calculations in R</h2>
+<p>The R function below calculates the probability of interval overlap using the formula derived above. I write it as a function of three quantities: the unknown &alpha;-level, the regression model, and the variance-covariance matrix for the parameters being compared.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func1 &lt;- function(alpha, model, sig) 1 - pt(-qt(1-alpha/2,model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*%c (1,-1)), model$df.residual) - pt(qt(1-alpha/2,model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*% c(1,-1)), model$df.residual, lower.tail=F)</div>
+<ul>
+  <li>The two  <em>t</em>-statistic probabilities are calculated with the <span class="style1">pt</span> function. The expression <span class="style7">pt(c,df)</span> calculates <em>P</em>(<em>T</em> &le; <em>c</em>). To obtain the reverse inequality I add the argument <span class="style22">lower.tail=F</span>, i.e., <span class="style7">pt(c,df,lower.tail=F)</span> =<em> P</em>(<em>T</em> &gt; <em>c</em>). Note: for continuous random variables P(<em>T</em> &le; <em>c</em>) = P(<em>T</em> &lt; <em>c</em>).</li>
+  <li><a name="qt"></a>The <em>t</em>-quantile, <img src="../../images/lectures/lecture6/tquantile.gif" alt="t quantile" width="35" height="32" align="absmiddle">, is calculated with the <span class="style1">qt</span> function: <span class="style7">qt(1-alpha/2,df)</span></li>
+  <li><a name="diag"></a>To obtain s<sub>1</sub> + s<sub>2</sub> I use the <span class="style1">diag</span> function to extract the diagonal entries of the variance-covariance matrix <span class="style7">sig</span>, take their square root with <span class="style11">sqrt</span>, and sum the result: <span class="style7">sum(sqrt(diag(sig)))</span>.</li>
+  <li>The degrees of freedom needed for the various <em>t</em>-functions is contained in the <span class="style22">df.residual</span> component of the <span class="style1">lm</span> model object, <span class="style7">model$df.residual</span>.</li>
+</ul>
+<p>I write a second function that takes this function evaluated at its arguments and subtracts 0.95 from it.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func2 &lt;- function(a,model,sigma) nor.func1(a,model,sigma)-.95</div>
+<p>Finding the &alpha; that makes the <span class="style7">nor.func1</span> function equal to 0.95 is the same as finding the &alpha; that makes the <span class="style7">nor.func2</span> function equal to zero. The reason for reformulating things in this way is that there are standard protocols for finding the zeros of functions. In R there is a function called <span class="style3">uniroot</span> that will do this for us.</p>
+<p>I next read in the data and fit the model. The model we need is the one I called <span class="style7">mod3a</span>. This is the re-parameterized version of model <span class="style7">mod3</span> that returns the estimates and standard errors of the individual slopes and intercepts, rather than the differences from the reference group, week 1.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz$richness &lt;- apply(rikz[,2:76], 1, function(x) sum(x&gt;0))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mod3 &lt;- lm(richness~NAP*factor(week), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mod3a &lt;- lm(richness~factor(week) + factor(week):NAP - 1, data=rikz)</div>
+<p><a name="numeric"></a>With four weeks of intercepts and slopes there are six pairwise comparisons we can make for each. I start by doing the calculations for the intercepts. I use the <span class="style1">numeric</span> function to initialize a vector with six slots, initially filled with zeros.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#initialize storage vector</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xvec1b &lt;- numeric(6)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> xvec1b</div>
+<span class="style24">[1] 0 0 0 0 0 0</span>
+<p>Next I extract the portion of the variance-covariance matrix that corresponds to just the four intercepts. This is the submatrix consisting of rows 1 through 4 and columns 1 through 4 of the matrix that is returned by <span class="style1">vcov</span> when applied to the <span class="style1">lm</span> model object.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#create sigma for intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">vmat &lt;- vcov(mod3a)[1:4,1:4]</div>
+<p><a name="for"></a>To find the confidence levels needed for the six different pairwise comparisons I use a nested <span class="style1">for</span> loop. The outside loop chooses the first member of the comparison while the inside loop chooses the second member of the comparison. The index for the outer loop <span class="style7">i</span> runs from <span class="style7">1:3</span> while the index for the inner loop <span class="style7">j</span> runs from <span class="style7">(i+1):4</span>. The result is that each comparison is different and we do a total of six.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ind &lt;- 1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">for(i in 1:3) {</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">&nbsp; for(j in (i+1):4){</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">&nbsp;&nbsp;&nbsp;&nbsp; sig &lt;- vmat[c(i,j), c(i,j)]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">&nbsp;&nbsp;&nbsp;&nbsp; #solve for alpha</div>
+<div class="style10" style="padding-left: 70px; text-indent:-70px">&nbsp;&nbsp;&nbsp;&nbsp; xvec1b[ind] &lt;- uniroot(function(x) nor.func2(x,mod3a, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">&nbsp;&nbsp;&nbsp;&nbsp; ind &lt;- ind+1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}} </div>
+<ul>
+  <li><span class="style7">ind</span> is the index of the storage vector that I initialize to 1. At the end of the inner loop its value is incremented by one so that the next time through the loop the result of the calculation will be stored in the next location in the vector.</li>
+  <li><span class="style7">sig</span> is a 2 &times; 2 matrix containing the two variances and the covariance of the parameter estimates being compared.</li>
+  <li><a name="uniroot"></a>The <span class="style1">uniroot</span> function requires a function of one variable as its first argument and an interval in which to search for the root as its second argument. To make the <span class="style7">nor.func2</span> function a function of one variable I make it a generic function using the <span class="style22">function(x)</span> notation where I make <em>x</em> the unknown &alpha; value we wish to find and I specify the regression model and variance-covariance matrix as the second and third arguments. The <span class="style1">uniroot</span> function returns a number of quantities but the number we want is contained in the <span class="style22">$root</span> component which I extract and store in the output vector.</li>
+</ul>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> xvec1b</div>
+<span class="style24">  [1] 0.1599852 0.1594201 0.1446751 0.1602253 0.1404851 0.1378858</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 1-xvec1b</div>
+<span class="style24">[1] 0.8400148 0.8405799 0.8553249 0.8397747 0.8595149 0.8621142</span>
+<p>The confidence levels are not all the same but they're fairly similar varying from 84.0% to 86.2%. So, each pairwise comparison requires a slightly different confidence level. This would be impossible to display graphically and when the values are this close will typically not make much of a difference, so I take the mean of the six values as the confidence level to use in constructing the individual confidence intervals. I round the value to three decimal places to avoid numerical problems with the <span class="style1">confint</span> function that will be used to calculate the confidence intervals.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1b &lt;- round(mean(1-xvec1b),3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1b</div>
+<span class="style24">[1] 0.85</span>
+<p>I next repeat these calculations for the slopes. This involves choosing rows 5 through 8 and columns 5 through 8 of the variance-covariance matrix.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#obtain confidence level for slopes</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #initialize storage</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xvec1c &lt;- numeric(6)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #create sigma for slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  vmat &lt;- vcov(mod3a)[5:8,5:8]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #location in storage vector</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ind &lt;- 1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  for(i in 1:3) {</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> &nbsp;for(j in (i+1):4) {</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  &nbsp;&nbsp;&nbsp;&nbsp; sig &lt;- vmat[c(i,j), c(i,j)]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  &nbsp;&nbsp;&nbsp;&nbsp; #solve for alpha</div>
+<div class="style10" style="padding-left: 70px; text-indent:-70px">  &nbsp;&nbsp;&nbsp;&nbsp; xvec1c[ind] &lt;- uniroot(function(x) nor.func2(x, mod3a, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  &nbsp;&nbsp;&nbsp;&nbsp; ind &lt;- ind+1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }}</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #average the confidence levels</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci1c &lt;- round(mean(1-xvec1c),3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 1-xvec1c</div>
+ <span class="style24"> [1] 0.8418427 0.8479629 0.8517045 0.8417620 0.8617851 0.8728127</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1c</div>
+<span class="style24">[1] 0.853</span>
+<p>This time the confidence levels vary from 84.2% to 87.3% so once again the mean, 85.3%, is probably a reasonable choice for all six.</p>
+<h2><a name="producing"></a>Producing the error bar plot</h2>
+<p>In <a href="lecture5.htm#plot">lecture 5</a> we created a data frame <span class="style7">out.mod</span> that contained the variables we needed for the error bar plot.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod &lt;- data.frame(est=coef(mod3a), confint(mod3a), week=rep(1:4,2), 
+  &nbsp;&nbsp;&nbsp; parm=rep(c('Intercept', 'Slope'), c(4,4)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(out.mod)[2:3] &lt;- c('low95','up95')</div>
+<p>I need to add to this the confidence intervals for the slopes and intercepts using the newly calculated confidence levels. Because the levels are slightly different for the slopes and intercepts I need to do two calculations and extract the intervals for the slopes from one and the intervals for the intercepts from the other.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#calculate confidence intervals for slopes and intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  slope.ci &lt;- confint(mod3a, level=ci1c)[5:8,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">int.ci &lt;- confint(mod3a, level=ci1b)[1:4,]</div>
+<p>I then add them as two new columns of the data frame <span class="style7">out.mod</span> first concatenating the intercept and slope left interval endpoints and then the right interval endpoints.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # add CI to the data frame from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out.mod$low50 &lt;- c(int.ci[,1], slope.ci[,1])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up50 &lt;- c(int.ci[,2], slope.ci[,2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up95 week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm<br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp; 11.405614&nbsp;&nbsp; 9.830654 12.98057382&nbsp;&nbsp;&nbsp; 1 Intercept<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.365321&nbsp;&nbsp; 1.919411&nbsp; 4.81123200&nbsp;&nbsp;&nbsp; 2 Intercept<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.034074&nbsp;&nbsp; 3.659578&nbsp; 6.40856863&nbsp;&nbsp;&nbsp; 3 Intercept<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp; 12.782828&nbsp;&nbsp; 9.948359 15.61729647&nbsp;&nbsp;&nbsp; 4 Intercept<br>
+  factor(week)1:NAP -1.900156&nbsp; -3.662941 -0.13737206&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  factor(week)2:NAP -1.474577&nbsp; -2.903985 -0.04516933&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  factor(week)3:NAP -1.913598&nbsp; -3.077255 -0.74994090&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  factor(week)4:NAP -8.900178 -11.829266 -5.97108970&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up50<br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.262940 12.5482878<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.316276&nbsp; 4.4143667<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.036842&nbsp; 6.0313051<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.726348 14.8393076<br>
+  factor(week)1:NAP&nbsp; -3.188863 -0.6114496<br>
+  factor(week)2:NAP&nbsp; -2.519565 -0.4295896<br>
+  factor(week)3:NAP&nbsp; -2.764305 -1.0628911<br>
+factor(week)4:NAP -11.041527 -6.7588292</span>
+<p>To produce the graph we can use the code from last time except that we need to add one more <span class="style1">panel.segments</span> call in the panel function to draw the error bars for the confidence intervals just calculated. Because they're shorter than the 95% confidence intervals I make them thicker and a lighter color.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add a new line to the panel function from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  dotplot(week~est|parm, data=out.mod, xlab='Estimate', ylab='Week', 
+  prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(2,1), 
+  panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #new line</div>
+<div class="style42" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low50[subscripts], y, out.mod$up50[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'))</div><br>
+<table width="600" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture6/fig2.png" width="460" height="345" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2</strong> &nbsp;Confidence intervals and point estimates of the slopes and intercepts from the regression model relating richness and NAP. Thin bars are 95% confidence intervals. Thick bars represent confidence intervals at confidence levels (here 85%) that permit making all pairwise comparisons between the different weeks.</td>
+  </tr>
+</table>
+<p>Using the dark, skinny bars that are the 95% confidence intervals we see that all the slopes and intercepts are significantly different from zero. To make pairwise comparisons between the slopes and intercepts across different weeks we check to see whether the short, thick error bars overlap. In the slopes column we see that the slopes in weeks 1, 2, and 3 are not significantly different from each other but they are each significantly different from the slope in week 4. In the intercepts panel we see that the week 1 and 4 intercepts are not significantly different, and the week 2 and week 3 intercepts are not significantly different, but the week 1 and week 4 intercepts are both significantly different from each of the week 2 and week 3 intercepts.</p>
+<h2><a name="cited"></a>Cited references</h2>
+<ul>
+  <li><a name="afshartous"></a>Afshartous, D. and R. A. Preston. 2010. Confidence intervals for dependent data: Equating non-overlap with<br>
+    statistical significance. <em>Computational Statistics and Data Analysis</em> <strong>54</strong>: 2296&ndash;2305.</li>
+  <li><a name="cumming"></a>Cumming, G. 2009. Inference by eye: Reading the overlap of independent confidence intervals. <em>Statistics in Medicine</em> <strong>28</strong>: 205&ndash;220.</li>
+  <li><a name="schenker"></a>Schenker, N. and J. F. Gentleman. 2001. On judging the significance of differences by examining overlap between confidence intervals. <em>The American Statistician</em>. <strong>55</strong>: 182&ndash;186.</li>
+  <li><a name="goldstein"></a>Goldstein, H. and Healy, M. 1995. The graphical presentation of a collection of means. <em>Journal of the Royal Statistical Society, Series A</em> <strong>159</strong>: 175&ndash;177.</li>
+  <li><a name="payton"></a>Payton M. E., Miller, A. E. , and Raun, W. R. 2000. Testing statistical hypotheses using standard error bars and confidence intervals. <em>Communications in Soil Science and Plant Analysis</em> <strong>31</strong>: 547&ndash;552.</li>
+  <li>  Payton, M. E., Greenstone, M. H., and Schenker N. 2003. Overlapping confidence intervals or standard error intervals: What do they mean in terms of statistical significance? 6pp. <em>Journal of Insect Science</em> <strong>3</strong>: 34.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum of the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 24, 2012<br>
+      URL: <a href="lecture6.htm#lecture6" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture6.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

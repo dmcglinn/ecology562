@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 9</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign9" id="assign9"></a>Assignment 9 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, March 23, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p>The data set for this assignment is  <a href="../../data/ozone.txt">ozone.txt</a>, a tab-delimited text file.</p>
+<h2 align="left">Overview</h2>
+<p align="left">The data set comes from a study of the relationship between atmospheric ozone concentration and meteorology in the Los Angeles basin. It was first presented by Breiman and Friedman (1985) and was further analyzed by Faraway (2006). The data consist of daily measurements of ozone concentration (maximum one hour average) and eight meteorological quantities for 330 days of 1976. The variables are listed below.</p>
+<p align="left"><strong>Dependent Variable</strong></p>
+<p align="left"><span class="style8">&nbsp;&nbsp;03:</span> Upland ozone concentration (ppm)<br>
+</p>
+<p align="left"><strong>Predictors </strong></p>
+<ol>
+  <li><span class="style8">temp:</span> Sandburg Air Force Base temperature (&deg;C) </li>
+  <li><span class="style8">ibh:</span> inversion base height (ft.) </li>
+  <li><span class="style8">dpg:</span> Daggett pressure gradient (mm Hg) </li>
+  <li><span class="style8">vis: </span>visibility (miles) </li>
+  <li><span class="style8">vh:</span> Vandenburg 500 millibar height (in) </li>
+  <li><span class="style8">humidity:</span> humidity (percent)</li>
+  <li><span class="style8">ibt:</span> inversion base temperature (&deg;F) </li>
+  <li><span class="style8">wind:</span> wind speed (mph) </li>
+  <li><span class="style8">day:</span> day of the year to account for possible seasonal effects not captured by the meteorological variables</li>
+</ol>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Fit an additive model that includes <span class="style8">O3</span> as the response along with separate smooths of each of the nine predictor variables.</li>
+  <li>According to the Wald tests in the summary table two of the smooths may not be statistically significant. The reported Wald tests are somewhat unreliable though. Better statistical tests can be obtained with <span class="style22">method=&quot;ML&quot;</span>. Refit the model using <span class="style22">method=&quot;ML&quot;</span> and try dropping the two variables in question one at a time. Use the <span class="style2">anova</span> function with <span class="style22">test='F'</span> to compare two nested models at a time. Remove those variables whose smooths are not significant as reported by  the <span class="style2">anova</span> function. </li>
+  <li>Plot the smooths and determine  which of the smooths are roughly linear. Replace the smooths for those variables with parametric linear terms.</li>
+  <li>Plots of the four remaining smooths suggest that a piecewise linear curve with two pieces might approximate the pattern displayed by the smooth. Separately try replacing each of the four smooths with an appropriate piecewise linear curve. Estimate the location of the breakpoint (knot) by fitting a large number of models and selecting the model that provides the best fit.</li>
+  <li>Argue that it is statistically defensible to replace only one of the smooths with a piecewise linear curve. (Remember that the estimated breakpoint location should count as one of the estimated parameters.)</li>
+  <li>For this variable, plot the smooth along with the replacement breakpoint model on the same graph so that the two functions can be readily compared.</li>
+</ol>
+<h2>Hints</h2>
+<ul>
+<li><strong>Question 4:</strong> To fit a breakpoint (BP) model for the variable <em>x</em> at breakpoint <em>c</em>, include the following two terms in the regression model: <span class="style10">x + I((x-c)*(x&gt;c))</span>. These two terms together should replace <span class="style10">s(x)</span>. For each of the four smooths you should take your full GAM from Question 3 and  replace only one smooth in that model with the corresponding BP terms. Loop through possible values of the breakpoint and choose the best one. Repeat this separately for each smooth keeping the rest of the model as it was in Question 3. So, in each case the model   you are fitting should contain 3 smooths, 4 linear terms, and 1 BP term. The difference between the models is that a different smooth gets swapped with the BP terms, but the rest of the smooths are still there. Finally you should compare each BP model separately to the GAM from Question 3.</li>
+
+  <li><strong>Question 6</strong>: For the smooth just plot the GAM from Question 3 with the select argument to select the smooth you want. Overlay the breakpoint term on top of this graph. You will need to choose an intercept of the breakpoint regression model so that the smoother and the breakpoint regression model have the same <em>x</em>- and <em>y</em>-coordinates at the left edge of the graph. It will take trial and error  to determine the <em>y</em>-coordinate of the smooth at the left-hand endpoint. Once you obtain this you can then figure out how much you need to add to the BP terms to cause the BP model to start at the same point. There is an example of doing this in the lecture 26 notes where I overlay the regression term for log(distance) on the smooth of distance.</li>
+</ul>
+<h2>Cited references</h2>
+<ul>
+  <li>Breiman, L. and J. H. Friedman. 1985. Estimating optimal transformations for multiple regression and correlation. <em>Journal of the American Statistical Association</em> 80: 580&ndash;598.</li>
+  <li>Faraway, Julian J. 2006. <em>Extending the Linear Model with R: Generalized Linear, Mixed Effects and Nonparametric Regression Models</em>. Chapman &amp; Hall/CRC Press: Boca Raton, FL.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 21, 2012<br>
+      URL: <a href="assign9.htm#assign9" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign9.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

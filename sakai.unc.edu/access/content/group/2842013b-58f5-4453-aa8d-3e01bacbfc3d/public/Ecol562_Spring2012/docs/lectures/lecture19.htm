@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 19&mdash;Wednesday, February 22, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture19" id="lecture19"></a>Lecture 19&mdash;Wednesday, February 22, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li>
+    <a href="lecture19.htm#random">Random effects approach to dealing with observational heterogeneity</a><a href="lecture19.htm#types"></a>
+  </li>
+  <li><a href="lecture19.htm#multilevel">Multilevel formulation of the random slopes and intercepts model</a></li>
+    <li><a href="lecture19.htm#ranlike">The likelihood of a mixed effects model</a>
+      <ul>
+      <li><a href="lecture19.htm#cluster">Likelihood  of the data at the cluster level</a></li>
+      <li>        <a href="lecture19.htm#joint">Joint distribution of the data and random  effects </a></li>
+      <li><a href="lecture19.htm#obtaining">Obtaining the  marginal likelihood of the data</a></li>
+      <li><a href="lecture19.htm#predicting">Contrasting fixed and random coefficients</a></li>
+    </ul>
+
+  <li><a href="lecture19.htm#correlation">The random intercepts model: a minimal model for correlated data</a></li>
+</ul>
+<h3><a name="random" id="random"></a>Random effects approach to dealing with observational heterogeneity</h3>
+<p>The random effects analog of the separate slopes and intercepts regression model  is the random slopes and intercepts model. </p>
+<p align="center"><img src="../../images/lectures/lecture19/random&#32;slope.gif" width="280" height="58" alt="random slope"></p>
+<p>with <img src="../../images/lectures/lecture19/epsilon.gif" alt="epsilon" width="123" height="35" align="absmiddle">. In this model &beta;<sub>0</sub> and &beta;<sub>1</sub> represent the population-average coefficients while <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> are the deviations from this population average for coral core <em>i</em>. &beta;<sub>0</sub> and &beta;<sub>1</sub> can also be interpreted as the regression coefficients for a typical core, i.e., one  corresponding to the middle of the distribution of random effects. The intercept for core <em>i</em> is <img src="../../images/lectures/lecture19/beta0i&#32;eq.gif" alt="beta0i" width="110" height="27" align="absmiddle"> and the slope is <img src="../../images/lectures/lecture19/beta1i&#32;eq.gif" width="105" height="27" align="absmiddle">. Thus the random slopes and intercepts formulation of this model is also the following.</p>
+<p align="center"><img src="../../images/lectures/lecture19/random&#32;slopeandints.gif" alt="random slopes" width="192" height="30" align="absmiddle"></p>
+<p><a name="ests"></a>What makes this model different from the fixed effects model is that <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> are not directly estimated but instead are assumed to be drawn from a multivariate normal distribution.</p>
+<p align="center"><img src="../../images/lectures/lecture19/random&#32;dist2.gif" width="290" height="83" alt="multivariate 1"></p>
+<p>The diagonal entries of the multivariate normal covariance matrix are the individual variances of the intercept and slope random effects and the off-diagonal entry is their covariance. Because the correlation coefficient is defined by <img src="../../images/lectures/lecture19/correlation.gif" alt="rho" width="75" height="57" align="absmiddle">, an equivalent way of writing this distribution (and the one used by R) is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture19/random&#32;dist.gif" width="335" height="83"></p>
+<p>Rather than estimate the individual <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> we instead estimate the parameters of the covariance matrix of the multivariate normal distribution: &rho;, &tau;<sub>0</sub>, and &tau;<sub>1</sub>. In the case of a normal response the likelihood simplifies in such a way that the individual <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> do not appear. For a non-normal response the random effects have to be numerically integrated out of the log-likelihood to yield what's called a marginal log-likelihood, which is then maximized.</p>
+<p>The upstart is that in the random slopes and intercepts model we   assume that the individual cores in the sample are drawn from a population of cores. The  slopes and intercepts of individual cores are just typical random realizations from the  population of slopes and intercepts from which they were drawn. Fig. 1 illustrates this situation for two specific cores that are numbered 1 and 2.</p>
+<p align="center"><img src="../../images/lectures/lecture19/fig1.png" width="317" height="251" alt="fig. 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;Illustration of the random slopes and intercepts model</p>
+<h2><a name="multilevel"></a>Multilevel formulation of the random slopes and intercepts model</h2>
+<p>It is common practice, particularly in sociology and political science, to formulate the random slopes and intercepts model slightly differently. Because it represents a hierarchy in the data, here annual rings nested in cores, it is convenient to write separate equations for each level of the hierarchy. These equations when combined yield the usual random slopes and intercepts model. </p>
+<p>The level-1 model is a model for the individual rings contained within coral cores. Here, the level-1 model is just the trend model.</p>
+<p align="center"><strong>Level 1 model:</strong><img src="../../images/lectures/lecture19/random&#32;slopeandints.gif" alt="random slopes" width="192" height="30" align="absmiddle">, where <img src="../../images/lectures/lecture19/epsilon.gif" alt="epsilon" width="123" height="35" align="absmiddle">, <img src="../../images/lectures/lecture19/i.gif" alt="i" width="100" height="25" align="absmiddle">, <img src="../../images/lectures/lecture19/j.gif" alt="j" width="105" height="26" align="absmiddle"></p>
+<p>The individual rings are called the level-1 units while the cores are called the level-2 units. The subscripts on the intercept and slope indicate that these parameters can potentially vary across cores, i.e., each core has its own separate regression equation. These equations define the level-2 model.</p>
+<p align="center"><strong>Level-2 Model:</strong> <img src="../../images/lectures/lecture19/level2.gif" alt="level2" width="133" height="72" align="absmiddle"> where <img src="../../images/lectures/lecture19/level2variance.gif" alt="level2 var" width="290" height="83" align="absmiddle"></p>
+<p>When we substitute the level-2 equations into the level-1 model we obtain the random slopes and intercepts model as before. In the multilevel formulation this combined expression is called the composite equation.</p>
+<p align="center"><strong>Composite equation: </strong><img src="../../images/lectures/lecture19/composite&#32;eq.gif" alt="composite" width="280" height="33" align="absmiddle"></p>
+<p>The multilevel formulation is a great bookkeeping tool. In the coral core model variables that characterize individual annual rings, such as Year, appear in the level-1 equation. Year is a level-1 variable. Variables that characterize individual cores (and therefore all of the rings contained in that core) appear in the level-2 equations. Such variables are called level-2 variables. Notice that we have a choice of whether we enter a level-2 variable into the level-2 intercept equation, the level-2 slope equation, or both. </p>
+<p>As an example suppose we decide to add reef type as a predictor in our model. Reef type is a characteristic of cores and hence is a level-2 predictor and should be added to the level-2 equations. It is also a categorical variable with three levels and hence will have to be added to the regression equation as two dummy variables. In the equations below I add it to both the intercept and the slope equation thus allowing both the intercept and slope to vary depending on the type of reef from which the core came.</p>
+<blockquote>
+  <p><strong>Level 1 model:</strong><img src="../../images/lectures/lecture19/random&#32;slopeandints.gif" alt="random slopes" width="192" height="30" align="absmiddle"></p>
+  <p><strong>Level-2 Model:</strong><img src="../../images/lectures/lecture19/level&#32;2a.gif" alt="level 2a" width="440" height="75" align="absmiddle"></p>
+</blockquote>
+<p>Now we have three population models, one for each reef type. The individual core regression lines in turn cluster about one of three population mean lines depending upon the reef type to which they belong. Fig. 2 illustrates this situation for two of the reef types, reef type 1 and reef type 2, and four cores, two from each reef type.</p>
+<p align="center"><img src="../../images/lectures/lecture19/fig2.png" width="467" height="249" alt="fig. 2"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 2</strong> &nbsp;Adding reef type as a level-2 predictor</span></p>
+<p align="left">From a modeling standpoint we would next test whether we need three population models (one for each reef type) to characterize the population of cores or just a single population model. Thus by using a mixed effects model we are able to include reef type in the model while at the same time letting each core have its own regression equation, something that was not possible in a purely fixed effects model.</p>
+<h2>
+  <a name="ranlike"></a>The likelihood of a  mixed effects model</h2>
+The switch from a separate slopes and intercepts (pure fixed effects) model to a random slopes and intercepts model leads to a fundamental change in the likelihood that is being maximized. In what follows I use generic notation for the distributions involved because the ideas carry over to other distributions besides the normal distribution that we're focusing on at the moment.  I  assume that the observations come in clusters and that the clusters are a random sample from a population of clusters.
+<h3><a name="cluster"></a>Likelihood of the data at the cluster level</h3>
+<p>Methods employing maximum likelihood all start from the same point, the likelihood function. Recall that if we have a random sample of observations, <img src="../../images/lectures/lecture19/y1y2yn.gif" width="111" height="28" align="absmiddle">, that are independent and identically distributed with probability density (mass) function <img src="../../images/lectures/lecture19/density.gif" alt="density" width="72" height="32" align="absmiddle"> where <strong>&theta;</strong> is potentially a vector of parameters of interest, then the likelihood of our sample is the product of the individual density functions. For the  normal regression model <strong>&theta;</strong> will consist of the set of regression parameters <strong>&beta;</strong> and the variance of the response &sigma;<sup>2</sup>, so that the likelihood can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture19/likelihood1.gif" width="248" height="57"></p>
+<p>With correlated data, i.e., structured data, the situation is more complicated. The data consist of observations <img src="../../images/lectures/lecture19/yij.gif" width="23" height="30" align="absmiddle"> where <em>i</em> indicates the level-2 unit and <em>j</em> the level-1 observation within that unit. Typically the level-2 units will be independent but  the level-1 units will not be. If we let</p>
+<p align="center"><img src="../../images/lectures/lecture19/yvec.gif" width="503" height="38" alt="yvec"></p>
+<p>so that <img src="../../images/lectures/lecture19/yivec.gif" alt="yi vector" width="183" height="38" align="absmiddle">, then we can write the likelihood in terms of the <em>m</em> clusters as follows where I include additional parameters that relate to the distribution of clusters.</p>
+<h2 align="center"><img src="../../images/lectures/lecture19/prob&#32;of&#32;y.gif" width="407" height="57" alt="prob of y"></h2>
+<h3><a name="joint"></a>Joint distribution of the data and random effects</h3>
+<p>If we choose to model the cluster structure using a mixed effects model then the <img src="../../images/lectures/lecture19/yij.gif" alt="" width="23" height="30" align="absmiddle"> are not the only random quantities to consider. The intercept <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle"> and  slope <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle">  random effects also have a distribution. Thus the natural starting place in constructing the likelihood is with the joint density function of the data and random effects in cluster <em>i</em>, <img src="../../images/lectures/lecture19/joint.gif" alt="joint" width="215" height="38" align="absmiddle">. From elementary probability theory we can write</p>
+<p align="center"><img src="../../images/lectures/lecture19/conditional3.gif" width="522" height="38" alt="conditional"></p>
+<ul>
+  <li>Here <img src="../../images/lectures/lecture19/conditional2.gif" alt="conditional" width="212" height="38" align="absmiddle"> is the conditional distribution of the observed data assuming the values of the random effects are known. This will correspond to the probability model we assume for the data at level 1. For normal models this density will also be a function of the vector of fixed effect parameters <strong>&beta;</strong> and the variance <img src="../../images/lectures/lecture19/sigma2.gif" width="26" height="26" align="absmiddle">.</li>
+  <li><img src="../../images/lectures/lecture19/random&#32;marginal.gif" alt="random marginal" width="87" height="32" align="absmiddle"> is the joint distribution of the random  effects. In all of the examples in this course this will assumed to be multivariate normal with mean zero and  variance matrix that was given above.</li>
+</ul>
+<p>Let <img src="../../images/lectures/lecture19/yivec.gif" alt="yi vector" width="183" height="38" align="absmiddle">. If we include the  regression parameters in the likelihood then the joint distribution of the data and the random effects in cluster <em>i</em> would be written as follows</p>
+<p align="center"><img src="../../images/lectures/lecture19/joint3.gif" width="685" height="38" alt="joint"></p>
+<p>Conditional on the value of the random effects, the individual <img src="../../images/lectures/lecture19/yij.gif" alt="" width="23" height="30" align="absmiddle"> in  cluster <em>i</em> are assumed to be independent. So we have</p>
+<p align="center"><img src="../../images/lectures/lecture19/joint4.gif" width="703" height="102" alt="joint"></p>
+<p>Here I use <img src="../../images/lectures/lecture19/marginaly.gif" width="153" height="38" align="absmiddle"> to denote the distribution of the individual <img src="../../images/lectures/lecture19/yij.gif" alt="" width="23" height="30" align="absmiddle"> conditional on the random effects and the regression and variance parameters.</p>
+<h3><a name="obtaining"></a>Obtaining the  marginal likelihood of the data</h3>
+<p>To go from a joint probability of <img src="../../images/lectures/lecture19/yij.gif" alt="" width="23" height="30" align="absmiddle">, <img src="../../images/lectures/lecture19/u0i.gif" alt="u0i" width="27" height="27" align="absmiddle">, and   <img src="../../images/lectures/lecture19/u1i.gif" alt="u1i" width="25" height="27" align="absmiddle"> to a marginal probability for <img src="../../images/lectures/lecture19/yij.gif" alt="" width="23" height="30" align="absmiddle"> we integrate over the possible values of the random effects. Thus the marginal likelihood for cluster <em>i</em> is the following. </p>
+<p align="center"><img src="../../images/lectures/lecture19/marginal&#32;2.gif" width="662" height="80" alt="margin"></p>
+<p>Putting all these pieces together we can write the marginal likelihood of our data as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture19/marginal3a.gif" width="712" height="237" alt="margin"></p>
+<p>For the random intercepts model we've been considering the distribution of the random effects is normal and the distribution of the response given the random effects is normal. Thus both functions <em>k</em> and <em>h</em> in the last expression are normal densities. It turns out under this scenario that <em>p</em> is also a normal density and its mean and variance can be found from the means and variances of <em>k</em> and <em>h</em>. Thus with a normal model it is possible to find the marginal likelihood without doing the integration shown in the last expression. This is what the <span class="style1">lme</span> function of the <span class="style19">nlme</span> package does. For  models in which <em>k</em> is not a normal distribution, e.g., binomial, Poisson or some other member of the exponential family, the integration needs to be carried out numerically in order to obtain the marginal likelihood. This is what the <span class="style13">lmer</span> function of the <span class="style19">lme4</span> package does. </p>
+<h3><a name="predicting"></a>Contrasting fixed and random coefficients</h3>
+<p>It is worth comparing what the likelihood looks like for the separate slopes and intercepts model.</p>
+<p align="center"><img src="../../images/lectures/lecture19/marginal3.gif" width="270" height="60" alt="marginal"></p>
+<p>In this likelihood the vector <strong>&beta;</strong> will also include the coefficients of the various dummy variables (now fixed effects) that are used to indicate  group  membership. These  can then be used to obtain estimates of the slopes and intercepts of each group. So in the separate intercepts model we obtain estimates of all the group slopes and intercepts. In the random intercepts model we assume the intercepts arise from a common distribution and then  estimate only the parameters of that distribution. If so then how can we get predictions of the intercept and slope random effects. How is this possible if the random effects are integrated out of the likelihood and are no longer present? </p>
+<p>The predictions of the random effects are not obtained as a result of maximizing the likelihood. What happens is that after having estimated the regression parameters and variances in the marginal likelihood  these estimates are used to obtain  predictions of the  random effects. Formally the predictions are the conditional means of the random effects distribution given the data and the regression parameters and   are obtained using what amounts to a generalized least squares formula. The fact that they are the means of distributions gives them a distinct Bayesian flavor and they're sometimes called empirical Bayes estimates (also best linear unbiased predictors or BLUPs). So, unlike the separate slopes and intercepts model the steps taken to obtain  predictions of the random slopes and intercepts are entirely post hoc.</p>
+<h2><a name="correlation" id="correlation"></a>The random intercepts model: a minimal model for correlated data</h2>
+<p>Fitting a  random intercepts model is a minimal way to account for lack of independence in a hierarchical experimental design. Suppose we have a split plot design in which treatment A with two levels is randomly applied to  groups (whole plots) and treatment B with two levels is random applied to individuals (split plots) separately within each group. The whole plots could be aquariums (with whole plot treatment &quot;temperature&quot;) and the split plots could be individual fish in the tanks (with split plot treatment &quot;species of fish&quot;).</p>
+<p align="center"><img src="../../images/lectures/lecture19/lec19a.png" width="515" height="190" alt="Fig. 3"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 3</strong> &nbsp;Split plot design with whole plot treatment A and split plot treatment B</span></p>
+<p>A minimal additive model that addresses the observational heterogeneity present in this design is the following random intercepts model (written in composite form).</p>
+<p align="center"><img src="../../images/lectures/lecture19/splitplot.gif" width="292" height="30" alt="splitplot"></p>
+<p>where <img src="../../images/lectures/lecture19/u0variance.gif" alt="u0 variance" width="120" height="35" align="absmiddle"> and <img src="../../images/lectures/lecture19/epsilon.gif" alt="epsilon" width="123" height="35" align="absmiddle"> and <span class="style8">trtA</span> and <span class="style8">trtB</span> are dummy variables indicating the treatment. (A more general model would allow also for an interaction between A and B but this is an unnecessary complication for the point I wish to make.) </p>
+<p>Consider the following three experimental units: two of them come from same group (level-2 unit <em>r</em>) and one comes from a different group (level-2 unit <em>s</em>). Here are their three regression equations.</p>
+<p align="center"><img src="../../images/lectures/lecture19/heterogeneity.gif" width="437" height="95"></p>
+<p>Notice that both observations from level-2 unit <em>r</em> share the common random effect <img src="../../images/lectures/lecture19/u0r.gif" alt="u0r" width="28" height="27" align="absmiddle">. The observation from level-2 unit <em>s</em> on the other hand possesses a different random effect, <img src="../../images/lectures/lecture19/u0s.gif" alt="u0s" width="28" height="27" align="absmiddle">. The random effect <img src="../../images/lectures/lecture19/u0r.gif" alt="u0r" width="28" height="27" align="absmiddle"> then accounts for all those unmeasured characteristics that make group <em>r</em> different from any other group. Its presence causes members of this group to be similar to each other but different from members of other groups.</p>
+<p><a name="ICC"></a>It can be shown that the random intercepts model induces a correlation in the observations coming from the same group. The relevant covariances are the following.</p>
+<p align="center"><img src="../../images/lectures/lecture19/covresults.gif" width="647" height="110" alt="covariance"></p>
+<p>Observations from the same group  (<em>i</em> = <em>k</em>) have a positive covariance, <img src="../../images/lectures/lecture19/tau02.gif" alt="tau2" width="23" height="27" align="absmiddle">, while observations from different groups (<em>i</em> &ne; <em>k</em>) have a covariance of zero. So observations coming from the same group are more similar (have positive covariance) than observations coming from different groups (zero covariance). </p>
+<p>Using the definition of correlation we can translate this statement about covariance into one about correlation. For distinct observations with <em>j</em> &ne; <em>l</em> we have</p>
+<p align="center"><img src="../../images/lectures/lecture19/corr.gif" width="528" height="178" alt="correlation"></p>
+<p>and so we see that observations coming from the same level-2 unit (group) are correlated while observations from different level-2 units are uncorrelated. </p>
+<p>Observe that the correlation structure is really very simple. Any two observations from the same level-2 unit have the same correlation. If we let <img src="../../images/lectures/lecture19/phi.gif" alt="phi" width="100" height="55" align="absmiddle"> then the correlation matrix for any level-2 unit takes the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture19/rho.gif" width="187" height="133" alt="rho"></p>
+<p name="compound"><a name="compound"></a>Such a constant correlation matrix is called exchangeable. If we assemble these exchangeable correlation matrices &rho; for all the level-2 units into a single matrix in which all observations are represented we obtain the following block-diagonal correlation structure for the model. </p>
+<p align="center"><img src="../../images/lectures/lecture19/Rmatrix.gif" width="205" height="132" alt="R matrix"></p>
+<p>where each &rho;<sub>i</sub> is an exchangeable correlation matrix like the one shown above and <strong>0</strong> is a matrix of zeros.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 22, 2012<br>
+      URL: <a href="lecture19.htm#lecture19" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture19.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,138 @@
+#obtain data
+ext.temp<-read.table('ecol 562/coral cores.txt',sep=',',header=T)
+
+#stack extension rates from individual cores in one column
+#create year and core variables
+ext.rates<-data.frame(unlist(ext.temp[,2:15]),rep(ext.temp$Year,14),rep(names(ext.temp)[2:15],rep(nrow(ext.temp),14)))
+names(ext.rates)<-c('Ext.rate','Year','Core')
+
+#create identifier of the Core the data came from
+ext.rates$reef.type<-substr(ext.rates$Core,1,2)
+#sort data in core and year order
+ext.rates1<-ext.rates[order(ext.rates$Core,ext.rates$Year),]
+#remove missing observations introduced by Excel
+ext.rates2<-ext.rates1[!is.na(ext.rates1$Ext.rate),]
+
+#examine the core time series
+library(lattice)
+xyplot(Ext.rate~Year|Core, data=ext.rates2,type='o')
+
+#fit a common regreession model
+model1<-lm(Ext.rate~Year, data=ext.rates2)
+coef(model1)
+#fit a common regression model with year centered at 1967
+model1<-lm(Ext.rate~I(Year-1967), data=ext.rates2)
+coef(model1)
+#fit a model in which each reef type has its own regression model
+model2<-lm(Ext.rate~factor(reef.type)+I(Year-1967)+factor(reef.type):I(Year-1967), data=ext.rates2)
+#fit a model in which each reef type has its own slope but each core has its own intercept
+model3<-lm(Ext.rate~Core+I(Year-1967)+factor(reef.type):I(Year-1967), data=ext.rates2)
+#fit a model in which each core has its own slope and intercept
+model4<-lm(Ext.rate~Core+I(Year-1967)+Core:I(Year-1967), data=ext.rates2)
+#compare the models
+AIC(model1,model2,model3,model4)
+#test the separate slope by core against the separate slope by reef type models
+anova(model3,model4)
+
+#locate starting year for each core time series
+tapply(ext.rates2$Year,ext.rates2$Core,function(x) x[1])
+
+#split residuals into separate groups by Core
+list.resids<-split(residuals(model4),ext.rates2$Core)
+length(list.resids)
+list.resids[[1]]
+
+#insert 30 missing values between the residuals from different cores
+long.resids<-list.resids[[1]]
+for(i in 2:length(list.resids)){
+long.resids<-c(long.resids,rep(NA,30))
+long.resids<-c(long.resids,list.resids[[i]])}
+
+long.resids[101:150]
+
+#examine the ACF out to lag 30
+acf(long.resids, na.action=na.pass, lag.max=30, ci=1-.05/30, ylim=c(-.2,.2), main=list('ACF plot',cex=1))
+
+#displayed N for confidence bands is incorrect
+#calculate sample size at each lag
+
+#number of observations used in lag 30
+sum((table(ext.rates2$Core)-30)*((table(ext.rates2$Core)-30)>0))
+#number of observations used at each lag
+sapply(0:30,function(k) sum((table(ext.rates2$Core)-k)*((table(ext.rates2$Core)-k)>0)))->N.samp
+
+#draw ACF with correct confidence bands
+acf(long.resids, na.action=na.pass, lag.max=30, ci.col='white', ylim=c(-.2,.2), main=list('ACF plot',cex=1))
+lines(0:30,-qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+lines(0:30,qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+
+#draw PACF with correct confidence bands
+pacf(long.resids, na.action=na.pass, lag.max=30, ci.col='white', ylim=c(-.2,.2), main=list('partialACF plot',cex=1))
+lines(0:30,qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+lines(0:30,-qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+
+############# Adding periodic terms ##############
+
+#determine the best period for a trigonometric model
+my.aic<-matrix(NA,ncol=2,nrow=60)
+for(k in 1:60) {
+update(model4,.~.+cos(2*pi/k*Year)+sin(2*pi/k*Year))->tmodel4
+my.aic[k,]<-c(k,AIC(tmodel4))}
+plot(my.aic[,1],my.aic[,2],type='l',xlab='Period',ylab='AIC')
+which.min(my.aic[,2])
+my.aic[36,]
+
+#add periodic term to regression model with best period
+update(model4,.~.+cos(2*pi/36*Year)+sin(2*pi/36*Year))->period.model4
+AIC(model4,period.model4)
+
+#check to see if periodicity in ACF is removed
+list.resids2<-split(residuals(period.model4),ext.rates2$Core)
+long.resids2<-list.resids2[[1]]
+ for(i in 2:length(list.resids2)){
+ long.resids2<-c(long.resids2,rep(NA,30))
+ long.resids2<-c(long.resids2,list.resids2[[i]])}
+
+acf(long.resids2, na.action=na.pass, lag.max=30, ci.col='white', ylim=c(-.2,.2), main=list('ACF plot',cex=1))
+lines(0:30,-qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+lines(0:30,qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)
+
+
+################ Adding a correlation structure for residuals ###########
+
+#refit model 4 using the gls function of nlme package
+library(nlme)
+gmodel4<-gls(Ext.rate~Core+I(Year-1967)+Core:I(Year-1967), data=ext.rates2,method='ML',na.action=na.omit)
+AIC(model4,gmodel4)
+
+#try fitting an AR(1) model based on previous ACF and PACF
+update(gmodel4,correlation=corARMA(p=1,q=0,form=~I(Year-1967)|Core))->gmodel4.1
+AIC(gmodel4,gmodel4.1)
+
+#try fitting a range of ARMA(p,q) models and saving the AIC
+
+cor.results<-NULL
+for(p in 0:3) {
+   for(q in 0:3) {
+if(p>0 | q>0) {
+cor.temp<-gls(Ext.rate~Core+I(Year-1967)+Core:I(Year-1967),data=ext.rates2,method='ML', na.action=na.omit, correlation=corARMA(p=p,q=q,form=~I(Year-1967)|Core))
+cor.results<-rbind(cor.results,c(p, q, logLik(cor.temp),AIC(cor.temp)))}
+}}
+
+#the ARMA(2,2) model did not converge and loop aborted
+#the ARMA(1,1) model has the lowest AIC of the models that converged
+cor.results
+
+#add the ARMA(1,1) structure to themodel
+update(gmodel4,correlation=corARMA(p=1,q=1,form=~I(Year-1967)|Core))->gmodel4.2
+
+#refit model 3 using an ARMA(1,1) structure
+gmodel3<-gls(Ext.rate~Core+I(Year-1967)+factor(reef.type):I(Year-1967), data=ext.rates2,method='ML',na.action=na.omit)
+update(gmodel3,correlation=corARMA(p=1,q=1,form=~I(Year-1967)|Core))->gmodel4.3
+
+#previously model3 and model 4 were significantly different
+anova(gmodel3,gmodel4)
+#after adding correlation structure they are no longer different
+anova(gmodel4.2,gmodel4.3)
+
+

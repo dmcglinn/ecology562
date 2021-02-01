@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 24&mdash;Monday, March 12, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture24" id="lecture24"></a>Lecture 24&mdash;Monday, March 12, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture24.htm#relationships">Relationships between regression models</a>
+    <ul>
+      <li><a href="lecture24.htm#OLS">Ordinary least squares (OLS)</a></li>
+      <li><a href="lecture24.htm#GLM">General linear model (GLM)</a></li>
+      <li><a href="lecture24.htm#GLIM">Generalized linear model (GLIM)</a></li>
+      <li><a href="lecture24.htm#GLS">Generalized least squares (GLS)</a></li>
+      <li><a href="lecture24.htm#GLMM">Generalized linear mixed effects model (GLMM)</a></li>
+      <li><a href="lecture24.htm#GEE">Generalized estimating equations (GEE)</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture24.htm#additive">Additive models: generalizing the systematic part of the regression model</a>
+    <ul>
+      <li><a href="lecture24.htm#abandoning">Abandoning linearity completely</a></li>
+      <li><a href="lecture24.htm#retaining">Retaining additivity but abandoning the parametric form</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture24.htm#local">Local polynomial regression</a>
+    <ul>
+      <li><a href="lecture24.htm#binning">Binning</a></li>
+      <li><a href="lecture24.htm#averaging">Local averaging</a> </li>
+      <li><a href="lecture24.htm#kernel">Kernel estimation</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture24.htm#references">Cited references</a></li>
+</ul>
+<h2 align="left"><a name="relationships" id="relationships"></a>Relationships between regression models</h2>
+<p align="left">Fig. 1 displays how the various models we've examined in this course relate to each other. I review each model type in turn.</p>
+<p align="center"><img src="../../images/lectures/lecture24/fig1.png" width="355" height="120" alt="fig. 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;Flow chart of models considered in this course</p>
+<h3><a name="OLS"></a>OLS = ordinary least squares</h3>
+<p>This is the classic ordinary regression model in which we have a continuous response <em>y</em> and multiple continuous predictors <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, &hellip; , <em>x</em><sub>j</sub> . We typically write</p>
+<p align="center"><img src="../../images/lectures/lecture24/OLS1.gif" width="172" height="60" alt="OLS model"></p>
+<p>Although not essential for estimation but necessary for inference we also assume <img src="../../images/lectures/lecture24/epsdist.gif" alt="epsilon distribution" width="168" height="37" align="absmiddle">, so that the errors are independent and have the same variance.</p>
+<h3><a name="GLM"></a>GLM = general linear model<br>
+</h3>
+<p>The general linear model is a minor generalization of the ordinary regression model that allows it to include predictors of any sort. In particular we can include categorical predictors in a regression model if we enter them as dummy variables (<a href="lecture2.htm#categorical">lecture 2</a>). Historically this realization was  important  because it meant that many of the classic statistical models, e.g., ANOVA and ANCOVA, are really just instances of regression.</p>
+<h3><a name="GLIM"></a>GLIM = generalized linear model</h3>
+<p>The generalized linear model extends the general linear model to  non-normal distributions for the response, in particular, distributions that are members of the exponential family of distributions (normal, binomial, Poisson, etc.). Formally a generalized linear model consists of three parts: (1) a random component, the probability distribution for the response, (2) a systematic component, this is the usual regression model, and (3) a link function <em>g</em> that links the random component to the systematic component. Formally we write the generalized linear model as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture24/GLIM.gif" width="168" height="95" alt="GLIM"></p>
+<p>where <em>f</em> is a probability distribution characterized by the parameters &mu; and &theta;. Unlike the ordinary regression model, parameter estimates of the generalized linear model are obtained using maximum likelihood instead of least squares. This provides us with log-likelihood, deviance, and AIC for model selection.</p>
+<h3><a name="GLS"></a>GLS = generalized least squares</h3>
+<p>GLS generalizes both OLS and the GLM to  correlated residuals with heterogeneous variances. Formally, we replace the assumption <img src="../../images/lectures/lecture24/epsdist.gif" alt="epsilon distribution" width="168" height="37" align="absmiddle"> with the assumption <img src="../../images/lectures/lecture24/epsdist2.gif" alt="epsilon distribution" width="152" height="32" align="absmiddle"> where <img src="../../images/lectures/lecture24/sigma.gif" alt="sigma" width="107" height="28" align="absmiddle">. Here <strong>V</strong> is a diagonal matrix of potentially different (heterogeneous) variance terms and <strong>R</strong> is a correlation matrix. We considered the case where <strong>V</strong> had a constant diagonal and <strong>R</strong> is generated by  an ARMA(<em>p</em>, <em>q</em>) process in <a href="lecture17.htm">lecture 17</a>.</p>
+<h3><a name="GLMM"></a>GLMM = generalized linear mixed effects model</h3>
+<p>Mixed effects models are useful for dealing with correlated hierarchical data, typically where observations come in groups and the observations within a group are more similar to each other than they are to members of other groups. Mixed effects models account for correlation indirectly by modeling observational heterogeneity. They include terms, random effects, that account for the similarities between observations. Formally this is done by extending the generalized linear model as follows. Let <em>i</em> denote the group and <em>j</em> an observation on that group. (For instance <em>i</em> could denote a person and <em>j</em> could denote one of the multiple measurement times on that person in a repeated measures design.) </p>
+<p align="center"><img src="../../images/lectures/lecture24/GLMM.gif" width="302" height="118" alt="GLMM"></p>
+<p>Here <em>x</em><sub>1</sub>, &hellip; , <em>x</em><sub>p</sub> and <em>z</em><sub>1</sub>, &hellip; , <em>z</em><sub>q</sub> are predictors. Typically, and in all the cases we've considered, the <em>z</em><sub>k</sub> are just relabeled members of the set {<em>x</em><sub>1</sub>, &hellip; , <em>x</em><sub>p</sub>}. &beta;<sub>0</sub>, &beta;<sub>1</sub>, &hellip; , &beta;<sub>p</sub> are the ordinary regression parameters while <em>u</em><sub>0i</sub>, <em>u</em><sub>1i</sub>, &hellip; , <em>u</em><sub>qi</sub> are random effects that vary across groups. We assume the random effects for a single group have a multivariate normal distribution,</p>
+<p align="center"><img src="../../images/lectures/lecture24/randomeffects.gif" width="198" height="133" alt="random effects distribution"></p>
+<p>and estimate the parameters of <strong>&Psi;</strong>. The random effects from different groups are independent. GLMMs can be estimated using maximum likelihood  and thus  yield a log-likelihood and AIC. Other choices of estimation, e.g., REML, are also possible and sometimes are the default. The presence of the random effects leads to a subject-specific interpretation of the fixed effect parameters in the model. For models with an identity link the fixed effect parameters also have a marginal (population-average) interpretation.</p>
+<h3><a name="GEE"></a>GEE = generalized estimating equations model</h3>
+<p>While mixed effects models are a very general way of handling correlated data they do have their limitations. In particular, they fail to provide a marginal interpretation of the parameters when <em>g</em> is not the identity link. Furthermore the random effects alone can fail to properly account for the correlation in the data. An alternative to mixed effects models in these cases is GEE. GEE estimates the marginal model directly and like GLS requires that the user specify a model for the variance and a model for the correlation. GEE starts with the same estimating equation that is obtained when trying to maximize the log-likelihood of a generalized linear model.</p>
+<p align="center"><img src="../../images/lectures/lecture24/GEE.gif" width="243" height="62" alt="GEE"></p>
+<p>If the right hand side was derived from a log-likelihood, then we can recapture that log-likelihood (up to an additive constant) by antidifferentiating the right hand side. In all other cases we refer to the antiderivative of the right hand side as a quasi-likelihood. In GEE we choose a regression model for &mu;, typically with a link function, and  models for the mean-variance relationship as well as the assumed correlation of the response. These choices together define<img src="../../images/lectures/lecture24/VARmu.gif" alt="Var mu" width="70" height="32" align="absmiddle">.</p>
+<h2><a name="additive" id="additive"></a>Additive models: generalizing the systematic part of the regression model</h2>
+<p>The four generalizations of the GLM that we've considered thus far have focused entirely on the random component of the model. With GLIMs we  considered probability models other than a normal distribution. We then relaxed the variance model and/or independence assumption of these probability models in different ways with GLS, GLMM, and GEE. </p>
+<p>We can also generalize  the systematic component of the regression model.</p>
+<p align="center">Systematic component: <img src="../../images/lectures/lecture24/systematic.gif" alt="systematic" width="168" height="60" align="absmiddle"></p>
+<p>What characterizes the systematic component of a generalized linear model is its linearity. The systematic component consists of a sum of predictors (or functions of predictors) that are each multiplied by constant terms, the parameters. We call a regression model linear when it is linear in its parameters.</p>
+<h3><a name="abandoning"></a>Abandoning linearity completely</h3>
+<p>One way we could generalize things is by abandoning the linear form of the systematic component entirely and writing it as a function of the predictors.</p>
+<p align="center"><img src="../../images/lectures/lecture24/nonlinear.gif" width="215" height="37" alt="nonlinear"></p>
+<p>If we have a parametric form in mind for the function <em>f</em> then we are in the realm of nonlinear regression. This is a well-studied field and there are standard methods for obtaining parameter estimates. We've already seen an example of this in <a href="../solutions/assign4.htm">Assignment 4</a> where you had occasion to use the <span class="style1">nls</span> function of R to estimate the nonlinear Arrhenius model. The general problem with nonlinear regression is that there are infinitely many possible nonlinear functions to consider. Unless theoretical considerations suggest a parametric form for <em>f</em>, the situation is rather hopeless.</p>
+<p>What about taking a nonparametric approach, using the data to suggest the form of the function <em>f</em>? Consider the case where <em>f</em> is assumed to be a function of two variables, <em>f</em>(<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>). Suppose we have <em>n</em> observations whose <em>x</em><sub>1</sub>-coordinates adequately cover the range of relevant values of <em>x</em><sub>1</sub> and whose <em>x</em><sub>2</sub>-coordinates similarly cover the range of interesting values of <em>x</em><sub>2</sub>. Unfortunately when we plot these points in the two-dimensional space of the <em>x</em><sub>1</sub>-<em>x</em><sub>2</sub> plane we see that coverage is noticeably sparser. This is referred to as the curse of dimensionality. To get the same coverage with comparable spacing in two dimensions that we had in one dimension requires <em>n</em><sup>2</sup> observations rather than <em>n</em>. (This is actually a bit of an overstatement. Still, the actual number of observations needed is much greater than <em>n</em> and does increase with an increasing power as  the number of dimensions increases.) This expansion in the data needed to obtain useful estimates makes full-fledged nonparametric estimation of a nonlinear function <em>f</em> of two or more predictors impractical in most cases.</p>
+<h3><a name="retaining"></a>Retaining additivity but abandoning the parametric form</h3>
+<p>A compromise approach that avoids the curse of dimensionality is to fit an additive model, a model that takes the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture24/additive.gif" width="343" height="100" alt="additive model"></p>
+<p>The individual functions, <em>f<sub>j</sub></em>, are called partial response functions and they represent the marginal relationship between the mean response and an individual predictor. Each <em>f<sub>j</sub></em> is a function of one variable. In the additive model <img src="../../images/lectures/lecture24/partial.gif" alt="partial" width="57" height="37" align="absmiddle"> replaces the parametric terms<img src="../../images/lectures/lecture24/parms.gif" alt="parametric" width="42" height="30" align="absmiddle">. The <em>f<sub>j</sub></em> are completely unspecified and do not depend on any parameters. For this reason the <em>f<sub>j</sub></em> are also called nonparametric regression estimators or &quot;smoothers&quot;. In  the R <span class="style19">mgcv</span> package that fits additive models an additive model with three predictors is written as follows: <span class="style11">y ~ s(x1) + s(x2) + s(x3)</span> where the <span class="style11">s()</span> notation is used to represent a generic smoother.</p>
+<ul>
+  <li>If the response variable <em>y</em> has a normal distribution we call the regression model an additive model. </li>
+  <li>If the distribution of the response <em>y</em> is a member of the exponential family (normal, binomial, Poisson, etc.) we refer to the regression model  as a generalized additive model (GAM). </li>
+  <li>If in addition the GAM contains random effect terms we have what's called a generalized additive mixed model (GAMM). </li>
+</ul>
+<p>Working with GAMs requires a profound adjustment in the way we view a regression model.</p>
+<ul>
+  <li>GAMs do not have  regression coefficients and  have no interpretable parameters.</li>
+  <li>GAMs do not yield explicit formulas for the mean response. Thus there is no equation into which we can plug in values for the predictors.</li>
+  <li>To understand the partial response functions  <em>f<sub>j</sub></em> that make up a GAM, we have to graph them. In fact a perfectly legitimate way to summarize the results of a GAM is by displaying graphs of the individual smoothers that make up the model.</li>
+  <li>Although there is no formula we can still obtain predictions from a GAM. The R <span class="style1">predict</span> function has a method for GAMs and will return values of the link function from an additive model for all the observations in the data frame or for a new set of observations.</li>
+</ul>
+<p>GAMs can be treated as a full-fledged approach to modeling, Zuur et al. (2007) and Zuur et al. (2009) are strong proponents of this viewpoint, or as a way of suggesting possible transformations of the predictors that can then be used in  parametric regression models. Packages that fit GAMs are flexible and allow users to treat some terms in the regression model  parametrically and other terms  nonparametrically. For instance, factor variables, which can't be smoothed, need to be entered into the model parametrically. An additive model that contains both parametric and nonparametric terms (smoothers)  is called a semiparametric regression model.</p>
+<p>To better understand the additive model we start by exploring how the individual partial response functions, the <em>f</em><sub><em>j</em></sub>, are obtained in practice. Because the overall model is additive we can restrict ourselves to the one variable nonparametric regression problem, <img src="../../images/lectures/lecture24/onevariable.gif" alt="one variable smmooth" width="87" height="32" align="absmiddle">. Given  a scatter plot of <em>y</em> versus <em>x</em> we wish to find a function <em>f</em> that best approximates the relationship between the two variables. Two popular ways of obtaining <em>f</em> are  local polynomial regression (lowess) and spline regression. We consider each approach in turn.</p>
+<h2><a name="local"></a>Local polynomial regression</h2>
+<p>Local polynomial regression is more commonly known as lowess or loess. Lowess is an acronym for LOcally WEighted Scatterplot Smoother. We  briefly considered lowess  in <a href="lecture11.htm#lowess">lecture 11</a>. Lowess is based on the following five ideas.</p>
+<ol>
+  <li>Binning</li>
+  <li>Local averaging</li>
+  <li>Kernel estimation</li>
+  <li>Local polynomial regression, per se</li>
+  <li>Robust regression</li>
+</ol>
+<p>We consider each of these ideas in turn.</p>
+<h3><a name="binning"></a>Binning</h3>
+<p>Binning turns a continuous variable into a categorical one. It recognizes that the <em>x</em>-values near a particular <em>x</em><sub>0</sub>  provide us with additional information about <em>f</em>(<em>x</em><sub>0</sub>). In binning we use the <em>x</em>-variable to construct the bins by dividing the <em>x</em>-axis into intervals that in turn define categories for the corresponding values of the <em>y</em>-variable. In the simplest version of binning we calculate the mean of the <em>y</em>-variables in each of the bins. The mean of the <em>y</em>-variables is assigned to the <em>x</em>-coordinate at the midpoint of each bin. To obtain <em>f</em> we  connect these points with line segments after sorting the means by their corresponding <em>x</em>-variable.</p>
+<p>The main difficulty with binning is in choosing the bins. If the bins are large then the predicted <em>y</em>-value will differ quite a bit from the individual <em>y</em>-values (high bias) although it will be stable under repeated sampling (low variance). If the bins are small then we approximate the individual y-values well (low bias) but the estimates will vary markedly with repeated sampling (high variance). The variance-bias trade-off suggests we need a better approach.</p>
+<h3><a name="averaging"></a>Local averaging</h3>
+<p>We can obtain an estimate of <em>y</em> at each of the unique values of <em>x</em> if we are willing to reuse data. With this in mind local averaging replaces the fixed bins with a moving window. Consider a specific value of <em>x</em>, denote it <em>x</em><sub>0</sub>. We start with a window centered at <em>x</em><sub>0</sub>, now referred to as the focal value. For all the observations within the window we average their values of the <em>y</em>-variable to obtain the estimate  <em>f</em>(<em>x</em><sub>0</sub>). The process then moves to the next unique <em>x</em>-value, <em>x</em><sub>1</sub>, and the process is repeated to obtain the estimate <em>f</em>(<em>x</em><sub>1</sub>). </p>
+<p>The  different windows overlap so the data get reused many times. In choosing the windows we can specify their width (now called the bandwidth) or we can instead require that each window contains a specified fraction of the data, referred to as the span. For instance if there are <em>n</em> observations and we wish each window to contain <em>m</em> of them,  we choose a variable bandwidth so that the span  <img src="../../images/lectures/lecture24/movern.gif" alt="m over n" width="28" height="25" align="absmiddle"> is the same for each window. As with binning in the end we obtain a graph of <em>f</em>(<em>x</em>) by connecting the individual means after first sorting them by their corresponding <em>x</em>-variable.</p>
+<h3><a name="kernel"></a>Kernel estimation</h3>
+<p>Local averaging typically yields a curve that is rather choppy as observations come and go. Furthermore while points near  <em>x</em><sub>0</sub> are indeed informative about <em>f</em>(<em>x</em><sub>0</sub>), they are not equally informative. We can get a smoother curve if we replace local averaging with locally weighted averaging, also known as kernel estimation. A kernel function is one that weights observations that are close to the focal value more heavily than observations that are far away. There are standard choices for the kernel functions a topic we'll explore   next time.</p>
+<h2><a name="references"></a>Cited references</h2>
+<ul>
+<li>Zuur, Alain F., Elena N. Ieno, and Graham M. Smith. 2007. <em>Analysing Ecological Data.</em> Springer, New York.</li>
+  <li>Zuur, Alain F., Elena N. Ieno, Neil J. Walker, Anatoly A. Savelieve, and Graham M. Smith. 2009. <em>Mixed Effects Models and Extensions in Ecology with R.</em> Springer, New York.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 13, 2012<br>
+      URL: <a href="lecture24.htm#lecture24" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture24.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+rikz <- read.table( 'ecol 562/RIKZ.txt', header=TRUE)
+apply(rikz[,2:76], 1, function(x) sum(x>0)) -> rikz$richness
+lm(richness~NAP, data=rikz) -> mod1
+lm(richness~NAP+factor(week), data=rikz) -> mod2
+lm(richness~NAP*factor(week), data=rikz) -> mod3
+glm(richness~NAP, data=rikz, family=poisson) -> mod1p
+glm(richness~NAP+factor(week), data=rikz, family=poisson) -> mod2p
+glm(richness~NAP*factor(week), data=rikz, family=poisson) -> mod3p
+
+#compare AIC of the six models
+AIC(mod1,mod2,mod3,mod1p,mod2p,mod3p)
+
+#add log-likelihoods to the table
+data.frame(AIC(mod1,mod2,mod3,mod1p,mod2p,mod3p), LL=sapply(list(mod1,mod2,mod3,mod1p,mod2p,mod3p), logLik))
+
+#testing if there are any missing values among the variables used in the model
+table(apply(rikz[,c("richness","NAP","week")], 1, function(x) sum(!is.na(x))))
+
+#log-transform richness
+lm(log(richness)~NAP, data=rikz) -> mod1.log
+#need to deal with zeros in the data
+lm(log(richness+.5)~NAP, data=rikz) -> mod1.log
+
+#log-likelihood and AIC are not comparable to those of the previous models
+#we need to make an adjustment to the log-likelihood
+logLik(mod1.log)
+AIC(mod1.log)

@@ -1,0 +1,85 @@
+#### R code for lecture 16 ####
+
+## Multiple comparison problem ##
+
+type.one.error<-function(alpha,n) 1-(1-alpha)^n
+#probability of at least one Type I error
+data.frame(num.tests=c(1,seq(5,50,5)),P.typeI.error=type.one.error(.05,c(1,seq(5,50,5))))
+
+# AR(1) process
+
+#initialize vector
+ei<-rep(NA,80)
+#generate AR(1),phi=.8
+set.seed(10)
+ei[1]<-rnorm(1)
+for(k in 2:80) ei[k] <- .8*ei[k-1]+rnorm(1)
+ei1<-ei
+
+#graph ACF and PACF--Fig.3
+
+par(mfrow=c(1,2))
+plot(acf(ei1,lag.max=10,plot=F),main='',ci.col='white',ylim=c(-.3,1))
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+#Bonferroni correction for ten tests
+lines(0:10,qnorm(.05/(10*2))/sqrt(80-(0:10)),lty=2,col=2)
+lines(0:10,-qnorm(.05/(10*2))/sqrt(80-(0:10)),lty=2,col=2)
+
+plot(pacf(ei1,lag.max=10,plot=F),main='',ci.col='white')
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+par(mfrow=c(1,1))
+
+# MA(2) process
+
+ei<-rep(NA,80)
+a<-rep(NA,80)
+#generate MA(2),theta1=3, theta2=2
+set.seed(10)
+ei[1]<-rnorm(1)
+a[1]<-ei[1]
+ei[2]<-rnorm(1)
+a[2]<-ei[2]
+for(k in 3:80) {
+  a[k]<-rnorm(1)
+  ei[k] <- 3*a[k-1]+2*a[k-2]+a[k]
+}
+ei2<-ei
+
+# fig. 4 graph ACF and PACF--Fig.4
+
+par(mfrow=c(1,2))
+plot(acf(ei2,lag.max=10,plot=F),main='',ci.col='white',ylim=c(-.3,1))
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+plot(pacf(ei2,lag.max=10,plot=F),main='',ci.col='white')
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+par(mfrow=c(1,1))
+
+# ARMA(1,1) process
+
+ei<-rep(NA,80)
+a<-rep(NA,80)
+#generate ARMA(1,1),phi=.8, theta=2
+set.seed(10)
+ei[1]<-rnorm(1)
+a[1]<-ei[1]
+for(k in 2:80) {
+a[k]<-rnorm(1)
+ei[k] <- .8*ei[k=1]+2*a[k-1]+a[k]
+}
+ei3<-ei
+
+#graph ACF and PACF--Fig.5
+
+par(mfrow=c(1,2))
+plot(acf(ei3,lag.max=10,plot=F),main='',ci.col='white',ylim=c(-.3,1))
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+plot(pacf(ei3,lag.max=10,plot=F),main='',ci.col='white')
+lines(0:10,-1.96/sqrt(80-(0:10)),lty=2,col=4)
+lines(0:10,1.96/sqrt(80-(0:10)),lty=2,col=4)
+par(mfrow=c(1,1))
+

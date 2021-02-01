@@ -1,0 +1,504 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 42&mdash;Wednesday, April 25, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style221 {color: #663366; font-weight: bold; }
+.style221 {color: #990099;
+	font-weight: bold;
+}
+.style41 {color: #CC0000;
+	font-weight: bold;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style91 {color: #339900;
+	font-weight: bold;
+}
+.style1022 {font-size: smaller}
+.style103 {color: #0033CC; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style6 {color: #0033CC;
+	font-size: smaller;
+}
+.style71 {color: #CC0000;
+	font-weight: bold;
+}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+.style18 {color: #009966;
+	font-weight: bold;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style161 {color: #660033;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture42" id="lecture42"></a>Lecture 42&mdash;Wednesday, April 25, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  
+  <li><a href="lecture42.htm#genstrata">Comments on stratified random samples</a></li>
+  <li><a href="lecture42.htm#cluster">Cluster samples</a>
+    <ul>
+      <li><a href="lecture42.htm#onestage">One-stage cluster samples</a></li>
+      <li><a href="lecture42.htm#twostage">Two-stage cluster samples</a></li>
+      <li><a href="lecture42.htm#gencluster">General comments about cluster samples</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture42.htm#contrast">Contrasting stratified and cluster samples</a></li>
+  <li><a href="lecture42.htm#systematic">Systematic random sample</a>s </li>
+  <li><a href="lecture42.htm#package">The survey package of R</a></li>
+
+  <li><a href="lecture42.htm#hierarchical">Using survey sampling methods for statistical modeling</a></li>
+  <li><a href="lecture42.htm#cited">Cited references</a></li>
+  <li><a href="lecture42.htm#rcode">R code used to produce figures</a></li>
+</ul>
+<h2><a name="genstrata"></a>Comments on stratified random samples </h2>
+<p>Stratified random sampling is appropriate when the population of interest consists of coherent subpopulations. In stratified random sampling we treat the subpopulations as separate populations in their own right for sampling purposes and we call the subpopulations  strata. The point estimates and their precisions for the individual strata are then reassembled to form a stratified estimate of the mean and variance.</p>
+<p>For stratified random sampling to be effective, the strata should be individually more homogeneous than the population as a whole. We want most of the variability to lie between strata rather than within strata. In ecology strata are often chosen to be habitat types. If an area exhibits an environmental gradient that is likely to have an effect on the variable we're measuring then we should construct strata boundaries that lie perpendicular to that gradient. In this case the strata are constructs that we've invented that may or may not correspond to obvious subpopulations in the field. The primary advantage of stratified random sampling is that the standard errors of our estimates are decreased because the variability that exists between the strata has been eliminated from the analysis.</p>
+<p>Within the strata any other possible sampling scheme is legitimate. Thus we can have stratified simple random samples, stratified systematic random samples, or stratified cluster random samples. The one practical issue that needs to be decided is how to allocate resources when sampling the different strata. Proportional allocation is a logical and relatively simple approach. Stratified random sampling nearly always results in a gain in precision unless the researcher is totally clueless about his/her study subjects. </p>
+<h2><a name="cluster"></a>Cluster samples</h2>
+<h3><a name="onestage"></a>One-stage cluster samples</h3>
+<p>Suppose the tract occupied by our schematic population is crisscrossed by roads that provide easy access to groups of units (Fig. 1). Logistically it makes sense to sample these units as a group. Groups of sampling units that exist for reasons unrelated to the variable of interest are called clusters. If we take a random sample of clusters and then take all members of the selected clusters for our sample we've created what's called a one-stage cluster sample. Because each cluster contains four elements, to obtain a one-stage cluster sample of size 12 we need only select three clusters. Because there are nine clusters total it follows that there are <img src="../../images/lectures/lecture42/1stageclustercomb.gif" width="78" height="61" align="absmiddle"> possible one-stage cluster samples of size 3.</p>
+<p><span class="style44"> choose(9,3)</span><br>
+  <span class="style6">[1] 84</span></p>
+<p> Using the <span class="style71">sample</span> function in R we can obtain a list of the clusters for our one-stage cluster sample as follows. </p>
+<p><span class="style44">sample(1:9, 3, replace=FALSE)</span></p>
+<p>An example of a  one-stage cluster sample taken from our schematic population is shown in Fig. 1. </p>
+<table width="700" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture42/fig6.jpg" alt="Fig. 6" width="290" height="309"></div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture42/fig7.jpg" alt="Fig. 7" width="297" height="310"></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><strong>Fig. 1</strong> &nbsp;One-stage cluster sample</div></td>
+    <td><div align="center"><strong>Fig. 2</strong> &nbsp;Two-stage cluster sample</div></td>
+  </tr>
+</table>
+<h3><a name="twostage"></a>Two-stage cluster samples</h3>
+<p>A two-stage cluster sample is an extension of a one-stage cluster sample in that it adds a second sampling stage. After selecting the clusters (primary sample units) we then choose a subsample of units from each cluster (secondary sample units), generally using simple random sampling. To obtain a sample of size 12 from our schematic population using a two-stage cluster sample, we could select six clusters at the first stage and then two units from each of those clusters at the second stage. (Other possibilities are to select four primary units followed by three secondary units from each, etc.) There are <img src="../../images/lectures/lecture42/twostagecomb.gif" width="201" height="68" align="absmiddle"> different cluster samples of this type.</p>
+<p class="style44">choose(9,6)*(choose(4,2))^6<br>
+  <span class="style103">[1] 3919104</span></p>
+<p>Using R we obtain the six primary sampling units as follows.</p>
+<p class="style44">sample(1:9, 6, replace = FALSE)</p>
+<p>Then if we think of the units in each cluster as being numbered 1, 2, 3, and 4 in some order, we can obtain the secondary units as follows.</p>
+<p><span class="style44">sapply(1:6, function(x) sample(1:4, 2, replace=F))</span><br>
+  <span class="style103">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[,1] [,2] [,3] [,4] [,5] [,6]<br>
+    [1,]&nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp; 2<br>
+    [2,] &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 3</span></p>
+<p> An example of one such two-stage cluster sample is shown in Fig. 2. </p>
+<h3><a name="gencluster"></a>General comments about cluster samples</h3>
+<p>Cluster samples are often not chosen by design but are a product of circumstances. If the primary sampling unit is a quadrat or a sampling device (like a dip net or a bucket), but the object of interest is the individual  of which many are found in each primary sampling unit, then a cluster sample has been obtained. Cluster samples are identified by the number of stages that are present.</p>
+<ol>
+  <li>In a <span class="style31">single stage</span> (or simple) <span class="style31">cluster sample</span>, clusters are selected and then every unit occurring in that cluster is also taken. </li>
+  <li>In <span class="style31">multistage cluster samples</span> the clusters are selected and then subsampled one or more times. The number of nested subsamples that are present defines the number of stages. </li>
+</ol>
+<p>Cluster sampling tends to work best when the individual clusters are as diverse as possible, at least as diverse as the population as a whole. Typically this will not be the case because cluster elements tend to be positively correlated and hence less diverse than the population as a whole. As a result parameter estimates obtained using cluster samples tend to be less precise (more variable) than estimates obtained from simple random sampling. </p>
+<p>An advantage of cluster sampling is that a sample frame is not needed for the whole population, only for the clusters that happen to be included in the sample, and if we're doing only a one-stage cluster sample, then not even that. For a one-stage cluster sample our sample frame is just a list of the clusters. In environmental science clusters tend to be spatial or temporal units.</p>
+<h2><a name="contrast"></a>Contrasting stratified and cluster samples</h2>
+<p>Stratified random samples and cluster samples are easy to distinguish after the fact, but perhaps less so before sampling begins. It's conceivable that one person's strata might be another person's clusters.</p>
+<div align="center">
+  <table width="650" border="1">
+    <tr  bgcolor="#F1D2D8">
+      <td><div align="center"><strong>Stratified random sample</strong></div></td>
+      <td><div align="center"><strong>Cluster sample</strong></div></td>
+    </tr>
+    <tr>
+      <td><ol>
+        <li>In a stratified random sample all strata are included in the sample.</li>
+      </ol></td>
+      <td><ol>
+        <li>In a cluster sample only a random subset of clusters is included.</li>
+      </ol></td>
+    </tr>
+    <tr>
+      <td><ol start=2>
+        <li>Stratified sampling is done to increase precision. </li>
+      </ol></td>
+      <td><ol start=2>
+        <li>Cluster sampling is done to decrease cost.</li>
+      </ol></td>
+    </tr>
+    <tr>
+      <td><ol start=3>
+        <li>A &quot;good&quot; stratum will look very different from the overall population and in particular be different from the other strata comprising that population. </li>
+      </ol></td>
+      <td><ol start=3>
+        <li>A &quot;good&quot; cluster should look just like the population as a whole and should resemble all other clusters in the population.</li>
+      </ol></td>
+    </tr>
+    <tr>
+      <td><ol start=4>
+        <li>Strata should be internally homogeneous.</li>
+      </ol></td>
+      <td><ol start=4>
+        <li>Clusters should be internally heterogeneous.</li>
+      </ol></td>
+    </tr>
+  </table>
+</div>
+<h2><a name="systematic"></a>Systematic random samples</h2>
+<div class="figureR1">
+  <p align="center"><img src="../../images/lectures/lecture42/fig8.jpg" width="297" height="311">
+  <p align="center"><strong>Fig. 3</strong> &nbsp;Systematic sample </p>
+</div>
+<p> Systematic samples are very popular because they are very easy to carry out and are often logistically attractive. Unfortunately they have a number of problems statistically. After a random starting point in the sample frame, a systematic sample selects additional sample units at regular intervals. Thus for a systematic sample to be feasible it must  be possible to order the sampling units in some way. </p>
+<p>To obtain a systematic sample of size 12 from our schematic population of size 36, we randomly choose a value from 1, 2, or 3 as a starting place and then select every third value from that starting point until we cycle through the population. Observe that in this instance there are only three possible starting points and hence only three possible systematic samples of size 12 from this population.</p>
+<p>Using R we obtain our systematic sample as follows.</p>
+<p><span class="style44">seq(sample(1:3,1),36,3)</span><br>
+  <span class="style103">[1] 2 5 8 11 14 17 20 23 26 29 32 35</span></p>
+<p>Fig. 3 illustrates one such sample. While the regularity of the sample may be a bit disconcerting, such a sample can be either very good or very bad.</p>
+<ul>
+  <li>It's very bad if it turns out there is a gradient running east-west, because then we've managed to miss much of the gradient having obtained samples from only two points in the gradient.</li>
+  <li>It's very good if it turns out there is a gradient running north-south because then we've managed to obtain samples from all possible points in the gradient. </li>
+</ul>
+<p>Besides its goodness or badness, the real difficulty with systematic samples is in trying to come up with an honest measure of sampling variability. To accomplish this often requires making some rather extreme assumptions or carrying out some ad hoc statistical gymnastics.</p>
+<p>A systematic sample is an ordered sample. The implicit assumption in systematic sampling is that it is possible to order the target area in some way and to use that order to pick a sample. Means obtained with a systematic sample of size <em>n</em> will be unbiased for the population mean (equal to the population mean on average) if the sample is spread out over the population in equal increments in such a way that <img src="../../images/lectures/lecture41/N_over_n.gif" width="30" height="26" align="absmiddle"> is an integer, where <em>N</em> is the population size. </p>
+<p>Generally speaking, if the target area is large and the sampling area is small, there are no particular statistical problems inherent in using a systematic sample instead of a simple random sample. An example of such a situation would be taking a transect along an ocean bottom stopping every kilometer or so to take a sample.</p>
+<p>How should one obtain the variance of systematic sample estimates?</p>
+<ol>
+  <li>If the population is fairly homogeneous it is probably OK to use the variance formulas for simple random sampling.</li>
+  <li>If the population is sparse or otherwise heterogeneous, it is better to replicate the systematic sample and use the replicates to obtain a variance estimate. The replication may be done by simply dividing a single systematic sample into sections.</li>
+</ol>
+<p>If a population exhibits a trend then a judiciously selected systematic sample can be more precise than a simple random sample of the same size.</p>
+<h2><a name="package"></a>The survey package of R</h2>
+<p>There exist formulas for calculating simple statistics and their standard errors for most of the standard sampling designs. But when sampling protocols are  complicated  it becomes necessary to approximate things numerically either using available software or by writing your own routines. The <span class="style18">survey</span> package in R can provide sample estimates along with their standard errors for all of the standard sample designs plus many additional ones. The <span class="style18">survey</span> package is not part of the standard R installation. So the first time you plan to use it you first need to obtain this package from the R web site.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(survey)</div>
+<p>The <span class="style18">survey</span> package was written by Thomas Lumley of the University of Washington, <a href="lecture42.htm#lumley">Lumley (2007)</a>, and he has provided a number of useful references for his package. </p>
+<ul>
+  <li>The package has its own web site, <a href="http://faculty.washington.edu/tlumley/survey/">http://faculty.washington.edu/tlumley/survey/</a> where you can find many helpful documents on using the package. In particular you can find worked examples from a number of standard textbooks on survey sampling. </li>
+  <li> In addition manuals and vignettes for the <span class="style18">survey</span> package can be found in the doc folder of the library folder of the folder that contains R.  A vignette is an expository document that illustrates a particular feature of a package. </li>
+  <li>You can also find the standard documentation for all the <span class="style18">survey</span> package functions at the R web site. The URL for the pdf file that documents the syntax and use of all the functions in the package as well as vignettes is <a href="http://cran.r-project.org/web/packages/survey/index.html">http://cran.r-project.org/web/packages/survey/index.html</a>. <br>
+  </li>
+</ul>
+<p>To illustrate its capabilities I use it to  analyze data collected with a one-stage cluster sample. The data file is <a href="../../data/Surinam.csv">Surinam.csv</a>, a comma-delimited file with the variable names in the first row of the file. The data are a complete inventory of all the trees in a 60 ha section of forest in Surinam. It is taken from <a href="lecture42.htm#schreuder">Schreuder et al. (2004)</a> who use it to illustrate  applications of survey sampling theory to forestry.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">trees &lt;- read.csv('ecol 562/Surinam.csv')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(trees)</div>
+<span class="style24">&nbsp;[1] &quot;Diameter_cm&quot; &quot;Longitude&quot; &nbsp;&nbsp;&quot;Latitude&quot; &quot;Height_m&quot; &quot;Volume_cum&quot; <br>
+&nbsp;[6] &quot;SubPlot&quot; &nbsp;&nbsp;&nbsp;&nbsp;&quot;x2&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;x3&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;DBHClass&quot; &quot;Diameter_in&quot;<br>
+[11] &quot;Height_ft&quot;&nbsp;&nbsp; &quot;Volume_cuft&quot; &quot;CC&quot;</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<p>The variable <span class="style8">SubPlot</span> records the subplot in which a tree occurred. There are 60 subplots identified by a combination of letter and number.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> unique(trees$SubPlot)</div>
+<span class="style24">&nbsp;[1] D1 A1 B1 C1 D2 A2 C2 B2 C3 D3 A3 B3 C4 A4 B4 D4 D5 A5 B5 <br>
+[20] C5 D6 B6 C6 A6 D7 C7 A7 B7 C8 D8 B8 A8 D9 A9 B9 C9 A10 D10<br>
+[39] B10 C10 C11 A11 D11 B11 B12 C12 D12 A12 B13 C13 A13 D13 D14 C14 B14 A14 D15<br>
+[58] C15 A15 B15<br>
+60 Levels: A1 A10 A11 A12 A13 A14 A15 A2 A3 A4 A5 A6 A7 A8 A9 B1 B10 ... D9</span>
+</p>
+<p><span class="style8">SubPlot</span> is a factor variable in R, as indicated by the comment at the end of the <span class="style41">unique</span> output above &quot;60 levels: A1 A10&quot; etc. A factor level has both a name (the name of the subplot in this case) and a number (a number from 1 to 60). We can take advantage of the numeric values to color the subplots geographically. In the <span class="style41">plot</span> command below I use the numeric level of the factor levels as the value of the <span class="style161">col=</span> argument. Because there are only 8 numeric color levels in R, the color levels are recycled and repeated for the 60 subplot values. As Fig. 4 shows the subplots are quadrats that are geographically distinct. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(Latitude~Longitude, data=trees, cex=.5,  col=as.numeric(SubPlot))</div>
+<br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture42/fig5.png" width="363" height="325" alt="fig. 1"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><div align="center"><strong>Fig. 4 </strong>&nbsp;The geographic distribution of SubPlots in the  population</div></td>
+  </tr>
+</table>
+<p>In a one-stage cluster sample we obtain a random sample of clusters and then select all the elements in that cluster. I begin by obtaining a sorted list of the unique cluster names.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot.list &lt;- sort(unique(trees$SubPlot))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">num.plots <- length(plot.list)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">num.plots</div>
+<span class="style24">[1] 60</span>
+<p>Because comparisons between cluster means form the basis for the variance calculation in a one-stage cluster sample, the smallest  sample size we can take that is still useful is a cluster sample with two clusters. I use the <span class="style41">sample</span> function to select three clusters from the list of unique clusters.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> set.seed(20)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.plot &lt;- plot.list[sample(1:num.plots,3)]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.plot</div>
+<span class="style24">[1] D2 D1 B10<br>
+60 Levels: A1 A10 A11 A12 A13 A14 A15 A2 A3 A4 A5 A6 A7 A8 A9 B1 B10 B11 B12 B13 B14 B15 ... D9</span>
+<p name="in"><a name="in"></a>Next we need to select the elements from the population of trees that belong to  clusters D2, D1, and B10. This is easily done with the Boolean intersection operator, <span class="style41">%in%</span>. I first illustrate its use. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AB &lt;- LETTERS[1:2]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AB</div>
+<span class="style24">[1] &quot;A&quot; &quot;B&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">test &lt;- c(&quot;A&quot;,&quot;C&quot;,&quot;a&quot;,&quot;B&quot;,&quot;D&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">test %in% AB</div>
+<span class="style24">[1] TRUE FALSE FALSE TRUE FALSE</span>
+<p>So <span class="style101">x%in%y</span> tests whether each element in <span class="style101">x</span> is among the elements in <span class="style101">y</span>. I next obtain the one-stage cluster sample.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cluster.sample &lt;- trees[trees$SubPlot %in% my.plot,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(Latitude~Longitude, data=trees, col=c('grey70',2)[as.numeric(SubPlot %in% my.plot)+1])</div><br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture42/fig9.png" width="420" height="310" alt="fig 5"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><div align="center">
+      <table width="450" border="0" align="center">
+        <tr>
+          <td class="styleArial"><div align="center"><strong>Fig. 5 </strong>&nbsp;Location of the cluster sample</div></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+
+<p name="svydesign"><a name="svydesign"></a>To use the <span class="style19">survey</span> package we first have to define the nature of the sample using the <span class="style41">svydesign</span> function. For the simple sample schemes we've discussed the following four arguments are all that we need.</p>
+<ul>
+  <li><span class="style161">id</span>: This identifies the primary sampling unit (and the secondary units if they exist). </li>
+  <li><span class="style161">strata</span>: Use this option if there are strata you wish to include as part of the analysis. </li>
+  <li><span class="style161">fpc</span>: This specifies the finite population correction factor, the FPC. You can either enter the FPC yourself or enter the population size on which the FPC should be based. Note: The arguments for <span class="style161">fpc</span> should refer to variable(s) in a data frame. If the variables do not exist you can create them on the fly when specifying the argument. This argument is optional.</li>
+  <li><span class="style161">data</span>: This specifies the data frame.</li>
+</ul>
+<p>For <span class="style161">id</span>, <span class="style161">strata</span>, and <span class="style161">fpc</span> if what comes next is a variable occurring in the specified data frame then the first character in the argument must be a <span class="style161">~</span>. For more complicated designs there are additional arguments that are useful. The <span class="style161">probs</span> argument can be used to specify the individual probabilities of selection for each element of the sample. Thus we can use the <span class="style18">survey</span> package to analyze any kind of sample as long as the probabilities of selection are known. The <span class="style161">weights</span> argument can be used instead of the <span class="style161">probs</span> argument (the weights are the reciprocal of the selection probabilities). In addition the <span class="style161">weights</span> argument can be used to handle missing data, nonresponses, and many of the other biases that can creep into sample designs.</p>
+<p>To construct the survey object for a one-stage cluster sample we need to specify the <span class="style161">id</span>, <span class="style161">fpc</span>, and <span class="style161">data</span> arguments.</p>
+<ol>
+  <li><span class="style161">id=~SubPlot</span>: The primary sampling units are  the clusters, not the individual trees. Thus the <span class="style161">id</span> argument is used to reflect this.</li>
+  <li><span class="style161">fpc=rep(60, nrow(cluster.sample)</span>: The FPC is now calculated in terms of the sampling fraction of clusters, i.e., how many clusters were sampled relative to the number of clusters in the population. Since there are 60 clusters in the population, I enter this value for <span class="style161">fpc</span> and let R calculate the FPC from it. </li>
+</ol>
+<p><a name="confint"></a>I create the <span class="style41">svydesign</span> object and calculate the sample mean and  standard error of the <span class="style8">Diameter_cm</span> variable. I then construct a 95% confidence interval for the mean using the <span class="style41">confint</span> function.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cluster.sample$fpc &lt;- rep(60, nrow(cluster.sample))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cluster.obj &lt;- svydesign(id=~SubPlot, fpc=~fpc, data=cluster.sample)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#get means and confidence intervals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cluster.out &lt;- svymean(~Diameter_cm, cluster.obj)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cluster.out</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mean &nbsp;&nbsp;&nbsp;&nbsp;SE<br>
+Diameter_cm 41.043 1.5667</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> confint(cluster.out)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.5 %   &nbsp;&nbsp;97.5 %<br>
+Diameter_cm 37.97257 44.11389</span>
+<p>We can also fit regression models that account for the manner in which the data are collected using the <span class="style41">svyglm</span> function of the <span class="style19">survey</span> package. Essentially <span class="style41">svyglm</span> uses <span class="style41">glm</span> to fit the model and then adjusts the standard errors of the parameter estimates based on the sample design that was used. When the sample design is a cluster sample, the <span class="style41">svyglm</span> function is an alternative  to fitting a mixed effects model or to specifying a correlation structure using generalized least squares or generalized estimating equations. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.svy &lt;- svyglm(Volume_cum~Diameter_cm, design=cluster.obj)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out.svy)</div>
+
+<span class="style24">Call:<br>
+  svyglm(Volume_cum ~ Diameter_cm, design = cluster.obj)</span>
+<p><span class="style24">Survey design:<br>
+  svydesign(id = ~SubPlot, fpc = ~fpc, data = cluster.sample)</span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)<br>
+  (Intercept) -4.50414&nbsp;&nbsp;&nbsp; </span><span class="style25">1.15804</span><span class="style24">&nbsp; -3.889&nbsp;&nbsp;&nbsp;&nbsp; 0.16<br>
+  Diameter_cm&nbsp; 0.15329&nbsp;&nbsp;&nbsp; </span><span class="style25">0.02924</span><span class="style24">&nbsp;&nbsp; 5.243&nbsp;&nbsp;&nbsp;&nbsp; 0.12</span>
+<p><span class="style24">(Dispersion parameter for gaussian family taken to be 2.470582)</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 2</span>
+<p>We can compare the above results to what we get by fitting a random intercepts model. With only three clusters, the mixed effects model will not be very accurate here.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(nlme)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.lme &lt;- lme(Volume_cum~Diameter_cm, random=~1|SubPlot, data=cluster.sample, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.lme)</div>
+<span class="style24">  Linear mixed-effects model fit by maximum likelihood<br>
+  &nbsp;Data: cluster.sample <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIC&nbsp;&nbsp;&nbsp; logLik<br>
+&nbsp; 1305.587 1320.985 -648.7936</span>
+<p><span class="style24">Random effects:<br>
+  &nbsp;Formula: ~1 | SubPlot<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) Residual<br>
+  StdDev: 4.665527e-05 1.569542</span>
+<p><span class="style24">Fixed effects: Volume_cum ~ Diameter_cm <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value&nbsp; Std.Error&nbsp; DF&nbsp;&nbsp; t-value p-value<br>
+  (Intercept) -4.504145 </span><span class="style25">0.21536764</span><span class="style24"> 343 -20.91375&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  Diameter_cm&nbsp; 0.153294 </span><span class="style25">0.00482657</span><span class="style24"> 343&nbsp; 31.76040&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  &nbsp;Correlation: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intr)<br>
+  Diameter_cm -0.92 </span>
+<p><span class="style24">Standardized Within-Group Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Med&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -3.03580046 -0.44650216&nbsp; 0.01902902&nbsp; 0.43778939 10.52751911 </span>
+<p><span class="style24">Number of Observations: 347<br>
+  Number of Groups: 3 </span>
+<p>The point estimates are the same but the standard errors are six times larger using  the <span class="style19">survey</span> package versus using the mixed effects model. Given that we know that the variance components will be difficult to estimate with so few clusters, the more conservative results from the cluster sample analysis are probably a better choice.</p>
+<h2><a name="hierarchical" id="hierarchical"></a>Using survey sampling methods for statistical modeling</h2>
+<p>There is a direct relationship between  basic survey sample sampling designs and some of the standard statistical designs we've considered in this course. For instance, </p>
+<ul>
+  <li>When strata are used to control for heterogeneity they are serving the same role as blocking in experimental designs. </li>
+  <li>Cluster samples are  examples of hierarchical data. Thus survey sample methods provide yet another way to deal with correlated (clustered) data.</li>
+</ul>
+<p>In a survey sample the focus is on the  selection probabilities of the individual sample units. In hierarchical designs the probability of selecting any given unit from the underlying population can at least in principle be  specified. Using these probabilities expectations and variances can  be fully specified, although in practice the   variances may need to be approximated. Survey sampling software, such as the <span class="style19">survey</span> package of R, can be used to carry out regressions in which the sample design is taken into account when calculating the standard errors of regression parameters. </p>
+<p>We have covered four different methods for dealing with correlated and  clustered (hierarchical) data in this course.</p>
+<ol>
+  <li>Survey sample methods in which the focus is on the selection probabilities of individual elements.</li>
+  <li>Mixed effects models in which observational heterogeneity is modeled through the use of random effects.</li>
+  <li>Generalized least squares for Gaussian data in which variance heterogeneity and correlation are accounted for by specifying a variance-covariance matrix for the residuals.</li>
+  <li>Marginal models based on generalized estimating equations in which variance heterogeneity and correlation is incorporated directly into the estimating equation derived from the model's log-likelihood or quasi-likelihood.</li>
+</ol>
+<h2><a name="cited"></a>Cited references</h2>
+<ul>
+  <li><a name="lumley"></a>Lumley, Thomas. 2007. Survey Analysis in R.<a href="http://faculty.washington.edu/tlumley/survey/"> http://faculty.washington.edu/tlumley/survey/</a></li>
+  <li><a name="schreuder"></a>Schreuder, Hans T., Ernst, Richard, and Ramirez-Maldonado, Hugo. 2004. Statistical techniques for sampling and monitoring natural resources. Gen. Tech. Rep. RMRS-GTR-126. Fort Collins, CO: U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station. 111 p. Publication: <a href="http://www.fs.fed.us/rm/pubs/rmrs_gtr126.pdf">http://www.fs.fed.us/rm/pubs/rmrs_gtr126.pdf</a><br>
+    Accompanying data sets and R code: <a href="http://www.fs.fed.us/rm/pubs/rmrs_gtr126_data_sets.zip">http://www.fs.fed.us/rm/pubs/rmrs_gtr126_data_sets.zip</a></li>
+</ul>
+
+<h2><a name="rcode"></a>R code used to produce figures</h2>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"><span class="style91">#Fig. 1 </span></div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">par(mar=c(2.1,4.1,2,1))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">mydat &lt;- data.frame(rep(1:6,6), rep(6:1,rep(6,6)))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">colnames(mydat) &lt;- c('x','y') </div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">clusts &lt;- c(rep(rep(1:3, rep(2,3)),2), rep(rep(4:6,rep(2,3)),2), rep(rep(7:9, rep(2,3)),2))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">clusts2 &lt;- rep(c(rep(1:2,3), rep(3:4,3)),3)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">mysub &lt;- mydat[clusts%in%sample(1:9,3, replace=FALSE),]</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">plot(mysub$y~mysub$x, pch=16, cex=2, ylim=c(0.5,6.5), xlim=c(0.5,6.5), col='pink', axes=FALSE, xlab='',ylab='')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">axis(1, at=1:6, label=rep(' ',6))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">axis(2, at=6:1, label=seq(1,31,6), las=1, cex.axis=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">box()</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">points(mysub$x, mysub$y, pch=1, cex=2, col=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">points(mydat$x, mydat$y, pch=4, cex=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">abline(h=c(2.5,4.5), lty=3, lwd=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">abline(v=c(2.5,4.5), lty=3, lwd=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px">mtext(side=3, line=.5, 'One-Stage Cluster Sample')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"><span class="style91"><strong>#Fig. 2 </strong></span></div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> level2 &lt;- sample(1:9,6)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> level1 &lt;- sapply(1:6, function(x) sample(1:4,2))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> plot(mydat$y~mydat$x, pch=16, cex=2, ylim=c(0.5,6.5), xlim=c(0.5,6.5), col='pink', axes=FALSE, xlab='', ylab='', type='n')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> mydat1 &lt;- data.frame(mydat,clusts,clusts2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> for(i in 1:6) {</div>
+<div class="style44" style="padding-left: 50px; text-indent:-30px"> mysub &lt;- mydat1[mydat1$clusts==level2[i],]</div>
+<div class="style44" style="padding-left: 50px; text-indent:-30px"> mysub2 &lt;- mysub[mysub$clusts2%in%level1[,i],]</div>
+<div class="style44" style="padding-left: 50px; text-indent:-30px"> points(mysub2$x, mysub2$y, col='pink', cex=2 ,pch=16)</div>
+<div class="style44" style="padding-left: 50px; text-indent:-30px"> points(mysub2$x, mysub2$y, col=2, cex=2, pch=1)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> }</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> axis(1, at=1:6, label=rep(' ',6))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> axis(2, at=6:1, label=seq(1,31,6), las=1, cex.axis=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> box()</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> points(mydat$x, mydat$y, pch=4, cex=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> abline(h=c(2.5,4.5), lty=3, lwd=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> abline(v=c(2.5,4.5), lty=3, lwd=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> mtext(side=3, line=.5, 'Two-Stage Cluster Sample')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"><span class="style91">#Fig. 3 </span></div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> par(mar=c(2.1,4.1,2,1))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> mydat &lt;- data.frame(rep(1:6,6), rep(6:1,rep(6,6)))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> colnames(mydat) &lt;- c('x','y')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> mysub &lt;- mydat[seq(sample(1:3,1),36,3),]</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> plot(mysub$y~mysub$x, pch=16, cex=2, ylim=c(0.5,6.5), xlim=c(0.5,6.5), col='pink', axes=FALSE, xlab='', ylab='')</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> axis(1, at=1:6, label=rep(' ',6))</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> axis(2, at=6:1, label=seq(1,31,6), las=1, cex.axis=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> box()</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> points(mysub$x, mysub$y, pch=1, cex=2, col=2)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> points(mydat$x, mydat$y, pch=4, cex=.8)</div>
+<div class="style44" style="padding-left: 30px; text-indent:-30px"> mtext(side=3, line=.5, 'Systematic Random Sample')</div>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><p><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 27, 2012<br>
+      URL: <a href="lecture42.htm#lecture42" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture42</a></font><font size=-1><a href="lecture42.htm#lecture42" target="_self">.htm</a></font></p></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

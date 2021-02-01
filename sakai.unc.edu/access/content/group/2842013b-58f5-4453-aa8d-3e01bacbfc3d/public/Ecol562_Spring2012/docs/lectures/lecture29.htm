@@ -1,0 +1,758 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 29&mdash;Friday, March 23, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style102 {font-size: smaller}
+.style6 {	color: #0033CC;
+	font-size: smaller;
+}
+.style7 {	color: #CC0000;
+	font-weight: bold;
+}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+.style103 {color: #0033CC; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {color: #660099;
+	font-weight: bold;
+}
+.style104 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture29" id="lecture29"></a>Lecture 29 (lab 10)&mdash;Friday, March 23, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture29.htm#overview">Overview of the data</a></li>
+  <li><a href="lecture29.htm#working">Working with dates in R </a></li>
+  <li><a href="lecture29.htm#Kaplan">Kaplan-Meier estimator of the survivor function</a></li>
+  <li><a href="lecture29.htm#testing">Testing for differences in survivorship with the log-rank test</a></li>
+  <li><a href="lecture29.htm#coxph">Cox proportional hazards model</a>
+    <ul>
+      <li><a href="lecture29.htm#accounting">Accounting for observational heterogeneity</a></li>
+      <li><a href="lecture29.htm#including">Including covariates</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture29.htm#examining">Examining the proportional hazards assumption</a>
+    <ul>
+      <li><a href="lecture29.htm#examining">Graphical test</a></li>
+      <li><a href="lecture29.htm#analytical">Analytical test</a></li>
+      <li><a href="lecture29.htm#whatto">What to do when the PH assumption is rejected</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture29.htm#parametric">Parametric survival analysis--Weibull model</a>
+    <ul>
+      <li><a href="lecture29.htm#displaying">Graphing the survivor function using the predict function</a></li>
+      <li><a href="lecture29.htm#plotting">Plotting the fitted model with the curve function</a> <span class="style102">[not covered]</span></li>
+      <li><a href="lecture29.htm#checking">Checking whether the Weibull model is appropriate</a> <span class="style102">[not covered]</span></li>
+    </ul>
+  </li>
+  <li><a href="lecture29.htm#interval">Interval censoring</a> <span class="style102">[not covered]</span></li>
+  <li><a href="lecture29.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture29.htm#asdate">as.Date</a> converts character representations of dates into R's internal date format.</li>
+  <li><a href="lecture29.htm#class">class</a> identifies the class of an R object.</li>
+  <li><a href="lecture29.htm#cluster">cluster</a> (from <span class="style19">survival</span>) in a survival regression model  indicates that observations are grouped. The effect is that a robust sandwich estimate of the variance  is used for Wald tests and the model score test.</li>
+  <li><a href="lecture29.htm#coxph">coxph</a> (from <span class="style19">survival</span>) fits Cox proportional hazards regression models.</li>
+  <li><a href="lecture29.htm#coxzph">cox.zph</a> (from <span class="style19">survival</span>) when applied to <span class="style1021">coxph</span> model objects  tests the proportional hazards assumption.</li>
+  <li><a href="lecture29.htm#displaying">matplot</a> plots multiple columns of a matrix as different response variables in a single plot.</li>
+  <li>strata (from <span class="style19">survival</span>) defines a stratum variable in a survival regression model. With <a href="lecture29.htm#stratacox">coxph</a> it leads to separate baseline hazards being assumed for the different strata. With <a href="lecture29.htm#weibullstrata">survreg</a> and <span class="style22">dist=Weibull</span> it causes a different Weibull shape parameter to be estimated in each stratum.</li>
+  <li><a href="lecture29.htm#Kaplan">Surv</a> (from <span class="style19">survival</span>) is used to create a survival object for use with other survival package functions.</li>
+  <li><a href="lecture29.htm#survdiff">survdiff</a> (from <span class="style19">survival</span>)  carries out the log-rank test and its variations.</li>
+  <li><a href="lecture29.htm#Kaplan">survfit</a> (from <span class="style19">survival</span>) generates a Kaplan-Meier estimate of the survivor function for different groups using either raw data or a <span class="style1021">coxph</span> model object.</li>
+  <li><a href="lecture29.htm#parametric">survreg</a> (from <span class="style19">survival</span>) estimates parametric regression models for survival data.</li>
+  <li><a href="lecture29.htm#control">survreg.control</a> (from <span class="style19">survival</span>) is used to adjust the optimization settings of the <span class="style1021">survreg</span> function.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture29.htm#confint">conf.int=</a> is an argument to <span class="style1021">plot.survfit</span>, the <span class="style1021">survfit</span> method for <span class="style1021">plot</span>, and can be used to add confidence bands to a curve. Legal values are T or F.</li>
+  <li><a href="lecture29.htm#control">control=</a> is an argument to <span class="style1021">survreg</span> that is used to adjust the default optimization settings of the function.</li>
+  <li><a href="lecture29.htm#parametric">dist=</a> is an argument to <span class="style1021">survreg</span> that identifies the probability model.</li>
+  <li><a href="lecture29.htm#displaying">p=</a> is used with the <span class="style1021">predict</span> function when it is applied to a <span class="style1021">survreg</span> object with either <span class="style22">type=&quot;quantile&quot;</span> or <span class="style22">type=&quot;uquantile&quot;</span>. It is used to list the quantiles at which predictions are desired.</li>
+  <li><a href="lecture29.htm#rho">rho=</a> is an option of the <span class="style4">survdiff</span> function for differentially weighting survival times. The default setting <span class="style22">rho=0</span> carries out the ordinary log-rank test, while <span class="style22">rho=1</span> carries out the Gehan-Wilcoxon modification of the log-rank test.</li>
+  <li>type= when used with <a href="lecture29.htm#displaying">predict</a> on a <span class="style1021">survreg</span> object  identifies the kind of prediction that is desired. It can also be used  with the <a href="lecture29.htm#interval">Surv</a> function to indicate interval censoring.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture29.htm#Kaplan">survival</a> for the various functions needed to carry out survival analysis.</li>
+</ul>
+<h2><a name="overview"></a>Overview of the  data</h2>
+<p>The data are taken from a Master's thesis in which the goal is to determine the habitat requirements of the rare plant species <em>Tephrosia angustissima</em> with the goal of eventually reintroducing it into portions of its historical range where it has been extirpated. Additional details of the study can be found at the Fairchild Tropical Botanic Garden <a href="http://www.virtualherbarium.org/gardenviews/TephrosiaAngustissima.html">web page</a>. Greenhouse-raised parents were planted in three distinct habitats. All of their progeny were marked and their survival history was recorded. The first few observations from the data set are shown below. Each row corresponds to an individual seedling.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> seedlings &lt;- read.csv('ecol 562/seedlings.csv')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> seedlings[1:4,]</div>
+<span class="style24">&nbsp;&nbsp;Start.Date Last.Observed SdlgCensor Parent HabitCode SdlgCode parentlight<br>
+1  &nbsp;8/10/2004    &nbsp;&nbsp;&nbsp;11/14/2004          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;138         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;2138    &nbsp;&nbsp;&nbsp;95.30254<br>
+2  &nbsp;8/10/2004    &nbsp;&nbsp;&nbsp;11/14/2004          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;138         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;2139    &nbsp;&nbsp;&nbsp;95.30254<br>
+3  &nbsp;8/10/2004    &nbsp;&nbsp;&nbsp;11/14/2004          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;138         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;2141    &nbsp;&nbsp;&nbsp;95.30254<br>
+4  &nbsp;8/10/2004    &nbsp;&nbsp;&nbsp;11/14/2004          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;138         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;2142    &nbsp;&nbsp;&nbsp;95.30254<br>
+&nbsp;&nbsp;left.bound right.bound<br>
+1         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96<br>
+2         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96<br>
+3         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96<br>
+4         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;96</span>
+<ul>
+  <li>The variable <span class="style8">SdlgCensor</span> records whether a seedling was alive (<span class="style8">SdlgCensor</span>=0) or dead (<span class="style8">SdlgCensor</span>=1) the last time it was observed. Observations with <span class="style8">SdlgCensor</span>=0 were right censored. </li>
+  <li>The variable <span class="style8">Parent</span> records the parent ID of the planted adult plants that produced the individual seedlings. In these data multiple seedlings have the same parent. Thus there are seedlings from the same parent and seedlings from different parents. </li>
+  <li>The variable <span class="style8">HabitCode</span> identifies the microhabitat: 1=firebreak, 2=pine, and 3=Serenoa (a habitat dominated by saw palmetto). </li>
+</ul>
+<h2><a name="working"></a>Working with dates in R</h2>
+<p>This is an example of a staggered entry data set. A seedling's survival history began  when it was first observed in the field. To estimate the survivor function all individuals must have the same start  time. Thus we need to create an age variable from the staggered entry dates.</p>
+<p> <a name="asdate"></a>The variables <span class="style8">Start.Date</span> and <span class="style8">Last.Observed</span> were treated as character data by R and converted to factors by the <span class="style1021">read.csv</span> function when the data were read in. To calculate a seedling's age at death (or censor time), we need to get R to treat these values as actual dates. The <span class="style1021">as.Date</span> function of base R can be used to convert character data into date data. To use it we enter the character representation of the date as the first argument and a string that identifies the manner in which the date is formatted as the second argument. The string consists of conversion specifications that are introduced by the % character usually followed by a single letter. A full list of conversion specifications are given in the help screen of the <span class="style1021">strptime</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">?strptime</div>
+<p>The dates in the seedlings file are presented in the order month, day, followed by a four-digit year all separated by forward slashes. The format string we need to use that identifies this arrangement is <span class="style1">&quot;%m/%d/%Y&quot;</span>. Then to obtain the age of a seedling we subtract the start date from the last observed date. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">seedlings$Age &lt;- as.Date(seedlings$Last.Observed, &quot;%m/%d/%Y&quot;) - as.Date(seedlings$Start.Date, &quot;%m/%d/%Y&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> seedlings[1:4,]</div>
+<span class="style24">  &nbsp; Start.Date Last.Observed SdlgCensor Parent HabitCode SdlgCode parentlight<br>
+  1&nbsp; 8/10/2004&nbsp;&nbsp;&nbsp; 11/14/2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 138&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2138&nbsp;&nbsp;&nbsp; 95.30254<br>
+  2&nbsp; 8/10/2004&nbsp;&nbsp;&nbsp; 11/14/2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 138&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2139&nbsp;&nbsp;&nbsp; 95.30254<br>
+  3&nbsp; 8/10/2004&nbsp;&nbsp;&nbsp; 11/14/2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 138&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2141&nbsp;&nbsp;&nbsp; 95.30254<br>
+  4&nbsp; 8/10/2004&nbsp;&nbsp;&nbsp; 11/14/2004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 138&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 2142&nbsp;&nbsp;&nbsp; 95.30254<br>
+  &nbsp; left.bound right.bound&nbsp;&nbsp;&nbsp;&nbsp; Age<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 96 96 days<br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 96 96 days<br>
+  3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 96 96 days<br>
+  4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 96 96 days</span>
+<p><a name="class"></a>Observe that the print out for the  <span class="style8">Age</span> variable just created includes some unusual formatting. To see what kind of object we've created we can use the <span class="style1021">class</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 
+class(seedlings$Age)</div>
+<span class="style24">[1] &quot;difftime&quot;</span>
+<p>The survival functions we'll be using can't work with objects that have date classes, so we need to convert these date differences into numbers with the     <span class="style1021">as.numeric</span> function. Here's the complete command after this additional modification.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">seedlings$Age &lt;- as.numeric(as.Date(seedlings$Last.Observed, &quot;%m/%d/%Y&quot;) - as.Date(seedlings$Start.Date, &quot;%m/%d/%Y&quot;))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">class(seedlings$Age)</div>
+<span class="style24">[1] &quot;numeric&quot;</span>
+<h2><a name="Kaplan"></a>Kaplan-Meier estimate of the survivor function</h2>
+<p>The package <span class="style19">survival</span> contains functions for carrying out survival analysis. The first step in any analysis is to use the <span class="style1021">Surv</span> function to create a survival object. For right censored data we need to specify two arguments: the variable that records the age at the event time followed by the variable that identifies the nature of the event (failure or censored). The <span class="style1021">survfit</span> function  then uses the <span class="style1021">Surv</span> object as the response variable in a formula expression to produce the Kaplan-Meier estimate of the survivor function. The standard approach is to create the <span class="style1021">Surv</span> object and estimate the survivor function in a single expression.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(survival)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out0 &lt;- survfit(Surv(Age, SdlgCensor)~1, data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out0)</div>
+<span class="style24">&nbsp;[1] &quot;n&quot;         &nbsp;&nbsp;&nbsp;&nbsp;&quot;time&quot;      &nbsp;&nbsp;&nbsp;&nbsp;&quot;n.risk&quot;    &nbsp;&quot;n.event&quot;&nbsp;   &quot;n.censor&quot;  &nbsp;&nbsp;&quot;surv&quot; <br>
+&nbsp;[7] &quot;type&quot;      &nbsp;&quot;std.err&quot;   &nbsp;&quot;upper&quot;     &nbsp;&nbsp;&quot;lower&quot;     &nbsp;&nbsp;&nbsp;&quot;conf.type&quot; &nbsp;&quot;conf.int&quot; <br>
+[13] &quot;call&quot;</span>
+<p>The component <span class="style32">$surv</span> of the <span class="style1021">survfit</span> object is the Kaplan-Meier estimate while <span class="style32">$upper</span> and <span class="style32">$lower</span> components are the upper and lower 95% confidence limits. If we use the <span class="style1021">plot</span> function on a <span class="style1021">survfit</span> object, we get the a plot of the estimated survivor function along with a 95% confidence band.
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out0, ylab='S(t)', xlab='t')</div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig1.png" width="306" height="243" alt="fig 1"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 1&nbsp;</strong>&nbsp;Kaplan-Meier estimate of the seedling survivor function</td>
+  </tr>
+</table>
+<p>To obtain separate estimates of the survivor function by habitat we enter the habitat variable as a factor on the right side of the <span class="style1021">survfit</span> formula.
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1 &lt;- survfit(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out1, col=1:3, ylab='S(t)', xlab='t')</div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig2.png" width="306" height="243" alt="fig 1"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 2&nbsp;</strong>&nbsp;Kaplan-Meier estimate of the seedling survivor function separately by habitat</td>
+  </tr>
+</table>
+<p>The tick-marks shown on the individual curves represent ages at which individuals were censored. </p>
+<p><a name="confint"></a>It is possible to add confidence bands to each curve by specifying  <span class="style22">conf.int=T</span> as an argument to <span class="style1021">plot</span> (actually the <span class="style1021">plot.survfit</span> method). Unfortunately the confidence bands that appear are not distinguished from the estimate (using different line types or colors) and the display can get confusing. To superimpose the 95% confidence bands on this graph each with their own line types we need to add them ourselves. To accomplish this we have to understand how the estimates and confidence limits are organized in the <span class="style1021">survfit</span> object that was created. When a factor variable is included on the right side of the formula expression, a new component called <span class="style32">$strata</span> is generated in the <span class="style1021">survfit</span> object. It tells us the number of observations in the individual strata and the order they occur in the returned estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1$strata</div>
+<span class="style24"> factor(HabitCode)=1 factor(HabitCode)=2 factor(HabitCode)=3 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;36                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31</span>
+<p>We can use this variable to create an indicator variable that identifies the stratum from which each estimate comes.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">habitat &lt;- rep(1:3, out1$strata)</div>
+<p>Using this variable we can variously select the estimates for habitats 1, 2, and 3 and add the confidence bands to the above plot with the <span class="style1021">lines</span> function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence bounds for habitat 1 KM estimate</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out1$time[habitat==1], out1$lower[habitat==1], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out1$time[habitat==1], out1$upper[habitat==1], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence bounds for habitat 2 KM estimate</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out1$time[habitat==2], out1$lower[habitat==2], col= 2, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out1$time[habitat==2], out1$upper[habitat==2], col= 2, lty=2, type='s')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence bounds for habitat 3 KM estimate</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out1$time[habitat==3], out1$lower[habitat==3], col= 3, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out1$time[habitat==3], out1$upper[habitat==3], col= 3, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', legend=1:3, title='habitat', col=1:3, lty=1, cex=.9, bty='n')</div>
+</p>
+<p>From the plot we see that while habitats 1 and 2 exhibit different survivorship patterns initially that then converge, individuals in habitat 3 persist longer than individuals in the other two habitats at every age.</p>
+<table width="450" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig3.png" width="306" height="243" alt="fig 1"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 3&nbsp;</strong>&nbsp;Kaplan-Meier estimates of the seedling survivor function given separately by habitat with 95% confidence bands</td>
+  </tr>
+</table>
+<h2><a name="testing"></a>Testing for differences in survivorship with the log-rank test</h2>
+<p><a name="survdiff"></a>The <span class="style1021">survdiff</span> function carries out the log-rank test to test for differences in the survivor function between groups. Its syntax is identical to that of the <span class="style1021">survfit</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1.diff &lt;- survdiff(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1.diff</div>
+<span class="style24"> Call:<br>
+survdiff(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode), <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data = seedlings)</span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N Observed Expected (O-E)^2/E (O-E)^2/V<br>
+  factor(HabitCode)=1 1119     &nbsp;&nbsp;&nbsp;&nbsp;1116      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;934     &nbsp;&nbsp;&nbsp;&nbsp;35.58     &nbsp;&nbsp;&nbsp;&nbsp;110.3<br>
+  factor(HabitCode)=2  &nbsp;260      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;258      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;307      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.79      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.9<br>
+  factor(HabitCode)=3  &nbsp;233      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;212      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;345     &nbsp;&nbsp;&nbsp;&nbsp;51.50      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;86.5</span>
+<p><span class="style24"> Chisq= </span><span class="style25">123</span><span class="style24"> on 2 degrees of freedom, </span><span class="style25">p= 0
+</span>
+<p><a name="rho"></a>The <span class="style1021">survdiff</span> function has an argument <span class="style22">rho</span> that allows one to weight observations in the survival history differently. The default value is<span class="style22"> rho=0</span> for which the weights are all equal to one.  If we set <span class="style22">rho=1</span> we obtain the Gehan-Wilcoxon test that weights early differences in survivorship more heavily than differences at later survival times. The weights in this case are the number of individuals that are still at risk at each event time.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1.diff2 &lt;- survdiff(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings, rho=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1.diff2</div>
+<span class="style24"> Call:<br>
+survdiff(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode), <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data = seedlings, rho = 1)</span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N Observed Expected (O-E)^2/E (O-E)^2/V<br>
+  factor(HabitCode)=1 1119    &nbsp;&nbsp;&nbsp;660.3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;558      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18.9      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;88.7<br>
+  factor(HabitCode)=2  &nbsp;260    &nbsp;&nbsp;&nbsp;118.4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;164      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.5      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26.2<br>
+  factor(HabitCode)=3  &nbsp;233     &nbsp;&nbsp;&nbsp;&nbsp;95.7      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;153      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21.5      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45.8</span>
+<p> <span class="style24">Chisq= </span><span class="style25">90.4</span><span class="style24"> on 2 degrees of freedom, </span><span class="style25">p= 0
+</span>
+<p>The conclusions are the same for both versions of the test but notice that the value of the test statistic is much larger for the ordinary log-rank test indicating that late survival time differences are larger than early survival time differences. This is also clear from Fig. 3.</p>
+<h2><a name="coxph" id="coxph"></a>Cox proportional hazards model</h2>
+<p>The <span class="style1021">coxph</span> function fits the Cox proportional hazards regression model. Its syntax is identical to that of other regression functions in R except that it does require  the response to be a survival object created by the <span class="style1021">Surv</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1.cox &lt;- coxph(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out1.cox)</div>
+<span class="style24"> Call:<br>
+coxph(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode), data = seedlings)</span>
+<p><span class="style24"> &nbsp;&nbsp;n= 1612 </span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coef exp(coef) se(coef)      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z Pr(&gt;|z|) <br>
+  factor(HabitCode)2 -0.37936   &nbsp;&nbsp;0.68430  &nbsp;0.06932 -5.473 4.43e-08 ***<br>
+  factor(HabitCode)3 -0.76908   &nbsp;&nbsp;0.46344  &nbsp;0.07719 -9.963  &nbsp;&lt; 2e-16 ***<br>
+  ---<br>
+  Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp(coef) exp(-coef) lower .95 upper .95<br>
+  factor(HabitCode)2    &nbsp;&nbsp;&nbsp;0.6843      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.461    &nbsp;&nbsp;&nbsp;0.5974    &nbsp;&nbsp;&nbsp;0.7839<br>
+  factor(HabitCode)3    &nbsp;&nbsp;&nbsp;0.4634      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.158    &nbsp;&nbsp;&nbsp;0.3984    &nbsp;&nbsp;&nbsp;0.5391</span>
+<p><span class="style24">Rsquare= 0.075   (max possible= 1 )<br>
+  Likelihood ratio test= 125.9  on 2 df,   p=0<br>
+  Wald test            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 113.3  on 2 df,   p=0<br>
+  Score (logrank) test = 117.1  on 2 df,   p=0</span>
+<p>In Cox regression we model the log hazard so the fact that the coefficient estimates are negative and statistically significant tells us that plants in habitats 2 and 3 experience a significantly lower hazard than do plants in habitat 1, the reference group. The exponentiated coefficients shown in the output are the hazard ratios. The hazard ratios labeled <span class="style32">exp(-coef)</span> have switched things around so that habitats 2 and 3 are the reference groups, and habitat 1 is the test group. Using these we see that the hazard of dying at any instant is 1.46 times greater in habitat 1 than in habitat 2, and 2.16 times  greater in habitat 1 than in habitat 3.</p>
+<p>The <span class="style1021">coxph</span> object that was created has a method for the <span class="style1021">anova</span> function from which we can obtain an overall test of the  construct <span class="style8">HabitCode</span>. With just one predictor this is identical to the likelihood ratio test reported in the summary table.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(out1.cox)</div>
+<span class="style24"> Analysis of Deviance Table<br>
+&nbsp;Cox model: response is Surv(Age, SdlgCensor)<br>
+Terms added sequentially (first to last)</span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loglik  &nbsp;Chisq Df Pr(&gt;|Chi|) <br>
+  NULL              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-10229 <br>
+  factor(HabitCode) -10166 125.86  &nbsp;2  &lt; 2.2e-16 ***<br>
+  ---<br>
+  Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p>Although the baseline hazard is not estimated in a Cox model, it is still possible to obtain an estimate of the survivor function by applying the <span class="style1021">survfit</span> function to a <span class="style1021">coxph</span> object. It returns an estimate that is similar to the Kaplan-Meier estimate calculated from raw data. According to the help screen for <span class="style1021">survfit</span>, &quot;When the parent data is a Cox model, there is an extra term in the variance of the curve, due to the variance of the coefficients and hence variance in the computed weights.&quot; For Cox models it is necessary to specify values for the variables in the model using the <span class="style22">newdata=</span> argument. I obtain these estimates for each habitat type by specifying different values for the <span class="style8">HabitCode</span> variable, plot the results, and superimpose the ordinary Kaplan-Meier estimates for comparison.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># KM estimates</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out1, col=1:3, ylab='S(t)', xlab='t')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># separate Cox estimates by habitat</div>
+
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> cox1 &lt;- survfit(out1.cox, newdata=list(HabitCode=1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  cox2 &lt;- survfit(out1.cox, newdata=list(HabitCode=2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  cox3 &lt;- survfit(out1.cox, newdata=list(HabitCode=3))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(cox1)</div>
+
+<span class="style24">&nbsp;[1] &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;time&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;n.risk&quot;&nbsp;&nbsp;&nbsp; &quot;n.event&quot;&nbsp;&nbsp; &quot;n.censor&quot;&nbsp; &quot;surv&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[7] &quot;type&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;std.err&quot;&nbsp;&nbsp; &quot;upper&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lower&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;conf.type&quot; &quot;conf.int&quot; <br>
+  [13] &quot;call&quot;</span>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># add Cox estimates</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(cox1$time, cox1$surv, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(cox2$time, cox2$surv, lty=2, type='s', col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(cox3$time, cox3$surv, lty=2, type='s', col=3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend(&quot;topright&quot;, as.vector(sapply(list(&quot;Cox:&quot;, &quot;KM:&quot;), function(x) paste(x, paste(&quot;Habitat =&quot;,1:3)))), col=c(1:3,1:3), lty=c(2,2,2,1,1,1), bty=&quot;n&quot;, cex=.8)</div>
+</p>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig4.png" width="306" height="243" alt="fig 1"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 4&nbsp;</strong>&nbsp;Kaplan-Meier and Cox estimates of the seedling survivor functions separately by habitat </td>
+  </tr>
+</table>
+<h3><a name="accounting"></a>Accounting for observational heterogeneity</h3>
+<p><a name="cluster"></a>So far the Cox model hasn't given us anything more than we already obtained with the ordinary Kaplan-Meier estimate and the log-rank test. The real reason for fitting a Cox model is  to include additional predictors for statistical control in order to obtain more realistic estimates of the standard errors. Recall that these data are heterogeneous&mdash;some come seedlings from the same parent and other seedlings come from different parents. Seedlings from the same parent are likely to be close spatially and more similar genetically. Mixed effects models in survival analysis are called frailty models and while they are available in R they are sometimes difficult to fit. A GEE alternative  to frailty models calculates robust sandwich estimates of the variances of the parameter estimates for the Wald tests (univariate and multivariate) that are reported in the output. We can obtain robust sandwich estimates with the <span class="style1021">cluster</span> function by identifying <span class="style8">Parent</span> as the source of the heterogeneity and then including this as a term in the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out2.cox &lt;- coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+ cluster(Parent), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out2.cox)</div>
+<span class="style24"> Call:<br>
+coxph(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode) + cluster(Parent), <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data = seedlings)</span>
+<p><span class="style24"> n= 1612 </span>
+<p> <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coef exp(coef) se(coef) robust se      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z Pr(&gt;|z|) <br>
+  factor(HabitCode)2 -0.37936   &nbsp;&nbsp;0.68430  &nbsp;0.06932   &nbsp;&nbsp;</span><span class="style25">0.12236 -3.100  0.00193 **</span><span class="style24"> <br>
+    factor(HabitCode)3 -0.76908   &nbsp;&nbsp;0.46344  &nbsp;0.07719   &nbsp;&nbsp;</span><span class="style25">0.14345 -5.361 8.26e-08 ***</span><span class="style24"><br>
+      ---<br>
+      Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp(coef) exp(-coef) lower .95 upper .95<br>
+  factor(HabitCode)2    &nbsp;&nbsp;&nbsp;0.6843      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.461    &nbsp;&nbsp;&nbsp;</span><span class="style25">0.5384    &nbsp;&nbsp;&nbsp;0.8697</span><span class="style24"><br>
+    factor(HabitCode)3    &nbsp;&nbsp;&nbsp;0.4634      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.158    &nbsp;&nbsp;&nbsp;</span><span class="style25">0.3499    &nbsp;&nbsp;&nbsp;0.6139 </span>
+<p><span class="style24">Rsquare= 0.075   (max possible= 1 )<br>
+  Likelihood ratio test= 125.9 on 2 df,&nbsp;   p=0<br>
+  Wald test            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= </span><span class="style25">29.86</span><span class="style24"> on 2 df,&nbsp;   p=</span><span class="style25">3.281e-07</span><span class="style24"><br>
+    Score (logrank) test = 117.1  on 2 df,&nbsp;   p=0,   &nbsp;</span><span class="style25">Robust = 22.14  p=1.558e-05</span>
+<p> <span class="style24">&nbsp;&nbsp;(Note: the likelihood ratio and score tests assume independence of<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;observations within a cluster, the Wald and robust score tests do not).</span>
+<p>The new results obtained by including the <span class="style1021">cluster</span> function are highlighted in the above output. Specifying <span class="style8">Parent</span> as a source of clustering has changed the reported <em>p</em>-values and confidence intervals, but it has not altered any of our conclusions. Habitat is still seen to have a significant effect on survival.</p>
+<h3><a name="including" id="including"></a>Including covariates</h3>
+<p>Another reason for fitting a Cox model is to include control variables in the model, variables that might be confounders of the effect of interest. This is not a primary issue with  these data because most of the available explanatory variables are just surrogates for habitat. One variable that may be an exception to this is <span class="style8">parentlight</span>, which was measured at the beginning of study and was an attempt to account for the different microhabitats experienced by individual seedlings.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out3.cox &lt;- coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+ cluster(Parent) + parentlight, data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out3.cox)</div>
+
+<p><span class="style24">Call:<br>
+coxph(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode) + cluster(Parent) + <br>
+&nbsp;&nbsp;&nbsp; parentlight, data = seedlings)</span>
+<p><span class="style24">&nbsp; n= 1535, number of events= 1509 <br>
+  &nbsp;&nbsp; (77 observations deleted due to missingness)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; coef exp(coef) se(coef) robust se&nbsp;&nbsp;&nbsp;&nbsp; z Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  factor(HabitCode)2 -0.25088&nbsp;&nbsp; 0.77812&nbsp; 0.07285&nbsp;&nbsp; 0.13276 -1.89&nbsp;&nbsp;&nbsp; 0.059 .&nbsp; <br>
+  factor(HabitCode)3 -0.82102&nbsp;&nbsp; 0.43999&nbsp; 0.07914&nbsp;&nbsp; 0.13630 -6.02&nbsp; 1.7e-09 ***<br>
+  parentlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00464&nbsp;&nbsp; 1.00465&nbsp; 0.00095&nbsp;&nbsp; 0.00226&nbsp; 2.05&nbsp;&nbsp;&nbsp; </span><span class="style25">0.040</span><span class="style24"> *&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exp(coef) exp(-coef) lower .95 upper .95<br>
+  factor(HabitCode)2&nbsp;&nbsp;&nbsp;&nbsp; 0.778&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.285&nbsp;&nbsp;&nbsp;&nbsp; 0.600&nbsp;&nbsp;&nbsp;&nbsp; 1.009<br>
+  factor(HabitCode)3&nbsp;&nbsp;&nbsp;&nbsp; 0.440&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.273&nbsp;&nbsp;&nbsp;&nbsp; 0.337&nbsp;&nbsp;&nbsp;&nbsp; 0.575<br>
+  parentlight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.995&nbsp;&nbsp;&nbsp;&nbsp; 1.000&nbsp;&nbsp;&nbsp;&nbsp; 1.009</span>
+<p><span class="style24">Concordance= 0.588&nbsp; (se = 0.01 )<br>
+  Rsquare= 0.086&nbsp;&nbsp; (max possible= 1 )<br>
+  Likelihood ratio test= 138&nbsp; on 3 df,&nbsp;&nbsp; p=0<br>
+  Wald test&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 38.6&nbsp; on 3 df,&nbsp;&nbsp; p=2.09e-08<br>
+  Score (logrank) test = 132&nbsp; on 3 df,&nbsp;&nbsp; p=0,&nbsp;&nbsp; Robust = 21.2&nbsp; p=9.59e-05</span>
+<p><span class="style24">&nbsp; (Note: the likelihood ratio and score tests assume independence of<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; observations within a cluster, the Wald and robust score tests do not).</span>
+<p>The  Wald test with the robust standard errors finds this predictor to be statistically significant.</p>
+<h2><a name="examining"></a>Examining the proportional hazards assumption</h2>
+<h3>Graphical test</h3>
+<p>For categorical predictors the proportional hazards assumption can be assessed by plotting log(&ndash;log(<em>S</em>(<em>t</em>))) against time separately for the different habitat categories. If the proportional hazards assumption holds the curves should be parallel. Here <em>S</em>(<em>t</em>) is the KM estimate of the survivor function for the different categories. I examine whether the proportional hazards assumption is satisfied for the individual habitats. Although the KM estimates were obtained earlier I repeat the calculations below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1 &lt;- survfit(Surv(Age, SdlgCensor)~factor(HabitCode), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> habitat &lt;- rep(1:3, out1$strata)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out1$time,log(-log(out1$surv)), type='n', ylab=expression(log(-log(S(t)))), xlab=&quot;t&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out1$time[habitat==1], log(-log(out1$surv[habitat==1])), col=1, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out1$time[habitat==2], log(-log(out1$surv[habitat==2])), col=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out1$time[habitat==3], log(-log(out1$surv[habitat==3])), col=3, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', legend=1:3, title='habitat', col=1:3, lty=1, cex=.9, bty='n')</div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig5.png" width="307" height="242" alt="fig. 5"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 5&nbsp;</strong>&nbsp;Graphical assessment of the proportional hazards assumption for the  predictor habitat</td>
+  </tr>
+</table>
+<p>While the curves for habitat 1 and 3 are parallel, the curve for habitat 2 is clearly not parallel to the other two suggesting that the proportional hazards assumption for this variable may be incorrect.</p>
+<h3><a name="analytical"></a>Analytical test</h3>
+<p>Suppose subject <em>i</em> has an event at time <em>t<sub>j</sub></em>. Then the Schoenfeld residual for this subject for a given predictor is the observed value of that predictor minus a weighted average of the predictor values for the other subjects still at risk at time <em>t<sub>j</sub></em>. The weights used are each subject&rsquo;s estimated hazard. The idea behind the statistical test is that if the proportional hazards assumption holds for a particular covariate then the Schoenfeld residuals for that covariate will not be related to survival time. </p>
+<p><a name="coxzph"></a>The <span class="style1021">cox.zph</span> function in the <span class="style19">survival</span> package uses this approach to assess the proportional hazards assumption. When we plot the object created by <span class="style1021">cox.zph</span> we get estimates of a time-dependent coefficient for each predictor in the mode,   labeled <span class="style8">beta(t)</span> in the plot. If the proportional hazards assumption is correct, <span class="style8">beta(t)</span> will be a horizontal line at the value returned by <span class="style1021">coxph</span> for this parameter. The printout from the function call provides a test that slope of this line is 0 for each regressor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.zph &lt;- cox.zph(out3.cox)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.zph</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rho chisq        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+factor(HabitCode)2  &nbsp;0.0883 39.73 2.92e-10<br>
+factor(HabitCode)3 -0.0429  &nbsp;8.67 3.24e-03<br>
+parentlight         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0426 16.19 5.74e-05<br>
+GLOBAL                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA 58.84 1.04e-12</span>
+<p>The displayed <em>p</em>-value tests whether the individual regression coefficients are constant over time. According to the test results above  we should reject this for all of the regressors in the model. Of course  the clustering of observations around parents may be inflating the magnitude of these relationships so perhaps we should not take the <em>p</em>-values too literally. </p>
+<p>If we plot the <span class="style1021">cox.zph</span> object we get a graphical display of how the different regression coefficients estimated change over time. The <span class="style22">ylim</span> argument is used to zoom in on the displayed pattern.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">par(mfrow=c(2,2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.zph[1], ylim=c(-2,2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(h=coef(out3.cox)[1], col=2, lty=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.zph[2], ylim=c(-2,2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(h=coef(out3.cox)[2], col=2, lty=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.zph[3], ylim=c(-.05,.05))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(h=coef(out3.cox)[3], col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">par(mfrow=c(1,1))</div>
+<br>
+<table width="570" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig6.png" width="510" height="500" alt="fig. 6"></th>
+  </tr>
+  <tr>
+    <td><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 6&nbsp;</strong>&nbsp;A graphical assessment of the proportional hazards assumption: a plot of the individual estimated regression coefficients against time with the  estimate from the Cox model superimposed.</td>
+  </tr>
+</table>
+<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">coef(out3.cox)</div>
+<span class="style24"> factor(HabitCode)2 &nbsp;factor(HabitCode)3        &nbsp;&nbsp;parentlight <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.250874548       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.821015074        &nbsp;&nbsp;0.004641883 </span>
+<p>The coefficient estimates from <span class="style1021">coxph</span> for the habitat effect regressors are negative, while the estimate for the parent light variable is positive. In Fig. 6 it appears that the first habitat dummy regressor coefficient and the <span class="style8">parentlight</span> coefficient start negative and then become positive over time. More importantly we see that the coefficient estimates from the Cox model (the horizontal lines in the graphs) do not lie entirely within the displayed confidence bounds at all the survival times. (The habitat 3 coefficient comes closest but exits the confidence bands for long survival times.) Based on Fig. 6 the constant estimates returned by the Cox model for each parameter are implausible and would be rejected   at many of the survival times.</p>
+<h3><strong><a name="whatto"></a>What to do when proportional hazards (PH) assumption is rejected</strong></h3>
+<ol>
+  <li>Examine the structural form of the predictors in the model. Perhaps they have a more complicated relationship with the log hazard.</li>
+  <li>Repeat the analysis by stratifying on the exposure variable. If there are no other predictors of interest then do not fit any model, just obtain Kaplan&ndash;Meier curves for each exposure group separately. If there are additional control variables fit a Cox model in which the levels of the exposure variable are treated as strata.</li>
+  <li>Start the analysis at a time when&nbsp; the PH assumption appears to hold, and use a Cox PH model for only those individuals that survived that long.</li>
+  <li>Fit one Cox model to the early data and a different Cox model for the later data to get two different hazard ratio estimates, one for each of these two time periods.</li>
+  <li>Fit a modified Cox model that includes a time-dependent variable that incorporates the interaction of exposure with time. Such a model is called an extended Cox model. </li>
+  <li>Switch to a parametric model in which the PH assumption is not important.</li>
+</ol>
+<p><strong>Option 1.</strong> In Fig. 6 the variable <span class="style8">parentlight</span> appears to have a quadratic relationship with time. Perhaps it also has a quadratic relationship with the hazard. Such a relationship is biologically motivated. One might expect that there would be an intermediate optimal light level for survival rather than a strictly linear relationship.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out4.cox &lt;- coxph(Surv(Age,SdlgCensor)~factor(HabitCode)+ cluster(Parent)+ parentlight + I(parentlight^2), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cox.zph(out4.cox)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rho  &nbsp;chisq        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+factor(HabitCode)2&nbsp;  0.08402 39.687 2.98e-10<br>
+factor(HabitCode)3 -0.04296  &nbsp;8.228 4.12e-03<br>
+parentlight         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01795  &nbsp;2.540 </span><span class="style25">1.11e-01</span><span class="style24"><br>
+I(parentlight^2)   &nbsp;&nbsp;-0.00719  &nbsp;0.414 </span><span class="style25">5.20e-01</span><span class="style24"><br>
+GLOBAL                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA 65.264 2.26e-13</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(summary(out4.cox)$coefficients,5)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coef exp(coef) se(coef) robust se        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z Pr(&gt;|z|)<br>
+factor(HabitCode)2 -0.18184   &nbsp;&nbsp;0.83373  &nbsp;0.07698   &nbsp;&nbsp;0.14069 -1.29254  &nbsp;0.19617<br>
+factor(HabitCode)3 -0.78702   &nbsp;&nbsp;0.45520  &nbsp;0.08004   &nbsp;&nbsp;0.13412 -5.86802  &nbsp;0.00000<br>
+parentlight        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.01066   &nbsp;&nbsp;0.98940  &nbsp;0.00536   &nbsp;&nbsp;0.01246 -0.85566  &nbsp;0.39219<br>
+I(parentlight^2)    &nbsp;&nbsp;&nbsp;0.00013   &nbsp;&nbsp;1.00013  &nbsp;</span><span class="style25">0.00005   &nbsp;&nbsp;0.00011  &nbsp;1.24653  &nbsp;0.21257 </span>
+<p>The test for time-varying coefficients is no longer significant for <span class="style8">parentlight</span>. On the other hand the quadratic coefficient is not statistically significant when we use robust standard errors, although it is statistically significant at &alpha; = .05 if we use the naive standard error.</p>
+<p><a name="stratacox"></a><strong>Option 2</strong>. For categorical variables we have the option of stratifying by levels of the categorical variable. In a Cox model this means assuming different baseline hazards  for each level but still using all the data  in estimating the remaining regression coefficients. To carry this out with <span class="style1021">coxph</span> we use the <span class="style1021">strata</span> function rather than the <span class="style1021">factor</span> function on the variable <span class="style8">HabitCode</span>. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out5.cox &lt;- coxph(Surv(Age,SdlgCensor)~strata(HabitCode)+ parentlight + cluster(Parent), data=seedlings)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cox.zph(out5.cox)</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rho chisq        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+parentlight 0.0455  &nbsp;18.3 1.84e-05</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">round(summary(out5.cox)$coefficients,5)</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coef exp(coef) se(coef) robust se       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z Pr(&gt;|z|)<br>
+parentlight 0.00447   &nbsp;&nbsp;1.00448  &nbsp;0.00096   &nbsp;&nbsp;0.00227 1.97225  &nbsp;0.04858</span>
+<p>The down side to this approach is that no estimates are returned for the stratifying variable, hence in this case there is no way to assess statistically whether survivorship differs by habitat.</p>
+<h2><a name="parametric"></a>Parametric survival models&mdash;Weibull regression</h2>
+<p>Parametric survival models are fit in R with the <span class="style1021">survreg</span> function of the <span class="style19">survival</span> package. I focus here exclusively on Weibull models. Depending on the parameterization, a Weibull model can be viewed as either a proportional hazards (PH) model or an accelerated failure time (AFT) model.  R fits the accelerated failure time parameterization.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.weib &lt;- survreg(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings, dist='weibull')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.weib)</div>
+<span class="style24"> Call:<br>
+survreg(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode), <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data = seedlings, dist = &quot;weibull&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Std. Error     &nbsp;&nbsp;&nbsp;&nbsp;z        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+(Intercept)         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.603     &nbsp;&nbsp;&nbsp;&nbsp;0.0215 260.9 0.00e+00<br>
+factor(HabitCode)2  &nbsp;0.257     &nbsp;&nbsp;&nbsp;&nbsp;0.0475   &nbsp;&nbsp;5.4 6.69e-08<br>
+factor(HabitCode)3  &nbsp;0.614     &nbsp;&nbsp;&nbsp;&nbsp;0.0515  &nbsp;11.9 1.03e-32<br>
+Log(scale)         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.374     &nbsp;&nbsp;&nbsp;&nbsp;0.0185 -20.2 7.29e-91</span>
+<p><span class="style24"> Scale= 0.688 </span>
+<p><span class="style24"> Weibull distribution<br>
+  Loglik(model)= -10345.5   Loglik(intercept only)= -10429.7<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Chisq= 168.36 on 2 degrees of freedom, p= 0 <br>
+  Number of Newton-Raphson Iterations: 5 <br>
+  n= 1612 </span>
+<p>As is explained in <a href="lecture28.htm#weibull">lecture 28</a>, in the AFT parameterization of the Weibull distribution we model  what is usually called the log scale parameter, log &lambda;, with a linear predictor.  This is essentially equivalent to modeling log survival time. Confusingly, another parameter in the <span class="style1021">survreg</span> output is labeled <span class="style32">log(scale)</span>. This reversed notation is peculiar to <span class="style1021">survreg</span>. What <span class="style1021">survreg</span> calls the scale parameter is in fact the reciprocal of what is usually called the shape parameter. Based on the positive coefficient estimates shown in the above output for <span class="style1">HabitCode</span> we can conclude that plants in habitats 2 and 3 live significantly longer (their survival times are more stretched out) than those in habitat 1.</p>
+<p><a name="control"></a>Although not needed here it is possible to adjust the default optimization settings with the <span class="style22">control</span> argument coupled with the <span class="style1021">survreg.control</span> function. For instance, the following settings increase the maximum number of iterations from the default value of 30 to 100.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.weib0 &lt;- survreg(Surv(Age,SdlgCensor)~factor(HabitCode), data=seedlings, dist='weibull', control=survreg.control(maxiter=100))</div>
+<h3><a name="displaying"></a>Graphing the survivor function using the predict function</h3>
+<p>There are a number of ways of displaying the results from the Weibull analysis. We can use the <span class="style1021">predict</span> function on the <span class="style1021">survreg</span> model object and request percentile estimates for designated percentiles and plot the results. For this we need to use the <span class="style22">p=</span> argument to specify a list of the quantile points of the cumulative distribution function. In the code below I generate a sequence of equally spaced percentiles but stop at the 99th percentile because the 100th percentile is at infinity. I specify <span class="style22">type=&quot;quantile&quot;</span> to obtain the quantile predictions. Using the <span class="style1021">matplot</span> function to generate the plot is a shortcut; it plots the estimate and 95% confidence bands all at the same time with a single function call.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pct &lt;- 1:99/100 </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ptime &lt;- predict(out.weib, newdata=data.frame(HabitCode=1), type='quantile', p=pct, se=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(ptime)</div>
+<span class="style24"> [1] &quot;fit&quot;    &quot;se.fit&quot; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">matplot(cbind(ptime$fit, ptime$fit + 2*ptime$se.fit, ptime$fit - 2*ptime$se.fit), 1-pct, xlab=&quot;Days&quot;, ylab=&quot;Survival&quot;, type='l', lty=c(1,2,2), col=1)</div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig7.png" width="320" height="240" alt="fig 7"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 7&nbsp;</strong>&nbsp;Estimate of the Weibull survivor function with 95% confidence bands</td>
+  </tr>
+</table>
+<p>We can perhaps obtain more accurate coverage by constructing the confidence intervals on the log scale and then exponentiating the result. To obtain an estimate of the quantiles of the survivor function on the scale of the linear predictor we need to specify <span class="style22">type='uquantile'</span>. After calculating the confidence bounds for the log quantiles we then need to exponentiate the result.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#calculating confidence bounds on a log scale</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ptime2 &lt;- predict(out.weib, newdata=data.frame(HabitCode=1), type='uquantile', p=pct, se=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">matplot(cbind(exp(ptime2$fit), exp(ptime2$fit + 2*ptime2$se.fit), exp(ptime2$fit - 2*ptime2$se.fit)), 1-pct, xlab=&quot;Days&quot;, ylab=&quot;Survival&quot;, type='l', lty=c(1,2,2), col=1)</div>
+<p>For these data the plot that results is essentially identical to Fig. 7 and is not shown.</p>
+<h3><a name="plotting"></a>Plotting the survivor function with the curve function</h3>
+<p>The labeling of the Weibull parameters in the <span class="style1021">survreg</span> function even differs from that used by the Weibull function in base R. As was mentioned above the linear predictor is the estimate of what is usually called log scale, i.e. log &lambda;, and what <span class="style1021">survreg</span> calls the scale parameter is in fact the reciprocal of the Weibull shape parameter used in the base R Weibull functions. With those identifications  understood, plotting the Weibull survivor function becomes straight-forward. Just use the <span class="style1021">pweibull</span> function with the argument <span class="style22">lower.tail=FALSE</span>, or equivalently,  plot instead 1&ndash;<span class="style1021">pweibull</span>. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(pweibull(x, scale=exp(coef(out.weib)[1]), shape=1/out.weib$scale, lower.tail=FALSE), from=0, to=max(seedlings$Age), col=1, ylab =expression(hat(S)(t)), xlab='t')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(pweibull(x, scale=exp(coef(out.weib)[1]+ coef(out.weib)[2]), shape=1/out.weib$scale, lower.tail=FALSE), from=0, to=max(seedlings$Age), add=T, col=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(pweibull(x, scale=exp(coef(out.weib)[1]+ coef(out.weib)[3]), shape=1/out.weib$scale, lower.tail=FALSE), from=0, to=max(seedlings$Age), add=T, col=3) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright',paste('Habitat',1:3), col=1:3, lty=1, cex=.9, bty='n')</div>
+</p>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig8.png" width="320" height="240" alt="fig 8"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 8&nbsp;</strong>&nbsp;Weibull survivor functions for individual habitats</td>
+  </tr>
+</table>
+<p>Fig. 8 compares the estimate of the survivor function in habitat 1 using the Cox model with the estimated obtained using Weibull regression. As the plot demonstrates the two estimates coincide fairly closely. The Weibull model estimate resembles a smoothed version of the Cox model estimate.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(survfit(out1.cox, newdata=data.frame(HabitCode=1)), xlab='t', ylab=expression(hat(S)(t)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ptime$fit, 1-pct, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ptime$fit + 2*ptime$se.fit, 1-pct, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(ptime$fit - 2*ptime$se.fit, 1-pct, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('topright', c('Cox model', 'Weibull model'), col=1:2, lty=1, cex=.9, bty='n') </div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig9.png" width="320" height="240" alt="fig 9"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 9&nbsp;</strong>&nbsp;Comparison of the Weibull and Cox estimates of the survivor function for habitat 1</td>
+  </tr>
+</table>
+<p>In a similar fashion we can obtain estimates of the Weibull densities and the Weibull hazard functions in the three habitats.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Weibull densities</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(dweibull(x, scale=exp(coef(out.weib)[1]), shape=1/out.weib$scale), from=0, to=max(seedlings$Age), ylab=&quot;Density&quot;, xlab=&quot;Age&quot;, axes=F)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">axis(1,cex.axis=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">axis(2,cex.axis=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">box() </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(dweibull(x, scale=exp(coef(out.weib)[1]+ coef(out.weib)[2]), shape=1/out.weib$scale), from=0, to=max(seedlings$Age),add=T, col=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(dweibull(x, scale=exp(coef(out.weib)[1]+coef(out.weib)[3]), shape=1/out.weib$scale), from=0, to=max(seedlings$Age), add=T, col=3) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright',paste('Habitat',1:3), col=1:3, lty=1, cex=.8, bty='n')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Weibull hazard functions</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(dweibull(x, scale=exp(coef(out.weib)[1]), shape=1/out.weib$scale)/pweibull(x, scale=exp(coef(out.weib)[1]), shape=1/out.weib$scale,     lower.tail=FALSE), from=0, to=max(seedlings$Age), ylab=&quot;hazard&quot;, xlab=&quot;Age&quot;, axes=F) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">axis(1,cex.axis=.9)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">axis(2,cex.axis=.9)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">box()</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(dweibull(x, scale=exp(coef(out.weib)[1]+coef(out.weib)[2]), shape=1/out.weib$scale)/pweibull(x, scale=exp(coef(out.weib)[1]+coef(out.weib)[2]), shape=1/out.weib$scale,     lower.tail=FALSE), from=0, to=max(seedlings$Age), add=T, col=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(dweibull(x, scale=exp(coef(out.weib)[1]+coef(out.weib)[3]), shape=1/out.weib$scale)/pweibull(x, scale=exp(coef(out.weib)[1]+coef(out.weib)[3]), shape=1/out.weib$scale,     lower.tail=FALSE), from=0, to=max(seedlings$Age), add=T, col=3) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topleft',paste('Habitat',1:3), col=1:3, lty=1, cex=.9, bty='n')</div>
+<br>
+<table width="650" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig10a.png" width="291" height="287" alt="fig 10a"></th>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig10b.png" width="291" height="287" alt="fig 10b"></th>
+  </tr>
+  <tr>
+    <td colspan="2"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 10&nbsp;</strong>&nbsp;Estimated Weibull density and hazard functions for each habitat</td>
+  </tr>
+</table>
+<h3><a name="checking"></a>Checking whether the Weibull model is  appropriate </h3>
+<p>For a model with only categorical variables a graphical test of the Weibull model is to plot log(-log(<em>S</em>(<em>t</em>))) versus log <em>t</em> separately for each category. Here <em>S</em>(<em>t</em>) is the usual Kaplan-Meier estimate. The key result derived from this plot is  that straight but not necessarily parallel lines support the Weibull assumption while parallel curves support the proportional hazards (PH) assumption.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(log(out1$time),log(-log(out1$surv)), type='n', xlab=expression(log(t)), ylab=expression(log(-log(S(t)))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(log(out1$time)[habitat==1], log(-log(out1$surv[habitat==1])), col=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(log(out1$time)[habitat==2], log(-log(out1$surv[habitat==2])), col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(log(out1$time)[habitat==3], log(-log(out1$surv[habitat==3])), col=3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(log(-log(out1$surv[habitat==1]))~ log(out1$time)[habitat==1]), lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(log(-log(out1$surv[habitat==2]))~ log(out1$time)[habitat==2]), lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(log(-log(out1$surv[habitat==3]))~ log(out1$time)[habitat==3]), lty=2, col=3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', paste('Habitat',1:3), col=1:3, lty=1, cex=.9, bty='n')</div>
+<br>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture29/fig11.png" width="316" height="243" alt="fig 11"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 11&nbsp;</strong>&nbsp;Graphical assessment of the Weibull assumption</td>
+  </tr>
+</table>
+<p></p>
+<p>The following is a summary of the possible results and recommended actions for a plot of log[&minus;log <em>S</em>(<em>t</em>)] against log <em>t</em> as taken from <a href="lecture29.htm#Kleinbaum">Kleinbaum &amp;  Klein (2005)</a>, p. 274.</p>
+<ol>
+  <li> Parallel straight lines&rArr;Weibull model is OK. PH and AFT assumptions hold.</li>
+  <li> Parallel straight lines with a slope of 1&rArr;exponential can be used. PH and AFT  assumptions hold.</li>
+  <li> Parallel but not straight lines&rArr; PH assumption holds but it's not Weibull (so can use Cox model instead).</li>
+  <li> Not parallel and not straight&rArr; not Weibull but  PH is also violated.</li>
+  <li> Not parallel but straight lines&rArr; Weibull holds, but PH and AFT violated. Use different shape parameters in Weibull model<em></em></li>
+</ol>
+<p><a name="weibullstrata"></a>The lines shown in Fig. 11 are clearly not parallel but, except for a couple of early values in habitat 3, they may not be that far from being straight. According to the recommendations given above we should try a Weibull model in which we let the shape parameter vary by habitat. In the <span class="style1021">survreg</span> function we can request different shape parameters by using the <span class="style1021">strata</span> function. Interestingly <span class="style1021">survreg</span> allows us to vary both the shape and scale parameters  by habitat. We do this by letting habitat appear both as a predictor and as an argument of the <span class="style1021">strata</span> function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #shape parameter varies by habitat</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out2.weib &lt;- survreg(Surv(Age,SdlgCensor)~strata(HabitCode), data=seedlings, dist='weibull')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #shape and scale parameters vary by habitat</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out3.weib &lt;- survreg(Surv(Age,SdlgCensor)~factor(HabitCode)+strata(HabitCode), data=seedlings, dist='weibull')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sapply(list(out.weib, out2.weib, out3.weib), extractAIC)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[,2]     &nbsp;&nbsp;&nbsp;&nbsp;[,3]<br>
+[1,]     &nbsp;&nbsp;&nbsp;&nbsp;4.00     &nbsp;&nbsp;&nbsp;&nbsp;4.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.00<br>
+[2,] 20698.97 20777.56 20687.88</span>
+<p>When we compare the three Weibull models using AIC we find that a model in which both the scale and shape parameters vary by habitat fits best. The summary of the best model is shown below. In the summary table the last three coefficient estimates are what R calls the <span class="style32">log(scale)</span> parameters (but really correspond to the shape parameters in the manner explained above).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out3.weib)</div>
+<span class="style24">Call:<br>
+survreg(formula = Surv(Age, SdlgCensor) ~ factor(HabitCode) + <br>
+&nbsp;&nbsp;&nbsp;&nbsp;strata(HabitCode), data = seedlings, dist = &quot;weibull&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Std. Error      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+(Intercept)         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.608     &nbsp;&nbsp;&nbsp;&nbsp;0.0215 260.33 0.00e+00<br>
+factor(HabitCode)2  &nbsp;0.276     &nbsp;&nbsp;&nbsp;&nbsp;0.0467   &nbsp;&nbsp;5.91 3.52e-09<br>
+factor(HabitCode)3  &nbsp;0.563     &nbsp;&nbsp;&nbsp;&nbsp;0.0617   &nbsp;&nbsp;9.12 7.33e-20<br>
+HabitCode=1        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.388     &nbsp;&nbsp;&nbsp;&nbsp;0.0215 -18.02 1.26e-72<br>
+HabitCode=2        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.461     &nbsp;&nbsp;&nbsp;&nbsp;0.0469  &nbsp;-9.83 7.97e-23<br>
+HabitCode=3        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.198     &nbsp;&nbsp;&nbsp;&nbsp;0.0545  &nbsp;-3.63 2.86e-04</span>
+<p><span class="style24">Scale:<br>
+  HabitCode=1 HabitCode=2 HabitCode=3 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.678       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.631       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.821 </span>
+<p><span class="style24">Weibull distribution<br>
+  Loglik(model)= -10337.9   Loglik(intercept only)= -10384.8<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Chisq= 93.68 on 2 degrees of freedom, p= 0 <br>
+  Number of Newton-Raphson Iterations: 5 <br>
+  n= 1612 </span>
+<h2><a name="interval"></a>Interval censoring</h2>
+<p>The seedlings were examined episodically every few months rather than continuously. Thus it is perhaps better to treat all of the observations as interval censored. The <span class="style1021">survreg</span> function does support interval censoring. The variables <span class="style8">left.bound</span> and <span class="style8">right.bound</span> in the seedlings data frame record the last time a seedling was seen alive and the very next observation period respectively (at which time it was not found). To let R know that interval censoring is desired, the <span class="style22">type=&quot;interval2&quot;</span> argument is used in the <span class="style1021">Surv</span> function. One peculiar aspect of using interval-censored data in a Weibull model is that observations whose censor intervals are of the form (0, <em>x</em>), where <em>x</em> is some value and hence are really left-censored, must instead be recorded as (NA, <em>x</em>) because 0 is not a legal value in the Weibull distribution. Similarly, truly right-censored observations must be recorded with the interval (<em>x</em>, NA). These adjustments have already been made to the variables <span class="style8">left.bound</span> and <span class="style8">right.bound</span>. The syntax for fitting the model with <span class="style1021">survreg</span> is shown below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out4.weib &lt;- survreg(Surv(left.bound, right.bound, type=&quot;interval2&quot;) ~ factor(HabitCode), data=seedlings, dist='weibull')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out4.weib)</div>
+<span class="style24">Call:<br>
+survreg(formula = Surv(left.bound, right.bound, type = &quot;interval2&quot;) ~ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;factor(HabitCode), data = seedlings, dist = &quot;weibull&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Std. Error      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p<br>
+(Intercept)         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.283     &nbsp;&nbsp;&nbsp;&nbsp;0.0261 202.45 0.00e+00<br>
+factor(HabitCode)2  &nbsp;0.322     &nbsp;&nbsp;&nbsp;&nbsp;0.0566   &nbsp;&nbsp;5.68 1.33e-08<br>
+factor(HabitCode)3  &nbsp;0.518     &nbsp;&nbsp;&nbsp;&nbsp;0.0619   &nbsp;&nbsp;8.37 5.91e-17<br>
+Log(scale)         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.218     &nbsp;&nbsp;&nbsp;&nbsp;0.0240  &nbsp;-9.06 1.32e-19</span>
+<p><span class="style24">Scale= 0.804 </span>
+<p><span class="style24">Weibull distribution<br>
+  Loglik(model)= -2727   Loglik(intercept only)= -2773.7<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Chisq= 93.5 on 2 degrees of freedom, p= 0 <br>
+  Number of Newton-Raphson Iterations: 4 <br>
+  n= 1612 </span>
+<p>The basic conclusions about the effect of habitat on survival do not change when we treat the data as interval censored.</p>
+<h2><a name="cited"></a>Cited references</h2>
+<ul>
+  <li><a name="Kleinbaum"></a>Kleinbaum, David G. and Mitchel Klein. 2005. <em>Survival Analysis: A Self-learning Text.</em> Springer, New York.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a></p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 5, 2012<br>
+      URL: <a href="lecture29.htm#lecture29" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture29.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

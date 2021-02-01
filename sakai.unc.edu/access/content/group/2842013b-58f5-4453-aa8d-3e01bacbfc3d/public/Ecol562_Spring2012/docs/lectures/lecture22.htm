@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 22&mdash;Wednesday, February 29, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.eq {width: 100%; }
+.style14 {font-family: "Courier New", Courier, mono;}
+.styleArial2 {	font-family: Arial, Helvetica, sans-serif;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture22" id="lecture22"></a>Lecture 22&mdash;Wednesday, February 29, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture22.htm#approach">A marginal approach to generalized linear models</a>
+    <ul>
+      <li><a href="lecture22.htm#formal">An abstract formulation of the generalized linear model</a></li>
+      <li><a href="lecture22.htm#estimating">From estimating equations to generalized estimating equations (GEE)</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture22.htm#quasilikelihood">Quasi-likelihood</a></li>
+  <li><a href="lecture22.htm#implementing">Implementing GEE in practice</a></li>
+  <li><a href="lecture22.htm#comparing">Comparing GEE to GLM</a></li>
+  <li><a href="lecture22.htm#quasifamily">The quasi family of models</a></li>
+  <li><a href="lecture22.htm#choosing">Choosing a correlation structure</a>
+    <ul>
+      <li><a href="lecture22.htm#method2">Method 2: Pan's QIC or CIC</a></li>
+      <li><a href="lecture22.htm#method3">Method 3: Comparing sandwich estimates</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture22.htm#problems">A problem with GEE and binary data</a></li>
+  <li><a href="lecture22.htm#references">References</a></li>
+</ul>
+<h2><a name="approach"></a>A marginal approach to generalized linear models</h2>
+<p>As appealing as   mixed effects models are for handling hierarchical clustered/correlated data, the difficulties (<a href="lecture21.htm#difficulties">discussed last time</a>) in interpreting the parameter estimates from  generalized linear mixed effects models with non-identity links suggests that other approaches are needed. One of the most popular of these is generalized estimating equations (GEE). GEE extends generalized linear models to  correlated data but differs from mixed effects models in that GEE explicitly fits a marginal model to data. To understand the motivation behind GEE we need to take a closer look at the theory behind generalized linear models. </p>
+<h3><a name="formal"></a>An abstract formulation of the generalized linear model</h3>
+<p>The probability distributions used in generalized linear models are related because they are all  members of what's called the exponential family of distributions. The density (mass) function of any member of the exponential family takes the following form.</p>
+<table class="eq">
+  <tr>
+    <td><p align="center"><img src="../../images/lectures/lecture22/expfamily.gif" alt="exponential family" width="317" height="65" align="absmiddle"></p></td>
+    <th>(1) </th>
+  </tr>
+</table>
+<p>The functions <em>a</em>, <em>b</em>, and <em>c</em> in the formula will vary from distribution to distribution. The parameter &theta; is called the canonical parameter and is a function of &mu;. This function of &mu;  is referred to as the canonical link function. </p>
+<p><strong>Example:</strong> As an illustration we write the Poisson distribution in its exponential form. The formula for the Poisson probability mass function is shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture22/Poisson.gif" width="208" height="58"></p>
+<p align="left">Through a series of steps we can transform this expression into one that is of the correct exponential form.</p>
+<p align="center"><img src="../../images/lectures/lecture22/Poisson&#32;exponential.gif" width="495" height="123"></p>
+<p align="left">Comparing this to the generic exponential form</p>
+<p align="center"><img src="../../images/lectures/lecture22/exponentialfamily1.gif" width="273" height="65" alt="exponential family"></p>
+<p align="left">we can make the following identifications.</p>
+<ul>
+  <li><img src="../../images/lectures/lecture22/eqn1.gif" alt="theta" width="77" height="27" align="absmiddle"></li>
+  <li><img src="../../images/lectures/lecture22/eqn2.gif" alt="boftheta" width="243" height="30" align="absmiddle"></li>
+  <li><img src="../../images/lectures/lecture22/eqn3.gif" alt="aofphi" width="72" height="30" align="absmiddle"></li>
+  <li><img src="../../images/lectures/lecture22/eqn4.gif" width="142" height="32" align="absmiddle"></li>
+</ul>
+<p align="center">* * * * *</p>
+<p>The canonical link functions for three members of the exponential family of probability distributions are shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture22/canonical.gif" width="193" height="115" alt="canonical"></p>
+<p>These in turn are the usual link functions used in normal, Poisson, and logistic regression. The mean and variance of a distribution in the exponential family are given generically as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture22/moments.gif" width="373" height="85" alt="moments"></p>
+<p>The last step defines Var(&mu;) as the derivative of the mean with respect to the canonical parameter.</p>
+<p>Suppose we have a random sample of size <em>n</em> from a member of the exponential family of distributions. The likelihood is given by</p>
+<p align="center"><img src="../../images/lectures/lecture22/likelihood.gif" width="310" height="65" alt="likelihood"></p>
+<p>with corresponding log-likelihood</p>
+<p align="center"><img src="../../images/lectures/lecture22/loglikelihood.gif" alt="log-likelihood" width="307" height="65" align="absmiddle">.</p>
+<p>To find maximum likelihood estimates analytically we take the derivative of the log-likelihood with respect to the canonical parameter &theta;, set the result equal to zero, and solve for &theta;.</p>
+<p align="center"><img src="../../images/lectures/lecture22/score1.gif" width="132" height="52" alt="score function"></p>
+<p>Typically we do this in a regression setting in which we express the canonical parameter as a linear combination of predictors. </p>
+<p align="center"><img src="../../images/lectures/lecture22/linearpredictor.gif" width="135" height="60" alt="linear predictor"></p>
+<p>So, in this case  we would differentiate the log-likelihood with respect to each of the regression parameters separately, set the result equal to zero, and solve for the regression parameters. The  shorthand notation for this is to use a vector derivative (gradient).</p>
+<p align="center"><img src="../../images/lectures/lecture22/score2.gif" width="132" height="55" alt="score function"></p>
+<p>After some algebraic simplification and using   the notation defined previously, we end up with <em>p</em> + 1 equations of the following form.</p>
+<table class="eq">
+  <tr>
+    <td><p align="center"><img src="../../images/lectures/lecture22/estimatingeqn.gif" alt="estimating equation" width="323" height="62" align="absmiddle"></p></td>
+    <th>(2) </th>
+  </tr>
+</table>
+<p>These are referred to as  estimating equations because we can use them to obtain the maximum likelihood estimate of <strong>&beta;</strong>. The <em>p</em> + 1 estimating equations defined by eqn (2) can be written more succinctly using matrix notation.  Define the <em>n</em> &times; (<em>p</em> + 1) matrix <strong>D</strong>, the <em>n</em> &times; <em>n</em> matrix <strong>V</strong>, and the <em>n </em>&times; 1 vector <strong>y</strong> &ndash; <strong>&mu;</strong> as follows.</p>
+<table width="610" border="0" align="center" cellpadding="0">
+  <tr valign="middle">
+    <td><img src="../../images/lectures/lecture22/Dmat.gif" alt="D matrix" width="228" height="225" align="absmiddle">,</td>
+    <td><img src="../../images/lectures/lecture22/Vmat.gif" width="335" height="143" alt="V matrix" align="absmiddle">,</td>
+  </tr>
+</table>
+<p align="center"><img src="../../images/lectures/lecture22/yminusmu.gif" alt="y minus mu vector" width="152" height="132" align="absmiddle"></p>
+<p align="left">With these definitions the <em>p</em> + 1 estimating equations of eqn (2) can be written as the following single matrix equation.</p>
+<table class="eq">
+  <tr>
+    <td><p align="center"><img src="../../images/lectures/lecture22/estimatingmatrix.gif" alt="estimating matrix" width="360" height="158" align="absmiddle"></p></td>
+    <th>(3) </th>
+  </tr>
+</table>
+<h3 align="left"><a name="estimating"></a>From estimating equations to generalized estimating equations (GEE)</h3>
+<p align="left">The primary problem in dealing with correlated data in a likelihood framework is that the likelihood becomes inordinately complicated. Generalized estimating equations gets around this difficulty by making the following simple observation. Although the likelihood in eqn (1) depends specifically on the form of the probability distribution, (the functions <em>a</em>, <em>b</em>, and <em>c</em>), the estimating equation that we obtain by differentiating the log-likelihood that is shown in eqns (2) and (3) depends on the probability distribution only via the mean <strong>&mu;</strong> and the variance <strong>V</strong>. The rest of the details about the nature of the original probability distribution are irrelevant. So, when a probability model is a member of the exponential family we   don't need the all the details of the probability distribution in order to estimate the parameters  of a regression equation, just its mean and variance.</p>
+<p align="left">Inspired by  this observation, generalized estimating equations performs an end-around the likelihood. Rather than starting with eqn (1), GEE starts with the estimating equations in eqn (2), or equivalently the matrix version eqn (3), and generalizes it in two distinct ways.</p>
+<ol>
+  <li>With independent data the matrix <strong>V</strong> in eqn (3) is a diagonal matrix. A generalization to correlated data is to instead let <strong>V</strong> = <strong>&Sigma;</strong>, an arbitrary variance-covariance matrix. Specifically we let </li>
+</ol>
+<p align="center"><img src="../../images/lectures/lecture22/Sigma.gif" width="147" height="33" alt="Sigma"></p>
+<blockquote>
+  <p>where <strong>S</strong> is a diagonal matrix and <strong>R</strong> is the proposed correlation matrix for our data. Typically <strong>R</strong> will depend on parameters that  need to be estimated from the data when solving eqn (3). If so, an additional estimating equation will be required.</p>
+</blockquote>
+<ol start="2">
+  <li>GEE allows us to avoid specifying  a probability model entirely.  Instead we just need a regression model for the mean &mu; and a  variance model Var(&mu;). The variance model may include a correlation structure or not. For instance we might choose a binomial-like model for the variance, <em>p</em>(1 &ndash; <em>p</em>), even though the data themselves are not binomial and perhaps not even discrete! The Simpson's diversity index in Assignments 1 and 2 is an example where such an approach might make sense.</li>
+</ol>
+<p>Both of these two generalizations lead to what is called a generalized estimating equation. Parameter estimates are obtained by solving the generalized estimating equations numerically typically using an optimization algorithm based on Newton's method.</p>
+<h2><a name="quasilikelihood"></a>Quasi-likelihood</h2>
+<p>The estimating equation of eqn (1) is  the derivative of the log-likelihood set equal to zero.</p>
+<p align="center"><img src="../../images/lectures/lecture22/estimatingeqn2.gif" width="292" height="62" alt="estimating equation"></p>
+<p>From calculus we know that the process of differentiation can be reversed by integrating (antidifferentiating) this expression. Because we can add an arbitrary constant to an antiderivative and obtain another antiderivative,  antidifferentiation does not yield a unique result. Antidifferentiating the estimating equation yields the following.</p>
+<p align="center"><img src="../../images/lectures/lecture22/integration.gif" width="393" height="125" alt="integral"></p>
+<p>If  we start with this last integral, there are two possible scenarios.</p>
+<ol>
+  <li>If the integrand was obtained from an estimating equation that was derived from a log-likelihood then the integral can be written in the form <img src="../../images/lectures/lecture22/loglikeplusK.gif" alt="log-likelihood plus K" width="108" height="30" align="absmiddle"> where <em>K</em> contains terms that don't involve &mu;. So,  the log-likelihood will be included in the set of antiderivatives  obtained from the estimating equation. </li>
+  <li>If instead we start with   a generalized estimating equation  by adding a correlation structure to an estimating equation, by postulating a mean-variance relationship  Var(&mu;), or by doing both, then there is no corresponding log-likelihood. Integrating the estimating equation in this case will not yield a true log-likelihood, but instead generates something referred to as a quasi-likelihood  (although it might be better to call it a quasi-loglikelihood). The formal definition of the quasi-likelihood is that it is the antiderivative of the generalized estimating equation evaluated  at the parameter estimates, eqn (4).</li>
+</ol>
+<table class="eq">
+  <tr>
+    <td><p align="center"><img src="../../images/lectures/lecture22/quasilikelihood.gif" alt="quasilikelihood" width="250" height="65" align="absmiddle"></p></td>
+    <th>(4) </th>
+  </tr>
+</table>
+<p>The connection between quasi-likelihood and likelihood theory is actually quite close. It turns out that GEE estimates have the same large sample properties that MLEs do&mdash;they're consistent, asymptotically normal, etc. In addition, the quasi-likelihood can be used to generate an AIC-like quantity for use in model selection. </p>
+<h2><a name="implementing"></a>Implementing GEE in practice</h2>
+<p>When estimating a regression model using maximum likelihood (for instance fitting a generalized linear model) we </p>
+<ol>
+  <li>specify a  model for the mean and </li>
+  <li>a probability model (along with a link function) for the response. </li>
+</ol>
+<p>When fitting a model using generalized estimating equations we </p>
+<ol>
+  <li>specify a regression model for the mean, </li>
+  <li>a model for the mean-variance relationship Var(&mu;), and</li>
+  <li> a model for the correlation. </li>
+</ol>
+<p>In  most GEE software the  mean-variance relationship  is identified by specifying, using a family argument, a probability model  that has the same mean-variance relationship as the one desired. This convention is rather counterintuitive given that there is no probability model in GEE. Table 1 lists some typical choices for the family argument in GEE and the corresponding expression for Var(&mu;) that results from that  choice.</p>
+<p align="center" class="styleArial2"><strong>Table 1</strong> &nbsp;Common mean-variance relationships in GEE</p>
+<table width="350" border="1" align="center" cellpadding="2" cellspacing="1" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Var(&mu;)</strong></td>
+    <td><strong>Family</strong></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td><div align="center">gaussian (normal)</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">&mu;</div></td>
+    <td><div align="center">poisson</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">&mu;(1 &ndash; &mu;)</div></td>
+    <td><div align="center">binomial (Bernoulli)</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">&mu;<sup>2</sup></div></td>
+    <td><div align="center">gamma</div></td>
+  </tr>
+</table>
+<p>Depending on the software, a scale parameter &phi; can also be estimated to account for over- or under-dispersion in Poisson and binomial models.</p>
+<p>Table 2 defines some of the common correlation models that are  available in GEE software. (The exact name used will depend on the software.) The correlation requested in GEE is referred to as the working correlation and for 2-level hierarchical data it refers to the correlation among  observations <em>j</em> and <em>k</em> coming from the same  level-2 unit <em>i</em>. </p>
+<p align="center" class="styleArial2"><strong>Table 2</strong> &nbsp;Common correlation structures in GEE</p>
+<table width="500" border="1" align="center" cellpadding="2" cellspacing="1" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Correlation type</strong></td>
+    <td><strong>Correlation formula</strong></td>
+  </tr>
+  <tr>
+    <td>independence</td>
+    <td><img src="../../images/lectures/lecture22/cor_independence.gif" width="182" height="37" alt="independence"></td>
+  </tr>
+  <tr>
+    <td>exchangeable</td>
+    <td><img src="../../images/lectures/lecture22/cor_exchangeable.gif" width="183" height="37" alt="exchangeable"></td>
+  </tr>
+  <tr>
+    <td>AR(1)</td>
+    <td><img src="../../images/lectures/lecture22/cor_ar1.gif" width="210" height="37" alt="AR1"></td>
+  </tr>
+  <tr>
+    <td>unstructured</td>
+    <td><img src="../../images/lectures/lecture22/cor_unstruct.gif" width="197" height="37"></td>
+  </tr>
+  <tr>
+    <td>user-defined</td>
+    <td>Specific values are entered for the correlations</td>
+  </tr>
+</table>
+<p>Typically there is also an ID argument that is used to identify the variable that denotes the level-2 units. This is the same as the group variable in mixed effects models. (In <span class="style19">nlme</span> the group variable appeared to the right of the vertical bar in the random argument: <span class="style14">random = ~1|group_variable</span>.)</p>
+<h2><a name="comparing"></a>Comparing GEE to GLM</h2>
+<ol>
+  <li>Typically, GEE returns parameter estimates that are fairly close to those returned by GLM when the models being compared assume the same mean-variance relationship, i.e., use the same value of the family argument. </li>
+  <li>When there is a hypothesized correlation structure in a GEE model, the estimated variance of the parameter estimates tends to be larger in GEE than it is for GLM.</li>
+  <li>Because GEE is not a likelihood-based method, GEE output does not include a log-likelihood, likelihood ratio tests, or AIC. Reported significance tests are  the Wald tests for individual parameter estimates.</li>
+</ol>
+<h2><a name="quasifamily"></a>The quasi family of models</h2>
+<p>The family argument of the <span class="style1">glm</span> function of R permits the use of quasibinomial, quasipoisson, or the more general quasi function. These are not probability distributions per se but are ways to specify a model for Var(&mu;) in the manner described in Table 1 above. The quasipoisson and quasibinomial choices generalize the expressions given in Table 1 as follows.</p>
+<p align="center" class="styleArial2"><strong>Table 3</strong>&nbsp; The quasi values for the family argument</p>
+<table width="350" border="1" align="center" cellpadding="2" cellspacing="1" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Family</strong></td>
+    <td><strong>Var(&mu;)</strong></td>
+  </tr>
+  <tr align="center">
+    <td>quasipoisson</td>
+    <td>&phi;&mu;</td>
+  </tr>
+  <tr align="center">
+    <td>quasibinomial </td>
+    <td>&phi;&mu;(1 &ndash; &mu;)</td>
+  </tr>
+</table>
+<p>Here <img src="../../images/lectures/lecture22/theta.gif" alt="theta" width="178" height="52" align="absmiddle"> is called the dispersion parameter. The Pearson deviance is the sum of the squared Pearson residuals. The quasi function can be used to specify these same variance structures as well as others by giving a formula for the variance along with a link function. For instance, <span class="style14">family=quasi(var=&quot;mu(1-mu)&quot;, link=logit)</span> yields the same result as <span class="style14">family=quasibinomial</span>. </p>
+<p>The quasipoisson and quasibinomial families provide a crude way to adjust for overdispersion in data, where overdispersion is defined as deviation from  the Poisson or binomial probability models due to clumping. When either family = quasipoisson or family = quasibinomial is specified, the parameter estimates one gets from <span class="style1">glm</span> are identical to what one gets with family = poisson or family = binomial, but the standard errors are adjusted by multiplying them by the square root of <em>&phi;</em>.</p>
+<p>Full-fledged GEE, on the other hand, assumes the data have a hierarchical structure in which the clusters are identified explicitly with an ID variable. GEE also allows you to model the correlation in a cluster  by using one of the correlation structures of  Table 2.</p>
+<h2><a name="choosing"></a>Choosing a correlation structure</h2>
+<p>There are three recommended methods   for choosing a correlation structure for GEE (Hardin &amp; Hilbe, 2003). </p>
+<ol>
+  <li>Choose a correlation structure that reflects the manner in which the data were collected. For instance with temporal data  a sensible correlation structure is one that includes time dependence, such as AR(1).</li>
+  <li>Choose a correlation structure that minimizes Pan's QIC. QIC is a statistic that generalizes AIC to GEE but is used only for comparing models that are identical except for their different correlation structures. Note: This is not QAIC that is described in Burnham &amp; Anderson (2002).</li>
+  <li>Choose a correlation structure for which the sandwich estimates of the variance most closely approximate the naive estimate of the variance.</li>
+</ol>
+<p>I  examine the last two options in more detail.</p>
+<h3><a name="method2"></a>Method 2: Pan's QIC and/or CIC</h3>
+<p>QIC is due to Pan (2001) and comes in two flavors. One version is used for selecting a correlation structure and the second version is used for choosing  models all of which were fit with the same correlation structure. I  first discuss the version of QIC that is used for choosing a correlation structure. </p>
+<p>In what follows let <em>R</em> denote the correlation structure of interest and let <em>I</em> denote the independence model. Recall the definition of AIC.</p>
+<p align="center"><img src="../../images/lectures/lecture22/AIC.gif" width="172" height="27" alt="AIC"></p>
+<p>QIC is defined analogously as follows.</p>
+<table class="eq">
+  <tr>
+    <td><p align="center"><img src="../../images/lectures/lecture22/QIC.gif" alt="QIC" width="348" height="68" align="absmiddle"></p></td>
+    <th>(5) </th>
+  </tr>
+</table>
+<p>The first term contains the quasi-likelihood as given in eqn (4) except that it is now extended to the full data set.</p>
+<p align="center"><img src="../../images/lectures/lecture22/quasilikelihood2.gif" width="288" height="68" alt="quasi-likelihood"></p>
+<p>The quasi-likelihood defined in this formula is actually a bit of a hybrid. For <img src="../../images/lectures/lecture22/muhat.gif" alt="mu hat" width="18" height="28" align="absmiddle"> we use the regression coefficient estimates obtained from a GEE model with correlation model <em>R</em>, but for Var(&mu;) we assume a working correlation structure of independence<em> I</em>. Table 4 gives the  quasi-likelihood formulas (multiplied by &phi;) for  models in which the mean-variance relationship has the form of a binomial or a Poisson random variable.</p>
+<p align="center" class="styleArial2"><strong>Table 4</strong>&nbsp; Quasi-likelihoods</p>
+<table width="550" border="1" align="center" cellpadding="2" cellspacing="1" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Family</strong></td>
+    <td><strong>Var(&mu;)</strong></td>
+    <td  ><strong><img src="../../images/lectures/lecture22/quasiheader2.gif" width="135" height="32"></strong></td>
+  </tr>
+  <tr align="center">
+    <td>binomial</td>
+    <td>&mu;(1 &ndash; &mu;)</td>
+    <td><img src="../../images/lectures/lecture22/binomialquasilikelihood.gif" width="245" height="63" alt="binomial quasi-likelihood"></td>
+  </tr>
+  <tr align="center">
+    <td>Poisson</td>
+    <td>&mu;</td>
+    <td><img src="../../images/lectures/lecture22/Poissonquasilikelihood.gif" width="142" height="58" alt="Poisson quasi-likelihood"></td>
+  </tr>
+</table>
+<p>For binary data (binomial with <em>n</em> = 1) the estimate of &phi; described above  is not used; instead &phi; is set to one. The second term of QIC, <img src="../../images/lectures/lecture22/trace.gif" alt="trace" width="115" height="40" align="absmiddle">, is a penalty term that is analogous to 2<em>K</em> in the formula for AIC. It is defined as follows.</p>
+<ol>
+  <li>Trace refers to &quot;matrix trace&quot;, the sum of the diagonal entries of a matrix.</li>
+  <li><img src="../../images/lectures/lecture22/omegaI.gif" alt="omega" width="78" height="33" align="absmiddle"> where <strong>A</strong><sub><em>I</em></sub> is the   variance-covariance matrix of the parameter estimates in which an independence model <em>I</em> is used for the correlation.</li>
+  <li><img src="../../images/lectures/lecture22/Vrhat.gif" alt="VR hat" width="27" height="32" align="absmiddle"> is the modified sandwich estimate (explained in the next section) of the variance-covariance matrix of the parameter estimates that is obtained using the hypothesized correlation model <em>R</em>. The sandwich estimate of the variance-covariance matrix is part of the standard output from GEE.</li>
+</ol>
+<p>So, to calculate QIC we need to fit two models: one that uses the correlation model <em>R</em> and the other that uses the independence model <em>I</em>.  QIC is then used like AIC. We make various choices for <em>R</em> and choose the <em>R</em> that yields the lowest value of QIC.</p>
+<p>Pan (2001) also suggested another version of QIC for comparing models that have the same working correlation matrix <em>R</em> and the same quasi-likelihood form (for instance, all Poisson), but involve different predictor sets. He suggested calculating a statistic QIC<sub>u</sub> that is defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture22/QICu.gif" width="272" height="42" alt="QICu"></p>
+<p>Models with smaller values of QIC<sub>u</sub> are to be preferred.</p>
+<p><a name="CIC"></a>Recently QIC has been criticized as a model selection tool, particularly if the model for the mean does not fit the data very well. Hin and Wang (2009) argue that the two terms in the expression for  QIC in eqn (5) are not equally informative for correctly identifying the correlation structure. In particular the quasi-likelihood term corresponds to an apparent error rate that better indicates an inadequacy in the mean model rather than in the correlation model. Through simulations they demonstrate that when the mean model is misspecified, the quasi-likelihood term can mask differences in model quality that are due purely to the different assumptions made about the correlation. As a result they recommend using just the second term of QIC (without the superfluous multiplier of two) when comparing models with different correlation structures. They call this statistic the correlation information criterion, CIC. </p>
+<p align="center"><img src="../../images/lectures/lecture22/CIC.gif" width="155" height="40" alt="CIC"></p>
+<h3><a name="method3"></a>Method 3: Comparing sandwich estimates</h3>
+<p>All GEE packages return something that is variously referred to as the sandwich variance estimate or the robust variance estimate. For many packages this is the default estimate that is displayed in the standard error column of the summary table of the model. The sandwich estimate corrects the  variance estimate that is based on the working correlation matrix <em>R</em> using a correction that is constructed from the model residuals. It tends to be robust to an incorrectly specified working correlation model <em>R</em> and will be nearly correct even if <em>R</em> is incorrect. The sandwich estimate is known to behave best for a large sample consisting of many small groups so that there are  not too many observations in each group. If the total number of groups is small, the sandwich estimate can be very biased.</p>
+<p>In addition to the sandwich variance estimate, GEE packages also return a variance estimate that is based only on the working correlation model <em>R</em>. This is variously called the model-based variance estimate or the naive variance estimate. </p>
+<p>A correlation model <em>R</em> can be selected as follows. Fit a series of models that differ only in the choice of  correlation matrix <em>R</em>; all of the remaining features of these models  are  the same. For each model compare the  sandwich variance estimates with the model-based variance estimates. The  model whose sandwich variance estimates most closely resembles its  model-based variance estimates is the one with the best correlation model <em>R</em>.</p>
+<h2><a name="problems"></a>A  problem with GEE and binary data</h2>
+<p>In addition to invertibility and positive definiteness, correlation matrices for binary data have a further feasibility requirement (Chaganty and Joe 2004). The predicted probabilities of a pair of binary response variables impose a constraint on the legal values that the correlation can take. Let <em>y<sub>i</sub></em> and <em>y<sub>j</sub></em> be two binary observations, let <em>p<sub>i</sub></em>&nbsp;and <em>p<sub>j</sub></em> be their predicted probabilities under a given model, and let <em>r<sub>ij</sub></em>&nbsp;be their correlation as estimated from say a GEE model. Prentice (1998) derived the following formula for the joint probability of the binary pair<em> y<sub>i</sub></em>&nbsp;and<em> y<sub>j</sub></em>.</p>
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/lectures/lecture22/prentice.gif" width="530" height="85" alt="prentice"></p>
+<p>Because probabilities must be non-negative, the expression inside the brackets imposes a constraint on the possible values the correlation<em> r<sub>ij</sub></em>&nbsp;can take.</p>
+<p>Currently available GEE software, including the <span class="style19">gee</span> and <span class="style19">geepack</span> packages of R, do not check for the feasibility of the correlation matrices they estimate for binary data. The general consensus is that if a correlation estimated by GEE is infeasible that is a good reason to reject that correlation model. There has been a lot of discussion of this issue in the biomedical and biostatistical literature. For a recent survey see Ziegler and Vens (2010) as well as the discussion that follows the article (Breitung et al. 2010; Shults 2011).</p>
+<h2><a name="references"></a>References</h2>
+<ul>
+  <li>Breitung, J., N. R. Chaganty, R. M. Daniel, M. G. Kenward, M. Lechner, P. Martus, R. T. Sabo, Y.-G. Wang, and C. Zorn. 2010. Discussion of &ldquo;Generalized estimating equations: Notes on the choice of the working correlation matrix&rdquo;. <em>Methods of Information in Medicine</em> <strong>49</strong>: 426&ndash;432.</li>
+  <li>Burnham, K. P. and D. R. Anderson. 2002. <i>Model Selection and Multimodel Inference</i>. Springer-Verlag: New York.</li>
+  <li> Chaganty, N. R. and H. Joe. 2004. Efficiency of generalized estimating equations for binary responses. <em>Journal of the Royal Statistical Society B</em> <strong>66</strong>: 851&ndash;860. </li>
+  <li>Hardin, James W. and Joseph M. Hilbe. 2003. <em>Generalized Estimating Equations</em>. Chapman &amp; Hall/CRC Press: Boca Raton, FL.</li>
+  <li> Hin, Lin-Yee and You-Gan Wang. 2009. Working-correlation-structure identification in generalized estimating equations. <em>Statistics in Medicine</em> <strong>28</strong>: 642&ndash;658. </li>
+  <li>Pan, W. 2001. Akaike's information criterion in generalized estimating equations. <em>Biometrika</em> <strong>83</strong>: 551&ndash;562.</li>
+  <li>Prentice R. L. 1988. Correlated binary regression with covariates specific to each binary observation. <em>Biometrics </em><strong>44</strong>: 1033&ndash;1048.</li>
+  <li>Shults, J. 2011. Discussion of &ldquo;Generalized estimating equations: Notes on the choice of the working correlation matrix&quot;&mdash;continued. <em>Methods of Information in Medicine</em> <strong>50</strong>: 96&ndash;99.</li>
+  <li>Ziegler, A. and M. Vens. 2010. Generalized estimating equations: Notes on the choice of the working correlation matrix. <em>Methods of Information in Medicine</em> <strong>49</strong>: 421&ndash;425.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 29, 2012<br>
+      URL: <a href="lecture22.htm#lecture22" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture22.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

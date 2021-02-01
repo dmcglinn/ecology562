@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 2&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+.style8 {color: #CC0033}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="assign2" id="assign2"></a>Assignment 2&mdash;Solution</h1>
+<h2>Question 1 </h2>
+<p>I read in the data and calculate the Simpson's diversity index. The species data lie in columns 2 through 76 of the data frame so I select only those columns to calculate the diversity index.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(vegan)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  rikz$simpson &lt;- diversity(rikz[,2:76], 'simpson', 1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model3 &lt;- lm(simpson~NAP*factor(week), data=rikz)</div>
+<p>To force R to return estimates for the individual slopes and intercepts I fit the full interaction model without NAP and without an intercept.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model3a &lt;- lm(simpson~factor(week)+factor(week):NAP - 1, data=rikz)</div>
+<p>I extract the coefficient estimates, calculate confidence intervals using the <span class="style4">confint</span> function, and create labels for the week and estimate type, slope or intercept.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod &lt;- data.frame(est=coef(model3a), confint(model3a), week=rep(1:4,2), 
+  parm=rep(c('Intercept', 'Slope'), c(4,4)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(out.mod)[2:3] &lt;- c('low95','up95')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up95 week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm<br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.601960078&nbsp; 0.4579173&nbsp; 0.74600288&nbsp;&nbsp;&nbsp; 1 Intercept<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.326222041&nbsp; 0.1939818&nbsp; 0.45846226&nbsp;&nbsp;&nbsp; 2 Intercept<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.599122838&nbsp; 0.4734142&nbsp; 0.72483152&nbsp;&nbsp;&nbsp; 3 Intercept<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.668685772&nbsp; 0.4094507&nbsp; 0.92792085&nbsp;&nbsp;&nbsp; 4 Intercept<br>
+  factor(week)1:NAP -0.214123822 -0.3753447 -0.05290296&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  factor(week)2:NAP -0.213231377 -0.3439623 -0.08250049&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+  factor(week)3:NAP&nbsp; 0.004919613 -0.1015062&nbsp; 0.11134545&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+factor(week)4:NAP&nbsp; 0.050147353 -0.2177414&nbsp; 0.31803614&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; Slope</span>
+<p>Finally I use the lattice code developed in class to plot the point estimates and 95% confidence intervals.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x, y, lx, ux, subscripts, ...) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  dotplot(week~est|parm, data=out.mod, xlab='Estimate', ylab='Week', 
+  prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(2,1), 
+  panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, 
+  lwd=3, col='dodgerblue4', lineend=1)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }, scales=list(x='free'))</div>
+<div align="center"><img src="../../images/assignments/assignment2/fig1.png" width="565" height="365" alt="fig 1"><br>
+</div>
+<h2>Question 2 </h2>
+<p>I start by calculating the appropriate confidence level to use in displaying the intercepts.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func1 &lt;- function(alpha, model, sig)  
+  1 - pt(-abs(qt(alpha/2,model$df.residual))* 
+sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*%c (1,-1)), model$df.residual) - pt(abs(qt(alpha/2,model$df.residual)) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*% c(1,-1)), model$df.residual, lower.tail=F)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#function whose roots we need</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  nor.func2 &lt;- function(a,model,sigma) nor.func1(a,model,sigma)-.95</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#obtain confidence level for intercepts</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #initialize storage vector</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xvec1b &lt;- numeric(6)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #create sigma for intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  vmat &lt;- vcov(model3a)[1:4,1:4]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #running index</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ind &lt;- 1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  for(i in 1:3) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  for(j in (i+1):4){</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  sig &lt;- vmat[c(i,j),c(i,j)]</div>
+<div class="style15" style="padding-left: 90px; text-indent:-30px">  #solve for alpha</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  xvec1b[ind] &lt;- uniroot(function(x) nor.func2(x,model3a, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  ind &lt;- ind+1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }}</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #average the confidence levels</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1b &lt;- round(mean(1-xvec1b),3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 1-xvec1b</div>
+<span class="style24">  [1] 0.8400148 0.8405799 0.8553249 0.8397747 0.8595149 0.8621142</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1b</div>
+<span class="style24">[1] 0.85</span>
+<p>The actual values for the six pairwise comparisons vary from 84% to 86%, so the mean of  85% looks reasonable. I repeat this for the slopes.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#obtain confidence level for slopes</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #initialize storage</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xvec1c &lt;- numeric(6)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #create sigma for slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  vmat &lt;- vcov(model3a)[5:8,5:8]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #location in storage vector</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ind &lt;- 1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  for(i in 1:3) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">for(j in (i+1):4) {</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">sig &lt;- vmat[c(i,j),c(i,j)]</div>
+<div class="style15" style="padding-left: 90px; text-indent:-30px">#solve for alpha</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">xvec1c[ind] &lt;- uniroot(function(x) nor.func2(x,model3a, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">ind &lt;- ind+1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}}</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#average the confidence levels</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci1c &lt;- round(mean(1-xvec1c),3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 1-xvec1c</div>
+<span class="style24">  [1] 0.8418427 0.8479629 0.8517045 0.8417620 0.8617851 0.8728127</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci1c</div>
+<span class="style24">[1] 0.853</span>
+<p>The slope confidence levels are a little more variable ranging from 84% to 87%. Once again the mean of 85.3% seems like a reasonable choice.</p>
+<p>I use these levels, 85% and 85.3%., to calculate a new set of confidence intervals and I add them to the data frame constructed in Question 1.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # calculate confidence intervals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> slope.ci &lt;- confint(model3a,level=ci1c)[5:8,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> int.ci &lt;- confint(model3a,level=ci1b)[1:4,]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # add CI to the data frame from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- c(int.ci[,1],slope.ci[,1])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- c(int.ci[,2],slope.ci[,2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up95 week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up50<br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.601960078&nbsp; 0.4579173&nbsp; 0.74600288&nbsp;&nbsp;&nbsp; 1 Intercept&nbsp; 0.4974533&nbsp; 0.70646683<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.326222041&nbsp; 0.1939818&nbsp; 0.45846226&nbsp;&nbsp;&nbsp; 2 Intercept&nbsp; 0.2302784&nbsp; 0.42216572<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.599122838&nbsp; 0.4734142&nbsp; 0.72483152&nbsp;&nbsp;&nbsp; 3 Intercept&nbsp; 0.5079180&nbsp; 0.69032772<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.668685772 &nbsp;0.4094507&nbsp; 0.92792085&nbsp;&nbsp;&nbsp; 4 Intercept&nbsp; 0.4806041&nbsp; 0.85676749<br>
+  factor(week)1:NAP -0.214123822 -0.3753447 -0.05290296&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; Slope -0.3319865 -0.09626118<br>
+  factor(week)2:NAP -0.213231377 -0.3439623 -0.08250049&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; Slope -0.3088039 -0.11765883<br>
+  factor(week)3:NAP&nbsp; 0.004919613 -0.1015062&nbsp; 0.11134545&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; Slope -0.0728844&nbsp; 0.08272363<br>
+factor(week)4:NAP&nbsp; 0.050147353 -0.2177414&nbsp; 0.31803614&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; Slope -0.1456963&nbsp; 0.24599099</span>
+<p>I generate the plot.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add a new line to the panel function from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  dotplot(week~est|parm, data=out.mod, xlab='Estimate', ylab='Week', 
+  prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(2,1), 
+  panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #new line</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low50[subscripts], y, out.mod$up50[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'))</div>
+<p align="center"><img src="../../images/assignments/assignment2/fig2.png" width="565" height="365" alt="fig 2"></p>
+<p align="left">From the graph it's clear that the slopes in weeks 1 and 2 are not different and the slopes in weeks 3 and 4 are not different. The slopes in weeks 1 and 2 are both different from the slope in week 3 (the thick lines failt to overlap). If you carefully scrutinize the graph you'll see that the thick blue bars of weeks 1 and 2 do overlap the thick blue bar of week 4, so these slopes are not significantly different. Thus only two of the six possible slope pairwise differences are statistically significant: slope 1 is different from 3 and slope 2 is different from 3</p>
+<p align="left">Using the 95% confidence intervals we see that  the slopes in weeks 1 and 2 are significantly different from zero while the slopes in weeks 3 and 4 are not.</p>
+<p align="left">Remember that this graph is supposed to be consistent with what we would obtain if we formallyl carried out these six individual tests. Three of the tests, comparing the slopes of weeks 2, 3, and 4 against the slope in week 1 are carried out in the summary table of the original model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(model3)$coefficients)</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate&nbsp; Std. Error t value&nbsp; Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.60196008&nbsp; 0.07109038&nbsp; 8.4675 3.477e-10 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.21412382&nbsp; 0.07956839 -2.6911&nbsp; 0.010628 *&nbsp; <br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; -0.27573804&nbsp; 0.09650602 -2.8572&nbsp; 0.006975 ** <br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; -0.00283724&nbsp; 0.09435587 -0.0301&nbsp; 0.976173&nbsp;&nbsp;&nbsp; <br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.06672569&nbsp; 0.14636596&nbsp; 0.4559&nbsp; 0.651139&nbsp;&nbsp;&nbsp; <br>
+  NAP:factor(week)2&nbsp; 0.00089244&nbsp; 0.10244032&nbsp; 0.0087&nbsp; 0.993096&nbsp;&nbsp;&nbsp; <br>
+  NAP:factor(week)3&nbsp; 0.21904343&nbsp; 0.09534153&nbsp; 2.2975&nbsp; </span><span class="style25">0.027348</span><span class="style24"> *&nbsp; <br>
+  NAP:factor(week)4&nbsp; 0.26427117&nbsp; 0.15430936&nbsp; 1.7126&nbsp; </span><span class="style25">0.095155</span><span class="style24"> .&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>Notice that the last line of the output shows that the slopes in weeks 1 and 4 are not significantly different (<em>p</em> = 0.095), while the slopes in weeks 1 and 3  are (second to the last line, <em>p</em> = 0.027). To get additional pairwise tests we can refit the model choosing week 2 as the reference group.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model3.1 &lt;- lm(simpson~NAP*factor(week, levels=c(2,1,3,4)), data=rikz)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(model3.1)$coefficients)</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate&nbsp; Std. Error t value&nbsp; Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.32622204&nbsp; 0.06526538&nbsp; 4.9984 1.418e-05 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.21323138&nbsp; 0.06452047 -3.3049&nbsp; 0.002118 ** <br>
+  factor(week, levels = c(2, 1, 3, 4))1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.27573804&nbsp; 0.09650602&nbsp; 2.8572&nbsp; 0.006975 ** <br>
+  factor(week, levels = c(2, 1, 3, 4))3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.27290080&nbsp; 0.09004864&nbsp; 3.0306&nbsp; 0.004437 ** <br>
+  factor(week, levels = c(2, 1, 3, 4))4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.34246373&nbsp; 0.14362702&nbsp; 2.3844&nbsp; 0.022347 *&nbsp; <br>
+  NAP:factor(week, levels = c(2, 1, 3, 4))1 -0.00089244&nbsp; 0.10244032 -0.0087&nbsp; 0.993096&nbsp;&nbsp;&nbsp; <br>
+NAP:factor(week, levels = c(2, 1, 3, 4))3&nbsp; 0.21815099&nbsp; 0.08319718&nbsp; 2.6221&nbsp; </span><span class="style25">0.012612</span><span class="style24"> *&nbsp; <br>
+NAP:factor(week, levels = c(2, 1, 3, 4))4&nbsp; 0.26337873&nbsp; 0.14711608&nbsp; 1.7903&nbsp; </span><span class="style25">0.081595</span><span class="style24"> .&nbsp; <br>
+---<br>
+Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p align="left">The last line of the output shows that the slopes in weeks 2 and 4 are not significantly different (<em>p</em> = 0.082), while the slopes in weeks 1 and 3 are (second to the last line,  <em>p</em> = 0.013). This agrees with our graphical display.</p>
+
+<h2>Question 3 </h2>
+<p>By definition Simpson's diversity index reports the probability that two randomly chosen individuals from the same site are different species. Being a probability Simpson's diversity is a number that lies between zero and one. We can demonstrate that there is a problem with the model by showing that  the predictions from the model routinely exceed  both of these boundaries.</p>
+<p><strong>The X = 0 boundary</strong>. I calculate P(<em>X</em> &le; 0) for each of the 45 predicted means. The largest observed probability of this event is 0.60 and at 12 of the  45 predicted means there is a greater than 5% chance of obtaining a negative value for diversity. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> max(pnorm(0, predict(model3), summary(model3)$sigma))</div>
+<span class="style24">[1] 0.5965873</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sum(pnorm(0, predict(model3), summary(model3)$sigma)&gt;.05)</div>
+<span class="style24">[1] 12</span>
+<p>I display all of probabilities in a box plot.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> boxplot(pnorm(0, predict(model3), summary(model3)$sigma), horizontal=T, outline=F, ylim=c(0,.6), xlab='P(X &lt;= 0)')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #jitter the points vertically to prevent overlap</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(pnorm(0, predict(model3), summary(model3)$sigma), jitter(rep(1,45), a=.2), col='seagreen', cex=.8, pch=16)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(v=.05, lty=2, col=2)</div>
+<p align="center"><img src="../../images/assignments/assignment2/fig3a.png" width="450" height="230" alt="fig 3"></p>
+<p><strong>The X = 1 boundary.</strong> I calculate P(<em>X</em> &gt; 1) using the <span class="style22">lower.tail=F</span> option of <span class="style4">pnorm</span>. This time the largest probability of a value exceeding 1 is 0.31. At 9  of the 45 means there is a greater than  5% chance of obtaining a diversity value that exceeds 1.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> max(pnorm(1, predict(model3), summary(model3)$sigma, lower.tail=F))</div>
+<span class="style24">  [1] 0.3080553</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(pnorm(1, predict(model3), summary(model3)$sigma, lower.tail=F)&gt;.05)</div>
+<span class="style24">  [1] 9</span>
+</p>
+<p>I display the 45 probabilities in a box plot.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> boxplot(pnorm(1, predict(model3), summary(model3)$sigma, lower.tail=F), horizontal=T, outline=F, ylim=c(0,.35), xlab='P(X &gt; 1)')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #jitter the points vertically to prevent overlap</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(pnorm(1, predict(model3), summary(model3)$sigma, lower.tail=F), jitter(rep(1,45), a=.2), col='seagreen', cex=.8, pch=16)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(v=.05, lty=2, col=2)</div>
+<p align="center"><img src="../../images/assignments/assignment2/fig3b.png" width="450" height="230" alt="fig 4"></p>
+<p>For completeness I collect  both sets of calculations in a single data frame and display the two box plots together in a single  graph.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">newdat &lt;- data.frame(prob = c(pnorm(0, predict(model3), summary(model3)$sigma), pnorm(1, predict(model3), summary(model3)$sigma, lower.tail=F)), cat=rep(c(0,1), c(45,45)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  boxplot(prob~factor(cat), data=newdat,  horizontal=T, outline=F, ylim=c(0,.6), axes=F, xlab='Probability')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  axis(1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  axis(2, las=2, at=1:2, labels=c(expression(P(X&lt;=0)), expression(P(X&gt;=1))), cex.axis=.9)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  box()</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  points(newdat$prob,jitter(as.numeric(newdat$cat)+1,a=0.2), col='seagreen', cex=.8, pch=16)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(v=.05, lty=2, col=2)</div>
+<p align="center"><img src="../../images/assignments/assignment2/fig4.png" width="500" height="310" alt="fig 5"></p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment2/hw2scores.png" width="380" height="190" alt="hw2 scores"><br>
+</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 2, 2012<br>
+      URL: <a href="assign2.htm#assign2" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign2.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

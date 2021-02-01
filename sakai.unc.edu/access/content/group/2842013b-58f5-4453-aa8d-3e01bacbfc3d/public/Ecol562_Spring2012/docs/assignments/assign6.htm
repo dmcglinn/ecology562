@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 6</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style13 {font-weight: bold; color: #008000; }
+
+.style3 {
+	font-weight: bold;
+	color: #008000;
+	font-size:larger;
+}
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign6" id="assign6"></a>Assignment 6 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, February 24, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p><a href="ftp://ftp.cmdl.noaa.gov/ccg/co2/trends/co2_mm_mlo.txt">Mauna Loa monthly atmospheric CO<sub>2</sub> means</a></p>
+  <p>The data for this assignment are described at the NOAA <a href="http://www.esrl.noaa.gov/gmd/ccgg/trends/">web site</a> as follows: &quot;The carbon dioxide data, measured as the mole fraction in dry air, on Mauna Loa constitute the longest record of direct measurements of CO<sub>2</sub> in the atmosphere. &hellip; Data are reported as a dry mole fraction defined as the number of molecules of carbon dioxide divided by the number of molecules of dry air multiplied by one million (ppm).&quot; </p>
+<h2 align="left">Preliminary Steps</h2>
+<p align="left">The goal of this exercise is to develop a regression model for the monthly mean atmospheric CO<sub>2</sub> levels in Hawaii from 1958 to 2012. The model will be purely descriptive using time as the only predictor. The two variables of interest are </p>
+<ul>
+  <li><span class="styleArial">average</span>: the monthly average atmospheric CO<sub>2</sub> level. This variable is  missing for some months.</li>
+  <li><span class="styleArial">decimal date</span>: the year and month converted to a decimal value.</li>
+</ul>
+<p>Obtain the data and read it into R. According to the description of the data missing values are recorded as -99.99. Use the <span class="style22">na.strings='-99.99'</span> argument of <span class="style2">read.table</span> to identify those values as missing. Note: the missing code needs to be given in quotes.</p>
+<p>Create  a variable, call it <span class="styleArial">ID</span>, that starts at 1 for the earliest observation and has as its last value  the number of observations in the data set. We'll use this variable to model periodicities in the CO<sub>2</sub> levels over time.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Plot monthly average atmospheric CO<sub>2</sub> level against <span class="styleArial">decimal date</span> (with points connected by line segments). Superimpose a linear trend  on this scatter plot. Does the trend in the data look linear?</li>
+  <li>Fit a linear trend model and a quadratic model to the data and test one against the other. Which appears to be the better model?</li>
+  <li>Plot the ACF of the residuals from the best model of Question 2 using the default setting for <span class="style22">lag.max</span>. The displayed lags represent months. What obvious periodicity is displayed?</li>
+  <li>To account for the observed annual cycle add appropriate trigonometric terms that are functions of the <span class="styleArial">ID</span> variable  to the best model from Question 2. Verify that the new terms are statistically significant.</li>
+  <li>Plot the ACF of the residuals of the model of Question 4 using <span class="style22">lag.max=500</span>. What do you see?</li>
+  <li>Add trigonometric terms  that are functions of the <span class="styleArial">ID</span> variable to account for the long-range periodic behavior seen in Question 5. Fit a sequence of models with different integer choices for the period and select the period that yields a model with the lowest AIC. Verify that all the terms in the model are statistically significant.</li>
+  <li>Plot the ACF of the residuals of the best model of Question 6 using the default settings for <span class="style22">lag.max</span>. You should see evidence of a short-range period. Guess the period or fit a sequence of models as in Question 6 to identify the period precisely.  Verify that all terms of your new model are statistically significant.</li>
+  <li>Plot the ACF of the residuals of the best model of Question 7. There still may be evidence of long range periodicities, but the short range ACF should be well-behaved. Plot the PACF of the residuals of this model. Based on what you see in these two plots what correlation structures might you consider?</li>
+  <li>Add a number of appropriate correlation structures to the best model of Question 7 and select the best of these. <strong>Warning</strong>: depending on the speed of your computer some of these models may take a long time to fit!</li>
+  <li>Plot the ACF of the residuals of your best model from Question 9 using <span class="style22">type='normalized'</span> to see if the remaining correlation has been accounted for. You should see that except for a significant lag 12 correlation (and its multiples), the remaining residual correlation has been removed.</li>
+  <li> To remove this last significant correlation try fitting an AR(12) correlation model instead for the residuals.  This AR(12) model will not have the lowest AIC of the correlation models considered because the <span class="style2">gls</span> function forces us to include all of the intermediate autoregressive parameters, most of which are not needed here.</li>
+  <li>Plot the predicted mean of your final model superimposed on a plot of the raw data over time.</li>
+</ol>
+<h2>Hints</h2>
+<p><span class="style3">Preliminary steps</span></p>
+<ul>
+  <li>Because the lines of text at the top of the file begin with a comment symbol, #, it is possible to read the web page directly into R  from the web site as is. Specify the URL as the file location and don't include the <span class="style22">header=</span> argument of <span class="style2">read.table</span>, or specify it as <span class="style22">header=F</span>. Without a header R will create generic names for the columns so you will have to supply your own names with the <span class="style2">names</span> function after you read in the file.</li>
+  <li>If instead you would rather read in the file using the names that appear in the file you will need to first edit the file as follows.
+    <ul>
+      <li>Remove the preliminary text and modify the header so that the variable names occupy only a single row. </li>
+      <li>Remove the comment symbol, #, that begins the row of variable names.</li>
+      <li>Add names for the variables that occupy the first two columns of  the file that are currently unnamed.</li>
+      <li>The variable in the last column is named &quot;<span class="styleArial">#days</span>&quot;. Because # is the comment symbol in R you must remove the # character from the name before you try to read the data into R.</li>
+    </ul>
+  </li>
+</ul>
+<p><span class="style3">Question 3 and others involving an ACF</span></p>
+<p>The vector of residuals returned from the models you fit will have the missing observations removed. So it will be shorter than your original data set. This messes up the temporal spacing of the observations. In order to obtain an honest ACF we need to re-introduce those missing values back into the residual vector. The following three-step protocol will do this.
+</p>
+<ol>
+  <li>Create a data frame that contains the residuals of the model and the  ID variable. You will need to remove those ID values corresponding to missing values of the response before constructing the data frame. This data frame will have dimension 640 &times; 2.</li>
+  <li>Create a second data frame that contains the full ID variable. This data frame will have dimension 647 &times; 1. Make sure the ID variable in both data frames has the same name.</li>
+  <li>Use the <span class="style2">merge</span> function to merge the two data frames. The <span class="style2">merge</span> function is used to combine the variables from two data frames using common named  fields, in this case ID, to line up the observations properly. We  also need to include the argument <span class="style22">all=T</span> of <span class="style2">merge</span> so that unmatched cases are included.</li>
+</ol>
+<p>The data frame this produces will have a column of residuals in which the missing values have been inserted. As an example, suppose the original input data frame is called <span class="styleArial">co2</span> and the best model from Question 2 is called <span class="styleArial">out2</span>. The three steps listed above would be carried out as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">data1 &lt;- data.frame(res=residuals(out2), ID=co2$ID[!is.na(co2$average)])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> data2 &lt;- data.frame(ID=co2$ID)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> data3 &lt;- merge(data1, data2, all=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> data3[1:9,]</div>
+<span class="style24">&nbsp; ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; res<br>
+1&nbsp; 1&nbsp; 1.5132024<br>
+2&nbsp; 2&nbsp; 3.1844621<br>
+3&nbsp; 3&nbsp; 3.1663749<br>
+4&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA<br>
+5&nbsp; 5&nbsp; 1.3888820<br>
+6&nbsp; 6&nbsp; 0.3902997<br>
+7&nbsp; 7 -1.4084469<br>
+8&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA<br>
+9&nbsp; 9 -1.4172666</span>
+<p>Before examining the ACF of the residuals you will need to carry out these three steps  for each of the models you fit.</p>
+<p><span class="style3"><strong>Question 10</strong></span></p>
+<p>For residuals produced by the <span class="style2">gls</span> function there is a <span class="style22">type='normalized'</span> argument,</p>
+<p> <span class="style1">residuals(gls.model, type='normalized')</span>, </p>
+<p>that extracts normalized residuals in which the standardized residuals are pre-multiplied by the inverse square root factor of the estimated error correlation matrix. If the chosen correlation structure is correct the normalized residuals should no longer display the significant ACF pattern you were trying to remove.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 20, 2012<br>
+      URL: <a href="assign6.htm#assign6" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign6.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 10</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign10" id="assign10"></a>Assignment 10 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, March 30, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p>The data set for this assignment is  <a href="../../data/flowers.txt">flowers.txt</a>, a space-delimited text file.</p>
+<h2 align="left">Overview</h2>
+<p align="left">The goal is to determine if male flowers of the dioecious plant <em>Clematis ligusticifolia</em> are more attractive to insects than are female flowers. Muenchow (1986) describes her experimental protocol as follows (p. 247).</p>
+<blockquote>
+  <p align="left" class="styleArial">The data were collected in Matthews-Winter Park, Jefferson County, Colorado. In 1983 the plants bloomed from about 15 July to 15 August. Between 0700 and 1500 on 15 days throughout the blooming period, I recorded waiting times until insects arrived as follows. I chose two target flowers on the same plant, at least 30 cm apart but close enough to allow careful simultaneous observation. The choice of two target flowers rather than one was necessitated by the overall slow arrival rate of insects. When watching a single flower, I was in danger of observing so few visits that any analysis would be compromised by small sample size. The event was defined as the arrival of any flying insect at one of the flowers. The flowers are shallow and capable of being pollinated by a variety of insects, as is typical of dioecious flowers (Bawa 1980, G. Muenchow, personal observation), so I did not restrict my attention to any one insect group. The waiting times were recorded to the nearest minute. I used &asymp; 20 plants of each gender and usually collected 6-8 data points in a day. Altogether 96 cases (pairs of target flowers) were observed during a total of 3180 min (53 h). In 10 of these cases I observed no insects; these data were censored after 75 or more minutes of observation.</p>
+</blockquote>
+<p align="left">The data are reported in Muenchow (1986), a paper whose purpose was to introduce the methods of survival analysis to ecologists. </p>
+<p align="left"><strong>Variables </strong></p>
+<ol>
+  <li><span class="style8">time:</span> the time to an event, insect arrival or censoring</li>
+  <li><span class="style8">censor:</span> 1 = event, 0 = censor</li>
+  <li><span class="style8">sex:</span> sex of plant bearing the flowers</li>
+</ol>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Obtain the Kaplan-Meier estimates of the survivor curves for the two sexes and display them on the same graph along with 95% confidence intervals.</li>
+  <li>For flowers of each sex, estimate the median time it takes for an insect to visit along with a 95% confidence interval for the median.</li>
+  <li>Test whether the event time distribution of insect visits is different for male and female flowers.</li>
+  <li>Estimate the hazard ratio of males versus females and interpret this quantity in terms of the language of this problem.</li>
+  <li>Assess whether the proportional hazards assumption is appropriate for these data.</li>
+  <li>Fit a Weibull model to the event time data in which you allow for an effect due to the sex of the flower. Use the Weibull model to estimate the median time to an event as well as the standard error of the median separately for each sex.</li>
+</ol>
+<h2>Hints</h2>
+<h3><strong>Question 2</strong> </h3>
+<p>A 95% confidence interval for the median can be obtained by first plotting the Kaplan-Meier estimate of the survivor function along with 95% confidence bands (use the <span class="style22">conf.int=T</span> argument of <span class="style2">plot</span> to display the intervals for each <span class="style8">sex</span>) and then adding a horizontal line at <em>S</em>(<em>t</em>) = 0.50. Where this line intersects the KM estimate of the survivor function is the median. The desired confidence interval corresponds to where this horizontal line intersects the lower and upper confidence bands of <em>S</em>(<em>t</em>). To make this determination easier you can use the <span class="style2">grid</span> function to add gridlines to the graph at the integer values of <span class="style8">time</span>.</p>
+<p>It  turns out that there is an even easier way to answer this question. One of the standard R functions when applied to an object of class <span class="style2">survfit</span> returns estimates of the median and its 95% confidence interval automatically. To see what functions support the <span class="style2">survfit</span> class use the <span class="style2">methods</span> function as follows: <span class="style10">methods(class=survfit)</span>. One of the functions shown in the display is the one you want.</p>
+<h3><strong>Question 6</strong></h3>
+<p>I'm asking you to predict the value of a specific survivorship quantile for male and female flowers. Examine the help screen of the appropriate method of one of R's basic functions  to determine what  arguments you need to specify to obtain these values.</p>
+<h2>Cited references</h2>
+<ul>
+  <li>Muenchow, Gayle. 1986. Ecological use of failure time analysis. <em>Ecology</em> <strong>67</strong>(1): 246&ndash;250.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 26, 2012<br>
+      URL: <a href="assign10.htm#assign10" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign10.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

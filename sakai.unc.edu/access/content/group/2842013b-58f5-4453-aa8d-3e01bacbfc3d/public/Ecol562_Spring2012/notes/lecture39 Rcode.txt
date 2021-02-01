@@ -1,0 +1,82 @@
+setwd("C:/Users/jmweiss/Documents/ecol 562")
+elfin<-read.csv('elfin.csv')
+library(mgcv)
+gam1 <- gam(Occupied_Unoccupied~s(TotalCanopy)+s(WildIndigoSize)+s(NearestWildIndigo)+s(DistanceNearestTree)+
+s(DirectionTree,k=8)+s(Slope)+s(SlopeAspect,k=8), data=elfin, method="ML", family=binomial)
+summary(gam1)
+
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy)+s(WildIndigoSize)+s(NearestWildIndigo)+s(DistanceNearestTree)+
+s(DirectionTree,k=8)+s(Slope), data=elfin, method="ML", family=binomial)
+
+#anova does not run because models fit to different data sets
+anova(gam2,gam1)
+
+#check for missing values
+apply(elfin,2,function(x) sum(is.na(x)))
+
+#remove observations with missing values of SlopeAspect
+elfin2<-elfin[!is.na(elfin$SlopeAspect),]
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy)+s(WildIndigoSize)+s(NearestWildIndigo)+s(DistanceNearestTree)+
+s(DirectionTree,k=8)+s(Slope), data=elfin2, method="ML", family=binomial)
+
+#negative change in deviance and no p-value
+anova(gam2,gam1,test='Chisq')
+#negative change in df and no p-value
+anova(gam1,gam2,test='Chisq')
+#simpler model has better log-likelihood. Say what?
+logLik(gam1)
+logLik(gam2)
+#reported AIC is impossible: AIc(gam1) > AIC(gam2) + 2
+AIC(gam1,gam2)
+
+#examine summary table of smooths
+summary(gam1)$s.table
+summary(gam2)$s.table
+
+#function to fit smooths with different choices for number of knots
+my.out<-NULL
+my.gam<-function(k) {
+gam1 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope)+s(SlopeAspect,k=8), data=elfin2, method="ML", family=binomial)
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope), data=elfin2, method="ML", family=binomial)
+cur.results<-c(gam1$deviance,gam1$df.residual,logLik(gam1),gam2$deviance,gam2$df.residual,logLik(gam2),
+ gam2$deviance-gam1$deviance, gam2$df.residual-gam1$df.residual,k)
+my.out<-rbind(my.out,cur.results)
+my.out
+}
+
+#try knots = 10, 15, 20, and 25: positive change in deviance for knots 20 and 25
+sapply(c(10,15,20,25),my.gam)
+
+##Correction 1: increase nunber of knots so smooths are not constrained
+#refit models with k=20
+k<-20
+gam1 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope)+s(SlopeAspect,k=8), data=elfin2, method="ML", family=binomial)
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope), data=elfin2, method="ML", family=binomial)
+
+#now test is correct
+anova(gam2,gam1,test='Chisq')
+
+#try it again with 25 knots
+k<-25
+gam1 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope)+s(SlopeAspect,k=8), data=elfin2, method="ML", family=binomial)
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope), data=elfin2, method="ML", family=binomial)
+
+#no obvious differences
+anova(gam2,gam1,test='Chisq')
+
+## alternate correction
+#fit gam2 model use smoothing parameters from gam1 so models are truly nested
+k<-10
+gam1 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope)+s(SlopeAspect,k=8), data=elfin2, method="ML", family=binomial)
+gam1$sp
+gam2 <- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+s(WildIndigoSize,k=k)+s(NearestWildIndigo,k=k)+
+s(DistanceNearestTree,k=k)+s(DirectionTree,k=8)+s(Slope),sp=gam1$sp[1:6], data=elfin2, method="ML", family=binomial)
+anova(gam2,gam1,test='Chisq')
+AIC(gam1,gam2)

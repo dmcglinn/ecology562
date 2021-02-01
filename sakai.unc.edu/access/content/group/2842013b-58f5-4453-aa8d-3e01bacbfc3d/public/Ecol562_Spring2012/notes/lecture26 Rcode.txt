@@ -1,0 +1,184 @@
+
+### Example 1: using a GAM to suggest a nonlinear model ####
+
+bees<-read.table("ecol 562/beepollen.txt",header=T)
+
+plot(removed~duration,data=bees)
+
+#add lowess curve using lowess function
+low1<-lowess(bees$removed~bees$duration)
+names(low1)
+lines(low1,col=1,lty=2)
+
+#add lowess curve using loess function
+low2<-loess(removed~duration,data=bees)
+names(low2)
+#must sort the fitted values first
+lines(low2$x[order(low2$x)],low2$fitted[order(low2$x)],col=2)
+
+#choose settings that are closer to that of lowess function
+low2<-loess(removed~duration,data=bees,span=2/3,family="symmetric")
+lines(low2$x[order(low2$x)],low2$fitted[order(low2$x)],col=3)
+
+#loess has a method for the predict function
+predict(low2)
+
+#fit a parametric nonlinear function to data
+myfunc<-function(x,a,b) b*(1-exp(a*x))
+nls(removed~myfunc(duration,a,b),start=list(a=-.1,b=.7),data=bees)->out.nls
+summary(out.nls)
+
+#add curve to graph
+curve(myfunc(x,coef(out.nls)[1],coef(out.nls)[2]),add=T,col=4)
+
+#display the two bee types
+points(bees$duration,bees$removed,col=bees$code,pch=c(1,16)[bees$code])
+
+#add smoothing spline 
+library(mgcv)
+model0<-gam(removed~s(duration),data=bees)
+summary(model0)
+
+#display marginal response function
+windows()
+plot(model0)
+
+#obtain model predictions and add them to earlier graph
+predict(model0)->out.gam.p
+lines(bees$duration[order(bees$duration)],out.gam.p[order(bees$duration)],col='grey70',lwd=2)
+
+#there is a gam method for plot
+methods(plot)
+?plot.gam
+
+
+#interact a smooth with a factor variable
+model1<-gam(removed~factor(code)+s(duration,by=factor(code)),data=bees)
+
+#display both partial response functions in single graph
+plot(model1,pages=1)
+summary(model1)
+
+#a different way to fit the same model
+model2<-gam(removed~s(duration,by=as.numeric(code==1))+s(duration,by=as.numeric(code==2)),data=bees)
+AIC(model1,model2)
+summary(model2)
+
+#display predicted smooth for each bee type
+plot(removed~duration,data=bees)
+points(bees$duration,bees$removed,col=bees$code,pch=c(1,16)[bees$code])
+pred1<-predict(model1,newdata=data.frame(duration=1:80,code=rep(1,80)))
+pred2<-predict(model1,newdata=data.frame(duration=1:80,code=rep(2,80)))
+lines(1:80,pred1,col=1)
+lines(1:80,pred2,col=2)
+
+#fit parametric version: interaction model for a and be parameters
+myfunc2<-function(x,z,a,b,a1,b1) (b+b1*z)*(1-exp((a+a1*z)*x))
+nls(removed~myfunc2(duration,I(code-1),a,b,a1,b1),start=list(a=-.1,b=.7,a1=0,b1=0),data=bees)->out.nls2
+summary(out.nls2)
+#test if need two models or one
+anova(out.nls,out.nls2)
+
+curve(myfunc2(x,0,coef(out.nls2)[1],coef(out.nls2)[2],coef(out.nls2)[3],coef(out.nls2)[4]),add=T,col=1,lty=2)
+curve(myfunc2(x,1,coef(out.nls2)[1],coef(out.nls2)[2],coef(out.nls2)[3],coef(out.nls2)[4]),add=T,col=2,lty=2)
+
+### Example 2: choosing transformations for predictors with a GAM ###
+
+frogs<-read.csv('ecol 562/frogs.txt')
+#logistic regression with four smoothers
+out.gam<-gam(pres.abs~s(distance)+s(NoOfPools)+s(meanmin)+s(meanmax),data=frogs,family=binomial)
+summary(out.gam)
+#check the effect of increasing the number of knots
+out.gam<-gam(pres.abs~s(distance,k=20)+s(NoOfPools)+s(meanmin)+s(meanmax),data=frogs,family=binomial)
+summary(out.gam)
+
+#plot the marginal response functions in one graph
+plot(out.gam,pages=1)
+
+#replace smooths that are obviously linear
+out.gam1<-gam(pres.abs~s(distance,k=20)+NoOfPools+meanmin+s(meanmax),data=frogs,family=binomial)
+AIC(out.gam,out.gam1)
+summary(out.gam1)
+
+#based on smooth, try a log function for distance
+out.gam2<-gam(pres.abs~log(distance)+NoOfPools+meanmin+s(meanmax),data=frogs,family=binomial)
+AIC(out.gam2,out.gam1)
+summary
+
+#try linear and quadratic versions of meanmax
+out.gam3<-gam(pres.abs~log(distance)+NoOfPools+meanmin+meanmax,data=frogs,family=binomial)
+out.gam4<-gam(pres.abs~log(distance)+NoOfPools+meanmin+meanmax+I(meanmax^2),data=frogs,family=binomial)
+AIC(out.gam2,out.gam3,out.gam4)
+summary(out.gam4)
+
+### Example 3: a three-level GAMM ###
+
+carib<-read.csv('ecol 562/carib.csv')
+
+#we have repeated measures on reefs
+#reefs are found in marine preserves with similar management methods
+gamm(logit~s(z),random=list(MPA_UID=~1,REEF_ID_GR=~1), data=carib, method="ML")->out.gamm
+
+#there are two components: an lme compoment
+summary(out.gamm$lme)
+VarCorr(out.gamm$lme)
+
+#and a gam component
+summary(out.gamm$gam)
+
+#plot the marginal response function
+plot(out.gamm$gam)
+
+#plot the fixed effects model by obtaining predictions
+pred1<-predict(out.gamm$gam,level=0)
+#put the predictions in the correct order for plotting
+out10<-data.frame(p=pred1,z=carib$z)
+out10<-out10[order(out10$z),]
+plot(p~z,type='l',data=out10, ylab='Logit', xlab='Years protected')
+
+#not all values of the predictor are equally represented in the data set
+table(carib$z)
+
+#add a bar chart of observation frequences to the graph
+par(lend=1)
+par(new=T)
+plot(as.numeric(names(table(carib$z))),table(carib$z),type='h',xlim=c(0,50), lwd=5,axes=F,xlab='',ylab='',ylim=c(0,400), col='grey70')
+par(new=F)
+
+#estimate a cubic function and add it to graph
+
+lme(logit~z+I(z^2)+I(z^3),random=list(MPA_UID=~1,REEF_ID_GR=~1), data=carib, method="ML")->out.lme
+pred2<-predict(out.lme,level=0)
+#put the predictions in the correct order for plotting
+out11<-data.frame(p=pred2,z=carib$z)
+out11<-out11[order(out11$z),]
+
+plot(p~z,type='l',data=out10, ylab='Logit', xlab='Years protected', xlim=c(0,50))
+lines(out11$z,out11$p,col=2, lty=2)
+
+#estimate a breakpoint regression model
+
+temp.data <- data.frame(logit=carib$logit, z=carib$z, REEF_ID_GR=carib$REEF_ID_GR, MPA_UID=carib$MPA_UID)
+
+my.aic<-NULL
+for (i in 5:25) {
+temp.data$c1 <- i
+lme(logit~z+I((z-c1)*(z>c1)),random=list(MPA_UID=~1,REEF_ID_GR=~1), data=temp.data, method="ML")->temp.lme
+my.aic<-rbind(my.aic,c(i,AIC(temp.lme)))
+}
+
+which.min(my.aic[,2])
+my.aic[which.min(my.aic[,2]),]
+
+lme(logit~z+I((z-9)*(z>9)),random=list(MPA_UID=~1,REEF_ID_GR=~1), data=temp.data, method="ML")->temp.lme
+pred3<-predict(temp.lme,level=0)
+#put the predictions in the correct order for plotting
+out12<-data.frame(p=pred3,z=carib$z)
+out12<-out12[order(out12$z),]
+lines(out12$z,out12$p,col=3)
+
+par(lend=1)
+par(new=T)
+plot(as.numeric(names(table(carib$z))),table(carib$z),type='h',xlim=c(0,50), lwd=5,axes=F,xlab='',ylab='',ylim=c(0,400), col='grey70')
+par(new=F)
+

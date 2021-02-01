@@ -1,0 +1,176 @@
+setwd("C:/Users/jmweiss/Documents/ecol 562")
+Bahama<-read.table('Bahama.txt',header=T)
+Ditch<-read.table('Ditch.txt',header=T)
+
+#### regression tree ####
+
+Bahama[1:4,]
+#examine distribution of the response
+table(Bahama$Parrot)->out.t
+plot(as.numeric(names(out.t)),as.vector(out.t),type='h')
+
+#regression tree
+library(rpart)
+parrot_tree<-rpart(Parrot~CoralTotal+factor(Month)+factor(Station)+factor(Method), data=Bahama)
+print(parrot_tree)
+#RSS after one split
+7044.2100+31494.2000
+#RSS explained after 1 split
+1-(7044.2100+31494.2000)/50188.3500
+
+#plot the tree
+plot(parrot_tree)
+text(parrot_tree,cex=.85,use.n=T)
+#make room for the text
+plot(parrot_tree,margin=.1)
+text(parrot_tree,cex=.85,use.n=T)
+#obtain actual valus of categorical variables
+plot(parrot_tree,margin=.1)
+text(parrot_tree,cex=.85,use.n=T,pretty=1)
+#make all branches the same length
+plot(parrot_tree,margin=.1,uniform=T)
+text(parrot_tree,cex=.85,use.n=T,pretty=1)
+#change the angle of branches
+plot(parrot_tree,margin=.1,uniform=T,branch=0)
+plot(parrot_tree,margin=.1,uniform=T,branch=0.5)
+
+#display the CP table
+printcp(parrot_tree)
+
+#refit model with smaller value of cp
+parrot_tree<-rpart(Parrot~CoralTotal+factor(Month)+factor(Station)+factor(Method), data=Bahama, control=rpart.control(cp=.001))
+printcp(parrot_tree)
+
+#set the random so results can be reproduced
+set.seed(20)
+parrot_tree<-rpart(Parrot~CoralTotal+factor(Month)+factor(Station)+factor(Method), data=Bahama, control=rpart.control(cp=.001))
+
+#display CP table
+printcp(parrot_tree)
+#plot CP xerror against CP
+plotcp(parrot_tree)
+
+#examine components of rpart object
+names(parrot_tree)
+parrot_tree$cptable
+
+#obtain CP at minimum xerror
+min(parrot_tree$cptable[,"xerror"])
+which.min(parrot_tree$cptable[,"xerror"])
+min(parrot_tree$cptable[4,"CP"])
+min(parrot_tree$cptable[4,"CP"])->cp.choice
+
+#prune the tree back corresponding to the optimal cp
+prune(parrot_tree, cp=cp.choice)->pruned.tree
+pruned.tree
+plot(pruned.tree,margin=0.1)
+text(pruned.tree,cex=.8,use.n=T,pretty=1)
+
+#obtain predictions of each observations based on tree
+predict(pruned.tree)
+
+#other components of the rpart object
+names(pruned.tree)
+#where identifies the leaf to which observations are defined
+pruned.tree$where
+#the rownames of the frame identify the horizontal coordinates of leaves
+pruned.tree$frame
+rn<-rownames(pruned.tree$frame)
+rn
+
+#match rownames with where elements
+lev<-rn[sort(unique(pruned.tree$where))]
+lev
+
+#create a factor variable that identifies the leaves
+where<-factor(rn[pruned.tree$where],levels=lev)
+#count number of observations at each leaf
+n<-tapply(Bahama$Parrot,where,length)
+n
+
+#create display of tree plus boxplots of observations in each leaf
+par(mfrow=c(2,1))
+par("mar")
+par("mar")->oldmar
+par(mar=c(1.1,4.1,1.1,1.1))
+plot(pruned.tree,margin=.2)
+text(pruned.tree,cex=.8,use.n=T,pretty=1)
+par(mar=c(2.1,4.1,0.1,1.1))
+boxplot(Bahama$Parrot~where,varwidth=T,pars=list(axes=F))
+axis(2)
+mtext(side=1,line=.5,text(paste('n=',n),at=1:4,cex=.9)
+
+# the partykit version of the same plot
+library("partykit")
+plot(as.party(pruned.tree), tp_args=list(id=FALSE))
+
+### classification trees ####
+
+dim(Ditch)
+Ditch[1:4,]
+table(Ditch$Site)
+#to get classification tree make response a factor or use method="class"
+set.seed(50)
+ditch_tree<-rpart(factor(Site)~.,data=Ditch[,c(1,4:18)],method="class",control=rpart.control(cp=.001,minsplit=15))
+ditch_tree
+
+par(mar=oldmar)
+par(mfrow=c(1,1))
+plot(ditch_tree,mar=0.1)
+text(ditch_tree,use.n=T,cex=.9)
+printcp(ditch_tree)
+plotcp(ditch_tree)
+
+#try to grow a bigger tree
+ditch_tree<-rpart(factor(Site)~.,data=Ditch[,c(1,4:18)],method="class",control=rpart.control(cp=.0001,minsplit=15))
+plotcp(ditch_tree)
+names(ditch_tree)
+
+ditch_tree$cptable
+ditch_tree$cptable[4,"CP"]
+ditch_tree$cptable[4,"CP"]->my.cp
+
+#prune tree
+prune(ditch_tree,cp=my.cp)->myprune
+plot(myprune,margin=0.1)
+text(myprune,cex=0.8,use.n=T)
+
+#display partykit graph of classification tree
+plot(as.party(myprune), tp_args=list(id=FALSE))
+
+#display a tree with a mosaic plot
+par(mfrow=c(2,1))
+par(mar=c(0.5,2.1,0.5,0))
+plot(myprune,margin=0.3)
+text(myprune,cex=.8,use.n=T)
+par(xpd=T)
+par(mar=c(1.1,5.1,2.1,1.1))
+mosaicplot(table(myprune$where,Ditch$Site),main='',xlab='',las=1)
+
+#predictions are the probabilities of each category
+predict(myprune)
+
+#display the importance of calcium in distinguishing sites
+par(xpd=F)
+par(mar=oldmar)
+par(mfrow=c(1,1))
+dotchart(Ditch$Total_Calcium, pch=Ditch$Site, xlab='range',ylab="Sample", main="Total Calcium")
+#add split point from tree
+abline(v=118,lty=2,col=2)
+
+#summary output shows primary and surrogate splits
+summary(myprune)
+
+#### random forest #####
+
+library(randomForest)
+ditch_rf<-randomForest(factor(Site)~.,data=Ditch[,c(1,4:18)])
+#impute values for missing values
+ditch_rf<-randomForest(factor(Site)~.,data=Ditch[,c(1,4:18)],na.action=na.roughfix,importance=T)
+ditch_rf
+names(ditch_rf)
+
+#display the importance of variables in the data set
+ditch_rf$importance
+ditch_rf$importance[,6]
+dotchart(sort(ditch_rf$importance[,6]))

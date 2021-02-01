@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 13&mdash;Wednesday, February 8, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style13 {color: #CC0000}
+.style2 {	color: #FF0000;
+	font-weight: bold;
+}
+.style111 {color: #336699;
+	font-weight: bold;
+}
+.style221 {color: #339966;
+	font-weight: bold;
+}
+.style29 {font-family: "Courier New", Courier, mono}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture13" id="lecture13"></a>Lecture 13&mdash;Wednesday, February 8, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture13.htm#deviance">Deviance</a>
+<ul>
+      <li><a href="lecture13.htm#goodness">The deviance as a goodness of fit statistic
+        
+      </a></li>
+      <li><a href="lecture13.htm#analysis">Analysis of deviance</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture13.htm#residuals">Residuals for generalized linear models</a>
+<ul>
+      <li><a href="lecture13.htm#devres">Deviance residuals</a></li>
+      <li><a href="lecture13.htm#Pearson">Pearson residuals</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture13.htm#binomial">Binomial distribution</a></li>
+  <li><a href="lecture13.htm#logistic">Logistic regression</a></li>
+  <li><a href="lecture13.htm#interpretation">Interpreting  regression equations with different link functions</a>
+    <ul>
+      <li><a href="lecture13.htm#identity">Identity link</a></li>
+      <li><a href="lecture13.htm#log">Log link</a></li>
+      <li><a href="lecture13.htm#logit">Logit link</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture13.htm#cited">Cited references</a></li>
+</ul>
+<h2><a name="deviance"></a>Deviance</h2>
+<h3><a name="goodness"></a>The deviance as a goodness of fit statistic</h3>
+<p>Historically a quantity called the <span class="style31">deviance</span> has played a large role in assessing the fit of generalized linear models. The deviance derives from the usual likelihood ratio statistic as we now illustrate. Suppose we have two nested models with estimated parameter sets <img src="../../images/lectures/lecture13/thetatilde.gif" alt="theta tilde" width="17" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture13/thetahat.gif" alt="theta hat" width="17" height="28" align="absmiddle"> and corresponding likelihoods <img src="../../images/lectures/lecture13/likelihood&#32;thetatilde.gif" alt="likelihood theta tilde" width="47" height="37" align="absmiddle">  and <img src="../../images/lectures/lecture13/likelihood&#32;thethat.gif" alt="likelihood theta hat" width="47" height="40" align="absmiddle">. If  <img src="../../images/lectures/lecture13/likelihood&#32;thethat.gif" alt="likelihood theta hat" width="47" height="40" align="absmiddle"> is a special case of <img src="../../images/lectures/lecture13/likelihood&#32;thetatilde.gif" alt="likelihood theta tilde" width="47" height="37" align="absmiddle">then we can compare the models using a likelihood ratio test.</p>
+<p align="center"><img src="../../images/lectures/lecture13/LRtest.gif" width="338" height="72" alt="LR test"></p>
+<p>Recall that LR has an asymptotic chi-squared distribution with degrees of freedom equal to the difference in the number of parameters estimated in the two models. Alternatively, the degrees of freedom is the number of parameters that are fixed to have a specific value in one model but are freely estimated in the other model. </p>
+<p name="residualdeviance"><a name="residualdeviance"></a> A saturated model is one in which one parameter is estimated for each observation. Suppose the model with likelihood <img src="../../images/lectures/lecture13/likelihood&#32;thetatilde.gif" alt="likelihood theta tilde" width="47" height="37" align="absmiddle"> is the saturated model and <img src="../../images/lectures/lecture13/likelihood&#32;thethat.gif" alt="likelihood theta hat" width="47" height="40" align="absmiddle"> is the likelihood of some model of interest, call it model <em>M</em>. In the special case where model <em>M</em> is being compared  to the saturated model, the likelihood ratio statistic for this comparison is called the <span class="style31">deviance</span>. Technically a distinction is made between   the <span class="style31">residual deviance</span><em>, D<sub>M</sub></em> , and the <span class="style31">scaled deviance</span>, the <span class="style31">residual deviance</span> divided by the scale parameter.</p>
+<p align="center"><img src="../../images/lectures/lecture13/scaled&#32;deivaince.gif" width="180" height="85" alt="scaled deviance"></p>
+<p>The scale parameter is a term recognizable in the log-likelihood when it is written in its exponential form. For the Poisson and binomial distributions, the two probability models for which the deviance can be legitimately used as a goodness of fit statistic, this distinction between residual deviance and scaled deviance is unimportant because the scale parameter &phi; = 1, so the two are the same.</p>
+<p>In the saturated model <em>n</em> parameters are estimated, one for each of the <em>n</em> observations. In model <em>M</em> there are <em>p</em> &lt; <em>n</em> parameters that are estimated. This means that <em>n</em> &ndash;&nbsp;<em>p</em> of the parameters that were estimated in the saturated model are set to zero in Model <em>M</em>. Because the scaled deviance is a likelihood ratio statistic it follows that</p>
+<p align="center"><img src="../../images/lectures/lecture13/scaled&#32;deviance&#32;dist.gif" width="92" height="55" alt="scaled deviance distribuition"></p>
+<p>Thus the deviance has the form of  a goodness of fit statistic. Large values of the deviance, relative to its degrees of freedom, indicate a significant lack of fit. As was noted above there are only two  kinds of generalized linear models for which the  deviance is an appropriate goodness of fit statistic:  Poisson regression and logistic regression with grouped binary data (which we'll consider in <a href="lecture14.htm#logit1">lecture 14</a>). The deviance statistic should not be used as a goodness of fit statistic for logistic regression with a binary response.  </p>
+<p>The mean of a chi-squared distribution is equal to its degrees of freedom, i.e., <img src="../../images/lectures/lecture15/chisquaredmean.gif" alt="chi-squared mean" width="132" height="37" align="absmiddle">. Thus if a model provides a good fit to the data and the chi-squared distribution of the deviance holds, we  expect the scaled deviance of the model to be close to its mean value <em>n</em> &ndash; <em>p</em>, i.e., <img src="../../images/lectures/lecture13/deviance&#32;mean&#32;2.gif" alt="deviance mean" width="98" height="55" align="absmiddle">. For Poisson and binomial probability models, &phi; = 1. Thus for these models we expect <img src="../../images/lectures/lecture13/deviance&#32;poisson.gif" alt="deviance poisson" width="95" height="27" align="absmiddle"> or equivalently <img src="../../images/lectures/lecture13/deviance&#32;poisson&#32;2.gif" alt="deviance ratio" width="77" height="55" align="absmiddle">. So a quick test of the adequacy of a Poisson or binomial model is to divide the residual deviance by its degrees of freedom and see if the result is close to one. If the ratio is much larger than one we call the data <span class="style31">overdispersed</span>. If it is much smaller than one we call the data <span class="style31">underdispersed</span>. (Note: The use of these terms should  be restricted to Poisson and binomial distributions.) </p>
+<p name="deviancetest">Unfortunately the accuracy of this test is somewhat dubious with small data sets.  In order for the chi-squared distribution of the deviance to hold, the expected Poisson or binomial counts, i.e., the fitted values predicted by the model, should be large. A general rule is that they should exceed 5, although when there are many categories Agresti (2002) notes that an expected cell frequency as small as 1 is okay as long as no more than 20% of the expected counts are less than 5. </p>
+<p name="underdispersion">To illustrate the use of the deviance for checking model fit we revisit a Poisson regression model that was fit in <a href="lecture11.htm">lecture 11</a>.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">corals &lt;- read.csv('ecol 562/corals.csv', header=T)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  corals.sort &lt;- corals[order(corals$CORAL_COVE),]</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> model2 &lt;- glm(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort, family=poisson)</div>
+<p>To fit the saturated model we create a variable that has a different value for each observation, convert it to a factor, and then use it as a predictor in a Poisson regression model.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#fit saturated model</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  corals.sort$ID &lt;- 1:nrow(corals.sort)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  model0 &lt;- glm(PREV_1~factor(ID), data=corals.sort, family=poisson)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # number of observations
+</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> nrow(corals.sort)</div>
+<span class="style24">  [1] 280</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # number of parameters in saturated model
+</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> length(coef(model0))</div>
+<span class="style24">  [1] 280</span>
+  
+<p>So in the saturated model we have 280 parameters, one for each observation. To compare our model to the saturated model we can use a likelihood ratio test.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #goodness of fit statistic</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> 2*logLik(model0)-2*logLik(model2)</div>
+ <span class="style24"> [1] 4912.255</span>
+<p name="underdispersion">The  degrees of freedom of the likelihood ratio statistic is just the difference in number of parameters fit in the two models.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> length(coef(model0))-length(coef(model2))</div>
+<span class="style24">[1] 275</span>
+<p name="underdispersion">This likelihood ratio statistic and its degrees of freedom are reported as part of the  summary output from the model and labeled the residual deviance.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> summary(model2)</div>
+<span class="style24">Call:<br>
+  glm(formula = PREV_1 ~ CORAL_COVE * WSSTA + I(WSSTA^2), family = poisson, <br>
+  &nbsp;&nbsp;&nbsp; data = corals.sort)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max&nbsp; <br>
+  -12.0267&nbsp;&nbsp; -2.6401&nbsp;&nbsp; -1.5599&nbsp;&nbsp;&nbsp; 0.1912&nbsp;&nbsp; 20.9158&nbsp; </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.0349466&nbsp; 0.0911488&nbsp; -0.383&nbsp;&nbsp;&nbsp; 0.701&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0332184&nbsp; 0.0018308&nbsp; 18.144&nbsp;&nbsp; &lt;2e-16 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.3056099&nbsp; 0.0162077&nbsp; 18.856&nbsp;&nbsp; &lt;2e-16 ***<br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.0270397&nbsp; 0.0007945 -34.032&nbsp;&nbsp; &lt;2e-16 ***<br>
+  CORAL_COVE:WSSTA&nbsp; 0.0038035&nbsp; 0.0002341&nbsp; 16.246&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for poisson family taken to be 1)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp; Null deviance: 11827.0&nbsp; on 279&nbsp; degrees of freedom<br>
+  </span><span class="style25">Residual deviance:&nbsp; 4912.3&nbsp; on 275&nbsp; degrees of freedom<br>
+  </span><span class="style24">AIC: 5527.6</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 7</span>
+<p name="underdispersion">To carry out the deviance goodness of fit test we compare the deviance to the critical value of a chi-squared distribution with 275 degrees of  freedom. The <em>p</em>-value of the residual deviance is</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># p-value of residual deviance </div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> 1-pchisq(2*logLik(model0) - 2*logLik(model2), length(coef(model0)) - length(coef(model2)))</div>
+<span class="style24">[1] 0</span>
+<p name="underdispersion">Because the <em>p</em>-value is very small, we should reject the null hypothesis. Before we conclude that we have a significant lack of fit,  we should verify that our data meet the minimum sample size criteria. We calculate the expected counts and determine the fraction of them that are less than 5.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> sum(fitted(model2)&lt;5)/length(fitted(model2))</div>
+<span class="style24">[1] 0.55</span>
+<p name="underdispersion">So 55% of the expected cell counts are less than five. This is far greater than 20% suggesting that we should not take the deviance test seriously here.</p>
+<h3><a name="analysis" id="analysis"></a>Analysis of deviance</h3>
+<p>The likelihood ratio test is often written with a negative sign.</p>
+<p align="center"><img src="../../images/lectures/lecture13/alt&#32;lrtest.gif" width="127" height="57" alt="LR test"></p>
+<p>Written this way L<sub>1</sub> is the larger of the two models (it has more estimated parameters) and L<sub>0</sub> is the simpler model in which some of those parameters have been assigned specific values (such as zero). Written this way and letting L<sub>S</sub> denote the likelihood of the saturated model, the scaled deviance can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture13/alt&#32;lrtest2.gif" width="185" height="57" alt="LR test"></p>
+<p>Now suppose we wish to compare two nested models with likelihoods L<sub>1</sub> and L<sub>2</sub> in which L<sub>2</sub> is the &quot;larger&quot; (more estimated parameters) of the two likelihoods. The likelihood ratio statistic for comparing these two models, written in the alternate format given above, is the following. </p>
+<p align="center"><img src="../../images/lectures/lecture13/analysis&#32;of&#32;deviance.gif" width="388" height="160" alt="analysis of deviance"></p>
+<p>where D<sub>1</sub> and D<sub>2</sub> are the deviances of models 1 and 2, respectively. Thus to carry out a likelihood ratio test to compare two models we can equivalently just compute the difference of their scaled deviances. </p>
+<p>Because of the parallel to analysis of variance (ANOVA) in ordinary linear models, carrying out an LR test using the scaled deviances of the models is often called <span class="style31">analysis of deviance</span>. This is what is reported by the <span class="style1">anova</span> function in R. The column labeled &quot;Deviance&quot; really represents the change in deviance between two adjacent models in the table. These are also  likelihood ratio statistics.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> anova(model2, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: poisson, link: log</span>
+<p><span class="style24">Response: PREV_1</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 279&nbsp;&nbsp;&nbsp; 11827.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  CORAL_COVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 4617.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 278&nbsp;&nbsp;&nbsp;&nbsp; 7209.5 &lt; 2.2e-16 ***<br>
+  WSSTA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; &nbsp;&nbsp;&nbsp;51.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 277&nbsp;&nbsp;&nbsp;&nbsp; 7158.0 7.371e-13 ***<br>
+  I(WSSTA^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 1967.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 276&nbsp;&nbsp;&nbsp;&nbsp; 5190.4 &lt; 2.2e-16 ***<br>
+  CORAL_COVE:WSSTA&nbsp; 1&nbsp;&nbsp;&nbsp; 278.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 275&nbsp;&nbsp;&nbsp;&nbsp; 4912.3 &lt; 2.2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<h2><strong><a name="residuals"></a>Residuals for generalized linear models</strong></h2>
+<p>In the ordinary normal-based multiple regression model, we write</p>
+<p align="center"><img src="../../images/lectures/lecture13/ord&#32;reg&#32;model.gif" width="300" height="60" alt="ordinary regression"></p>
+<p>where &epsilon;<sub>i</sub> is referred to as the error. When we obtain estimates for the parameters we write the fitted model as </p>
+<p align="center"><img src="../../images/lectures/lecture13/muhat.gif" width="270" height="37" alt="mu hat"></p>
+<p>so that <img src="../../images/lectures/lecture13/raw&#32;residual.gif" alt="raw residual" width="88" height="28" align="absmiddle"> is an estimate of the errors<em>, &epsilon;<sub>i</sub></em>. The<em> e<sub>i</sub></em> are called <span class="style31">residuals</span>, or more properly, the <span class="style31">raw residuals</span> (also called the <span class="style31">response residuals</span>) of the model. For generalized linear models the raw residuals are seldom useful. Instead two other kinds of residuals, deviance residuals and Pearson residuals, are used.</p>
+<h3><span class="style221"><a name="devres" id="devres"></a></span>Deviance residuals</h3>
+<p>The deviance is twice the difference in log-likelihoods between the current model and a saturated model. </p>
+<p align="center"><img src="../../images/lectures/lecture13/devres.gif" width="285" height="43" alt="deviance"></p>
+<p>Because the likelihood is a product of probabilities or densities, each log-likelihood is a sum of a probability or density  for each observation. If we group the corresponding log-likelihood terms from both the model and the saturated model by observation, we get that observation's contribution to the deviance which we denote by<em> <img src="../../images/lectures/lecture13/squareddeviance.gif" alt="squared deviance" width="25" height="30" align="absmiddle"></em>. Because of the factor of two that multiplies the difference in logs, each of these contributions is  squared, <img src="../../images/lectures/lecture13/logprop.gif" alt="log property" width="122" height="30" align="absmiddle">. The <span class="style31">deviance residual</span> is defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture13/deviance&#32;residual.gif" width="182" height="37" alt="deviance residual"></p>
+<p>Here <span class="style29">sign</span> denotes the sign function which is defined as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture13/signfunction.gif" width="222" height="103" alt="sign function"></p>
+<p>Because under ideal conditions the deviance can be used as a measure of lack of fit, the deviance residual measures the i<sup>th</sup> observation's contribution to model lack of fit.</p>
+<h3><a name="Pearson" id="Pearson"></a>Pearson residuals</h3>
+<p>The <span class="style31">Pearson residual</span> is a standardized raw residual. The raw residual is divided by an estimate of the standard error of the prediction. </p>
+<p align="center"><img src="../../images/lectures/lecture13/Pearsonresidual.gif" width="127" height="65" alt="Pearson residual"></p>
+<p>This estimate will vary depending on the probability distribution chosen for the response. The Pearson residual is that observation's contribution to the Pearson goodness of fit statistic.</p>
+<h2><strong><a name="binomial" id="binomial"></a>Binomial distribution</strong></h2>
+<p>A binomial random variable is discrete. It records the number of successes out of<em> n</em> trials. The classic illustration of the binomial distribution is an experiment in which we record the number of heads obtained when a coin is flipped <em>n</em> times. A binomial random variable is bounded on both sides&mdash;below by 0, above by <em>n</em>. This distinguishes it from a Poisson random variable which is  bounded below by zero but is unbounded above.</p>
+<p>An experiment is called a  binomial experiment if four assumptions are met.
+</p>
+<ol>
+  <li>Each trial is a Bernoulli trial, meaning that only one of two outcomes can occur. The outcomes are generally referred to &quot;success&quot; and &quot;failure&quot;. </li>
+  <li> The number of trials is fixed ahead of time and is denoted by <em>n.</em></li>
+  <li>The probability <em>p</em> of a success is the same on each Bernoulli trial.</li>
+  <li>The individual Bernoulli trials are independent.</li>
+</ol>
+<p>The binomial is a two-parameter distribution with parameters <em>n</em> and <em>p.</em> We write<img src="../../images/lectures/lecture13/binomial.gif" alt="binomial" width="160" height="30" align="absmiddle">. The mean and variance are</p>
+<blockquote>
+  <p><img src="../../images/lectures/lecture13/variance.gif" width="372" height="82" alt="binomial variance"></p>
+</blockquote>
+<p>Observe from this last expression that the variance is a function of the mean, i.e., <img src="../../images/lectures/lecture13/variance&#32;function.gif" alt="variance function" width="137" height="30" align="absmiddle">. If you plot the variance of the binomial distribution against the mean you obtain a parabola opening downward with a maximum at <img src="../../images/lectures/lecture13/max.gif" width="25" height="28" align="absmiddle"> corresponding to  <em>p</em> = 0.5. When <em>n</em> = 1 the binomial distribution is sometimes called the Bernoulli distribution and the data are referred to as <span class="style31">binary data</span>. To contrast this situation from the binomial distribution proper, we will refer to data arising from a binomial distribution with <em>n</em> &gt; 1 as<span class="style31"> grouped binary data</span>.</p>
+<p><strong>Examples of binomial data</strong></p>
+<ul>
+  <li> A seed germination experiment (binomial data proper). An experiment is carried out in which 100 seeds are planted in a pot and the number of seeds that germinate is recorded. This is done repeatedly for pots subjected to various light regimes, burial depths, etc. Clearly the first two assumptions of the binomial model hold here: the outcome on individual trials is dichotomous (seed germinates or seed did not germinate) and the number of trials was fixed ahead of time at 100. The remaining two assumptions (constant <em>p</em> and independence) would need to be verified.</li>
+  <li>The spatial distribution of endangered species (binary data).  We record the presence-absence of the species in a habitat (using perhaps a set of randomly located quadrats). We then try to relate the observed species distribution to characteristics of the habitat. The presence or absence of the species  in a given quadrat is a realization of a binomial random variable with <em>n</em> = 1.</li>
+</ul>
+<p>R binomial functions are denoted: <span class="style1">dbinom</span>, <span class="style1">pbinom</span>, <span class="style1">qbinom</span>, <span class="style1">rbinom</span>. In R the parameters <em>n</em> and <em>p </em>are specified with the argument names <span class="style13">size</span> and <span class="style13">prob</span> respectively.
+There is no special  function for binary data in R. Just use the  binomial function and set size = 1 (<em>n</em> = 1).</p>
+
+<h2 align="left"><a name="logistic" id="logistic"></a>Logistic Regression</h2>
+<p name="grouped">Logistic regression is the preferred method of  analysis for situations in which the response has a  binomial distribution. Logistic regression is a generalized linear model in which </p>
+<ol>
+  <li>the random component is the binomial (Bernoulli) distribution,</li>
+  <li>the linear predictor is <img src="../../images/lectures/lecture13/linearpredictor.gif" alt="linear predictor" width="182" height="30" align="absmiddle">, and </li>
+  <li> the link function is <img src="../../images/lectures/lecture13/link.gif" alt="link" width="155" height="60" align="absmiddle">, also called the logit.</li>
+</ol>
+<p>When the   binomial distribution is put in its standard exponential form   the parameter <em>p</em> only occurs as part of the logit function <img src="../../images/lectures/lecture13/logit.gif" alt="logit" width="95" height="60" align="absmiddle">. For this reason the logit function is called the canonical link in logistic regression. The logit turns out to be an excellent choice as a link function. One of the problems with using the identity link for proportions is that although proportions are required to lie in the interval [0, 1], an identity link can yield predictions outside this interval. The logit function restricts  <em>p</em> to the unit interval as we now demonstrate. Setting the logit link equal to the linear predictor and solving for <em>p</em> yields the following.</p>
+<p align="center"><img src="../../images/lectures/lecture13/binomial&#32;link.gif" width="462" height="117" alt="binomial link"></p>
+<ul>
+  <div class="figureR">
+    <p align="center"><img src="../../images/lectures/lecture13/fig1.png" width="282" height="276"></p>
+    <p align="center"> <strong>Fig. 1</strong> &nbsp;Inverse of the logit link</p>
+    <p align="center"> </p>
+  </div
+  >
+</ul>
+<p name="logistic">The expression <img src="../../images/lectures/lecture13/logistic.gif" alt="logistic" width="185" height="55" align="absmiddle"> that inverts the logit link  is called the logistic function and is shown in Fig. 1. Observe the following.
+</p>
+<ul>
+  <li>Since &eta; is the linear predictor there are no restrictions on its values and it in principle can range from &ndash;&infin; to &infin;.</li>
+  <li>The exponential function <img src="../../images/lectures/lecture13/etoeta.gif" alt="eta" width="30" height="25" align="absmiddle"> is always positive. Therefore the expression  <img src="../../images/lectures/lecture13/ginversemu.gif" alt="g inverse" width="60" height="52" align="absmiddle"> is also always positive. </li>
+  <li> Because<img src="../../images/lectures/lecture13/etoeta.gif" width="30" height="25" align="absmiddle"> is always positive it follows that <img src="../../images/lectures/lecture13/logit&#32;inequality.gif" alt="inequality" width="83" height="25" align="absmiddle">. Hence <img src="../../images/lectures/lecture13/p&#32;inequality.gif" width="117" height="52" align="absmiddle">.</li>
+  <li><img src="../../images/lectures/lecture13/ginversemu.gif" alt="g inverse" width="60" height="52" align="absmiddle"> approaches 0 as <img src="../../images/lectures/lecture13/eta&#32;lowerlimit.gif" alt="eta lower" width="70" height="22" align="absmiddle">.</li>
+  <li><img src="../../images/lectures/lecture13/ginversemu.gif" alt="g inverse" width="60" height="52" align="absmiddle"> approaches 1 as <img src="../../images/lectures/lecture13/eta&#32;upperlimit.gif" alt="eta upper" width="60" height="22" align="absmiddle">.</li>
+  <li>Therefore the logistic function maps the linear predictor &eta; nonlinearly into the interval (0, 1).  </li>
+</ul>
+<p>Other suitable link functions for binomial data are the probit, <img src="../../images/lectures/lecture13/probit.gif" alt="probit" width="123" height="32" align="absmiddle">, and the complementary log-log link, <img src="../../images/lectures/lecture13/cloglog.gif" alt="cloglog" width="200" height="35" align="absmiddle">, but the logit is certainly the most popular choice. The reason the logit is the preferred link function for binomial data is that it is interpretable. We examine this interpretation next. </p>
+<h2><strong><a name="interpretation"></a>Interpreting   regression equations </strong> with different link functions</h2>
+<p>As a background for understanding how to interpret regression coefficients in models with a logit link, we review the interpretation of regression coefficients in other kinds of regression models. </p>
+<div class="figureR">
+  <p align="center"> 
+</div
+>
+<h3><a name="identity"></a>Identity link </h3>
+<p>When  <img src="../../images/lectures/lecture13/gofmu.gif" alt="g of mu" width="47" height="30" align="absmiddle"> is the identity function, as is typically the case in ordinary linear regression, then </p>
+<p align="center"><img src="../../images/lectures/lecture13/identity1.gif" alt="identity" width="315" height="37" align="absmiddle">.</p>
+<p> If we increase <em>x</em><sub>1</sub> by one unit, then we have</p>
+<p align="center"><img src="../../images/lectures/lecture13/identity2.gif" width="378" height="108" alt="identity2"></p>
+<p>So &beta;<sub>1</sub> is interpreted as the amount that the mean is increased when <em>x</em><sub>1</sub> is increased by one unit. </p>
+<h3><a name="log" id="log"></a>Log link </h3>
+<p>When <img src="../../images/lectures/lecture13/gofmu.gif" alt="g of mu" width="47" height="30" align="absmiddle"> is the log function, as in Poisson or negative binomial regression, then </p>
+<p align="center"><img src="../../images/lectures/lecture13/loglink1.gif" width="330" height="37" alt="log link"></p>
+<p>If we increase <em>x</em><sub>1</sub> by one unit, then we have</p>
+<p align="center"><img src="../../images/lectures/lecture13/loglink2.gif" width="432" height="115" alt="log linke"></p>
+<p>So &beta;<sub>1</sub> is  the amount that the log mean is increased when <em>x</em><sub>1</sub> is increased by one unit. Converting to the original scale of the mean we have the following.</p>
+<p align="center"><img src="../../images/lectures/lecture13/loglink3.gif" width="488" height="127" alt="log link"></p>
+<p>So we can interpret &beta;<sub>1</sub> in terms of <img src="../../images/lectures/lecture13/ebeta1.gif" alt="exp beta1" width="27" height="25" align="absmiddle">, which is the amount the mean is multiplied by when <em>x</em><sub>1</sub> is increased by one unit. </p>
+<h3><a name="logit" id="logit"></a>Logit link </h3>
+<p name="odds"><a name="odds"></a>The argument just given in which we invert the identity and log links does not work for the logit link. The regression coefficients do not have simple interpretations on the scale of <em>p</em>, the probability of success. On the other hand the regression coefficients in logistic regression do have a simple interpretation in terms of the <span class="style31">odds</span>. Probability theory had its origin in the study of gambling. Gamblers typically speak in terms of the &quot;odds for&quot; or &quot;odds against&quot; events occurring, rather than in terms of probabilities, but the two notions are equivalent. Any statement made using odds can also be expressed in terms of probability.</p>
+<p>As an example, suppose it is stated that the odds in favor of an event <em>Y</em> = 1 occurring are 3 to 1. This can be interpreted as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture13/odds.gif" width="225" height="58" alt="odds"></p>
+<p>Thus if the odds for an event are 3:1, then the event has a probability  <img src="../../images/lectures/lecture13/pequals.gif" alt="p equals 3/4" width="57" height="30" align="absmiddle"> of occurring. </p>
+<p name="logodds"><a name="logodds"></a>Notice that it is odds, rather than probability, that is the argument of the logarithm function in the logit link. Thus the logit function is also called the <span class="style31">log odds</span> function. When the logit is viewed as a log odds, this immediately provides us with an interpretation for the regression parameter &beta;<sub>1</sub> in the logistic regression model. Switching to the log odds notation we have the following.</p>
+<p align="center"><img src="../../images/lectures/lecture13/logodds1.gif" width="372" height="40" alt="log odds"></p>
+<p align="center"><img src="../../images/lectures/lecture13/logodds2.gif" width="482" height="115" alt="log odds"></p>
+<p name="oddsratio"><a name="oddsratio"></a>Solving for &beta;<sub>1</sub> yields the following. </p>
+<p align="center"><img src="../../images/lectures/lecture13/logodds3.gif" width="503" height="183" alt="log OR"></p>
+<p align="left">where the notation OR denotes the <span class="style31">odds ratio</span>, the ratio of two odds. The specific odds ratio shown here measures the effect of increasing <em>x</em><sub>1</sub> by 1 on the odds that <em>Y</em> = 1. </p>
+<p align="left">Just as is the case with ordinary regression, Poisson regression, and negative binomial regression, we can use the sign of the regression coefficient in logistic regression to infer the effect a predictor has on the response. If &beta;<sub>1</sub> is the regression coefficient of <em>x</em><sub>1</sub>in the logistic regression model we have the following.</p>
+<ul>
+  <li>If &beta;<sub>1</sub> &gt; 0 then <img src="../../images/lectures/lecture13/ebeta1.gif" alt="exp beta1" width="27" height="25" align="absmiddle"> &gt; 1 and the odds of <em>Y</em> = 1 occurring go up when <em>x</em><sub>1</sub> increases.</li>
+  <li>If &beta;<sub>1</sub> &lt; 0 then  <img src="../../images/lectures/lecture13/ebeta1.gif" alt="exp beta1" width="27" height="25" align="absmiddle"> &lt; 1 and the odds of <em>Y</em> =1 occurring go down when <em>x</em><sub>1</sub> increases.</li>
+</ul>
+<h2><b><a name="cited"></a>Cited references</b></h2>
+<ul>
+  <li>Agresti, Alan. 2002. <em>Categorical Data Analysis</em>. Wiley: New York.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 13, 2012<br>
+      URL: <a href="lecture13.htm#lecture13" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture13.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

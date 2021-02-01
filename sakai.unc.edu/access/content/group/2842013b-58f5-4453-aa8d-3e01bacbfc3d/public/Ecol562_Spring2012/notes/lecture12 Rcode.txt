@@ -1,0 +1,16 @@
+par(mfrow=c(2,2))
+#graph NB distributions with different thetas
+plot(0:30,dnbinom(0:30,mu=10,size=10),type='h',lwd=2, ylab='P(X=k)',xlab='k')
+legend('topright',c(expression(mu==10), expression(theta==10)),bty='n')
+plot(0:30,dnbinom(0:30,mu=10,size=1),type='h',lwd=2, ylab='P(X=k)',xlab='k')
+legend('topright',c(expression(mu==10), expression(theta==1)),bty='n')
+plot(0:30,dnbinom(0:30,mu=10,size=.1),type='h',lwd=2, ylab='P(X=k)',xlab='k')
+legend('topright',c(expression(mu==10), expression(theta==.1)),bty='n')
+plot(0:30,dpois(0:30,lambda=10),type='h',lwd=2,ylab='P(X=k)',xlab='k')
+legend('topright',c(expression(lambda==10)),bty='n')
+par(mfrow=c(1,1))
+#probability X=30 under negative binomial models
+sapply(c(10,1,.1),function(x) dnbinom(30,mu=10,size=x))
+# probability X=30 for Poisson with same mean
+dpois(30,10)
+

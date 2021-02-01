@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 7&mdash;Wednesday, January 25, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture7" id="lecture7"></a>Lecture 7&mdash;Wednesday, January 25, 2012</h1>
+<h3>Topics</h3>
+<ul>
+  <li><a href="lecture7.htm#visualizing">Visualizing the regression model as a data-generating mechanism</a>
+    <ul>
+      <li><a href="lecture7.htm#creating">Creating the points to be plotted</a></li>
+      <li><a href="lecture7.htm#generating">Generating the three-dimensional graph</a></li>
+      <li><a href="lecture7.htm#problems">Summarizing the problems with the model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture7.htm#maximum">Maximum likelihood estimation</a>
+    <ul>
+      <li><a href="lecture7.htm#constructing">Constructing the likelihood</a>  </li>
+    </ul>
+  </li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture7.htm#dnorm">dnorm</a> is the density function of the normal distribution.</li>
+  <li><a href="lecture7.htm#length">length</a> returns the number of elements contained in a vector.</li>
+  <li><a href="lecture7.htm#points3d">points3d</a> (from the <span class="style19">scatterplot3d</span> package) is a component of the object returned by <span class="style1">scatterplot3d</span>. It is a function for adding points, lines, and curves to a three-dimensional scatter plot.</li>
+  <li><a href="lecture7.htm#scatterplot3d">scatterplot3d</a> (from the <span class="style19">scatterplot3d</span> package) carries out a parallel projection of points in 3-space to generate a two-dimensional perspective drawing of a 3-dimensional scatter plot of points.</li>
+  <li><a href="lecture7.htm#seq">seq</a> generates a vector of values that begin at a specified starting value and increase by a specified increment until a specified stop value is reached.</li>
+  <li><a href="lecture7.htm#text">text</a> is a low-level graphics function that can be used to add text strings to an already created graph.</li>
+  <li><a href="lecture7.htm#xyzconvert">xyz.convert</a> (from the <span class="style19">scatterplot3d</span> package) is a component of the object returned by <span class="style1">scatterplot3d</span>. It is a function that converts ordinary (<em>x</em>, <em>y</em>, <em>z</em>) Cartesian coordinates to the parallel projection coordinates used in the graph drawn by <span class="style1">scatterplot3d</span>.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture7.htm#box">box=</a> (argument to <span class="style1">scatterplot3d</span>) is used to toggle the setting of whether a box is drawn around the 3-D graph.</li>
+  <li><a href="lecture7.htm#newdata">newdata=</a> (argument to <span class="style102">predict</span>) is used to specify new data values at which to predict the value of the response.</li>
+  <li><a href="lecture7.htm#srt">srt=</a> (argument to <span class="style1">par</span>) is used to specify an angle (between 0 and 360 degrees) for rotating text strings.</li>
+  <li><a href="lecture7.htm#xpd">xpd=</a> (argument to <span class="style1">par</span>) is used to change where graphical output is allowed to appear. When <span class="style22">xpd=FALSE</span>, the default, plotting is clipped to the plot region; if <span class="style22">xpd=TRUE</span>, all plotting is clipped to the figure region (a bigger region).</li>
+  <li><a href="lecture7.htm#typel">type=</a> (argument to various plotting functions) is used to change how points are plotted. We used <span class="style22"><a href="lecture7.htm#typel">type='l'</a></span> to draw line segments between points and <span class="style22"><a href="lecture7.htm#typeh">type='h'</a></span> to drop a perpendicular from the point to an axis.</li>
+</ul>
+<h2>R packages used</h2>
+<ul>
+  <li><a href="lecture7.htm#scatterplot3d">scatterplot3d</a> (for <span class="style102">scatterplot3d</span>) is used to produce 3-dimensional scatter plots.</li>
+</ul>
+<h2><a name="visualizing" id="visualizing"></a>Visualizing the regression model as a data-generating mechanism</h2>
+<p>In <a href="lecture5.htm#problems">lecture 5</a> we saw that our final regression model for richness yielded  nonsensical predictions. Using the predicted means for the observations and the assumed normal distribution of the response the model predicted negative richness values with a high probability for at least some observations. To get a better sense of why this is happening we next construct a 3-dimensional graph that  clearly demonstrates the relationship of the regression model to the probability model. To make the construction of the graph easier I use  a simpler regression model than our final model, one that relates richness to NAP but does not include the effect of week.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table('ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> rikz$richness &lt;- apply(rikz[,2:76], 1, function(x) sum(x&gt;0))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">mod1 &lt;- lm(richness~NAP, data=rikz)</div>
+<h3><a name="creating"></a>Creating the points to be plotted</h3>
+<p><a name="newdata"></a>The three-dimensional picture that we'll generate will show the regression line  lying in the <em>x</em>-<em>y</em> plane. At various points along this line we'll draw the corresponding normal distribution for the response. Each curve is centered on the regression line with the <em>z</em>-axis defining the normal probability density at that point. </p>
+<p>We start by calculating the predicted normal means at four different values of the predictor NAP. For this we use the <span class="style1">predict</span> function (used previously in <a href="lecture5.htm#predict"> lecture 5</a>) with the <span class="style22">newdata</span> argument. In the <span class="style22">newdata</span> argument we specify values for all of the predictors appearing in the regression model. The new values have to be organized in the form of a data frame created here with the <span class="style1">data.frame</span> function.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> mu &lt;- predict(mod1, newdata=data.frame(NAP=c(-1.5,0,1,2)))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> mu</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 <br>
+10.9859416&nbsp; 6.6856619&nbsp; 3.8188087&nbsp; 0.951955</span>
+<p><a name="seq"></a><a name="length"></a>Next we construct a vector of richness values at which to evaluate the normal density function. The <span class="style1">seq</span> function generates a vector of equally spaced values over a specified range. The call below  creates a vector that begins at &ndash;10 and ends at 20 in which each value is separated by a distance of 0.10. This calculation produces 301 different values. To determine the number of elements in a vector one can use the <span class="style1">length</span> function.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> y1 &lt;- seq(-10,20,.1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> length(y1)</div>
+<span class="style24">  [1] 301</span>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> y1[1:8]</div>
+<span class="style24">[1] -10.0&nbsp; -9.9&nbsp; -9.8&nbsp; -9.7&nbsp; -9.6&nbsp; -9.5&nbsp; -9.4&nbsp; -9.3</span>
+<p><a name="dnorm"></a>Next we use the <span class="style1">dnorm</span> function to calculate the probability density at each of the values specified in the vector <span class="style8">y1</span>. The three arguments of <span class="style1">dnorm</span> are the value at which to compute the density, the mean of the normal distribution, and the standard deviation of the normal distribution. We carry out this calculation separately for each of the four predicted means. The standard deviation is stored in the <span class="style8">$sigma</span> component of the object created by the <span class="style1">summary</span> function when applied to a regression model.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> z1a &lt;- dnorm(y1, mu[1], summary(mod1)$sigma)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> length(z1a)</div>
+<span class="style24">[1] 301</span>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> z1b &lt;- dnorm(y1, mu[2], summary(mod1)$sigma)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> z1c &lt;- dnorm(y1, mu[3], summary(mod1)$sigma)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> z1d &lt;- dnorm(y1, mu[4], summary(mod1)$sigma)</div>
+
+<p>Finally we need a vector of the individual <em>x</em>-values that correspond to the values of NAP used to predict the normal mean. These are the same for each normal mean so we use the <span class="style1">rep</span> function to create a vector of repeated values of the same length as the <span class="style8">y1</span> vector.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> x1a &lt;- rep(-1.5, length(y1))</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> x1b &lt;- rep(0, length(y1))</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> x1c &lt;- rep(1, length(y1))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> x1d &lt;- rep(2, length(y1))</div>
+<p>The individual vectors of <em>x</em>-, <em>y</em>-, and <em>z</em>-values are then concatenated together to produce single <em>x</em>-, <em>y</em>-, and <em>z</em>-vectors. The <em>y</em>-vector is just  the <span class="style8">y1</span> vector copied four times.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> x &lt;- c(x1a,x1b,x1c,x1d)</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> z &lt;- c(z1a,z1b,z1c,z1d)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> y &lt;- c(y1,y1,y1,y1)</div>
+<h3><a name="generating"></a>Generating the three-dimensional graph</h3>
+<p><a name="scatterplot3d"></a><a name="box"></a>Next load the <span class="style19">scatterplot3d</span> package. This package is not part of the standard R installation so it first needs to be downloaded from the CRAN site. The first three arguments of the <span class="style1">scatterplot3d</span> function are the <em>x</em>-, <em>y</em>-, and <em>z</em>-coordinates of the points to be plotted. The call below specifies limits for the three axes (these were determined by first  using the function without specifying limits) and labels for the three axes. The option <span class="style22">type='n'</span> is used so that no points are actually displayed in the graph and <span class="style22">box=FALSE</span> is used to prevent a default box from being drawn around the plot.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> library(scatterplot3d)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1 &lt;- scatterplot3d(x, y, z, xlim=c(-1.5,2), ylim=c(-5,20), zlim=c(0,0.2), xlab='NAP', ylab='Richness', zlab='Density', type='n', box=FALSE)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture7/fig1.png" width="440" height="240" alt="fig. 1"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 1</strong> &nbsp;Axes and labels set up by the scatterplot3d function.</td>
+  </tr>
+</table>
+<p>The <span class="style1">scatterplot3d</span> function is unusual in that its return values are functions that can then be used to add additional features to a plot. A function is needed here because the <span class="style1">scatterplot3d</span> function represents a three-dimensional figure as a parallel projection and we need the formulas that were used to map three-dimensional coordinates on a projected two-dimensional space. Using the <span class="style1">names</span> function on the object created by <span class="style1">scatterplot3d</span> reveals the names of the functions that are returned.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> names(q1)</div>
+<span class="style24">[1] &quot;xyz.convert&quot; &quot;points3d&quot;&nbsp;&nbsp;&nbsp; &quot;plane3d&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;box3d&quot;</span>
+<p><a name="xyzconvert"></a>To use these functions we have to specify the object name, here <span class="style8">q1</span>, followed by a dollar sign as part of the function name. Notice that the <span class="style1">scatterplot3d</span> function doesn't rotate the <em>y</em>-axis label and place it next to the axis. We can do this ourselves but in order to proceed we need to know the coordinates of the projected values at the location where we want to place the label. In Fig. 1 it appears the location (2.4, 5, 0) might work for the <em>y</em>-axis label. The <span class="style1">xyz.convert</span> function component returned by <span class="style1">scatterplot3d</span> will calculate the projected 2-D coordinates of this location.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$xyz.convert(2.5,5,0)</div>
+<span class="style24">$x<br>
+[1] 6.111111</span>
+<p><span class="style24">$y<br>
+[1] 0.8888889</span>
+<p><a name="xpd"></a>To redo the graph without the <em>y</em>-axis label, the <span class="style22">ylab</span> argument should be set to an empty string, so that nothing is displayed: <span class="style11">ylab=' '</span>. Depending on the size of your graphics window the &quot;20&quot; tick mark label on the <em>y</em>-axis may have been truncated. By default R clips all text to the plot region of the graph. We can cause it to clip to the entire figure region instead by changing the setting of the global graphics parameter <span class="style22">xpd</span> to <span class="style11">xpd=T</span>.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> par(xpd=T)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">q1 &lt;- scatterplot3d(x, y, z, xlim=c(-1.5,2), ylim=c(-5,20), zlim=c(0,0.2), xlab='NAP', ylab=' ',zlab='Density', type='n', box=FALSE)</div>
+<p><a name="text"></a><a name="srt"></a>Next  the <span class="style1">text</span> function is used to place the axis label at the desired location. To rotate the text we need to set the global string rotation parameter to a nonzero angle  with the <span class="style22">srt</span> argument and then add the text at the projected coordinates. Trial and error suggested that 48 degrees was a good choice. The <span class="style1">text</span> function arguments are the <em>x</em>- and <em>y</em>-coordinates first, followed by the text to be displayed in quotes, followed by any additional graphics parameters that control how the text is to be displayed.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> par(srt=48)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> text(6.2, 0.9, 'Richness', cex=1)</div>
+<br>
+
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture7/fig2.png" width="420" height="240" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2</strong> &nbsp;Adding a rotated text label to the <em>y</em>-axis.</td>
+  </tr>
+</table>
+<p>After adding the text the global graphics parameters need to be set back to their default values.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> par(srt=0)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> par(xpd=F)</div>
+<p><a name="points3d"></a><a name="typel"></a>The <span class="style1">points3d</span> function is used to add four normal curves to the plot at the coordinates  calculated earlier. Specifying <span class="style22">type='l'</span>, where <span class="style11">'l'</span> denotes line, causes the points to be connected with line segments. As was the case with the <span class="style1">xyz.convert</span> function, the name of the <span class="style1">scatterplot3d</span> object that contains these functions makes up part of the name of the function, here <span class="style1">q1$points3d</span>.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(x1a, y1, z1a, type='l')</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(x1b, y1, z1b, type='l')</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(x1c, y1, z1c, type='l')</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(x1d, y1, z1d, type='l')</div>
+<p>Next we draw the regression line in the <em>xy</em>-plane. A vector of the four different NAP values cooresponds to the <em>x</em>-coordinates and a vector of zeros corresponds to the <em>z</em>-coordinates. The <em>y</em>-coordinates are contained in the previously created vector <span class="style11">mu</span>. These are are then connected  with thick line segments, <span class="style11">lwd=2</span>, again using the <span class="style1">points3d</span> function.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> newx &lt;- c(-1.5, 0, 1,2)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> newz &lt;- rep(0, length(newx))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(newx, mu, newz, type='l', lwd=2)</div>
+<p>To indicate the zero boundary for richness in the <em>xy</em>-plane, we add a dashed red line at <em>y</em> = 0.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">q1$points3d(newx, newz, newz, type='l', lty=2, col=2)</div>
+<p><a name="typeh"></a>Finally to make it clear that some of the normal curves are extending past <em>y</em> = 0, we can drop a perpendicular form the normal curve at <em>y</em> = 0 down onto the <em>x</em><em>y</em>-plane. The <span class="style1">dnorm</span> function is used to calculate the density at <em>y</em> = 0 at each of the four means and the <span class="style1">points3d</span> function with <span class="style22">type='h'</span>, where <span class="style11">'h'</span> denotes height, is used to drop a perpendicular to the <em>xy</em>-plane.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(newx[4], 0, dnorm(0, mu[4], summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(newx[3], 0, dnorm(0, mu[3], summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(newx[2], 0, dnorm(0, mu[2], summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> q1$points3d(newx[1], 0, dnorm(0, mu[1], summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)</div>
+<p>Fig. 3 shows the finished graph. Observe that three of the normal curves clearly extend past <em>y</em> = 0 into the region of negative richness. The curve at NAP = 2 shows that the probability of obtaining a negative value there under the model is quite large.</p>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture7/fig3.png" width="420" height="240" alt="fig. 3"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3</strong> &nbsp;Graph of the regression line along with the predicted normal distributions of the response at four different values of NAP. The plot shows that the probability of obtaining a negative value for richness increases as the value of NAP increases.</td>
+  </tr>
+</table>
+<h3><a name="problems"></a>Summarizing the problems with the model</h3>
+<p>Fig. 3 shows one actual problem and one potential problem with the model. The potential problem is that at  NAP values that are only slightly larger than what are displayed in the graph, the regression line is going to cross the <em>x</em>-axis and predict negative values for the mean richness of a site. (We saw in <a href="lecture5.htm#problems">lecture 5</a> that this actually happens for the more complicated model that included an interaction of NAP and week.) The reason this problem arises is because of the way we've chosen to set up the regression model. The current model is</p>
+<p align="center"><img src="../../images/lectures/lecture7/eqn1.gif" width="133" height="27" alt="identity link"></p>
+<p>and because the estimate of &beta;<sub>1</sub> is not zero, this line will eventually cross the <em>x</em>-axis (NAP-axis) at some point. For some data sets this might  occur only for impossible values of <em>x</em> or at values of <em>x</em>  that are beyond the range of the data, so in these cases the problem doesn't arise.  In the current data set we are not so lucky. Fortunately there is an easy fix: we need to model an appropriate function of the mean rather than the mean itself. For example if we were to fit the regression equation</p>
+<p align="center"><img src="../../images/lectures/lecture7/eqn2.gif" width="162" height="27" alt="log link"></p>
+<p>to the data, then we would obtain the following equation for &mu;.</p>
+<p align="center"><img src="../../images/lectures/lecture7/eqn3.gif" width="178" height="32" alt="exponential"></p>
+<p>Because the exponential function is never negative we can never get negative predictions for the mean and the problem is solved! The function of the mean that appears in the regression equation is called a link function and here we are using a log link function. In the original equation where we model the mean directly the link function is called the identity link. We'll make use of link functions extensively in this course.</p>
+<p>The other problem revealed in Fig. 3 is that the normal probability model that we're using, when viewed as a data-generating mechanism, can generate negative values for richness. Now if the purpose of the model is to describe only the data that we  collected then this is not a problem. But if we want to view the model as a description of nature and to use it to predict richness for values of NAP that were not actually observed, then this model is seriously deficient. Fortunately, there is a fix for this too. We need to abandon the normal probability distribution as a model for the response and choose instead a probability model that  can only take on non-negative values and is more appropriate for describing count data. We tackle this problem next.</p>
+<h2 align="left"><a name="maximum" id="maximum"></a>Maximum likelihood estimation</h2>
+<p>In order to fit regression models to response variables drawn from probability distributions other than the normal distribution, we need to  find an alternative to  least squares for parameter estimation. Least squares  is extremely popular because it's easy to understand, easy to implement, and has good properties. In ordinary linear regression,</p>
+<p align="center"><img src="../../images/lectures/lecture7/ordinaryregression.gif" width="142" height="27" alt="ordinary regression"></p>
+<p>and our goal is to fit a line to a scatter plot. &epsilon; denotes the observed deviation from that line. The method of least squares obtains values for &beta;<sub>0</sub> and  &beta;<sub>1</sub> that minimize the sum of the squared deviations about that line.</p>
+<p align="center"><img src="../../images/lectures/lecture7/OLS.gif" width="172" height="58" alt="OLS"></p>
+<p>The quantity being minimized is called  the objective function. The standard tools of calculus can be used to minimize this objective function analytically and there exist well-defined algorithms  for finding solutions numerically in both  linear and nonlinear settings. Least squares makes no assumption about the underlying probability model for the response. Typically, a normal model is assumed for &epsilon; (and hence for <em>y</em>), but this is tacked on at the end and is not formally part of the least squares solution.</p>
+<p>A normal probability model is a natural choice for least squares because the basic formulation involving squared deviations requires that the errors are symmetrically disposed about the regression surface. Symmetry is also a characteristic of the normal distribution. For asymmetric probability models least squares solutions don't make much sense. In some of the alternatives to least squares  the probability model is incorporated directly into the objective function at the beginning, rather than tacking it on at the end as an afterthought. Two  such approaches  are maximum likelihood estimation and Bayesian estimation. In this course we'll consider only  maximum likelihood estimation. </p>
+<h3><a name="constructing" id="constructing"></a>Constructing the likelihood</h3>
+<p>In maximum likelihood estimation the probability model for the data takes center stage and is used to define a quantity called the likelihood. For discrete data the likelihood has a very simple interpretation. When the parameters of the probability model are given specific values, the likelihood is the probability of obtaining the data we actually obtained. To motivate this interpretation I start with a generic example.</p>
+<p>Suppose we obtain a random sample of size <i>m</i> from a target population. For each element in our sample we measure some quantity of interest. In a regression setting this quantity would typically be  called the response variable. Denote this quantity by the symbol <i>X</i>. Statistically we think of each observation in our random sample as being an independent random draw from the target population. Accordingly <em>X</em> is called a random variable to reflect the fact that its value is uncertain and its realized value is a function of its distribution  in the underlying population. So, before we observe the different values of <em>X</em> in our sample we can think of those values as corresponding to <i>m</i> random variables, <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>, ... , <i>X<sub>m</sub></i>, one for each potential observation in our sample. It's  conventional to use a capital letter such as <em>X</em> to denote a random variable and a lower case letter <em>x</em> to denote an observed value of that random variable. Following this convention (<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>, ... , <i>X<sub>m</sub></i>) represents the set of all the possible samples of size <em>m</em> that could be drawn from the population while (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , <i>x<sub>m</sub></i>) represents the specific random sample that was actually obtained. </p>
+<p>What is the probability of obtaining this particular random sample? Formally we would write the probability as</p>
+<p align="center"><img src="../../images/lectures/lecture7/jointprob.gif" width="273" height="32" alt="joint probability"></p>
+<p>This is an example of a joint probability, the probability of simultaneously observing all <i>m</i> events. Another way of writing this is as follows.</p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture7/jointprob2.gif" width="335" height="35" alt="joint probability"></p>
+</blockquote>
+<p>Because  we have a random sample, each of the individual events is independent of the others. From elementary probability theory, if events <i>A</i> and <i>B</i> are independent then it follows that</p>
+<p align="center"><img src="../../images/lectures/lecture7/independence.gif" width="190" height="30" alt="independence"></p>
+<p>Applying this to our data we have</p>
+<p align="center"><img src="../../images/lectures/lecture7/randomsamp.gif" width="398" height="125" alt="random sample"></p>
+<p>where the capital &Pi; symbol denotes a product (just as a capital &Sigma; denotes a sum). The next step is to choose a probability model for <em>P</em>(<em>X</em><sub>i</sub> = <em>x</em><sub>i</sub>), a process that we'll begin next time.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 30, 2012<br>
+      URL: <a href="lecture7.htm#lecture7" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture7.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

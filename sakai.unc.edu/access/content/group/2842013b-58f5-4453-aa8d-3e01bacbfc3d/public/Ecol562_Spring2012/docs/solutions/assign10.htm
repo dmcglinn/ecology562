@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 10&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="assign10" id="assign6"></a>Assignment 10&mdash;Solution</h1>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">flowers &lt;- read.table('flowers.txt', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(flowers)</div>
+<span class="style24">  [1] &quot;time&quot;&nbsp;&nbsp; &quot;censor&quot; &quot;sex&quot;&nbsp; </span>
+
+<h2>Question 1</h2>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(survival)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #obtain Kaplan-Meier estimate for each sex</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out &lt;- survfit(Surv(time,censor)~sex, data=flowers)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out)</div>
+<span class="style24">  &nbsp;[1] &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;time&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;n.risk&quot;&nbsp;&nbsp;&nbsp; &quot;n.event&quot;&nbsp;&nbsp; &quot;n.censor&quot;&nbsp; &quot;surv&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[7] &quot;type&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;strata&quot;&nbsp;&nbsp;&nbsp; &quot;std.err&quot;&nbsp;&nbsp; &quot;upper&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lower&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;conf.type&quot;<br>
+  [13] &quot;conf.int&quot;&nbsp; &quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out$strata</div>
+<span class="style24">  sex=F sex=M <br>
+  &nbsp;&nbsp; 36&nbsp;&nbsp;&nbsp; 30 </span>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px"> #create survival time indicator by sex</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sex &lt;- rep(c('F','M'), out$strata)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out, col=1:2, xlab='time', ylab='S(t)')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence bounds for female flowers</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='F'], out$lower[sex=='F'], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='F'], out$upper[sex=='F'], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence bounds for male flowers</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='M'], out$lower[sex=='M'], col= &quot;tomato &quot;, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='M'], out$upper[sex=='M'], col= &quot;tomato &quot;, lty=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('Female','Male'), col=1:2, lty=1, cex=.9, bty='n')</div><br>
+<table width="575" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment10/fig1.png" width="475" height="365" alt="fig. 1"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 1 </strong>&nbsp;Survivor curves separately by sex of flower. Point estimate and 95% confidence intervals are shown. Here the survivor curve represents the probability that the waiting time for the first insect visit exceeds the time shown.</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<h2>Question 2</h2>
+<p>I redo the graph of Question 1 but zoom in on the time interval (0, 50). I add solid grid lines at every 10 time units and dotted grid lines at each time unit.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out, col=1:2, xlab='time', ylab='S(t)', xlim=c(0,50))</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='F'], out$lower[sex=='F'], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='F'], out$upper[sex=='F'], col= &quot;grey50 &quot;, lty=2, type='s')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='M'], out$lower[sex=='M'], col= &quot;tomato &quot;, lty=2, type='s')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='M'], out$upper[sex=='M'], col= &quot;tomato &quot;, lty=2, type='s')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('Female','Male'), col=1:2, lty=1, cex=.9, bty='n')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(h=.5, col=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> grid(nx=50, ny=NA)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">grid(nx=NULL, ny=NA, col='grey60', lty=1)</div>
+<p>&nbsp;</p>
+<table width="550" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment10/fig2.png" width="480" height="365" alt="fig. 2"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2 </strong>&nbsp;Survivor curves and 95% confidence intervals from Fig. 1 shown with grid lines added to facilitate estimating 95% confidence intervals for the median waiting times.</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>From the graph we see that the horizontal  line at <em>S</em>(<em>t</em>) = 0.5 (the median) intersects the male 95% confidence bands at 9 and 27. It intersects the female 95% confidence bands at 23 and 43.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=350 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Median waiting time by sex of the flower</td>
+  </tr>
+</table>
+<table width="420" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Sex</strong></div></td>
+    <td><div align="center"><strong>Median</strong></div></td>
+    <td><div align="center"><strong>95% confidence interval</strong></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">female</div></td>
+    <td><div align="center">29</div></td>
+    <td><div align="center">(23, 43)</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">male</div></td>
+    <td><div align="center">16</div></td>
+    <td><div align="center">(9, 27)</div></td>
+  </tr>
+</table>
+<p>Alternatively, the <span class="style4">print</span> function has a method for <span class="style4">survfit</span> objects. When <span class="style4">print</span> is applied to a <span class="style4">survfit</span> object  it returns the median and 95% confidence intervals of the median.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> methods(class=&quot;survfit&quot;)</div>
+<span class="style24"> [1] [.survfit*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lines.survfit*&nbsp;&nbsp; plot.survfit*&nbsp;&nbsp;&nbsp; points.survfit* <br>
+[5] </span><span class="style25">print.survfit</span><span class="style24">*&nbsp;&nbsp; summary.survfit*</span>
+<p><span class="style24"> &nbsp;&nbsp; Non-visible functions are asterisked</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> print(out)</div>
+ <span class="style24">  Call: survfit(formula = Surv(time, censor) ~ sex, data = flowers)</span>
+<p><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; records n.max n.start events median 0.95LCL 0.95UCL<br>
+  sex=F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43</span><span class="style24"><br>
+  sex=M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 49&nbsp;&nbsp;&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp; 47&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">16&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27
+</span>
+<h2>	Question 3</h2>
+<p>We can test for differences in survivorship by sex with the log rank test.</p>
+
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.diff1 &lt;- survdiff(Surv(time,censor)~sex, data=flowers)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.diff1</div>
+<span class="style24">  Call:<br>
+survdiff(formula = Surv(time, censor) ~ sex, data = flowers)</span>
+<p> <span class="style24">N Observed Expected (O-E)^2/E (O-E)^2/V<br>
+  sex=F 47       39    49.46     2.213     5.453<br>
+  sex=M 49       47    36.54     2.996     5.453</span>
+<p><span class="style24"> Chisq= 5.5  on 1 degrees of freedom, </span><span class="style25">p= 0.01953
+</span>
+<p>The default test is the standard log rank test with equally weighted waiting times (rho = 0). We see that the flower sexes differ significantly  in time to the first insect visit. We can redo the test but weight the early waiting times more than later weighting times (rho = 1).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.diff2 &lt;- survdiff(Surv(time,censor)~sex, data=flowers, rho=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.diff2</div>
+<span class="style24">  Call:<br>
+  survdiff(formula = Surv(time, censor) ~ sex, data = flowers, <br>
+rho = 1)</span>
+<p><span class="style24"> N Observed Expected (O-E)^2/E (O-E)^2/V<br>
+  sex=F 47    20.43    26.81     1.520     5.094<br>
+sex=M 49    28.32    21.93     1.858     5.094</span>
+<p><span class="style24"> Chisq= 5.1  on 1 degrees of freedom, </span><span class="style25">p= 0.02401
+</span>
+<p>The results are the same. Female flowers wait longer to be visited by insects than do male flowers.</p>
+<h2>Question 4</h2>
+<p>To obtain the hazard ratio I fit a proportional hazards model for survival time with sex as the only predictor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.cox &lt;- coxph(Surv(time,censor)~sex, data=flowers)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out.cox)</div>
+ <span class="style24"> Call:<br>
+coxph(formula = Surv(time, censor) ~ sex, data = flowers)</span>
+<p><span class="style24">&nbsp; n= 96, number of events= 86 </span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; coef exp(coef) se(coef)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z Pr(&gt;|z|)&nbsp; <br>
+  sexM 0.50216&nbsp;&nbsp; 1.65228&nbsp; 0.21813 2.3021&nbsp; 0.02133 *<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; exp(coef) exp(-coef) lower .95 upper .95<br>
+  sexM&nbsp;&nbsp;&nbsp; </span><span class="style25">1.6523</span><span class="style24">&nbsp;&nbsp;&nbsp; 0.60522&nbsp;&nbsp;&nbsp; 1.0775&nbsp;&nbsp;&nbsp; 2.5337</span>
+<p><span class="style24">Concordance= 0.569&nbsp; (se = 0.031 )<br>
+  Rsquare= 0.054&nbsp;&nbsp; (max possible= 0.999 )<br>
+  Likelihood ratio test= 5.33&nbsp; on 1 df,&nbsp;&nbsp; p=0.020994<br>
+  Wald test&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 5.3&nbsp; on 1 df,&nbsp;&nbsp; p=0.021328<br>
+  Score (logrank) test = 5.41&nbsp; on 1 df,&nbsp;&nbsp; p=0.020051</span>
+<p>Females are the reference group thus the coefficient of sex is the effect on the log hazard of being male relative to being female. Formally we have the following</p>
+<p align="center"><img src="../../images/assignments/assignment10/loghazard.gif" width="228" height="58" alt="log hazard"></p>
+<p>Exponentiating these equations we obtain the hazards for males and females.</p>
+<p align="center"><img src="../../images/assignments/assignment10/hazards.gif" width="398" height="67" alt="hazard"></p>
+<p>This yields the following hazard ratio for males versus females.</p>
+<p align="center"><img src="../../images/assignments/assignment10/HR.gif" width="345" height="62" alt="hazard ratio"></p>
+<p>From the output this hazard ratio is estimated to be 1.65. The hazard ratio is a ratio of these rates. The hazard itself is a probability rate and can be use to infer the expected number of events per unit  time. So, we can say any of the following.</p>
+<ol>
+  <li>In a given  time period unvisited male flowers can expect 1.65 times as many visitations by insects as  unvisited female flowers. </li>
+  <li>A female flower waits 1.65 times as long as a male flower for the first insect visit. </li>
+  <li>At any instant the risk of an unvisited male flower being visited by an insect is 1.65 times the risk of an unvisited female flower being visited by an insect. </li>
+  <li>In any period of time, male flowers are 1.65 times as likely to be visited as female flowers.</li>
+  <li>Male flowers are being visited at 1.65 times the rate that female flowers are being visited.</li>
+</ol>
+<h2>Question 5</h2>
+<p>The proportional hazards assumption says that the hazard function can be decomposed into a product of two components one that depends upon time and another that depends upon predictors but not time.</p>
+<p align="center"><img src="../../images/assignments/assignment10/coxhazard.gif" width="272" height="85" alt="hazard"></p>
+<p>A graphical test of the proportional hazards function for a categorical predictor like sex, is to plot log(log(&ndash;<em>S</em>(<em>t</em>)) against time (<em>t</em>) separately for each sex and see if the graphs are roughly parallel.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out$time,log(-log(out$surv)), type='n', ylab=expression(log(-log(S(t)))), xlab=&quot;t&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out$time[sex=='F'], log(-log(out$surv[sex=='F'])), col=1, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out$time[sex=='M'], log(-log(out$surv[sex=='M'])), col=2, type='s')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c('Female','Male'), col=1:2, lty=1, cex=.9, bty='n')</div><br>
+<table width="550" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment10/fig3.png" width="475" height="365" alt="fig 3"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3 </strong>&nbsp;Graphical assessment of the proportional hazards function. As we can see the log(-log(S(t)) curves are parallel over most of the survival times.</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>The graphs are parallel nearly their entire length. (Note: It's impossible for the curves to be parallel at the very beginning because both curves begin at the same point.) We can obtain a formal test and a second graphical test of the proportional hazards assumption by using the <span class="style4">cox.zph</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.z &lt;- cox.zph(out.cox)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.z</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rho&nbsp; chisq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p<br>
+  sexM -0.04155 0.1448 </span><span class="style25">0.7036
+  </span>
+  <p>The test is nowhere near being statistically significant. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(out.cox)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sexM <br>
+  0.50215778</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.z)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(h=coef(out.cox), col=2, lty=2)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment10/fig4.png" width="385" height="285" alt="fig. 4"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4 </strong>&nbsp;Estimate of how the coefficient of sex varies over time in the proportional hazards model</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>If the proportional hazards assumption holds, then the regression coefficients should not depend upon time. Fig. 4 shows how the coefficient of the predictor sex  changes over time. Superimposed on the graph is the estimated constant sex effect  of 0.50 that was obtained from the Cox model. Although the Fig. 4 shows that the sex coefficient does change over time, the Cox estimate of 0.5 lies entirely within the displayed confidence limits. As a result we cannot reject  0.5 as a possible value for the parameter at any time and so the coefficient of sex  could easily be constant.</p>
+<h2>Question 6</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.weib &lt;- survreg(Surv(time,censor)~sex, data=flowers, dist='weibull')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.weib)</div>
+<span class="style24">Call:<br>
+  survreg(formula = Surv(time, censor) ~ sex, data = flowers, dist = &quot;weibull&quot;)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value Std. Error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p<br>
+  (Intercept)&nbsp; 3.84739&nbsp;&nbsp; &nbsp;0.17121 22.4712 7.938e-112<br>
+  sexM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.56465&nbsp;&nbsp;&nbsp; 0.23231 -2.4306&nbsp; 1.508e-02<br>
+  Log(scale)&nbsp;&nbsp; 0.06471&nbsp;&nbsp;&nbsp; 0.08603&nbsp; 0.7522&nbsp; 4.519e-01</span>
+<p><span class="style24">Scale= 1.067 </span>
+<p><span class="style24">Weibull distribution<br>
+  Loglik(model)= -391.7&nbsp;&nbsp; Loglik(intercept only)= -394.7<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chisq= 5.93 on 1 degrees of freedom, p= 0.015 <br>
+  Number of Newton-Raphson Iterations: 5 <br>
+  n= 96 </span>
+<p>If we examine the help screen of the <span class="style4">predict</span> method for <span class="style4">survreg</span> objects we see that the arguments we need to obtain predictions of the median are <span class="style22">newdata</span>, <span class="style22">type</span>, <span class="style22">se.fit</span>, and <span class="style22">p</span>. These are highlighted in Fig. 5.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ?predict.survreg</div><br>
+<table width="660" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment10/fig6a.png" width="649" height="532" alt="fig 5t"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 5 </strong>&nbsp;Estimate of how the coefficient of sex varies over time in the proportional hazards model</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>To get predictions of the median we select <span class="style22">type=&quot;quantile&quot;</span> and <span class="style22">p = 0.5</span>. To get the standard error we use <span class="style22">se.fit=T</span>. To obtain these estimates for males and females we need to include these values for sex in a <span class="style22">newdata</span> argument.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(out.weib, newdata=data.frame(sex=c('M','F')), type=&quot;quantile&quot;, p=.5, se.fit=T)</div>
+<span class="style24">  $fit<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 <br>
+18.024439 31.701894 </span>
+<p><span class="style24">$se.fit<br>
+  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 <br>
+3.0675624 5.6009253</span>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=380 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 2 &nbsp;</strong> Median waiting time by sex of the flower from Weibull model</td>
+  </tr>
+</table>
+<div align="center">
+  <table width="400" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+    <tr bgcolor="#F1D2D8" align="center">
+      <td><strong>Sex</strong></td>
+      <td><strong>Median time to visit</strong></td>
+      <td><strong>Standard error</strong></td>
+    </tr>
+    <tr align="center">
+      <td>female</td>
+      <td>31.7</td>
+      <td>5.60</td>
+    </tr>
+    <tr align="center">
+      <td>male</td>
+      <td>18.0</td>
+      <td>3.07</td>
+    </tr>
+  </table>
+</div>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment10/hwscores.png" width="355" height="205" alt="hw scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 6, 2012<br>
+      URL: <a href="assign10.htm#assign10" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign10.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

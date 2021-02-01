@@ -1,0 +1,194 @@
+#using read.table
+corals<-read.table('ecol 562/corals.csv',header=T,sep=',')
+#using read.csv
+corals<-read.csv('ecol 562/corals.csv',header=T)
+names(corals)
+
+#plot response versus coral cover
+plot(PREV_1~CORAL_COVE,data=corals,ylim=c(0,50))
+#add regression smoother
+lines(lowess(corals$PREV_1~corals$CORAL_COVE),col=2)
+
+#plot response versus stress metric
+plot(PREV_1~WSSTA,data=corals,ylim=c(0,50))
+lines(lowess(corals$PREV_1~corals$WSSTA),col=2)
+
+### normal model ####
+lm(PREV_1~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals) -> model1
+anova(model1)
+summary(model1)
+
+# each observation has a unique value of coral cover
+length(unique(corals$CORAL_COVE))
+dim(corals)
+
+#explanation of the order function
+x<-sample(1:10)
+x
+order(x)
+x[order(x)]
+
+#sort data in coral cover order
+corals.sort<-corals[order(corals$CORAL_COVE),]
+
+#refit model to sorted data
+lm(PREV_1~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort) -> model1
+
+#plot raw data and normal mean
+plot(PREV_1~CORAL_COVE,data=corals.sort,ylim=c(-25,350),cex=.6)
+lines(corals.sort$CORAL_COVE,predict(model1),col=2)
+
+#add 95% confidence interval for mean
+plot(PREV_1~CORAL_COVE,data=corals.sort,ylim=c(-100,350),cex=.6)
+lines(corals.sort$CORAL_COVE,predict(model1),col=2)
+lines(corals.sort$CORAL_COVE,predict(model1)-1.96*summary(model1)$sigma,col=4,lty=2)
+lines(corals.sort$CORAL_COVE,predict(model1)+1.96*summary(model1)$sigma,col=4,lty=2)
+
+#simulate data from normal model
+set.seed(10)
+test.data <- sapply(predict(model1),function(x) rnorm(1,x,summary(model1)$sigma))
+
+#display two graphs in same window
+par(mfrow=c(2,1))
+plot(PREV_1~CORAL_COVE,data=corals.sort,ylim=c(-100,350),cex=.6)
+plot(test.data~corals.sort$CORAL_COVE,cex=.6,ylim=c(-100,350))
+abline(h=0,col=2,lty=2)
+
+##### Poisson model #####
+
+glm(PREV_1~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort,family=poisson) -> model2
+
+#simulate data from Poisson model
+set.seed(12)
+test.data2 <- sapply(exp(predict(model2)),function(x) rpois(1,x))
+plot(PREV_1~CORAL_COVE,data=corals.sort,ylim=c(-100,350),cex=.6)
+plot(test.data2~corals.sort$CORAL_COVE,cex=.6,ylim=c(-100,350))
+
+anova(model2,test='Chisq')
+summary(model2)
+
+#compare log-likelihood and AIC of Poisson and normal model
+logLik(model1)
+logLik(model2)
+AIC(model1)
+AIC(model1,model2)
+
+#log-likelihood function for normal model using midpoint approximation
+norm.loglike1 <- function(model,y) {
+sigma2 <- (sum(residuals(model)^2))/length(y)
+prob <- dnorm(y,mean=predict(model),sd=sqrt(sigma2))
+loglike <- sum(log(prob))
+loglike
+}
+
+norm.loglike1(model1,corals.sort$PREV_1)
+
+#log-likelihood function for normal model using exact probability calculation
+norm.loglike2 <- function(model,y) {
+sigma2 <- (sum(residuals(model)^2))/length(y)
+prob <- pnorm(y+.5,mean=predict(model),sd=sqrt(sigma2))-pnorm(y-.5,mean=predict(model),sd=sqrt(sigma2))
+loglike <- sum(log(prob))
+loglike
+}
+
+norm.loglike2(model1,corals.sort$PREV_1)
+
+###### Negative binomial model #######
+
+library(MASS)
+glm.nb(PREV_1~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort)->model3
+anova(model3)
+summary(model3)
+
+#compare coefficients of three models fit so far
+coef(model1)
+coef(model2)
+coef(model3)
+
+#compare AIC of models
+AIC(model1,model2,model3)
+
+#dispersion parameter is called theta
+names(model3)
+
+#simulate data from negative binomial model
+set.seed(12)
+test.data3<-sapply(fitted(model3),function(x) rnbinom(1,mu=x,size=model3$theta))
+
+#graph raw data, Poisson data, and NB data
+par(mfrow=c(3,1))
+plot(PREV_1~CORAL_COVE,data=corals.sort,ylim=c(0,350),cex=.6)
+plot(test.data2~corals.sort$CORAL_COVE,cex=.6,ylim=c(0,350))
+plot(test.data3~corals.sort$CORAL_COVE,cex=.6,ylim=c(0,350))
+
+##### log-normal model #######
+
+#because of zeros log is undefined
+lm(log(PREV_1)~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort)->model4
+
+#add a small constant
+lm(log(PREV_1+.5)~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort)->model4
+
+#AIC of this model is not comparable to previous models because reponse is transformed
+AIC(model4)
+
+#function to determine optimal constant to use
+norm.loglike3 <- function(k,y) {
+lm(log(PREV_1+k)~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort)->model
+sigma2 <- (sum(residuals(model)^2))/length(y)
+prob <- ifelse(y==0, pnorm(log(y+k+.5),mean=predict(model),sd=sqrt(sigma2)),
+pnorm(log(y+k+.5),mean=predict(model),sd=sqrt(sigma2))
+-pnorm(log(y+k-.5),mean=predict(model),sd=sqrt(sigma2)))
+loglike <- sum(log(prob))
+loglike
+}
+
+#test the function
+norm.loglike3(.5,corals.sort$PREV_1)
+norm.loglike3(.7,corals.sort$PREV_1)
+norm.loglike3(.4,corals.sort$PREV_1)
+
+#evaluate function on a range of values
+sapply(seq(.1,1,.01),function(x) norm.loglike3(x,corals.sort$PREV_1))->out.L
+
+#plot log-liklihood
+par(mfrow=c(1,1))
+plot(seq(.1,1,.01),out.L,type='l')
+
+#try a different range of values
+sapply(seq(.01,.4,.01),function(x) norm.loglike3(x,corals.sort$PREV_1))->out.L
+plot(seq(.01,.4,.01),out.L,type='l')
+
+#locate maximum
+max(out.L)
+#which value gave rise to the max?
+which.max(out.L)
+seq(.01,4,.01)[which.max(out.L)]
+
+#refit the model using this constant
+lm(log(PREV_1+.13)~WSSTA*CORAL_COVE+I(WSSTA^2),data=corals.sort)->model4
+anova(model4)
+
+#compare coefficients of all the models we fit
+t(sapply(list(model1,model2,model3,model4),coef))
+
+#compare log-liklihood of this model with NB model
+norm.loglike3(.13,corals.sort$PREV_1)
+logLik(model3)
+
+#compare AIC
+AIC(model3)
+-2*norm.loglike3(.13,corals.sort$PREV_1)+2*6
+#count constant as an estimated parameter
+-2*norm.loglike3(.13,corals.sort$PREV_1)+2*7
+
+#graph the predictions of each model
+# use 30% as the value for coral cover--the mean
+
+linfunc<-function(model,x,cover) coef(model)[1] +coef(model)[2]*x +coef(model)[3]*cover+
+coef(model)[4]*x^2+coef(model)[5]*x*cover
+curve(linfunc(model1,x,30),from=0,to=30,ylim=c(0,25))
+curve(exp(linfunc(model4,x,30)),add=T,lty=2)
+curve(exp(linfunc(model2,x,30)),add=T,col=2)
+curve(exp(linfunc(model3,x,30)),add=T,col=2,lty=2)
+legend('topright', c('normal','lognormal','Poisson','negative binomial'), col=c(1,1,2,2), lty=c(1,2,1,2), cex=.9, bty='n')

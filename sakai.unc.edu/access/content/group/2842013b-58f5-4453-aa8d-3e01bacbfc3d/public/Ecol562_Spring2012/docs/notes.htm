@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Ecology 562&mdash;R code</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/js/styleswitcher.js"></script> 
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+-->
+</style>
+
+</head>
+
+<body>
+<h1 align="center"><a name="notes" id="notes"></a>Ecology 562&mdash;R code from lecture</h1>
+<p align="left">These are text files containing the history of my R sessions from class. I have edited out the mistakes but there is only minimal commentary. Treat these files as being superseded by the lecture notes once those get posted.</p>
+<p align="left"><a href="../notes/lecture1&#32;Rcode.txt">Lecture 1 (January 9)</a><br>
+  <a href="../notes/lecture4&#32;Rcode.txt">Lecture 4 (January 18)</a><br>
+  <a href="../notes/lecture5&#32;Rcode.txt">Lecture 5 (January 20)</a><br>
+  <a href="../notes/lecture6&#32;Rcode.txt">Lecture 6 (January 23)</a><br>
+  <a href="../notes/lecture7&#32;Rcode.txt">Lecture 7 (January 25)</a><br>
+  <a href="../notes/lecture8&#32;Rcode.txt">Lecture 8 (January 27)</a><br>
+<a href="../notes/lecture9&#32;Rcode.txt">Lecture 9 (January 30) </a><br>
+<a href="../notes/lecture10&#32;Rcode.txt">Lecture 10 (February 1)
+</a><br>
+<a href="../notes/lecture11&#32;Rcode.txt">Lecture 11 (February 3) </a><br>
+<a href="../notes/lecture12&#32;Rcode.txt">Lecture 12 (February 6) </a><br>
+<a href="../notes/lecture13&#32;Rcode.txt">Lecture 13 (February 8)</a><br>
+<a href="../notes/lecture14&#32;Rcode.txt">Lecture 14 (February 10)</a></a><br>
+<a href="../notes/lecture16&#32;Rcode.txt">Lecture 16 (February 15)</a></a><br>
+<a href="../notes/lecture17&#32;Rcode.txt">Lecture 17 (February 17)</a></a><br>
+<a href="../notes/lecture20&#32;Rcode.txt">Lecture 20 (February 24)</a></a><br>
+<a href="../notes/QICbinomgeeglm.txt">QICbinomgeeglm.txt</a><br>
+<a href="../notes/QICbinomgee.txt">QICbinomgee.txt</a><br>
+<a href="../notes/feasibility.txt">feasibility.txt<br>
+</a><a href="../notes/lecture23&#32;Rcode.txt">Lecture 23 (March 2)</a></a><br>
+<a href="../notes/lecture26&#32;Rcode.txt">Lecture 26 (March 16)</a></a><a href="../notes/feasibility.txt"></a><br>
+<a href="../notes/lecture29&#32;Rcode.txt">Lecture 29 (March 23)</a></a><br>
+<a href="../notes/lecture32&#32;Rcode.txt">Lecture 32 (March 30)</a></a><a href="../notes/feasibility.txt"></a><br>
+<a href="../notes/lecture33&#32;Rcode.txt">Lecture 33 (April 2)</a></a><a href="../notes/feasibility.txt"></a><br>
+<a href="../notes/lecture34&#32;Rcode.txt">Lecture 34 (April 4)</a></a><br>
+<a href="../notes/lecture37&#32;Rcode.txt">Lecture 37 (April 13)</a></a><a href="../notes/feasibility.txt"></a><br>
+<a href="../notes/lecture39&#32;Rcode.txt">Lecture 39 (April 18)</a></a><a href="../notes/feasibility.txt"></a><br>
+<a href="../notes/lecture40&#32;Rcode.txt">Lecture 40 (April 20)</a></a><a href="../notes/feasibility.txt"></a><br>
+</p>
+<p align="center"><a href="../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 20, 2012<br>
+      URL: <a href="notes.htm#notes" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/notes.htm</a></font></td>
+  </tr>
+</table>
+<h4>&nbsp;</h4>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+prentice <- function(fitvals,y,wave.var, wave1, wave2) 
+ {
+ ui <- fitvals
+ yvar <- y
+ yi4 <- yvar[wave.var==wave1]
+ yi7 <- yvar[wave.var==wave2]
+ ui4 <- ui[wave.var==wave1]
+ ui7 <- ui[wave.var==wave2]
+ limits <- -sqrt(ui4*ui7*(1-ui4)*(1-ui7))/((yi4-ui4)*(yi7-ui7)) 
+ one.zero <- (1:length(yi4))[(yi4==0 & yi7==1) | (yi4==1 & yi7==0)]
+ both.zero <- (1:length(yi4))[(yi4==0 & yi7==0) | (yi4==1 & yi7==1)]
+ upperbound <- sort(limits[one.zero])
+ lowerbound <- sort(limits[both.zero],decreasing=T)
+ out <- list(lowerbound,upperbound)
+ names(out) <- c("lowerbound","upperbound")
+ out
+ }
+
+lims.func <- function(fitvals,y,wave.var, wave1, wave2) {
+  out.fease <- prentice(fitvals,y,wave.var, wave1, wave2) 
+  c(max(out.fease$lowerbound), min(out.fease$upperbound))
+}
+
+#example using data set sm and model geefit.ex
+
+grps <- unique(sm$strtno)
+numgrps <- length(grps)
+#complete set of groups
+fulldata<-data.frame(strtno=rep(grps, rep(12,numgrps )), wave=rep(1:12,numgrps))
+#non-missing data
+actualdata<-data.frame(strtno=sm$strtno[!is.na(sm$nesting2)], wave=sm$wave[!is.na(sm$nesting2)], pred=fitted(geefit.ex)[!is.na(sm$nesting2)], nesting2=sm$nesting2[!is.na(sm$nesting2)])
+#insert missing data
+newdat2<-merge(actualdata,fulldata, all=T)
+
+#there are 66 correlations
+wave.mat <- matrix(NA,nrow=66,ncol=2)
+k<-1
+ for(i in 1:11){
+  for(j in (i+1):12){
+ wave.mat[k,]<-c(i,j)
+ k<-k+1
+ }}
+
+bounds <- sapply(1:66,function(x) lims.func(newdat2$pred, newdat2$nesting2, newdat2$wave,wave.mat[x,1], wave.mat[x,2]))
+

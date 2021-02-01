@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 8</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign8" id="assign8"></a>Assignment 8 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, March 16, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p>The data set for this assignment is  <a href="../../data/burn.csv">burn.csv</a>, a comma-delimited text file.</p>
+<h2 align="left">Overview</h2>
+<p align="left">The data come from a study of the role  that prescribed burning plays as a land management tool  in Onslow Bight, a region of the North Carolina (NC) coastal plain where a multiagency partnership has been established for the conservation of the longleaf pine ecosystem.  The objective was to determine the site and landscape characteristics that best explain the placement of prescribed burns as a way to assess whether prescribed burning is being carried out in areas that need restoration.</p>
+<p align="left">The authors compiled GIS data delineating the locations of  prescribed burns conducted between 1989 and 2007 from the six Onslow Bight land-management agencies that manage their land via prescribed burning: Camp LeJeune, Croatan National Forest, Cherry Point, Cedar Island NWR, NC WRC, and TNC. Soil survey data were used to select only sites  that are predominantly on soils with relatively low organic matter content&mdash;the soils that support longleaf pines. This  identified sites that currently support longleaf pine communities or that could be restored to longleaf and yielded 697 sites covering a total  of 52,226 hectares. </p>
+<p align="left">Records of prescribed burning were in the form of GIS polygon data delineating burned areas from 1989 to 2007. Sites were included in the study only if they provided at least 15 years of burn history data. Analysis was then restricted to the years 2004 to 2007. For each year during the period 2004 to 2007 the authors labeled a site as &ldquo;burned&rdquo; for that year if 50% or more was burned. Thus each  of the 697 sites in the study contributed four binary observations. </p>
+<p align="left">The  full history of prescribed burning, beginning in 1989, was used to create the set of predictor variables that were thought to influence whether a site was burned. The authors considered a number of different models. We will focus on a model that included only what the author's termed  non-ecological variables. These include:</p>
+<ol>
+  <li><span class="style8">burn50</span> is a binary variable indicating whether more than 50% of the site was burned in a given year. This is the response variable of the analysis.</li>
+  <li><span class="style8">year</span> records the year of the measurement.</li>
+  <li><span class="style8">PolyFID</span> is a categorical variable that identifies the site at which the four annual burn measurements were obtained.</li>
+  <li><span class="style8">Hectares</span> is the area of the site.</li>
+  <li><span class="style8">zmin_drd</span> is the distance from the nearest road.</li>
+  <li><span class="style8">zmin_ddv</span> is the distance from the nearest development.</li>
+  <li><span class="style8">zmin_dr</span> is the distance from the most recent burn.</li>
+  <li><span class="style8">prop_timb</span> is the proportion of the site in managed timber.</li>
+  <li><span class="style8">Prop_no_b</span> is the proportion of the site that has never been burned.</li>
+  <li><span class="style8">rx_cat3</span> is a categorical variable with four categories that denote the time since the last burn: 1= 1 year, 2 = 2-3 years, 3 = 4-5 years, and 4 = greater than 5 years.</li>
+</ol>
+<p>Some of these variables varied by year at each site (e.g., time since last burn and distance from the nearest burn) while others were treated as constant at a site during the four years covered by the study. </p>
+<p>The data in this study consist of repeated measurements on the same site, as well as separate measurements on different sites. Thus there is the potential for temporal correlation among observations coming from the same site. A site&rsquo;s burn status in a given year can affect the decision to burn in following years. In addition, sites are aggregated in space, leading to potential spatial correlation if the decision to burn one site affects the decision to burn  a nearby site. In this homework assignment we will address only the  temporal correlation in these data.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Fit a model with the binary variable <span class="style8">burn50</span> as the response. As predictors use <span class="style8">Hectares</span>, <span class="style8">rx_cat3</span> (as a factor), <span class="style8">zmin_drd</span>, <span class="style8">prop_timb</span>, <span class="style8">Prop_no_b</span>, <span class="style8">zmin_dr</span>, <span class="style8">zmin_ddv</span>, and the interaction of <span class="style8">zmin_ddv</span> and <span class="style8">rx_cat3</span>. For this preliminary model ignore the issue of temporal correlation.</li>
+  <li>Use GEE to include a temporal correlation model for the response. Use the same set of predictors as in Question 1 but add the following correlation structures:
+    <ol>
+      <li>independence</li>
+      <li>exchangeable</li>
+      <li>unstructured</li>
+      <li>AR(1)</li>
+      <li>stationary M-dependent of order 1</li>
+      <li>non-stationary M-dependent of order 1</li>
+    </ol>
+  </li>
+  <li>Use  appropriate statistical criteria to determine which of the six correlation models is best for these data.</li>
+  <li>A common rule-of-thumb for management of longleaf pine ecosystems is to burn every three years. Assuming that at least some of the managers were following this rule of thumb explain why it gives additional support for the correlation model you selected in Question 3.</li>
+  <li>Fit a generalized linear mixed effects model with random intercepts to these data using the same set of regressors that you used in Question 1 (and Question 2). </li>
+  <li>Assemble in a table the estimated coefficients for the generalized linear model, the best generalized estimating equation model, and the fixed effect estimates from the generalized linear mixed effects model. Two of the sets of estimates will be very similar. Explain why this probably happened and in particular why the third set of estimates is different from these two.</li>
+  <li>Examine the estimates of the elements of the working correlation matrix for the model you chose in Question 3. Determine which if any of the entries fall outside the Prentice bounds for correlations between binary observations.</li>
+  <li>Replace the correlations in the correlation matrix that fall outside the Prentice bounds with values that lie just inside the Prentice bounds. Use two-digit precision for this, i.e., the new correlation should be recorded to only two significant digits yet still fall within the bounds. Leave the remaining correlations alone.</li>
+  <li>Refit the GEE model using your new correlation matrix treating the correlation matrix as fixed. Report the summary table of the model.</li>
+</ol>
+<h2>Hints</h2>
+<ul>
+  <li><strong>General:</strong> Some of the GEE questions will need to be answered using the <span class="style19">gee</span> package while others will need to be answered using the <span class="style19">geepack</span> package.</li>
+  <li><strong>Question 7:</strong> A random intercepts model induces a correlation in the response variable. What is the nature of that correlation and why does knowing that help you answer this question?</li>
+
+  <li><strong>Questions 8</strong>: This material was not covered in the formal lab session but the information for doing this is described in the notes for <a href="../lectures/lecture23.htm#checking">lecture 23</a>. The situation you have here is much simpler than it was in lecture 23 because you have no missing data and each site provides data for all four years. Thus you can use the raw response and the fitted values from the model directly and can skip over the steps where  missing values were introduced to fill out the groups. You have six different correlation values to examine. You will need to construct a two-column matrix that contains the six different ways of pairing up the four years. You can either use the for loop code from the notes or  construct the matrix by hand.</li>
+  <li><strong>Question 9</strong>: The details for doing this are explained at the end of the <a href="../lectures/lecture23.htm#zcor">lecture 23</a> notes. It was not carried out there because the <span class="style2">geeglm</span> function could not fit the model without crashing R. You won't have that problem here. You will need to specify <span class="style22">corstr=&quot;fixed&quot;</span> and  create a <span class="style22">zcor</span> object that contains the six unique non-diagonal entries of the correlation matrix (the lower triangle treated in column order) as a vector. The entire vector then must be repeated as many times as there are unique groups in the data set. As a result the <span class="style22">zcor</span> object should have length that is six times the number of rows in the data set. See the help screen of the R <span class="style2">geese</span> function for an example.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 5, 2012<br>
+      URL: <a href="assign8.htm#assign8" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign8.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

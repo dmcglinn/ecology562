@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 32&mdash;Friday, March 30, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style102 {font-size: smaller}
+.style6 {	color: #0033CC;
+	font-size: smaller;
+}
+.style7 {	color: #CC0000;
+	font-weight: bold;
+}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+.style103 {color: #0033CC; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {color: #660099;
+	font-weight: bold;
+}
+.style104 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style331 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style37 {	color: #FF0000;
+	font-weight: bold;
+}
+.style431 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style22 {	color: #990099;
+	font-weight: bold;
+}
+.style2 {	color: #CC0000;
+	font-size:large;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture32" id="lecture32"></a>Lecture 32 (lab 11)&mdash;Friday, March 30, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture32.htm#spatial">Overview of the data</a></li>
+  <li><a href="lecture32.htm#checking">Checking for spatial correlation with a Mantel test</a></li>
+  <li><a href="lecture32.htm#meanprocess">Accounting for spatial correlation using the mean process &mu;(s)</a>
+    <ul>
+      <li><a href="lecture32.htm#response">Response surface model</a></li>
+      <li><a href="lecture32.htm#gam">GAM model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture32.htm#errorprocess">Accounting for spatial correlation using the error process W(s)</a>
+    <ul>
+      <li><a href="lecture32.htm#estimating">Estimating an empirical semivariogram</a></li>
+      <li><a href="lecture32.htm#fitting">Fitting theoretical models to the empirical semivariogram</a></li>
+      <li><a href="lecture32.htm#accounting">Adding a spatial correlation error structure to regression models</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture32.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture32.htm#asgeodata">as.geodata</a> (from <span class="style19">geoR</span>) creates a geodata object  for use by functions in the <span class="style19">geoR</span> package. </li>
+  <li><a href="lecture32.htm#dist">dist</a> calculates the pairwise dissimilarities for a set of observations. It returns an object of class &quot;dist&quot;.</li>
+  <li><a href="lecture32.htm#gls">gls</a>  (from <span class="style19">nlme</span>) fits regression models using generalized least squares.</li>
+  <li><a href="lecture32.htm#mantel">mantel</a> (from <span class="style19">vegan</span>) carries out Mantel tests on distance matrices.</li>
+  <li><a href="lecture32.htm#persp">persp</a> generates  three-dimensional graphs of surfaces.</li>
+  <li><a href="lecture32.htm#outer">outer</a> applies a function to all combinations of the elements of two vectors.</li>
+  <li><a href="lecture32.htm#update">update</a> allows additional arguments to be added to an already existing model.</li>
+  <li><a href="lecture32.htm#variofit">variofit</a> (from <span class="style19">geoR</span>) fits a theoretical semivariogram model to an empirical semivariogram using least squares.</li>
+  <li><a href="lecture32.htm#variog">variog</a> (from <span class="style19">geoR</span>) estimates an empirical semivariogram.</li>
+  <li><a href="lecture32.htm#Variogram">Variogram</a> (from <span class="style19">nlme</span>) estimates an empirical semivariogram.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture32.htm#corr">corr=</a> (argument to <span class="style4">gls</span>) for specifying a correlation structure for the residuals.</li>
+  <li><a href="lecture32.htm#variofit">cov.model</a>= (argument to <span class="style4">variofit</span>) specifies the theoretical variogram model to be fit. </li>
+  <li><a href="lecture32.htm#variofit">ini=</a> (argument to <span class="style4">variofit</span>) specifies initial values for the partial sill and range of the theoretical variogram.</li>
+  <li><a href="lecture32.htm#variog">max.dist=</a> (argument to <span class="style4">variog</span>) largest distance to use in constructing the empirical semivariogram.</li>
+  <li><a href="lecture32.htm#variofit">nugget=</a> (argument to <span class="style4">variofit</span> and <span class="style4">gls</span>) specifies an initial value for the nugget (<span class="style4">variofit</span>) or is assigned the value TRUE or FALSE as an argument in an <span class="style19">nlme</span> correlation structure (<span class="style4">gls</span>).</li>
+  <li> <a href="lecture32.htm#variog">option=</a> (argument to <span class="style4">variog</span>) the type of semivariogram desired. Choices included &quot;bin&quot;, &quot;cloud&quot;, and &quot;smooth&quot;. </li>
+  <li><a href="lecture32.htm#ticktype">phi=</a> (argument to <span class="style1021">persp</span>) specifies the colatitude of the viewing direction. Corresponds to &phi; in a spherical coordinate system.</li>
+  <li><a href="lecture32.htm#Variogram">resType=</a> (argument to <span class="style1021">Variogram</span> in the <span class="style19">nlme</span> package) specifies the type of residual to use. We used it to specify normalized residuals, <span class="style22">resType='n'</span>, standardized residuals pre-multiplied by the inverse square-root factor of the estimated error correlation matrix.</li>
+  <li><a href="lecture32.htm#scheme">scheme=</a> (argument to <span class="style1021">plot.gam</span>) controls whether two-dimensional smoothers are displayed as contour plots, <span class="style22">scheme=0</span>, or three-dimensional graphs, <span class="style22">scheme=1</span>.</li>
+  <li><a href="lecture32.htm#ticktype">theta=</a> (argument to <span class="style1021">persp</span>) is used to rotate the surface about the <em>z</em>-axis. Corresponds to &theta; in a spherical coordinate system.</li>
+  <li><a href="lecture32.htm#ticktype">ticktype=</a> (argument to <span class="style1021">persp</span>) controls whether tick marks, <span class="style22">ticktype=&quot;detailed&quot;</span>, or arrows, <span class="style22">ticktype=&quot;simple&quot;</span>, are displayed on the axes of 3-dimensional plots.</li>
+  <li><a href="lecture32.htm#type">type=</a> (argument to <span class="style1021">residuals.gls</span>) determines the type of residual that is extracted. We specified <span class="style22">residual='n'</span> to extract normalized residuals from a <span class="style4">gls</span> object.</li>
+  <li><a href="lecture32.htm#variog">uvec=</a> (argument to <span class="style4">variog</span>) specifies the midpoints of the bins for pooling the squared differences to produce a smooth semivariogram.</li>
+  <li><a href="lecture32.htm#variofit">vario=</a> (argument to <span class="style4">variofit</span>) specifies the variogram object created by <span class="style4">variog</span> that is then used to fit a theoretical variogram. </li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture32.htm#geoR">geoR</a> for the <span class="style4">as.geodata</span>,<span class="style4"> variog</span>, and<span class="style4"> variofit </span> functions for constructing the semivariogram. </li>
+  <li><a href="lecture32.htm#gls">nlme</a> for <span class="style4">gls </span>and<span class="style4"> Variogram </span>functions. Also source of the <span class="style8">Wheat2</span> data set.</li>
+  <li><a href="lecture32.htm#mantel">vegan</a> for the <span class="style4">mantel</span> function. </li>
+</ul>
+<h2><a name="spatial"></a>Overview of the data</h2>
+
+<p> Spatial statistics is a big topic and we'll only scratch its surface today. Specifically we'll learn how to check for spatial correlation in the residuals from a regression model and  examine ways to account for that correlation. A large number of packages are available in R for spatial analysis and most of these overlap extensively in their features. We'll focus on two: the <span class="style19">geoR</span> package for variogram analysis and the <span class="style19">vegan</span> package for its Mantel test. The <span class="style19">nlme</span> package that we've used previously for multilevel modeling  is also relevant here in that it allows the user to specify a spatial structure for regression models. A good source of information on R packages and what they can do can be found at the <a href="http://cran.us.r-project.org/web/views/index.html">CRAN task views</a> site. The spatial section at this site lists over 100 different R packages that can be used to analyze and manipulate spatial data.</p>
+<p>The data we'll use for illustration is the <span class="style8">Wheat2</span> data set in the <span class="style19">nlme</span> package taken from Stroup <em>et al.</em> (1994). It's described as an agronomic wheat trial in which the yields of 56 varieties of wheat were compared. The trials were arranged in four geographic blocks within which each variety was planted once. Thus the block variable is an attempt to control for heterogeneity in the data due to the large spatial extent of the experiment. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(nlme)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> data(Wheat2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(Wheat2)</div>
+  <span class="style24">[1] &quot;Block&quot; &quot;variety&quot; &quot;yield&quot; &quot;latitude&quot; &quot;longitude&quot; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Wheat2[1:8,]</div>
+<span class="style24">  Grouped Data: yield ~ variety | Block<br>
+  &nbsp; Block&nbsp; variety yield latitude longitude<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; LANCER 29.25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19.2<br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; BRULE 31.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20.4<br>
+  3&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; REDLAND 35.05&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21.6<br>
+  4&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; CODY 30.10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22.8<br>
+  5&nbsp; &nbsp;&nbsp;&nbsp;1 ARAPAHOE 33.05&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24.0<br>
+  6&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; NE83404 30.25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25.2<br>
+  7&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; NE83406 35.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26.4<br>
+  8&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; NE83407 19.40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2<br>
+&gt;&nbsp;</span>
+<p><span class="style8">Wheat2</span> is an example of a groupedData object, a special data structure used by the <span class="style19">nlme</span> package. To understand the experimental layout I plot <span class="style8">latitude</span> against <span class="style8">longitude</span> coloring the points according to their <span class="style8">Block</span> assignment. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(latitude~longitude, col=as.numeric(Block), data=Wheat2)</div>
+<p align="center"><img src="../../images/lectures/lecture32/fig1.png" width="395" height="320" alt="fig 1">
+<p align="center" class="styleArial"> <strong>Fig. 1</strong>&nbsp; Spatial arrangement of plots showing the Block variable</p>
+
+<p>As the figure shows the blocking is an attempt to control for the effect of latitude. It's not clear to me what the units  for latitude and longitude represent. If the numbers are interpreted as degrees then the study region would have to be in Africa and encompass nearly half the continent. My understanding from reading Stroup <em>et al.</em> (1994) is that the study was done in Nebraska.</p>
+<p>For distant points on the earth's surface the proper way to calculate distances is as  great circle distances for which latitude and longitude provide the spherical coordinates of points. For nearby points planar projections are satisfactory approximations of great circle distances. Stroup <em>et al.</em> (1994) provide no further explanation on how latitude and longitude were recorded. The <span class="style8">Wheat2</span> data set is commonly used as an example in the documentation for mixed model software. For example, SAS Proc Mixed and the Splus nlme library both use it. In both cases the latitude and longitude values are treated as raw numbers for calculating distances. Lacking information to do otherwise we will follow their lead. </p>
+<h2><a name="checking"></a>Checking for spatial correlation with a Mantel test </h2>
+<p>We can obtain a crude measure of spatial correlation by carrying out a Mantel test, the details of which were given in <a href="lecture31.htm#mantel">lecture 31</a>. A Mantel test works with dissimilarity matrices. With <em>n</em> observations there are <img src="../../images/lectures/lecture32/mantel.gif" width="125" height="61" align="absmiddle"> distinct pairs of observations and hence the same number of dissimilarities. For each pair of observations we calculate their dissimilarity in two distinct ways and then compare the results. The Mantel test calculates the Pearson correlation coefficient of the two sets of dissimilarities and uses a permutation test to assess its statistical significance.
+</p>
+<p>Usually one set of dissimilarities is the set of geographic distances between the points. The other set uses the absolute difference in some attribute measured at each location. The permutation test is carried out by simultaneously permuting the rows and columns of one of the dissimilarity matrices. It is necessary to permute both the rows and columns in order to preserve the distance structure of the data. This is equivalent to randomly reassigning attribute values to locations. </p>
+<p name="dist"><a name="dist"></a>To begin we need to calculate the distance matrices. We can use the R function <span class="style4">dist</span> for this purpose. The first argument to <span class="style4">dist</span> should be a vector or a matrix where each row corresponds to an observation.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#geographic distances</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dist1 &lt;- dist(cbind(Wheat2$latitude, Wheat2$longitude))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#differences in yield </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dist2 &lt;- dist(Wheat2$yield)</div>
+<p name="mantel">The <span class="style4">dist</span> function returns an object of class &quot;dist&quot;. To see a few of the distances that were generated we need to convert the dist object to a matrix with <span class="style1021">as.matrix</span> and then specify the rows and columns we wish to see.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> class(dist1)</div>
+<span class="style24">  [1] &quot;dist&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> as.matrix(dist1)[1:4,1:4]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp; 4<br>
+  1 0.0 1.2 2.4 3.6<br>
+  2 1.2 0.0 1.2 2.4<br>
+  3 2.4 1.2 0.0 1.2<br>
+  4 3.6 2.4 1.2 0.0</span>
+<p name="mantel"><a name="mantel"></a>The package <span class="style19">vegan</span> contains the <span class="style4">mantel</span> function for carrying out the Mantel test. By default the <span class="style4">mantel</span> function uses 1000 permutations for the permutation test although this can be modified with its <span class="style22">permutations</span> argument. (Technically this is 999 permutations plus the  value of the Mantel statistic calculated using the unpermuted data.) 1000 is adequate for a crude estimate of statistical significance.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(vegan)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel(dist1, dist2)</div>
+<p class="style24">Mantel statistic based on Pearson's product-moment correlation </p>
+<p class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist2) </p>
+<p class="style24">Mantel statistic <span class="style24">r: 0.2005</span> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Significance: <span class="style25">&lt; 0.001</span></p>
+<p class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp;&nbsp;90% &nbsp;&nbsp;&nbsp;95% &nbsp;97.5% &nbsp;&nbsp;&nbsp;99% <br>
+  0.0338 0.0416 0.0500 0.0596 </p>
+<p class="style24">Based on 1000 permutations</p>
+<p>The reported Mantel correlation is 0.20 and the <em>p</em>-value is 0.001. Since this is based on 1000 values it means that the observed Mantel correlation was greater than the Mantel correlation obtained with any of the 999 data permutations.</p>
+<p>Of course it's not news that agricultural yield varies with geography. What's important statistically is that such spatial correlation is accounted for in our model, either explicitly or implicitly. To this end we fit a series of models that attempt to relate <span class="style8">yield</span> to <span class="style8">variety</span> while controlling for geography. The simplest attempt at this is to add <span class="style8">Block</span> as  a predictor in the regression model. <span class="style8">Block</span> has already been declared a factor in the <span class="style8">Wheat2</span> data frame so its numerical values won't cause R to treat it as a continuous predictor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model1 &lt;- lm(yield~variety + Block, data=Wheat2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dist3 &lt;- dist(residuals(model1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel(dist1, dist3)</div>
+<p class="style24">Mantel statistic based on Pearson's product-moment correlation </p>
+<p class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist3) </p>
+<p class="style24">Mantel statistic r: <span class="style24">0.1061</span> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Significance: <span class="style25">&lt; 0.001</span></p>
+<p class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp;&nbsp;90% &nbsp;&nbsp;&nbsp;95% &nbsp;97.5% &nbsp;&nbsp;&nbsp;99% <br>
+  0.0302 0.0415 0.0472 0.0560 </p>
+<p class="style24">Based on 1000 permutations</p>
+<p>From the output we see that including <span class="style8">Block</span> (and <span class="style8">variety</span>) as  predictors has accounted for some of the original spatial variation in <span class="style8">yield</span>, but the residual spatial correlation is still significantly greater than zero (<em>p</em> &lt; .001). </p>
+<h2><a name="meanprocess"></a>Accounting for spatial correlation using the mean process &mu;(s)</h2>
+<p>In <a href="lecture31.htm#theoretical">lecture 31</a> we saw that a spatially referenced variable can be decomposed into a spatial mean process plus a spatial error process. One way to account for spatial correlation is to introduce additional spatially referenced predictors into the model. With these data  we are limited in this regard but we do have the latitude and longitude of each observation so we could include an observation's latitude and longitude directly in the model for the mean. Here are the results for a model that is additive in latitude and longitude. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2 &lt;- lm(yield~variety + Block + latitude + longitude, data=Wheat2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dist3 &lt;- dist(residuals(model2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel(dist1, dist3)</div>
+
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist4) </span>
+<p><span class="style24">Mantel statistic r: 0.045574 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.025
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0325 0.0393 0.0453 0.0531 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<p>This has reduced the correlation even further, although it's still statistically significant (<em>p</em> = .025).
+Notice that the Mantel correlation is fairly small, 0.045, yet still statistically significant. The statistical significance arises  at least in part from the large amount of data we have. The 224 observations translate into 24,976 distances. An ordinary Pearson correlation of 0.045 would never be considered important regardless of its statistical significance. But given that we're looking at the correlation of distances rather than the actual observational values it's unclear how to interpret this small correlation.</p>
+<h3><a name="response"></a>Response surface model</h3>
+<p>Since the additive model was inadequate we could try to include a more complicated function of latitude and longitude. One recommendation  is to fit a response surface model of geographic coordinates (Berk and de Leeuw, 2006), a model of the form</p>
+<p align="center"><img src="../../images/lectures/lecture32/response.gif" width="182" height="30" alt="response surface"></p>
+<p>For these data a response surface model is a general second-degree polynomial model in longitude and latitude.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model3 &lt;- lm(yield~variety + Block + latitude + longitude + I(latitude^2) + I(longitude^2) + latitude*longitude, data=Wheat2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> dist3 &lt;- dist(residuals(model3))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mantel(dist1, dist3)</div>
+
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist3) </span>
+<p><span class="style24">Mantel statistic r: 0.018915 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.221
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0299 0.0384 0.0468 0.0530 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<p>So  adding a geographic response surface to the mean process model has removed the spatial correlation in the residuals.</p>
+<p><a name="persp"></a>To visualize the response surface we can use the <span class="style1021">persp</span> function to produce a three-dimensional plot. This function requires that we first evaluate the desired function on a grid of values. To set up the grid I create vectors that contain the sorted unique values of latitude and longitude in the data set.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#values for the grid--sorted unique values of geographic coordinates</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  my.x &lt;- sort(unique(Wheat2$longitude))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.y &lt;- sort(unique(Wheat2$latitude))</div>
+<p>Next I locate the  estimates of the response surface parameters in the coefficient vector of the model and write a function that calculates the value of the response surface. To simplify the specification of the function I use matrix multiplication in which I multiply a matrix of response surface terms by the coefficient vector.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(coef(model3))</div>
+<span class="style24">  [1] 64</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model3)[60:64]</div>
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; latitude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; longitude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(latitude^2)&nbsp;&nbsp;&nbsp;&nbsp; I(longitude^2) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; -0.1178493472&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.7432651339&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.0072518129&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.0251816795 <br>
+  latitude:longitude <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0199630578</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.func1 &lt;- function(y,x) cbind(y,x,y^2,x^2,x*y) %*% coef(model3)[60:64]</div>
+<p><a name="outer"></a>A convenient way to obtain the grid of function values we need is with the <span class="style1021">outer</span> function. The <span class="style1021">outer</span> function takes two vectors <strong>x</strong> and <strong>y</strong> as its first two arguments and pairs the elements of these vectors in all possible ways. It then evaluates the function that appears in its third argument on each of the ordered pairs.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.z &lt;- outer(my.y, my.x, my.func1)</div>
+
+<p>The rows of the grid are different latitudes  while the columns of the grid are different longitudes.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(out.z)</div>
+<span class="style24">[1] 11 22</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.z[1:4,1:4]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;[,4]<br>
+  [1,]&nbsp; 0.31782771&nbsp; 1.20397039&nbsp; 2.01758984 2.7586860<br>
+  [2,] -0.48817317&nbsp; 0.50097889&nbsp; 1.41760772 2.2617133<br>
+  [3,] -1.56234608 -0.47018464&nbsp; 0.54945356 1.4965685<br>
+[4,] -2.90469104 -1.70952022 -0.58687264 0.4632517</span>
+<p><a name="ticktype"></a>To produce the graph we use the <span class="style1021">persp</span> function with the two grid vectors as the first two arguments (in the same order as they were specified in the <span class="style1021">outer</span> function), followed by the grid of <em>z</em>-values. To get tick marks and their values I add the option <span class="style22">ticktype=&quot;detailed&quot;</span>. The arguments <span class="style22">theta</span> and <span class="style22">phi</span> can be used to define a viewing angle of the surface and have the effect of rotating the surface. They correspond to the &theta; and &phi; of the spherical coordinate system from mathematics.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">persp(my.y, my.x, out.z)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #rotate graph and add tick marks</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">persp(my.y, my.x, out.z, ticktype=&quot;detailed&quot;, theta=30, phi=30, ylab='longitude', xlab='latitude', zlab='z')</div>
+<br>
+<table width="600" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td>(a) <img src="../../images/lectures/lecture32/fig2pt1.png" alt="persp plot" width="275" height="250" align="texttop"><br></td>
+    <td>(b)
+     <img src="../../images/lectures/lecture32/fig2pt2.png" alt="persp plot 2" width="240" height="230" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2</strong> (a) Default persp plot of the response surface. (b) The same persp plot after changing the viewing perspective</span> and adding tick marks and labels to the graph.</td>
+  </tr>
+</table>
+<h3><a name="gam"></a>GAM model</h3>
+<p>Instead of looking for parametric functions of latitude and longitude to account for spatial correlation we can use nonparametric smoothers. Corresponding to the linear model in latitude and longitude, <span class="style8">model2</span>, we can instead fit an additive model using smooths of latitude and longitude.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(mgcv)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#separate smooths GAM</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  model4 &lt;- gam(yield~variety + Block + s(latitude) + s(longitude), data=Wheat2, method=&quot;ML&quot;)</div>
+<p>A Mantel test of the residuals from the GAM reveals that the spatial correlation has been removed.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dist3 &lt;- dist(residuals(model4))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  mantel(dist1, dist3)</div>
+
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist3) </span>
+<p><span class="style24">Mantel statistic r: 0.025553 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.16
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0328 0.0412 0.0498 0.0623 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<p>A plot of the smoothers reveals that while the relationship with longitude might be treated as roughly linear, the relationship with latitude is far from linear.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(model4, pages=1)</div>
+<br>
+
+<table width="450" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture32/fig2pt3.png" width="430" height="305" alt="smooths"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3 </strong>&nbsp;Partial response functions of latitude and longitude estimated from a GAM</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+
+<p>With regularly spaced observations like this, we might consider replacing the two additive smooths with a single smooth of both variables. Not surprisingly this model also removes the spatial correlation of the residuals.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #two-dimensional smooth</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model5 &lt;- gam(yield~variety + Block + s(latitude,longitude), data=Wheat2, method=&quot;ML&quot;)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dist3 &lt;- dist(residuals(model5))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mantel(dist1, dist3)</div>
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist3) </span>
+<p><span class="style24">Mantel statistic r: 0.014775 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.255
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0300 0.0385 0.0515 0.0582 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<p><a name="scheme"></a>To visualize the two-dimensional smooth we can create a contour plot or generate a three-dimensional surface plot by specifying <span class="style22">scheme=1</span>. Choosing this option calls the <span class="style1021">persp</span> function to which can be passed additional arguments such as <span class="style22">ticktype=&quot;detailed&quot;</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(model5)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(model5, scheme=1, ticktype='detailed')</div>
+<br>
+<table width="630" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td>(a) <img src="../../images/lectures/lecture32/fig2pt4.png" alt="contour plot" width="340" height="250" align="texttop"><br></td>
+    <td>(b) <img src="../../images/lectures/lecture32/fig2pt5.png" alt="persp plot" width="240" height="235" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4</strong> (a) Default contour plot of the two-dimensional smoother with confidence bands for the contours. (b) The same smoother as in (a) but now viewed as a surface in three dimensions.</td>
+  </tr>
+</table>
+
+<p>The graph of the two-dimensional smooth is not all that different from the quadratic response surface shown in Fig. 3.  We can compare all the models fit thus far using AIC. For what it's worth the model with the two-dimensional smooth of latitude and longitude ranks best.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model1, model2, model3, model4, model5)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model1 60.000000 1561.6218<br>
+  model2 62.000000 1459.6218<br>
+  model3 65.000000 1406.4373<br>
+  model4 71.007976 1388.0277<br>
+model5 80.048944 1319.2952</span>
+<p>Given that the only point of including latitude and longitude in the model was to account for spatial correlation and the last three models all do so, it's a matter of personal taste which of these models one chooses here. When we have data that are evenly distributed spatially without substantial gaps all of these methods are likely to work well. If on the other hand the data are sparse and patchy the GAM results may be unreliable and a parametric model might be preferred.</p>
+<h2><a name="errorprocess"></a>Accounting for spatial correlation using the error process W(s)</h2>
+<p>Instead of trying to account for the spatial correlation by  further enhancing the deterministic portion of the model, a perhaps more attractive approach is to modify the random portion of the model. The Mantel test is a crude, all or nothing, sort of tool that does little to help understand the nature of the spatial correlation except to say that it exists. To make further progress we need a way to visualize and model the correlation as a function of inter-observational distances. For geostatistical data the semivariogram is the preferred tool for doing this. </p>
+<h3><a name="estimating" id="estimating"></a>Estimating the empirical semivariogram </h3>
+<p><a name="geoR"></a>While the <span class="style19">nlme</span> package has a <span class="style4">Variogram</span> function, for serious modeling I prefer to use dedicated spatial packages such as <span class="style19">geoR</span> to develop geostatistical models. The <span class="style19">geoR</span> package is a comprehensive spatial analysis package written by a geographer. It works well except when given extremely large data sets. In those cases I've found the more limited <span class="style19">gstat</span> package is a good alternative. The variogram functions in <span class="style19">gstat</span> can be up to ten times faster at estimating the empirical semivariogram than are the functions in <span class="style19">geoR</span>. </p>
+<p name="gls"><a name="gls"></a> To simplify fitting the correlated residual models that will follow, I  refit the randomized block design model using the <span class="style4">gls</span> function of the <span class="style19">nlme</span> package. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gmodel2 &lt;- gls(yield~variety+Block, data=Wheat2, method='ML')</div>
+<p>The acronym <span class="style4">gls</span> stands for &quot;generalized least squares&quot; and it extends ordinary least squares estimation to  error structures other than independence. If no structure is specified the model output is identical to that returned by the <span class="style4">lm</span> function. </p>
+<p><a name="type"></a>I begin by creating a matrix whose columns contain the latitude,  longitude, and   normalized residual,<span class="style22"> type='n'</span>, from the regression model for each observation in the data set. This is the order required  by <span class="style19">geoR</span>. The response variable that will be used in the semivariogram should appear in the third column while the vectors used in calculating the distances should appear in columns 1 and 2. At this point the residuals are assumed to be independent so the only effect of using normalized residuals  is to change the scale of the calculated semivariance. I request normalized residuals  to be consistent with the later semivariograms  we will estimate.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> newdat &lt;- data.frame(Wheat2$latitude, Wheat2$longitude, residuals(gmodel2, type='n'))</div>
+<p name="asgeodata"><a name="asgeodata"></a>The <span class="style19">geoR</span> package like many R packages requires that data frames be converted into specialized objects before analysis. (Recall that the <span class="style19">ROCR</span> package had the same requirement in <a href="lecture14.htm#ROCcurve">lecture 14</a>. There the first step was to create a <span class="style1021">prediction</span> object.) In <span class="style19">geoR</span> this conversion is done with the <span class="style4">as.geodata</span> function. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(geoR) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat &lt;- as.geodata(newdat)</div>
+<p name="variog"><a name="variog"></a>The <span class="style19">geoR</span> function <span class="style4">variog</span> is used to estimate the empirical semivariogram. It accepts a large number of arguments of which I illustrate the following.
+</p>
+<ul>
+  <li><span class="style22">geodata</span>= specifies the &quot;geodata&quot; object previously created with the <span class="style4">as.geodata</span> function.</li>
+  <li><span class="style22">uvec</span>= specifies a sequence of values that define the centers of the bins for binning the squared differences. An alternative to specifying <span class="style22">uvec</span> is to specify the argument <span class="style22">breaks</span>, the endpoints of the binning intervals.</li>
+  <li><span class="style22">max.dist</span>= specifies the maximum distance used in constructing the semivariogram.</li>
+  <li><span class="style22">option</span>= specifies the type of semivariogram, <span class="style22">&quot;bin&quot;</span>, &quot;<span class="style22">cloud&quot;</span>, or &quot;<span class="style22">smooth&quot;</span>.</li>
+</ul>
+<p>After some experimentation I settle on the following specifications. The choice of 30 is a little more than one half the maximum distance between points in the data set.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> max(dist1)</div>
+<span class="style24">[1] 49.840144</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1 &lt;- variog(geodat, uvec=1:30, max.dist=30, option='bin')</div>
+<p>There is a lot of useful information returned by <span class="style4">variog</span>. The component <span class="style8">$n</span> records the number of distances that contributed to the smoothed estimate in each bin and the component <span class="style8">$u</span> records the center of each bin. The estimated semivariances are stored in the <span class="style8">$v</span> component.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(geodat.v1)</div>
+  <span class="style24">&nbsp;[1] &quot;u&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;v&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;n&quot; <br>
+    &nbsp;[4] &quot;sd&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;bins.lim&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;ind.bin&quot; <br>
+    &nbsp;[7] &quot;var.mark&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;beta.ols&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;output.type&quot; <br>
+    [10] &quot;max.dist&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;estimator.type&quot; &quot;n.data&quot; <br>
+    [13] &quot;lambda&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;trend&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;pairs.min&quot; <br>
+    [16] &quot;nugget.tolerance&quot; &quot;direction&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;tolerance&quot; <br>
+    [19] &quot;uvec&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;call&quot; </span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">geodat.v1$n</div>
+<span class="style24">&nbsp;[1] 210 &nbsp;199 &nbsp;766 538 832 462 &nbsp;434 1406 695 633 &nbsp;589 1556 1000 813<br>
+    [15] 628 1207 1200 837 731 474 1619 &nbsp;668 558 428 1131 &nbsp;547 &nbsp;465 196<br>
+  [29] 165</span></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1$u</div>
+<span class="style24">  &nbsp;[1]&nbsp; 1&nbsp; 2&nbsp; 4&nbsp; 5&nbsp; 6&nbsp; 7&nbsp; 8&nbsp; 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27<br>
+  [27] 28 29 30</span>
+<p>Notice that although we requested a bin center at 3 it doesn't appear in the list. Apparently our selections can be overruled perhaps when there are no observations in the chosen bins. If we calculate the semivariogram out to a distance of 50, the number of observations in each bin drops off precipitously.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1 &lt;- variog(geodat, uvec=1:50, max.dist=50, option='bin')</div>
+<span class="style24">variog: computing omnidirectional variogram</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1$n</span></div>
+  <span class="style331">&nbsp;[1] 210 &nbsp;199 &nbsp;766 538 832 462 &nbsp;434 1406 695 633 &nbsp;589 1556 1000 813<br>
+    [15] 628 1207 1200 837 731 474 1619 &nbsp;668 558 428 1131 &nbsp;547 &nbsp;465 196<br>
+    [29] 855 &nbsp;480 &nbsp;322 192 417 449 &nbsp;259 &nbsp;124 117 386 &nbsp;130 &nbsp;122 &nbsp;&nbsp;58 106<br>
+    [43] &nbsp;56 &nbsp;&nbsp;30 &nbsp;&nbsp;23 &nbsp;13 &nbsp;&nbsp;9 &nbsp;&nbsp;5</span></p>
+<p>The usual recommendation is that there should be at least 30 observations in each bin. It is also usually recommended that the semivariogram not be estimated beyond half the maximal distance in the data set. These recommendations are the basis of my choice of 30 for the limits. Based on the number of observations in each bin we clearly could choose narrower bins (and more of them), but as we'll see the pattern of correlation is already fairly clear using the output we have.</p>
+<p>The <span class="style4">variog</span> function has a <span class="style1021">plot</span> method. Thus if we pass the  object created by <span class="style4">variog</span> to the <span class="style1021">plot</span> function it will generate a plot of the list components <em>v</em> (the semivariogram estimates) against <em>u</em> (the distances) with the axes appropriately labeled.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1 &lt;- variog(geodat, uvec=1:50, max.dist=30, option='bin')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(geodat.v1)</div>
+
+  <p align="center"><img src="../../images/lectures/lecture32/fig5.png" width="400" height="315" alt="fig 5">
+  <p align="center" class="styleArial"> <strong>Fig. 5&nbsp;</strong> Empirical semivariogram of the residuals of yield regression model</p>
+
+<p>The plot shows a fairly typical semivariogram. The semivariance increases with distance (meaning that the correlation decreases) and although there is considerable scatter it appears to level off somewhere around a distance of 20 or 25. Observe that the semivariance is nonzero near the origin. Based on the terminology discussed in <a href="lecture31.htm#graphing">lecture 31</a> we would estimate the nugget in Fig. 5 to be 0.4, the sill to be 1.2 (giving a partial sill of 0.8), and the range to be somewhere between 20 and 30. </p>
+<p>If we increase the number of bins, the picture barely changes suggesting that the empirical semivariogram  shown in Fig. 5 is probably adequate.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1a &lt;- variog(geodat, uvec=seq(0,30,.5), max.dist=30, option='bin')</div>
+<span class="style24">variog: computing omnidirectional variogram</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(geodat.v1$n, geodat.v1a$n), length)</div>
+<span class="style24">  [1] 29 52</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(geodat.v1a)</div>
+<p align="center"> <img src="../../images/lectures/lecture32/fig5pt5.png" width="395" height="315" alt="semivariogram">
+<p align="center" class="styleArial"> <strong>Fig. 6&nbsp;</strong> Empirical semivariogram of the residuals using 52 bins</p>
+<h3><a name="fitting" id="fitting"></a>Fitting theoretical models to the empirical semivariogram</h3>
+<p name="variofit"><a name="variofit"></a>To incorporate spatial correlation into our regression model we need to estimate a theoretical semivariogram model. The <span class="style19">nlme</span> package offers five spatial correlation structures for this purpose: <span class="style1021">corExp</span> (exponential), <span class="style1021">corGaus</span> (Gaussian), <span class="style1021">corLin</span> (linear), <span class="style1021">corRatio</span> (rational quadratic), and <span class="style1021">corSpher</span> (spherical). All of these except the rational quadratic can be fit in <span class="style19">geoR</span> using its <span class="style4">variofit</span> function. We need to specify four arguments to <span class="style4">variofit</span>
+</p>
+<ul>
+  <li><span class="style22">vario</span>= specifies a &quot;variogram&quot; object created with the <span class="style1021">variog</span> function.</li>
+  <li><span class="style22">ini.cov.pars</span>= specifies a 2-vector of initial estimates for the partial sill and the range. The partial sill is the difference between the sill and the nugget.</li>
+  <li><span class="style22">cov.model</span>= specifies the spatial covariance model desired: &quot;exponential&quot;, &quot;gaussian&quot;, &quot;spherical&quot;, &quot;linear&quot;, etc.</li>
+  <li><span class="style22">nugget</span>= specifies an initial estimate of the nugget. </li>
+</ul>
+<p>I fit the four covariance models in succession and add them to the  empirical semivariogram of Fig. 5 with the <span class="style4">lines</span> function. Based on Fig. 5 I choose as initial values 0.8 for the partial sill, 30 for the range, and 0.4 for the nugget. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ols2 &lt;- variofit(geodat.v1, ini=c(.8,30), nugget=.4, cov.model='exponential')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ols2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ols3 &lt;- variofit(geodat.v1, ini=c(.8,30), nugget=.4, cov.model='gaussian')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ols3, col=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ols4 &lt;- variofit(geodat.v1, ini=c(.8,30), nugget=.4, cov.model='spherical')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ols4, col=3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ols5 &lt;- variofit(geodat.v1, ini=c(.8,30), nugget=.4, cov.model='linear')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(ols5, col='gray70')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('bottomright', c('exponential', 'Gaussian', 'spherical', 'linear'), col=c(2:4, 'gray70'), lty=rep(1,4), cex=.8, bty='n') </div>
+  
+    <p align="center"><img src="../../images/lectures/lecture32/fig6.png" width="400" height="315" alt="fig 6">
+<p align="center" class="styleArial"> <strong>Fig. 7</strong>&nbsp; Semivariogram models fit to the empirical semivariogram of Fig. 5</p>  
+  
+<p> As is clear from the plot, any of the semivariogram models, even the linear, could be a suitable model. In such a situation it makes sense to fit them all and compare the results using AIC. </p>
+<h3><a name="accounting"></a>Adding  a spatial correlation error structure to regression models</h3>
+<p>Formulas for the five spatial correlation structures available in <span class="style19">nlme</span> (with the variance set  equal to one) are shown below (Pinheiro and Bates, 2000, p. 232.)  </p>
+<table width="700" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><strong>Model</strong></td>
+    <td><strong>Formula</strong></td>
+  </tr>
+  <tr>
+    <td>Exponential</td>
+    <td><img src="../../images/lectures/lecture32/clip_image003.gif" width="195" height="32" alt="exponential"></td>
+  </tr>
+  <tr>
+    <td>Gaussian</td>
+    <td><img src="../../images/lectures/lecture32/clip_image006.gif" width="222" height="43" alt="gaussian"></td>
+  </tr>
+  <tr>
+    <td>Linear</td>
+    <td><img src="../../images/lectures/lecture32/clip_image009.gif" width="245" height="32" alt="linear"></td>
+  </tr>
+  <tr>
+    <td>Rational quadratic</td>
+    <td><img src="../../images/lectures/lecture32/clip_image012.gif" width="240" height="43"></td>
+  </tr>
+  <tr>
+    <td>Spherical</td>
+    <td><img src="../../images/lectures/lecture32/clip_image015.gif" width="385" height="43" alt="spherical"></td>
+  </tr>
+</table>
+<p>Here <em>I</em>( ) is the indicator function such that <img src="../../images/lectures/lecture32/indicator.gif" alt="indicator" width="220" height="75" align="absmiddle">. A nugget effect is introduced into these functions as follows. </p>
+<p align="center"><img src="../../images/lectures/lecture32/clip_image018.gif" width="373" height="77" alt="nugget"></p>
+<p align="left">The approach in <span class="style19">nlme</span> is different than in <span class="style19">geoR</span> (where the nugget is an additive term rather than a multiplicative one).</p>
+<p name="update"><a name="update"></a>To add a correlation structure to our generalized least squares model     we need to include the <span class="style22">corr</span> argument in the model specification. A simpler way than respecifying the model in its entirety again is to use the <span class="style4">update</span> function. The syntax requires specifying the old model first followed by other arguments that list the additions that should be made. In the call below the additions are all contained in the<span class="style22"> corr </span>argument.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#original model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gmodel2 &lt;- gls(yield~variety+Block, data=Wheat2, method='ML')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#new model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out1a &lt;- update(gmodel2, corr=corSpher(c(30,.4), form=~latitude+longitude, nugget=T))</div>
+<ul>
+  <li><a name="corr"></a>The value given to the <span class="style22">corr</span> argument is what's referred to as a correlation structure class, although it has the appearance of a function. In the model <span class="style8">out1a</span> I specify the <span class="style22">corSpher</span> class that produces a spherical correlation structure. </li>
+  <li>The first argument to the <span class="style22">corSpher</span> class is a vector specifying initial values for the range and nugget (in a multiplicative sense). I use the same values, 30 and 0.4, that I used previously with the <span class="style1021">variofit</span> function.</li>
+  <li>The second argument is a one-sided formula that specifies the coordinates of the position vector of an observation.</li>
+  <li>The last argument is a Boolean value for the <span class="style22">nugget</span> argument that determines whether or not a nugget effect should be estimated.</li>
+</ul>
+<p>I next fit models for the remaining four spatial correlation structures that are available in the <span class="style19">nlme</span> package.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1b &lt;- update(gmodel2, corr=corExp(c(30,.4), form=~latitude+longitude, nugget=T))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1c &lt;- update(gmodel2, corr=corGaus(c(30,.4), form=~latitude+longitude, nugget=T))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1d &lt;- update(gmodel2, corr=corLin(c(30,.4), form=~latitude+longitude, nugget=T))</div>
+
+<span class="style24">  Error in `coef&lt;-.corSpatial`(`*tmp*`, value = value[parMap[, i]]) : <br>
+  &nbsp; NA/NaN/Inf in foreign function call (arg 1)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1e &lt;- update(gmodel2, corr=corRatio(c(30,.4), form=~latitude+longitude, nugget=T))</div>
+<p>The linear model failed to converge because the initial estimates were too far off. From our earlier graph it is clear that the range is much greater than 30 for a linear model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1d &lt;- update(gmodel2, corr=corLin(c(50,.4), form=~latitude+longitude, nugget=T))</div>
+<p>I compare the  models to the original model using AIC.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(gmodel2, out1a, out1b, out1c, out1d, out1e)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  gmodel2 60 1561.6218<br>
+  out1a&nbsp;&nbsp; 62 1370.7012<br>
+  out1b&nbsp;&nbsp; 62 1372.9227<br>
+  out1c&nbsp;&nbsp; 62 1369.8884<br>
+  out1d&nbsp;&nbsp; 62 1372.1547<br>
+out1e&nbsp;&nbsp; 62 1369.5714</span>
+<p>It's clear that all five models containing a spatial correlation structure are a huge improvement over the original model. In truth the rational quadratic correlation structure just edges out the Gaussian structure. We can compare these models to  the mean process models where we attempted to account for the spatial correlation by including  latitude and longitude as predictors.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model1, model2, model3, model4, model5)</div>
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+   model1 60.000000 1561.6218<br>
+   model2 62.000000 1459.6218<br>
+   model3 65.000000 1406.4373<br>
+   model4 71.007976 1388.0277<br>
+   model5 80.048944 1319.2952</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<p>The spatial correlation models clearly beat most of these models except for the last model that included a nonparametric smoother of both latitude and longitude.    </p>
+<p name="Variogram"><a name="Variogram"></a>Finally we need to assess whether the spatial correlation in the residuals that we initially detected has been eliminated by modeling the error process. We could extract the residuals from model <span class="style8">out1e</span>, <span class="style1021">cbind</span> them to the <span class="style8">latitude</span> and <span class="style8">longitude</span> variables, and run them through <span class="style19">geoR</span> again, but we can also use the <span class="style4">Variogram</span> function in the <span class="style19">nlme</span> package for this purpose. The<span class="style4"> Variogram</span>  function requires a model object, a formula specifying the spatial coordinates, and the type of residual to plot (here specified as <span class="style22">resType='n'</span> for normalized residuals that remove the modeled correlation structure from the residuals). The <span class="style4">Variogram</span> function has a plot method so I feed the output directly to the <span class="style1021">plot</span> function. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># plot variogram for the residuals original model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(Variogram(gmodel2, form=~latitude+longitude, maxDist=30, resType='n'))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#
+    plot variogram for residuals of final model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(Variogram(out1e, form=~latitude+longitude, resType='n'))</div><br>
+<table width="670" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td>(a) <img src="../../images/lectures/lecture32/fig7a.png" alt="fig 7a" width="305" height="275" align="texttop"><br></td>
+    <td>(b) <img src="../../images/lectures/lecture32/fig7b.png" alt="fig 7b" width="305" height="275" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 8</strong> (a) Semivariogram for residuals from an ordinary regression model in which the residuals are assumed to be uncorrelated. (b) Semivariogram for residuals from a regression model in which the residuals are given a spatial correlation structure (rational quadratic).</td>
+  </tr>
+</table>
+<p>Alternatively we can generate the same plot in <span class="style19">geoR</span>. To obtain the normalized residuals we need to add the <span class="style22">type='n' </span>argument to the <span class="style1021">residuals</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> newdat2 &lt;- data.frame(Wheat2$latitude, Wheat2$longitude, residuals(out1e, type='n'))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">geodat &lt;- as.geodata(newdat2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v2 &lt;- variog(geodat, uvec=1:30, max.dist=30, option='bin')</span></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(geodat.v2)</span></div><br>
+<table width="450" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture32/fig8.png" width="395" height="315" alt="fig 8"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 9 </strong>&nbsp;Semivariogram (from geoR) for regression residuals from a  model with a rational quadratic residual correlation structure</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+
+<p>Finally, we can verify that the Mantel test applied to the normalized residuals does not yield a significant result.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dist3 &lt;- dist(residuals(out1e, type='n'))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mantel(dist1, dist3)</div>
+
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist1, ydis = dist3) </span>
+<p><span class="style24">Mantel statistic r: 0.018497 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.211
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0295 0.0382 0.0489 0.0557 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<h2 align="left"><a name="cited"></a>Cited references</h2>
+<ul>
+  <li>Berk, Richard and Jan de Leeuw. 2006. Multilevel statistical models and ecological scaling. In: J. Wu, K. B. Jones, H. Li, and O. L. Loucks (eds). <em>Scaling and Uncertainty Analysis in Ecology: Methods and Applications</em>, Springer (pp. 67&ndash;88). Springer. </li>
+  <li>Pinheiro, J. C. and Bates, D. M. 2000. <em>Mixed-Effects Models in S and S-Plus</em>. Springer-Verlag, New York.</li>
+  <li>Stroup, W. W., P. S. Baenziger, and D. K. Mulitze. 1994. Removing spatial variation from wheat yield trials: a comparison of methods. <em>Crop Science</em> <strong>86</strong>: 62&ndash;66.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a></p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 31, 2012<br>
+      URL: <a href="lecture32.htm#lecture32" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture32.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

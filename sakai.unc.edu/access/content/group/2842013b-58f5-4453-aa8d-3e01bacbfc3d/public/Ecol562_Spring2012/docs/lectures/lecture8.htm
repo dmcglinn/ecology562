@@ -1,0 +1,796 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 8 (lab 3)&mdash;Friday, January 27, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style245 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style3 {color: #CC0000;
+	font-weight: bold;
+}
+.style101 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style161 {	color: #660033;
+	font-weight: bold;
+}
+.style191 {color: #009900; font-weight: bold; }
+.style12 {	color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style91 {	color: #3333CC;
+	font-weight: bold;
+}
+.style171 {	color: #993399;
+	font-weight: bold;
+}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style1911 {color: #339933;
+	font-weight: bold;}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+.style1011 {font-family: "Courier New", Courier, mono}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style411 {color: #CC0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture8" id="lecture8"></a>Lecture 8 (lab 3)&mdash;Friday, January 27, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture8.htm#overview">Overview</a></li>
+  <li><a href="lecture8.htm#likelihood">Likelihood of a Poisson model</a></li>
+  <li><a href="lecture8.htm#loglikelihood">The log-likelihood</a></li>
+  <li><a href="lecture8.htm#fixed">Poisson regression model with a fixed &lambda;</a>
+    <ul>
+      <li><a href="lecture8.htm#constructing">Constructing the log-likelihood</a></li>
+    <li><a href="lecture8.htm#graphing">Graphing the log-likelihood</a></li>
+    <li><a href="lecture8.htm#maximizing">Maximizing the log-likelihood numerically</a></li>
+  </ul>
+  </li>
+  <li><a href="lecture8.htm#NAP">Poisson regression model in which &lambda; varies with  NAP</a>
+    <ul>
+      <li><a href="lecture8.htm#identity">Fitting a model with an identity link</a></li>
+      <li><a href="lecture8.htm#log">Fitting a model with a log link</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture8.htm#fitting">Fitting Poisson models with the glm function</a>
+    <ul>
+      <li><a href="lecture8.htm#log2">Poisson regression with a log link</a></li>
+      <li><a href="lecture8.htm#identity2">Poisson regression with an identity link</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture8.htm#datagenerating">The Poisson regression model as a data-generating mechanism</a></li>
+  <li><a href="lecture8.htm#models">Poisson regression models</a></li>
+  <li><a href="lecture8.htm#comparing">Comparing the likelihoods of discrete and continuous probability models</a></li>
+  <li><a href="lecture8.htm#checking">Checking the fit of the Poisson  model</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+
+  <li><a href="lecture8.htm#asvector">as.vector</a> converts a matrix into a vector by stacking the columns of the matrix on top of each other.</li>
+  <li><a href="lecture8.htm#dpois">dpois</a> is the probability mass function of the Poisson distribution.</li>
+  <li><a href="lecture8.htm#expression">expression</a>  constructs mathematical text expressions for use as labels in graphs.</li>
+  <li><a href="lecture8.htm#fitted">fitted</a> when applied to a <span class="style102">glm</span> model object returns estimates of the mean for each observation on the scale of the raw response, i.e., it does what <span class="style102">predict</span> does but it then inverts the link function.</li>
+<li><a href="lecture8.htm#glm">glm</a> is the generalized linear model function.</li>
+<li><a href="lecture8.htm#list">list</a> concatenates objects of diverse types together as a single object.</li>
+  <li><a href="lecture8.htm#logLik">logLik</a> returns the log-likelihood of a fitted model.</li>
+  <li><a href="lecture8.htm#nlm">nlm</a> is a nonlinear minimization function of R.</li>
+  <li><a href="lecture8.htm#optim">optim</a> is another numerical optimization function of R. It offers  more optimization methods than does <span class="style12">nlm</span>.</li>
+  <li><a href="lecture8.htm#optimize">optimize</a> is a one-dimensional numerical optimization function of R.</li>
+  <li><a href="lecture8.htm#nls"></a><a href="lecture8.htm#sapply">sapply</a> is used to apply a function individually to the elements in a vector returning one value for each component of the vector. The result will be  a vector, a matrix, or a list of values.</li>
+  <li><a href="lecture8.htm#tfunc">t</a> is the matrix transpose function. It swaps the rows and columns of a matrix.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture8.htm#glm">family</a>= (argument to <strong class="style102">glm</strong>) specifies a member of the exponential family of distributions to use as the probability model for the response in a  generalized linear model.</li>
+  <li><a href="lecture8.htm#dpois">lambda</a>= (argument to <span class="style4">dpois</span>, <span class="style4">ppois</span>, etc.) is the mean of a Poisson distribution.</li>
+  <li><a href="lecture8.htm#link">link=</a> (argument to <span class="style102">glm</span> as part of the family argument) is used to specify the link function that connects the systematic and random components of a generalized linear model.</li>
+  <li><a href="lecture8.htm#start">start=</a> (argument to <span class="style102">glm</span>) is used to specify starting values for the parameters of a regression model.</li>
+  <li><a href="lecture8.htm#test">test='Chisq'</a> (argument to <span class="style102">anova</span>) carries out a likelihood ratio test (analysis of deviance). If <span class="style102">anova</span> is given only one model the  individual predictors are tested in the order they are specified in the model expression. If it is given two models that are nested, <span class="style102">anova</span> provides a LR test of whether the parameters that are contained in the larger model but omitted from the smaller model are different from zero.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture8.htm#datagenerating">scatterplot3d</a> (for <span class="style102">scatterplot3d</span>) is used to produce 3-dimensional scatter plots.</li>
+</ul>
+<h2><a name="overview"></a>Overview of today's lab</h2>
+<p>Today we continue our discussion of maximum likelihood estimation by using it to obtain parameter estimates of a  Poisson regression model. We start by constructing the likelihood from first principles, then plot the log-likelihood to determine the maximum likelihood estimate (MLE) graphically, and finally use R's  optimization functions to obtain the estimate numerically. Poisson regression models can also be fit using the <span class="style102">glm</span> function of R. The <span class="style102">summary</span>, <span class="style102">anova</span>, <span class="style102">coef</span>, and <span class="style102">predict</span> functions when used on <span class="style102">glm</span> objects  produce output similar to what we obtained using <span class="style102">lm</span>.  To compare  Poisson regression models to  their normal regression model counterparts we use three-dimensional graphics and analytical methods. Finally a graphical method is used to assess the fit of a Poisson regression model.</p>
+<h2><a name="likelihood" id="likelihood"></a>Likelihood of a Poisson model</h2>
+<p>The Rikz data set is a supposedly random sample of  <em>m</em> = 45 sites  that we've used to construct regression models for species richness at the sites.  When we regressed richness against NAP we saw problems with the underlying assumption that the response variable is normally distributed about the regression line with constant variance. In particular the model predicted that at large NAP values, but still within the range of the data, there is a  sizable probability for    richness    values generated by the model to be negative.</p>
+<p>The problem with using a normal distribution for these data is that it doesn't respect the natural characteristics of the data. A normally distributed response is a continuous variable but richness can assume only non-negative integer values. An alternative probability model that is often used with count data is the Poisson distribution whose probability mass function is</p>
+<p align="center"><img src="../../images/lectures/lecture8/poisson.gif" width="152" height="55" alt="Poisson"></p>
+<p>In R the Poisson probability mass function is given by <span class="style1">dpois(x, lambda)</span>.  </p>
+<p>In <a href="lecture7.htm#constructing">lecture 7</a> we showed  that if we have a random sample then the joint probability of our data can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture8/randomsamp.gif" width="398" height="125" alt="random sample"></p>
+<p>Plugging Poisson probabilities into our expression for the joint probability yields the following. </p>
+<p align="center"><img src="../../images/lectures/lecture8/probmodel.gif" width="487" height="190" alt="Poisson model"></p>
+<p>where in the last step  the joint probability is denoted by <em>f</em>, a function of the data (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , <i>x<sub>m</sub></i>) as well as the Poisson parameter  &lambda;. If we knew &lambda; then we could calculate the probability of obtaining any set of observed values <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , <i>x</i><i><sub>m</sub></i>. Furthermore, for fixed &lambda; if we summed this expression over all possible values of <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , <i>x<sub>m</sub></i> we would get 1, because<em> f</em> is a probability function.</p>
+<p>In Poisson regression we typically model the rate parameter &lambda; of the Poisson distribution in terms of predictors. For reasons we'll explain later the preferred approach is to model log &lambda; rather than &lambda;.</p>
+<p align="center"><img src="../../images/lectures/lecture8/log&#32;lambda.gif" width="215" height="62" alt="log lambda"></p>
+<p>So under this scenario the probability of our data would be the following.</p>
+<p align="center"><img src="../../images/lectures/lecture8/pois&#32;regression.gif" width="465" height="57" alt="Poisson regression"></p>
+<p>where <em>x<sub>i</sub></em> is the observed species richness in sample <em>i</em>.</p>
+<p>Typically when using a probability distribution such as the Poisson we think of the parameters as fixed and the data as random. Given fixed values of the parameters, the Poisson formula returns the probability of obtaining a specific data value. In likelihood theory we turn these roles around. We view the data as fixed (after all, it's been collected so it's no longer random) and the parameters as random. To emphasize this in the Poisson example we could write the probability of our data as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture8/likelihood.gif" width="522" height="32" alt="likelihood"></p>
+<p align="left">where we now use the symbol <em>L</em> instead of <em>f</em> and we switch the order of its arguments. Viewed this way<em> L</em> is not a  a probability. For fixed data if we sum over all possible values of &lambda; we will not get 1. So when we think of the probability function as a function of the parameters rather than a function of the data we call it a likelihood. If we plug in values for &lambda; we get different values for the likelihood. Keep in mind that fundamentally it is still the joint probability function for our data under the assumed probability model, only by another name. </p>
+<p align="left">From a likelihood perspective a natural question to ask is the following, is there a value of &lambda; at which the likelihood achieves a maximum? Or, put another way, is there a value of &lambda; that makes obtaining the data we actually obtained most probable? In terms of our regression problem above we seek the values of &beta;<sub>0</sub> and &beta;<sub>1</sub> that make it most likely to obtain the data we actually obtained. We call those parameter values the maximum likelihood estimates (MLEs) of the parameters, because they maximize the likelihood. One of R. A. Fisher's major contributions to statistics (among many) was to realize that the likelihood function  is a vehicle for obtaining parameter estimates. </p>
+<h2 align="left"><a name="loglikelihood"></a>The log-likelihood</h2>
+<div class="figureR1">
+  <p align="center"><img src="../../images/lectures/lecture8/logplot.png" width="287" height="195" alt="log">
+  <p  class="styleArial" style="padding-left: 30px; text-indent:-45px"> <strong>Fig. 1</strong> &nbsp;Monotonicity of the logarithm function</p>
+</div>
+<p align="left">For both practical and theoretical reasons it is preferable to work with the log of the likelihood rather than the likelihood itself. Because the logarithm of a product is the sum of the logs, the log-likelihood has a simpler form than does the likelihood.</p>
+<p align="center"><img src="../../images/lectures/lecture8/loglike1.gif" width="323" height="58" alt="log likelihood 1"></p>
+<p align="left">or for our Poisson example</p>
+<p align="center"><img src="../../images/lectures/lecture8/loglike2.gif" width="363" height="58" alt="log-likelihood 2"></p>
+<p align="left">If our goal is to find the values of the parameters that maximize the likelihood, then nothing is lost if we choose to maximize the log-likelihood instead. This is because the logarithm function is a monotone increasing function. In other words if <em>x</em><sub>1</sub> &lt; <em>x</em><sub>2</sub> it also must be the case that log(<em>x</em><sub>1</sub>) &lt; log(<em>x</em><sub>2</sub>), and vice versa (Fig. 1). Consequently in our Poisson example the monotonicity of the logarithm function means that the value of &lambda; that maximizes log<em> L</em> is also the value of &lambda; that maximizes <em>L</em>.</p>
+<h2 align="left"><a name="fixed" id="fixed"></a>Poisson regression model with a fixed &lambda; </h2>
+<h3><a name="constructing" id="constructing"></a>Constructing the log-likelihood</h3>
+<p> We begin by loading the Rikz data set and refitting some of the normal models from before.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> rikz$richness &lt;- apply(rikz[,2:76], 1, function(x) sum(x&gt;0))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">mod1 &lt;- lm(richness~NAP, data=rikz)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">mod2 &lt;- lm(richness~NAP + factor(week), data=rikz)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">mod3 &lt;- lm(richness~NAP * factor(week), data=rikz)</div>
+<p> <a name="dpois"></a>The Poisson distribution is a standard model for non-negative discrete data (counts). The Poisson distribution is defined by a single parameter called the rate of the process that is generally denoted by the Greek letter &lambda;. We start with a simple Poisson model in which we assume a constant value for &lambda;. This is equivalent to a regression model in which we fit only an intercept. </p>
+<p>The expression for the Poisson log-likelihood given at the end of the last  section can be translated directly into R language as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL &lt;- function(x) sum(log(dpois(rikz$richness, lambda=x))) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<p>The <span class="style4">dpois</span> function is listable. Thus for a fixed value of &lambda; we can obtain the probabilities for all of our richness observations at once. Let's  study the behavior of the log-likelihood for different values for &lambda;. </p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(2)</div>
+ <span class="style24"> [1] -262.4898</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(3)</div>
+  <span class="style24">[1] -203.6908</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(4)</div>
+ <span class="style24"> [1] -175.0442</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(5)</div>
+ <span class="style24"> [1] -162.9194</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(6)</div>
+ <span class="style24"> [1] -161.2451</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(7)</div>
+<span class="style24">[1] -166.7825</span>
+<p>Remember our goal is to maximize the log-likelihood. Because we are dealing with probabilities the log-likelihood is negative and so we're looking for the least negative value of the log-likelihood.  Thus if we had to pick a value for &lambda; among the six we've examined so far, we should choose &lambda; = 6, because it produced the largest value of the log-likelihood. If  the log-likelihood is well-behaved then it would seem that the log-likelihood is maximized somewhere between &lambda; = 5 and &lambda; = 7.</p>
+<p>What happens if we try to evaluate our function on a vector of values? </p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(4:5)</div>
+<span class="style24">[1] -169.5975</span>
+<p>It returns a single number that is neither the log-likelihood at &lambda; = 4 nor the log-likelihood at &lambda; = 5. What gives? In the <span class="stylecayenne">Poisson.LL</span> function <span class="style4">dpois</span> is given a vector first argument, <span class="style1011">rikz$richness</span>, that is of length 45. With <span class="style1">4:5</span> we are passing a vector of length 2 to <span class="style4">dpois</span> for its second argument <span class="style22">lambda</span>. When a listable R function is given two vector arguments of different lengths it tries to match them up and, if necessary, it recycles the values of the shorter one until it is the same length as the longer one. Thus R creates the vector 4, 5, 4, 5, ...  and uses this for its <span class="style22">lambda</span> argument. As a result we get the log Poisson probability of the first observation using <span class="style22">lambda = 4</span>, the log Poisson probability of the second observation using <span class="style22">lambda = 5</span>, the log Poisson probability of the third observation using <span class="style22">lambda = 4</span>, etc. The values of <span class="style22">lambda</span> alternate between 4 and 5 each time and the result is nonsensical expression. </p>
+<p name="sapply"><a name="sapply"></a>The solution to this is to force R to use each element of the <span class="style22">lambda</span> argument once for all the values of <span class="style1">rikz$richness</span> before moving onto the next element of <span class="style22">lambda</span>. The <span class="style4">sapply</span> function can be used to do this. The <span class="style4">sapply</span> function will force the function that is given as its second argument to be evaluated separately for each element of its first argument.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(4)</div>
+ <span class="style24"> [1] -175.0442</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL(5)</div>
+ <span class="style24"> [1] -162.9194</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(4:5, Poisson.LL)</div>
+<span class="style24">[1] -175.0442 -162.9194 </span>
+<p>Now we get what we want: the log-likelihood evaluated once for &lambda; = 4 and a second time for &lambda; = 5.</p>
+<h3><a name="graphing"></a>Graphing the log-likelihood </h3>
+<div class="figureR">
+  <p align="center"><img src="../../images/lectures/lecture8/fig2.png" width="325" height="260" alt="fig. 2">
+  <p align="center" class="styleArial"> <strong>Fig. 2</strong> &nbsp;Plot of the log-likelihood function</p>
+</div
+>
+<p>To graph the log-likelihood we can evaluate our function on a whole list of possible values of &lambda; and then plot the results against &lambda;. For example to plot over the domain 4 &le; &lambda; &le; 7, we could first generate &lambda; in increments of 0.01 with <span class="style1011">seq(4,7,.01)</span> to use as the <em>x</em>-coordinates and then <span class="style4">sapply</span> the Poisson log-likelihood function to this vector of numbers to generate the corresponding function values for the <em>y</em>-coordinates.</p>
+<p  style="padding-left: 30px; text-indent:-30px"><span class="style10">plot(seq(4, 7, .01), sapply(seq(4, 7, .01), Poisson.LL), type='l', ylab='Log-likelihood', xlab=expression(lambda))</span></p>
+<ul>
+  <li><span class="style4">seq</span> here generates the numbers 4, 4.01, 4.02, etc. until the number 7 is reached. The syntax is <span class="style4">seq(</span><span class="style22">from=, to=, by=</span><span class="style4">)</span>.</li>
+  <li>The use of <span class="style22">type='l'</span> causes the plotted points to be connected with line segments (<span class="style22">'l' </span>is the first letter in 'line') while suppressing the plotting of the points themselves.</li>
+  <li><a name="expression"></a>R supports mathematical expressions and Greek letters in text and labels. These are typically invoked with the <span class="style4">expression</span> function. The Greek letters are referenced by their English equivalent: alpha, beta, etc. Notice that lambda is not quoted when given as an argument to <span class="style4">expression</span>. </li>
+</ul>
+<p><a name="seq"></a><a name="par"></a>From Fig. 2 we see that the maximum of the log-likelihood occurs somewhere between 5.5 and 6.0. </p>
+<h3><strong><a name="maximizing" id="maximizing"></a>Maximizing the log-likelihood numerically </strong></h3>
+<p name="nlm"><span class="style4"><a name="optimize" id="optimize"></a></span> Clearly we could repeatedly zoom in on the MLE graphically and obtain an estimate that is as accurate as we please, but such an approach is tedious and unwieldy. It is far more efficient  to obtain the estimate using  numerical optimization. R provides three numerical optimization functions that are useful here, <span class="style4">nlm</span>, <span class="style4">nlminb</span>, and <span class="style4">optim</span> (including its one-dimensional version <span class="style4">optimize</span>). Since the current problem is one-dimensional we use <span class="style4">optimize</span>. The help screen for <span class="style4">optimize</span> indicates that we need to specify three arguments: the function to optimize, an interval over which to search for the optimum value, and the argument <span class="style22">maximum=T</span> to indicate that we want a maximum value rather than a minimum value. Since we've already seen that the interval (4, 7) brackets the maximum we use this interval as the search interval.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> optimize(Poisson.LL, c(4,7), maximum=T)</div>
+<span class="style24">  $maximum<br>
+  [1] 5.688883</span>
+<p><span class="style24">$objective<br>
+  [1] -160.8757</span>
+<p name="nlm">The reported maximum value of the log-likelihood is &ndash;160.88 and it occurs at &lambda; = 5.69.</p>
+<h2 align="left"><span class="style31"><a name="NAP" id="NAP"></a></span>Poisson regression model in which &lambda; varies with NAP</h2>
+<h3><a name="identity" id="identity"></a>Fitting a Poisson regression model with an identity link</h3>
+<p>One  change we can make to the current model is to allow each site to have its own rate parameter. We begin by letting the Poisson parameter &lambda; vary with a site's value of NAP. Because the rate parameter is also the mean of the Poisson distribution this is equivalent to constructing a regression model for the mean. </p>
+<p align="center"><img src="../../images/lectures/lecture8/identitylink.gif" width="133" height="27" alt="identity link"></p>
+<p>The function for constructing the log-likelihood under this scenario is displayed below. It's a multi-lined function in which the first line defines the Poisson mean and  the second line then uses it as the <span class="style22">lambda</span> argument of the <span class="style102">dpois</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">Poisson.LL2 &lt;- function(x) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">mu &lt;- x[1] + x[2]*rikz$NAP</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">sum(log(dpois(rikz$richness, lambda=mu)))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>The optimization functions of R only accepts single parameter arguments. In order to fit models with multiple parameters we must make these parameters  the components of a vector. Here the vector is denoted by <strong>x</strong> and it  has length  2.  The first component x[1] is the intercept  and the second component x[2] is the slope in the regression equation. As a result when we use this function we have to supply it a vector of length 2.</p>
+<p><a name="tapply"></a>In order to use the optimization functions of R to obtain the MLE we first need initial estimates of the components of <strong>x</strong>. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL2(c(1,-2))</div>
+<span class="style24">  [1] NaN<br>
+  Warning message:<br>
+In dpois(x, lambda, log) : NaNs produced</span>
+<p>This choice apparently produced some illegal values for the Poisson parameter &lambda;. The reason this happened is because we are using an identity link which offers no protection against the parameter being negative. A log link would be a better choice here. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL2(c(7,-2))</div>
+<span class="style24">  [1] -132.2094</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL2(c(7,-3))</div>
+<span class="style24">  [1] -122.5027</span>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> Poisson.LL2(c(6,-3))</div>
+<span class="style24">  [1] NaN<br>
+  Warning message:<br>
+In dpois(x, lambda, log) : NaNs produced</span>
+<p>Because (7, &ndash;3) yields a larger log-likelihood than (7, &ndash;2) we use its components for the  starting values. </p>
+<p>All of the R optimization functions carry out <u>minimization</u> instead of maximization. Thus in order for us to be able to use them we need to change the way we've been formulating the problem. Since maximizing a function <span class="style1011">f</span> is equivalent to minimizing a function <span class="style1011">&ndash;f</span>, we need to re-express our objective function so that it returns the negative log-likelihood rather than the log-likelihood. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">neg.LL &lt;- function(x) -Poisson.LL2(x)</div>
+<p><a name="optim"></a>The <span class="style102">optim</span> function expects a vector of initial guesses as the first argument and the function to be minimized as the second argument.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> optim(c(7,-3), neg.LL)</div>
+<span class="style24">$par<br>
+[1]&nbsp; 6.693066 -2.888178</span>
+<p><span class="style24">$value<br>
+  [1] 122.2139</span>
+<p><span class="style24">$counts<br>
+  function gradient <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA </span>
+<p><span class="style24">$convergence<br>
+  [1] 0</span>
+<p><span class="style24">$message<br>
+  NULL</span>
+<p><span class="style24">Warning messages:<br>
+  1: In dpois(x, lambda, log) : NaNs produced<br>
+  2: In dpois(x, lambda, log) : NaNs produced<br>
+  3: In dpois(x, lambda, log) : NaNs produced<br>
+  4: In dpois(x, lambda, log) : NaNs produced<br>
+  5: In dpois(x, lambda, log) : NaNs produced</span>
+<p>The output tells us the following. </p>
+<ol>
+  <li>The MLEs of  the regression parameters are &beta;<sub>0</sub> = 6.693, &beta;<sub>1</sub> = &ndash;2.888</li>
+  <li>The value of the negative log-likelihood at the minimum is 122.2139</li>
+  <li>49 calls were made to the <span class="stylecayenne">neg.LL</span> function. There were no calls made to the gradient because by default <span class="style102">optim</span> used a finite-difference approximation for the gradient.</li>
+  <li>The help screen tell us that <span class="styleArial">convergence=0</span> means a <span class="styleArial">&quot;successful completion.&quot;</span></li>
+  <li>The warning messages that appear at the end of the output will be explained below. </li>
+</ol>
+<p><a name="nlm"></a>A second optimization function in R is the <span class="style102">nlm</span> function. It also does minimization but it expects the arguments to be in the reverse order from <span class="style102">optim</span>: first the function to be minimized and second the initial guesses for the parameters in the form of a vector.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> nlm(neg.LL, c(7,-3))</div>
+<span class="style24">  $minimum<br>
+[1] 122.2139</span>
+<p><span class="style24">$estimate<br>
+  [1]&nbsp; 6.693129 -2.888344</span>
+<p><span class="style24">$gradient<br>
+  [1] -7.237990e-06 -5.018472e-06</span>
+<p><span class="style24">$code<br>
+  [1] 1</span>
+<p><span class="style24">$iterations<br>
+  [1] 8</span>
+<p><span class="style24">Warning messages:<br>
+  1: In dpois(x, lambda, log) : NaNs produced<br>
+  2: In nlm(neg.LL, c(7, -3)) : NA/Inf replaced by maximum positive value<br>
+  3: In dpois(x, lambda, log) : NaNs produced<br>
+  4: In nlm(neg.LL, c(7, -3)) : NA/Inf replaced by maximum positive value</span>
+<p>The output tells us the following. </p>
+<ol>
+  <li>The value of the negative log-likelihood at the minimum is 122.2139</li>
+  <li>The MLEs of  the regression parameters are &beta;<sub>0</sub> = 6.693, &beta;<sub>1</sub> = &ndash;2.888</li>
+  <li>The value of the gradient at the MLE is very small. This is what we want. The gradient is the  derivative of the log-likelihood, which from calculus we know should be zero at a maximum or a minimum. Thus the fact that the reported value of the gradient  is very close to zero  encourages us to believe that <span class="style411">nlm</span> has found a solution (although there's no guarantee that it's the global minimum that we seek).</li>
+  <li>The help screen tell us that <span class="styleArial">code=1</span> means <span class="styleArial">&quot;relative gradient is close to zero, current iterate is probably solution.&quot;</span></li>
+  <li>It took 8 iterations of the numerical algorithm to  converge.</li>
+  <li>The warning messages tell us that in the process of searching for the minimum, the function encountered  illegal values that caused it to return a value of NA, or missing. Apparently the algorithm then recovered from this. </li>
+</ol>
+<p>The warning messages indicate that problems arose during the iterations but that both  <span class="style411">optim</span> and <span class="style411">nlm </span>managed to recover from them. These problems occurred because we fit a model using an identity link, which failed to  prevent the Poisson mean from becoming negative. To correct this we refit the same model using a log link.</p>
+<h3><a name="log" id="log"></a>Fitting  a Poisson model using a log link</h3>
+<p>To improve numerical stability and prevent the iterations from generating illegal values for the Poisson mean, we rewrite the log-likelihood function using a log link. With a log link the regression model  is</p>
+<p align="center"><img src="../../images/lectures/lecture8/loglink.gif" width="162" height="27" alt="loglink"></p>
+<p>The corresponding R function is the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">Pois.LL3 &lt;- function(x) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  loglambda &lt;- x[1] + x[2]*rikz$NAP</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">sum(log(dpois(rikz$richness, exp(loglambda)))) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>Notice that  the log link is exponentiated when it's entered as the second argument to <span class="style102">dpois</span>. As before we need to experiment with the function to obtain good starting values for the parameters.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Pois.LL3(c(2,.5))</div>
+<span class="style24">  [1] -303.0112</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> Pois.LL3(c(2,.25))</div>
+<span class="style24">  [1] -220.8275</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">Pois.LL3(c(3,.25))</div>
+<span class="style24">[1] -607.407</span>
+<p>The largest value of the log-likelihood is obtained with &beta;<sub>0</sub> = 2, &beta;<sub>1</sub> = 0.25 so we can use these as our initial guesses. This time  we construct the negative log-likelihood function on the fly using a generic function as the second argument to <span class="style102">optim</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> optim(c(2,.25), function(x) -Pois.LL3(x))</div>
+<span class="style24">$par<br>
+[1]&nbsp; 1.7910256 -0.5561581</span>
+<p><span class="style24">$value<br>
+  [1] 127.5904</span>
+<p><span class="style24">$counts<br>
+  function gradient <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 57&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NA </span>
+<p><span class="style24">$convergence<br>
+  [1] 0</span>
+<p><span class="style24">$message<br>
+  NULL</span>
+<p>Now we get numerical convergence without any warning messages. The solution this time is  &beta;<sub>0</sub> = 1.791, &beta;<sub>1</sub> = &ndash;0.556.</p>
+
+
+<h2 align="left"><a name="fitting"></a><a name="glm"></a>Fitting Poisson models with the glm function</h2>
+<p align="left">Regression models in which  the response has a Poisson distribution  are easily fit with the <span class="style102">glm</span> function of R. The <span class="style102">glm</span> function supports  additional probability distributions for the response besides the Poisson. These distributions are connected in that they are all members of what's called the exponential family of probability distributions. We'll discuss some of these other distributions later.</p>
+<h3 align="left"><a name="log2"></a>Poisson regression with a log link</h3>
+<p align="left"><a name="family"></a>The syntax of <span class="style102">glm</span> is identical to that of <span class="style102">lm</span> except that <span class="style102">glm</span> accepts an  optional <span class="style22">family</span> argument that  can be used to specify the desired probability distribution. If   the <span class="style22">family</span> argument is not specified then <span class="style102">glm</span>  uses a normal distribution. To fit a Poisson regression model with richness as the response and NAP as the predictor we would proceed as follows. A log link for the mean is the default in Poisson regression and doesn't have to be specifically requested.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # log link is the default</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod1p &lt;- glm(richness~NAP, data=rikz, family=poisson)</div>
+<p align="left"><a name="test"></a>The <span class="style102">summary</span> and <span class="style102">anova</span> functions can be used on a <span class="style102">glm</span> object to obtain statistical tests. For <span class="style102">anova</span> we need to specify an additional argument, <span class="style22">test='Chisq'</span>, in order to get <em>p</em>-values for the reported statistical tests.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod1p, test='Chisq')</div>
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model: poisson, link: log</span>
+<p><span class="style24">Response: richness</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp; 179.75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp;&nbsp; 1&nbsp;&nbsp; 66.571&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp; 113.18 </span><span class="style25">3.376e-16</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(mod1p)</div>
+<span class="style24">Call:<br>
+  glm(formula = richness ~ NAP, family = poisson, data = rikz)</span>
+<p><span class="style24">Deviance Residuals: <br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max&nbsp; <br>
+  -2.2029&nbsp; -1.2432&nbsp; -0.9199&nbsp;&nbsp; 0.3943&nbsp;&nbsp; 4.3256&nbsp; </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp; 1.79100 &nbsp;&nbsp;&nbsp;0.06329&nbsp; 28.297&nbsp; &lt; 2e-16 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.55597&nbsp;&nbsp;&nbsp; 0.07163&nbsp; -7.762 </span><span class="style25">8.39e-15</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">(Dispersion parameter for poisson family taken to be 1)</span>
+<p><span class="style24">&nbsp;&nbsp;&nbsp; Null deviance: 179.75&nbsp; on 44&nbsp; degrees of freedom<br>
+  Residual deviance: 113.18&nbsp; on 43&nbsp; degrees of freedom<br>
+  AIC: 259.18</span>
+<p><span class="style24">Number of Fisher Scoring iterations: 5</span>
+<p align="left">From the output we learn that the estimated regression equation is  log &mu; = 1.791 &ndash; 0.556*NAP. This matches what we obtained with the <span class="style102">optim</span> function in the previous section. </p>
+<p align="left">Although some of the language used in the output will appear strange, e.g., use of the word 'deviance', the output itself should seem familiar. The <span class="style102">anova</span> function carries out a sequence of tests on nested models whereas the summary table reports variables-added-last tests. Formally, the <span class="style102">anova</span> output reports the results from likelihood ratio tests (analogous to the <em>F</em>-tests of ordinary regression) whereas the <span class="style102">summary</span> table reports the results from Wald tests (analogous to the <em>t</em>-tests of ordinary regression). In ordinary regression  the <em>t</em>-tests and <em>F</em>-tests are mathematically related and when they are testing the same hypothesis they give the same results. In the likelihood framework, the likelihood ratio tests and Wald tests are constructed from different assumptions and will typically give different results even when they are testing the same hypothesis. This is the case in the above tables where both are testing the hypothesis H<sub>0</sub>: &beta;<sub>1</sub> = 0, but the reported <em>p</em>-values are slightly different.</p>
+<h3 align="left"><a name="link"></a><a name="identity2" id="identity2"></a>Poisson regression with an identity link</h3>
+<p align="left">To fit a Poisson regression model with an identity link we need to specify the <span class="style22">link</span> as part of the <span class="style22">family</span> argument.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod1p1 &lt;- glm(richness~NAP, data=rikz, family=poisson(link=identity))</div>
+<span class="style24">  Error: no valid set of coefficients has been found: please supply starting values<br>
+  In addition: Warning message:<br>
+In log(ifelse(y == 0, 1, y/mu)) : NaNs produced</span>
+<p align="left"><a name="start"></a>The model returns an error message because the built-in algorithm  generated starting values that caused problems for the optimization routine. This situation is not unusual when using link functions that are different from the default. We need to supply our own initial values just as we did with the <span class="style102">optim</span> function. For <span class="style102">glm</span> these are supplied in a <span class="style22">start</span> argument.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod1p1 &lt;- glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(6,-3))</div>
+<span class="style24">Error: cannot find valid starting values: please specify some</span>
+<p align="left">The values supplied didn't work so we try again.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod1p1 &lt;- glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(2,-.1))</div>
+<p align="left">Curiously these starting values worked even though they are much farther away from the final solution than the first choice of 6 and &ndash;3 are.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(mod1p1)</div>
+<span class="style24">  (Intercept)         NAP <br>
+6.693128   -2.888328 </span>
+<p align="left">If we give it starting values very close to the true solution it also converges to a solution.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod1p1 &lt;- glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(6.7,-2.9))</div>
+<p align="left">From the output of the <span class="style102">coef</span> function, the estimated regression model  with an identity link is the following: &mu; = 6.693 &ndash; 2.888*NAP.</p>
+<p align="left"><a name="logLik"></a>We can compare the log-likelihoods of the two models we've fit, one using a log link and the other using an identity link, and see  which model makes the data more probable. The <span class="style102">logLik</span> function of R extracts log-likelihoods from <span class="style102">glm</span> objects.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(mod1p)</div>
+ <span class="style24"> 'log Lik.' -127.5904 (df=2)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(mod1p1)</div>
+ <span class="style24"> 'log Lik.' -122.2139 (df=2)</span>
+<p><a name="list"></a>The log-likelihood of the Poisson model with an identity link is larger suggesting it provides a better fit to the data. To extract the log-likelihoods of both models with a single function call we need to use the <span class="style102">sapply</span> function and the <span class="style102">list</span> function to group the two models together.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(mod1p, mod1p1), logLik)</div>
+<p class="style24">[1] -127.5904 -122.2139</p>
+<p>The <span class="style102">predict</span> function when applied to a <span class="style102">glm</span> object returns predictions on the scale of the link function. So when we apply it to the <span class="style102">glm</span> model object <span class="stylecayenne">mod1p</span> in which we used a log link, it returns estimates of log &mu; for each observation.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # predict returns predictions on scale of link function</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(mod1p)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 <br>
+  1.7659782 2.3669856 2.5337777 1.4485173 2.1712829 1.1293885 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12 <br>
+  1.3350987 1.4379538 1.7570827 2.5326658 2.3336272 0.9603726 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18 <br>
+  1.9027477 2.0589763 1.6981495 0.8080358 1.8076763 1.5352492 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24 <br>
+  1.0309812 2.2418916 1.1699746 2.0706517 1.3856923 0.8864281 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 <br>
+  1.7609745 2.1123498 1.9844758 0.5556238 2.2874814 1.3651213 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36 <br>
+  1.3000724 0.7980283 1.0265334 1.8243555 1.5869548 0.8619653 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42 <br>
+  1.9994871 2.3497505 1.6964815 0.6501393 1.9889236 1.7387355 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45 <br>
+  1.7921090 0.5372767 1.3100799 </span>
+<p><a name="fitted"></a>To obtain estimates of &mu; we can just exponentiate these values, or alternatively, use the <span class="style102">fitted</span> function. The <span class="style102">fitted</span> function returns predictions on the scale of the response, i.e., it also inverts the link function.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # fitted returns predictions on scale of original variable</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fitted(mod1p)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 <br>
+  &nbsp;5.847290 10.665195 12.601019&nbsp; 4.256798&nbsp; 8.769528&nbsp; 3.093764 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12 <br>
+  &nbsp;3.800371&nbsp; 4.212068&nbsp; 5.795505 12.587015 10.315290&nbsp; 2.612670 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18 <br>
+  &nbsp;6.704291&nbsp; 7.837942&nbsp; 5.463827&nbsp; 2.243497&nbsp; 6.096265&nbsp; 4.642482 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24 <br>
+  &nbsp;2.803816&nbsp; 9.411116&nbsp; 3.221911&nbsp; 7.929990&nbsp; 3.997593&nbsp; 2.426447 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 <br>
+  &nbsp;5.818104&nbsp; 8.267645&nbsp; 7.275233&nbsp; 1.743028&nbsp; 9.850098&nbsp; 3.916198 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36 <br>
+  &nbsp;3.669562&nbsp; 2.221157&nbsp; 2.791373&nbsp; 6.198798&nbsp; 4.888839&nbsp; 2.367809 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42 <br>
+  &nbsp;7.385267 10.482953&nbsp; 5.454721&nbsp; 1.915808&nbsp; 7.307664&nbsp; 5.690144 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45 <br>
+  &nbsp;6.002098&nbsp; 1.711340&nbsp; 3.706470</span> 
+<h2 align="left"><a name="datagenerating"></a>The Poisson regression model as a data-generating mechanism</h2>
+<p align="left">In lecture 7 we generated a three-dimensional picture of the normal regression model and saw that the normal model had some problems with it. It would be useful to produce the same graph for the two Poisson models that we've considered,  a model with a log link and a model with an identity link, and see how they compare. For that we need to make only trivial modifications to the code from <a href="lecture7.htm#visualizing">lecture 7</a>. The code is shown below with the changes highlighted in <span class="style40">blue</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mu &lt;- <span class="style42">exp(</span>predict(<span class="style42">mod1p</span>, newdata=data.frame(NAP=c(-1.5,0,1,2)))<span class="style42">)</span></div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> y1 &lt;- <span class="style42">seq(0,20,1)</span></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x1a &lt;- rep(-1.5, length(y1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x1b &lt;- rep(0, length(y1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x1c &lt;- rep(1, length(y1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x1d &lt;- rep(2, length(y1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> z1a &lt;- <span class="style42">dpois(y1, mu[1])</span></div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> z1b &lt;- <span class="style42">dpois(y1, mu[2])</span></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  z1c &lt;- <span class="style42">dpois(y1, mu[3])</span></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  z1d &lt;- <span class="style42">dpois(y1, mu[4])</span></div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> x &lt;- c(x1a, x1b, x1c, x1d)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  y &lt;- c(y1, y1, y1, y1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  z &lt;- c(z1a, z1b, z1c, z1d)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(scatterplot3d)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  q1 &lt;- scatterplot3d(x, y, z, 
+xlim=c(-1.5, 2), ylim=c(0, 20),  type=&quot;n&quot;, 
+xlab=&quot;NAP&quot;,  zlab=&quot;Density&quot;, 
+box=FALSE, ylab='Richness')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1a, y1, z1a, <span class="style42">type='h'</span>, cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1b, y1, z1b, <span class="style42">type='h'</span>, cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1c, y1, z1c, <span class="style42">type='h'</span>, cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1d, y1, z1d, <span class="style42">type='h'</span>, cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mu2 &lt;- <span class="style42">exp(</span>predict(mod1p, newdata=data.frame(NAP=seq(-1.5,2,.1)))<span class="style42">)</span></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(seq(-1.5,2,.1), mu2, rep(0,length(mu2)), type='l', lwd=2)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture8/fig4a.png" width="480" height="210" alt="fig 4a"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3</strong> &nbsp;Poisson regression model using a log link</td>
+  </tr>
+</table>
+<p align="left">The distributions are plotted as bar graphs rather than curves because the Poisson distribution is only defined at non-negative integer values. Observe how the regression &quot;line&quot; curves around and comes in asymptotic to the NAP-axis. Notice also that when the Poisson mean is far removed from zero, the Poisson distribution is symmetric (e.g., at NAP = &ndash;1.5), but as the mean gets closer to zero the Poisson distribution becomes positively skewed. </p>
+<p align="left">To produce this graph for the Poisson model with an identity link requires only changing the expressions for <span class="stylecayenne">mu</span> and <span class="stylecayenne">mu2</span> in the above code.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># redo graph for identity link model</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> # open up new window
+</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> windows() <span class="style15"># quartz() on Mac</span></div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  mu &lt;- <span class="style42">predict(mod1p1</span>, newdata=data.frame(NAP=c(-1.5,0,1,2))<span class="style42">)</span></div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  y1 &lt;- seq(0,20,1)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  x1a &lt;- rep(-1.5, length(y1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  x1b &lt;- rep(0, length(y1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  x1c &lt;- rep(1, length(y1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  x1d &lt;- rep(2, length(y1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  z1a &lt;- dpois(y1, mu[1])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  z1b &lt;- dpois(y1, mu[2])</div>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px"> z1c &lt;- dpois(y1, mu[3])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  z1d &lt;- dpois(y1, mu[4])</div>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px"> x &lt;- c(x1a, x1b, x1c, x1d)</div>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px"> y &lt;- c(y1, y1, y1, y1)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  z &lt;- c(z1a, z1b, z1c, z1d)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  library(scatterplot3d)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  q1 &lt;- scatterplot3d(x,y,z, 
+xlim=c(-1.5, 2), ylim=c(0, 20),  type=&quot;n&quot;, 
+xlab=&quot;NAP&quot;,  zlab=&quot;Density&quot;, 
+box=FALSE, ylab='Richness')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1a, y1, z1a, type='h', cex=.8)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1b, y1, z1b, type='h', cex=.8)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1c, y1, z1c, type='h', cex=.8)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(x1d, y1, z1d, type='h', cex=.8)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">mu2 &lt;- <span class="style42">predict(mod1p1</span>, newdata=data.frame(NAP=seq(-1.5,2,.1))<span class="style42">)</span></div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#add regression line</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">q1$points3d(seq(-1.5,2,.1), mu2, rep(0,length(mu2)), type='l', lwd=2)</div><br>
+
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture8/fig4b.png" width="480" height="190" alt="fig 4b"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4</strong> &nbsp;Poisson regression model using an identity link</td>
+  </tr>
+</table>
+<p align="left">Although the model with an identity link yielded a larger log-likelihood than did the Poisson model with a log link, it's clear in Fig. 4 that extending the regression line to larger NAP values will cause it to eventually cross the <em>x</em>-axis and predict negative values for mean richness. Thus we might prefer the log link model here because it is  generalizable to new data.</p>
+<h2 align="left"><a name="models"></a>Poisson regression models</h2>
+<p>We can also fit Poisson regression model versions of the ordinary regression models we fit to these data previously. The next two models add week as a  categorical  variable.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # add week to the regression model</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> mod2p &lt;- glm(richness~NAP+factor(week), data=rikz, family=poisson)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod3p &lt;- glm(richness~NAP*factor(week), data=rikz, family=poisson)</div>
+
+<p>To test these models we can use the <span class="style102">anova</span> function on the interaction model.<br>
+  
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod3p, test='Chisq')</div>
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model: poisson, link: log</span>
+<p><span class="style24">Response: richness</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp; 179.753&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp; 66.571&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp; 113.182 3.376e-16 ***<br>
+  factor(week)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp; 59.716&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp;&nbsp;&nbsp;&nbsp; 53.466 6.759e-13 ***<br>
+  NAP:factor(week)&nbsp; 3&nbsp;&nbsp; 22.396&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37&nbsp;&nbsp;&nbsp;&nbsp; 31.070 5.396e-05 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 <br>
+</span>
+<p>The output is interpreted the same way as the ANOVA table for ordinary regression. The NULL model that appears first is one that contains only an intercept. The second line tells us that adding NAP is a significant improvement over the intercept-only model. Line 3 tells us that adding week to the NAP model yields a significant improvement. Line 4 tells us that adding the NAP &times; week interaction to the NAP + week model yields a significant improvement. Thus our final Poisson regression model should be the interaction model where the effect of NAP varies by week. Using the summary table we can then determine the nature of the interaction just as we did with the normal model.</p>
+<h2><a name="comparing" id="comparing"></a>Comparing the likelihoods of discrete and continuous probability models</h2>
+<p>We can use the magnitudes of the log-likelihoods to compare the final Poisson model with the final normal model.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # compare log-likelihood of normal and Poisson model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(mod3)</div>
+<span class="style24"> 'log Lik.' -99.62243 (df=9)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(mod3p)</div>
+<span class="style24">'log Lik.' -86.53437 (df=8)</span>
+<p align="left">Because the log-likelihood of the Poisson model exceeds that of the normal model, we would like to argue that the Poisson model is preferable&mdash;the data are more likely under the Poisson model than under the normal model. This remark needs further justification. Because the normal likelihood is a product of densities (which don't have an immediate probability interpretation) whereas the Poisson likelihood is a product of probability mass functions (which do have a probability interpretation), it's not at all clear that these two likelihoods are comparable. </p>
+<p>Because of the central limit theorem and the fact that the normal distribution provides a decent approximation to many probability models, it is perfectly legitimate to use the normal distribution, a model that assumes an underlying continuum, even when a variable is discrete. Even more common is the practice of  log-transforming or square-root transforming a discrete response variable and then assuming the result is normally distributed. As a result it would be nice to have a direct way to  compare the likelihoods derived from discrete and continuous probability models when applied to the same data set. </p>
+<p>At first glance this would not seem to be possible because likelihoods based on continuous probability models are densities while those based on discrete probability models are probabilities. To obtain a probability from a density requires integrating that density over an interval. In particular if <em>X</em> is a continuous random variable, then <img src="../../images/lectures/lecture8/probdiscrete.gif" width="113" height="30" align="absmiddle"> for all values of <em>k</em>. It is only expressions of the form <img src="../../images/lectures/lecture8/probinterval.gif" alt="prob of interval" width="117" height="35" align="absmiddle">, for some interval (<em>a</em>,<em> b</em>), that can have nonzero values. </p>
+<p>Obviously we do use continuous probability models for discrete random variables, so what does an expression of the form <em>P</em>(<em>X</em> = <em>k</em>) mean when <em>k</em> can only take  non-negative integer values? The standard interpretation is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture8/probdiscretedef.gif" width="302" height="113" alt="prob discrete vs continuous"></p>
+<p>and so we  have an implicit interval over which we can integrate the density. (Whether the interval is defined to be open, closed, or half-open is immaterial here.) Notice that the interval in question has length = 1 and that the value <em>X</em> = <em>k</em> is  the midpoint of this interval. The midpoint rule for approximating an integral tells us that</p>
+<p align="center"><img src="../../images/lectures/lecture8/probinterval2.gif" width="355" height="103" alt="prob interval"></p>
+<p>which is just the density. Thus we see that any density used as a model for discrete data can be interpreted as a probability in the approximating sense of the midpoint rule.</p>
+<p align="center"><img src="../../images/lectures/lecture8/fig3a.png" width="615" height="315"></p>
+<p align="center" class="styleArial"><strong>Fig. 5&nbsp;</strong> Using a continuous density to approximate a discrete probability (<a href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/notes/lecture8fig5.txt">R code</a>)</p>
+<p>Fig. 5 displays the predicted normal distribution for observation #4  using the NAP &times; week interaction model. The observed   richness for observation #4 is 11. Because the normal distribution is continuous,  calculating <em>P</em>(<em>X</em> = 11) requires evaluating the following integral.</p>
+<p align="center"><img src="../../images/lectures/lecture8/prob11.gif" width="270" height="43" alt="prob(x=11)"></p>
+<p><a name="dnorm"></a>where <img src="../../images/lectures/lecture8/normal4.gif" alt="normal4" width="100" height="27" align="absmiddle"> is the normal density predicted for observation #4. The graph on the left in Fig. 5 displays the midpoint approximation for this integral, the area of a rectangle whose height is the  density evaluated at <em>X</em> = 11 and whose width is 1. So, an approximate value of<em> P</em>(<em>X</em> = 11)  is just the density evaluated at <em>X</em> = 11. The normal density function in R is <span class="style4">dnorm</span>. </p>
+<p>The graph on the right in Fig. 5 displays the exact value of <em>P</em>(<em>X</em> = 11), the true area underneath the density curve from <em>x</em> = 10.5 to <em>x</em> = 11.5. The <span class="style4">pnorm</span> function in R is the normal cumulative distribution function. It returns the following value.</p>
+<p align="center"><img src="../../images/lectures/lecture8/pnorm.gif" width="328" height="43" alt="pnorm"></p>
+<p>This is the area under the graph from <em>x</em> = &ndash;&infin; to<em> x</em> = <em>a</em>. Thus we can find the area under the graph from<em> x</em> = <em>a</em> to <em>x</em> = <em>b</em> by subtracting <span class="style1">pnorm(a,&mu;,&sigma;)</span> from <span class="style1"> pnorm(b,&mu;,&sigma;)</span>. For our example <em>b</em> = 11.5 and <em>a</em> = 10.5 as is shown at the top of the figure.</p>
+<p>To carry out these calculations  in R the <span class="style4">predict</span> function is used to extract the estimated mean of  the normal distribution for observation #4.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#fit normal model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod3 &lt;- lm(richness~NAP*factor(week), data=rikz)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#calculate mean of fourth observation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mu &lt;- predict(mod3)[4]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #unbiased estimate of std dev</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sd &lt;- summary(mod3)$sigma</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #MLE of std dev</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sd &lt;- sqrt(sum(residuals(mod3)^2)/nrow(rikz))</div>
+<p>The estimated mean and standard deviation of the normal distribution can be used to calculate P(<em>X</em> = 11), first using the midpoint approximation and then using the exact formula.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#midpoint approximation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dnorm(11,mu,sd)</div>
+<span class="style24"> [1] 0.1697383</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #exact answer</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pnorm(11.5,mu,sd) - pnorm(10.5,mu,sd)</div>
+<span class="style24">[1] 0.1684763</span>
+<p>The answers agree to the second decimal place. Next we compare the exact and approximate probabilities for all 45 observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">y &lt;- pnorm(rikz$richness+.5, predict(mod3), summary(mod3)$sigma) - pnorm(rikz$richness-.5, predict(mod3), summary(mod3)$sigma)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">x &lt;- dnorm(rikz$richness, predict(mod3), summary(mod3)$sigma)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(y~x, ylab='Exact', xlab='Approximate')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(lm(y~x), col='grey70', lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> abline(0, 1, col=2, lty=2)</div>
+<p align="center"><img src="../../images/lectures/lecture8/fig5.png" width="430" height="360" alt="fig 5"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 6&nbsp;</strong> Comparing exact and approximate normal probabilities </span></p>
+<p>The approximate and exact probabilities shown in Fig. 6 appear to be exceptionally close. In reality the approximate probability consistently overestimates the true probability by a small amount. If we construct a 95% confidence interval for the slope we see that it doesn't include 1, so we would reject the hypothesis that the two probabilities are equal.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> confint(lm(y~x))</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  (Intercept) 0.0004370469 0.0007912393<br>
+x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.9887148715 0.9912073907</span>
+<h2 align="left"><a name="checking"></a>Checking the fit of the Poisson model</h2>
+<p align="left">The Poisson regression model estimates the mean of a Poisson distribution for each observation. Using it we can then construct the corresponding probability distribution of a Poisson random variable with that mean. To check the fit of the model we can assess whether the  observed richness values  look as if they could have arisen from their predicted distributions.  </p>
+<p align="left">We begin by calculating the Poisson probabilities of <em>X</em> = 0 up to and including <em>X </em>= 30 for each observation in the Rikz data set. Because we need to carry out this calculation separately for each observation we use the <span class="style102">sapply</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out &lt;- sapply(0:30, function(x) dpois(x,exp(predict(mod3p))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(out)</div>
+<span class="style24">  [1] 45 31</span>
+<p>From the dimensions of the output we can tell that the columns correspond to the different probabilities and the rows correspond to the different observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out[1:4,1:8]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,4]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,5]<br>
+  1 1.358353e-05 1.522259e-04 8.529715e-04 0.0031863185 0.008926991<br>
+  2 1.569700e-06 2.097845e-05 1.401846e-04 0.0006245048 0.002086568<br>
+  3 8.037218e-07 1.127944e-05 7.914792e-05 0.0003702543 0.001299038<br>
+  4 3.675566e-05 3.753201e-04 1.916238e-03 0.0065223738 0.016650346<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,6]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,7]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,8]<br>
+  1 0.020008337 0.037371079 0.05982924<br>
+  2 0.005577241 0.012422957 0.02371831<br>
+  3 0.003646144 0.008528339 0.01709812<br>
+  4 0.034004063 0.057870484 0.08441831</span>
+<p align="left"><a name="asvector"></a><a name="tfunc"></a>We need  to unstack this matrix into a single vector so it can be incorporated  into a data frame. The <span class="style102">as.vector</span> function converts a matrix into a vector by stacking the columns of the matrix one on top of the other. To keep probabilities from individual observations together we first transpose the matrix using the R <span class="style102">t</span> function, which swaps rows and columns, before using the <span class="style102">as.vector</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> as.vector(t(out))[1:5]</div>
+<span class="style24">[1] 1.358353e-05 1.522259e-04 8.529715e-04 3.186319e-03 8.926991e-03</span>
+<p align="left">In addition to the probabilities we need the following. </p>
+<ul>
+  <li>A column that labels the probabilities. It consists of the numbers 0:30 repeated 45 times.</li>
+  <li>An id variable that identifies the site that corresponds to each set of 31 probabilities. It consists of the 45 site numbers repeated 31 times.</li>
+  <li> The actual recorded richness at that site. Like id it also is repeated 31 times for each site.</li>
+</ul>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.dat &lt;- data.frame(p=as.vector(t(out)), x=rep(0:30,45), rich=rep(rikz$richness,rep(31,45)), id=rep(1:45,rep(31,45)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.dat[1:8,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p x rich id<br>
+  1 1.358353e-05 0&nbsp;&nbsp; 11&nbsp; 1<br>
+  2 1.522259e-04 1&nbsp;&nbsp; 11&nbsp; 1<br>
+  3 8.529715e-04 2&nbsp;&nbsp; 11&nbsp; 1<br>
+  4 3.186319e-03 3&nbsp;&nbsp; 11&nbsp; 1<br>
+  5 8.926991e-03 4&nbsp;&nbsp; 11&nbsp; 1<br>
+  6 2.000834e-02 5&nbsp;&nbsp; 11&nbsp; 1<br>
+  7 3.737108e-02 6&nbsp;&nbsp; 11&nbsp; 1<br>
+  8 5.982924e-02 7&nbsp;&nbsp; 11&nbsp; 1</span>
+<p>Next we  construct a panel graph showing the 45 sites in separate panels. Each panel  displays the predicted Poisson distribution as a bar plot (using <span class="style102">panel.xyplot</span> and <span class="style22">type='h'</span> to drop vertical lines to the x-axis) with the observed count superimposed on this distribution to see if it looks typical.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> xyplot(p~x|factor(id), data=my.dat, xlab='Count', ylab= 'Probability', panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.xyplot(x, y, type='h', lwd=2, col='grey70')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.points(my.dat$rich[subscripts][1], 0, col=2, pch=8, cex=.8)})</div><br>
+<table width="650" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture8/fig6.png" width="610" height="465" alt="fig. 6"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 7</strong>&nbsp;</strong> Panel graph of the predicted Poisson distributions at each site. The observed richness (*) is shown relative to its predicted distribution.</td>
+  </tr>
+</table>
+<p>Most of the distributions are  compressed because we're displaying more probabilities than are necessary. The smallest probability of an actual observation is 0.003,</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> min(dpois(rikz$richness, exp(predict(mod3p))))</div>
+<span class="style24">[1] 0.003184755</span>
+<p>so we can remove all probabilities less than 0.001 and redo the plot. The <em>x</em>-axis is made <span class="style1">'free'</span> so that the <em>x</em>-limits in each panel are adjusted according to what is being displayed.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.dat2 &lt;- my.dat[my.dat$p&gt;.001,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xyplot(p~x|factor(id), dat=my.dat2, , xlab='Count', ylab= 'Probability', panel=function(x, y, subscripts){</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.xyplot(x, y, type='h', lwd=2, col='grey70')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.points(my.dat2$rich[subscripts][1], 0, col=2, pch=8, cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'))</div>
+<p align="center"><img src="../../images/lectures/lecture8/fig7.png" width="610" height="470" alt="fig. 7"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 8&nbsp;</strong> A repetition of Fig. 6 in which negligible tail probabilities have been removed.</span></p>
+<p align="left">The only sites in which the observed richness count appears to be an outlier are sites 9 and 42. We can quantify this further by calculating a <em>p</em>-value for the observed richness in each site. The <em>p</em>-value is a tail probability, the probability of observing a value as extreme or more extreme than what was actually observed. We focus on the upper-tail <em>p</em>-values because its clear that there are no lower-tailed outliers. If <em>x</em><sub>i</sub> is the observed richness value in site <em>i</em> then the <em>p</em>-value can be calculated as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture8/dpois.gif" width="348" height="100" alt="dpois"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dpois(rikz$richness, exp(predict(mod3p))) + 1-ppois(rikz$richness, exp(predict(mod3p)))</div>
+<span class="style24">  &nbsp;[1] 0.564536595 0.856945440 0.644880896 0.443366343 0.807582741<br>
+  &nbsp;[6] 0.710012388 0.653212824 0.795528853 0.020409511 0.246635951<br>
+  [11] 0.466768559 0.721901128 0.456851258 0.775319935 0.529175529<br>
+  [16] 0.663517086 0.606943095 0.417628894 0.748191310 0.730492661<br>
+  [21] 0.365635600 0.407623265 0.170288173 1.000000000 0.910574728<br>
+  [26] 0.753415700 0.801883813 0.724110843 0.762425848 0.339517692<br>
+  [31] 0.547059256 0.659633303 0.746555060 0.618755905 0.239011476<br>
+  [36] 0.258738473 0.660451614 0.690243444 0.395297297 1.000000000<br>
+  [41] 0.322942714 0.004867473 0.831547249 1.000000000 0.765540804</span>
+<p>The only <em>p</em>-values less than 0.05 correspond to site 9 (<em>p</em> = 0.02) and site 42 (<em>p</em> = 0.005). With 45 sites we'd expect to obtain .05*45 = 2.25 significant <em>p</em>-values by chance alone, so what we obtained is not an unusual result. We conclude that the observed richness counts could very well have arisen from the proposed model.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 31, 2012<br>
+      URL: <a href="lecture8.htm#lecture8" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture8.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

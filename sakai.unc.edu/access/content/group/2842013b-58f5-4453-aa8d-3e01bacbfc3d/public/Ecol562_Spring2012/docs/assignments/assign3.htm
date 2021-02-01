@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 3</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign3" id="assign3"></a>Assignment 3 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, February 3, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p>The data for this assignment is the <a href="../../data/RIKZ.txt">RIKZ data set</a>, the same data set that was used in Assignment 1.</p>
+<h2 align="left">Overview</h2>
+<p align="left">Some of you have noticed that three of the Simpson diversity values calculated by the <span class="style2">diversity</span> function of the <span class="style9">vegan</span> package are incorrect. There are three sites with  no animals present and the <span class="style2">diversity</span> function assigns them a Simpson's diversity index of 1. Because these sites also had high values of NAP this assignment has a big effect on the regression results. (Examine the graph you made in Assignment 1 to see this.) </p>
+<p align="left">An examination of the code used by the <span class="style2">diversity</span> function makes it clear that this calculation is  a mistake.  The authors of the code didn't bother to consider the special limiting case of no species present. (To see the code that underlies the <span class="style2">diversity</span> function load the <span class="style9">vegan</span> package, type <span class="style10">diversity</span> at the R command prompt,  and press the return key.) When no animals are present diversity could be sensibly assigned either a missing value or a value of zero. The problem with setting diversity equal to zero is that then the zero sites are heterogeneous&mdash;some of them are zero because they have no species while others are zero because they have a single species present. </p>
+<p align="left">In this HW exercise we will assign these three sites a diversity of zero and refit the models from Assignment 1. The final model you get will be different from Assignment 1. Furthermore by redefining the week variable the model can be simplified even further.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Use the <span class="style2">ifelse</span> function of R to change the diversity values of those sites for which currently diversity = 1  to diversity = 0.</li>
+  <li>Refit your models from Assignment 1 and find the best model that relates diversity to NAP and week. It will be different from what you found before.</li>
+  <li>Based on the summary output of the model, which weeks appear to be different from each other?</li>
+  <li>Based on your answer to Question 3 create a new &quot;week&quot; variable that dichotomizes the weeks into similar groups so that there are only two groups of weeks. Fit your best model from Question 2 using this week variable instead of the old week variable.</li>
+  <li>The two &quot;best&quot; models with different versions of the week variable are nested models. Demonstrate this by formulating a null hypothesis that tests whether the four-week model can be reduced to the model with just two week categories. Clearly indicate what the nature of the simplification is in terms of the model parameters. Use R to formally test this null hypothesis. State your conclusions.</li>
+  <li>Graph your final model from Question 5.</li>
+  <li>Based on your final model from Question 5 and using all the appropriate statistical jargon, quantify and explain the   effect that &quot;week&quot; appears to have on diversity.</li>
+</ol>
+<h2>Hints</h2>
+<ul>
+  <li><strong>Question 1</strong>
+<ul>
+      <li>The <span class="style2">ifelse</span> function operates on vectors and returns vectors. The syntax for the <span class="style2">ifelse</span> function is: </li>
+    </ul>
+  </li>
+</ul>
+<blockquote>
+  <p><span class="style10">ifelse(Boolean condition, value to return if TRUE, value to return if FALSE)</span>. </p>
+</blockquote>
+<ul>
+  <ul>
+    <li>A Boolean condition is any statement that evaluates to TRUE or FALSE. Boolean conditions can be constructed from logical comparison operators: less than, equal to, greater than, etc. In R the logical equals operator is the double equals sign, <span class="style10">==</span>, not the single equals sign, which is an assignment operator.</li>
+    <li>One way to proceed is to set up the <span class="style2">ifelse</span> statement  as follows. If the Boolean condition is TRUE diversity is assigned a value of 0. If the Boolean condition is FALSE diversity is assigned its original value and hence is left unchanged.</li>
+  </ul>
+  <li><strong>Question 5</strong>: The <span class="style2">anova</span> function can be used to compare two nested models. Just enter the names of the two models separated by commas as the arguments to <span class="style2">anova</span>. In this case <span class="style2">anova</span> tests whether the models are significantly different, i.e., whether or not the more complicated model can be reduced to the simpler model.</li>
+  <li><strong>Question 7</strong>: If you pretend &quot;week&quot; is the variable of interest here and NAP is merely a control variable, then your final model can be viewed as one of the classical regression models of statistics. There is a standard way of describing the results from such a model. </li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology and the Environment, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 27, 2012<br>
+      URL: <a href="assign3.htm#assign3" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign3.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

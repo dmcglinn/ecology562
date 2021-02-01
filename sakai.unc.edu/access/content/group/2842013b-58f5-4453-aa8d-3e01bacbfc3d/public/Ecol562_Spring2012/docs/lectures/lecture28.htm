@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 28&mdash;Wednesday, March 21, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture28" id="lecture28"></a>Lecture 28&mdash;Wednesday, March 21, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture28.htm#comparing">Comparing survivor functions across groups</a></li>
+  <li><a href="lecture28.htm#regression">Regression models in survival analysis</a></li>
+  <li><a href="lecture28.htm#cox">Cox proportional hazards model</a>
+    <ul>
+      <li><a href="lecture28.htm#why">Why is the Cox model so popular?</a></li>
+      <li><a href="lecture28.htm#estimating">Estimating the Cox model</a></li>
+      <li><a href="lecture28.htm#comments">Some comments about partial likelihood</a></li>
+      <li><a href="lecture28.htm#hazard">Hazard ratios</a></li>
+      <li><a href="lecture28.htm#proportional">The proportional hazards assumption</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture28.htm#parametric">Parametric survival models</a>
+    <ul>
+      <li><a href="lecture28.htm#censoring">Censoring in parametric survival models</a></li>
+      <li><a href="lecture28.htm#weibull">Weibull regression model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture28.htm#discrete">Discrete time survival analysis</a></li>
+  <li><a href="lecture28.htm#references">References</a></li>
+</ul>
+<h2><a name="comparing"></a>Comparing survivor functions across groups</h2>
+<p>The hypergeometric model is the finite-population, sampling without replacement version of the binomial model. Whereas in the binomial model the probability of a success is constant from trial to trial, in the hypergeometric model the probability changes as selections are made. The standard illustration of a hypergeometric model is choosing colored balls from an urn. Suppose there are <em>N</em> balls in an urn of which <em>m</em> of them are red and the rest are black. The probability of drawing <em>X</em> = <em>k</em> red balls in a sample of size  <em>n</em> balls is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture28/hypergeometric.gif" width="247" height="125" alt="hypergeometric"></p>
+<p>The first term in the numerator is the number of ways of choosing <em>k</em> red balls, the second term is the number of ways of choosing <em>n</em> &ndash; <em>k</em> black balls, and the denominator is the number of different samples of <em>n</em> balls. The mean and variance of the hypergeometric distribution are the following.</p>
+<p align="center"><img src="../../images/lectures/lecture28/hypermean.gif" width="277" height="57" alt="hypergeometric mean"><br>
+</p>
+<p>We can apply this to survival analysis as follows. For simplicity suppose there are just two groups. At failure time <em>j</em> there are a total of <em>O<sub>j</sub></em> failures in a risk set of <em>N<sub>j</sub></em> individuals of which <em>n</em><sub>1<em>j</em></sub> of the individuals are from group 1. The probability of observing   <em>k</em> failures  in group 1 is the hypergeometric distribution (assuming the same failure rate in both groups).</p>
+<p align="center"><img src="../../images/lectures/lecture28/hyper2.gif" width="263" height="153" alt="hypergeometric"></p>
+<p>The log-rank test resembles the Pearson &Chi;<sup>2</sup> test in its construction. At each failure time we obtain the expected number of deaths under a hypergeometric model for the current risk set assuming that there is a  common failure rate in all the groups. We then subtract the expected number of deaths from the observed number of deaths in group 1. This is repeated at each failure time and the differences are summed. Treating the outcomes at each failure time as independent, the variance of the sum is just the sum of the hypergeometric variances at each event time. We divide the the summed differences by the square root of the variance of this sum under the hypergeometric model to obtain the test statistic of the log-rank test. When squared this test statistic has a chi-squared distribution.</p>
+In variations of this test  the failure times are weighted differently in order to emphasize early events or late events. As an illustration when there are just two groups the log-rank test takes the following form.
+<p align="center"><img src="../../images/lectures/lecture28/logrank.gif" width="253" height="132" alt="logrank"></p>
+<p>Here <em>m<sub>ij</sub></em> and <em>e<sub>ij</sub></em> are the observed and expected deaths for group <em>i</em> at failure time <em>j</em>.  One version of the test (variously called the generalized Wilcoxon or Gehan-Wilcoxon or just the Gehan test) uses the number at risk in the group as the weight, a choice that tends to reward early survival over later survival. The log-rank test proper uses equally weighted observations which  weights  later survival  more than  the Gehan test does. The log-rank test is purely a test of significance and cannot be used to estimate the magnitude of the differences between groups.</p>
+<h2><a name="regression"></a>Regression models in survival analysis</h2>
+<p>One of the goals in the regression modeling of survival data is to obtain estimates of the survivor function after adjusting for measured covariates, something that is not possible with the Kaplan-Meier estimator. There are two standard approaches to  regression analysis of survival data.</p>
+<ol>
+  <li>A proportional hazards model (PH) assumes  that covariates are  multiplicative with respect to the hazard. Typically we model the log hazard as a linear function of covariates.</li>
+  <li>An accelerated failure time model (AFT) assumes covariates are multiplicative with respect to survival time.  Typically we model the log survival time (or the scale parameter of a particular probability distribution) as a linear function of covariates.</li>
+</ol>
+<p>In addition we have the choice of a semi-parametric  or a parametric model. Parametric models can be either proportional hazards or accelerated failure time models. The most popular semiparametric model is a proportional hazards model called  Cox regression.</p>
+<h2><a name="cox"></a>Cox proportional hazards regression model</h2>
+<p>The Cox proportional hazards regression model is also called the Cox model, Cox regression, or just proportional hazards regression (although the latter is really a misnomer). It is extremely popular in medical fields where it is often the only kind of model that is considered. It is considered a semi-parametric model for reasons explained below. In Cox regression we model the hazard function as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture28/coxhazard.gif" width="230" height="63" alt="cox hazard"></p>
+<p>This is a model that is linear in the log hazard.</p>
+<p align="center"><img src="../../images/lectures/lecture28/loghazard.gif" width="252" height="58" alt="log hazard"></p>
+<p>The hazard in Cox regression is the product of two terms.</p>
+<ol>
+  <li><img src="../../images/lectures/lecture28/baselinehazard.gif" alt="baseline hazard" width="47" height="30" align="absmiddle">  is called the baseline hazard. Notice that the baseline hazard involves <em>t</em>, but not <em>x</em>.</li>
+  <li><img src="../../images/lectures/lecture28/linearpredictor.gif" alt="linear predictor" width="112" height="63" align="absmiddle"> contains the linear predictor and multiplies the baseline hazard. Notice that this term does not involve <em>t</em>. The assumption being made is that the individual predictors, <em>x<sub>i</sub></em>, are time-invariant.</li>
+</ol>
+<p>There is a model called the extended Cox model that does allow  covariates to be time-dependent.</p>
+<h3><a name="why"></a>Why is the Cox model so popular?</h3>
+<ol>
+  <li>Because we model the log hazard as a linear predictor we are guaranteed that estimate of the hazard will be non-negative as it should be.</li>
+  <li>It is not necessary to actually specify the  hazard function completely. The baseline hazard is not estimated in the Cox model because it drops out of the likelihood (see the <a href="lecture28.htm#estimating">next section</a>) and is actually not needed when making comparisons of interest. This is why the Cox model is called semi-parametric.</li>
+  <li>The Cox model generally agrees with the correct parametric model when the survival times do follow a specific parametric form. Thus the Cox model is robust to model misspecification.</li>
+</ol>
+<p>The Cox model is called semi-parametric because the hazard function is not fully specified.</p>
+<ul>
+  <li>The Cox model contains the term <img src="../../images/lectures/lecture28/baselinehazard.gif" alt="baseline hazard" width="47" height="30" align="absmiddle"> that represents the hazard when all <em>x<sub>i</sub></em>= 0, but otherwise it is unspecified.</li>
+  <li>In a parametric model the hazard is fully specified. For instance, if we assume a Weibull model for the survival times, <em>T</em> ~ Weibull(&lambda;, <em>p</em>), then the baseline hazard is given by <img src="../../images/lectures/lecture28/weibullhazard.gif" alt="weibull hazard" width="122" height="32" align="absmiddle">.</li>
+</ul>
+<h3><a name="estimating"></a>Estimating the Cox model</h3>
+<p>The regression coefficients of the Cox model are estimated by maximizing a quantity known as the partial likelihood (rather than a full likelihood). Recall that the likelihood is just the probability of obtaining the data that were obtained. In a partial likelihood for survival data rather than specifying <em>P</em>(data), we instead construct an expression for <em>P</em>(those who fail). Individuals who were censored do not contribute individual terms to the partial likelihood. Thus the likelihood takes the form</p>
+<p align="center"><img src="../../images/lectures/lecture28/likelhood.gif" width="245" height="27" alt="likelihood"></p>
+<p>in which there are <em>k</em> failure times. At each failure time the censored individuals do contribute to the risk set and are used in calculating the individual terms of the likelihood.</p>
+<p>Formally the Cox partial likelihood is constructed as follows. Let <img src="../../images/lectures/lecture28/times.gif" alt="times" width="102" height="30" align="absmiddle"> be the observation times for the <em>n</em> observations in the study and let <img src="../../images/lectures/lecture28/censors.gif" alt="censors" width="113" height="30" align="absmiddle"> be indicators of the event at those times, i.e., </p>
+<p align="center"><img src="../../images/lectures/lecture28/deltai.gif" width="263" height="75" alt="delta"></p>
+<p>Using the Cox model for the hazard, the hazard for individual <em>i</em> is just</p>
+<p align="center"><img src="../../images/lectures/lecture28/coxhazard2.gif" width="160" height="65" alt="cox hazard"></p>
+<p>Now form the following ratio.</p>
+<p align="center"><img src="../../images/lectures/lecture28/partiallike.gif" width="392" height="132" alt="partial likelihood"></p>
+<p>In the denominator we are summing the hazards for all individual still alive at time <em>t<sub>i</sub></em>, i.e., members of the risk set <em>R</em>(<em>t<sub>i</sub></em>). Notice that the baseline hazard <img src="../../images/lectures/lecture28/baselinehazard.gif" alt="baseline hazard" width="47" height="30" align="absmiddle">cancels  and does not appear in the final expression. The Cox partial likelihood is the product of all such terms.</p>
+<p align="center"><img src="../../images/lectures/lecture28/partiallike2.gif" width="258" height="142" alt="partial likelihood"></p>
+<p>The use of &delta;<sub>i</sub> as an exponent is just a convenient way of including all observations in the likelihood without  having to single out the failure times. Observations that are censored have &delta;<sub>i</sub> = 0 and hence contribute nothing to the likelihood (their contribution to the product is one).</p>
+<h3><a name="comments"></a>Some comments about the partial likelihood</h3>
+<ol>
+  <li>This is not an explicit probability model in the conventional sense. The terms are the ratios of hazards and so behave like probabilities but are not really probabilities.</li>
+  <li>Notice that the event times <img src="../../images/lectures/lecture28/times.gif" alt="event times" width="102" height="30" align="absmiddle">, whether failures or censors, don't explicitly appear  in the likelihood. They only arise in the calculation of the risk set. As a result, their actual values don't matter, only their relative order. The actual time of death is irrelevant. Thus the Cox model has a lot in common with conventional nonparametric approaches to statistics where ranks are analyzed rather than actual values.</li>
+  <li>The Cox model provides us with information about which covariates significantly affect survival, but it provides us with no estimate of the hazard or survivor function directly. After all how can it? The baseline hazard term does not appear in the likelihood. In truth there do exist some ad hoc methods to estimate <img src="../../images/lectures/lecture28/baselinehazard.gif" alt="baseline hazard" width="47" height="30" align="absmiddle">, and hence <em>h</em>(<em>t</em>) and <em>S</em>(<em>t</em>). What we get is a Kaplan-Meier-like estimate of the survival curve adjusted for covariates.</li>
+</ol>
+<h3><a name="hazard"></a>Hazard ratios</h3>
+<p>In logistic regression the focus is on odds ratios. A similar quantity, the hazard ratio, plays a role in Cox regression. To construct the hazard ratio we just take the ratio of the hazards of two individuals who have different values of the covariates, <em>x</em>.</p>
+<p align="center"><img src="../../images/lectures/lecture28/hazardratio.gif" width="475" height="123" alt="hazard ratio"></p>
+<p>Now suppose </p>
+<p align="center"><img src="../../images/lectures/lecture28/control.gif" alt="control" width="198" height="65" align="absmiddle"></p>
+<p>but for all other values of <em>x</em>, <em>x</em> = <em>x*</em>. Then we have <img src="../../images/lectures/lecture28/hazardrat2.gif" alt="hazard ratio" width="122" height="32" align="absmiddle"> for two individuals that differ only in their treatment. The hazard ratio in this instance tells us by what amount the hazard is multiplied for individuals in the treatment group relative to the control group while holding everything else constant.</p>
+<h3><a name="proportional"></a>The proportional hazards assumption</h3>
+<p>Notice that because the baseline hazards cancel, the  hazard ratio is constant with respect to time. This is the essence of the proportional hazards assumption. We'll discuss how one might go about testing this assumption in <a href="lecture29.htm#examining">lecture 29</a>, but what should one do if the assumption appears to be violated?</p>
+<ol>
+  <li>Stratify by the levels of a categorical variable for which the proportionality assumption fails. In this approach a separate baseline hazard is assumed for members of each stratum but all the data are still used to obtain parameter estimates.</li>
+  <li>Fit separate Cox models to different time intervals. This makes sense because if the proportional hazards assumption is violated then  the hazard is not constant with time.</li>
+  <li>Use the extended Cox model instead of the ordinary Cox model. The extended Cox model permits time-dependent covariates.</li>
+</ol>
+<h2><a name="parametric"></a>Parametric survival models</h2>
+<p>In parametric survival models an explicit probability model is chosen for the survival time distribution / hazard function. By choosing a probability model one also automatically chooses either a proportional hazards or an accelerated failure time model. Except for the Weibull (exponential) distributions,  only one of these choices is possible with a given probability model. The disadvantages of the parametric approach are the following.</p>
+<ol>
+  <li>It requires stronger assumptions than the Cox regression model.</li>
+  <li>It can be more complicated to understand for the novice.</li>
+</ol>
+<p>The advantages of the parametric approach are the following.</p>
+<ol>
+  <li>In addition to determining which variables affect survival, one also obtains smooth estimates of the survivor and hazard functions.</li>
+  <li>The parametric approach can easily handle any kind of censoring.</li>
+</ol>
+<h3><a name="censoring"></a>Censoring in parametric survival models</h3>
+<p>Let <em>f</em>(<em>t</em>) denote the probability density for the survival distribution. Table 4 summarizes how different kinds of censored observations contribute to the parametric likelihood of failure times. Note: <em>F</em>(0) = 0.</p>
+<div align="center"><span class="styleArial"><strong>Table 4 </strong>&nbsp;Contributions of censored observations to a parametric likelihood</span><br>
+</div>
+<table width="500" border="0" align="center">
+  <tr bgcolor="#F1D2D8">
+    <th scope="col">Type</th>
+    <th scope="col">Event</th>
+    <th scope="col">Contribution to the likelihood</th>
+  </tr>
+  <tr>
+    <td>uncensored</td>
+    <td><div align="center"><em>T</em> = 2</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture28/uncensored.gif" width="43" height="27" alt="uncensored"></div></td>
+  </tr>
+  <tr>
+    <td>right censored</td>
+    <td><div align="center"><em>T</em> &gt; 2</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture28/rightcensored.gif" width="167" height="43" alt="right censored"></div></td>
+  </tr>
+  <tr>
+    <td>left censored</td>
+    <td><div align="center"><em>T</em> &le; 2</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture28/leftcensored.gif" width="137" height="43" alt="left censored"></div></td>
+  </tr>
+  <tr>
+    <td>interval censored</td>
+    <td><div align="center">2 &lt; <em>T</em> &le; 3</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture28/intervalcensored.gif" width="192" height="43" alt="interval censored"></div></td>
+  </tr>
+</table>
+<h3><a name="weibull"></a>Weibull regression model</h3>
+<p>While there are many  potential probability models for survival distributions, the Weibull is the most commonly used and perhaps the most flexible. The Weibull survivor and hazard functions are shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture28/weibull.gif" width="290" height="68" alt="weibull"></p>
+<p>Here <em>p</em> = shape parameter and &lambda; (typically its log) is  modeled in terms of explanatory variables. The exponential distribution is a special case of the Weibull (<em>p</em> = 1).</p>
+<p>The Weibull distribution yields both a proportional hazards model and an accelerated failure time model depending on how things are parameterized. Having chosen one of the parameterizations it is possible to obtain the corresponding estimates for the other parameterization as Table 5 explains.</p>
+<div align="center"><span class="styleArial"><strong>Table 5</strong> &nbsp;Parameterizations for the Weibull regression model</span><br>
+</div>
+<table width="500" border="0" align="center">
+  <tr bgcolor="#F1D2D8">
+    <th scope="col">Proportional hazards</th>
+    <th scope="col">Accelerated failure time</th>
+  </tr>
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture28/phmodel.gif" width="212" height="108" alt="ph weibull"></div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture28/accmodel.gif" width="247" height="127" alt="aft weibull"></div></td>
+  </tr>
+</table>
+<p>From Table 5 we see that we can switch between the parameterizations using the  identity <img src="../../images/lectures/lecture28/equivalence.gif" alt="equivalence" width="90" height="30" align="absmiddle">. Thus when &beta;<sub>j</sub> &lt; 0 in the proportional hazards parameterization (meaning the hazard is decreased by increasing the value of the predictor), it follows that &alpha;<sub>j</sub> &gt; 0 in the accelerated failure time parameterization (meaning survival time is extended).</p>
+<h2><a name="discrete"></a>Discrete time survival analysis</h2>
+<p>An alternative approach to interval censored data is to use what's known as discrete time survival analysis. Discrete time survival analysis uses binary logistic regression with dummy variables to indicate the different survival intervals. See Singer &amp; Willett (2003), chapters 10&ndash;12, or Kleinbaum &amp; Klein (2005), pp. 290&ndash;292, for more details.</p>
+<h2><a name="references" id="references"></a>References</h2>
+<ul>
+  <li>Kleinbaum, David G. and Mitchel Klein. 2005. <em>Survival Analysis: A Self-learning Text.</em> Springer, New York.</li>
+  <li>Singer, J. D. &amp; Willett, J. B. 2003.<em> Applied Longitudinal Data Analysis: Modeling Change and Event Occurrence</em>. Oxford University Press, Oxford, UK.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 24, 2012<br>
+      URL: <a href="lecture28.htm#lecture28" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture28.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

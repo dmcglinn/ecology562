@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 4</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecology&#32;145&#32;Spring&#32;2006&#32;web/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style13 {font-weight: bold; color: #008000; }
+.style15 {
+	font-size: larger;
+	font-weight: bold;
+}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style22 {color: #663366; font-weight: bold; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign4" id="assign4"></a>Assignment 4 </h1>
+<p><span class="style15">Due Date</span>: Friday, February 10, 2012</p>
+
+<div align="left">
+  <h2 align="center" class="style13">Count Regression Models</h2>
+  <h3><span class="style13"><strong>Data</strong>&nbsp;</span> </h3>
+  <p>The file <a href="../../data/islands.txt">islands.txt</a> contains the data appearing in McMaster (2005). This is a comma-delimited text file in which the variable names appear in the first row. </p>
+  <h3><span class="style13"><strong>Background</strong>&nbsp;</span> </h3>
+  <p>McMaster (2005) examined native and non-native plant species richness on 22 islands off the coast of the northeastern United States and maritime Canada and studied its relationship to various geographic factors. For this exercise we will focus on only two variables.</p>
+  <ol>
+    <li>Species richness (sp.richness)</li>
+    <li>Island area (island.area) </li>
+  </ol>
+  <h3 class="style13">The Problem</h3>
+  <p>Fit the following five models to the&nbsp;variable  species richness <em>S</em> as a function of island area <em>A</em>. </p>
+  <ol>
+    <li>Gleason model: <img src="../../images/assignments/assignment4/Snormal.gif" alt="normal" width="160" height="35" align="absmiddle"> with identity link such that <img src="../../images/assignments/assignment4/gleason.gif" width="140" height="26" align="absmiddle"></li>
+    <li>Arrhenius model: <img src="../../images/assignments/assignment4/Snormal.gif" alt="normal" width="160" height="35" align="absmiddle"> with identity link such that <img src="../../images/assignments/assignment4/arrhenius.gif" width="83" height="30" align="absmiddle"></li>
+    <li>Log-Arrhenius model: <img src="../../images/assignments/assignment4/logSnormal.gif" width="188" height="35" align="absmiddle"> with identity link such that <img src="../../images/assignments/assignment4/gleason.gif" width="140" height="26" align="absmiddle"></li>
+    <li>Poisson GLIM: <img src="../../images/assignments/assignment4/poisson.gif" width="126" height="30" align="absmiddle"> with log link such that <img src="../../images/assignments/assignment4/poissonlink.gif" width="173" height="26" align="absmiddle"></li>
+    <li>Negative binomial GLIM: <img src="../../images/assignments/assignment4/negative&#32;binomial.gif" width="235" height="31" align="absmiddle"> with log link such that <img src="../../images/assignments/assignment4/NBlink.gif" width="168" height="26" align="absmiddle"></li>
+  </ol>
+  <p>In all models &beta;<sub>0</sub> and &beta;<sub>1</sub> are parameters to be estimated. In the normal models an additional parameter &sigma;<sup>2</sup> needs to be estimated, while  the negative binomial model  has the dispersion parameter &theta; to be estimated. The Poisson model has no additional parameters. Observe that models 1 and 3 can be fit as ordinary regression models (general linear models), model 2 is a nonlinear model (fit using nonlinear least squares), and models 4 and 5 are generalized linear models proper. </p>
+  <p>For each model,</p>
+  <ol>
+    <li>Report the fitted equation you obtain.</li>
+    <li>Graph the fitted equation superimposed on a scatter plot of the data. You may include more than one model on the same scatter plot when it's appropriate. </li>
+    <li>Finally compare all five models and determine which is (are) best for these data. </li>
+  </ol>
+</div>
+<h3 align="left" class="style13"><font face="Times New Roman, Times, serif">Cited Reference</font></h3>
+<ul>
+  <li>McMaster, Robert T. 2005. Factors influencing vascular plant diversity on 22 islands off the coast of eastern North America. <em>Journal of Biogeography</em> <strong>32</strong>: 475&ndash;492. </li>
+</ul>
+<h3 class="style13">Hints</h3>
+<p>The second model is nonlinear and can be fit in R using the <span class="style4">nls</span> function. Check the help page for <span class="style4">nls</span> to see how to use it. Basically in addition to the nonlinear formula you need to supply starting values for the parameters in the form of a list. The list is then entered as the <span class="style22">start</span> argument of <span class="style4">nls</span>. Observe that in creating the list you need to specify the starting values by their names. Fit the log-Arrhenius model first (model 3) and exponentiate the parameter estimates you obtain to use as starting estimates in this model, model 2.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a></p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 3, 2012<br>
+      URL: <a href="assign4.htm#assign4" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign4.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

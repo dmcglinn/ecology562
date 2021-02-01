@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 27&mdash;Monday, March 19, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture24" id="lecture24"></a>Lecture 27&mdash;Monday, March 19, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture27.htm#basics">The basics of survival analysis</a>
+    <ul>
+      <li><a href="lecture27.htm#types">Types of censoring</a></li>
+      <li><a href="lecture27.htm#standard">Standard statistical methods don't work well with survival data</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture27.htm#survivor">The survivor and hazard functions</a></li>
+  <li><a href="lecture27.htm#basic">The basic activities of survival analysis</a></li>
+  <li><a href="lecture27.htm#KM">The Kaplan-Meier estimator of the survivor function</a></li>
+</ul>
+<h2 align="left"><strong><a name="basics" id="basics"></a>The basics of survival analysis</strong></h2>
+<p>The subject matter of survival analysis, also called event history analysis, is the &quot;time to an event.&quot; Events in  ecology might include the following.</p>
+<ol>
+  <li> Death (in which case we're truly talking about survival).</li>
+  <li>Time to reproduction. Notice that in this case there is the possibility of recurrent events for polycarpic (plants) or iteroparous (animals) species.</li>
+</ol>
+<p>Although the language is clearly loaded, the &quot;time to an event&quot; is usually called a survival time and the event itself is typically called a failure regardless of the kind of event.</p>
+<p>For events that may or may not occur during a study period, a possible alternative to survival analysis is logistic regression. Logistic regression  focuses exclusively on whether an event occurs and ignores the time profile of the events. It also fails to distinguish true negatives from false negatives. In survival analysis, on the other hand, the focus is on the time profile of events rather than the raw number of events and the problem of false negatives is dealt with explicitly.</p>
+<p>There are two primary reasons why survival analysis requires its own methodology.</p>
+<ol>
+  <li>Survival time distributions are  non-normal and are typically long-tailed. In the parametric approach to survival analysis some rather exotic probability distributions are used that are quite unlike those used in  other applications.</li>
+  <li>Survival times are subject to censoring. A censored observation is one in which we have some information about survival time, but we don't know the survival time exactly. For example, an observation is censored if the study ends before the event has occurred. An observation may also be treated as censored if the observation &quot;fails&quot; because  the observation dropped out of the study for a reason unrelated to the event of interest.</li>
+</ol>
+<p>Fig. 1 illustrates the survival history for four seedlings that are part of a plant restoration study. Adults were introduced into different portions of the historical range of the species from which the species has been extirpated. To assist in returning the species to the wild the goal  was to discover which habitats promote plant longevity and reproductive success. </p>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><img src="../../images/lectures/lecture27/fig1.png" width="392" height="212" alt="fig. 1"></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 1</strong>&nbsp;&nbsp;Survival histories of four re-introduced seedlings</td>
+  </tr>
+</table>
+<p>Time lines in Fig. 1 begin at the point when the seedling was first observed in the field and end when the seedling was last observed. Individuals B and D experienced events (death) while individuals A and C were censored. Individual C was still alive when the study concluded. Individual A was stepped on by a field worker and so its death was not considered a natural death. The organization of the raw data corresponding to the graphical display of Fig. 1 is shown in Table 1.</p>
+<div align="center"> <span class="styleArial"><strong>Table 1</strong>&nbsp;&nbsp;Data table arranged in a manner appropriate for survival analysis</span><br>
+</div>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><div align="center">Individual</div></th>
+    <th scope="col"><div align="center">Start</div></th>
+    <th scope="col"><div align="center">Stop</div></th>
+    <th scope="col"><div align="center">Age</div></th>
+    <th scope="col"><div align="center">Status</div></th>
+  </tr>
+  <tr>
+    <td><div align="center">A</div></td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">6</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">0</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">B</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">10</div></td>
+    <td><div align="center">8</div></td>
+    <td><div align="center">1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">C</div></td>
+    <td><div align="center">0</div></td>
+    <td><div align="center">12</div></td>
+    <td><div align="center">12</div></td>
+    <td><div align="center">0</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">D</div></td>
+    <td><div align="center">0</div></td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">1</div></td>
+  </tr>
+</table>
+<p>As is often the case with survival data, the subjects exhibited a staggered entry with respect to calendar time. Survival analysis per se deals with time durations, the length of time a subject is observed. For this purpose each subject has a starting time of zero and an ending time that occurs when it experiences an event or leaves the study for other reasons. The variable Age in Table 1 records the length of time of each subject was observed to be alive while Status specifies the nature of the last observation time, 1 for an event and 0 if censored. The different symbols used at the endpoint of each time line in Fig. 1  also reflects each subject's value of Status.</p>
+<h3><a name="types"></a>Types of censoring</h3>
+<p>A censored individual provides some information but just not as much information as an observation that experienced an event. The amount of information it provides depends on the nature of the censoring. There are three basic kinds of censoring and these are distinguished in Fig. 2.</p>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture27/fig2.png" width="392" height="212" alt="fig. 2"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 2&nbsp;</strong> An illustration of the different types of censoring: right censoring (subject C), left censoring (subject A), and interval censoring (subject B). Subjects are  only observed  at times 1, 2, 3, and 4.</td>
+  </tr>
+</table>
+<ol>
+  <li>Right censoring&mdash;the event follows the last observation time so that the observed survival time is less than the true survival time. Right censoring is the most common form of censoring because it corresponds to any observations who have not experienced the event of interest at the conclusion of the study. In our seedling example, if a given seedling is  age <em>t</em> at the conclusion of the study then the best we can say is that the seedling's failure time is represented by the interval (<em>t</em>, &infin;). Subject C in Fig. 2 is right censored.</li>
+  <li>Left censoring&mdash;the event precedes the first observation time so that the observed survival time is greater than the true survival time. As an example, suppose a seedling is known to exist at baseline but at the first official observation time, one month later, the seedling is nowhere to be found. Thus its survival time is less than <em>t</em> = 1 and could be represented as (0, <em>t</em>). This is subject A in Fig. 2.</li>
+  <li>Interval censoring&mdash;the event occurs between two observation times <em>a</em> and <em>b</em> so that the precise time of the event is not known. Clearly left censoring is a special case of interval censoring (as, in truth, is right censoring). Subject B in Fig. 2 is interval censored.</li>
+</ol>
+<p>The objective of survival analysis is to use all the information provided by the censored individual up until the time of censoring. </p>
+<h3><a name="standard"></a>Standard statistical methods don't work well with survival data</h3>
+<p>I simulate 10,000 observations from a Gamma(1, .1) density, a long-tailed probability distribution that is sometimes used as a model for survival data. The theoretical density and the density estimated from this sample of 10,000 are shown in Fig. 3. As we can see the sample estimate of the density is quite close to the theoretical curve.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> set.seed(10)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.r &lt;- rgamma(10000,1,.1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.d &lt;- density(c(-out.r, out.r))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.x &lt;- out.d$x[out.d$x&gt;0]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.y &lt;- 2*out.d$y[out.d$x&gt;0]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> hist(out.r, probability=T ,ylim=c(0,.1), col='grey90', main='', xlab='Time to event')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(dgamma(x,1,.1),col=2,add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out.x[order(out.x)], out.y[order(out.x)], lty=2, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('Gamma(1,.1) density', 'Kernel density estimate (n = 10,000)'), col=c(2,1), lty=c(1,2), cex=.9, bty='n')</div><br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture27/fig2pt5.png" width="455" height="300" alt="Fig. 3"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 3</strong> &nbsp;A gamma(1, .1) density and an empirical estimate of this density based on a random sample of size 10,000.</td>
+  </tr>
+</table>
+<p>The theoretical mean of a Gamma(<em>a</em>, <em>b</em>) distribution is <img src="../../images/lectures/lecture27/aoverb.gif" alt="a over b " width="25" height="28" align="absmiddle">, which is equal to 10 in the example of Fig. 3. The estimate of the mean we obtain using the random sample of size 10,000 is quite close to this.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mean(out.r)</div>
+<span class="style24">[1] 10.0038</span>
+<p>Now suppose that these data were obtained as part of an experiment that we had to terminate at time = 25 so that event times in excess of 25 are censored. This corresponds to 8.4% of the observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(out.r&gt;25)/length(out.r)</div>
+<span class="style24">[1] 0.0828</span>
+
+<p>If we simply delete those observations we seriously underestimate the mean survival time.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.r2 &lt;- out.r[out.r&lt;=25]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mean(out.r2)</div>
+<span class="style24">[1] 7.79324</span>
+<p>If we instead assign the censored values their last observation time, 25, we still underestimate the mean.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.r3 &lt;- ifelse(out.r&lt;=25, out.r, 25)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mean(out.r3)</div>
+<span class="style24">[1] 9.21796</span>
+<p>It's worth noting that the median is unaffected by this kind of censoring as long as we retain the censored observations. On the other hand, if censoring occurred at various times throughout the study the median can also be affected. The primary motivation behind  survival analysis is that it provides us with procedures for obtaining good estimates of  population parameters in the presence of censoring.</p>
+<h2><a name="survivor"></a>The survivor and hazard functions</h2>
+<p>Let <em>T</em> = survival time, which is considered to be a random variable. In ordinary statistics we would typically characterize <em>T </em>in terms of its cumulative distribution function <em>F</em>(<em>t</em>), which is defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture27/cdf.gif" width="133" height="30" alt="cdf"></p>
+<p>Equivalently we can describe <em>T</em> in terms of its probability density function <em>f</em>(<em>t</em>) defined by</p>
+<p align="center"><img src="../../images/lectures/lecture27/density.gif" width="143" height="43" alt="density"></p>
+<p>In survival analysis, on the other hand, it is more convenient to work with two related functions called the survivor function <em>S</em>(<em>t</em>) and the hazard function <em>h</em>(<em>t</em>). The survivor function is closely related to the cumulative distribution function.</p>
+<p align="center"><img src="../../images/lectures/lecture27/survivor.gif" width="212" height="30"></p>
+<p>Because of  its relationship to the cumulative distribution function and the fact that <em>T</em> has a support set that is  non-negative it immediately follows that any survivor function must satisfy <em>S</em>(0) = 1, <em>S</em>(&infin;) = 0, and be monotone nonincreasing. Fig. 4 displays a possible survivor function along with its empirical estimate. Because we will only observe failures at discrete times, the empirical estimate of the survivor function is a step function.</p>
+<table width="400" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture27/fig3.png" width="320" height="220" alt="fig 3"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 4</strong> &nbsp;A survivor function along with its empirical estimate derived from a sample of survival times</td>
+  </tr>
+</table>
+<p>The hazard function <em>h</em>(<em>t</em>) is defined to be the instantaneous potential per unit time for an event to occur in the next instant given that the individual has survived to time <em>t</em>. It is also called the conditional failure rate and is defined formally as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture27/hazard.gif" width="275" height="57" alt="hazard"></p>
+<p>Based on  the formula the hazard is the instantaneous rate per unit time of the probability of failing in the next instant of time given survival up to this point. Notice that the hazard is not a probability per se but is rather a probability rate. While the hazard function is non-negative  unlike a probability the hazard can exceed one.</p>
+<p>Just as a probability density function fully characterizes a random variable, so does the hazard function. The usefulness of the hazard function is that it is directly related to the risk of occurrence of an event over time and thus has an intuitive appeal in characterizing risk. Probability models in parametric survival analysis are typically chosen based on the behavior of their hazard functions.</p>
+<ol>
+  <li>A constant hazard is characteristic of the exponential distribution.</li>
+  <li>A monotone hazard, one that is always nonincreasing or always nondecreasing, is characteristic of the Weibull distribution. The exponential distribution is a special case of the Weibull.</li>
+  <li>A hazard that initially increases and then decreases is characteristic of the lognormal distribution.</li>
+</ol>
+<p>The hazard and survivor functions are closely related and one can easily be derived from the other.</p>
+<p align="center"><img src="../../images/lectures/lecture27/hazard1.gif" width="213" height="78" alt="hazard1"></p>
+<p align="center"><img src="../../images/lectures/lecture27/hazard2.gif" width="195" height="48" alt="hazard2"></p>
+<p align="left">Furthermore the first of these identities implies that</p>
+<p align="center"><img src="../../images/lectures/lecture27/hazardidentity.gif" width="132" height="30" alt="hazard identity"></p>
+<h2><a name="basic"></a>The basic activities of survival analysis</h2>
+<ol>
+  <li>Estimate the survivor function (or equivalently, the hazard function). The Kaplan-Meier estimate of the survivor function is the typical choice.</li>
+  <li>Compare the survivor functions of two or more groups. The log-rank test is the standard approach.</li>
+  <li>Relate the survivor function (or the hazard) to explanatory variables. This is a regression problem in which we want to relate an individual's survival history to certain exposure variables while controlling for potential confounding variables. The standard approaches here are Cox regression (a semi-parametric approach) or Weibull regression (a parametric approach).</li>
+</ol>
+<h2><a name="KM"></a>The Kaplan-Meier estimator of the survivor function</h2>
+<p>Crucial to the development of any estimate of the survivor function is the notion of a risk set. Let <img src="../../images/lectures/lecture27/ordered&#32;times.gif" alt="ordered times" width="123" height="30" align="absmiddle"> denote the ordered failure times. We define the risk set <img src="../../images/lectures/lecture27/riskset.gif" alt="risk set" width="55" height="37" align="absmiddle"> as the set of individuals who have survived at least to time <img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle">. Consider first a case where there is no censoring. Let <em>n<sub>i</sub></em> = number of individuals alive just before time <img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle"> and let <em>m<sub>i</sub></em> = the number of deaths at time <img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle">. Suppose we have the following data.</p>
+<div align="center"><span class="styleArial"><strong>Table 2</strong> &nbsp;Survival data without censoring</span> </div>
+<table width="300" border="1" align="center">
+  <tr bgcolor="#F1D2D8">
+    <td scope="col"><div align="center"><img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle"></div></td>
+    <td scope="col"><div align="center"><em>n<sub>i</sub></em></div></td>
+    <td scope="col"><div align="center"><em>m<sub>i</sub></em></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0</div></td>
+    <td><div align="center">21</div></td>
+    <td><div align="center">0</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">6</div></td>
+    <td><div align="center">21</div></td>
+    <td><div align="center">3</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">7</div></td>
+    <td><div align="center">18</div></td>
+    <td><div align="center">1</div></td>
+  </tr>
+</table>
+<p>We can easily write down the survivor function at times 0, 6, and 7. We calculate it as the number of individuals that lived past the given time divided by the number of individuals we started with.</p>
+<p align="center"><img src="../../images/lectures/lecture27/KM1.gif" width="162" height="95" alt="KM"></p>
+<p>Although it's not useful in this particular instance, we can calculate the last probability in a different way by conditioning on the previous event.</p>
+<p align="center"><img src="../../images/lectures/lecture27/conditional.gif" width="310" height="33" alt="conditional"></p>
+<p>Sticking in the numbers from Table 2 yields the following.</p>
+<p align="center"><img src="../../images/lectures/lecture27/conditional2.gif" width="280" height="92" alt="conditional2"></p>
+<p>which is the same as before. Now suppose we have a censored observation at time <em>T</em> = 6 so that our data are as shown in Table 3. The column labeled <em>q<sub>i</sub></em> indicates the number of individual censored just after time <img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle"></p>
+<div align="center"><span class="styleArial"><strong>Table 3 </strong>&nbsp;Survival data with censoring</span> </div>
+<table width="300" border="1" align="center">
+  <tr bgcolor="#F1D2D8">
+    <td scope="col"><div align="center"><img src="../../images/lectures/lecture27/ti.gif" alt="ti" width="25" height="30" align="absmiddle"></div></td>
+    <td scope="col"><div align="center"><em>n<sub>i</sub></em></div></td>
+    <td scope="col"><div align="center"><em>m<sub>i</sub></em></div></td>
+    <td scope="col"><div align="center"><em>q<sub>i</sub></em></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">0</div></td>
+    <td><div align="center">21</div></td>
+    <td><div align="center">0</div></td>
+    <td><div align="center">0</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">6</div></td>
+    <td><div align="center">21</div></td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">7</div></td>
+    <td><div align="center">17</div></td>
+    <td><div align="center">1</div></td>
+    <td><div align="center">2</div></td>
+  </tr>
+</table>
+<p>With censoring, the risk set changes and our first method of calculating the survivor function is no longer possible, but the second method will work. The first two calculations of the survivor function remain the same, but the third will be different because #(<em>T</em> &gt; 6) has changed due to censoring.</p>
+<p align="center"><img src="../../images/lectures/lecture27/KM2.gif" width="280" height="92" alt="KM2"></p>
+<p>which is not the same as before. This calculation of the survival probabilities based on conditioning is the basis for the Kaplan-Meier estimator.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 24, 2012<br>
+      URL: <a href="lecture27.htm#lecture27" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture27.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

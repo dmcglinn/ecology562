@@ -1,0 +1,188 @@
+rikz <- read.table( 'ecol 562/RIKZ.txt', header=TRUE)
+apply(rikz[,2:76], 1, function(x) sum(x>0)) -> rikz$richness
+lm(richness~NAP, data=rikz) -> mod1
+lm(richness~NAP+factor(week), data=rikz) -> mod2
+lm(richness~NAP*factor(week), data=rikz) -> mod3
+
+#log-likelihood for intercept-only model
+Pois.LL <- function(lambda) sum(log(dpois(rikz$richness,lambda)))
+#choose a starting estimate
+Pois.LL(2)
+Pois.LL(3)
+Pois.LL(4)
+Pois.LL(5)
+Pois.LL(6)
+Pois.LL(7)
+# unexpected behavior: returns one value, not two
+Pois.LL(c(5,7))
+# compare with ordinary function
+f <- function(x) x^2
+f(c(5,7))
+
+#need to use sapply
+sapply(c(5,7), Pois.LL)
+sapply(seq(4,8,.01),Pois.LL)->out.L
+# plot log-likelihood
+plot(seq(4,8,.01),out.L,type='l',xlab=expression(lambda), ylab='log-likelihood')
+
+# obtain maximum numerically
+optimize(Pois.LL,c(4,7),maximum=T)
+# optim and nlminb locate minima, not maxima
+nlminb(5,function(x) -Pois.LL(x))
+optim(5,function(x) -Pois.LL(x))
+
+# Poisson regression with a single predictor NAP
+# identity link function
+Pois.LL2 <- function(x) {
+lambda <- x[1] + x[2]*rikz$NAP
+sum(log(dpois(rikz$richness,lambda))) }
+
+# some starting values yield illegal calculations
+Pois.LL2(1,-2)
+Pois.LL2(c(1,-2))
+Pois.LL2(c(7,-2))
+Pois.LL2(c(7,-3))
+Pois.LL2(c(6,-3))
+optim(c(7,-3),function(x) -Pois.LL2(x))
+
+# numerically more stable to use log link 
+Pois.LL2 <- function(x) {
+loglambda <- x[1] + x[2]*rikz$NAP
+sum(log(dpois(rikz$richness,exp(loglambda)))) }
+
+# results are now stable
+Pois.LL2(c(2,.5))
+Pois.LL2(c(2,.25))
+Pois.LL2(c(3,.25))
+optim(c(2,.25),function(x) -Pois.LL2(x))
+glm(richness~NAP,data=rikz,family=poisson)->mod1p
+summary(mod1p)
+anova(mod1p)
+anova(mod1p,test='Chisq')
+
+# log link is the default
+mod1p<-glm(richness~NAP, data=rikz, family=poisson)
+# identity link requires starting values
+mod1p1<-glm(richness~NAP, data=rikz, family=poisson(link=identity))
+mod1p1<-glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(6,-3))
+mod1p1<-glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(2,-.1))
+coef(mod1p1)
+mod1p1<-glm(richness~NAP, data=rikz, family=poisson(link=identity), start=c(6.7,-2.9))
+
+# can compare log-liklihoods of the two models
+logLik(mod1p)
+logLik(mod1p1)
+
+#to obtain log-likelihood of two models use sapply
+logLik(mod1p1,mod1p)
+sapply(list(mod1p1,mod1p),logLik)
+
+# predict returns predictions on scale of link function
+predict(mod1p)
+# fitted returns predictions on scale of original variable
+fitted(mod1p)
+
+
+# 3-dimensional picture of model
+mu=exp(predict(mod1p,newdata=data.frame(NAP=c(-1.5,0,1,2))))
+y1 <- seq(0,20,1)
+x1a<-rep(-1.5,length(y1))
+x1b<-rep(0,length(y1))
+x1c<-rep(1,length(y1))
+x1d<-rep(2,length(y1))
+z1a <- dpois(y1,mu[1])
+z1b <- dpois(y1,mu[2])
+z1c <- dpois(y1,mu[3])
+z1d <- dpois(y1,mu[4])
+x<-c(x1a,x1b,x1c,x1d)
+y<-c(y1,y1,y1,y1)
+z<-c(z1a,z1b,z1c,z1d)
+q1 <- scatterplot3d(x,y,z, 
+  xlim=c(-1.5, 2), ylim=c(0, 20),  type="n", 
+  xlab="NAP",  zlab="Density",
+  box=FALSE, ylab='Richness')
+q1$points3d(x1a, y1, z1a, type='h',cex=.8)
+q1$points3d(x1b, y1, z1b, type='h',cex=.8)
+q1$points3d(x1c, y1, z1c, type='h',cex=.8)
+q1$points3d(x1d, y1, z1d, type='h',cex=.8)
+mu2<-exp(predict(mod1p, newdata=data.frame(NAP=seq(-1.5,2,.1))))
+q1$points3d(seq(-1.5,2,.1), mu2, rep(0,length(mu2)), type='l', lwd=2)
+
+# redo graph for identity link model
+windows() # quartz() on Mac
+mu=predict(mod1p1,newdata=data.frame(NAP=c(-1.5,0,1,2)))
+y1 <- seq(0,20,1)
+x1a<-rep(-1.5,length(y1))
+x1b<-rep(0,length(y1))
+x1c<-rep(1,length(y1))
+x1d<-rep(2,length(y1))
+z1a <- dpois(y1,mu[1])
+z1b <- dpois(y1,mu[2])
+z1c <- dpois(y1,mu[3])
+z1d <- dpois(y1,mu[4])
+x<-c(x1a,x1b,x1c,x1d)
+y<-c(y1,y1,y1,y1)
+z<-c(z1a,z1b,z1c,z1d)
+q1 <- scatterplot3d(x,y,z, 
+  xlim=c(-1.5, 2), ylim=c(0, 20),  type="n", 
+  xlab="NAP",  zlab="Density",
+  box=FALSE, ylab='Richness')
+q1$points3d(x1a, y1, z1a, type='h',cex=.8)
+q1$points3d(x1b, y1, z1b, type='h',cex=.8)
+q1$points3d(x1c, y1, z1c, type='h',cex=.8)
+q1$points3d(x1d, y1, z1d, type='h',cex=.8)
+mu2<-predict(mod1p1, newdata=data.frame(NAP=seq(-1.5,2,.1)))
+#add regression line
+q1$points3d(seq(-1.5,2,.1), mu2, rep(0,length(mu2)), type='l', lwd=2)
+
+# add week to the regression model
+mod2p<-glm(richness~NAP+factor(week),data=rikz,family=poisson)
+mod3p<-glm(richness~NAP*factor(week),data=rikz,family=poisson)
+
+# test models
+anova(mod3p,test='Chisq')
+# examine estimates
+summary(mod3p)
+
+# compare log-likelihood of normal and Poisson model
+logLik(mod3)
+logLik(mod3p)
+
+# to get a probability from a density we need to integrate
+# but the density is the midpoint approximation of the integral
+# over a unit interval
+predict(mod3)[1]
+rikz$richness[1]
+fitted(mod3p)[1]
+# midpoint approximation
+dnorm(11,predict(mod3)[1],summary(mod3)$sigma)
+# actual probability
+pnorm(11.5,predict(mod3)[1],summary(mod3)$sigma)-
+pnorm(10.5,predict(mod3)[1],summary(mod3)$sigma)
+
+# for models with different numbers of parameters use AIC rather than LL
+AIC(mod3,mod3p)
+
+# check fit of model: use model to obtain Poisson means
+# display Poisson distributions for each site
+# superimpose observed value on this distribution
+sapply(0:30, function(x) dpois(x,exp(predict(mod3p)))) -> out
+dim(out)
+out[1:4,1:8]
+
+# create data frame to plot
+my.dat <- data.frame(p=as.vector(t(out)),x=rep(0:30,45), rich=rep(rikz$richness,rep(31,45)), id=rep(1:45,rep(31,45)))
+my.dat[1:8,]
+
+library(lattice)
+xyplot(p~x|factor(id),dat=my.dat,panel=function(x,y,subscripts){
+panel.xyplot(x,y,type='h',lwd=2,col='grey70')
+panel.points(my.dat$rich[subscripts][1],0,col=2,pch=8,cex=.8)})
+
+# could get better picture by removing negligible probabilities
+
+my.dat2 <- my.dat[my.dat$p>.0001,]
+xyplot(p~x|factor(id),dat=my.dat2,panel=function(x,y,subscripts){
+panel.xyplot(x,y,type='h',lwd=2,col='grey70')
+panel.points(my.dat2$rich[subscripts][1],0,col=2,pch=8,cex=.8)}, scales=list(x='free'))
+

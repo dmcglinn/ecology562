@@ -1,0 +1,864 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 3 (lab)&mdash;Friday, January 13, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style245 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style3 {color: #CC0000;
+	font-weight: bold;
+}
+.style101 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style161 {	color: #660033;
+	font-weight: bold;
+}
+.style191 {color: #009900; font-weight: bold; }
+.style12 {	color: #CC0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture3" id="lecture3"></a>Lecture 3 (lab 1)&mdash;Friday, January 13, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture3.htm#overview">Overview</a></li>
+  <li><a href="lecture3.htm#dataentry">Data entry</a></li>
+  <li><a href="lecture3.htm#reading">Reading a local text file</a></li>
+  <li><a href="lecture3.htm#directly">Reading in a text file  directly from the web</a>
+    <ul>
+      <li><a href="lecture3.htm#downloading">Downloading a new package from the CRAN site</a>
+<ul>
+          <li><a href="lecture3.htm#win2">Windows</a></li>
+          <li><a href="lecture3.htm#mac2">Mac OSX</a></li>
+        </ul>
+      </li>
+      <li><a href="lecture3.htm#using">Using the RCurl package</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture3.htm#getting">Getting information about data frames</a></li>
+  <li><a href="lecture3.htm#structural">Structural issues with the data set</a></li>
+  <li><a href="lecture3.htm#constructing">Constructing a richness variable</a></li>
+  <li><a href="lecture3.htm#fitting">Fitting a simple linear regression of richness on NAP</a></li>
+  <li><a href="lecture3.htm#graphing">Graphing the regression model</a></li>
+  <li><a href="lecture3.htm#adding">Adding a categorical predictor to the regression model</a>
+    <ul>
+      <li><a href="lecture3.htm#additive">Additive model</a></li>
+      <li><a href="lecture3.htm#interaction">Interaction model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture3.htm#graphing2">Graphing the interaction model</a>
+    <ul>
+      <li><a href="lecture3.htm#base">Creating the graph using base graphics</a></li>
+      <li><a href="lecture3.htm#lattice">Creating the graph with the lattice package</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture3.htm#saving">Saving your work</a></li>
+  <li><a href="lecture3.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture3.htm#abline">abline</a> adds a regression line to an already existing plot.</li>
+  <li><a href="lecture3.htm#anova">anova</a> when applied to a model object created by the <span class="style4">lm</span> function  produces an ANOVA table that reports the results of  a sequence of partial F-tests for testing whether a given term should be added to the model. The reference model for each test is one that contains all the terms   that appear above the current term in the ANOVA table.</li>
+  <li><a href="lecture3.htm#apply">apply</a> is used to apply a function (3rd argument) to a matrix (1st argument) separately by row (2nd argument = 1) or column (2nd argument = 2).</li>
+  <li><a href="lecture3.htm#asnumeric">as.numeric</a> converts character data into numbers or the levels of a factor variable to numerical values. In the latter case it produces integer values ranging from one to <em>n</em>, where <em>n</em> is the number of levels of the factor.</li>
+  <li><a href="lecture3.htm#catenate">c</a> is the catenation function that turns the elements making up its arguments into a single vector.</li>
+  <li><a href="lecture3.htm#choosecranmirror">chooseCRANmirror</a> can be used to change the current CRAN mirror site to another location.</li>
+  <li><a href="lecture3.htm#coef">coef</a> returns the coefficient estimates from a fitted model.</li>
+  <li><a href="lecture3.htm#names">colnames</a> displays the column names of a matrix or data frame.</li>
+  <li><a href="lecture3.htm#contrasts">contrasts</a> displays the coding scheme used by R for a factor variable.</li>
+  <li><a href="lecture3.htm#dim">dim</a> returns the number of rows and columns of a data frame.</li>
+  <li><a href="lecture3.htm#factor">factor</a> declares a variable to be a factor. The unique values of the variable become the levels of the factor and by default they are ordered in numerical or alphabetical order. Dummy contrasts are set up but these can be overridden with the <span class="style4">contrasts</span> function.</li>
+  <li><a href="lecture3.htm#function">function</a> is not a function per se but a keyword used when defining a function, either one that is named or one that is generic. </li>
+  <li><a href="lecture3.htm#geturl">getURL</a> (from <span class="style19">RCurl</span>) can be used to bring a text file into R from a web site. The contents of the file are brought in as a single long character string. We used it to read a file from a secure web site, one that had the https:// designation.</li>
+  <li><a href="lecture3.htm#getwd">getwd()</a> returns the folder path to  the current R working directory.</li>
+  <li><a href="lecture3.htm#history">history</a> opens up a history window in which one can view commands that were previously submitted  (Windows only). For example, <span class="sasblack">history(50)</span> would display  the last 50 commands issued. There is a 512 line default limit to what is saved, although this value can be changed. On a Mac a history panel is opened by selecting an icon at the top of the R window.</li>
+  <li><a href="lecture3.htm#legend">legend</a> is used to add a legend to an existing plot.</li>
+  <li><a href="lecture3.htm#levelsfunc">levels</a> displays the unique values of  a factor variable in their internal order.</li>
+  <li><a href="lecture3.htm#library">library</a> is used to load an R package into memory.</li>
+  <li><a href="lecture3.htm#lm">lm</a> is the linear model function in R for fitting ordinary regression  and analysis of variance models.</li>
+  <li><a href="lecture3.htm#names">names</a> displays the names of the variables in a data frame.</li>
+  <li><a href="lecture3.htm#panelxyplot">panel.lmline</a><a href="lecture3.htm#predict"></a> (from <span class="style19">lattice</span>) is used to estimate and add  regression lines to individual panels.</li>
+  <li><a href="lecture3.htm#panelxyplot">panel.xyplot</a><a href="lecture3.htm#predict"></a> (from <span class="style19">lattice</span>)  is a panel function used to display a scatter plot of points in individual panels</li>
+  <li><a href="lecture3.htm#paste">paste</a> is used to paste text strings together.</li>
+  <li><a href="lecture3.htm#readtable">read.table</a> reads in text data from an external file.</li>
+  <li><a href="lecture3.htm#setwd">setwd</a> sets the current working directory to a location that is specified (in quotes).</li>
+  <li><a href="lecture3.htm#sum">sum</a> calculates the sum of the elements of a vector or matrix.</li>
+  <li><a href="lecture3.htm#summary">summary</a> displays the parameter estimates and summary statistics of a linear model.</li>
+  <li><a href="lecture3.htm#table">table</a> when applied to a single variable returns the frequency counts for all the unique values of that variable. When <span class="style4">table</span> is applied to two variables (separated by commas) it cross-tabulates the frequencies of joint occurrences of the unique values of both variables producing a contingency table.</li>
+  <li><a href="lecture3.htm#textconnection">textConnection</a> makes a character vector, such as one created by <span class="style4">getURL</span>, look like a connection, allowing R routines that operate on connections to also operate on character vectors. We used it to convert the output from the <span class="style4">getURL</span> function into a form that <span class="style4">read.table</span> could understand.</li>
+  <li><a href="lecture3.htm#lattice">xyplot</a> (from <span class="style19">lattice</span>) is equivalent to the <span class="style4">plot</span> function of base graphics and is used to produce multi-panel displays in which the observations displayed in individual panels are selected according to  the value of a conditioning variable.</li>
+</ul>
+<h2>Special symbols and characters in R</h2>
+<ul>
+  <li><a href="lecture3.htm#assignment">&lt;-</a> the assignment operator in R, a less than symbol followed by a dash, representing a left pointing arrow. The arrow points in the direction of assignment. One may also use the equals sign, =, for a left assignment. </li>
+  <li><a href="lecture3.htm#assignment">-&gt;</a> the alternate assignment operator in R, a dash followed by a greater than symbol, representing a right pointing arrow. The arrow points in the direction of assignment.</li>
+  <li><a href="lecture3.htm#brackets">[ &nbsp;]</a>, a pair of brackets, is used for specifying elements of vectors or portions of data frames and matrices.</li>
+  <li><a href="lecture3.htm#parentheses">( &nbsp;)</a>, a pair of parentheses, is used to delimit the arguments of a function in R.</li>
+  <li><a href="lecture3.htm#dollarsign">$</a> is the list notation symbol that can be used to reference columns of a data frame by following it with the name assigned to that column.</li>
+  <li><a href="lecture3.htm#tilde">~</a> is the formula symbol and is used in defining expressions in R for model fitting. We used it in <span class="style4">plot</span> and <span class="style4">lm</span>. </li>
+  <li><a href="lecture3.htm#curly">{&nbsp;}</a> delimits multiple lines of code inside functions.</li>
+  <li><a href="lecture3.htm#xyplot">|</a> is used to separate a model formula and the conditioning variable in the formula for a lattice plot.</li>
+  <li><a href="lecture3.htm#star">*</a>  is  shortcut notation in linear models to produce  all the main effects and interactions involving a set of variables, e.g., var1*var2 is a shortcut for var1 + var2 + var1:var2.</li>
+  <li><a href="lecture3.htm#colon">:</a> in linear models is used to denote an interaction between two variables, e.g., var1:var2. It is also a an infix function that can be used to generate a consecutive sequence of integers, as in 1:4.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+<li><a href="lecture3.htm#bty">bty</a>= (argument to <span class="style4">legend</span>) specifies the box type that should surround the legend. Choosing <span class="style22">bty='n'</span> suppresses the drawing of a box around the legend.</li>
+<li><a href="lecture3.htm#cex">cex</a>= (argument to many graphics functions) specifies the amount of character expansion to be used for plotting symbols; <span class="style22">cex=1</span> is the default.</li>
+<li><a href="lecture3.htm#col">col</a>= (argument to many graphics functions) specifies the color to use in plotting points and/or line segments.</li>
+<li><a href="lecture3.htm#data">data</a>= (argument to many R functions) specifies the data frame from which the variables appearing in arguments to the function can be found. When the data argument is used the variables can be specified by just their names within the data frame. It is not necessary to include the data frame name as part of the variable name.</li>
+<li><a href="lecture3.htm#header">header</a>= (argument to <span class="style4">read.table</span>) takes on values TRUE or FALSE and indicates whether the first line of a text file should be treated as containing  variable names (TRUE) or not (FALSE).</li>
+<li><a href="lecture3.htm#labels">labels</a>= (argument to  <span class="style4">factor</span>) specifies a vector of labels for the levels defined by the <span class="style4">factor</span> function.</li>
+<li><a href="lecture3.htm#layout">layout</a>= (argument to <span class="style4">xyplot</span>) is used to define how the panels are arranged in the lattice display, the number of columns and the number of rows.</li>
+<li><a href="lecture3.htm#labels">levels</a>= (argument to <span class="style4">factor</span>) is used to specify the levels of a factor variable in the order desired. In dummy coding the first value specified in the <span class="style22">levels</span> argument becomes the reference level. </li>
+<li><a href="lecture3.htm#lty">lty</a>= (argument to many graphics functions) specifies the line type to use in drawing lines. Specifying <span class="style22">lty=1</span> draws a solid line, the default.</li>
+<li><a href="lecture3.htm#panel">panel</a>= (argument to <span class="style4">xyplot</span>) is used to define a customized panel function to control what is displayed in individual panels.</li>
+<li><a href="lecture3.htm#pch">pch</a>= (argument to many graphics functions) stands for &quot;print character&quot; and is used to designate the plotting symbol to be used in various plotting functions: <span class="style4">plot</span>, <span class="style4">points</span>, etc. </li>
+<li><a href="lecture3.htm#sep">sep</a>= (argument to <span class="style4">read.table</span>) specifies the character that is used to separate fields in the text file to be read into R. For example, <span class="style22">sep=',' </span>indicates that the entries are separated by commas while <span class="style22">sep='\t' </span>indicates that the entries are separated by tabs.</li>
+<li><a href="lecture3.htm#ssl">ssl.verifyhost=</a> (argument to <span class="style4">getURL</span>) can be used to turn host name verification off by setting <span class="style22">ssl.verifyhost=FALSE</span>.</li>
+<li><a href="lecture3.htm#ssl">ssl.verifypeer=</a> (argument to <span class="style4">getURL</span>) can be used to turn peer name verification off by setting <span class="style22">ssl.verifypeer=FALSE</span>.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture3.htm#lattice">lattice</a> for the function <span class="style4">xyplot</span>. The <span class="style19">lattice</span> package is the R implementation of trellis graphics.</li>
+  <li><a href="lecture3.htm#using">RCurl</a> for the <span class="style4">getURL</span> function. The <span class="style19">RCurl</span> package provides an R-interface to the libcurl library that provides HTTP facilities. This allows one to download files from Web servers, post forms, use HTTPS (the secure HTTP), use persistent connections, upload files, use binary content, handle redirects, and password authentication.</li>
+</ul>
+<h2><a name="overview"></a>Overview of today's lab</h2>
+<p>We examine a data set analyzed in Chapter 5 of <a href="lecture3.htm#zuur">Zuur et al. (2007)</a> to illustrate how to fit ordinary linear regression models in R. The data here consist of the abundances of different marine invertebrate species collected at various sites in the North Sea off the coast of Holland. The stated goal in <a href="lecture3.htm#zuur">Zuur et al. (2007)</a> is rather vague&mdash;to determine what abiotic factors affect the benthic fauna. Without  there being a more specific research question  we are straying into the realm of data dredging rather than true science, so we'll  use the data for illustrative purposes only.</p>
+<h2><a name="dataentry" id="dataentry"></a>Data entry</h2>
+<p>When R starts up you are presented with a console window in which you can enter commands. You can move back within a command line to correct mistakes by using the left and right arrow keys on the keyboard or with  the mouse. The home and end keys can be used to move to the beginning and end of the current line.  Previously issued commands can be recalled with the up arrow key.</p>
+<p>The <span class="style4"><a name="readtable" id="readtable"></a>read.table</span> function is used to read  data into R from a text file. The data may reside in a file that is stored on your personal computer or at a location on the web. I first consider reading data from a local file that is stored in a folder on your personal computer.</p>
+<h2><a name="reading"></a>Reading  a local text file</h2>
+<p><a name="getwd"></a><span class="style4"><a name="parentheses" id="parentheses"></a></span>There is a default location from which R will read and write files. To see what this is use the <span class="style4">getwd</span> function. R uses standard mathematical notation <em>f</em>(<em>x</em>,<em>y</em>,<em>z</em>) to specify functions and their arguments, so parentheses, <span class="style4">( )</span>, are always required with functions although sometimes it is not necessary to specify any arguments. The <span class="style4">getwd</span> function has no arguments but  still requires both parentheses.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">getwd()</div>
+<span class="style24">[1] &quot;/Users/jackweiss/Documents&quot;</span>
+<p>Notice that R indicates a computer's folder hierarchy by using a forward slash, /, not the backward slash, \, of Windows. When you specify a pathname to R you must also use forward slashes. On Windows you also have the option of using double backslashes, \\, but never a single backslash. The single backslash is an escape character in R and is used for the internal formatting of text strings.</p>
+<p>I've downloaded the data file from the class web site and stored it in a folder called &quot;ecol 562&quot; in the &quot;Documents&quot; folder of my computer. The file was saved as &quot;RIKZ&quot; but because it was saved as a text file it also has the extension &quot;.txt&quot; associated with it. Depending on how you've configured your computer the file extension may not be visible to you. Regardless, the correct name of the file is &quot;RIKZ.txt&quot;.</p>
+<p>The structure of the current file is particularly simple so we only need to specify two arguments to <span class="style4">read.table</span>.</p>
+<ol>
+  <li>The location of this file on your computer with the path to the file and file name enclosed in quotes. You may use single or double quotes, but you must not mix them in the same argument. It is not necessary to specify that part of the path that comprises the working directory.</li>
+  <li><a name="header"></a>The argument <span class="style22">header=TRUE</span> to indicate that the  names of the variables appear in the first line  of the file. R is case-sensitive. We can enter <span class="style1">TRUE</span> here, or <span class="style1">T</span>, but not <span class="style1">True</span>.</li>
+</ol>
+<p>To save the output of the <span class="style4">read.table</span> function we use the assignment operator, <span class="style4"><a name="assignment"></a>&lt;-</span> , to assign the output to an object in R. The arrow points in the direction of the assignment. We can also use the assignment arrow <span class="style4">-&gt;</span> in which case the calculation should appear first, then <span class="style4">-&gt;</span>, followed by the variable that is to get assigned the result of the calculation.
+</p>
+<p>Note: The <span class="style4">&lt;-</span> can be replaced with an <span class="style4">=</span> sign. The equal sign always assigns the result of the calculation on the right to the variable on the left of the equal sign. Thus it cannot be used to replace <span class="style4">-&gt;</span>. </p>
+<p><strong>Method 1: Specify the folder as part of the name</strong></p>
+<p>We can read in the file <span class="style1">RIKZ.txt</span> with <span class="style4">read.table</span> as follows. I store the result in a variable I call <span class="style1">rikz</span>. </p>
+
+
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#read in data from a folder in my Documents folder</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<p>R treats any line that begins with a <a name="comment"></a><span class="style4">#</span> symbol as a comment and ignores it. I will occasionally mix comments in with the code to annotate what's being done. They will be colored in <span class="style8">green</span> and start with a # symbol.</p>
+<p id="sep" name="sep"><a name="sep" id="sep"></a> The <span class="style22">sep</span> argument of <span class="style4">read.table </span>can be  used  to tell R what the field delimiter is. By default <span class="style4">read.table</span> assumes the fields in the file are separated by spaces or tabs. Use <span class="style22">sep=',' </span>to indicate a comma-delimited file or  <span class="style22">sep='\t'</span> to explicitly indicate a tab-delimited file. The current file is tab-delimited so the following will also successfully read in the file.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#assumes entries in different fields are separated by tabs </div>
+    <div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE, sep='\t')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"></div>
+<p><a name="readcsv"></a><a name="readdelim"></a>There are two other R functions for reading in data, <span class="style4">read.csv</span> and <span class="style4">read.delim</span>. These files assume the files are comma-delimited and tab-delimited, respectively, by calling <span class="style4">read.table</span> with the  appropriate arguments for <span class="style22">sep</span> already filled in.</p>
+<p><strong>Method 2: First change the working directory</strong></p>
+<p><a name="setwd"></a>If all of our data sets are found in a specific folder it probably makes sense to make that directory the working directory and read the files in directly from there. The <span class="style4">setwd</span> function can be used to first change the folder that is identified as the working directory. It takes a single argument: the complete path to the folder, enclosed in quotes. Now when I use <span class="style4">read.table</span> I don't have to specify the folder that contains the file.</p>
+
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#change working directory</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">setwd('/Users/jackweiss/Documents/ecol 562')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">getwd()</div>
+<span class="style24">[1] &quot;/Users/jackweiss/Documents/ecol 562&quot;</span>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#read in data from this folder</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'RIKZ.txt', header=TRUE)</div>
+
+<h2><a name="directly"></a>Reading in a text file  directly from the web</h2>
+<p>The <span class="style4">read.table</span> function can also be used to read in files from the web. For this the first argument of <span class="style4">read.table</span> is the URL of the file, where the entire URL is enclosed  in quotes. This will work for files located on web sites whose URL begins with 'http://'. Unfortunately the Sakai site where the class files are stored is a secure site whose URL  begins with &quot;https://&quot;. Reading in public files from such sites is a two-step process in R that requires the use of the <span class="style4">getURL</span> function that is contained in the <span class="style19">RCurl</span> package. The <span class="style19">RCurl</span> package is not part of the standard installation of R so we'll first need to download it from the CRAN site and install it into our copy of R. This process needs to be  done only once.</p>
+<h3><a name="downloading"></a>Downloading a new package from the CRAN site</h3>
+<p class="style161"><a name="win2"></a>Windows OS</p>
+<p>On Windows downloading and installing a new R package  is a three-step process.</p>
+<ol>
+  <li>Choose <span class="styleArial">Install Packages</span> from the <span class="styleArial">Packages</span> menu (Fig. 1a).</li>
+  <li>Choose a mirror site for the download (Fig. 1b). </li>
+  <li>Select the desired package from the list of packages that appears and click the <span class="styleArial">OK</span> button (Fig. 1c). </li>
+</ol>
+<table width="722" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td width="255" valign="top">(a) <img src="../../images/lectures/lecture3/pkg1.png" alt="" width="226" height="124" align="top"></td>
+    <td width="221" valign="top"><div align="left">(b) <img src="../../images/lectures/lecture3/cranbig.png" alt="CRAN" width="158" height="470" align="texttop"></div></td>
+    <td width="240" valign="top">(c) <img src="../../images/lectures/lecture3/menubig.png" alt="menu" width="197" height="418" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="styleArial"><strong>Fig. 1</strong> &nbsp;Windows OS: Installing an R package from the CRAN site on the web </td>
+  </tr>
+</table>
+<p>The desired package will be downloaded along with any additional packages  it requires. </p>
+<p class="style161"><a name="mac2"></a>Mac OS X</p>
+<p>Choose <span class="styleArial">Package Installer</span> from the <span class="styleArial">Packages &amp; Data </span>menu (Fig. 2a). In the window that appears (Fig. 2b)  enter <span class="style101">RCurl</span> in the <span class="styleArial">Package Search box</span> and press the return key on the keyboard to search for the <span class="style191">RCurl</span> package. It should eventually appear in the Package column along with its version number. Click the <span class="styleArial">Install Dependencies</span> check box so that if the package depends on any other packages these will be downloaded also. Finally, highlight the desired package in the list (sometimes multiple packages appear) and  click <span class="styleArial">Install Selected</span> to download the package to the R libraries folder.</p>
+<table  border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td width="240" valign="top">(a) <img src="../../images/lectures/lecture3/mac1.png" alt="mac1" width="196" height="96" align="texttop"></td>
+    <td width="520">(b) <img src="../../images/lectures/lecture3/macinstaller.png" alt="installer" width="484" height="377" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="styleArial"><strong>Fig. 2</strong> &nbsp;Mac OS X: Installing an R package from the CRAN site.</td>
+  </tr>
+</table>
+<p><a name="choosecranmirror"></a>If the package fails to turn up when searching for  it, the  CRAN mirror you're using doesn't have the appropriate version of the package  for your installed version of R. In that case you can try changing the mirror by entering <span class="style1">chooseCRANmirror()</span> at the R command prompt in the console, choosing a different mirror site in the pop-up menu that appears, and repeating the above protocol to try to install the package again from the new site.</p>
+<h3><a name="using" id="using"></a>Using the RCurl package</h3>
+<p><a name="library"></a>The package is now installed into your version of R but it hasn't been loaded into memory yet. That can be done with the <span class="style12">library</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(RCurl)</div>
+<p><a name="geturl"></a>The next step is to bring the text file into R from the web site with the <span class="style4">getURL</span> function from the <span class="style19">RCurl</span> package. This brings the contents of the file into R as a single long character string. In the command shown below I enclose the URL of the RIKZ data set from the Sakai web site in quotes and make it the first argument of <span class="style4">getURL</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myfile &lt;- getURL(&quot;https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/data/RIKZ.txt&quot;)</div>
+<p>The above function call works on my Mac, but on Windows I get the following error message.</p>
+<span class="style24">Error in function (type, msg, asError = TRUE)  : <br>
+SSL certificate problem, verify that the CA cert is OK. Details:<br>
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed</span>
+<p><a name="ssl"></a>I was able to fix this by adding two additional arguments to <span class="style4">getURL</span>, <span class="style1">ssl.verifyhost=F</span> and <span class="style1">ssl.verifypeer=F</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myfile &lt;- getURL(&quot;https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/data/RIKZ.txt&quot;, ssl.verifyhost=F, ssl.verifypeer=F)</div>
+<p><a name="textconnection"></a>Finally we need to convert the output from <span class="style4">getURL</span> into a usable format. The function <span class="style4">textConnection</span> will do this and the output from it can then be used as the first argument of <span class="style4">read.table</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table(textConnection(myfile), header=T)</div>
+<h2><a name="getting"></a>Getting information about   data frames </h2>
+<p>The object <span class="style1">rikz</span> that we've created in R is called a data frame. 
+  
+  
+  Data frames look like matrices but the elements of data frames can be mixtures of character and numeric data. More formally  data frames are tightly coupled collections of variables that share many of the properties of matrices and of lists. They are the fundamental data structures for most of R's modeling functions.</p>
+<p name="dim"><a name="dim"></a>The <span class="style4">dim</span> function is used to determine the dimensions of a data frame. </p>
+        
+          <div class="style10">dim(rikz)</div>
+          <span class="style24">[1] 45 89</span></p>
+          <p>From the output we see that there are 45 rows and 89 columns. To display the contents of a data frame we can use the <span class="style4">print</span> function or just type the name of the data frame at the R prompt and press the <span class="styleArial2">Enter</span> key. Because the <span class="style1">rikz</span> data set is so large, it makes more sense to just display a subset of the data set. For instance, the following displays the first four rows of <span class="style1">rikz</span>.</p>
+<div class="style10">rikz[1:4,]</div>
+<span class="style24">&nbsp;&nbsp;Sample C1 P1 P2 P3 P4 P5 P6 P7 P8 P9 P10 P11 P12 P13 P14 P15<br>
+1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1  &nbsp;4  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;1  &nbsp;0  &nbsp;0  &nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;4<br>
+2      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2  &nbsp;0  &nbsp;0  &nbsp;1  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0   &nbsp;&nbsp;2   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0<br>
+3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3  &nbsp;0  &nbsp;0  &nbsp;3  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0   &nbsp;&nbsp;1   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0<br>
+4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0  &nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0&nbsp;&nbsp;   0<br>
+&nbsp;&nbsp;P16 P17 P18 P19 P20 P21 P22 P24 P25 N1 CR1 CR2 CR3 CR4 CR5 CR6<br>
+1  &nbsp;32   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0  &nbsp;50  &nbsp;0   &nbsp;&nbsp;2   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0<br>
+2  &nbsp;22   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0  &nbsp;12  &nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;1   &nbsp;&nbsp;8   &nbsp;&nbsp;0   &nbsp;&nbsp;0<br>
+3  &nbsp;16   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;1   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;7  &nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;2  &nbsp;25   &nbsp;&nbsp;0   &nbsp;&nbsp;0<br>
+4  &nbsp;79   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;0  &nbsp;92   &nbsp;&nbsp;1  &nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;2   &nbsp;&nbsp;0   &nbsp;&nbsp;0   &nbsp;&nbsp;1   &nbsp;&nbsp;1<br>
+&nbsp;&nbsp;CR7 CR8 CR9 CR10 CR11 CR12 CR13 CR14 CR15 CR16 CR17 CR18 CR19<br>
+1 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;30 &nbsp;&nbsp;&nbsp;9 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;8<br>
+2 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0<br>
+3 &nbsp;&nbsp;1 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;0<br>
+4 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;CR20 CR21 CR22 CR23 CR24 CR25 CR26 CR27 CR28 M1 M2 M3 M4 M5 M6<br>
+1 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0<br>
+2 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0<br>
+3 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;7 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0<br>
+4 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0<br>
+&nbsp;&nbsp;&nbsp;M7 M8 M9 M10 M11 M12 M14 M15 M16 M17 I1 I2 I3 I4 I5 week angle1<br>
+1 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;1 &nbsp;0 &nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;32<br>
+2 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;1 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;62<br>
+3 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;65<br>
+4 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;&nbsp;0 &nbsp;0 &nbsp;0 &nbsp;2 &nbsp;0 &nbsp;0 &nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;55<br> 
+&nbsp;&nbsp;angle2 exposure salinity temperature    &nbsp;&nbsp;&nbsp;NAP penetrability<br>
+1     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.045         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;253.9<br>
+2     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.036         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;226.9<br>
+3     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.336         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;237.1<br>
+4     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.616         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;248.6<br>
+&nbsp;&nbsp;grainsize humus chalk sorting1 Beach<br>
+1     &nbsp;&nbsp;&nbsp;&nbsp;222.5  &nbsp;0.05  &nbsp;2.05    &nbsp;&nbsp;&nbsp;69.83     &nbsp;&nbsp;&nbsp;&nbsp;1       <br>
+2     &nbsp;&nbsp;&nbsp;&nbsp;200.0  &nbsp;0.30  &nbsp;2.50    &nbsp;&nbsp;&nbsp;59.00     &nbsp;&nbsp;&nbsp;&nbsp;1       <br>
+3     &nbsp;&nbsp;&nbsp;&nbsp;194.5  &nbsp;0.10  &nbsp;3.45    &nbsp;&nbsp;&nbsp;59.22     &nbsp;&nbsp;&nbsp;&nbsp;1       <br>
+4     &nbsp;&nbsp;&nbsp;&nbsp;221.0  &nbsp;0.15  &nbsp;1.60    &nbsp;&nbsp;&nbsp;67.75     &nbsp;&nbsp;&nbsp;&nbsp;1       </span>
+        <p id="dataframe" name="dataframe"><a name="brackets"></a>The notation <span class="style1">1:4</span> is shortcut for  the numbers 1, 2, 3, 4. The bracket notation, <span class="style4">[ ]</span>, is used to display the elements of a data frame. The value that precede the comma denotes the rows to be selected. The value that follows the comma denotes the columns. Because no numbers follow the comma in the above example, we obtain all 89 of the columns of the data frame. </p>
+        <p name="dataframe">In the above display  we see that the variable names appear in the first row of the output and the row numbers appear in the first column. The display  wraps to a new line when the window is full. The variable names that start  with one or two capital letters followed by a number denote different marine invertebrate species that were collected in the various samples. The displayed values are the counts of individual organisms in the sample. A value of zero means the species was not observed in the current sample. In the last few columns are variables corresponding to the various abiotic measurements that were made. These will be the predictors in our regression model. In addition we see that there are variables denoting the sample number (Sample in column 1), as well as the week the measurement was made and the beach on which the measurement was taken.</p>
+        <p name="dataframe"><a name="catenate"></a>To look at rows 1 through 4 but only columns 1 and 77 through 89 I  enter the following. The <span class="style4">c</span> function is the catenate function. It concatenates in this case numbers that are not consecutive into a vector. </p>
+<div class="style10">rikz[1:4, c(1,77:89)]</div>
+<span class="style24">&nbsp;&nbsp;Sample week angle1 angle2 exposure salinity temperature    &nbsp;&nbsp;&nbsp;NAP<br>
+1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;32     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.045<br>
+2      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;62     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.036<br>
+3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;65     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.336<br>
+4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;55     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.616<br>
+&nbsp;&nbsp;penetrability grainsize humus chalk sorting1 Beach<br>
+1         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;253.9     &nbsp;&nbsp;&nbsp;&nbsp;222.5  &nbsp;0.05&nbsp;  2.05    &nbsp;&nbsp;&nbsp;69.83     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+2         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;226.9     &nbsp;&nbsp;&nbsp;&nbsp;200.0  &nbsp;0.30  &nbsp;2.50    &nbsp;&nbsp;&nbsp;59.00     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+3         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;237.1     &nbsp;&nbsp;&nbsp;&nbsp;194.5  &nbsp;0.10  &nbsp;3.45    &nbsp;&nbsp;&nbsp;59.22     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+4         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;248.6     &nbsp;&nbsp;&nbsp;&nbsp;221.0  &nbsp;0.15  &nbsp;1.60    &nbsp;&nbsp;&nbsp;67.75     &nbsp;&nbsp;&nbsp;&nbsp;1</span>
+        <p name="dataframe"><a name="dollarsign"></a>We can also select elements of a data frame using what's called list notation. In this notation we specify the name of the data frame followed by a <span class="style4">$</span> sign followed by the name of the variable. For instance, <span class="style1">rikz$NAP</span> displays the values of the variable in the <span class="style1">rikz</span> data frame called NAP.</p>
+<div class="style10">rikz$NAP</div>
+<span class="style24">&nbsp;[1]  &nbsp;0.045 -1.036 -1.336  &nbsp;0.616 -0.684  &nbsp;1.190  &nbsp;0.820  &nbsp;0.635  &nbsp;0.061 -1.334 -0.976<br>
+[12]  &nbsp;1.494 -0.201 -0.482  &nbsp;0.167  &nbsp;1.768 -0.030  &nbsp;0.460  &nbsp;1.367 -0.811  &nbsp;1.117 -0.503<br>
+[23]  &nbsp;0.729  &nbsp;1.627  &nbsp;0.054 -0.578 -0.348  &nbsp;2.222 -0.893  &nbsp;0.766  &nbsp;0.883  &nbsp;1.786  &nbsp;1.375<br>
+[34] -0.060  &nbsp;0.367  &nbsp;1.671 -0.375 -1.005  &nbsp;0.170  &nbsp;2.052 -0.356  &nbsp;0.094 -0.002  &nbsp;2.255<br>
+[45]  &nbsp;0.865</span>
+<p>We can obtain the same output with the bracket notation by enclosing the name of the desired column in quotes.</p>
+<div class="style10"> rikz[,&quot;NAP&quot;]</div>
+<span class="style24">  &nbsp;[1]&nbsp; 0.045 -1.036 -1.336&nbsp; 0.616 -0.684&nbsp; 1.190&nbsp; 0.820&nbsp; 0.635&nbsp; 0.061 -1.334 -0.976<br>
+  [12]&nbsp; 1.494 -0.201 -0.482&nbsp; 0.167&nbsp; 1.768 -0.030&nbsp; 0.460&nbsp; 1.367 -0.811&nbsp; 1.117 -0.503<br>
+  [23]&nbsp; 0.729&nbsp; 1.627&nbsp; 0.054 -0.578 -0.348&nbsp; 2.222 -0.893&nbsp; 0.766&nbsp; 0.883&nbsp; 1.786&nbsp; 1.375<br>
+  [34] -0.060&nbsp; 0.367&nbsp; 1.671 -0.375 -1.005&nbsp; 0.170&nbsp; 2.052 -0.356&nbsp; 0.094 -0.002&nbsp; 2.255<br>
+[45]&nbsp; 0.865</span>
+<h2><a name="structural"></a>Structural issues with the data set</h2>
+<p>When we examine the data more closely we see that we don't have a simple random sample of beach locations. <a name="table" id="table"></a>If we tabulate the beach variable with the <span class="style4">table</span> function we see that there are five samples per beach.</p>
+<div class="style10">table(rikz$Beach)</div>
+<span class="style24">1 2 3 4 5 6 7 8 9 <br>
+          5 5 5 5 5 5 5 5 5 </span>
+
+        <p>So, at best we have a two-stage cluster sample in which a random sample of beaches was taken after which a random sample of five observations was taken on each beach.  If we look at the variable week, things become even more complicated.</p>
+<div class="style10"></div>
+<div class="style10">table(rikz$week, rikz$Beach)</div>
+<span class="style24">  &nbsp;&nbsp; <br>
+  &nbsp;&nbsp;&nbsp; 1 2 3 4 5 6 7 8 9<br>
+  &nbsp; 1 5 5 0 0 0 0 0 0 0<br>
+  &nbsp; 2 0 0 5 5 0 0 5 0 0<br>
+  &nbsp; 3 0 0 0 0 0 5 0 5 5<br>
+&nbsp; 4 0 0 0 0 5 0 0 0 0</span>
+<p name="dataframe">From the table of week versus beach we see that the different beaches were sampled in different weeks. Thus observations were not made at the same time but were obtained sequentially over the course of a month. This has the potential of introducing a  temporal component to the data. It may turn out that observations are similar because they came from the same beach or because they were obtained during the same week, rather than because of any of the attributes that were measured. If the abiotic variables don't account for this spatial and temporal clustering  it may be necessary to include it explicitly in the model.</p>
+<p name="dataframe">There are also some issues with the abiotic variables. Below I look at the first 8 rows of the non-biological variables.</p>
+<div class="style10">rikz[1:8,c(1,77:89)]</div>
+<span class="style24"> &nbsp;&nbsp;Sample week angle1 angle2 exposure salinity temperature    &nbsp;&nbsp;&nbsp;NAP<br>
+  1      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;32     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.045<br>
+  2      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;62     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.036<br>
+  3      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;65     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -1.336<br>
+  4      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;55     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5  &nbsp;0.616<br>
+  5      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;23     &nbsp;&nbsp;&nbsp;&nbsp;96       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10     &nbsp;&nbsp;&nbsp;&nbsp;29.4        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17.5 -0.684<br>
+  6      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6    &nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;129     &nbsp;&nbsp;&nbsp;&nbsp;89        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8     &nbsp;&nbsp;&nbsp;&nbsp;29.6        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20.8  &nbsp;1.190<br>
+  7      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7    &nbsp;&nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;126     &nbsp;&nbsp;&nbsp;&nbsp;89        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8     &nbsp;&nbsp;&nbsp;&nbsp;29.6        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20.8  &nbsp;0.820<br>
+  8      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8    &nbsp;&nbsp;&nbsp;1     &nbsp;&nbsp;&nbsp;&nbsp;52     &nbsp;&nbsp;&nbsp;&nbsp;89        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8     &nbsp;&nbsp;&nbsp;&nbsp;29.6        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20.8  &nbsp;0.635<br>
+&nbsp;&nbsp;penetrability grainsize humus chalk sorting1 Beach<br>
+1         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;253.9     &nbsp;&nbsp;&nbsp;&nbsp;222.5  &nbsp;0.05  &nbsp;2.05   &nbsp;&nbsp;69.830     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+2         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;226.9     &nbsp;&nbsp;&nbsp;&nbsp;200.0  &nbsp;0.30  &nbsp;2.50   &nbsp;&nbsp;59.000     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+3         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;237.1     &nbsp;&nbsp;&nbsp;&nbsp;194.5  &nbsp;0.10  &nbsp;3.45   &nbsp;&nbsp;59.220     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+4         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;248.6     &nbsp;&nbsp;&nbsp;&nbsp;221.0  &nbsp;0.15  &nbsp;1.60   &nbsp;&nbsp;67.750     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+5         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;251.9     &nbsp;&nbsp;&nbsp;&nbsp;202.0  &nbsp;0.05  &nbsp;2.45   &nbsp;&nbsp;57.760     &nbsp;&nbsp;&nbsp;&nbsp;1<br>
+6         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;250.1     &nbsp;&nbsp;&nbsp;&nbsp;192.5  &nbsp;0.10  &nbsp;2.50   &nbsp;&nbsp;53.075     &nbsp;&nbsp;&nbsp;&nbsp;2<br>
+7         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;257.1     &nbsp;&nbsp;&nbsp;&nbsp;205.5  &nbsp;0.10  &nbsp;1.85   &nbsp;&nbsp;54.410     &nbsp;&nbsp;&nbsp;&nbsp;2<br>
+8         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;247.9     &nbsp;&nbsp;&nbsp;&nbsp;211.5  &nbsp;0.10  &nbsp;1.70   &nbsp;&nbsp;60.405     &nbsp;&nbsp;&nbsp;&nbsp;2</span>
+<p name="names">What we see is that values of some variables vary for each sample while some are the same for individual samples but vary only when we switch to another beach. Thus <span class="style1">angle2</span>, <span class="style1">exposure</span>, <span class="style1">salinity</span>, and <span class="style1">temperature</span> were apparently measured once on each beach but were not measured at individual sample locations. This raises the question of how these variables should be used in a regression model. If we use them as ordinary predictors we are forced to assume that the beach-level values accurately reflect what would have been measured at individual sample sites. The data set  already gives us a reason to question this assumption. There are two reported angle measurements in the data set, <span class="style1">angle1</span> measured at each sample location and <span class="style1">angle2</span> measured for each beach. They don't look anything like each other. 
+</p>
+<h2 name="names"><a name="constructing"></a>Constructing a richness variable</h2>
+<p name="names"><a name="names"></a>The <span class="style4">names</span> function displays  the names of the columns of a data frame. (The same output can also be obtained with the <span class="style4">colnames</span> function.)</p>
+<div class="style10">names(rikz)</div>
+<span class="style24">
+  &nbsp;[1] &quot;Sample&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;C1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P2&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+  &nbsp;[5] &quot;P3&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P4&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P5&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[9] &quot;P7&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P8&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P9&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P10&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;P11&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P12&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P13&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P14&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [17] &quot;P15&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P16&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P17&quot;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;P18&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [21] &quot;P19&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P20&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P21&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P22&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [25] &quot;P24&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;P25&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;N1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [29] &quot;CR2&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR3&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR4&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR5&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [33] &quot;CR6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR7&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;CR8&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR9&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [37] &quot;CR10&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR11&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR12&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR13&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [41] &quot;CR14&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR15&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR16&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR17&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [45] &quot;CR18&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR19&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR20&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR21&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [49] &quot;CR22&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR23&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR24&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR25&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [53] &quot;CR26&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR27&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CR28&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [57] &quot;M2&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M3&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M4&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M5&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [61] &quot;M6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M7&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M8&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M9&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [65] &quot;M10&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M11&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M12&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M14&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [69] &quot;M15&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M16&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;M17&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;I1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [73] &quot;I2&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;I3&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;I4&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;I5&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [77] &quot;week&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;angle1&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&quot;angle2&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;exposure&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [81] &quot;salinity&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;temperature&quot;&nbsp;&nbsp; &quot;NAP&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;penetrability&quot;<br>
+  [85] &quot;grainsize&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;humus&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;chalk&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;sorting1&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[89] &quot;Beach&quot;&nbsp;&nbsp; </span>
+<p><a name="apply"></a>The numbers at the edge of the display give us the position of the next displayed element in the vector of names. Using these numbers we see that the species data appear in columns 2 through 76. To calculate the species richness of a sample we need to count up the number species for which the recorded value is different from zero. A simple way to accomplish this is with the <span class="style4">apply</span> function. The <span class="style4">apply</span> function takes three arguments:</p>
+<ol>
+          <li> a matrix to act on, </li>
+          <li>the elements to act on&mdash;the rows, 1, or the columns, 2, and</li>
+          <li>the function to apply to those elements</li>
+        </ol>
+<p>A nice description of the <span class="style4">apply</span> function as well as some of the other sophisticated R functions useful for manipulating entire matrices can be found on the UCLA stats web site.</p>
+<p align="center"><a href="http://www.ats.ucla.edu/stat/r/library/advanced_function_r.htm">http://www.ats.ucla.edu/stat/r/library/advanced_function_r.htm</a></p>
+<p><a name="sum"></a>Suppose we wanted to calculate the total abundance at each site. For that we would need to add up  the counts for all the individual species. The following function call uses the <span class="style4">apply</span> function to do the job.</p>
+   <div class="style10" style="padding-left: 30px; text-indent:-30px">apply(rikz[,2:76], 1, sum)</div>
+<span class="style24">  &nbsp;[1] 143&nbsp; 52&nbsp; 70 199&nbsp; 67 944 241 192 211&nbsp; 48&nbsp; 35&nbsp;&nbsp; 1&nbsp; 47&nbsp; 38&nbsp; 10&nbsp;&nbsp; 1&nbsp; 47&nbsp; 73&nbsp;&nbsp; 8&nbsp; 48&nbsp;&nbsp; 6&nbsp; 42&nbsp; 29<br>
+        [24]&nbsp;&nbsp; 0&nbsp; 43&nbsp; 33&nbsp; 34&nbsp; 67&nbsp; 46&nbsp; &nbsp;5&nbsp;&nbsp; 7&nbsp;&nbsp; 1&nbsp;&nbsp; 1 102 352&nbsp;&nbsp; 6&nbsp; 99&nbsp; 27&nbsp; 85&nbsp;&nbsp; 0&nbsp; 19&nbsp; 34&nbsp; 23&nbsp;&nbsp; 0&nbsp; 11</span>
+<ul>
+  <li>The first term, <span class="style1">rikz[,2:76]</span> specifies the columns of <span class="style1">rikz</span> that correspond to the species counts.</li>
+          <li>The second term, <span class="style1">1</span>, indicates that we want to work with the rows of the matrix. The rows correspond to individual samples.</li>
+          <li>The third argument is the R function <span class="style4">sum</span> that sums up all of the values it is given.</li>
+</ul>
+<p>To obtain richness we need to determine if a species was present or absent at the site and then count the number of presences. We can determine if a species was present or absent by using the Boolean condition <em>x</em> &gt; 0. This evaluates to TRUE if <em>x</em> is greater than zero, FALSE if <em>x</em> is 0 (or less). I try it out for the first site. In this case it yields a vector of length 75 consisting of individual TRUEs and FALSEs. </p>
+     <div class="style10" style="padding-left: 30px; text-indent:-30px"> rikz[1,2:76]&gt;0</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; C1&nbsp;&nbsp;&nbsp; P1&nbsp;&nbsp;&nbsp; P2&nbsp;&nbsp;&nbsp; P3&nbsp;&nbsp;&nbsp; P4&nbsp;&nbsp;&nbsp; P5&nbsp;&nbsp; P6&nbsp;&nbsp;&nbsp; P7&nbsp;&nbsp;&nbsp; P8&nbsp;&nbsp;&nbsp; P9&nbsp;&nbsp; P10&nbsp;&nbsp; P11&nbsp;&nbsp; P12&nbsp;&nbsp; P13 &nbsp;&nbsp;P14&nbsp; P15<br>
+          1 TRUE FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE<br>
+  &nbsp;&nbsp; P16&nbsp;&nbsp; P17&nbsp;&nbsp; P18&nbsp;&nbsp; P19&nbsp;&nbsp; P20&nbsp;&nbsp; P21&nbsp;&nbsp; P22&nbsp;&nbsp; P24&nbsp; P25&nbsp;&nbsp;&nbsp; N1&nbsp; CR1&nbsp;&nbsp; CR2&nbsp;&nbsp; CR3&nbsp;&nbsp; CR4&nbsp;&nbsp; CR5&nbsp;&nbsp; CR6<br>
+          1 TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE TRUE FALSE FALSE FALSE FALSE FALSE<br>
+  &nbsp;&nbsp;&nbsp; CR7&nbsp;&nbsp; CR8&nbsp;&nbsp; CR9&nbsp; CR10&nbsp; CR11&nbsp; CR12&nbsp; CR13 CR14 CR15&nbsp; CR16&nbsp; CR17&nbsp; CR18 CR19&nbsp; CR20&nbsp; CR21&nbsp; CR22<br>
+          1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE TRUE FALSE FALSE FALSE TRUE FALSE FALSE FALSE<br>
+  &nbsp;&nbsp; CR23&nbsp; CR24&nbsp; CR25 CR26&nbsp; CR27&nbsp; CR28&nbsp;&nbsp;&nbsp; M1&nbsp;&nbsp;&nbsp; M2&nbsp;&nbsp;&nbsp; M3&nbsp;&nbsp;&nbsp; M4&nbsp;&nbsp;&nbsp; M5&nbsp;&nbsp;&nbsp; M6&nbsp;&nbsp;&nbsp; M7&nbsp;&nbsp;&nbsp; M8&nbsp;&nbsp;&nbsp; M9&nbsp;&nbsp; M10<br>
+          1 FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE<br>
+  &nbsp;&nbsp;&nbsp; M11&nbsp;&nbsp; M12&nbsp;&nbsp; M14&nbsp;&nbsp; M15&nbsp;&nbsp; M16&nbsp; &nbsp;M17&nbsp;&nbsp;&nbsp; I1&nbsp;&nbsp;&nbsp; I2&nbsp;&nbsp; I3&nbsp;&nbsp;&nbsp; I4&nbsp;&nbsp;&nbsp; I5<br>
+        1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE</span>
+<p>By default TRUE values have numeric value 1 and FALSE values have numeric value 0, so we can sum them to obtain the number of species that were present.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(rikz[1,2:76]&gt;0)</div>
+ <span class="style24">       [1] 11</span>
+<p><a name="function"></a><a name="sum"></a>Now we're ready to calculate the richness of each of the individual sites. The following use of the <span class="style4">apply</span> function calculates the richness at each site and creates a new column in the data frame <span class="style1">rikz</span> with the name &quot;richness&quot;.</p>
+<div class="style10">apply(rikz[,2:76], 1, function(x) sum(x&gt;0)) -&gt; rikz$richness</div>
+<div class="style10">rikz$richness</div>
+<span class="style24"> &nbsp;[1] 11 10 13 11 10  8  9  8 19 17  6  1  4  3  &nbsp;3  1  3  3  1  4  3 22  6  0  6  5  4<br>
+        [28]  &nbsp;1  &nbsp;6  &nbsp;4  &nbsp;2  &nbsp;1  1  3  4  &nbsp;3  &nbsp;5  7  5  0  7 11  3  0</span>
+        <ul>
+          <li>The first term, <span class="style1">rikz[,2:76]</span> selects the columns of rikz that correspond to the species counts.</li>
+          <li>The second term, <span class="style1">1</span>, indicates we want to work with the rows. The rows correspond to individual samples.</li>
+          <li>The notation, <span class="style1">function(x) sum(x&gt;0)</span>, in the third argument creates what's called a generic function, a function that is generated on the fly without being given an explicit name. The keyword <span class="style1">function(x)</span> identifies that what comes next is a function and that the variable in the function is denoted by <span class="style1">x</span>. The actual function formula is<span class="style1"> sum(x&gt;0)</span>. </li>
+          <li>Finally I assign the results to a new column called <span class="style1">richness</span> in the data frame <span class="style1">rikz</span>. Notice the use of the $ notation discussed previously.
+        </li>
+        </ul>
+
+        <p><a name="ncol"></a>If we examine the <span class="style1">rikz</span> data frame we see that a new column has been added.</p>
+     <div class="style10" style="padding-left: 30px; text-indent:-30px"> rikz[1:4,]</div>
+<span class="style24">  &nbsp; Sample C1 P1 P2 P3 P4 P5 P6 P7 P8 P9 P10 P11 P12 P13 P14 P15 P16 P17 P18 P19 P20 P21 P22 P24<br>
+          1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 4&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 1&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 4&nbsp; 32&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+          2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp; 0&nbsp; 0&nbsp; 1&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 2&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 22&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+          3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 0&nbsp; 0&nbsp; 3&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 16&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+          4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 79&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 92<br>
+  &nbsp; P25 N1 CR1 CR2 CR3 CR4 CR5 CR6 CR7 CR8 CR9 CR10 CR11 CR12 CR13 CR14 CR15 CR16 CR17 CR18 CR19<br>
+          1&nbsp; 50&nbsp; 0&nbsp;&nbsp; 2&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp; 30&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 8<br>
+          2&nbsp; 12&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 8&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0 &nbsp;&nbsp;0&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0<br>
+          3&nbsp;&nbsp; 7&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 2&nbsp; 25&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 0<br>
+          4&nbsp;&nbsp; 1&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 2&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 1&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 15&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0<br>
+  &nbsp; CR20 CR21 CR22 CR23 CR24 CR25 CR26 CR27 CR28 M1 M2 M3 M4 M5 M6 M7 M8 M9 M10 M11 M12 M14 M15<br>
+          1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+          2&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 1&nbsp;&nbsp; 0<br>
+          3&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+          4&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp;&nbsp; 0<br>
+  &nbsp; M16 M17 I1 I2 I3 I4 I5 week angle1 angle2 exposure salinity temperature&nbsp;&nbsp;&nbsp; NAP penetrability<br>
+          1&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 1&nbsp; 0&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 32&nbsp;&nbsp;&nbsp;&nbsp; 96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp; 29.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17.5&nbsp; 0.045&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 253.9<br>
+          2&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 62&nbsp;&nbsp;&nbsp;&nbsp; 96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp; 29.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17.5 -1.036&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 226.9<br>
+          3&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 65&nbsp;&nbsp;&nbsp;&nbsp; 96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp; 29.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17.5 -1.336&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 237.1<br>
+          4&nbsp;&nbsp; 0&nbsp;&nbsp; 0&nbsp; 0&nbsp; 0&nbsp; 2&nbsp; 0&nbsp; 0&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 55&nbsp;&nbsp;&nbsp;&nbsp; 96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp; 29.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17.5&nbsp; 0.616&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 248.6<br>
+  &nbsp; grainsize humus chalk sorting1 Beach richness<br>
+          1&nbsp;&nbsp;&nbsp;&nbsp; 222.5&nbsp; 0.05&nbsp; 2.05&nbsp;&nbsp;&nbsp; 69.83&nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11<br>
+          2&nbsp;&nbsp;&nbsp;&nbsp; 200.0&nbsp; 0.30&nbsp; 2.50&nbsp;&nbsp;&nbsp; 59.00&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10<br>
+          3&nbsp;&nbsp;&nbsp;&nbsp; 194.5&nbsp; 0.10&nbsp; 3.45&nbsp;&nbsp;&nbsp; 59.22&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13<br>
+          4&nbsp;&nbsp;&nbsp;&nbsp; 221.0&nbsp; 0.15&nbsp; 1.60&nbsp;&nbsp;&nbsp; 67.75&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11</span>
+<div class="style10"></div>
+<h2><a name="fitting"></a>Fitting a simple linear regression model of richness on NAP</h2>
+        <p><a name="lm"></a><a name="tilde"></a><a name="data"></a>The  variable NAP measures  the height of a sample site relative to the mean tide level and is the first predictor considered by Zuur et al. (2007) in their regression model. The <span class="style4">lm</span> function of R  fits ordinary regression models. The regression model itself is specified as a formula, in this case, <span class="style1">richness ~ NAP</span>. The <span class="style22">data</span> argument is used to specify the data frame that contains the variables that appear in the formula.</p>
+<div class="style10">lm(richness~NAP, data=rikz) -&gt; mod1</div>
+<p>Entering the name of an R object at the prompt in the console window causes the object to be printed. With an <span class="style4">lm</span> object this yields a minimal amount of information about the model fit&mdash;just the call that was used and estimates of the parameters.</p>
+<div class="style10">mod1</div>
+<span class="style24">Call:<br>
+  lm(formula = richness ~ NAP, data = rikz)</span><br>
+       <span class="style24">Coefficients:<br>
+          (Intercept)          &nbsp;&nbsp;&nbsp;NAP <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.686       -2.867 </span>
+
+<p><a name="summary"></a>To get additional information we can use the <span class="style4">summary</span> function.</p>
+<div class="style10">summary(mod1)</div>
+<span class="style24">Call:<br>
+          lm(formula = richness ~ NAP, data = rikz)</span>
+        <p><span class="style24">Residuals:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Min      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1Q  &nbsp;Median      &nbsp;&nbsp;&nbsp;&nbsp;3Q     &nbsp;&nbsp;&nbsp;&nbsp;Max <br>
+          -5.0675 -2.7607 -0.8029  1.3534 13.8723 
+        </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error t value Pr(&gt;|t|) <br>
+  (Intercept)   &nbsp;&nbsp;</span><span class="style25">6.6857</span><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;0.6578  &nbsp;10.164 5.25e-13 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          </span><span class="style25">-2.8669</span><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;0.6307  &nbsp;</span><span class="style25">-4.545 4.42e-05</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:  0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span></p>
+<p><span class="style24">Residual standard error: 4.16 on 43 degrees of freedom<br>
+  Multiple R-squared: </span><span class="style25">0.3245</span><span class="style24">,	Adjusted R-squared: 0.3088 <br>
+  F-statistic: </span><span class="style25">20.66</span><span class="style24"> on 1 and 43 DF,  p-value: </span><span class="style25">4.418e-05</span>
+
+<p>Two <em>p</em>-values appear in the output.</p>
+<ol>
+          <li>The <em>p</em>-values in the column <span class="style1">Pr(&gt;|t|)</span> are for tests of whether each individual regression coefficient is different from zero (given that all the remaining predictors are in the model).</li>
+          <li>The <em>p</em>-value that appears in the last line for the <span class="style1">F-statistic</span> is a test of whether the regression coefficients of all predictors (excluding the intercept) are simultaneously equal to zero.</li>
+        </ol>
+<p>Notice that the two <em>p</em>-values are identical (when rounded to two decimals). That's because there is only one predictor in the model. In this special case the <em>F</em>-statistic (20.66) is equal to the square of the <em>t</em>-statistic (&ndash;4.545). We conclude that there is a statistically significant linear relationship between richness and NAP. Another useful quantity is R<sup>2</sup>, labeled &quot;Multiple R-squared&quot; in output. In words it tells us that 32.45% of the variability in the response has been explained by its linear relationship with NAP.</p>
+<h2><a name="graphing"></a>Graphing the regression model</h2>
+        <p><a name="plot"></a>Scatter plots are produced with the <span class="style4">plot</span> function. We can use formula notation in the <span class="style4">plot</span> function as follows.</p>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#formula notation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(richness~NAP, data=rikz)</div>
+        <p><a name="abline"></a>The <span class="style4">plot</span> function is a high-level graphics command and will cause the contents of the active graphics window to be replaced with the current graph. Other graphics commands can then be used to add additional features to the current graph. The <span class="style4">abline</span> function can be used to add a regression line to the current graph. When there is only one predictor <span class="style4">abline</span> needs only the <span class="style4">lm</span> object in order to draw the line (Fig. 3).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(mod1)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><img src="../../images/lectures/lecture3/fig3.png" width="450" height="290" alt="fig. 3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3</strong> &nbsp;Regression model superimposed on a scatter plot of the data. </td>
+  </tr>
+</table>
+
+
+<h2><a name="adding"></a>Adding a categorical predictor to the regression model</h2>
+<p name="dollarsign"><a name="factor"></a>I next consider adding the  structural variable, week, to the regression model. Even though this variable has numeric values, it is in fact a categorical variable. The values just serve to label the categories. Because the labels also serve to order the categories  it might be tempting to treat it as continuous. This would not be wrong but when we treat it as categorical we'll  be able to see if linearity is a good assumption. To make R  treat  week  as categorical I use the <span class="style4">factor</span> function of R when fitting the model. The <span class="style4">factor</span> function automatically creates a set of indicator variables using the lowest numeric value to define the baseline level. For the variable week R generates the following regressors.</p>
+<p align="center" name="dollarsign"><img src="../../images/lectures/lecture3/z1.gif" alt="z2" width="203" height="70" align="absmiddle">, &nbsp;<img src="../../images/lectures/lecture3/z2.gif" alt="z2" width="202" height="70" align="absmiddle">, &nbsp;<img src="../../images/lectures/lecture3/z3.gif" alt="z3" width="203" height="70" align="absmiddle"></p>
+<p align="left" name="dollarsign"><a name="levelsfunc" id="levelsfunc"></a><a name="contrasts"></a>We can verify that this is the case by using the <span class="style4">levels</span> and <span class="style4">contrasts</span> functions of R on the factor variable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> levels(factor(rikz$week))</div>
+<span class="style24">  [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">contrasts(factor(rikz$week))</div>
+<span class="style24">  &nbsp; 2 3 4<br>
+  1 0 0 0<br>
+  2 1 0 0<br>
+  3 0 1 0<br>
+  4 0 0 1</span>
+</p>
+<p>The output from <span class="style4">levels</span> tells us that R sees four categories that it is labeling (notice the quotes around the values)  1, 2, 3, and 4. The <span class="style4">contrasts</span> function shows the coding of the three dummy variables (the three columns in the displayed output) for each of the four categories of week (the four rows in the output). Observe that the reference level, week = 1, has a value of zero in each of the three columns.</p>
+<h3><strong><a name="additive"></a>Additive model</strong></h3>
+<p>First I fit the additive model. </p>
+<p align="center"><img src="../../images/lectures/lecture3/additive.gif" width="357" height="27" alt="additive"></p>
+<p>This is a model in which we have a different regression line (richness versus NAP) for every week. The lines are parallel but are allowed to have  different intercepts. (See<a href="lecture2.htm#dummy1"> lecture 2</a>.)</p>
+
+<div class="style10">lm(richness~NAP + factor(week), data=rikz) -&gt; mod2</div>
+<h3><strong><a name="interaction"></a>Interaction model</strong></h3>
+<p><a name="colon"></a>Next I fit the interaction model. This allows the lines to have different slopes and different intercepts in each week. Interactions in R are denoted with a colon, <span class="style1">NAP:factor(week)</span>.</p>
+<div class="style10">lm(richness~NAP + factor(week) + NAP:factor(week), data=rikz) -&gt; mod3</div> 
+<p name="dollarsign"><a name="star"></a>Alternatively we can use R's shortcut * notation to fit this model.</p>
+<div class="style10">lm(richness~NAP*factor(week), data=rikz) -&gt; mod3</div> 
+
+<p name="dollarsign">The asterisk between the terms causes R to generate the individual terms plus the interaction term. The interaction model written in terms of the dummy variables defined above is the following. (See <a href="lecture2.htm#dummy2">lecture 2</a>.)</p>
+<p align="center" name="dollarsign"><img src="../../images/lectures/lecture3/interaction.gif" width="708" height="27" alt="interaction"></p>
+<p name="dollarsign">This is  also a model in which we have a different regression line (richness versus NAP) in every week. It differs from the additive model in that the lines are now allowed to have both different slopes and different intercepts.</p>
+<p name="dollarsign">The three models we've fit so far are nested. We can reduce the interaction model (<span class="style1">mod3</span>) to the additive model (<span class="style1">mod2</span>)   by dropping the interaction terms. The can be expressed formally in the form of the following hypothesis test.</p>
+<p align="center"><img src="../../images/lectures/lecture3/week&#32;hypothesis.gif" width="333" height="58" alt="week hypothesis"></p>
+<p><a name="anova"></a>The <span class="style4">anova</span> function of R carries out this test. When <span class="style4">anova</span> is given a single model it carries out a sequence of partial F-tests starting with the individual additive terms and culminating with the interactions. These are sequential tests so that in each row of the output table, the term that appears in that row has been added to a model that already contained all the terms listed above it in the table. The <span class="style4">anova</span> function adheres to the principle of marginality so that a model with an interaction term must also contain the main effect terms that comprise the interaction. A good way to read the table produced by the <span class="style4">anova</span> function is from the bottom up. </p>
+<div class="style10">anova(mod3)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: richness<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Df Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 357.53&nbsp; 357.53 59.9605 2.967e-09 ***<br>
+  factor(week)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 387.11&nbsp; 129.04 21.6406 2.896e-08 ***<br>
+  NAP:factor(week)&nbsp; 3 136.38&nbsp;&nbsp; 45.46&nbsp; 7.6241 </span><span class="style25">0.0004323</span><span class="style24"> ***<br>
+  Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37 220.62&nbsp;&nbsp;&nbsp; 5.96&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<br>
+<p>The row labeled <span class="style1">NAP:factor(week)</span> tests whether we need to add an interaction term to the additive model. Because the <em>p</em>-value of the test is small (<em>p</em> &lt; .05), we reject the null hypothesis of no interaction and conclude the interaction of NAP and categorical week is statistically significant.</p>
+<h2><a name="graphing2" id="graphing2"></a>Graphing the interaction model</h2>
+<p>If we use the <span class="style4">summary</span> function on the fitted interaction model, <span class="style1">mod3</span>, we are shown the individual coefficient estimates for the different dummy regressors and the individual statistical tests for these coefficients. Because week 1 is the reference group, the  tests involving the dummy regressors are tests of whether the slope or intercept in a given week is different from what it was in week 1. For example, the last line of the table tells us that the slope in week 4 is significantly different from what it was in week 1. From the reported point estimates we see that the slope in week 1 was &ndash;1.9 and the slope in week 4 is 7 less than this, or &ndash;8.9. </p>
+<div class="style10"> summary(mod3)</div>
+<span class="style24">Call:<br>
+lm(formula = richness ~ NAP * factor(week), data = rikz)</span>
+<p><span class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -6.3022 -0.9442 -0.2946&nbsp; 0.3383&nbsp; 7.7103 </span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11.40561&nbsp;&nbsp;&nbsp; 0.77730&nbsp; 14.673&nbsp; &lt; 2e-16 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.90016&nbsp;&nbsp;&nbsp; 0.87000&nbsp; -2.184 0.035369 *&nbsp; <br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; -8.04029&nbsp;&nbsp;&nbsp; 1.05519&nbsp; -7.620 4.30e-09 ***<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; -6.37154&nbsp;&nbsp;&nbsp; 1.03168&nbsp; -6.176 3.63e-07 ***<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.37721&nbsp;&nbsp;&nbsp; 1.60036&nbsp;&nbsp; 0.861 0.395020&nbsp;&nbsp;&nbsp; <br>
+  NAP:factor(week)2&nbsp; 0.42558&nbsp;&nbsp;&nbsp; 1.12008&nbsp;&nbsp; 0.380 0.706152&nbsp;&nbsp;&nbsp; <br>
+  NAP:factor(week)3 -0.01344&nbsp;&nbsp;&nbsp; 1.04246&nbsp; -0.013 0.989782&nbsp;&nbsp;&nbsp; <br>
+  NAP:factor(week)4 -7.00002&nbsp;&nbsp;&nbsp; 1.68721&nbsp; -4.149 0.000188 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 2.442 on 37 degrees of freedom<br>
+  Multiple R-squared: 0.7997,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.7618 <br>
+  F-statistic: 21.11 on 7 and 37 DF,&nbsp; p-value: 3.935e-11 </span>
+
+<p><a name="coef"></a>We can extract just the parameter estimates from the model with the <span class="style4">coef</span> function.</p>
+<div class="style10"> coef(mod3)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAP&nbsp;&nbsp;&nbsp;&nbsp; factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; factor(week)4 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11.40561401&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.90015634&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -8.04029272&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -6.37154047&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.37721360 <br>
+  NAP:factor(week)2 NAP:factor(week)3 NAP:factor(week)4 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.42557926&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.01344155&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -7.00002159</span>
+<p>Using the  dummy variable definitions given above we can calculate the intercept and slope of the lines in each of the four weeks. (See <a href="lecture2.htm#dummy2">lecture 2</a>.)</p>
+<p align="center"><img src="../../images/lectures/lecture3/interaction.gif" width="708" height="27" alt="interaction"></p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Intercepts and slopes for the regression lines in different weeks<a href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/code/R&#32;code&#32;hot&#32;days.html#gam"></a></td>
+  </tr>
+</table>
+<table width="700" border="1" align="center" cellpadding=2 cellspacing=0 frame=box rules=groups>
+    <colgroup>
+    </colgroup>
+    <colgroup span=2>
+    </colgroup>
+        <colgroup span=2>
+    </colgroup>
+    <thead>
+      <tr  bgcolor="#F1D2D8">
+
+    <td><div align="center"><strong>week</strong></div></td>
+    <td><div align="center"><strong>intercept</strong></div></td>
+    <td><div align="center"><strong>estimate of intercept</strong></div></td>
+    <td><div align="center"><strong>slope</strong></div></td>
+    <td><div align="center"><strong>estimate of slope</strong></div></td>
+ </tr>
+    </thead>
+    <tr>
+    <tbody>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td>&beta;<sub>0</sub></td>
+    <td class="sasblack">coef(mod1)[1]</td>
+    <td>&beta;<sub>1</sub></td>
+    <td class="sasblack">coef(mod1)[2]</td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td>&beta;<sub>0</sub> + &beta;<sub>2</sub></td>
+    <td class="sasblack">coef(mod1)[1] + coef(mod1)[3]</td>
+    <td>&beta;<sub>1</sub> + &beta;<sub>5</sub></td>
+    <td class="sasblack">coef(mod1)[2] + coef(mod1)[6]</td>
+  </tr>
+  <tr>
+    <td><div align="center">3</div></td>
+    <td>&beta;<sub>0</sub> + &beta;<sub>3</sub></td>
+    <td class="sasblack">coef(mod1)[1] + coef(mod1)[4]</td>
+    <td>&beta;<sub>1</sub> + &beta;<sub>6</sub></td>
+    <td class="sasblack">coef(mod1)[2] + coef(mod1)[7]</td>
+  </tr>
+  <tr>
+    <td><div align="center">4</div></td>
+    <td>&beta;<sub>0</sub> + &beta;<sub>4</sub></td>
+    <td class="sasblack">coef(mod1)[1] + coef(mod1)[5]</td>
+    <td>&beta;<sub>1</sub> + &beta;<sub>7</sub></td>
+    <td class="sasblack">coef(mod1)[2] + coef(mod1)[8]</td>
+  </tr>
+      </tbody>
+</table>
+<p>Using this information we can plot the individual lines estimated by the model. I do this two ways: first using  base graphics of R and secondly using the <span class="style19">lattice</span> package.</p>
+<h3><a name="base"></a>Creating the graph using base graphics</h3>
+<p><a name="col"></a><a name="pch"></a><a name="lty"></a>Using base graphics I plot all the data in single scatter plot using different   colors and plotting symbols to represent the data from different weeks. This is accomplished by including the <span class="style22">col</span> and <span class="style22">pch</span> arguments in the <span class="style4">plot</span> function and choosing  values from those shown in Fig. 4 below.  R has 25 built-in plotting symbols and over 600 named colors as well as 8 colors that can be specified with the numbers 1 through 8. To see a full list of colors go to <a href="http://research.stowers-institute.org/efg/R/Color/Chart/index.htm">http://research.stowers-institute.org/efg/R/Color/Chart/index.htm</a>.</p>
+<table width="750"  border="0" align="center" cellpadding="2" cellspacing="6">
+  <tr>
+    <td><img src="../../images/lectures/lecture3/symbols.png" alt="symbols" width="197" height="186"></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/lectures/lecture3/colors.png" alt="colors" width="286" height="122"></td>
+    <td><img src="../../images/lectures/lecture3/linetypes.png" width="198" height="174" alt="lty"></td>
+  </tr>
+  <tr>
+    <td colspan="3"><span class="styleArial"><strong>Fig. 4</strong> &nbsp;&nbsp;&nbsp;Plotting characters (pch), numeric color codes (col), and line types (lty) in R</span></td>
+  </tr>
+</table>
+<p>Because the variable week is coded 1 through 4, I can use the value of week as the argument to <span class="style22">col</span> to select one of the first four numbered colors, <span class="style1">col = week</span>. I elect to use the filled plotting symbols that start with 15. These can be obtained by adding 14 to the value of week, <span class="style1">pch = 14 + week</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(richness~NAP, data=rikz, col=week, pch=week+14)</div>
+<p><a name="asnumeric"></a>If week was a factor (e.g., if it was originally a character variable and was then converted to a factor by R when it was read in by the <span class="style4">read.table</span> function), the same effect could be obtained with the <span class="style4">as.numeric</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(richness~NAP, data=rikz, col=as.numeric(factor(week)), pch=as.numeric(factor(week))+14)</div>
+<p><a name="abline"></a>To add the regression lines to the plot I use the <span class="style4">abline</span> function.  I give the intercept as the first argument and the slope as the second argument to <span class="style4">abline</span>. The values are determined from the  formulas given in Table 1. I specify the appropriate color with <span class="style22">col=</span> and make the line dashed by specifying <span class="style22">lty=2</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(coef(mod3)[1], coef(mod3)[2], col=1, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  abline(coef(mod3)[1]+coef(mod3)[3], coef(mod3)[2]+coef(mod3)[6], col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  abline(coef(mod3)[1]+coef(mod3)[4], coef(mod3)[2]+coef(mod3)[7], col=3, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(coef(mod3)[1]+coef(mod3)[5], coef(mod3)[2]+coef(mod3)[8], col=4, lty=2)</div>
+<p><a name="legend"></a>Finally I add a legend to distinguish the lines and plotting symbols.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('topright', paste('week ', 1:4), col=1:4, pch=15:18, lty=2, cex=.8, bty='n')</div>
+<ul>
+  <li>In the <span class="style4">legend</span> function the first argument specifies the location for the legend. There are a set of reserved words that can be used here, such as <span class="style1">'topright'</span>. Alternatively you can specify an <em>x</em>-coordinate and a <em>y</em>-coordinate separated by a comma. </li>
+  <li><a name="paste"></a>The second argument of <span class="style4">legend</span> is the text you wish to see in the legend. For this I could have entered <span class="style1">c('week 1', 'week 2', 'week 3', 'week 4')</span>. Instead I use the <span class="style4">paste</span> function of R to paste the text in the string <span class="style1">'week '</span> separately to the numbers 1 through 4 with <span class="style1">paste('week ', 1:4)</span>.</li>
+  <li>The <span class="style22">col</span> argument specifies the colors.</li>
+  <li>The <span class="style22">pch</span> argument specifies the plotting symbols.</li>
+  <li>The <span class="style22">lty</span> argument specifies the line type used. <span class="style1">lty=2</span> corresponds to a dashed line (Fig. 4).</li>
+  <li><a name="bty"></a>The <span class="style22">bty</span> argument specifies the border type for the legend. I select <span class="style1">bty='n'</span> which means no border is drawn.</li>
+  <li><a name="cex"></a>The <span class="style22">cex</span> argument controls the size of the symbols and text in the legend. The default is <span class="style1">cex=1</span> which I find to be too big.</li>
+</ul>
+<p>The final graph is shown in Fig. 5.</p>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><img src="../../images/lectures/lecture3/fig4.png" width="450" height="290" alt="fig 5"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 5</strong> &nbsp;Interaction model superimposed on a scatter plot of the data. </td>
+  </tr>
+</table>
+<p>From the graph it appears that it is week 4 that is driving the interaction. The lines in the other three weeks are roughly parallel. It also appears that there is a single site with a very large richness value that has been highly influential on the fit. Given that  only five sites are being used to estimate the slope and intercept in week 4, the regression line for  week 4 does not appear to be very reliable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(rikz$week)</div>
+<span class="style24">&nbsp;1&nbsp; 2&nbsp; 3&nbsp; 4 <br>
+  10 15 15&nbsp; 5</span>
+<h3><a name="lattice" id="lattice"></a>Creating the graph with the lattice package</h3>
+<p>The <span class="style19">lattice</span> package provides a second way to create graphs in R. (A third way is with the <span class="style19">ggplot2</span> package.) Although <span class="style19">lattice</span> can be used to produce any graph that base graphics can produce, the primary use of the <span class="style19">lattice</span> package is to generate panel graphs (trellis graphics) in which we plot a relationship between variables conditional on the value of some other variable. In the present example we will use week as the conditioning variable.</p>
+<p>The <span class="style19">lattice</span> package is part of the standard installation of R so we don't need to download it from the web. We do first need to load it into memory though.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<p><a name="xyplot"></a>The primary plotting function in <span class="style19">lattice</span> is the <span class="style4">xyplot</span> function. It supports the formula notation we used in the <span class="style4">plot</span> function. To indicate that we want a separate plot for each week we write the formula as follows: <span class="style1">richness~NAP|week</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(richness~NAP|week, data=rikz)</div>
+<p>The labeling of the panels is less than ideal in Fig. 6a. Because week is a numeric variable <span class="style19">lattice</span> has used a thermomenter-like display to indicate its relative value. To get the actual values of each week to display in the panel we need to convert week to a factor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(richness~NAP|factor(week), data=rikz)</div>
+<p><a name="labels" id="labels"></a>Finally we can get slightly nicer labels by generating our own text for them in the call to the <span class="style4">factor</span> function. I include the <span class="style22">levels</span> argument to indicate what the levels are and the <span class="style22">labels</span> argument to associate the desired labels with those levels.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(richness~NAP|factor(week, levels=1:4, labels=paste('week ',1:4)), data=rikz)</div>
+<p>Fig 6b shows the result.</p>
+
+<table  border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr>
+    <td width="340" valign="top">(a) <img src="../../images/lectures/lecture3/fig5a.png" width="335" height="290" alt="fig 5a"></td>
+    <td width="340">(b) <img src="../../images/lectures/lecture3/fig5b.png" width="335" height="290" alt="fig 5b"></td>
+  </tr>
+  <tr>
+    <td colspan="3" class="styleArial" style="padding-left: 35px; text-indent:-28px" ><strong>Fig. 6</strong> &nbsp;A panel graph in which the grouping variable week is treated  (a) as a continuous variable, and (b) as a factor.</td>
+  </tr>
+</table>
+<p><a name="layout"></a>The arrangement of the panels is determined by size of the graphics window. The arrangement can be specified explicitly with the  <span class="style22">layout</span> argument. For example, to have the panels arranged in one column and four rows we would add the argument <span class="style1">layout=c(1,4)</span> to the <span class="style4">xyplot</span> call.</p>
+<p><a name="curly"></a><a name="panel"></a>What's shown in the individual panels is determined by a panel function. The default panel function  just the displays a scatter plot of the data. To add a regression line we need to write our own panel function. This is done by specifying the <span class="style22">panel</span> argument of the <span class="style4">xyplot</span> function followed by our  function definition. A panel function that produces a scatter plot of the points and adds dashed regression lines is shown below. Because the function has more than one line we need to enclose the lines in a pair of curly brackets, { }.</p>
+<div class="style1" style="padding-left: 30px; text-indent:-30px">function(x,y) {<br>
+panel.xyplot(x, y)<br>
+panel.lmline(x, y, lty=2) }
+</div>
+<p><a name="panelxyplot"></a><span class="style4">panel.xyplot</span> and <span class="style4">panel.lmline</span> are special functions that are used only when defining a panel function. Here's the full call to <span class="style4">xyplot</span> with the user-specified panel function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(richness~NAP|factor(week,levels=1:4,labels=paste('week ',1:4)), data=rikz, layout=c(2,2), panel=function(x,y) {<br>
+  panel.xyplot(x,y)<br>
+panel.lmline(x,y ,lty=2)})</div>
+<p>Fig. 7 shows the result. One of the nice features of the <span class="style19">lattice</span> package is that the graph in each panel is drawn to the same scale (this can be overridden) so that the points and lines in the different panels are directly comparable.</p>
+<table width="480" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture3/fig6.png" width="430" height="310" alt="fig 6"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 7</strong> &nbsp;Graph of the interaction model using the lattice package</td>
+  </tr>
+</table>
+<h2><a name="saving" id="saving"></a>Saving your work</h2>
+<p><a name="history"></a>In Windows  the <span class="style4">history</span> function can be used to  display  recent lines of code. For instance, </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">history(100) </div>
+<p>will display in a separate window the last 100 lines of code that you've entered in the R command console. The contents of this window can then be saved or you can copy out selected lines of code from this window. </p>
+<p>This method doesn't work in Mac OSX. Instead you should click the icon at the top of the screen that is indicated in Fig. 8. This opens  a history window next to the console window  which has buttons that allow you to save the contents of the history window to a file. The saved file is given the extension .Rhistory, but it is really a text file and can be opened and  edited with a text editor such as TextEdit or a word processor.</p>
+<table width="520"  border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture3/macfig1.png" width="500" height="84" alt="fig7"></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture3/history.png" width="291" height="438" alt="history"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 8</strong>&nbsp;&nbsp;Saving the history of R commands in Mac OSX</td>
+  </tr>
+</table>
+<p>When you shut down R you will be prompted  to save the current R workspace. The R workspace consists of all the objects you created in the current R session (and whatever objects were saved from previous sessions). Generally speaking you will not want to save the workspace. Instead when you open R the next time, use the saved history of commands (after editing out the mistakes you made) to regenerate those objects that you need. That way you start with a clean slate each time.</p>
+<h2><a name="cited"></a>Cited references</h2>
+<p><a name="zuur"></a>Zuur, Alain F., Elena N. Ieno, and Graham M. Smith. 2007. <em>Analysing Ecological Data.</em> Springer, New York. <a href="http://www.springerlink.com/content/g6632j/">UNC e-book</a></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum of the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 15, 2012<br>
+      URL: <a href="lecture3.htm#lecture3" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture3.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

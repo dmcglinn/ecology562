@@ -1,0 +1,50 @@
+rikz <- read.table( 'ecol 562/RIKZ.txt', header=TRUE)
+apply(rikz[,2:76], 1, function(x) sum(x>0)) -> rikz$richness
+
+#normal models
+lm(richness~NAP, data=rikz) -> mod1
+lm(richness~NAP+factor(week), data=rikz) -> mod2
+lm(richness~NAP*factor(week), data=rikz) -> mod3
+
+#Poisson models
+glm(richness~NAP, data=rikz, family=poisson) -> mod1p
+glm(richness~NAP+factor(week), data=rikz, family=poisson) -> mod2p
+glm(richness~NAP*factor(week), data=rikz, family=poisson) -> mod3p
+
+#display estimates and Wald tests
+summary(mod3p)
+
+#produces a sequence of likelihood ratio tests
+anova(mod3p,test='Chisq')
+
+#model log-likelihood
+logLik(mod2p)
+logLik(mod3p)
+
+#likelihood ratio statistic
+2*(logLik(mod3p)-logLik(mod2p))
+#number of estimated parameters
+attr(logLik(mod2p),'df')
+attr(logLik(mod3p),'df')
+
+#likelihood ratio statistic
+2*(logLik(mod3p)-logLik(mod2p))->LR.stat
+#degrees of freedom for test, number of parameters dropped
+attr(logLik(mod3p),'df')-attr(logLik(mod2p),'df')->df.LR
+df.LR
+
+#p-value for test statistic
+1-pchisq(LR.stat,df.LR)
+#critical value of LR test: reject if LR.stat exceeds this
+qchisq(.95,df.LR)
+
+#can also compare two nested models directly
+anova(mod2p,mod3p,test='Chisq')
+
+#Wald confidence interval for NAP coefficient
+summary(mod3p)$coefficients
+summary(mod3p)$coefficients[2,1]+qnorm(.025)*summary(mod3p)$coefficients[2,2]
+summary(mod3p)$coefficients[2,1]+qnorm(.975)*summary(mod3p)$coefficients[2,2]
+
+#profile likelihood confidence intervals for parameters
+confint(mod3p)

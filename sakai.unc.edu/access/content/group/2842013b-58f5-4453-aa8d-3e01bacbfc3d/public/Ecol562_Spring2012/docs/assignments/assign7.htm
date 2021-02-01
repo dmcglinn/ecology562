@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 7</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style13 {font-weight: bold; color: #008000; }
+
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign7" id="assign7"></a>Assignment 7 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, March 2, 2012</p>
+
+<h2>Data Source </h2>
+
+<p>The data for this assignment are from Michael Crawlely's web site. The files are <a href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/fertilizer.txt">fertilizer.txt</a> and <a href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/farms.txt">farms.txt</a>.</p>
+<h1 align="left" class="style13">Part 1</h1>
+<h2 align="left">Overview</h2>
+<p align="left">The data set <a href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/fertilizer.txt">fertilizer.txt</a> records the root length (<span class="style8">root</span>) of twelve plants (<span class="style8">plant</span>) measured at two-week intervals (<span class="style8">week</span>) for a total of ten weeks. One half the plants had fertilizer added, the other half, the controls, did not (<span class="style8">fertilizer</span>). Thus we have multiple measurements made on the same plant as well as measurements made on different plants.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Fit a model in which root size  is allowed to vary as a function of time. Be sure in fitting your model that you properly account for the manner in which the data were obtained.</li>
+  <li>Determine the effect of fertilizer on root growth.</li>
+  <li>For your final model from Question 2 determine if there is any lingering temporal correlation that should be accounted for.</li>
+  <li>Graph your final model superimposed on the raw data. Clearly show the population average model as well as the various subject-specific models.</li>
+</ol>
+<h1 align="left" class="style13">Part 2</h1>
+<h2 align="left">Overview</h2>
+<p align="left">The data set <a href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/farms.txt">farms.txt</a> records plant size (<span class="style8">size</span>) and soil nitrogen levels (<span class="style8">N</span>) at 120 locations. A random sample of 24 farms (<span class="style8">farm</span>) was initially obtained and then measurements were taken at five locations on each farm.</p>
+
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Fit a variance components model and partition the variability in plant size as variability between plants on the same farm and variability between plants  from different farms. Where does most of the variability occur?</li>
+  <li>Estimate the correlation of the response variable for observations coming from the same farm.</li>
+  <li>Fit a regression model  that estimates the overall linear relationship between plant size and soil nitrogen levels while properly accounting for the structure of the data set.</li>
+</ol>
+<h2>Cited reference</h2>
+<p>Crawley, M. J.  2007.  <em>The R Book</em>.  John Wiley, New York </p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 27, 2012<br>
+      URL: <a href="assign7.htm#assign7" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign7.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 26&mdash;Friday, March 16, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style102 {font-size: smaller}
+.style6 {	color: #0033CC;
+	font-size: smaller;
+}
+.style7 {	color: #CC0000;
+	font-weight: bold;
+}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+.style103 {color: #0033CC; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {color: #660099;
+	font-weight: bold;
+}
+.style104 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture26" id="lecture26"></a>Lecture 26 (lab 9)&mdash;Friday, March 16, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture26.htm#background">Lowess, loess, and splines</a></li>
+  <li><a href="lecture26.htm#GAMs">GAMs with interactions</a></li>
+  <li><a href="lecture26.htm#using">Using a GAM to choose a transformation of a predictor</a></li>
+  <li><a href="lecture26.htm#generalized">Generalized additive mixed effects models</a></li>
+  <li><a href="lecture26.htm#cited">Cited references</a></li>
+</ul>
+<h3>R functions and commands demonstrated</h3>
+<ul>
+  <li><a href="lecture26.htm#gam">gam</a> (from <span class="style19">mgcv</span>) for fitting generalized additive models (GAMs).</li>
+  <li><a href="lecture26.htm#gamm">gamm</a> (from <span class="style19">mgcv</span>) for fitting generalized additive mixed effects models (GAMMs).</li>
+  <li><a href="lecture26.htm#loess">loess</a> fits a local polynomial regression smoother to a scatter plot of data.</li>
+  <li><a href="lecture26.htm#lowess">lowess</a> fits a local polynomial regression smoother to a scatter plot of data.</li>
+  <li><a href="lecture26.htm#methods">methods</a> lists the available methods for a given function.</li>
+  <li><a href="lecture26.htm#plotgam">plot.gam</a> (from <span class="style19">mgcv</span>) is a method for the <span class="style1021">plot</span> function for displaying <span class="style1021">gam</span> objects.</li>
+  <li><a href="lecture26.htm#sfunc">s</a> (from <span class="style19">mgcv</span>) is the smoothing spline function used to estimate a smooth in a GAM.</li>
+  <li><a href="lecture26.htm#smoothspline">smooth.spline</a> fits a smoothing spline to a scatter plot.</li>
+</ul>
+<h3>R function options</h3>
+<ul>
+  <li><a href="lecture26.htm#by">by=</a> (argument to <span class="style1021">s</span>) is used to fit separate smooths for each level of a specified factor variable.</li>
+  <li><a href="lecture26.htm#f">f=</a> (argument to <span class="style1021">lowess</span><span class="style1021"></span>) is used to define the span of the <span class="style1021">lowess</span> smoother.</li>
+  <li><a href="lecture26.htm#family">family=</a> (argument to <span class="style1021">loess</span>)  is used to add a robust step to local polynomial regression: <span class="style22">family=&quot;symmetric&quot;</span>.</li>
+  <li><a href="lecture26.htm#knots">k=</a> (argument to <span class="style1021">s</span>) is used to specify the dimension of the basis used to represent the smooth. The default is <em>k</em> = 10.</li>
+  <li><a href="lecture26.htm#method">method=</a> (argument to <span class="style1021">gam</span> and <span class="style1021">gamm</span>) is used to change the default estimation method from GCV to something else.</li>
+  <li><a href="lecture26.htm#new">new=</a> (argument to <span class="style1021">par</span>) when set to TRUE it prevents a high-level graphics command (such as <span class="style1021">plot</span>) from clearing the graphics window.</li>
+  <li><a href="lecture26.htm#newdata">newdata=</a> (argument to <span class="style1021">predict</span>) is used to define new data values at which to obtain predictions from a fitted regression model.</li>
+  <li><a href="lecture26.htm#pages">pages=</a> (argument to<span class="style1021"> plot.gam</span>) is used to display all the   estimated partial response functions in a single graphics window.</li>
+  <li><a href="lecture26.htm#pages">select=</a> (argument to<span class="style1021"> plot.gam</span>) is used to select a specific estimated partial response function to display.</li>
+  <li><a href="lecture26.htm#span">span=</a> (argument to <span class="style1021">loess</span>)  is used to define the span of the <span class="style1021">loess</span> smoother.</li>
+</ul>
+<h3>R packages used </h3>
+<ul>
+  <li><a href="lecture26.htm#mgcv">mgcv</a> used for the functions <span class="style1021">gam </span> and <span class="style1021">gamm</span> to fit GAMs and GAMMs.</li>
+</ul>
+<h2><a name="background" id="background"></a>Lowess, loess, and splines</h2>
+<p>The data set <a href="../../data/beepollen.txt">beepollen.txt</a> is taken from Harder and Thompson (1989). As part of a study to investigate reproductive strategies in plants, they  recorded the proportions of pollen removed by bumblebee queens and honeybee workers pollinating a species of <em>Erythronium</em> lily and the time they spent at the flower. There are three variables in the data set.</p>
+<ol start="1" type="1">
+  <li><span class="style8">removed</span>: proportion of pollen removed </li>
+  <li><span class="style8">duration</span>: duration of visit in seconds </li>
+  <li><span class="style8">code</span>:      1=bumblebee queens, 2=honeybee workers </li>
+</ol>
+<p> The response variable of interest is <span class="style8">removed</span> and  the predictor is <span class="style8">duration</span>. The variable <span class="style8">removed</span> is a proportion, so it normally would offer a special challenge for analysis, but for these data the recorded proportions are far removed from the boundary values of zero and one so it is safe to treat them as being normally distributed.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bees &lt;- read.table(&quot;ecol 562/beepollen.txt&quot;, header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(bees)</div>
+
+<span class="style24">  [1] &quot;removed&quot;&nbsp; &quot;duration&quot; &quot;code&quot;&nbsp;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bees[1:8,]</div>
+<span class="style24"> &nbsp; removed duration code<br>
+  1&nbsp;&nbsp; &nbsp;0.07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 1<br>
+  2&nbsp;&nbsp;&nbsp; 0.10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp; 1<br>
+  3&nbsp;&nbsp;&nbsp; 0.11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 1<br>
+  4&nbsp;&nbsp;&nbsp; 0.12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp; 1<br>
+  5&nbsp;&nbsp;&nbsp; 0.15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12&nbsp;&nbsp;&nbsp; 1<br>
+  6&nbsp;&nbsp;&nbsp; 0.19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp; 1<br>
+  7&nbsp;&nbsp;&nbsp; 0.28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp; 1<br>
+8&nbsp;&nbsp;&nbsp; 0.31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp; 1</span>
+<p><a name="f"></a><a name="lowess"></a>To help determine the functional form of the relationship between  <span class="style8">removed</span> and <span class="style8">duration</span> we plot the data and superimpose a nonparametric smoother. The <span class="style1021">lowess</span> function has an argument <span class="style22">f</span> that defines the span of the smoother, the fraction of the data that should be included in the window of the smooth. Values of <span class="style22">f</span> closer to 1 yield a smoother curve. The default setting is <span class="style1">f=2/3</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.low &lt;- lowess(bees$removed~bees$duration)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out.low)</div>
+<span class="style24">[1] &quot;x&quot; &quot;y&quot;</span>
+<p>The <span class="style1021">lowess</span> function returns two vectors: the sorted values of the <em>x</em>-variable and the lowess predictions of the <em>y</em>-values sorted by the values of the <em>x</em>-variable. As a result the <span class="style1021">lines</span> function can be used to add the output of <span class="style1021">lowess</span>  to an existing scatter plot.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(out.low, col=2)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #increase the  span to 0.95</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(lowess(bees$removed~bees$duration, f=.95), col='grey70', lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('bottomright', c('f = 2/3', 'f = .95'), col=c(2,'grey70'), lwd=c(1,2), lty=1, cex=.9, title='span', bty='n')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig1.png" width="375" height="285" alt="fig. 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1 &nbsp;</strong>Smoothers produced by the lowess function using different spans </p>
+<p><a name="span"></a><a name="loess"></a>The <span class="style1021">loess</span> function of R is a second implementation of lowess. It has a <span class="style22">span</span> argument that controls the span and hence the band width. The <span class="style1021">loess</span> function is more flexible than <span class="style1021">lowess</span> in that it has a <span class="style22">data</span> argument, can handle missing values, and has a method for the <span class="style1021">predict</span> function so that new values of the response variable can be predicted using <span class="style1021">loess</span>. One drawback of <span class="style1021">loess</span> is that it doesn't automatically sort the fitted values so this needs to be done before the observations can be plotted.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.loess &lt;- loess(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out.loess)</div>
+
+<span class="style24">&nbsp;[1] &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;fitted&quot;&nbsp;&nbsp;&nbsp; &quot;residuals&quot; &quot;enp&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;s&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;one.delta&quot;<br>
+  &nbsp;[7] &quot;two.delta&quot; &quot;trace.hat&quot; &quot;divisor&quot;&nbsp;&nbsp; &quot;pars&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;kd&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;terms&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;xnames&quot;&nbsp;&nbsp;&nbsp; &quot;x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weights&quot;</span>
+<p>The smoothed values are in the <span class="style32">&quot;fitted&quot;</span> component whereas <span class="style32">&quot;x&quot;</span> contains the unsorted values of the predictor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out.loess$x[order(out.loess$x)], out.loess$fitted[order(out.loess$x)], col=2)</div>
+<p><a name="family"></a>The default settings for <span class="style1021">loess</span> are different from those of <span class="style1021">lowess</span>. The default span is 0.75 and the last robust step of lowess is not carried out. To include the final robust step you need to specify the argument <span class="style22">family=&quot;symmetric&quot;</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.loess2 &lt;- loess(removed~duration, data=bees, family=&quot;symmetric&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out.loess2$x[order(out.loess2$x)], out.loess2$fitted[order(out.loess2$x)], col=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('bottomright',c('default loess', 'robust loess'), col=c(2,4), lty=1, bty='n', cex=.9)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig2.png" width="385" height="285" alt="fig. 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2 &nbsp;</strong>Smoothers produced by the loess function</p>
+<p><a name="smoothspline"></a>There are many ways to generate spline fits in R. Smoothing splines can be obtained with the <span class="style1021">smooth.spline</span> function. Like <span class="style1021">lowess</span> it returns the predictions sorted in order of the <em>x</em>-variable and so the spline fit can be plotted directly with the <span class="style1021">lines</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out.sp &lt;- smooth.spline(bees$duration, bees$removed)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">  names(out.sp)</div>
+
+<span class="style24">&nbsp;[1] &quot;x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;w&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;yin&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;data&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lev&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;cv.crit&quot; <br>
+  &nbsp;[8] &quot;pen.crit&quot; &quot;crit&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;df&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;spar&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lambda&quot;&nbsp;&nbsp; &quot;iparms&quot;&nbsp;&nbsp; &quot;fit&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [15] &quot;call&quot;</span>
+<p class="style24">&nbsp;</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(out.sp, lwd=2, col='grey70')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig3.png" width="375" height="285" alt="fig. 3"></p>
+<p align="center" class="styleArial"><strong>Fig. 3 &nbsp;</strong>Smoothing spline</p>
+<p><a name="sfunc"></a><a name="gam"></a><a name="mgcv"></a>An identical smoothing spline fit can also be obtained by fitting a generalized additive model using the <span class="style1021">gam</span> function of the <span class="style19">mgcv</span> package. The <span class="style1021">gam</span> function supports ordinary formula notation except that we need to use the <span class="style1021">s </span>function on those predictors for which we wish to estimate  smoothers. The primary reference for the <span class="style19">mgcv</span> package is Wood (2006).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(mgcv)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model0 &lt;- gam(removed~s(duration), data=bees)</div>
+<p>To add the spline model to a plot we need to first use the <span class="style1021">predict</span> function to generate predicted values and then sort the predictions in the order of the <em>x</em>-variable before plotting them.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  model0.p &lt;- predict(model0)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(bees$duration[order(bees$duration)], model0.p[order(bees$duration)], col=3)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig4.png" width="375" height="285" alt="fig. 4"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 4 &nbsp;</strong>Smoothing spline</span> obtained from fitting a GAM</p>
+
+
+<p>Based on the estimated smoother it appears that an increasing function with an asymptote would be a reasonable model. A simple choice is the two-parameter exponential model.</p>
+<p align="center"><img src="../../images/lectures/lecture26/exponential.gif" width="185" height="33" alt="exponential"></p>
+<p>Here <em>b</em> is the asymptote and <em>a</em> is a negative number that controls the rate of approach to the asymptote. The <span class="style1021">nls</span> function can be used to fit nonlinear models to data. (We previously used <span class="style1021">nls</span> to fit a nonlinear Arrhenius model in <a href="../assignments/assign4.htm">Assignment 4</a>.) The <span class="style1021">nls</span> function requires a formula for the nonlinear function with the variables specified as well as a <span class="style22">start</span> argument that provides initial values for the model parameters, here <em>a</em> and <em>b</em>. From the plot  we  estimate that the asymptote <em>b</em> should be around 0.7. For <em>a</em> I choose a small negative number.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> myfunc &lt;- function(x,a,b) b*(1-exp(a*x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.nls &lt;- nls(removed~myfunc(duration,a,b), data=bees, start=list(a=-.1, b=.7))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.nls)</div>
+<span class="style24">Formula: removed ~ myfunc(duration, a, b)</span>
+<p><span class="style24">Parameters:<br>
+  &nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  a -0.06858&nbsp;&nbsp;&nbsp; 0.01209&nbsp; -5.674&nbsp; 9.5e-07 ***<br>
+  b&nbsp; 0.74021&nbsp;&nbsp;&nbsp; 0.05826&nbsp; 12.705&nbsp; &lt; 2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 0.1388 on 45 degrees of freedom</span>
+<p><span class="style24">Number of iterations to convergence: 4 <br>
+  Achieved convergence tolerance: 4.353e-06</span>
+<p>I use the <span class="style1021">curve</span> function to add the estimated exponential curve to Fig. 3. The fitted exponential curve provides a close approximation to the smoothing spline (Fig. 5).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(bees$duration[order(bees$duration)], model0.p[order(bees$duration)], col='grey70', lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(myfunc(x, coef(out.nls)[1], coef(out.nls)[2]), add=T, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('bottomright', c('exponential', 'spline'), col=c(2,'grey70'), lwd=c(1,2), lty=c(2,1), cex=.9, bty='n')</div>
+
+<p align="center"><img src="../../images/lectures/lecture26/fig5.png" width="370" height="285" alt="fig. 5"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 5 &nbsp;</strong>Smoothing spline</span> and nonlinear parametric model</p>
+<h2><a name="GAMs"></a>GAMs with interactions </h2>
+<p>If we use different symbols and colors to denote the kinds of bees (bumblebee or honeybee) in the scatter plot we see that the  two kinds of bees are not exhibiting the same pattern. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(bees$duration, bees$removed, col=bees$code, pch=c(1,16)[bees$code])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('bottomright', c('bumblebees', 'honeybees'), pch=c(1,16), col=1:2, cex=.9, bty='n')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig6.png" width="370" height="285" alt="fig. 6"></p>
+<p align="center" class="styleArial"><strong>Fig. 6 &nbsp;</strong>Using the code variable to identify the  bees</p>
+
+<p>Honeybees appear to be largely responsible for driving the saturation model we've been fitting. Bumblebees may show no saturation at all (if we ignore two outlying values) or at best saturate at a much lower level. To examine these patterns  we could fit separate lowess curves to  subsets of the data in an obvious way. Alternatively we can interact the smoother with a categorical predictor and fit a GAM. I illustrate the latter approach.</p>
+<p>To fit a model in which both bee models have the same basic functional form and only the asymptote is shifted we can include a single smooth of <span class="style8">duration</span> as before but include the <span class="style8">code</span> variable as a factor. The factor adds to the intercept and acts to shift the curve and asymptote up and down.</p>
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> model1 &lt;- gam(removed~s(duration) + <span class="style42">factor(code)</span>, data=bees)</div>
+<p><a name="newdata"></a>To plot the estimated curves  I use the <span class="style1021">predict</span> function and supply it with new data in the <span class="style22">newdata</span> argument. The value of <span class="style22">newdata</span>  must be a data frame with columns that have the same names as the predictors that were used to fit the model. I first determine the range of the <em>x</em>-variable <span class="style8">duration</span> for the two bee types and then predict the mean response separately for the two kinds of bees.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> tapply(bees$duration, bees$code, range)</div>
+<span class="style24">$`1`<br>
+[1]&nbsp; 2 58</span>
+<p><span class="style24">$`2`<br>
+  [1]&nbsp; 3 78</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #obtain the predictions</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p1a &lt;- predict(model1, newdata=data.frame(duration=1:58, code=rep(1,58)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p1b &lt;- predict(model1, newdata=data.frame(duration=1:78, code=rep(2,78)))</div>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px"> #plot the results</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(bees$duration, bees$removed, col=bees$code, pch=c(1,16)[bees$code])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(1:58, out.p1a, lty=2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(1:78, out.p1b, lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c('bumblebees','honeybees'), pch=c(1,16), col=1:2, cex=.9, bty='n')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig7.png" width="470" height="285" alt="fig. 7"></p>
+<p align="center" class="styleArial"><strong>Fig. 7 &nbsp;</strong>Additive model with a factor variable and a smooth</p>
+<p><a name="by"></a>We can also let the entire functional form of the smoother vary by bee type by including <span class="style8">factor(code)</span> as a predictor and  in the <span class="style22">by</span> argument of the smoother.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- gam(removed~<span class="style42">factor(code)</span>+s(duration, <span class="style42">by=factor(code)</span>), data=bees)</div>
+<p>A second way to fit this same model is to use the smoother twice each time selecting a different subset of the data using the <span class="style22">by</span> argument.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2a &lt;- gam(removed~s(duration, by=as.numeric(code==1))+s(duration, by=as.numeric(code==2)), data=bees)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model2, model2a)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model2&nbsp; 8.161188 -49.07263<br>
+model2a 8.161188 -49.07263</span>
+<p>I graph this model and add it to the smooths of Fig. 7.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p2a &lt;- predict(model2, newdata=data.frame(duration=1:58, code=rep(1,58)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p2b &lt;- predict(model2, newdata=data.frame(duration=1:78, code=rep(2,78)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  points(bees$duration, bees$removed, col=bees$code, pch=c(1,16)[bees$code])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(1:58, out.p1a, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(1:78, out.p1b, lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  legend('bottomright', c('bumblebees', 'honeybees', 'additive GAM', 'interaction GAM'), pch=c(1,16,NA,NA), col=c(1,2,1,1), lty=c(NA,NA,2,1), lwd=c(1,1,1,2), cex=.9, bty='n')</div>
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(1:78, out.p2b, lwd=2, col='pink')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(1:58, out.p2a, lwd=2, col='grey70')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig8.png" width="490" height="300" alt="fig. 8"></p>
+<p align="center" class="styleArial"><strong>Fig. 8 &nbsp;</strong>Interaction model between a factor variable and a smooth</p>
+
+<p>We can compare these models using AIC. I include the common smooth model fit in the previous section for a baseline comparison.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2 &lt;- gam(removed~factor(code)+s(duration, by=factor(code)), data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model0, model1, model2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model0 4.669237 -44.23431<br>
+  model1 6.168346 -51.59651<br>
+model2 8.161188 -49.07263</span>
+<p><a name="method"></a>Because these models are fit using the GCV criterion, I'm not sure how seriously to take the AIC values reported here. To play it safe I refit the three models using maximum likelihood, <span class="style22">method='ML'</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model0.mls &lt;- gam(removed~s(duration), data=bees, method='ML')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> model1.mls &lt;- gam(removed~s(duration)+factor(code), data=bees, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2.mls &lt;- gam(removed~factor(code)+s(duration, by=factor(code)), data=bees, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model0.mls, model1.mls, model2.mls)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model0.mls 4.766599 -44.23703<br>
+  model1.mls 6.317117 -51.60267<br>
+model2.mls 7.533869 -48.52325</span>
+<p>So based on the GAMs we should prefer a model in which the smooth for honeybees is the same as that of bumblebees except the smooth of honeybees is  shifted upward. We can compare these results to the comparable parametric models. I write two new functions that allow the asymptote and/or the scale parameter of the exponential function to vary depending on the value of the <span class="style8">code</span> variable.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myfunc2 &lt;- function(x,z,a,b,b1) (b+b1*z)*(1-exp((a)*x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myfunc3 &lt;- function(x,z,a,b,a1,b1) (b+b1*z)*(1-exp((a+a1*z)*x))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#separate asymptotes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.nls2 &lt;- nls(removed~myfunc2(duration, I(code-1), a, b, b1), data=bees, start=list(a=-.1, b=.7, b1=0))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#separate rates and asymptotes</div>
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.nls3 &lt;- nls(removed~myfunc3(duration, I(code-1), a, b, a1, b1), data=bees, start=list(a=-.1, b=.7, a1=0, b1=0))</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.nls, out.nls2, out.nls3)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+out.nls&nbsp;&nbsp; 3 -48.27628<br>
+out.nls2&nbsp; 4 -54.92918<br>
+out.nls3&nbsp; 5 -52.95404</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#compare fit of the two models</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(out.nls2, out.nls3)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Model 1: removed ~ myfunc2(duration, I(code - 1), a, b, b1)<br>
+  Model 2: removed ~ myfunc3(duration, I(code - 1), a, b, a1, b1)<br>
+  &nbsp; Res.Df Res.Sum Sq Df&nbsp;&nbsp;&nbsp;&nbsp; Sum Sq F value Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp; 0.72134&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp; 0.72096&nbsp; 1 0.00038147&nbsp; 0.0228 0.8808</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#summary table of the simpler model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.nls2)</div>
+<span class="style24">Formula: removed ~ myfunc2(duration, I(code - 1), a, b, b1)</span>
+<p><span class="style24">Parameters:<br>
+  &nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  a&nbsp; -0.09472&nbsp;&nbsp;&nbsp; 0.01956&nbsp; -4.842 1.62e-05 ***<br>
+  b&nbsp;&nbsp; 0.59962&nbsp;&nbsp;&nbsp; 0.05696&nbsp; 10.527 1.34e-13 ***<br>
+  b1&nbsp; 0.18386&nbsp;&nbsp;&nbsp; 0.05725&nbsp;&nbsp; 3.211&nbsp; 0.00247 ** <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 0.128 on 44 degrees of freedom</span>
+<p><span class="style24">Number of iterations to convergence: 6 <br>
+  Achieved convergence tolerance: 2.331e-06 </span>
+<p>Both AIC and statistical testing agree that the two kind of bees should have the same rate parameter <em>a</em>, but different asymptotes <em>b</em>. We can compare the parametric models to the GAMs using AIC. The parametric model ranks best.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.nls, out.nls2, out.nls3, model0.mls, model1.mls, model2.mls)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.nls&nbsp;&nbsp;&nbsp; 3.000000 -48.27628<br>
+out.nls2&nbsp;&nbsp; 4.000000 </span><span class="style25">-54.92918</span><span class="style24"><br>
+  out.nls3&nbsp;&nbsp; 5.000000 -52.95404<br>
+  model0.mls 4.766599 -44.23703<br>
+model1.mls 6.317117 -51.60267<br>
+model2.mls 7.533869 -48.52325</span>
+<p>I plot the best GAM and the best parametric model superimposed on a scatter plot of the data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(removed~duration, data=bees)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  points(bees$duration, bees$removed, col=bees$code, pch=c(1,16)[bees$code])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(1:58, out.p1a, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(1:78, out.p1b, lty=2, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c('bumblebees', 'honeybees', 'GAM', 'parametric'), pch=c(1,16,NA,NA), col=c(1,2,1,1), lty=c(NA,NA,2,1), lwd=c(1,1,1,2), cex=.9, bty='n')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(myfunc2(x,0, coef(out.nls2)[1], coef(out.nls2)[2], coef(out.nls2)[3]), from=0, to=58, add=T, col='grey70', lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(myfunc2(x, 1, coef(out.nls2)[1], coef(out.nls2)[2], coef(out.nls2)[3]), add=T, col='pink', lwd=2)</div>
+
+<p align="center"><img src="../../images/lectures/lecture26/fig9.png" width="470" height="285" alt="fig. 9"></p>
+<p align="center" class="styleArial"><strong>Fig. 9 &nbsp;</strong>Best parametric and GAM models for the bee data</p>
+
+<h2><a name="using"></a>Using a GAM to choose a transformation of a predictor</h2>
+<p> As an example of using a GAM to determine transformations of predictors for a parametric model we examine habitat suitability data for the rare Corroboree frog of Australia. The data are from a student's Master's thesis at the University of Canberra, Hunter (2000), and can be found in the <span class="style19">DAAG</span> library as the data set<span class="style23"> frogs</span>. Additional analysis of these data can be found in Chapter 8 of Maindonald and Braun (2003). The variables included in <a href="../../data/frogs.txt">frogs.txt</a> are the following:</p>
+<ol>
+  <li><span class="style8">pres.abs:</span> 0 = frogs were absent, 1 = frogs were present</li>
+  <li><span class="style8">northing:</span> reference point</li>
+  <li><span class="style8">easting:</span> reference point</li>
+  <li><span class="style8">altitude:</span> altitude, in meters</li>
+  <li><span class="style8">distance:</span> distance in meters to nearest extant population</li>
+  <li><span class="style8">NoOfPools:</span> number of potential breeding pools</li>
+  <li><span class="style8">NoOfSites:</span> number of potential breeding sites within a 2 km radius</li>
+  <li><span class="style8">avrain:</span> mean rainfall for Spring period</li>
+  <li><span class="style8">meanmin:</span> mean minimum Spring temperature</li>
+  <li><span class="style8">meanmax:</span> mean maximum Spring temperature</li>
+</ol>
+<p>The response variable of interest is <span class="style8">pres.abs</span> and to simplify things we'll look at just four of the nine predictors: <span class="style8">distance</span>, <span class="style8">NoOfPools</span>, <span class="style8">meanmin</span>, and <span class="style8">meanmax</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">frogs &lt;- read.csv(&quot;ecol 562/frogs.txt&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(frogs)</div>
+
+<span class="style24">  &nbsp;[1] &quot;pres.abs&quot;&nbsp; &quot;northing&quot;&nbsp; &quot;easting&quot;&nbsp;&nbsp; &quot;altitude&quot;&nbsp; &quot;distance&quot;&nbsp; &quot;NoOfPools&quot; &quot;NoOfSites&quot; &quot;avrain&quot;&nbsp;&nbsp; <br>
+&nbsp;[9] &quot;meanmin&quot;&nbsp;&nbsp; &quot;meanmax&quot;&nbsp; </span>
+<p>I verify that there are enough unique values of each predictor to justify fitting a smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> apply(frogs[, c(&quot;distance&quot;, &quot;NoOfPools&quot;, &quot;meanmin&quot;, &quot;meanmax&quot;)], 2, function(x) length(unique(x)))</div>
+<span class="style24">  &nbsp;distance NoOfPools&nbsp;&nbsp; meanmin&nbsp;&nbsp; meanmax <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 83</span>
+<p>Because the response is binary, I carry out logistic regression by specifying the <span class="style22">family=binomial</span> argument of <span class="style1021">gam</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(mgcv)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.gam &lt;- gam(pres.abs~s(distance) + s(NoOfPools) + s(meanmin) + s(meanmax), data=frogs, family=binomial)</div>
+<p><a name="methods"></a>The <span class="style1021">plot</span> function has a method for <span class="style1021">gam</span> objects. To see a list of available methods for <span class="style1021">plot</span> use the <span class="style1021">methods</span> function on <span class="style1021">plot</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">methods(plot)</div>
+
+<span class="style24">&nbsp;[1] plot.acf*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.ACF*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.augPred*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;[4] plot.compareFits*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.data.frame*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.decomposed.ts*&nbsp;&nbsp; <br>
+&nbsp;[7] plot.default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.dendrogram*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.density&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[10] plot.ecdf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.factor*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.formula*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[13] plot.function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">plot.gam</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.gls*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[16] plot.hclust*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.histogram*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.HoltWinters*&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[19] plot.intervals.lmList* plot.isoreg*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;plot.lm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[22] plot.lme*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.lmList*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.medpolish*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[25] plot.mlm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.nffGroupedData*&nbsp;&nbsp; plot.nfnGroupedData*&nbsp; <br>
+[28] plot.nls*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.nmGroupedData*&nbsp;&nbsp;&nbsp; plot.pdMat*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[31] plot.ppr*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.prcomp*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.princomp*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[34] plot.profile.nls*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.ranef.lme*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.ranef.lmList*&nbsp;&nbsp;&nbsp; <br>
+[37] plot.shingle*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.simulate.lme*&nbsp;&nbsp;&nbsp;&nbsp; plot.spec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[40] plot.stepfun&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.stl*&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot.table*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[43] plot.trellis*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.ts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.tskernel*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+[46] plot.TukeyHSD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plot.Variogram*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<p><span class="style24">&nbsp;&nbsp; Non-visible functions are asterisked</span>
+<p><a name="plotgam"></a>Notice that <span class="style1021">plot.gam </span>is listed. This is a plot method for <span class="style1021">gam</span> objects and has a number of options specific for displaying GAMs. To see these options bring up the help screen for the <span class="style1021">plot.gam </span>method. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">?plot.gam</div>
+<p align="center"><img src="../../images/lectures/lecture26/window.png" width="694" height="467" alt="plot.gam help"></p>
+<p align="center" class="styleArial"><strong>Fig. 10 &nbsp;</strong>Help screen for the plot.gam method</p>
+<p><a name="pages"></a>Two especially useful options are <span class="style22">pages</span> and <span class="style22">select</span>. To get all of the smooths to display on a single page we need to add  the argument <span class="style22">pages=1</span>  to the <span class="style1021">plot.gam</span> call.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.gam, pages=1)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig10.png" width="500" height="375" alt="fig. 10"></p>
+<p align="center" class="styleArial"><strong>Fig. 11 &nbsp;</strong>Estimated partial response functions from the GAM</p>
+<p>Each displayed object is the partial response function as estimated by <span class="style1021">gam</span>. The graphs are analogous to plotting  individual regression terms such as <img src="../../images/lectures/lecture26/regterm.gif" alt="regression term" width="40" height="30" align="absmiddle"> in an ordinary regression model. Fig. 11 suggests that the relationship of the logit with <span class="style8">NoOfPools</span> and <span class="style8">meanmin</span> is probably linear. The summary table provides additional information.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.gam)</div>
+<span class="style24"> Family: binomial <br>
+ Link function: logit </span>
+<p><span class="style24">Formula:<br>
+  pres.abs ~ s(distance) + s(NoOfPools) + s(meanmin) + s(meanmax)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp; -0.9335&nbsp;&nbsp;&nbsp;&nbsp; 0.2341&nbsp; -3.987 6.68e-05 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df Chi.sq&nbsp; p-value&nbsp;&nbsp;&nbsp; <br>
+  s(distance)&nbsp; </span><span class="style25">1.794</span><span class="style24">&nbsp; 2.247&nbsp; 8.455 0.018951 *&nbsp; <br>
+  s(NoOfPools) 1.000&nbsp; 1.000 10.429 0.001241 ** <br>
+  s(meanmin)&nbsp;&nbsp; 1.000&nbsp; 1.000 16.145 5.87e-05 ***<br>
+  s(meanmax)&nbsp;&nbsp; </span><span class="style25">1.772</span><span class="style24">&nbsp; 2.224 17.418 0.000225 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.363&nbsp;&nbsp; Deviance explained =&nbsp;&nbsp; 31%<br>
+  UBRE score = -0.026688&nbsp; Scale est. = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n = 212</span>
+<p>The estimated degrees of freedom of the <span class="style8">meanmax</span> and <span class="style8">distance</span> smoothers exceed 1, while the edf of the smooths for <span class="style8">NoOfPools</span>  and <span class="style8">meanmin</span> is 1, confirming linearity. The graph of the smooth of  <span class="style8">distance</span> in Fig. 11 resembles an inverted logarithm suggesting <span class="style8">log(distance)</span> might be a good choice for a parametric term. (The large range of <span class="style8">distance</span>  also suggests a logarithmic transformation might be appropriate.) I replace the nonparametric smooth of <span class="style8">distance</span> with <span class="style8">log(distance)</span> in the GAM.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.gam1 &lt;- gam(pres.abs~log(distance) + s(NoOfPools) + s(meanmin) + s(meanmax), data=frogs, family=binomial)</div>
+<p>I compare the two models using AIC.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.gam, out.gam1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.gam&nbsp; 6.565388 206.3422<br>
+out.gam1 5.789663 204.1376</span>
+<p>The model with <span class="style8">log(distance)</span> has a lower AIC. We can perhaps obtain a better estimate of  AIC by refitting the two models using maximum likelihood estimation, <span class="style22">method=&quot;ML&quot;</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gam.ml &lt;- gam(pres.abs~s(distance) + s(NoOfPools) + s(meanmin) + s(meanmax), data=frogs, family=binomial, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.gam1.ml &lt;- gam(pres.abs~log(distance) + s(NoOfPools) + s(meanmin) + s(meanmax), data=frogs, family=binomial, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(out.gam.ml, out.gam1.ml)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.gam.ml&nbsp; 5.000011 209.6275<br>
+out.gam1.ml 5.000013 205.1332</span>
+<p>AIC still prefers the semi-parametric model with <span class="style8">log(distance)</span> instead of a smoothed <span class="style8">distance</span>. The coefficient of the log term is the second entry in the coefficient vector from the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(out.gam1)[1:6]</div>
+<span class="style24">  &nbsp;&nbsp; (Intercept)&nbsp; log(distance) s(NoOfPools).1 s(NoOfPools).2 s(NoOfPools).3 s(NoOfPools).4 <br>
+&nbsp; 4.717276e+00&nbsp; -8.066707e-01&nbsp; -1.704321e-05&nbsp;&nbsp; 6.134517e-06&nbsp; -4.454965e-06&nbsp;&nbsp; 5.878728e-06 </span>
+<p>We can compare the two fits by superimposing the log term on the graph of the smooth. Because these are marginal response functions the vertical scales are not be the same for these two terms. I choose a value of the intercept for the parametric term so that the two curves  overlap. By inspecting the graph and plotting points by trial and error I discover that the first plotted point of the smooth is approximately (250, .8).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.gam, select=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> min(frogs$distance)</div>
+<span class="style24">  [1] 250</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(250, .8, pch=16, cex=.5, col=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#calculate the intercept that yields 0.8 when distance = 250</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> .8-coef(out.gam1)[2]*log(250)</div>
+<span class="style24">  log(distance) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; 5.254001 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(5.254+coef(out.gam1)[2]*log(x), add=T, col=2)</div>
+
+<p align="center"><img src="../../images/lectures/lecture26/fig11.png" width="365" height="315"></p>
+<p align="center" class="styleArial"><strong>Fig. 12 &nbsp;</strong>Superimposing a parametric and a nonparametric smooth</p>
+
+<p>A simpler way to overlay the two graphs is to use the <span class="style22">shift</span> argument of <span class="style4">plot.gam</span> (the plot method for gam objects) and to specify for this argument the intercept of the gam model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.gam, select=1, shift=coef(out.gam)[1])</div>
+<p>For the breakpoint function we do the same thing.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(coef(out.gam1)[2]*log(x) + coef(out.gam1)[1], add=T, col=2)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig13a.png" width="360" height="300" alt="Fig. 13"></p>
+<p align="center" class="styleArial"><strong>Fig. 13 &nbsp;</strong>Superimposing a parametric and a nonparametric smooth, method 2</p>
+
+<p>For <span class="style8">meanmax</span> I try a quadratic function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.gam2 &lt;- gam(pres.abs~s(distance) + s(NoOfPools) + s(meanmin) + meanmax + I(meanmax^2), data=frogs, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.gam,out.gam2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.gam&nbsp; 6.565388 206.3422<br>
+out.gam2 7.576463 205.8462</span>
+<p>So there is some evidence that we can replace the smooth with a quadratic. To obtain a more reliable result we should compare models fit with maximum likelihood.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gam2.ml &lt;- gam(pres.abs~s(distance) + s(NoOfPools) + s(meanmin) + meanmax + I(meanmax^2), data=frogs, family=binomial, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.gam.ml, out.gam2.ml)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.gam.ml&nbsp; 5.000011 209.6275<br>
+out.gam2.ml 6.000007 208.1088</span>
+<p>Using  the GAM we have obtained possible structural forms for the predictors for use in a parametric model: the logarithm of <span class="style8">distance</span> and a quadratic model for <span class="style8">meanmax</span>.
+</p>
+<h2><a name="generalized"></a>Generalized additive mixed effects models</h2>
+<p>The data set <a href="../../data/carib.csv">carib.csv</a> is  taken from Selig and Bruno (2010) who compiled a comprehensive global database to compare long-term changes (1969 to 2006) in coral cover from 5170 independent surveys inside 310 MPAs (marine protected areas) around the world and 3364 surveys of unprotected reefs. Surveys were from 4456 reefs across 83 different countries, although a few well-surveyed countries were better represented in the data set.  993 of the surveys  were repeated at least twice with 306 in the Caribbean and 687 in the Indo-Pacific. The surveys in the database were conducted across more than 40 years in the Caribbean and more than 30 years in the Indo-Pacific. In today's class we restrict ourselves to the data obtained from reefs in the Caribbean.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">carib &lt;- read.csv(&quot;ecol 562/carib.csv&quot;)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(carib)</div>
+<span class="style24">  &nbsp;[1] &quot;REEF_ID_GR&quot;&nbsp;&nbsp;&nbsp; &quot;UNIQUE_POO&quot;&nbsp;&nbsp;&nbsp; &quot;SURVEY_ID&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;REEF_NAME&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;OCEAN&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LOCATION&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[7] &quot;COUNTRY&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LONGITUDE&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LATITUDE&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;YEAR&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DEPTH_AVE&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DEPTH_MIN&quot;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;DEPTH_MAX&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;HARD_COR_P&quot;&nbsp;&nbsp;&nbsp; &quot;SUBREGION&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;ALGAE_P&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;NOTES&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;D_SOURCE&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [19] &quot;SUBREGION_&quot;&nbsp;&nbsp;&nbsp; &quot;REGION&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;REGION_COD&quot;&nbsp;&nbsp;&nbsp; &quot;OLDDIS&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;AREANAME&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;GISNAME&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [25] &quot;DESIGNATE&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;IUCNCAT&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;IUCNCAT_PO&quot;&nbsp;&nbsp;&nbsp; &quot;SITE_CODE&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;TERRE&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;MPA_POLY&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [31] &quot;MPA&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LON_CEN&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;LAT_CEN&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;YEAR_MPA2&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;YEAR_MPA&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;AREA_M&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [37] &quot;PERIMETER_&quot;&nbsp;&nbsp;&nbsp; &quot;GRPMPA_ID&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;MPA_UID_ORIG&quot;&nbsp; &quot;DISTANCE_ORIG&quot; &quot;ORIG_MPA_UID&quot;&nbsp; &quot;MPA_UID&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [43] &quot;MPA_UID_SE&quot;&nbsp;&nbsp;&nbsp; &quot;DISTANCE_T&quot;&nbsp;&nbsp;&nbsp; &quot;logit&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;MPA_CODE&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;YEAR.PROT&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;FIRST.SURVEY&quot; <br>
+  [49] &quot;z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+
+<p>Only a few of the variables are of interest to us today. I extract those below and display the first four observations of each.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> carib[1:4, c(1,4,7,14,45,42,35,10,49)]</div>
+<span class="style24">&nbsp; REEF_ID_GR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REEF_NAME COUNTRY HARD_COR_P&nbsp;&nbsp;&nbsp;&nbsp; logit MPA_UID YEAR_MPA YEAR z<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10006 East Snake Caye&nbsp; Belize&nbsp;&nbsp;&nbsp;&nbsp; 15.625 -1.686399&nbsp;&nbsp;&nbsp; 3314&nbsp;&nbsp;&nbsp;&nbsp; 2000 2004 4<br>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10007&nbsp;&nbsp;&nbsp; Pelican Reef&nbsp; Belize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.250 -2.708050&nbsp;&nbsp;&nbsp; 2162&nbsp;&nbsp;&nbsp;&nbsp; 1996 2004 8<br>
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10008 Bungy Back Side&nbsp; Belize&nbsp;&nbsp;&nbsp;&nbsp; 20.625 -1.347680&nbsp;&nbsp;&nbsp; 2162&nbsp;&nbsp;&nbsp;&nbsp; 1996 2004 8<br>
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10009 Seal Caye Point&nbsp; Belize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.625 -2.820055&nbsp;&nbsp;&nbsp; 2162&nbsp;&nbsp;&nbsp;&nbsp; 1996 2004 8</span>
+
+<p>The data consist of annual surveys of coral reefs carried over various years in the Caribbean. At each survey an estimate was made of the percent of the reef occupied by living coral (<span class="style8">HARD_COR_P</span>). This was recorded as a number between 0 and 100. A bounded response can pose a challenge in regression models. To get around this coral cover was converted to an unbounded number by taking its logit.</p>
+<p align="center"><img src="../../images/lectures/lecture26/logit.gif" width="378" height="57" alt="logit"></p>
+<p>Coral cover has been declining in the Caribbean over time. To see if the protection of coral reefs in marine sanctuaries is having a positive effect, the trend in coral cover was modeled as a function of the amount of time since the marine sanctuary was created (<span class="style8">YEAR_MPA</span>). This is the variable <span class="style8">z</span> in the data set.</p>
+<p align="center">z = YEAR &ndash; YEAR_MPA</p>
+<p>When fitting regression models to these data we need to account for the structure of the data set. At its simplest this is a repeated measures design with multiple annual measurements coming from the same reef (<span class="style8">REEF_ID_GR</span>). The data are extremely unbalanced with most of the reefs providing only a single year of data. Still, 95 reefs provided 11 years of data and one reef provided 17 years of data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">table(table(carib$REEF_ID_GR))</div>
+<span class="style24">&nbsp; 1&nbsp;&nbsp; 2&nbsp;&nbsp; 3&nbsp;&nbsp; 4&nbsp;&nbsp; 5&nbsp;&nbsp; 6&nbsp;&nbsp; 7&nbsp;&nbsp; 9&nbsp; 10&nbsp; 11&nbsp; 12&nbsp; 15&nbsp; 17 <br>
+508&nbsp; 36&nbsp; 17&nbsp; 10&nbsp; 40&nbsp;&nbsp; 3&nbsp;&nbsp; 6&nbsp;&nbsp; 6&nbsp; 95&nbsp;&nbsp; 1&nbsp;&nbsp; 1&nbsp;&nbsp; 1&nbsp;&nbsp; 1</span>
+<p>Many of  the reefs are located in the same marine sanctuary (<span class="style8">MPA_UID</span>). We might expect that because of their relative proximity and similar management strategies that  reefs from the same sanctuary might have a similar response to protection. </p>
+<p>The repeated measures design coupled with spatial clustering of reefs leads to observational heterogeneity at three levels. To account for the repeated measures aspect we can assign observations coming from the same reef the same random effect: <em>u</em><sub>0<em>ij</em></sub>, where <em>j</em> denotes the reef and <em>i</em> denotes the marine sanctuary containing that reef. To link reefs coming from the same marine sanctuary we can assign them a common random effect, <em>u</em><sub>0<em>i</em></sub>. In multilevel model notation we can write the three-level random intercepts model as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture26/multilevel.gif" width="292" height="93" alt="multilevel"></p>
+<p>where <em>i </em>denotes the sanctuary, <em>j</em> the reef in that sanctuary, and <em>k</em> the annual observation on that reef. Each of the error terms is assumed to be drawn from a normal distribution.</p>
+<p align="center"><img src="../../images/lectures/lecture26/errors.gif" width="515" height="37" alt="errors"></p>
+<p>Written as a single composite model we have the following.</p>
+<p align="center"><img src="../../images/lectures/lecture26/composite.gif" width="290" height="30" alt="composite"></p>
+<p><a name="gamm"></a>The <span class="style1021">gamm</span> function of the <span class="style19">mgcv</span> package can be used to fit generalized additive mixed effects models. The <span class="style1021">gamm</span> function calls the <span class="style1021">lme</span> function of the <span class="style19">nlme</span> package to fit the model. In the <span class="style19">nlme</span> package there are two different ways to represent a 3-level model with random intercepts at each level. One version is the following.</p>
+<p align="center" class="style1">random = ~1|MPA_UID/REEF_ID_GR</p>
+<p>Notice that the larger grouping variable, in this case the marine sanctuary <span class="style8">MPA_UID</span>, appears before the smaller grouping variable, the reef <span class="style8">REEF_ID_GR</span> and the two of them are separated by a forward slash, <span class="style8">/</span>. This notation forces the same coefficient, in this case the intercept, to be random at each level. A more flexible notation also supported by <span class="style1021">lme</span> that can be used to specify different random effects at each level is the following.</p>
+<p align="center" class="style1">random = list(MPA_UID=~1, REEF_ID_GR=~1)</p>
+<p>The second version of the notation is the only version supported by the <span class="style1021">gamm</span> function. To fit a generalized additive mixed effects model for the logit in which we include a smooth of the predictor <span class="style8">z</span> we would enter the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.carib &lt;- gamm(logit~s(z), random=list(MPA_UID=~1, REEF_ID_GR=~1), data=carib, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out.carib)</div>
+<span class="style24">[1] &quot;lme&quot; &quot;gam&quot;</span>
+<p>Two components are returned: an <span class="style32">lme</span> component and a <span class="style32">gam</span> component. The <span class="style32">lme</span> component contains mostly details from the <span class="style1021">lme</span> fit that are of little interest to us. It does contain the AIC and log-likelihood of the model though. The <span class="style32">gam</span> component contains information about the smooth and it is the component that we need to plot to visualize the smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.carib$gam)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig12.png" width="340" height="285" alt="fig. 12"></p>
+<p align="center" class="styleArial"><strong>Fig. 14 &nbsp;</strong>Estimated partial response function for the predictor z</p>
+<p>The plot suggests that initially coral cover continued its decline but that at approximately 15 years of protection things began to turn around. Then inexplicably at around 30 years of protection the decline began anew. The fitted smooth looks remarkably like a cubic although the reported degrees of freedom of the smooth exceeds six.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out.carib$gam)</div>
+<span class="style24">Family: gaussian <br>
+  Link function: identity </span>
+<p><span class="style24">Formula:<br>
+  logit ~ s(z)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept) -1.94830&nbsp;&nbsp;&nbsp; 0.09755&nbsp; -19.97&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df&nbsp;&nbsp;&nbsp;&nbsp; F p-value&nbsp;&nbsp;&nbsp; <br>
+  s(z) </span><span class="style25">6.427</span><span class="style24">&nbsp; 6.427 59.65&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.0157&nbsp; Scale est. = 0.22176&nbsp;&nbsp; n = 1990</span>
+<p><a name="knots"></a>The column labeled edf is the estimated degrees of freedom. This can be thought of as analogous to the degree of a polynomial. When edf = 1 the relationship is linear. If the reported estimated degrees of freedom approaches the default dimension for the spline basis, <em>k</em> = 10, as it does here one should refit the model with a larger value for <em>k</em> using the <span class="style22">k=</span> argument of the smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.carib2 &lt;- gamm(logit~s(z,k=15), random=list(MPA_UID=~1, REEF_ID_GR=~1), data=carib, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.carib2$gam)</div>
+<span class="style24">Family: gaussian <br>
+  Link function: identity </span>
+<p><span class="style24">Formula:<br>
+  logit ~ s(z, k = 15)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept) -1.95104&nbsp;&nbsp;&nbsp; 0.09785&nbsp; -19.94&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df&nbsp;&nbsp;&nbsp;&nbsp; F p-value&nbsp;&nbsp;&nbsp; <br>
+  s(z) </span><span class="style25">9.472</span><span class="style24">&nbsp; 9.472 37.27&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.0205&nbsp; Scale est. = 0.22003&nbsp;&nbsp; n = 1990</span>
+<p>The estimated degrees of freedom has increased substantially, but when we examine the smooth we see it has the same basic form as before but with more wiggles. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.carib2$gam)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig11a.png" width="340" height="235" alt="fig 14"></p>
+<p align="center" class="styleArial"><strong>Fig. 15 &nbsp;</strong>Estimated partial response function for the predictor z using k = 15 knots</p>
+<p>If we increase the dimension further, say <em>k</em> = 20, the edf continues to increase (edf = 13.64) and the curve wiggles even more. Part of this may be due to the fact that<em> z</em> is discrete. </p>
+<p align="center"><img src="../../images/lectures/lecture26/fig15a.png" width="345" height="235" alt="fig. 15"></p>
+<p align="center" class="styleArial"><strong>Fig. 16 &nbsp;</strong>Estimated partial response function for the predictor z using k = 20 knots</p>
+<p>I next try replacing the smooth with a cubic.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.carib.cubic &lt;- lme(logit~z+I(z^2)+I(z^3), random=list(MPA_UID=~1, REEF_ID_GR=~1), data=carib, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.carib.cubic, out.carib$lme, out.carib2$lme)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.carib.cubic&nbsp; 7 4447.960<br>
+  out.carib$lme&nbsp;&nbsp; &nbsp;6 4449.802<br>
+  out.carib2$lme&nbsp;&nbsp; 6 4445.780</span>
+<p>The cubic model has a lower AIC than the first GAM with a smooth with  a basis dimension of 10 but a larger AIC than the second GAM with a smooth with a basis dimension of 15, suggesting that a cubic might be a more parsimonious model. Because there is a single predictor in the model we can compare the smooth with the cubic by plotting the predictions from each model on the same graph. I plot the population-level model for each, <span class="style22">level = 0</span>. In order for the plot to display properly we need to sort the predicted values in order of the <em>x</em>-axis variable <span class="style8">z</span>. This needs to be done for the predictions from both models.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">gam.p &lt;- predict(out.carib$gam, level=0)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out10 &lt;- cbind(gam.p, carib$z)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out10 &lt;- out10[order(out10[,2]),]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">colnames(out10) &lt;- c('y', 'x')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lme.p &lt;- predict(out.carib.cubic, level=0)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out11 &lt;- cbind(lme.p, carib$z)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out11 &lt;- out11[order(out11[,2]),]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  colnames(out11) &lt;- c('y', 'x')</div>
+<p>Finally we can plot things.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(y~x, data=out10, type='l', ylab='Logit', xlab='Years protected')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out11[,'x'], out11[,'y'], col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('GAM','cubic'), col=c(1,2), lty=c(1,2), cex=.9, bty='n')</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig13.png" width="375" height="285" alt="fig. 13"></p>
+<p align="center" class="styleArial"><strong>Fig. 17 &nbsp;</strong>GAM smoother (10 knots) and cubic function</p>
+<p><a name="new"></a>But there's a problem here that becomes apparent if we add to the graph a bar chart that indicates the distribution of the data. Because the bar chart is on a different scale from the logit graph, I add it by overlaying a second plot on the top of the logit plot. This is accomplished with the global graphics parameter setting <span class="style22">new=T</span> to <span class="style1021">par</span> which prevents a subsequent call to <span class="style1021">plot</span> from erasing the current graph. To make sure the graphs line up I explicitly specify the same <span class="style22">xlim</span> argument for both. I use the <span class="style22">ylim</span> argument in the second graph to scale the height of the bars in the bar plot.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y~x, data=out10, type='l', ylab='Logit', xlab='Years protected', xlim=c(0,50))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  lines(out11[,'x'], out11[,'y'], col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  legend('topright', c('GAM','cubic'), col=c(1,2), lty=c(1,2), cex=.9, bty='n')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #add bar plot</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(new=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  par(lend=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">   plot(as.numeric(names(table(carib$z))), table(carib$z), type='h', axes=F, ylim=c(0,500), lwd=4, col='grey70', xlab='', ylab='', xlim=c(0,50))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">   par(new=F)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig14.png" width="375" height="285" alt="fig. 1" longdesc="4"></p>
+<p align="center" class="styleArial"><strong>Fig. 18 &nbsp;</strong>Plot of the GAM along with distribution of the data</p>
+<p>The graph shows that  the point where the smooth begins its  rebound in coral cover corresponds to a portion of the graph where we have very little data. So, it is quite possible the upturn is not real, or at least not reliable. This is one of the dangers of fitting generalized additive models when there are gaps in the data. An alternative to the GAM picture is one continuous decline or perhaps two separate declines but with different slopes. The latter is called a breakpoint regression model. To fit it we need to determine the location of the breakpoint. </p>
+<p>A breakpoint regression term in the variable <em>z</em> with breakpoint at <em>z</em> = <em>c</em> has the following form: <span class="style1">z + (z-c)*(z&gt;c)</span>. From the graph the breakpoint  appears to occur somewhere between <em>z</em> = 5 and <em>z</em> = 25. I fit a separate breakpoint model at each integer value in this interval. Because of a peculiarity in the way <span class="style1021">lme</span> fits models, I need to add the putative breakpoint as a column in the data frame before I fit the model. This should not be necessary  and is not required when fitting models using, e.g., the <span class="style1021">lm</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic2 &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for(i in 5:25){</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">     #add breakpoint to data frame--should not be necessary</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">     carib$c &lt;- i</div>
+   <div class="style10" style="padding-left: 60px; text-indent:-30px"> trial &lt;- lme(logit~z+I((z-c)*(z&gt;c)), random=list(MPA_UID=~1, REEF_ID_GR=~1), data=carib, method='ML')</div>
+   <div class="style10" style="padding-left: 60px; text-indent:-30px">   my.aic2 &lt;- rbind(my.aic2, c(i, AIC(trial)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> which.min(my.aic2[,2])</div>
+ <span class="style24"> [1] 5</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic2[5,]</div>
+<span class="style24">[1]    9.000 4436.615</span>
+<p>Observe that the AIC of the breakpoint model is much lower than that of the cubic model and either GAM. (Note: the correct AIC of the breakpoint model is 4436.615 + 2 = 4438.615, because we should count the estimated breakpoint as a parameter.) I add the breakpoint model to Fig. 18.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bp.model &lt;- lme(logit~z+I((z-9)*(z&gt;9)), random=list(MPA_UID=~1, REEF_ID_GR=~1), data=carib, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y~x, data=out10, type='l', ylab='Logit', xlab='Years protected', xlim=c(0,48), ylim=c(-3.5,0))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">     #cubic model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(out11[,'x'], out11[,'y'], col=2, lty=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">     #breakpoint model</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(fixef(bp.model)[1] + fixef(bp.model)[2]*x + fixef(bp.model)[3]*(x-9)*(x&gt;9), add=T, col=3, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('GAM', 'cubic', 'breakpoint'), col=c(1,2,3), lty=c(1,2,1), lwd=c(1,1,2), cex=.9, bty='n')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> par(new=T)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">par(lend=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(as.numeric(names(table(carib$z))), table(carib$z), type='h', axes=F, ylim=c(0,500), lwd=4, col='grey70', xlab='', ylab='', xlim=c(0,48))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(new=F)</div>
+<p align="center"><img src="../../images/lectures/lecture26/fig15.png" width="370" height="285" alt="fig. 15"></p>
+<p align="center" class="styleArial"><strong>Fig. 19 &nbsp;</strong>Plot of the GAM along with breakpoint regression model</p>
+<h2><a name="cited"></a>Cited References</h2>
+<ul>
+  <li>Harder, L. D. and J. D. Thompson. 1989. Evolutionary options for maximizing pollen dispersal of animal-pollinated plants. <em>American Naturalist</em> <strong>133</strong>: 323&ndash;344.</li>
+  <li>Hunter, D. (2000) The conservation and demography of&nbsp; the southern corroboree frog (<em>Pseudophryne corroboree</em>). M.Sc. thesis, University of Canberra, Canberra.</li>
+  <li>Maindonald, J., and J. Braun. 2003. <em>Data Analysis and Graphics Using R: An Example-based Approach.</em> Cambridge University Press. </li>
+  <li>Selig E. R. and J. F. Bruno. 2010. A global analysis of the effectiveness of marine protected areas in preventing coral loss.<em> PLoS ONE</em> <strong>5</strong>(2): e9278.</li>
+  <li>Wood, S. N. 2006. <em>Generalized Additive Models: An Introduction with R</em>. Chapman &amp; Hall/CRC Press, Boca Raton, FL.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a></p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 20, 2012<br>
+      URL: <a href="lecture26.htm#lecture26" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture26.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

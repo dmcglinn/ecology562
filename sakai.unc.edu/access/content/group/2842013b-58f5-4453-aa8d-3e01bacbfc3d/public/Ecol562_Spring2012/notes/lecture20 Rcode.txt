@@ -1,0 +1,135 @@
+#load and manipulate data
+ext.temp <- read.table( 'ecol 562/coral cores.txt', header=T, sep=',')
+ext.rates.temp <- data.frame(rep(ext.temp$Year,14), unlist(ext.temp[,2:15]), rep(names(ext.temp)[2:15], rep(nrow(ext.temp),14)))
+names(ext.rates.temp) <- c('Year','Ext.rate','Core')
+ext.rates.temp$reef.type <- substr(ext.rates.temp$Core,1,2)
+ext.rates <- ext.rates.temp[!is.na(ext.rates.temp$Ext.rate),]
+ext.rates2 <- ext.rates[order(ext.rates$Core, ext.rates$Year),]
+
+#fit random intercepts model
+library(nlme)
+lme(Ext.rate~Year,data=ext.rates2,random=~1|Core,method="ML")->out1
+#ANOVA table
+anova(out1)
+#summary
+summary(out1)
+#fixed effect estimates (population average)
+fixef(out1)
+#fixed effect + random effects (subject-specific)
+coef(out1)
+#random intercepts
+ranef(out1)
+#variance components
+VarCorr(out1)
+#variance components are stored as text
+VarCorr(out1)[1,1]
+as.numeric(VarCorr(out1)[1,1])
+
+#predictions from population average model
+predict(out1,level=0)[1:12]
+#predictions from subject-specific model 
+predict(out1,level=1)[1:12]
+ranef(out1)
+
+#graph random intercepts model
+library(lattice)
+xyplot(Ext.rate~Year|Core, layout=c(4,4), data=ext.rates2,panel=function(x,y,subscripts) {
+panel.xyplot(x,y,type='l',col='grey70')
+panel.lines(x,predict(out1,level=0)[subscripts],col=1,lwd=2)
+panel.lines(x,predict(out1,level=1)[subscripts],col=2,lty=2)},
+key=list(x=.6,y=.95, origin=c(0,0), text=list(c('raw data', 'population average', 'subject-specific'), cex=.9), lines=list(col=c('grey70',1,2), lwd=c(1,2,1), lty=c(1,1,2))))
+
+#check for residual correlation
+ACF(out1)
+plot(ACF(out1),alpha=.05)
+#using Bonferroni correction
+plot(ACF(out1),alpha=.05/20)
+
+#fit an AR(1) model to the residuals
+update(out1,correlation=corARMA(p=1,q=0,form=~Year))->out2
+AIC(out1,out2)
+plot(ACF(out2,resType='normalized'),alpha=.05/20)
+plot(ACF(out2,resType='normalized'),alpha=.05/10)
+
+#fit an AR(1,1) model to the residuals
+update(out1,correlation=corARMA(p=1,q=1,form=~Year))->out3
+AIC(out1,out2,out3)
+plot(ACF(out3,resType='normalized'),alpha=.05/10)
+
+#how has accounting for correlation changed our conclusions?
+printCoefmat(summary(out1)$tTable)
+printCoefmat(summary(out3)$tTable)
+
+#random slopes and intercepts model
+lme(Ext.rate~Year,data=ext.rates2,random=~Year|Core,method="ML")->out2
+summary(out2)
+#variance components
+VarCorr(out2)
+#fixed effects
+fixef(out2)
+summary(out2)$tTable
+#fixed effects plus random effects
+coef(out2)
+
+#random slopes and intercepts model with centered year
+lme(Ext.rate~I(Year-1967),data=ext.rates2,random=~I(Year-1967)|Core,method="ML")->out2a
+#variance components
+VarCorr(out2a)
+#fixed effects
+fixef(out2a)
+#fixed effects plus random effects
+coef(out2a)
+
+#plot random slopes and intercept model
+xyplot(Ext.rate~Year|Core,data=ext.rates2, layout=c(4,4), panel=function(x,y,subscripts) {
+panel.xyplot(x,y,type='l',col='grey70')
+panel.lines(x,predict(out2a,level=0)[subscripts],col=1,lwd=2)
+panel.lines(x,predict(out2a,level=1)[subscripts],col=2,lty=2)},
+key=list(x=.6,y=.95, origin=c(0,0), text=list(c('raw data', 'population average', 'subject-specific'), cex=.9), lines=list(col=c('grey70',1,2), lwd=c(1,2,1), lty=c(1,1,2))))
+
+#fit a model with only random slopes
+lme(Ext.rate~I(Year-1967),data=ext.rates2,random=~I(Year-1967)-1|Core,method="ML")->out2b
+AIC(out2,out2a,out2b)
+
+#fit a random slopes and intercepts model in which reef type modifies the slope
+lme(Ext.rate~I(Year-1967)+I(Year-1967):factor(reef.type), data=ext.rates2, random=~I(Year-1967)|Core,method="ML")->out3
+AIC(out3)
+summary(out3)
+
+#graph the reef type model
+xyplot(Ext.rate~Year|Core,data=ext.rates2, layout=c(4,4), panel=function(x,y,subscripts) {
+panel.xyplot(x,y,type='l',col='grey70')
+panel.lines(x,predict(out3,level=0)[subscripts],col=1,lwd=2)
+panel.lines(x,predict(out3,level=1)[subscripts],col=2,lty=2)},
+key=list(x=.6,y=.95, origin=c(0,0), text=list(c('raw data', 'population average', 'subject-specific'), cex=.9), lines=list(col=c('grey70',1,2), lwd=c(1,2,1), lty=c(1,1,2))))
+
+# model in which reef type affects both slopes and intercepts
+lme(Ext.rate~I(Year-1967)+factor(reef.type)+I(Year-1967):factor(reef.type),data=ext.rates2,random=~I(Year-1967)|Core,method="ML")->out4
+AIC(out3,out4)
+anova(out4)
+summary(out4)
+
+#Variance components model
+out0 <- lme(Ext.rate~1,random=~1|Core, data=ext.rates2, method='ML')
+VarCorr(out0)
+#intraclass correlation coefficient
+0.007738093/(0.007738093+0.014771638)
+
+#fit the same models using the lme4 package
+
+library(lme4)
+#random intercepts model
+lmer(Ext.rate~Year + (1|Core), data=ext.rates2, REML=FALSE) -> out.lmer
+summary(out.lmer)
+#random slopes and intercepts model
+lmer(Ext.rate~Year + (Year|Core), data=ext.rates2, REML=FALSE) -> out.lmer
+summary(out.lmer)
+#random slopes and intercepts model--uncorrelated
+lmer(Ext.rate~Year + (1|Core)+(Year-1|Core), data=ext.rates2, REML=FALSE) -> out.lmer
+summary(out.lmer)
+
+#random slopes and intercepts model using centered year
+lmer(Ext.rate~I(Year-1967) + (I(Year-1967)|Core), data=ext.rates2, REML=FALSE) -> out.lmer
+summary(out.lmer)
+
+

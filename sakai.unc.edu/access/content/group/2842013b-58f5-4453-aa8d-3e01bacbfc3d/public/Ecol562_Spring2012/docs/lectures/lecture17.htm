@@ -1,0 +1,692 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 17 (lab)&mdash;Friday, February 17, 2012</title>
+
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {	color: #660099;
+	font-weight: bold;
+}
+.style13 {font-size: smaller}
+.style331 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style91 {color: #FF0000; font-weight: bold; }
+.style191 {color: #009900; font-weight: bold; }
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+}
+.style241 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style26 {font-family: "Courier New", Courier, mono}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture17" id="lecture17"></a>Lecture 17 (lab 6)&mdash;Friday, February 17, 2012</h1>
+<h2>What was covered?</h2>
+<ul>
+  <li><a href="lecture17.htm#overview">Overview of a temporally correlated data set</a></li>
+  <li><a href="lecture17.htm#reshaping">Reshaping the data set </a></li>
+  <li><a href="lecture17.htm#structured">Graphing structured data sets</a></li>
+  <li><a href="lecture17.htm#fitting">Fitting models to the data</a></li>
+  <li><a href="lecture17.htm#testing">Testing for residual temporal autocorrelation</a></li>
+  <li><a href="lecture17.htm#adding">Adding a periodic component to the model</a></li>
+  <li><a href="lecture17.htm#determining">Determining the form of the correlation structure</a></li>
+  <li><a href="lecture17.htm#have">Have we  correctly modeled the residual correlation?</a></li>
+  <li><a href="lecture17.htm#accounting">Does accounting for temporal correlation change our conclusions?</a></li>
+  <li><a href="lecture17.htm#cited">Cited reference</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture17.htm#acf">acf</a> calculates and plots the autocorrelation function of a vector of values. It assumes the values are in their proper order and that they were collected at equally-spaced intervals  of time or space.</li>
+  <li><a href="lecture17.htm#corarma">corARMA</a> (from <span class="style19">nlme</span>) is used to define an ARMA(p,q) correlation structure that is then entered as the value of the <span class="style22">correlation=</span> argument of <span class="style4">gls</span>.</li>
+  <li><a href="lecture17.htm#split">for</a> defines a for loop in R. A typical implementation is <span class="style1">for(i in 1:n)</span> where <span class="style1">i</span> is the index of the loop and <span class="style1">1:n</span> defines the legal values that <span class="style1">i</span> can take. The R expression or the set of R expressions enclosed by curly braces that immediately follows this is called the body of the loop. The expressions in the body of the loop are evaluated separately for each value of <em>i</em>. The first time through the loop <em>i</em>  is assigned the value 1 and  at each subsequent iteration of the   loop <em>i</em> is incremented by 1. When <em>i</em> = <em>n</em> the body of the loop is evaluated for the last time and the process ends.</li>
+  <li><a href="lecture17.htm#gls">gls</a> (from <span class="style19">nlme</span>) is use to fit models to structured data using generalized least squares.</li>
+  <li><a href="lecture17.htm#if">if</a> is a programming control statement that allows branching within a program. Contrast this with <span class="style102">ifelse</span> which conditionally assigns values to the elements of a vector.</li>
+  <li><a href="lecture17.htm#isna">is.na</a> tests whether  individual values are missing or not evaluating to TRUE or FALSE, respectively.</li>
+  <li><a href="lecture17.htm#pacf">pacf</a> calculates and plots the partial autocorrelation function for  a vector of observations.</li>
+  <li><a href="lecture17.htm#rep">rep</a> is used to replicate the elements of a vector either individually or as a unit.</li>
+  <li><a href="lecture17.htm#split">split</a> divides the elements of one vector into groups according to the values of a second vector. The object  created by <span class="style4">split</span> is a list.</li>
+  <li><a href="lecture17.htm#substr">substr</a> extracts a substring of  character values from a character variable. If <em>x</em> contains character data then <span class="style1">substr(x,m,n)</span> extracts the character values from position <em>m</em> up to and including position <em>n</em> of <em>x</em> for each observation.</li>
+  <li><a href="lecture17.htm#unlist">unlist</a> turns a list into a vector. We use it here to turn portions of a data frame, whose columns are the components of a list, into a single vector.</li>
+  <li><a href="lecture17.htm#whichmin">which.min</a> identifies the location of the minimum value of a vector.</li>
+</ul>
+<h2>Special symbols and characters in R</h2>
+<ul>
+  <li><a href="lecture17.htm#dbracket">[[ ]]</a> is used to select an element of a list via its numerical position. Thus <span class="style1">x[[2]]</span> selects the second element of the list <em>x</em>, while <span class="style1">x[[2]][1]</span> selects the first element of the second element of the list. The $ notation is used to select elements of a list by name.</li>
+  <li><a href="lecture17.htm#or">|</a> is the logical 'or' operator in R.</li>
+  <li><a href="lecture17.htm#not">!</a> is the logical 'not' operator in R.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture17.htm#acf">ci</a>= (argument to <span class="style4">acf</span>) defines the confidence level (.95, .90, etc.) for the confidence bands that are displayed in the plot of the autocorrelation function.</li>
+  <li><a href="lecture17.htm#cicol">ci.col</a>= (argument to <span class="style4">acf</span>) determines the color of the confidence bands in the plot of the ACF.</li>
+  <li><a href="lecture17.htm#corarma">correlation</a>= (argument to <span class="style4">gls</span>) is used to specify a correlation structure for the residuals.</li>
+  <li><a href="lecture17.htm#corarma">form</a>= (argument to <span class="style4">corARMA</span>) identifies the variable that records time in the model as well as any grouping variable, if present, to use when estimating the ARMA process.</li>
+  <li><a href="lecture17.htm#acf">lag.max</a>=(argument to <span class="style4">acf</span>) defines the maximum number of lags at which to calculate the correlation in the ACF.</li>
+  <li><a href="lecture17.htm#corarma">method</a>= (argument to <span class="style4">gls</span>)  identifies the estimation method to be used. We specified <span class="style22">method=&quot;ML&quot;</span> to obtain maximum likelihood estimates of the parameters.<br>
+  </li>
+  <li><a href="lecture17.htm#acf">na.action</a>= (argument to <span class="style4">acf</span> as well many other functions)  is used to specify how the <span class="style4">acf</span> function should treat missing observations. We used <span class="style22">na.action=na.pass</span>, which caused the <span class="style4">acf</span> function to skip over missing observations but still account for them when calculating lags.</li>
+  <li><a href="lecture17.htm#type">type=</a> (argument to <span class="style102">residuals</span>) is used to specify the type of residuals desired. We used it as <span class="style22">type='normalized'</span> to obtain normalized residuals from <span class="style4">gls</span>,  standardized residuals pre-multiplied by the inverse square-root factor of the estimated error correlation matrix.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture17.htm#lattice">lattice</a> for the function <span class="style4">xyplot</span>. The <span class="style19">lattice</span> package is the R implementation of trellis graphics.</li>
+  <li><a href="lecture17.htm#gls">nlme</a> for the function <span class="style3">gls</span> to carry out generalized least squares.</li>
+</ul>
+<h2><a name="overview" id="overview"></a>Overview of a temporally correlated data set</h2>
+<p>Here's a description of today's data set taken from the abstract of Castillo et al. (2011).</p>
+<blockquote>
+  <p class="styleArial">Natural and anthropogenic stressors are predicted to have increasingly negative impacts on coral reefs. Understanding how these environmental stressors have impacted coral skeletal growth should improve our ability to predict how they may affect coral reefs in the future. We investigated century-scale variations in skeletal extension for the slow-growing massive scleractinian coral <em>Siderastrea siderea</em> inhabiting the forereef, backreef, and nearshore reefs of the Mesoamerican Barrier Reef System (MBRS) in the western Caribbean Sea. Thirteen <em>S. siderea</em> cores were extracted, slabbed, and X-rayed. Annual skeletal extension was estimated from adjacent low-and high-density growth bands. </p>
+</blockquote>
+<p>The data we have are the annual extension rates (the amount a coral colony grows in a year) from 13 different samples. Cross-sections of cores taken from coral colonies exhibit rings much like tree trunks do. I load the data  from the class web site that I previously downloaded to my laptop and examine the first few observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.temp &lt;- read.table( 'ecol 562/coral cores.txt', header=T, sep=',')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dim(ext.temp)</div>
+<span class="style24">[1] 141  15</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.temp[1:4,]</div>
+<span class="style24">&nbsp;&nbsp;Year FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 FR.12 FR.13 BR.06 BR.07<br>
+1 2008 0.382 0.422 0.229 0.243    &nbsp;&nbsp;&nbsp;NA 0.471 0.562 0.384 0.809 0.483<br>
+2 2007 0.398 0.301 0.136 0.287    &nbsp;&nbsp;&nbsp;NA 0.266 0.436 0.230 0.740 0.390<br>
+3 2006 0.260 0.508 0.102 0.460    &nbsp;&nbsp;&nbsp;NA 0.360 0.377 0.282 0.705 0.356<br>
+4 2005 0.341 0.448 0.322 0.156    &nbsp;&nbsp;&nbsp;NA 0.480 0.285 0.316 0.628 0.271<br>
+&nbsp;&nbsp;BR.08 NS.14 NS.15 NS.16<br>
+1 0.393 0.508 0.586 0.313<br>
+2 0.334 0.504 0.314 0.393<br>
+3 0.411 0.487 0.459 0.329<br>
+4 0.359 0.495 0.544 0.192</span>
+<p>Each column contains the record from a different coral core. The first part of the variable name identifies the reef type (FR = forereef, BR = backreef, NS = nearshore) and the second part the sample number. The sample labeled FR.10 has all missing values, NA. It was discarded after it was discovered that the growth bands were too distorted to provide reliable readings.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">range(ext.temp$Year, na.rm=T)</div>
+<span class="style24">[1] 1900 2008</span>
+<p>There are some issues with the data file. Each coral core provides a different amount of data with some colonies being older than others. When this happens missing values were entered for the earlier years going all the way back to 1900. In truth none of the cores have data going back this far so that a number of years have  missing values for all the samples. The earliest dated band corresponds to 1911 as we can see in the output below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.temp[97:100,]</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;Year FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 FR.12 FR.13 BR.06 BR.07<br>
+97  &nbsp;1912    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+98  &nbsp;1911    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+99  &nbsp;1910    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+100 1909    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BR.08 NS.14 NS.15 NS.16<br>
+97     &nbsp;&nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA 0.651<br>
+98     &nbsp;&nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA 0.325<br>
+99     &nbsp;&nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+100    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA</span>
+<p>More alarming is the fact that the end of the file contains rows of all missing values, even for <span class="stylecayenne">Year</span>!</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.temp[136:141,]</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;Year FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 FR.12 FR.13 BR.06 BR.07<br>
+136   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+137   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+138   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+139   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+140   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+141   &nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BR.08 NS.14 NS.15 NS.16<br>
+136    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+137    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+138    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+139    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+140    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA<br>
+141    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA    &nbsp;&nbsp;&nbsp;NA</span>
+<p>What we're seeing here is  a &quot;feature&quot; of Excel that has been present for over a decade. When files are exported from Excel as comma-delimited text files, Excel will often append  extra blank rows at the end of the file consisting of commas but no data. This has occurred in this file so we'll need to eliminate these spurious rows of &quot;data&quot;.</p>
+<p>The goal of this lab session is to model the extension rates over time to  determine if the reef location, (FR, BR, or NS), has an effect. In doing so we will need  to respect the structure of the data, the fact that observations are nested in cores. This isn't a random sample of extension rates, instead we have a random sample of cores from which were then obtained all the annual extension rates. So, although observations from different cores are probably independent,  it's unlikely that the observations coming the same core are. Put another way the data here are heterogeneous. We have observations coming from different cores as well as multiple observations coming from the same core. Furthermore, because the growth rings were measured over time we might expect measurements made in successive years to be more similar to each other than they are to measurements made far in the past. Thus we will need to examine the residuals of our regression models for evidence of lingering temporal correlation.</p>
+<p>The  set-up of the current data frame is not appropriate for fitting  regression models. Annual extension rate is the response  so it needs to appear as a single column not scattered across 14 different columns as is currently the case. We will need to stack these columns keeping track of the years represented by the individual elements. We'll also need to create new variables that identify the core from which the observations came as well as the reef type for that core.</p>
+
+<h2><a name="reshaping" id="reshaping"></a>Reshaping the data set</h2>
+<p> <a name="unlist"></a>The first task is to stack into a single column the columns of the data frame that contain the extension rates. The <span class="style4">unlist</span> function will do this (because technically the columns of a data frame are the elements of a list).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">unlist(ext.temp[,2:15])</div>
+<p><a name="rep"></a>Next we need to repeat the entire<span class="stylecayenne"> Year</span> column once for each of the 14 columns we're unlisting. This can be accomplished with the <span class="style4">rep</span> function. The <span class="style4">rep</span> function can be used in two distinct ways. </p>
+<ol>
+  <li>One way is to repeat an entire vector as we're doing here. This is accomplished by entering a scalar as the second argument of <span class="style4">rep</span>. </li>
+  <li>The second way is to repeat each element of a vector a specified number of times. In this case the second argument of <span class="style4">rep</span> is a vector whose length is the same as the length of the first argument.</li>
+</ol>
+<p>The following simple examples illustrate these  two uses of <span class="style4">rep</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rep(1:3,4)</div>
+<span class="style24">[1] 1 2 3 1 2 3 1 2 3 1 2 3</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rep(1:3,c(2,5,4))</div>
+<span class="style24">[1] 1 1 2 2 2 2 2 3 3 3 3</span>
+<p>The repeated <span class="stylecayenne">Year</span> variable is created with <span class="style4">rep</span> using the first method.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rep(ext.temp$Year,14)</div>
+<p>The <span class="stylecayenne">Core</span> labels currently are the column names in the original data frame. A variable that identifies the <span class="stylecayenne">Core</span> can be created with <span class="style4">rep</span> using the second method. Because the number of rows of the data frame we're unlisting is <span class="style1">nrow(ext.temp) = 141</span>, the second argument of <span class="style4">rep</span> should be a vector containing the number 141 repeated 14 times. We can generate this efficiently by using a <span class="style4">rep</span> call as the second argument of <span class="style4">rep</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rep(names(ext.temp)[2:15], rep(nrow(ext.temp),14))</div>
+<p><a name="dataframe"></a>To assemble the results in a new data frame, I use the <span class="style4">data.frame</span> function and then assign names to the newly created columns.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rates.temp &lt;- data.frame(rep(ext.temp$Year,14), unlist(ext.temp[,2:15]), rep(names(ext.temp)[2:15], rep(nrow(ext.temp),14)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(ext.rates.temp) &lt;- c('Year','Ext.rate','Core')</div>
+<p><a name="substr"></a>Next we create a reef type variable. The first two letters of the <span class="stylecayenne">Core</span> name identify the reef type. I use the <span class="style4">subset</span> function of R to extract these two letters. Here <span class="style1">substr(ext.rates.temp$Core,1,2)</span> extracts the letters of <span class="stylecayenne">Core</span> that begin at position 1 and end at position 2.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rates.temp$reef.type &lt;- substr(ext.rates.temp$Core,1,2)</div>
+<p><a name="isna"></a><a name="not"></a>The missing values in the data set are all superfluous. None of them are there to denote gaps in a time series. Therefore it is safe to remove them. To remove the missing values I use the <span class="style4">is.na</span> function. <span class="style1">is.na(x)</span> evaluates to TRUE if <em>x</em> is missing, and FALSE if not. Therefore when preceded by <span class="style3">!</span>,  R's logical not symbol, <span class="style1">!is.na(x)</span> is TRUE if <em>x</em> is not missing. I use it as a row condition to extract only the non-missing observations in the data frame.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rates &lt;- ext.rates.temp[!is.na(ext.rates.temp$Ext.rate),]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(ext.rates.temp)</div>
+<span class="style24">[1] 1974    4</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dim(ext.rates)</div>
+<span class="style24">[1] 767   4</span>
+<h2><a name="structured"></a>Graphing structured data sets</h2>
+<p><a name="lattice"></a>Because the data come to us in units, cores, it is important when displaying the data graphically that this structure is preserved.  The <span class="style4">xyplot</span> function of the <span class="style19">lattice</span> graphics system is designed to generate such plots. I begin by sorting the data by <span class="stylecayenne">Year</span> separately for each core.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rates2 &lt;- ext.rates[order(ext.rates$Core, ext.rates$Year),]</div>
+<p>The basic syntax is <span class="style1">xyplot(y~x|z)</span> where <em>z</em> is the grouping variable. What's displayed is the relationship <span class="style1">y~x</span> separately for each distinct value of <em>z</em>. The variable <em>z</em> is a conditioning variable such that each distinct value of <em>z</em> will correspond to a separate panel in the displayed output.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(Ext.rate~Year|Core, data=ext.rates2)</div>
+<p>Because this is a time series we should connect consecutive points with line segments. To display both points and lines I include the argument<span class="style22"> type='o'</span> where 'o' signifies overlay.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(Ext.rate~Year|Core, data=ext.rates2, type='o')</div><br>
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig1.png" width="465" height="340" alt="fig. 1"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 1 </strong> &nbsp; Panel graph of the extension rate time series in which each panel represents the data from a different core</p></td>
+  </tr>
+</table>
+<p><a name="layout"></a>From the graph it appears there may be an increasing trend in the backreef cores and perhaps a negative trend in some of the forereef cores.</p>
+<h2><a name="fitting"></a>Fitting models to the data</h2>
+<p>I start by fitting a sequence of models that ignores the structured nature of the data. I fit in order</p>
+<ol>
+  <li>a common slope and intercept model,</li>
+  <li>a model in which the slopes and intercepts vary by reef type,</li>
+  <li>a model in which the intercepts vary by core but the slopes vary by reef type, and</li>
+  <li>a model in which both the slopes and intercepts vary by core.</li>
+</ol>
+<p><a name="ifunc"></a>To obtain more meaningful estimates I elect to center the predictor <span class="stylecayenne">Year</span>. Centering means subtracting off a fixed constant from the predictor. In an uncentered model, <span class="style1">y~x</span>, the  intercept estimates the mean response when <em>x</em> = 0. For the current data set this would correspond to the mean annual extension rate in the year 0 AD, an absolutely useless (and nonsensical) piece of information. Instead, I center the variable <span class="stylecayenne">Year</span> so that the intercept corresponds to the mean for a year that actually occurs within the range of the data. For various reasons I choose the year 1967 as the centering constant. The centering can be done by creating a new variable in the data frame, or it can be done on the fly within the regression equation by using the <span class="style4">I</span> function as follows: <span class="style1">lm(Ext.rate~I(Year-1967), data=ext.rates2)</span>. The <span class="style4">I</span> function causes the arithmetic specified in its argument to be performed before the regression model is fit. In this case, 1967 is subtracted from the value of <span class="stylecayenne">Year</span> for each observation. The slopes of the centered and uncentered models are exactly the same; only the intercepts are different.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#single slope and intercept </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  model1 &lt;- lm(Ext.rate~I(Year-1967), data=ext.rates2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#slopes and intercepts vary by reef type</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- lm(Ext.rate~I(Year-1967)+ factor(reef.type) + factor(reef.type):I(Year-1967), data=ext.rates2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#core intercepts, reef slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model3 &lt;- lm(Ext.rate~I(Year-1967)+ factor(reef.type):I(Year-1967) + factor(Core), data=ext.rates2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#core intercepts and slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model4 &lt;- lm(Ext.rate~I(Year-1967)+ factor(Core):I(Year-1967) + factor(Core), data=ext.rates2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(model1, model2, model3, model4)</div>
+
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model1&nbsp; 3&nbsp; -757.5727<br>
+  model2&nbsp; 7&nbsp; -795.2139<br>
+  model3 17 -1090.5689<br>
+model4 27 -1093.6115</span>
+<p>The results indicate that it is necessary for each core to have its own intercept. The closeness in the AIC of the last two models suggests that the evidence for requiring each core to have a separate slope is not as strong as it is for the intercepts. I carry out a formal partial-<em>F</em> test to verify this.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(model3, model4)</div>
+<span class="style24">  Analysis of Variance Table</span>
+<p class="style24">Model 1: Ext.rate ~ I(Year - 1967) + factor(reef.type):I(Year - 1967) + <br>
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factor(Core)<br>
+  Model 2: Ext.rate ~ I(Year - 1967) + factor(Core):I(Year - 1967) + factor(Core)<br>
+  &nbsp; Res.Df&nbsp;&nbsp;&nbsp;&nbsp; RSS&nbsp; Df Sum of Sq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F&nbsp; Pr(&gt;F)&nbsp; <br>
+  1&nbsp;&nbsp;&nbsp; 751 10.3648&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br>
+  2&nbsp;&nbsp;&nbsp; 741 10.0581&nbsp; 10&nbsp;&nbsp;&nbsp; 0.3068 2.2599 0.01328 *<br>
+  ---<br>
+Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</p>
+<p>The significance test agrees with AIC suggesting that each core is sufficiently different that it needs a separate slope and intercept. The  reef type pattern is not  able to adequately account for individual core differences. Of course all of these results are tentative because we've not yet addressed the  temporal correlation that may  be present in the data.</p>
+<h2><a name="testing"></a>Testing for residual temporal correlation</h2>
+<p>Because the data were recorded over time we might expect later values to be influenced by earlier values. The predictors in our model may have accounted for some of the original temporal correlation in the data, so we should examine the residuals of the model. The temporal correlation if it exists should be present within a core not between cores, thus we have 13 separate time series to look at. It would be desirable to use the data from all cores simultaneously to obtain a better estimate of the correlation. The <span class="style102">acf</span> function we will use to examine the autocorrelation function (ACF) uses the relative position of the values in a vector to determine their  separation in time. Thus we can't simply concatenate the different time series because this would mess up the calculation of lags. The last year of one series would be adjacent to the first year of the next series and the values from these different series would  incorrectly contribute to the short-term lag correlations. The trick to doing this correctly is to introduce missing values between each core series before stringing together the residuals from the separate cores as one long time series. Enough missing values should be used to prevent cross-core contamination at the temporal lags  of interest. </p>
+<p><a name="split"></a><a name="dbracket"></a>I first use the <span class="style4">split</span> function to divide the residuals into separate groups based on the core from which they came. The <span class="style4">split</span> function creates a list because the residual vectors from different cores are of different lengths. We've previously accessed the components of lists with the $ notation, but lists can also be accessed numerically by their position using the double subscript notation, <span class="style1">[[&nbsp;]]</span>. I use a <span class="style4">for</span> loop indexed by <em>i</em> to repeatedly carry out a sequence of operations for different values of the index <em>i</em>. Each time through the loop a vector of residuals from a different core is selected to which  30 missing values are then appended. This new vector is then added to the growing vector of residuals and missing values  generated up until this point.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">list.resids &lt;- split(residuals(model4), ext.rates2$Core)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  long.resids &lt;- list.resids[[1]]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  for (i in 2:length(list.resids)) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #add 30 missing values to the vector of residuals</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  long.resids &lt;- c(long.resids, rep(NA,30))</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">  #append the residuals from the next core</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  long.resids &lt;- c(long.resids, list.resids[[i]])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }</div>
+<p><a name="acf"></a>The R <span class="style4">acf</span> function has an argument <span class="style22">na.action=na.pass</span> that causes it to skip over the missing values (while still keeping track of the time differences). I also include the <span class="style22">lag.max=30</span> argument so that only 30 lags are displayed. Because   only 30 missing values were inserted between the time series, at lags greater than 30 the residuals from one core will be contaminated with those from the next core. I use the <span class="style22">ci</span> argument to set a 95% confidence band with a <a href="lecture16.htm#bonferroni">Bonferroni correction</a> to account for the fact that we'll be carrying out 30  tests of significance at 30 different lags.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">acf(long.resids, na.action=na.pass, lag.max=30, ci=1-.05/30, ylim=c(-.2,.2), main=list('Autocorrelation Plot', cex=1))</div>
+<br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig2.png" width="385" height="270" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 2 </strong> &nbsp; Plot of autocorrelation function of the residuals</p></td>
+  </tr>
+</table>
+
+<p>The plot shows a few significant correlations at early lags and then a number of additional significant correlations beginning at around lag 15. Unfortunately, the displayed confidence bounds are incorrect. The <span class="style4">acf</span> function is using the &ldquo;wrong&rdquo; fixed sample size. It is counting the NAs. We can see this by assigning the results of the <span class="style4">acf</span> function to an object and examining the <span class="style32">$n.used</span> component.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">acf(long.resids, na.action=na.pass, lag.max=30, ci=1-.05/30, ylim=c(-.2,.2), main=list('Autocorrelation Plot',cex=1))-&gt;acf.out</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> acf.out$n.used</div>
+<span class="style24">  [1] 1157</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> nrow(ext.rates2)</div>
+  <span class="style24">[1] 767</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(long.resids)</div>
+<span class="style24">[1] 1157</span>
+<p> To correct this we need to add the confidence bounds ourselves using the correct sample sizes for each lag. The  formula for the error bounds of the ACF is</p>
+<p align="center"><img src="../../images/lectures/lecture17/conf&#32;envelope.gif" width="70" height="63" alt="envelope"></p>
+<p>Here <em>L</em> is the total number of lags being tested,<img src="../../images/lectures/lecture17/z&#32;quantile.gif" alt="z quantile" width="62" height="30" align="absmiddle"> is a quantile of a standard normal distribution, and <em>N</em>(<em>k</em>) is the number of observations available at lag <em>k</em>. As an illustration of determining <em>N</em>(<em>k</em>) I compute the number of observations available for calculating the lag 30 correlation. To obtain the numbers of observations in each core I use the <span class="style4">table</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(ext.rates2$Core)</div>
+<span class="style24">BR.06 BR.07 BR.08 FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 <br>
+&nbsp;&nbsp;&nbsp;80    &nbsp;&nbsp;&nbsp;83    &nbsp;&nbsp;&nbsp;19    &nbsp;&nbsp;&nbsp;94    &nbsp;&nbsp;&nbsp;69    &nbsp;&nbsp;&nbsp;23    &nbsp;&nbsp;&nbsp;29     &nbsp;&nbsp;&nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;47 <br>
+FR.12 FR.13 NS.14 NS.15 NS.16 <br>
+&nbsp;&nbsp;&nbsp;79    &nbsp;&nbsp;&nbsp;41    &nbsp;&nbsp;&nbsp;44    &nbsp;&nbsp;&nbsp;61    &nbsp;&nbsp;&nbsp;98 </span>
+<p>The number of pairs of observations a distance 30 years apart is obtained by subtracting 30 from these values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">table(ext.rates2$Core)-30</div>
+<span class="style24">BR.06 BR.07 BR.08 FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 <br>
+&nbsp;&nbsp;&nbsp;50    &nbsp;&nbsp;&nbsp;53   &nbsp;&nbsp;-11    &nbsp;&nbsp;&nbsp;64    &nbsp;&nbsp;&nbsp;39    &nbsp;&nbsp;&nbsp;-7    &nbsp;&nbsp;&nbsp;-1   &nbsp;&nbsp;-30    &nbsp;&nbsp;&nbsp;17 <br>
+FR.12 FR.13 NS.14 NS.15 NS.16 <br>
+&nbsp;&nbsp;&nbsp;49    &nbsp;&nbsp;&nbsp;11    &nbsp;&nbsp;&nbsp;14    &nbsp;&nbsp;&nbsp;31    &nbsp;&nbsp;&nbsp;68</span>
+<p>The negative values can be removed by multiplying them by a Boolean condition that tests if the calculated values are positive or not.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">(table(ext.rates2$Core)-30)*((table(ext.rates2$Core)-30)&gt;0)</div>
+<span class="style24">BR.06 BR.07 BR.08 FR.02 FR.04 FR.05 FR.09 FR.10 FR.11 <br>
+&nbsp;&nbsp;&nbsp;50    &nbsp;&nbsp;&nbsp;53     &nbsp;&nbsp;&nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;64    &nbsp;&nbsp;&nbsp;39     &nbsp;&nbsp;&nbsp;&nbsp;0     &nbsp;&nbsp;&nbsp;&nbsp;0     &nbsp;&nbsp;&nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;17 <br>
+FR.12 FR.13 NS.14 NS.15 NS.16 <br>
+&nbsp;&nbsp;&nbsp;49    &nbsp;&nbsp;&nbsp;11    &nbsp;&nbsp;&nbsp;14    &nbsp;&nbsp;&nbsp;31    &nbsp;&nbsp;&nbsp;68 </span>
+<p>Finally we sum these up.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sum((table(ext.rates2$Core)-30)* ((table(ext.rates2$Core)-30)&gt;0))</div>
+<span class="style24">[1] 396</span>
+<p>To carry out these calculations at each lag, I write a function in which I replace 30 in the above expression with a variable and then <span class="style4">sapply</span> the function to the numbers 0 through 30, the possible lags.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">N.samp &lt;- sapply(0:30, function(k) sum((table(ext.rates2$Core)-k)* ((table(ext.rates2$Core)-k)&gt;0)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  N.samp</div>
+<span class="style24"> &nbsp;[1] 754 741 728 715 702 689 676 663 650 637 624 611 598 585 572 559<br>
+[17] 546 533 520 508 496 484 472 461 450 439 428 417 406 396</span>
+<p><a name="cicol"></a>I now use these values in the formula for the confidence bands given above and draw my own bands. It is not possible to turn off the display of the default confidence bands from the <span class="style4">acf</span> function, so I just color them white using the <span class="style22">ci.col</span> argument. (A better solution is to draw the spikes ourselves.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">acf(long.resids, na.action=na.pass, lag.max=30, ylim=c(-.2,.2), ci.col='white', main=list('Autocorrelation Plot', cex=1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(0:30, -qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(0:30, qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div><br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig3.png" width="385" height="270" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 3 </strong> &nbsp; Plot of autocorrelation function for the residuals</p></td>
+  </tr>
+</table>
+
+<p>While the picture has improved, there is still a significant correlation at lag one, and perhaps another at lag 24. The Bonferroni correction guarantees that no more than 5% of the observed significant lags are due to chance. With 30 lags that comes to 1.5 spurious significant results. Given that there are possibly two significant lags in Fig. 3, with one at lag 1, we probably shouldn't attribute them to chance.</p>
+<h2><a name="adding"></a>Adding a periodic component to the model</h2>
+<p>While the ARMA models we discussed last time can be used to remove residual correlation at low lags, they are rather ineffectual at dealing with periodic behavior. The pattern in Fig. 3 looks distinctly sinusoidal suggesting that adding a trigonometric term to the regression model might eliminate the observed periodic pattern. The graph suggests that a sine function with a period of 40 years might work, but we should use the data to estimate the amplitude, period, and phase angle. We can accomplish this by fitting the following model with a value specified for <em>k</em>.</p>
+<span class="style10">update(model4, .~.+cos(2*pi/k*Year)+sin(2*pi/k*Year))</span><br>
+<p>If we specify the value for <em>k</em>, the period, R will estimate coefficients b<sub>1</sub> and b<sub>2</sub> for the cosine and sine. Using a little trigonometry we can rewrite the sum of a cosine and sine of the same angle as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture17/trig&#32;function.gif" width="612" height="190" alt="trig"></p>
+<p>In the second line I noticed that the coefficients of the original cosine and sine are clearly the sine and cosine of some angle that I call &phi;. (Proof: the two coefficients lie between &ndash;1 and 1 and if you square them they sum to 1.) In the last line I use the sine of the sum of two angles identity where the angles  are <img src="../../images/lectures/lecture17/angle1.gif" alt="angle 1" width="45" height="52" align="absmiddle"> and &phi;. So by adding the sine and cosine term to the regression model we are actually adding a single sine function with amplitude <em>A</em>, period <em>k</em>, and phase angle &phi;.</p>
+<p>The estimated regression equation will provide values for <em>A</em> and &phi;, but we still need to specify <em>k</em>. To obtain the maximum likelihood estimate of <em>k</em>, I set up a profile likelihood problem. I fit the model for a range of plausible integer values for <em>k</em>, examine the AICs (or log-likelihoods) of the resulting models, and select the model that yields the smallest AIC (largest log-likelihood). </p>
+<p>The code below estimates a model with a periodic term in which the period <em>k</em> ranges from 1 to 60. I begin by creating a variable to store the results, a matrix with 2 columns and 60 rows that I populate initially with missing values. I then fit the model for various values of <em>k</em>  each time computing the AIC and storing it in the matrix along with the corresponding value of <em>k</em>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.aic&lt;-matrix(NA, ncol=2, nrow=60)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  for(k in 1:60) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  tmodel4 &lt;- update(model4, .~.+cos(2*pi/k*Year)+sin(2*pi/k*Year))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  my.aic[k,] &lt;- c(k,AIC(tmodel4))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p><a name="whichmin"></a>I use the <span class="style4">which.min</span> function to determine the position of the smallest AIC value in the matrix of results.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">which.min(my.aic[,2])</div>
+<span class="style24">  [1] 36</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic[36,]</div>
+<span class="style24">[1]    36.000 -1111.465</span>
+<p>So we need a sine function with a period of 36 years. It might be interesting to plot the AIC values to see if this choice is unambiguous.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(my.aic[,1], my.aic[,2], xlab='period', ylab='AIC', type='l')</div>
+<p>&nbsp;</p>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig4.png" width="404" height="247" alt="fig 4"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 4 </strong> &nbsp; Plot of AIC for different choices of the period of the periodic function</p></td>
+  </tr>
+</table>
+
+<p><a name="periodmodel4"></a>With this choice for the period, we can  refit the regression model with a periodic term, extract the residuals, and examine the autocorrelation function again.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">period.model4 &lt;- update(model4, .~.+cos(2*pi/36*Year)+sin(2*pi/36*Year))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  list.resids2 &lt;- split(residuals(period.model4), ext.rates2$Core)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  long.resids2 &lt;- list.resids2[[1]]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> for (i in 2:length(list.resids2)) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  long.resids2 &lt;- c(long.resids2, rep(NA,20))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  long.resids2 &lt;- c(long.resids2, list.resids2[[i]])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  acf(long.resids2, na.action=na.pass, lag.max=30,  ylim=c(-.2,.2), main=list('Autocorrelation plot for model with periodic function', cex=1), ci.col='white')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(0:30, -qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(0:30, qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div>
+<br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig5.png" width="385" height="270" alt="fig. 4"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 5 </strong> &nbsp; Autocorrelation plot of the  residuals for a model with a periodic function</p></td>
+  </tr>
+</table>
+
+<p>The significant long-range correlations have been removed as have the short-range ones.</p>
+<h2><a name="determining"></a>Determining the form of the correlation structure</h2>
+<p><a name="pacf"></a>Although the lag 24 correlation in Fig. 3 was at best marginally significant, the lag 1 correlation was definitely significant. Rather than try to model the periodicity we could instead focus on the significant lag 1 residual correlation in <span class="style1">model4</span> and treat the apparent periodicity as spurious.  The short-term correlation pattern displayed in Fig. 3 shows an exponential decay with increasing lag. This is usually the signature of an autoregressive process. As was explained in <a href="lecture16.htm#AR">lecture 16</a>, the partial autocorrelation function can be used to determine the order of the autoregressive process. If we plot the partial autocorrelation function for <span class="style1">model4</span> using the <span class="style4">pacf</span> function of R we obtain the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">pacf(long.resids, na.action=na.pass, lag.max=30, ci.col='white', ylim=c(-.2,.2), main=list('Partial Autocorrelation Plot', cex=1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(0:30, -qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(0:30, qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div> <br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig7.png" width="385" height="270" alt="fig. 6"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 6</strong> &nbsp;Partial autocorrelation plot of the residuals</td>
+  </tr>
+</table>
+
+<p>There is only one significant lag in the PACF suggesting that perhaps an AR(1) process is appropriate. Because the PACF is decaying exponentially and not dropping off suddenly to zero, some mixture of an autoregressive and moving average process might be a better choice. In any case it is pretty clear that an ARMA(p,q) process with fairly low values for p and 	q, perhaps no more than 1, will suffice.</p>
+<p> <a name="gls"></a>As was discussed in <a href="lecture15.htm#generalized">lecture 15</a>, correlation structures for the residuals can be added to an ordinary regression model by using generalized least squares. The <span class="style4">gls</span> function in the <span class="style19">nlme</span> package implements generalized least squares. To specify a correlation structure  the correlation argument of <span class="style4">gls</span> is included in which one of the  standard classes of correlation structures (corStruct) available in the <span class="style19">nlme</span> package is used. For instance, to specify an ARMA(1,1) model that is fit separately to each core using centered <span class="stylecayenne">Year</span> as the time variable we would write the following:</p>
+<p class="style1">correlation=corARMA(p=1, q=1, form = ~ I(Year-1967) | Core)</p>
+<p><a name="corarma"></a>The <span class="style22">form</span> argument of <span class="style4">corARMA</span> identifies the variable that records time  in the model,  <span class="stylecayenne"> I(Year-1967)</span> in our case, and a grouping variable if there is one, which is <span class="stylecayenne">Core</span> here. Just as with the <span class="style4">xyplot</span> function of <span class="style19">lattice</span>, a vertical bar is used to separate the time variable from the grouping variable. The <span class="style4">gls</span> function provides a couple of different methods for  estimating the ARMA parameters of which maximum likelihood is one. Because we want to compare models using AIC we need to tell <span class="style4">gls</span> to use maximum likelihood by including the argument <span class="style22">method='ML'</span>. </p>
+<p><a name="if"></a><a name="or"></a>I next fit a sequence of ARMA(p,q) models using different values of <em>p</em> and <em>q</em> and then  compare the models obtained to the original model using AIC. In order to   keep track of the results, I set this up as two nested loops that cycle through different values of <em>p</em> and <em>q</em>. I have to exclude the possibility of <em>p</em> = 0 and <em>q</em> = 0 explicitly with an <span class="style4">if</span> conditional programming statement because this is not a legal combination in the <span class="style4">corARMA</span> function. The notation <span class="style1">p&gt;0 | q&gt;0</span> causes the statements that follow it to be executed only when at least one of <em>p</em> or <em>q</em> is not zero. Although it is purely overkill here, I try fitting all possible ARMA(p,q) processes up to order 3. I store the results in an object called <span class="stylecayenne">cor.results</span> that is initialized to <span class="style1">NULL</span> (meaning empty). Each new vector of results is then added to this object by attaching them at the end with the <span class="style3">rbind</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(nlme)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> cor.results &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">for(p in 0:3) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> for(q in 0:3) {</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px"> if(p&gt;0 | q&gt;0) {</div>
+
+<div class="style10" style="padding-left: 120px; text-indent:-30px">cor.temp &lt;- gls(Ext.rate~I(Year-1967)+ factor(Core):I(Year-1967) + factor(Core), data=ext.rates2, method='ML', correlation=corARMA(p=p, q=q, form = ~ I(Year-1967) | Core))</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px">cor.results &lt;- rbind(cor.results, c(p, q, logLik(cor.temp), AIC(cor.temp))) }</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">}</div>
+
+
+<p class="style24">Error in gls(Ext.rate ~ I(Year - 1967) + factor(Core):I(Year - 1967) +  : <br>
+function evaluation limit reached without convergence (9)</p>
+<p>The error message indicates that one of the models failed to converge. Because we were saving the results incrementally we can examine the results so far to see where things went wrong.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cor.results</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[,1] [,2]     &nbsp;&nbsp;&nbsp;&nbsp;[,3]      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[,4]<br>
+&nbsp;[1,]    &nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;1 578.5313 -1101.063<br>
+&nbsp;[2,]    &nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;2 580.9363 -1103.873<br>
+&nbsp;[3,]    &nbsp;&nbsp;0    &nbsp;&nbsp;&nbsp;3 583.6040 -1107.208<br>
+&nbsp;[4,]    &nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;0 579.3271 -1102.654<br>
+&nbsp;[5,]    &nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;1 583.5647 -1109.129<br>
+&nbsp;[6,]    &nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;2 582.0690 -1104.138<br>
+&nbsp;[7,]    &nbsp;&nbsp;1    &nbsp;&nbsp;&nbsp;3 583.8434 -1105.687<br>
+&nbsp;[8,]    &nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;0 582.1162 -1106.232<br>
+&nbsp;[9,]    &nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;1 583.7883 -1107.577<br>
+[10,]    &nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;2 612.9906 -1163.981</span>
+<p>The first missing model is  the ARMA(2,3) model. So either it  failed to converge or the last reported model, ARMA(2,2), failed to converge. Because this is way past what we think is a reasonable model anyway, I skip over it. I restart the loop with <em>p</em> = 3 and try to finish the rest of the models.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">for(p in 3:3) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> for(q in 0:3) {</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px"> if(p&gt;0 | q&gt;0) {</div>
+
+<div class="style10" style="padding-left: 120px; text-indent:-30px">cor.temp &lt;- gls(Ext.rate~I(Year-1967)+ factor(Core):I(Year-1967) + factor(Core), data=ext.rates2, method='ML', correlation=corARMA(p=p, q=q, form = ~ I(Year-1967) | Core))</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px">cor.results &lt;- rbind(cor.results, c(p, q, logLik(cor.temp), AIC(cor.temp))) }</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">}</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">colnames(cor.results) &lt;- c('p', 'q', 'logLik', 'AIC')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cor.results &lt;- rbind(cor.results, c(0, 0, logLik(model4), AIC(model4)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">cor.results</div>
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p q   &nbsp;&nbsp;logLik       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIC<br>
+  &nbsp;[1,] 0 1 578.5313 -1101.063<br>
+  &nbsp;[2,] 0 2 580.9363 -1103.873<br>
+  &nbsp;[3,] 0 3 583.6040 -1107.208<br>
+  &nbsp;[4,] 1 0 579.3271 -1102.654<br>
+  &nbsp;[5,] 1 1 583.5647 -1109.129<br>
+  &nbsp;[6,] 1 2 582.0690 -1104.138<br>
+  &nbsp;[7,] 1 3 583.8434 -1105.687<br>
+  &nbsp;[8,] 2 0 582.1162 -1106.232<br>
+  &nbsp;[9,] 2 1 583.7883 -1107.577</span><br>
+  <span class="style25">[10,] 2 2 612.9906 -1163.981</span><span class="style24"><br>
+  [12,] 3 0 584.0702 -1108.140<br>
+  [13,] 3 1 584.1622 -1106.324<br>
+  [14,] 3 2 584.1936 -1104.387<br>
+  [15,] 3 3 584.9909 -1103.982<br>
+[16,] 0 0 573.8058 -1093.612</span></p>
+<p>  <a name="wrong"></a>If the output is to believed, an ARMA(2,2) model is the clear winner followed by an ARMA(1,1) model as a distant second. The fact that a mixed autoregressive and moving average process ranks best is consistent with what the ACF and PACF plots revealed. The fact that it is an ARMA(2,2) process is a bit surprising. But if we scrutinize the results from the other models it becomes quite clear that the log-likelihood reported for the ARMA(2,2) process is wrong.<br>
+</p>
+<p>How do we know this? When we examine a sequence of nested models the value of the log-likelihood must be a monotone increasing function of the number of parameters. Adding a parameter to a previously estimated model cannot cause the log-likelihood to decrease. At worst the log-likelihood may stay the same if the new parameter contributes nothing to the model. Not counting the correlation parameters of the ARMA(p,q) process, each model estimates  27  parameters. If we focus on two different sequences of nested models that sandwich the ARMA(2,2) model we see that there is a problem. </p>
+<table width="600" border=1 align="center" frame=VOID rules=groups cellpadding="2">
+<colgroup span=5></colgroup><colgroup span=5></colgroup>
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Model</strong></div></td>
+    <td><div align="center"><strong>p</strong></div></td>
+    <td><div align="center"><strong>q</strong></div></td>
+    <td><div align="center"><strong>logLik</strong></div></td>
+    <td><div align="center"><strong># parms</strong></div></td>
+    <td><div align="center"><strong>Model</strong></div></td>
+    <td><div align="center"><strong>p</strong></div></td>
+    <td><div align="center"><strong>q</strong></div></td>
+    <td><div align="center"><strong>logLik</strong></div></td>
+    <td><div align="center"><strong># parms</strong></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">ARMA(2,1)</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">1</div></td>
+    <td><div align="center">583.7883</div></td>
+    <td><div align="center">30</div></td>
+    <td><div align="center">ARMA(1,2)</div></td>
+    <td><div align="center">1</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">582.0690</div></td>
+    <td><div align="center">30</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">ARMA(2,2)</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">612.9906</div></td>
+    <td><div align="center">31</div></td>
+    <td><div align="center">ARMA(2,2)</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">612.9906</div></td>
+    <td><div align="center">31</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">ARMA(2,3)</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">NA</div></td>
+    <td><div align="center">32</div></td>
+    <td><div align="center">ARMA(3,2)</div></td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">2</div></td>
+    <td><div align="center">584.1936</div></td>
+    <td><div align="center">32</div></td>
+  </tr>
+</table>
+
+
+<p>Based on the two nested sequences of models that are shown, it is clear that the correct log-likelihood of the ARMA(2,2) model must lie between 583.79 and 584.19. The reported value of 612.99 has to be wrong.</p>
+<p>Discarding the ARMA(2,2) model results as being spurious,  the model with the lowest AIC is an ARMA(1,1) model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">which.min(cor.results[c(1:9,11:16), &quot;AIC&quot;])</div>
+<span class="style24">  [1] 5</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cor.results[5,]</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q     &nbsp;&nbsp;logLik        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIC <br>
+1.0000     1.0000   583.5647 -1109.1295 </span>
+<p>The ARMA(1,1) model for the residuals is</p>
+<p align="center"><img src="../../images/lectures/lecture17/arma11.gif" width="180" height="27" alt="ARMA(1,1)"></p>
+<p>where <img src="../../images/lectures/lecture17/at.gif" alt="at" width="120" height="35" align="absmiddle"> and &phi;<sub>1</sub>,  &theta;<sub>1</sub>, and &sigma;<sup>2</sup> are parameters that are estimated by <span class="style4">gls</span>. </p>
+<h2><a name="have" id="have"></a>Have we correctly modeled the residual correlation?</h2>
+<p><a name="type"></a>When we specify a correlation model for the residuals, we don't remove the correlation , we attempt to model it. Thus an ACF of the ordinary residuals will still the resemble Fig. 3. To determine if the choice of correlation model is correct we can plot the ACF of the normalized residuals from our model. According to the help screen of <span class="style102">residuals.gls</span>,  specifying <span class="style22">type = &quot;normalized&quot;</span> as an argument to the <span class="style3">residuals</span> function yields standardized residuals that are pre-multiplied by the inverse square-root factor of the estimated error correlation matrix.  If the specified correlation model is correct, the ACF of the normalized residuals should no longer show a significant pattern. I extract the normalized residuals, insert missing values between the core time series, and plot the ACF.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model4.1 &lt;- gls(Ext.rate~I(Year-1967)+ factor(Core):I(Year-1967) + factor(Core), data=ext.rates2, method='ML', correlation=corARMA(p=1, q=1, form = ~ I(Year-1967) | Core))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">list.resids4 &lt;- split(residuals(model4.1, type='normalized'), ext.rates2$Core)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> long.resids4 &lt;- list.resids4[[1]]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for (i in 2:length(list.resids4)) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">long.resids4 &lt;- c(long.resids4, rep(NA,30))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">long.resids4 &lt;- c(long.resids4, list.resids4[[i]])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">acf(long.resids4, na.action=na.pass, lag.max=30, ylim=c(-.2,.2), main=list('Autocorrelation plot using normalized residuals', cex=1), ci.col='white')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(0:30, -qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(0:30, qnorm(1-.025/30)/sqrt(N.samp), col=2, lty=2)</div><br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture17/fig8.png" width="385" height="270" alt="fig. 7"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><strong>Fig. 7</strong> &nbsp;ACF of the normalized residuals from an AR(1,1) model</td>
+  </tr>
+</table>
+<p>The plot reveals that the significant lag 1 correlation has been removed. The previously observed periodic behavior has also been removed.</p>
+<h2><a name="accounting"></a>Does accounting for temporal correlation change our conclusions?</h2>
+<p>Recall that the point of accounting for correlation was to ensure that we can draw valid conclusions when using AIC and/or significance testing for model selection. Previously we concluded that the best model was one that allowed each individual core to have its own intercept and slope. That conclusion  must now be changed. I refit <span class="stylecayenne">model3</span> with an ARMA(1,1) correlation structure for the residuals and compare it to <span class="stylecayenne">model4</span> with the same correlation structure.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model3.1 &lt;- gls(Ext.rate~I(Year-1967)+ factor(reef.type):I(Year-1967) + factor(Core), data=ext.rates2, method='ML', correlation=corARMA(p=1, q=1, form = ~ I(Year-1967) | Core))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  sapply(list(model4.1, model3.1), AIC)</div>
+<span class="style24">  [1] -1109.129 -1116.003</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(model3.1, model4.1)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model df       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIC        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIC   &nbsp;&nbsp;logLik   &nbsp;&nbsp;Test  &nbsp;L.Ratio p-value<br>
+model3.1     &nbsp;&nbsp;&nbsp;&nbsp;1 19 -1116.004 -1027.7962 577.0017 <br>
+model4.1     &nbsp;&nbsp;&nbsp;&nbsp;2 29 -1109.130  &nbsp;-974.4974 583.5647 1 vs 2 13.12601  &nbsp;0.2167</span>
+<p>The two models are not significantly different. Now the best model is the simpler one in which in the intercepts are different for each core, but the slopes vary by reef type. This confirms the researchers' hypothesis that the trend over time has been different depending upon the environment of the coral colony. Colonies in the nearshore and forereef environments have an annual extension rate trend that is less than that of reefs in the backreef environment. The backreef colonies exhibit a weak positive trend while those in the nearshore and forereef environments exhibit a negative trend. Of these only the trend in the forereef  is  significantly different from zero (details not shown).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">printCoefmat(summary(model3.1)$tTable)</div>
+
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value&nbsp;&nbsp; Std.Error&nbsp;&nbsp;&nbsp;&nbsp; t-value p-value<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.59582205&nbsp; 0.01941775 30.68440169&nbsp; 0.0000<br>
+  I(Year - 1967)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00124904&nbsp; 0.00055605&nbsp; 2.24629241&nbsp; 0.0250<br>
+  factor(Core)BR.07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.25090600&nbsp; 0.02720749 -9.22194588&nbsp; 0.0000<br>
+  factor(Core)BR.08&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.31231460 &nbsp;0.04573936 -6.82813629&nbsp; 0.0000<br>
+  factor(Core)FR.02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.16334703&nbsp; 0.02654098 -6.15452120&nbsp; 0.0000<br>
+  factor(Core)FR.04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.03422231&nbsp; 0.02863294 -1.19520773&nbsp; 0.2324<br>
+  factor(Core)FR.05&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.24088486&nbsp; 0.04178198 -5.76528150&nbsp; 0.0000<br>
+  factor(Core)FR.09&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.18602882&nbsp; 0.03856782 -4.82342016&nbsp; 0.0000<br>
+  factor(Core)FR.11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.18836691&nbsp; 0.03257122 -5.78323171&nbsp; 0.0000<br>
+  factor(Core)FR.12&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.13610616&nbsp; 0.02754488 -4.94124995&nbsp; 0.0000<br>
+  factor(Core)FR.13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.19675693&nbsp; 0.03416953 -5.75825713&nbsp; 0.0000<br>
+  factor(Core)NS.14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.06662032&nbsp; 0.03384235 -1.96854866&nbsp; 0.0494<br>
+  factor(Core)NS.15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.24787863&nbsp; 0.02996787 -8.27147914&nbsp; 0.0000<br>
+  factor(Core)NS.16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.20528552&nbsp; 0.02648374 -7.75137825&nbsp; 0.0000<br>
+  I(Year - 1967):factor(reef.type)FR -0.00312697&nbsp; 0.00069922 -4.47205727&nbsp; 0.0000<br>
+  I(Year - 1967):factor(reef.type)NS -0.00209073&nbsp; 0.00076088 -2.74778028&nbsp; 0.0061</span>
+<h2 align="left"><a name="cited"></a>Cited reference</h2>
+<ul>
+  <li>Castillo, K. D., Ries, J. B., and Weiss, J. M. 2011. Declining coral skeletal extension for forereef colonies of <em>Siderastrea siderea</em> on the Mesoamerican Barrier Reef system, southern Belize. <em>PLoS One</em> <strong>6</strong>, e14615. doi:10.1371/journal.pone.0014615.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 19, 2012<br>
+      URL: <a href="lecture17.htm#lecture17" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture17.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

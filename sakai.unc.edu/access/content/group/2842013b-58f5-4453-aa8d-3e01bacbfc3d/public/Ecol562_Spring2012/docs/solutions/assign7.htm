@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 7&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="assign5" id="assign6"></a>Assignment 7&mdash;Solution</h1>
+<h2 align="left">Part 1</h2>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">
+ fertilizer &lt;- read.table( 'http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/fertilizer.txt', header=T)
+</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(fertilizer)</div>
+<span class="style24">  [1] &quot;root&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;week&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;plant&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;fertilizer&quot;</span>
+<h3>Question 1</h3>
+<p>The important characteristic of these data is that we have multiple measurements from the same plant (5 values per plant) as well as measurements made on different plants. Thus the data are heterogeneous. We can account for this by fitting a mixed effects model in which <span class="style8">plant</span> is identified as the grouping variable. Preliminary plots indicate that growth is nearly linear over the time period in question so a linear regression of root versus week treating week as a continuous variable makes sense here. Letting <em>i</em> denote the plant and <em>j</em> the observation on that plant we have</p>
+<p align="center"><img src="../../images/assignments/assignment7/eqn1.gif" width="217" height="30" alt="eqn 1"></p>
+<p>where <img src="../../images/assignments/assignment7/epsdist.gif" alt="epsilon distribution" width="165" height="37" align="absmiddle">. With only 12 plants it will be overkill to try to let both the intercepts and slopes be random. In fact as we'll see, except for an effect due to fertilizer, the slopes show almost no variability across plants. A minimal mixed effects model is a random intercepts model in which the intercepts are allowed to vary across plants but the slopes are treated as constant.</p>
+<p align="center"><img src="../../images/assignments/assignment7/eqn2.gif" width="108" height="58" alt="eqn 2"></p>
+<p>where <img src="../../images/assignments/assignment7/udist.gif" alt="u dist" width="163" height="37" align="absmiddle">. This model is fit as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(nlme)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1 &lt;- lme(root~week, random=~1|plant, data=fertilizer, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numDF denDF&nbsp;&nbsp; F-value p-value<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 47&nbsp; 525.8152&nbsp; &lt;.0001<br>
+week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 47 1726.7813&nbsp; &lt;.0001</span>
+<p>The linear relationship between root size and time is highly significant.</p>
+<h3>Question 2</h3>
+<p>Fertilizer is a level-2 variable. It was randomly applied to  whole plants, not to the individual times at which a plant was measured. As a level-2 variable fertilizer can affect the level-2 equation either by modifying the intercept, the slope, or both. We consider each possibility in turn.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#fertilizer modifies the intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out2 &lt;- lme(root~week+fertilizer, random=~1|plant, data=fertilizer, method=&quot;ML&quot;)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #fertilizer modifies the slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out3 &lt;- lme(root~week+week:fertilizer, random=~1|plant, data=fertilizer, method=&quot;ML&quot;)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #fertilizer modifies the slopes and the intercepts.</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out4 &lt;- lme(root~ week*fertilizer, random=~1|plant, data=fertilizer, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(out1, out2, out3, out4)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out1&nbsp; 4 121.2852<br>
+  out2&nbsp; 5 105.7642<br>
+  out3&nbsp; 5 106.3386<br>
+out4&nbsp; 6 </span><span class="style25">103.2927
+</span>
+<p>The model in which fertilizer affects both the intercepts and slopes ranks best. We carry out a formal significance test of the individual terms.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out4)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numDF denDF&nbsp;&nbsp; F-value p-value<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 46 2186.2403&nbsp; &lt;.0001<br>
+  week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 46 1830.0170&nbsp; &lt;.0001<br>
+  fertilizer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp; 37.0307&nbsp; 0.0001<br>
+week:fertilizer&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 46&nbsp;&nbsp;&nbsp; 4.3740&nbsp; 0.0420</span>
+<p>There is a significant interaction between week and fertilizer (the slope effect) as well as a significant effect of fertilizer on the intercepts.</p>
+<h3>Question 3</h3>
+<p>I display the autocorrelation function of the residuals using a Bonferroni correction for four tests (corresponding to the four lags shown). None of the spikes achieves statistical significance so there is no need to consider a correlation model for the residuals.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(ACF(out4, form=~week), alpha=.05/4)</div>
+<br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment7/fig1.png" width="420" height="305" alt="fig. 1"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 50px; text-indent:-50px"><strong>Fig. 1 </strong> &nbsp;ACF for the level-1 residuals</p></td>
+  </tr>
+</table>
+<h3>Question 4</h3>
+<p>I color the lines and points to indicate if fertilizer is present (red) or absent (blue).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(root~week|plant, data=fertilizer, panel=function(x,y,subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  fert &lt;- as.numeric(fertilizer$fertilizer)[subscripts][1]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.xyplot(x, y, col=c(2,4)[fert], pch=c(21,22)[fert])</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(out4,level=0)[subscripts], col=c(2,4)[fert])</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(out4,level=1)[subscripts], col=c(2,4)[fert], lty=2)},</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">&nbsp;key=list(x=.75, y=.89, corner=c(0,0), lines=list(lty=c(1,2), col=c(1,1), size=3), text=list(c('population average', 'subject-specific'), cex=.8) ))</div><br>
+<table width="600" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/assignment7/fig2.png" width="570" height="410" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p style="padding-left: 46px; text-indent:-46px"><strong>Fig. 2 </strong> &nbsp;Plot of fitted model: population average (consisting of estimates of the fixed effects only) and subject specific (consisting of estimates of the fixed effects and predictions of the random effects) along with the data. The data are colored red (fertilizer added) and blue (fertilizer absent).</p></td>
+  </tr>
+</table>
+<h3>Additional comments</h3>
+<p>In Fig. 2 we see that  a regression line whose slope varies only by fertilizer type seems to provide a reasonable fit to the data. There is no need for  each plant to have its own slope. If one tries to fit a random slopes and intercepts model, the following message is obtained.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1.5 &lt;- lme(root~week,random=~week|plant, data=fertilizer, method=&quot;ML&quot;)</div>
+<span class="style24">  Error in lme.formula(root ~ week, random = ~week | plant, data = fertilizer,&nbsp; : <br>
+  &nbsp; nlminb problem, convergence error code = 1<br>
+&nbsp; message = iteration limit reached without convergence (10)</span>
+<p>It is possible by adjusting various control parameters to get a slopes and intercept model to converge here. The <span class="style4">lme</span> function has a control argument for which one can use the <span class="style4">lmeControl</span> function to modify the default settings of the optimization algorithm. In the run below I change the  optimization function from the default <span class="style22">nlminb</span> to <span class="style22">optim</span> and increase the maximum number of iterations for various steps.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1.5 &lt;- lme(root~week, random=~week|plant, data=fertilizer, method=&quot;ML&quot;, <span class="style42">control=lmeControl(maxIter=1000, msMaxIter=1000, niterEM=1000, opt='optim')</span>)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out1,out1.5)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out1&nbsp;&nbsp;&nbsp; 4 121.2852<br>
+  out1.5&nbsp; 6 119.7192</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out4.5 &lt;- lme(root~week*fertilizer, random=~week|plant, data=fertilizer, method=&quot;ML&quot;, <span class="style42">control=lmeControl(maxIter=1000, msMaxIter=1000, niterEM=1000, opt='optim')</span>)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out4,out4.5)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+out4&nbsp;&nbsp;&nbsp; 6 </span><span class="style25">103.2927</span><span class="style24"><br>
+out4.5&nbsp; 8 106.2191</span>
+<p>Notice that before including fertilizer in the model, a random slopes and intercepts model has a lower AIC than a random intercepts model, but once fertilizer is included as a predictor of the slopes there is no longer a need for the random slopes. Fitting the random slopes and intercepts model 
+in this case increases the AIC over a random intercepts model.</p>
+<h2>Part 2</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> farms &lt;- read.table( 'http://www.bio.ic.ac.uk/research/mjcraw/therbook/data/farms.txt', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(farms)</div>
+<span class="style24">[1] &quot;N&quot;&nbsp;&nbsp;&nbsp; &quot;size&quot; &quot;farm&quot;</span>
+<h3>Question 1</h3>
+<p>These data consist of a random sample of farms and then multiple measurements taken from the same farm. To investigate whether this structure matters we can fit a random intercepts model in which there are no predictors, just an intercept, and in which we allow that intercept to vary across farms.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out0 &lt;- lme(size~1, random=~1|farm, data=farms, method='ML')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> VarCorr(out0)</div>
+<span class="style24">  farm = pdLogChol(1) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Variance&nbsp; StdDev&nbsp; <br>
+  (Intercept) 66.950405 8.182323<br>
+Residual&nbsp;&nbsp;&nbsp;&nbsp; 5.969213 2.443197</span>
+<p>From the output we see that the variance within farms, &sigma;<sup>2</sup>, is 5.97 while the variance between between farms, &tau;<sup>2</sup>, is 66.95 indicating that the variability of the response between farms is 11 times its variability within farms.</p>
+<h3>Question 2</h3>
+<p>The intra-class correlation compares the variability between farms to the total variability (sum of the variability between and within farms).</p>
+<p align="center"><img src="../../images/assignments/assignment7/correlation.gif" width="102" height="55" alt="rho"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">as.numeric(VarCorr(out0)[1,1]) / (as.numeric(VarCorr(out0)[1,1]) + as.numeric(VarCorr(out0)[2,1]))</div>
+<span class="style24">[1] 0.9181398</span>
+<h3>Question 3</h3>
+<p>I fit a random intercepts mode in which nitrogen is a level-1 predictor of size.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1 &lt;- lme(size~N, random=~1|farm, data=farms, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out1)</div>
+<span class="style24">Linear mixed-effects model fit by maximum likelihood<br>
+&nbsp;Data: farms <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIC&nbsp;&nbsp;&nbsp; logLik<br>
+&nbsp; 614.3769 625.5269 -303.1885</span>
+<p><span class="style24">Random effects:<br>
+  &nbsp;Formula: ~1 | farm<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) Residual<br>
+  StdDev:&nbsp;&nbsp;&nbsp; 8.316789 1.920269</span>
+<p><span class="style24">Fixed effects: size ~ N <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value Std.Error DF&nbsp; t-value p-value<br>
+  (Intercept) 85.58120 2.5276865 95 33.85752&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.70806 0.0931177 95&nbsp; 7.60392&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  &nbsp;Correlation: <br>
+  &nbsp; (Intr)<br>
+  N -0.732</span>
+<p><span class="style24">Standardized Within-Group Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Med&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -2.80413111 -0.63410087&nbsp; 0.02949117&nbsp; 0.70724199&nbsp; 2.19176486 </span>
+<p><span class="style24">Number of Observations: 120<br>
+  Number of Groups: 24 </span>
+<h3>Other comments</h3>
+<p>Like the model in Part 1, in order to fit a random slopes and intercepts model here it is necessary to adjust the default optimization settings of the <span class="style4">lme</span> function. If we do so we fail to find evidence that both slopes and intercepts should be random. The AIC of this model is higher than the comparable random intercepts model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1.5 &lt;- lme(size~N, random=~N|farm, data=farms, method='ML')</div>
+<span class="style24">  Error in lme.formula(size ~ N, random = ~N | farm, data = farms, method = &quot;ML&quot;) : <br>
+  &nbsp; nlminb problem, convergence error code = 1<br>
+  &nbsp; message = iteration limit reached without convergence (10)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out1.5 &lt;- lme(size~N, random=~N|farm, data=farms, method='ML', control=lmeControl(maxIter=1000, msMaxIter=1000, niterEM=1000, opt='optim'))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out1, out1.5)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+out1&nbsp;&nbsp;&nbsp; 4 </span><span class="style25">614.3769</span><span class="style24"><br>
+out1.5&nbsp; 6 617.7898</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment7/hwscores.png" width="400" height="200" alt="HW scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 13, 2012<br>
+      URL: <a href="assign7.htm#assign7" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign7.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

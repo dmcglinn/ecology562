@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 15&mdash;Monday, February 13, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture15" id="lecture15"></a>Lecture 15&mdash;Monday, February 13, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture15.htm#problem">The problem of correlated data</a>
+    <ul>
+      <li><a href="lecture15.htm#why">Why can't we ignore correlation in data?</a></li>
+      <li><a href="lecture15.htm#special">The special characteristics of temporal data</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture15.htm#mathematics">The mathematics of generalized least squares (GLS)</a>
+    <ul>
+      <li><a href="lecture15.htm#overview">Overview of least squares (OLS)</a></li>
+      <li><a href="lecture15.htm#generalized">Generalized least squares (GLS) for correlated data</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture15.htm#identifying">Using the ACF to identify the form of temporal correlation</a>
+    <ul>
+      <li><a href="lecture15.htm#definition">Definition of the ACF</a></li>
+      <li><a href="lecture15.htm#using">Using the ACF</a>  </li>
+    </ul>
+  </li>
+</ul>
+<h2>The problem of correlated data</h2>
+<p>We'll spend the next three weeks discussing methods for handling correlated data. We focus on three distinct approaches.</p>
+<ol>
+  <li>Generalized least squares (GLS). This is a generalization of  ordinary least squares in which we explicitly account for  correlation in  data. For it to work we need to have enough data to be able to accurately estimate correlations. For this reason generalized least squares is especially suitable for temporal data that consist of long time series. Because it's  least squares, it is  most appropriate when the response variable  can be assumed to be normally distributed.</li>
+  <li>Mixed effects models. This is an omnibus approach and is especially appropriate when the presence of  correlation is obvious, but the exact form of the correlation is not. Generally speaking one often uses a mixed effects model if it's felt that doing something, even if it's crude, is  better than doing nothing at all. With temporal data mixed effects models are especially suitable for short time series where there isn't enough data to accurately determine the exact nature of the correlation structure. A serious problem with mixed effects models is that for non-normal response variables, particularly binary data with a logit link, their interpretation is problematic and counter-intuitive.</li>
+  <li>Generalized estimating equations (GEE). GEE can be considered analogous to GLS for non-normal responses. It assumes that observations come in clusters such that observations from the same cluster are correlated but observations from different clusters are not. As is the case with GLS in GEE the correlation is modeled explicitly.</li>
+</ol>
+<p>This list leaves out a lot of other more specialized approaches, particularly those for dealing with specific sorts of spatial correlation. Examples include  CAR (conditional autoregressive) and SAR (simultaneous autoregressive) models that are complicated instances of mixed effects models when observations  have an identifiable neighborhood structure. These are both best handled from a Bayesian perspective.</p>
+<h3><a name="why"></a>Why can't we ignore correlation in data?</h3>
+<p>If we are taking a likelihood perspective then the likelihood we've been formulating is wrong if the data are truly correlated. In the discrete case the likelihood of our data under a given model is the joint probability of obtaining our data under the given model.</p>
+<p align="center"><img src="../../images/lectures/lecture15/eqn1.gif" width="455" height="33" alt="eqn 1"></p>
+<p>Now if <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ... , <em>x</em><sub><em>n</em></sub> are a random sample then the observations are independent and their joint probability can be written as a product of their identical marginal distributions.</p>
+<p align="center"><img src="../../images/lectures/lecture15/eqn2.gif" width="372" height="58" alt="eqn 2"></p>
+<p>Accordingly the log-likelihood is the sum of individual log probabilities. This is the scenario we've assumed in order to obtain the parameter estimates of generalized linear models. </p>
+<p>If the data are not independent then the above factorization is invalid. As a result the likelihood and AIC are wrong, the results of model selection may be incorrect, and the parameter estimates and their standard errors may be affected. If we use least squares to estimate the model and we have normally distributed response, then the parameter estimates we obtain will still be correct but the reported significance tests for those parameters will be  wrong. This reasons for this are the following.</p>
+<ul>
+  <li>The reported standard errors will be too small (under the assumption that the observations are positively correlated&mdash;the usual case for temporally correlated data). Thus we can obtain significant results when we should not.</li>
+  <li>The sample size is inflated. If  we have a random sample with <em>n</em> = 100 then we have 100 distinct bits of information. If on the other hand the data in our sample are correlated then from an information-theoretic perspective some of the information is redundant and we really have less than 100 bits of information. So, the actual sample is <em>n</em> &lt; 100. This in turn affects standard errors and the degrees of freedom for our tests.</li>
+</ul>
+<p>It's worth noting that most ecological data sets possess spatial and/or temporal extent and thus will be correlated to some degree. </p>
+<p>When we assume independence in formulating the likelihood, the independence is conditional on the values of the model parameters.  In a regression model estimates of the parameters are functions of the model predictors. Consequently if the predictors in the model also vary both spatially and temporally, we expect that at least some if not all of the correlation in the  response variable will be explained by the regression model.  Given this our focus here will be the following. After fitting the best regression model we can, what should we do about any lingering correlation that remains in the response variable?</p>
+<h3><a name="special"></a>The special characteristics of temporal data</h3>
+<p>To introduce methods for dealing with correlated data we will focus on temporal data because temporal data are the easiest to model.</p>
+<ol>
+  <li>Temporal correlation is one-dimensional and unidirectional. We only have to worry about the effect that   the past has on the present, not vice versa.</li>
+  <li>The toolbox for the analysis of temporal data is quite full. Time series analysis has long been an important subject in financial analysis, for example in the prediction of future stock behavior. As a general rule when there is money to be made, the available analytical tools will typically be quite good.</li>
+</ol>
+<h2><a name="mathematics"></a>The mathematics of generalized least squares (GLS)</h2>
+<p>Because it generalizes ordinary least squares, generalized least squares (GLS)  is largely restricted to situations in which a normal distribution makes sense as a probability model for the response. For non-normal correlated data the choices are murkier, so for the moment we'll focus exclusively on regression models with a normally distributed response. Generalized least squares requires us to formulate a specific model for the variances and covariances of our observations. This is not difficult with temporal data because there are some obvious choices. For this reason we will focus on analyzing temporal data using GLS.</p>
+<h3><a name="overview"></a>Overview of ordinary least squares</h3>
+<p>In matrix notation, the ordinary regression problem can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture15/matrixnotation.gif" width="92" height="27" alt="matrix"></p>
+<p>Here</p>
+<ul>
+  <li><strong>y</strong> is an <em>n</em> &times; 1 vector of values of the response variable.</li>
+  <li><strong>X</strong> is an <em>n</em> &times; <em>p</em> matrix called the design matrix. Each column corresponds to a different regressor and each row corresponds to the values of the regressors for a different observation.</li>
+  <li><strong>&beta;</strong> is a <em>p</em> &times; 1 vector of regression parameters.</li>
+  <li><strong>&epsilon;</strong> is an <em>n</em> &times; 1 error vector.</li>
+</ul>
+<p>The method of least squares yields an explicit formula for the estimates of the components of <strong>&beta;</strong>.</p>
+<p align="center"><img src="../../images/lectures/lecture15/olssolution.gif" width="142" height="38" alt="OLS solution"></p>
+<p>The least squares solution doesn't make any distributional assumptions but to obtain statistical tests and confidence intervals we need to assume a probability distribution for the response vector <strong>y</strong>. Least squares lends itself to assuming a normal distribution for <strong>y</strong> which we can write as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture15/ydist.gif" width="178" height="35" alt="y distribution"></p>
+<p>Here <strong>I</strong> is the <em>n</em> &times; <em>n</em> identity matrix, a matrix of zeros except for ones on the diagonal. This is the matrix formulation of independence for a normally distributed response. We can also express this assumption in terms of the error vector of the regression equation.</p>
+<p align="center"><img src="../../images/lectures/lecture15/errordist.gif" width="162" height="35" alt="error distibution"></p>
+<p>This assumption coupled with the least squares solution leads to the theoretical  distribution of the regression parameters <strong>&beta;</strong> (normal distribution) and an explicit formula for their standard errors.</p>
+<h3><a name="generalized"></a>Generalized least squares (GLS) for correlated data</h3>
+<p>Generalized least squares (GLS) generalizes ordinary least squares to the case where the residuals have a normal distribution with  an arbitrary covariance matrix &Sigma;.</p>
+<p align="center"><img src="../../images/lectures/lecture15/errordistGLS.gif" width="147" height="32" alt="GLS errors"></p>
+<p>For convenience we will write the covariance matrix in the form <img src="../../images/lectures/lecture15/sigma.gif" alt="sigma" width="77" height="27" align="absmiddle">. It turns out that not every matrix is a covariance matrix. Covariance matrices are rather special. </p>
+<ol>
+  <li>Covariance matrices are positive definite. Positive definiteness is the matrix version of the scalar notion of being positive.</li>
+  <li>Covariance matrices admit a square root decomposition referred to as the Cholesky decomposition. This means that we can write</li>
+</ol>
+<p align="center"><img src="../../images/lectures/lecture15/cholesky.gif" width="152" height="27" alt="cholesky"></p>
+<blockquote>
+  <p>for some nonsingular, symmetric matrix <strong>P</strong>. <strong>P</strong> act like the square root of <strong>V</strong> and is sometimes called a square root matrix.</p>
+</blockquote>
+<p>It turns out that </p>
+<p align="center"><img src="../../images/lectures/lecture15/variancepinverse.gif" width="588" height="38" alt="variance P inverse y"></p>
+<p>so that we can uncorrelate the errors with an appropriate transformation, namely premultiplying the response vector by <strong>P</strong><sup>&ndash;1</sup>. So, suppose we have the following generalized regression model.</p>
+<p align="center"><img src="../../images/lectures/lecture15/glsmodel1.gif" width="270" height="35" alt="gls model"></p>
+<p>We premultiply both sides of the regression equation by <strong>P</strong><sup>&ndash;1</sup> to obtain the following.</p>
+<p align="center"><img src="../../images/lectures/lecture15/transformation.gif" width="195" height="108" alt="transformation"></p>
+<p>where now <img src="../../images/lectures/lecture15/omega.gif" alt="omega" width="167" height="35" align="absmiddle">. This is just the ordinary least squares problem again with the variables and matrices relabeled. The formula for the solution was given above.</p>
+<p align="center"><img src="../../images/lectures/lecture15/glsformula.gif" width="302" height="285" alt="gls formula"></p>
+<p>So as was the case with ordinary least squares we end up with an exact formula for the regression parameters, this time in terms of the design matrix and the unscaled covariance matrix <strong>V</strong>. Unfortunately the formula requires that we know <strong>V</strong>, so typically we'll need to estimate it first. </p>
+<p>To make this problem feasible and to avoid overparameterization, the usual approach is to assume that <strong>V</strong> has a very simple form, a correlation structure that is based on a small number of parameters, and to jointly estimate the regression parameters and the covariance parameters. There are specific algorithms for special correlation structures, but a general approach is to use maximum likelihood estimation. This can be done by using the above solution for &beta; (as well as the MLE expression for &sigma;) and treating the log-likelihood as a function to be maximized over the unknown correlation parameters.</p>
+<h2><a name="identifying" id="common2"></a>Using the ACF to identify the form of temporal correlation</h2>
+<p>To implement generalized least squares we need to choose a parametric form for the matrix <strong>V</strong>. If we assume that the residuals all have the same variance, then the matrix <strong>V</strong> is the correlation matrix of the residuals. For temporal data the primary tool for identifying reasonable models for the correlation is the empirical autocorrelation function (ACF).</p>
+<p>Suppose that a regression model has been fit to temporal data, consisting of either a single time series or a set of time series (repeated measures on different units), and that the standardized residuals have been extracted from the model.</p>
+<p align="center"><img src="../../images/lectures/lecture15/stdresid.gif" width="90" height="57" alt="standardized residual"></p>
+<p>Here <img src="../../images/lectures/lecture15/sigmai.gif" alt="sigma" width="103" height="32" align="absmiddle">. We make the following what are called stationarity assumptions about the residuals.</p>
+<ol>
+  <li>Their mean is not changing. If we've modeled the regression relationship correctly then the model errors should have mean zero.</li>
+  <li>The correlation between the residuals is only a function of their relative temporal position and is not related to their absolute temporal position. </li>
+</ol>
+<p>As a consequence of the stationarity assumptions, especially (2), we can define the residual autocorrelation at various lags by considering all the pairs of residuals that are the same number of time units apart (Fig. 1). Lag 1 observations are all pairs of observations that are one time unit apart, lag 2 observations are all pairs of observations that are two time units apart, etc.</p>
+<p align="center"><img src="../../images/lectures/lecture15/lags.png" width="416" height="134" alt="lags"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;Observations that are 1, 2, &hellip; time units apart</p>
+<h3><a name="definition"></a>Definition of the ACF</h3>
+<p>We assume that the residuals are sorted in time order. If the data consist of multiple time series that correspond to different observational units, then within each observational unit the residuals should be sorted in time order. For a single time series of length <em>n</em> we define the autocorrelation at lag <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture15/corr1.gif" width="190" height="112"></p>
+<p>If we have <em>M</em> different time series of varying lengths then the average is taken over all the individual time series.</p>
+<p align="center"><img src="../../images/lectures/lecture15/corr2.gif" width="217" height="120" alt="lag l correlation"></p>
+<p>Here <img src="../../images/lectures/lecture15/NofL.gif" alt="N of l" width="45" height="25" align="absmiddle"> is the number of terms in the numerator sum (the total number of residual pairs a distance of <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> time units apart) and <em>N</em>(0) is the total number of residuals. The autocorrelation function (ACF) is the lag <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> correlation, <img src="../../images/lectures/lecture15/acf.gif" alt="ACF" width="43" height="30" align="absmiddle">, treated as a function of the lag <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle">.</p>
+<p>Observe that the formula for the lag <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> autocorrelation is just a special case of the usual Pearson correlation formula except that here the means are zero and a different numbers of terms contribute to the numerator and denominator expressions.</p>
+<p align="center"><img src="../../images/lectures/lecture15/r.gif" width="300" height="118" alt="r"></p>
+<h3><a name="using"></a>Using the ACF</h3>
+<p>The autocorrelation function is usually examined graphically by plotting <img src="../../images/lectures/lecture15/acf.gif" alt="ACF" width="43" height="30" align="absmiddle"> against <img src="../../images/lectures/lecture15/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> in the form of a spike plot and then superimposing 95% (or Bonferroni-adjusted 95%) confidence bands. We expect with temporally ordered data that the correlation will decrease with increasing lag. Fig. 2 shows a  plot of the ACF that is typically seen with temporally correlated data.  Here the correlation decreases exponentially with lag. </p>
+<p align="center"><img src="../../images/lectures/lecture15/fig2.png" width="415" height="300" alt="fig 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2</strong> &nbsp;Display of   an ACF with 95% confidence bands</p>
+<p>The confidence bands for the ACF are calculated using the following formula.</p>
+<p align="center"><img src="../../images/lectures/lecture15/bounds.gif" width="80" height="68" alt="bounds"></p>
+<p>Here <em>z</em>(<em>p</em>) denotes the quantile of a standard normal distribution such that <em>P</em>(<em>Z</em> &le; <em>z</em>(<em>p</em>)) = <em>p</em>. For an ordinary 95% confidence band we would set &alpha;* = .05. For a Bonferroni-corrected confidence bound in which we attempt to account for carrying out ten significance tests (corresponding to the ten nonzero lags shown in Fig. 2) we would use &alpha;* = .05/10. </p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 13, 2012<br>
+      URL: <a href="lecture15.htm#lecture15" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture15.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

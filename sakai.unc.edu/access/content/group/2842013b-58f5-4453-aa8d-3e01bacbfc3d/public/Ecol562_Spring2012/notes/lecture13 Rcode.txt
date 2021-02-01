@@ -1,0 +1,21 @@
+corals <- read.csv('ecol 562/corals.csv', header=T)
+corals.sort <- corals[order(corals$CORAL_COVE),]
+model2 <- glm(PREV_1~CORAL_COVE*WSSTA+I(WSSTA^2), data=corals.sort, family=poisson)
+
+#fit saturated model
+corals.sort$ID<-1:nrow(corals.sort)
+model0 <- glm(PREV_1~factor(ID), data=corals.sort, family=poisson)
+nrow(corals.sort)
+length(coef(model0))
+
+#goodness of fit test
+2*logLik(model0)-2*logLik(model2)
+
+anova(model2,test='Chisq')
+1-pchisq(4912.3,275)
+
+#check minimum count criterion
+#fraction of expected counts less than 5
+sum(fitted(model2)<5)/length(fitted(model2))
+
+

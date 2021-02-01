@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 16&mdash;Wednesday, February 15, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture16" id="lecture16"></a>Lecture 16&mdash;Wednesday, February 15, 2012</h1>
+<h2>Outline of lecture </h2>
+<ul>
+  <li><a href="lecture16.htm#using">Using the ACF to identify correlation</a>  </li>
+  <li><a href="lecture16.htm#multiple">The multiple testing problem</a></li>
+  <ul>
+    <li><a href="lecture16.htm#mathematics">The mathematics of multiple testing</a></li>
+    <li><a href="lecture16.htm#dunn">The Dunn-Sidak method</a></li>
+    <li><a href="lecture16.htm#bonferroni">The Bonferroni procedure </a></li>
+  </ul>
+  <li><a href="lecture16.htm#partial">Partial autocorrelation function</a></li>
+  <li><a href="lecture16.htm#temporal">ARMA temporal correlation models for residuals</a>
+    <ul>
+      <li><a href="lecture16.htm#autoregressive">Autoregressive processes, AR(p)</a></li>
+      <li><a href="lecture16.htm#moving">Moving average processes, MA(q)</a></li>
+      <li><a href="lecture16.htm#ARMA">ARMA processes, ARMA(p,q)</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture16.htm#recognizing">Recognizing residuals correlation patterns from the ACF (and PACF)</a>
+<ul>
+      <li><a href="lecture16.htm#AR">AR(p) process</a></li>
+      <li><a href="lecture16.htm#MA">MA(q) process</a></li>
+      <li><a href="lecture16.htm#ARMApq">ARMA(p,q) process</a></li>
+      <li><a href="lecture16.htm#uncorrelated">Uncorrelated process</a></li>
+      <li><a href="lecture16.htm#periodic">Periodic process</a></li>
+      <li><a href="lecture16.htm#nonstationary">Nonstationary process</a>  </li>
+</ul>
+  </li>
+  <li><a href="lecture16.htm#cited">Cited reference</a></li>
+  <li><a href="lecture16.htm#Rcode">R code</a></li>
+</ul>
+<h2><a name="using"></a>Using the ACF to identify correlation</h2>
+<p>The autocorrelation function is usually examined graphically by plotting <img src="../../images/lectures/lecture16/acf.gif" alt="ACF" width="43" height="30" align="absmiddle"> against <img src="../../images/lectures/lecture16/lagl.gif" alt="lag l" width="15" height="20" align="absmiddle"> in the form of a spike plot and then superimposing 95% (or Bonferroni-adjusted 95%) confidence bands. We expect with temporally ordered data that the correlation will decrease with increasing lag. Fig. 1 shows a  plot of the ACF that is typically seen with temporally correlated data.  Here the correlation decreases exponentially with lag. </p>
+<p align="center"><img src="../../images/lectures/lecture16/fig2.png" width="415" height="300" alt="fig 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;Display of   an ACF with 95% confidence bands</p>
+<p>The confidence bands for the ACF are calculated using the following formula.</p>
+<p align="center"><img src="../../images/lectures/lecture16/bounds.gif" width="80" height="68" alt="bounds"></p>
+<p>Here <em>z</em>(<em>p</em>) denotes the quantile of a standard normal distribution such that <em>P</em>(<em>Z</em> &le; <em>z</em>(<em>p</em>)) = <em>p</em>. For an ordinary 95% confidence band we would set &alpha;* = .05. For a Bonferroni-corrected confidence bound in which we attempt to account for carrying out ten significance tests (corresponding to the ten nonzero lags shown in Fig. 1) we would use &alpha;* = .05/10. We examine the rationale for this correction in the next section.</p>
+<h2><a name="multiple"></a>The multiple testing problem</h2>
+<p>The multiple testing problem deals with the probability 
+    of falsely rejecting the null hypothesis when a collection of tests are considered 
+    together. It stems from the simple observation, developed more fully below, 
+    that the more tests you do the more likely it is that you'll obtain a significant 
+  result by chance alone. The &quot;problem&quot; is deciding whether anything should be done about it. This is 
+  a surprisingly contentious issue.</p>
+<p>Consider again the situation shown in Fig. 1. The displayed residual correlations at ten different lags along with the 95% confidence bands allow us to carry out ten individual tests. At each lag if a spike pokes beyond the confidence band, we would  declare the correlation at that lag to be significantly different from zero at &alpha; = .05. Remember that &alpha; = Prob(Type I error) = P(reject H<sub>0</sub> when in fact H<sub>0</sub> is true). So given that we have a 5% chance of making a Type I error on each of the ten tests individually,  what's the probability that we make at least one Type 
+I error in doing all ten of these tests? This is called the experimentwise 
+    (or familywise) Type I error. We set the individual &alpha;-levels at some fixed 
+    value, say &alpha; = .05, and are now concerned how that translates into an experimentwise 
+&alpha;-level when we consider all the individual tests together.</p>
+<h3><b><a name="mathematics"></a>The mathematics of multiple testing</b> </h3>
+<p>It's easy to derive a formula for experimentwise error. </p>
+<p align="center"><img src="../../images/lectures/lecture16/probs1.gif" alt="probs" width="567" height="157" align="absmiddle"></p>
+<p>The last expression involves calculating the probability of the intersection of ten simple events. Recall that in general <img src="../../images/lectures/lecture16/probintersection.gif" alt="prob intersection" width="212" height="35" align="absmiddle">. 
+    So we have three scenarios to consider:</p>
+<p align="center"><img src="../../images/lectures/lecture16/prob(agivenb)chocies.gif" width="318" height="110" alt="scenarios"></p>
+<p>Because the same residuals contribute to  each of the different lag calculations  we would expect  the ten simple events in the intersection 
+     to be positively correlated with each other. Rather than try to estimate this correlation we'll instead 
+    assume the events are independent (scenario 1). Because the events are actually positively 
+    correlated (scenario 2), making this assumption will cause us to <u>underestimate</u> the 
+    joint probability above which in turn means we will <u>overestimate</u> the 
+    probability of making at least one Type I error. As a result the formula we obtain assuming independence is actually a worst-case scenario. 
+    Bender and Lange (2001) refer to this as the maximum experimentwise error 
+    rate (MEER). </p>
+<p>So we have, assuming independence</p>
+<p align="center"><img src="../../images/lectures/lecture16/probs2.gif" width="575" height="90" alt="probs"></p>
+<p>But we've set the probability of a Type I error equal to 
+  &alpha; in each of these tests. So each of these probabilities  is 1 &#150; 
+  &alpha;. Thus we have</p>
+<p align="center"><img src="../../images/lectures/lecture16/proboftypeIerror.gif" width="377" height="100" alt="type i error"></p>
+<p>If we carry out <i>n</i> tests the experimentwise error becomes</p>
+<p align="center"><img src="../../images/lectures/lecture16/ntests.gif" width="473" height="35" alt="n tests"></p>
+<p> Using R we can estimate how large this probability becomes 
+    for fixed &alpha; when <i>n</i> is allowed to vary.
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> typeI.error &lt;- function(alpha,n) 1-(1-alpha)^n</div>
+
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #probability of at least one Type I error</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> data.frame(num.tests=c(1, seq(5,50,5)), P.typeI.error=typeI.error(.05, c(1,seq(5,50,5))))</div>
+<span class="style24">  &nbsp;&nbsp; num.tests P.typeI.error<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 0.0500000<br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp; 0.2262191<br>
+  3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp; 0.4012631<br>
+  4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">15&nbsp;&nbsp;&nbsp;&nbsp; 0.5367088</span><span class="style24"><br>
+  5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp;&nbsp; 0.6415141<br>
+  6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp; 0.7226104<br>
+  7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30&nbsp;&nbsp;&nbsp;&nbsp; 0.7853612<br>
+  8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35&nbsp;&nbsp;&nbsp;&nbsp; 0.8339166<br>
+  9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40 &nbsp;&nbsp;&nbsp;&nbsp;0.8714878<br>
+  10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp; 0.9005597<br>
+  11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50&nbsp;&nbsp;&nbsp;&nbsp; 0.9230550</span>
+
+<p>So by the time we've done 15 tests there's at least a 50-50 
+    chance that we've made a Type I error somewhere in the process. So, what should we do? There are two basic options:
+</p>
+<ol>
+  <li>Do nothing and accept the chance that many of our statistically &quot;significant&quot; results are probably 
+  just chance events because we did so many tests, or</li>
+  <li>Adjust our individual &alpha;-levels downward so that 
+    the experimentwise &alpha;-level is tolerable. </li>
+</ol>
+<p>Adjusting &alpha; is a reasonable choice, but it comes 
+    at a cost. There is an inverse relationship 
+    between &alpha; and &beta;, the Type I and Type II errors. If we decrease &alpha; on each test we necessarily 
+    increase &beta;. Fig. 2   illustrates the tradeoff between &alpha; 
+  and &beta; for a simple one-sample hypothesis test. The distance <i>d</i> that is shown between the two distributions 
+    represents a difference that is considered biologically important. The old &alpha; (solid pink) and the old &beta; (solid green) represent the original Type I and Type II errors. When &alpha; is decreased to new &alpha; (&alpha;* = red hatched region only), the old &beta; is increased so that it now also includes the region labeled &quot;increase in &beta;&quot; (&beta;* = green hatched region plus solid green region).</p>
+<p align="center"><img src="../../images/lectures/lecture16/power.png" width="288" height="225" alt="power"></p>
+<p align="center" class="styleArial"><strong>Fig. 2</strong> &nbsp;Type I and Type II errors in a two-sample hypothesis test</p>
+Hence controlling the experimentwise Type I error inflates the individual Type II errors. Since power = 1 &#150;&nbsp;&beta;, another way of saying 
+    this is that controlling the experimentwise Type I error leads to a loss of 
+    power for detecting differences in each of the individual tests. This  
+    strategy is considered acceptable largely because it is so difficult to quantify the Type 
+    II error  given that it depends on the true, but unknown, 
+state of nature. 
+<h3><a name="dunn" id="dunn"></a>Dunn-Sidak method</h3>
+<p>Let 
+
+<img src="../../images/lectures/lecture16/alphai.gif" alt="alphai" width="23" height="27" align="absmiddle"> = &alpha;-level for individual tests and let <img src="../../images/lectures/lecture16/alphae.gif" alt="alphae" width="25" height="27" align="absmiddle"> = experimentwise &alpha;-level. Our goal is to choose <img src="../../images/lectures/lecture16/alphai.gif" alt="alphai" width="23" height="27" align="absmiddle"> in order to achieve a desired <img src="../../images/lectures/lecture16/alphae.gif" alt="alphae" width="25" height="27" align="absmiddle"> as given by the experimentwise error formula</p>
+<p align="center"><img src="../../images/lectures/lecture16/alphaeform.gif" width="135" height="35" alt="alpha e"><br>
+</p>
+<p>The Dunn-Sidak method makes the following choice for <img src="../../images/lectures/lecture16/alphai.gif" alt="alphai" width="23" height="27" align="absmiddle">. </p>
+<p align="center"><img src="../../images/lectures/lecture16/dunnsidak.gif" width="142" height="37" alt="dunn sidak"></p>
+<p>The simplest way to see that the Dunn-Sidak method works 
+    is to plug this choice for <img src="../../images/lectures/lecture16/alphai.gif" alt="alphai" width="23" height="27" align="absmiddle"> into the experimentwise error formula above.</p>
+<p align="center"><img src="../../images/lectures/lecture16/dunnsidakcheck.gif" width="307" height="173" alt="dunn sidak"></p>
+<p>which is what we want. The R function below carries out the Dunn-Sidak calculation. We illustrate its use in a scenario where there are 10 tests and we desire the 
+  experimentwise Type I error rate to be .05. </p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dunn.sidak <- function(alpha,n) 1-(1-alpha)^(1/n)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dunn.sidak(.05,10) </div>
+<span class="style24">[1] 0.005116197</span>
+<p>The Dunn-Sidak formula suggests 
+  that <img src="../../images/lectures/lecture16/alphai.gif" alt="alphai" width="23" height="27" align="absmiddle">, the &alpha;-level used for each individual test, should be almost 
+a factor of 10 smaller, .0051, than the desired experimentwise &alpha;.</p>
+<h3><a name="bonferroni"></a>Bonferroni procedure</h3>
+<p>The Bonferroni procedure is a linear approximation 
+    to the Dunn-Sidak formula. It owes its popularity to the fact that it is trivial 
+    to calculate. Calculus provides us with the formula for the binomial series, a generalization of the binomial theorem to exponents other than positive 
+    integers. Unlike the binomial formula, the binomial series expansion involves 
+    an infinite number of terms.</p>
+<p align="center"><img src="../../images/lectures/lecture16/binomialseries.gif" width="490" height="52" alt="binomial series"></p>
+<p>Since 0 &lt; &alpha; &lt; 1, we can use the binomial series 
+    formula with <i>x</i> = &#150;&alpha; and <img src="../../images/lectures/lecture16/kvalue.gif" alt="k" width="53" height="27" align="absmiddle"> to obtain a series expansion of the <img src="../../images/lectures/lecture16/oneminusalphatooneovern.gif" alt="one minus alpha" width="72" height="37" align="absmiddle"> term that appears in the Dunn-Sidak formula.</p>
+<div align="center"><img src="../../images/lectures/lecture16/taylorapprox.gif" width="362" height="148"></div>
+
+<p>    where in the last step  all terms are dropped except for the first 
+  two.  
+The error in this approximation can be determined from the error formula for a Taylor 
+        series. In particular, with <i>x</i> = &#150;&alpha;  the above series is an alternating series, so the truncation 
+        error turns out to be no greater than the magnitude of the first term 
+        omitted. Since the first omitted term  squares &alpha; and divides by <i>n</i><sup>2</sup>, 
+          the error of this approximation will be small. Plugging this approximation into the Dunn-Sidak 
+formula yields the Bonferroni criterion  for the &alpha; to use on individual tests.  </p>
+<p align="center"><img src="../../images/lectures/lecture16/Bonferronni.gif" width="298" height="57" alt="Bonferroni"></p>
+<p>For the scenario we've been considering,  10 tests and a desired 
+    experimentwise Type I error of .05, the Bonferroni criterion yields: .05/10 
+    = .005. This is hardly different from the recommendation of the Dunn-Sidak 
+    method.</p>
+<h2><a name="partial"></a>Partial autocorrelation function</h2>
+<p>Another diagnostic  that is useful in certain circumstances is the partial autocorrelation function (PACF). Suppose we regress each residual against the first <em>k</em> lagged residuals  as in the following regression equation.</p>
+<p align="center"><img src="../../images/lectures/lecture16/pacf.gif" width="260" height="27" alt="pacf"></p>
+<p>The coefficient &beta;<sub>k</sub> in this regression is called the partial autocorrelation at lag <em>k</em>. It represents the relationship of a residual to the residual at the <em>k</em><sup>th</sup> lag after having  removed the effect of the residuals at lags 1, 2, &hellip;, through <em>k</em> &ndash; 1. After we plot the ACF,  depending on what it shows, a plot of the PACF at lag <em>k</em> versus <em>k</em> can be helpful in choosing an appropriate correlation model for the residuals. Further details are given <a href="lecture16.htm#recognizing">below</a>.</p>
+<h2><a name="temporal"></a>ARMA temporal correlation models for residuals</h2>
+<p>Typically the ACF and PACF are used jointly to identify an appropriate ARMA correlation model for the residuals. For an ARMA model  to be appropriate the observations need to be equally spaced in time. (This caveat also holds for the use of the ACF.)</p>
+<h3><a name="autoregressive"></a>Autoregressive processes, AR(p)</h3>
+<p>A residual autoregressive process is defined by a recurrence relation that expresses the  residual at a given time as a linear function of earlier residuals plus a random noise term. In an autoregressive process of order <em>p</em>, the residuals are related to each other by the following equation.</p>
+<p align="center"><img src="../../images/lectures/lecture16/ARp.gif" alt="AR(p) process" width="292" height="30" align="absmiddle">, &nbsp;&nbsp;<img src="../../images/lectures/lecture16/at.gif" alt="at distribution" width="163" height="35" align="absmiddle"></p>
+<p>where &phi;<sub>1</sub>, &phi;<sub>2</sub>, &hellip; , &phi;<sub>p</sub> are the autoregressive parameters of the process. In an autoregressive process a residual  is affected by all residuals  <em>p</em> time units or less in the past. The term <em>a<sub>t</sub></em> represents random noise and  is uncorrelated with earlier residuals.</p>
+<p>The various &phi; coefficients in this model are difficult to interpret except in the simplest case of an AR(1) process. For an AR(1) process we have</p>
+<p align="center"><img src="../../images/lectures/lecture16/AR1.gif" width="113" height="27" alt="AR(1) process"></p>
+<p>for <em>t</em> = 2, 3, &hellip; and <img src="../../images/lectures/lecture16/epsilon1.gif" alt="epsilon1" width="200" height="35" align="absmiddle">. If we write down the equations for the first few terms and carry out back-substitution we get the following.</p>
+<p align="center"><img src="../../images/lectures/lecture16/AR1terms.gif" width="392" height="95" alt="AR(1) terms"></p>
+<p>Because the noise terms are uncorrelated we find that for any time <em>t</em>,</p>
+<p align="center"><img src="../../images/lectures/lecture16/AR1correlation.gif" width="157" height="37" alt="AR(1) correlation"></p>
+<p>So for an AR(1) process the correlation decreases exponentially over time  by a factor &phi;. For other autoregressive processes the correlation at various lags is much more complicated, but it is still the case that the ACF of all autoregressive processes decreases in magnitude with increasing lag.</p>
+<h3><a name="moving" id="moving"></a>Moving average processes, MA(q)</h3>
+<p>A residual moving average process is defined by a recurrence relation that expresses the  residual at a given time as a linear function of earlier noise terms plus its own  unique random noise term. In a moving average process of order <em>q</em>, the residuals are related to each other by the following equation.</p>
+<p align="center"></p>
+<p align="center"><img src="../../images/lectures/lecture16/MAq.gif" width="290" height="30" alt="MAq"></p>
+<p>where &theta;<sub>1</sub>, &theta;<sub>2</sub>, &hellip; , &theta;<sub>q</sub> are the moving average parameters of the process. The simplest example is an MA(1) process which is defined by the  recurrence relation</p>
+<p align="center"><img src="../../images/lectures/lecture16/MA1.gif" width="115" height="27" alt="MA(1)"></p>
+<p>for <em>t</em> = 2, 3, &hellip; and <img src="../../images/lectures/lecture16/epsilon1.gif" alt="epsilon1" width="200" height="35" align="absmiddle">. The parameter &theta; has no simple interpretation. Generally speaking moving average processes provide good models of short term correlation.</p>
+<h3><a name="ARMA" id="moving2"></a>ARMA processes, ARMA(p,q)</h3>
+<p>An ARMA(p, q) process, autoregressive moving average process of order <em>p</em> and <em>q</em>, is a process includes both an autoregressive component and a moving average component. The parameter <em>p</em> refers to the order of the autoregressive process and <em>q</em> is the order of the moving average process. The general recurrence relation for a residual ARMA(p, q) process is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture16/AMRApq.gif" width="525" height="30" alt="ARMA(p,q)"></p>
+<p>where &phi;<sub>1</sub>, &phi;<sub>2</sub>, &hellip; , &phi;<sub>p</sub> are the autoregressive parameters of the process and &theta;<sub>1</sub>, &theta;<sub>2</sub>, &hellip; , &theta;<sub>q</sub> are the moving average parameters of the process. </p>
+<h2><a name="recognizing"></a>Recognizing residual correlation patterns using the ACF (and PACF)</h2>
+<p>One strategy for choosing a residual temporal correlation structure is to fit a number of  different ARMA(p, q) models using maximum likelihood and then choose the correlation structure that yields the largest decrease in AIC. The problem with this approach is that there are too many models to consider and we may end up capitalizing on chance in selecting a best model. </p>
+<p>A more parsimonious approach is to use  diagnostic graphical techniques  to narrow  the search down to a smaller set of candidate models. For instance, if graphical diagnostics suggest an AR(2) model might be an appropriate choice, we might also try fitting an AR(1), AR(3), MA(1), MA(2), ARMA(1,1), and perhaps a few other processes for the residuals and then choose the best among these using AIC. If a number of models turn out to be equally competitive I would defer to the graphical results in selecting the final model. In what follows I describe the graphical signatures of various ARMA processes.</p>
+<h3><a name="AR"></a>AR(p) process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="1" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0" valign="top">
+    <td >ACF decaying exponentially to zero (alternating or not). </td>
+    <td >AR process. The number of significant lags in the PACF  determines the order of the process.</td>
+  </tr>
+</table>
+
+<p>In an autoregressive process the magnitude of the correlation decreases exponentially with increasing lag. If, e.g.,  one or more of the autoregressive parameters are negative, the correlations can change sign at different lags but their magnitudes will still decrease exponentially. For an autoregressive process of order <em>p</em>, a plot of the PACF will show <em>p</em> significant lags after which the PACF drops precipitously to near zero. Fig. 3 shows the ACF and PACF of an AR(1) process with &phi; = 0.8 . Observe that only the first lag of the PACF is statistically significant corresponding to<em> p</em> = 1.</p>
+<p align="center"><img src="../../images/lectures/lecture16/fig3.png" width="580" height="240" alt="fig. 3"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 3</strong> &nbsp;ACF and PACF of an AR(1) process</span> (<a href="../../notes/lecture16&#32;Rcode.txt">R code</a>)</p>
+<h3><a name="MA"></a>MA(q) process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="0" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0">
+    <td  >ACF with one or more significant spikes. The rest of the spikes are near zero. The PACF decays exponentially to zero.</td>
+    <td >MA process. The number of significant spikes in the ACF determines the order of the process.</td>
+  </tr>
+</table>
+<p>In a moving average process the number of consecutive significant spikes in the ACF identifies the order of the process, after which the correlation is zero. (Compare this to the autoregressive process described above.) Often the PACF will show an exponential decay in the magnitudes of the spikes at consecutive lags. As an illustration Fig. 4 shows the ACF and PACF of an MA(2) process with &theta;<sub>1</sub> = 3 and &theta;<sub>2</sub> = 2 . Observe that  the first two lags of the ACF are significant, <em>q</em> = 2, and the PACF shows oscillatory decay to zero.</p>
+<p align="center"><img src="../../images/lectures/lecture16/fig4.png" width="580" height="240" alt="fig. 3"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 4</strong> &nbsp;ACF and PACF of an MA(2) process</span> (<a href="../../notes/lecture16&#32;Rcode.txt">R code</a>)</p>
+<h3><a name="ARMApq" id="ARMApq"></a>ARMA(p, q) process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="0" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0">
+    <td  >ACF exhibits a few significant spikes followed by a decay. The ACF and PACF are hybrids of the AR(<em>p</em>) and MA(<em>q</em>) patterns.</td>
+    <td  >ARMA(<em>p</em>, <em>q</em>) process. Try various values for <em>p</em> and <em>q</em> and compare results using AIC.</td>
+  </tr>
+
+</table>
+<p>The AR(<em>p</em>) and MA(<em>q</em>) processes are special cases of the ARMA(<em>p</em>, <em>q</em>) process with <em>q</em> = 0 and <em>p</em> = 0 respectively. Use the guidelines given above to obtain rough estimates of <em>p</em> and <em>q</em> and then investigate nearby values for these parameters as well in various combinations. Fig. 5 shows the ACF and PACF of an ARMA(1,1) process with &phi; = 0.8 and &theta; = 2 . Observe that the ACF has a single significant lag as does the PACF.</p>
+<p align="center"><img src="../../images/lectures/lecture16/fig5.png" width="580" height="240" alt="fig. 3"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 5</strong> &nbsp;ACF and PACF of an ARMA(1,1) process</span> (<a href="../../notes/lecture16&#32;Rcode.txt">R code</a>)</p>
+<h3><a name="uncorrelated"></a>Uncorrelated process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="0" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0">
+    <td >ACF exhibits no significant spikes. Spikes at all lags are near zero.</td>
+    <td >Uncorrelated</td>
+  </tr>
+</table>
+<p>Uncorrelated processes may exhibit some decay over time, but none of the  correlations at any lag will be statistically significant. In order for this to be true it may be necessary to carry out a Bonferroni correction to obtain the appropriate familywise &alpha;-level. In carrying out a Bonferroni correction the desired alpha level (typically &alpha; = .05) is divided by the number of lags that are being examined. One should only include the lags in this calculation for which the sample size is adequate to accurately estimate a correlation.</p>
+<h3><a name="periodic"></a>Periodic  process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="0" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0">
+    <td >ACF exhibits  significant spikes at roughly regular intervals.</td>
+    <td >Periodic process</td>
+  </tr>
+</table>
+<p>The potential for  periodicity in temporal data can usually be anticipated a priori and should have a theoretical basis. If a periodic process is observed in the residuals of a regression model, a periodic function of time (consisting of both a sine and cosine term) can be included in the regression model. </p>
+<h3><a name="nonstationary" id="nonstationary"></a>Nonstationary  process</h3>
+<table width="620" border="1" align="center" cellpadding="2" cellspacing="0" bordercolor="F1D2D8">
+  <tr bgcolor= "#F1D2D8" align="center">
+    <td><strong>Pattern</strong></td>
+    <td><strong>Conclusion</strong></td>
+  </tr>
+  <tr bgcolor="#F0F0F0" valign="top">
+    <td >ACF exhibits  many significant spikes that fail to decay or that decay only extremely gradually.</td>
+    <td >Process is not stationary.</td>
+  </tr>
+</table>
+<p>If the temporal correlation of the regression residuals fails to decay over time, it means that the regression model is inadequate. There is a trend over time that has not been accounted for. If no further time-dependent predictors are available for inclusion in the regression model, various functions of time can be added to  the model until the residuals exhibit stationarity.</p>
+<h2><a name="cited"></a>Cited reference</h2>
+<ul>
+  <li> Bender, R. and Lange, S. 2001. Adjusting for multiple testing&#151;when 
+    and how? <i>Journal of Clinical Epidemiology</i> <b>54</b>: 343&#150;349.</li>
+</ul>
+<h2><a name="Rcode"></a>R Code</h2>
+<p>The R code used to generate Figs. 3&ndash;5 and the output contained in this document appears <a href="../../notes/lecture16&#32;Rcode.txt">here</a>.
+</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 15, 2012<br>
+      URL: <a href="lecture16.htm#lecture16" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture16.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

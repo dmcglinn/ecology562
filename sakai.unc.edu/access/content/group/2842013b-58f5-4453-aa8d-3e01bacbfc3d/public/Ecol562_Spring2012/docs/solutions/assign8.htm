@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 8&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="assign8" id="assign6"></a>Assignment 8&mdash;Solution</h1>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">
+  burn &lt;- read.csv('ecol 562/burn.csv')
+</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(burn)</div>
+
+<span class="style24">  &nbsp;[1] &quot;PolyFID&quot;&nbsp;&nbsp; &quot;Owner&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;X&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;burn50&quot;&nbsp;&nbsp;&nbsp; &quot;rx_cat3&quot;&nbsp;&nbsp; &quot;zmin_d_a&quot; <br>
+  &nbsp;[8] &quot;zmin_di&quot;&nbsp;&nbsp; &quot;zm_mcov&quot;&nbsp;&nbsp; &quot;zm_ccov&quot;&nbsp;&nbsp; &quot;Hectares&quot;&nbsp; &quot;zmin_drd&quot;&nbsp; &quot;prop_timb&quot; &quot;Prop_no_b&quot;<br>
+[15] &quot;zmin_dr&quot;&nbsp;&nbsp; &quot;zmin_ddv&quot;&nbsp; &quot;year&quot;&nbsp;</span>
+<h2>Question 1</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm.mod &lt;- glm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(glm.mod, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model: binomial, link: logit</span>
+<p><span class="style24">Response: burn50</span>
+<p><span class="style24">Terms added sequentially (first to last)</span>
+
+<p><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  NULL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2763&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2321&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  Hectares&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2762&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2312&nbsp;&nbsp; 0.0037 ** <br>
+  factor(rx_cat3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 107.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2759&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2205&nbsp; &lt; 2e-16 ***<br>
+  zmin_drd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 23.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2758&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2181&nbsp; 1.5e-06 ***<br>
+  prop_timb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2757&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2173&nbsp;&nbsp; 0.0042 ** <br>
+  Prop_no_b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 31.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2756&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2142&nbsp; 1.8e-08 ***<br>
+  zmin_dr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 32.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2755&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2110&nbsp; 1.5e-08 ***<br>
+  zmin_ddv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2754&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2107&nbsp;&nbsp; 0.0961 .&nbsp; <br>
+  factor(rx_cat3):zmin_ddv&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 25.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2751&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2081&nbsp; 1.3e-05 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<h2>Question 2</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(gee)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gee.ind &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;independence&quot;, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gee.ex &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;exchangeable&quot;, scale.fix=T)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> gee.un &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;unstructured&quot;, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gee.ar1 &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;AR-M&quot;, Mv=1, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gee.non &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;non_stat_M_dep&quot;, Mv=1, scale.fix=T)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> gee.sta &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;stat_M_dep&quot;, Mv=1, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<h2>Question 3</h2>
+<p>I obtain the QIC, CIC, sum of the absolute differences between the naive parameter standard errors and the robust parameter standard errors, and the sum of the absolute differences of the naive parameter covariance matrix and the robust parameter covariance matrix. I assemble the results in a matrix and identify the winners.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> stats &lt;- sapply(list(gee.ind, gee.ex, gee.un, gee.ar1, gee.non, gee.sta), function(x) QIC.binom.gee(x, gee.ind))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sediff &lt;- sapply(list(gee.ind, gee.ex, gee.un, gee.ar1, gee.non, gee.sta), function(x) sum(abs(summary(x)$coefficients[,2]-summary(x)$coefficients[,4])))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> covdiff &lt;- sapply(list(gee.ind, gee.ex, gee.un, gee.ar1, gee.non, gee.sta), function(x) sum(abs(x$robust.variance-x$naive.variance)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.comp &lt;- cbind(t(stats), sediff, covdiff)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.comp) &lt;- c('ind', 'ex', 'un', 'AR1', 'nonstat', 'stat')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.comp</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QIC&nbsp;&nbsp; CIC sediff covdiff<br>
+  ind&nbsp;&nbsp;&nbsp;&nbsp; 2106 12.52 0.1346&nbsp; 0.2915<br>
+  ex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2114 11.17 0.1129&nbsp; 0.2666<br>
+  un&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2129 10.85 0.1393&nbsp; 0.2517<br>
+  AR1 &nbsp;&nbsp;&nbsp;&nbsp;2113 11.21 0.1420&nbsp; 0.3037<br>
+  nonstat 2115 11.03 0.1391&nbsp; 0.2954<br>
+  stat&nbsp;&nbsp;&nbsp; 2114 11.12 0.1380&nbsp; 0.2996</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> winners &lt;- rownames(out.comp)[apply(out.comp, 2, which.min)]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(winners) &lt;- colnames(out.comp)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> winners</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; QIC&nbsp;&nbsp;&nbsp;&nbsp; CIC&nbsp; sediff covdiff <br>
+&nbsp; &quot;ind&quot;&nbsp;&nbsp;&nbsp; &quot;un&quot;&nbsp;&nbsp;&nbsp; &quot;ex&quot;&nbsp;&nbsp;&nbsp; &quot;un&quot; </span>
+<p>The independence model has the smallest QIC, the unstructured model has the smallest CIC, the exchangeable model has the lowest sum of absolute standard error differences, and the unstructured model has the lowest sum of absolute covariance differences. The <a href="../lectures/lecture22.htm#CIC">proponents of CIC</a> note that for models that do not predict the mean well, QIC does a poor job of selecting the correct correlation structure, while CIC performs better. Given that the unstructured matrix is the winner using CIC and one additional  metric, at this point I would lean toward using the unstructured correlation matrix.</p>
+<h2>	Question 4</h2>
+<p>The data span the years 2004 through 2007. A manager who followed the rule of thumb and who burned in 2004 would then not burn in 2005, not burn in 2006, but burn again in 2007. Thus response variable in 2004 is negatively correlated with the response variable in 2005 and 2006, but positively correlated with it in 2007. Thus in the four year span, observations that are one or two years apart should be negatively correlated while observations that are three years apart should be positively correlated. The correlation matrix would be expected to contain terms whose signs exhibit  the following pattern.</p>
+<p align="center"><img src="../../images/assignments/assignment8/correlationmat.gif" width="132" height="117" alt="correlation matrix"></p>
+<p>If we examine the estimated unstructured correlation matrix it is exactly of this form with all negative values on the off-diagonal except in the (1, 4) position, which is positive.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gee.un$working.correlation</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp; [,4]<br>
+  [1,]&nbsp; 1.0000 -0.1603 -0.1824&nbsp; 0.2462<br>
+  [2,] -0.1603&nbsp; 1.0000 -0.1443 -0.1632<br>
+  [3,] -0.1824 -0.1443&nbsp; 1.0000 -0.0857<br>
+[4,]&nbsp; 0.2462 -0.1632 -0.0857&nbsp; 1.0000</span>
+<h2>Question 5</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(lme4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lmer.fit &lt;- lmer(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3) + (1|PolyFID), family = binomial, data = burn)</div>
+<h2>Question 6</h2>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mods &lt;- cbind(coef(glm.mod), coef(gee.un), fixef(lmer.fit))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(out.mods) &lt;- c('GLM', 'GEE', 'GLMM')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mods</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GLM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GEE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GLMM<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.9896559 -1.5952972 -1.9896559<br>
+  Hectares&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0009879&nbsp; 0.0005944&nbsp; 0.0009879<br>
+  factor(rx_cat3)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.9214607&nbsp; 0.6034236&nbsp; 0.9214608<br>
+  factor(rx_cat3)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0122814&nbsp; 0.3673825&nbsp; 1.0122815<br>
+  factor(rx_cat3)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.6795490&nbsp; 0.1071735&nbsp; 0.6795490<br>
+  zmin_drd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0725129&nbsp; 0.0503981&nbsp; 0.0725129<br>
+  prop_timb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.9587330 -0.6887083 -0.9587331<br>
+  Prop_no_b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.9963088 -1.0300449 -0.9963088<br>
+  zmin_dr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.4510979 -0.4725218 -0.4510980<br>
+  zmin_ddv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.0742413&nbsp; 0.0843247 -0.0742413<br>
+  factor(rx_cat3)2:zmin_ddv -0.0499653 -0.2330747 -0.0499653<br>
+  factor(rx_cat3)3:zmin_ddv&nbsp; 1.2818659&nbsp; 1.0374087&nbsp; 1.2818659<br>
+factor(rx_cat3)4:zmin_ddv&nbsp; 0.2610036&nbsp; 0.1272098&nbsp; 0.2609800</span>
+<p>The fact that the GLM and GLMM solutions are identical suggests that the GLMM has converged to the GLM solution, i.e., a model without random effects. We can verify this by examining the log-likelihoods of these two models as well as the variance components of the mixed effects model. The log-likelihoods are identical and the variance component is essentially zero.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(glm.mod, lmer.fit), logLik)</div>
+<span class="style24">[1] -1040.7 -1040.7</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> VarCorr(lmer.fit)</div>
+<span class="style24">$PolyFID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)<br>
+(Intercept) 1.42621e-15<br>
+attr(,&quot;stddev&quot;)<br>
+(Intercept) <br>
+3.77652e-08 <br>
+attr(,&quot;correlation&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)<br>
+(Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</span>
+<p><span class="style24">attr(,&quot;sc&quot;)<br>
+  [1] NA</span>
+<p>When this happens it means the model has converged to a local solution rather than the global solution. Under normal circumstances we might try to reparameterize the model or fiddle with control settings, but those are unlikely to be successful here. A random intercepts model induces an exchangeable correlation structure within clusters so that all members of the group are equally correlated to each other and positively so. We've already seen from Question 4 that this is probably the wrong correlation structure for these data. Consequently a random intercepts model is probably the wrong model for these data too.</p>
+<h2>Question 7</h2>
+<p>I create a matrix in which all the possible pairs of the four different years appear as row entries.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> wave.mat &lt;- matrix(NA, nrow=6, ncol=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> k &lt;- 1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for(i in 2004:2006){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  for(j in (i+1):2007){</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  wave.mat[k,] &lt;- c(i,j)</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  k &lt;- k+1</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">   }}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> wave.mat</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; [,1] [,2]<br>
+  [1,] 2004 2005<br>
+  [2,] 2004 2006<br>
+  [3,] 2004 2007<br>
+  [4,] 2005 2006<br>
+  [5,] 2005 2007<br>
+  [6,] 2006 2007</span>
+
+<p>I next use the Prentice function from class to calculate upper and lower bounds for the six entries in the correlation matrix corresponding to these pairs of years.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> bounds &lt;- sapply(1:6, function(x) lims.func(fitted(gee.un), burn$burn50, burn$year, wave.mat[x,1], wave.mat[x,2]))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">low.mat &lt;- gee.un$working.correlation[ lower.tri(gee.un$working.correlation)]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> bounds</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,4]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,5]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,6]<br>
+[1,] -0.193763 -0.112229 -0.0495914 -0.0544835 -0.182476 -0.146461<br>
+[2,]&nbsp; 0.184067&nbsp; 0.140478&nbsp; 0.3932899&nbsp; 0.3597066&nbsp; 0.340684&nbsp; 0.534700</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> low.mat</div>
+<span class="style24">[1] -0.1603141 -0.1824291&nbsp; 0.2461951 -0.1442678 -0.1631727 -0.0857017</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> low.mat&gt;=bounds[1,] &amp; low.mat&lt;=bounds[2,]</div>
+<span class="style24">[1]&nbsp; TRUE FALSE&nbsp; TRUE FALSE&nbsp; TRUE&nbsp; TRUE</span>
+<p>The entries in the (1,3) and (2,3) positions exceed the Prentice bounds. The estimated values are far too negative.</p>
+<h2>Question 8</h2>
+<p>I replace the entries in the (1,3) and (2,3) positions with &ndash;0.11 and &ndash;0.05 respectively (as well as the corresponding entries in the lower triangle).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat &lt;- gee.un$working.correlation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat[1,3] &lt;- -0.11</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat[3,1] &lt;- new.mat[1,3]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat[2,3] &lt;- -.05</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat[3,2] &lt;- new.mat[2,3]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> new.mat</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,4]<br>
+  [1,]&nbsp; 1.000000 -0.160314 -0.1100000&nbsp; 0.2461951<br>
+  [2,] -0.160314&nbsp; 1.000000 -0.0500000 -0.1631727<br>
+  [3,] -0.110000 -0.050000&nbsp; 1.0000000 -0.0857017<br>
+[4,]&nbsp; 0.246195 -0.163173 -0.0857017&nbsp; 1.0000000</span>
+<h2>Question 9</h2>
+<p>The <span class="style19">geepack</span> package requires that we extract the lower triangle of the correlation matrix we wish to use and then replicate it with the <span class="style4">rep</span> function as many times as there are different groups in the data set. The number of groups is the number of unique values of the plot indicator <span class="style8">PolyFID</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(unique(burn$PolyFID))</div>
+<span class="style24">[1] 691</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> zcor &lt;- rep(new.mat[lower.tri(new.mat)], length(unique(burn$PolyFID)))</div>
+<p> To fit the model with <span class="style4">geeglm</span> I enter this as the <span class="style22">zcor</span> argument and specify <span class="style1">corst=&quot;fixed&quot;</span>.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(geepack)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geeglm.fix &lt;- geeglm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, <span class="style42">corstr=&quot;fixed&quot;, zcor=zcor</span>, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(geeglm.fix)</div>
+<span class="style24">Call:<br>
+  geeglm(formula = burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + <br>
+  &nbsp;&nbsp;&nbsp; prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), <br>
+  &nbsp;&nbsp;&nbsp; family = binomial, data = burn, id = PolyFID, zcor = zcor, <br>
+  &nbsp;&nbsp;&nbsp; corstr = &quot;fixed&quot;, scale.fix = T)</span>
+<p><span class="style24">&nbsp;Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate&nbsp;&nbsp; Std.err&nbsp;&nbsp; Wald Pr(&gt;|W|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.697391&nbsp; 0.138567 150.05&nbsp; &lt; 2e-16 ***<br>
+  Hectares&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.000698&nbsp; 0.000325&nbsp;&nbsp; 4.61&nbsp;&nbsp; 0.0317 *&nbsp; <br>
+  factor(rx_cat3)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.669453&nbsp; 0.162977&nbsp; 16.87&nbsp; 4.0e-05 ***<br>
+  factor(rx_cat3)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.537899&nbsp; 0.260912&nbsp;&nbsp; 4.25&nbsp;&nbsp; 0.0392 *&nbsp; <br>
+  factor(rx_cat3)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.250123&nbsp; 0.215030&nbsp;&nbsp; 1.35&nbsp;&nbsp; 0.2447&nbsp;&nbsp;&nbsp; <br>
+  zmin_drd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.056454&nbsp; 0.025438&nbsp;&nbsp; 4.93&nbsp;&nbsp; 0.0265 *&nbsp; <br>
+  prop_timb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.752567&nbsp; 0.277991&nbsp;&nbsp; 7.33&nbsp;&nbsp; 0.0068 ** <br>
+  Prop_no_b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.982047&nbsp; 0.233089&nbsp; 17.75&nbsp; 2.5e-05 ***<br>
+  zmin_dr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.460432&nbsp; 0.107152&nbsp; 18.46&nbsp; 1.7e-05 ***<br>
+  zmin_ddv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.026709&nbsp; 0.076397&nbsp;&nbsp; 0.12&nbsp;&nbsp; 0.7266&nbsp;&nbsp;&nbsp; <br>
+  factor(rx_cat3)2:zmin_ddv -0.200711&nbsp; 0.129358&nbsp;&nbsp; 2.41&nbsp;&nbsp; 0.1208&nbsp;&nbsp;&nbsp; <br>
+  factor(rx_cat3)3:zmin_ddv&nbsp; 1.093507&nbsp; 0.343279&nbsp; 10.15&nbsp;&nbsp; 0.0014 ** <br>
+  factor(rx_cat3)4:zmin_ddv&nbsp; 0.179461&nbsp; 0.089204&nbsp;&nbsp; 4.05&nbsp;&nbsp; 0.0442 *&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Scale is fixed.</span>
+<p><span class="style24">Correlation: Structure = fixed&nbsp; Link = identity </span>
+<p><span class="style24">Estimated Correlation Parameters:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std.err<br>
+  alpha:1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  Number of clusters:&nbsp;&nbsp; 691&nbsp;&nbsp; Maximum cluster size: 4 </span></p>
+<p>It turns out this model could also have been fit using the <span class="style4">gee</span> function of the <span class="style19">gee</span> package. We need to use <span class="style22">corst=&quot;fixed&quot;</span> with the <span class="style22">R=</span> argument in which we specify the  correlation matrix for the largest sized group. As usual the group is identifed with the <span class="style22">id</span> variable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gee.fix &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, <span class="style42">corstr=&quot;fixed&quot;, R=new.mat</span>, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(gee.fix)</div>
+<span class="style24">&nbsp;GEE:&nbsp; GENERALIZED LINEAR MODELS FOR DEPENDENT DATA<br>
+  &nbsp;gee S-function, version 4.13 modified 98/01/27 (1998) </span>
+<p><span class="style24">Model:<br>
+  &nbsp;Link:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logit <br>
+  &nbsp;Variance to Mean Relation: Binomial <br>
+  &nbsp;Correlation Structure:&nbsp;&nbsp;&nbsp;&nbsp; Fixed </span>
+<p><span class="style24">Call:<br>
+  gee(formula = burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + <br>
+  &nbsp;&nbsp;&nbsp; prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), <br>
+  &nbsp;&nbsp;&nbsp; id = PolyFID, data = burn, R = new.mat, family = binomial, <br>
+  &nbsp;&nbsp;&nbsp; corstr = &quot;fixed&quot;, scale.fix = T)</span>
+<p><span class="style24">Summary of Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -0.6635 -0.1880 -0.1085 -0.0221&nbsp; 0.9921 </span>
+
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Naive S.E. Naive z Robust S.E. Robust z<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.697391&nbsp;&nbsp; 0.165405 -10.262&nbsp;&nbsp;&nbsp; 0.138567&nbsp;&nbsp; -12.25<br>
+  Hectares&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;0.000698&nbsp;&nbsp; 0.000317&nbsp;&nbsp; 2.203&nbsp;&nbsp;&nbsp; 0.000325&nbsp;&nbsp;&nbsp;&nbsp; 2.15<br>
+  factor(rx_cat3)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.669453&nbsp;&nbsp; 0.179328&nbsp;&nbsp; 3.733&nbsp;&nbsp;&nbsp; 0.162977&nbsp;&nbsp;&nbsp;&nbsp; 4.11<br>
+  factor(rx_cat3)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.537899&nbsp;&nbsp; 0.265638&nbsp;&nbsp; 2.025&nbsp;&nbsp;&nbsp; 0.260912&nbsp;&nbsp;&nbsp;&nbsp; 2.06<br>
+  factor(rx_cat3)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.250123&nbsp;&nbsp; 0.221797&nbsp;&nbsp; 1.128&nbsp;&nbsp;&nbsp; 0.215030&nbsp;&nbsp;&nbsp;&nbsp; 1.16<br>
+  zmin_drd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.056454&nbsp;&nbsp; 0.031749&nbsp;&nbsp; 1.778&nbsp;&nbsp;&nbsp; 0.025438&nbsp;&nbsp;&nbsp;&nbsp; 2.22<br>
+  prop_timb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.752567&nbsp;&nbsp; 0.293341&nbsp; -2.565&nbsp;&nbsp;&nbsp; 0.277991&nbsp;&nbsp;&nbsp; -2.71<br>
+  Prop_no_b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.982047&nbsp;&nbsp; 0.209656&nbsp; -4.684&nbsp;&nbsp;&nbsp; 0.233089&nbsp;&nbsp;&nbsp; -4.21<br>
+  zmin_dr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.460432&nbsp;&nbsp; 0.091942&nbsp; -5.008&nbsp;&nbsp;&nbsp; 0.107152&nbsp;&nbsp;&nbsp; -4.30<br>
+  zmin_ddv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.026709&nbsp;&nbsp; 0.087260&nbsp;&nbsp; 0.306&nbsp;&nbsp;&nbsp; 0.076397&nbsp;&nbsp;&nbsp;&nbsp; 0.35<br>
+  factor(rx_cat3)2:zmin_ddv -0.200711&nbsp;&nbsp; 0.121673&nbsp; -1.650&nbsp;&nbsp;&nbsp; 0.129358&nbsp;&nbsp;&nbsp; -1.55<br>
+  factor(rx_cat3)3:zmin_ddv&nbsp; 1.093507&nbsp;&nbsp; 0.348452&nbsp;&nbsp; 3.138&nbsp;&nbsp;&nbsp; 0.343279&nbsp;&nbsp;&nbsp;&nbsp; 3.19<br>
+  factor(rx_cat3)4:zmin_ddv&nbsp; 0.179461&nbsp;&nbsp; 0.098064&nbsp;&nbsp; 1.830&nbsp;&nbsp;&nbsp; 0.089204&nbsp;&nbsp;&nbsp;&nbsp; 2.01</span>
+<p><span class="style24">Estimated Scale Parameter:&nbsp; 1<br>
+  Number of Iterations:&nbsp; 4</span>
+<p><span class="style24">Working Correlation<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]&nbsp;&nbsp; [,2]&nbsp;&nbsp;&nbsp; [,3]&nbsp;&nbsp;&nbsp; [,4]<br>
+  [1,]&nbsp; 1.000 -0.160 -0.1100&nbsp; 0.2462<br>
+  [2,] -0.160&nbsp; 1.000 -0.0500 -0.1632<br>
+  [3,] -0.110 -0.050&nbsp; 1.0000 -0.0857<br>
+  [4,]&nbsp; 0.246 -0.163 -0.0857&nbsp; 1.0000</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment8/hwscores.png" width="360" height="200" alt="hw scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 25, 2012<br>
+      URL: <a href="assign8.htm#assign8" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign8.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

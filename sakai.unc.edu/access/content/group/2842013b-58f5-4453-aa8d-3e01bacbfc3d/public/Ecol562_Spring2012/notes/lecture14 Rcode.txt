@@ -1,0 +1,149 @@
+
+################# grouped binary data ###################3
+
+#Windows: read data from clipboard
+bliss<-read.table('clipboard',header=T)
+#mac: read data from clipboard
+bliss<-read.table(pipe("pbpaste"),header=T)
+
+#fit logistic regression to insecticide concentration
+out1<-glm(cbind(dead,alive)~conc,data=bliss,family=binomial)
+#estimates and Wald tests
+summary(out1)
+#likelihood ratio test
+anova(out1,test='Chisq')
+#predicted logits
+predict(out1)
+#predicted probabilities
+fitted(out1)
+
+#calculate predicted counts to check minimum cell size
+cbind(fitted(out1),1-fitted(out1))*30
+
+#use residual deviance for goodness of fit test
+names(out1)
+out1$deviance
+out1$df.residual
+1-pchisq(out1$deviance,out1$df.residual)
+
+#plot empirical logits
+plot(bliss$conc,log((bliss$dead+1/2)/(bliss$alive+1/2)),xlab='concentration',ylab='logit')
+#add regression line
+abline(coef(out1),lty=2)
+
+#inverse logit function for this model
+inv.logit<-function(x) exp(coef(out1)[1]+coef(out1)[2]*x)/(1+exp(coef(out1)[1]+coef(out1)[2]*x))
+
+#plot empirical probababilities
+plot(bliss$conc,bliss$dead/(bliss$dead+bliss$alive),xlab='concentration',ylab='probability')
+#logit curve
+curve(inv.logit,add=T,lty=2)
+
+
+
+#coefficients
+coef(out1)
+#odds ratio for concentration
+exp(coef(out1)[2])
+
+#Wald confidence intervals for the concentration coefficient
+summary(out1)$coefficients[2,1]+qnorm(.025)*summary(out1)$coefficients[2,2]->low
+summary(out1)$coefficients[2,1]+qnorm(.975)*summary(out1)$coefficients[2,2]->hi
+c(low,hi)
+#Wald confidence interval for the odds ratio
+exp(c(low,hi))
+
+#profile likelihood confidence interval
+confint(out1)->lik
+lik
+#profile likelihood confidence interval for OR
+exp(lik[2,])
+
+############# Binary data ####################
+
+solea<-read.table('ecol 562/Solea.txt',header=T)
+solea[1:4,]
+
+# model with salinity
+out1<-glm(Solea_solea~salinity,data=solea,family=binomial)
+summary(out1)
+#odds ratio for increasing salinity
+exp(coef(out1)[2])
+#odds ratio for decreasing salinity
+exp(-coef(out1)[2])
+
+#likelihood ratio test
+anova(out1,test='Chisq')
+#Wald test
+summary(out1)
+
+#graph model
+inv.logit<-function(x) exp(coef(out1)[1]+coef(out1)[2]*x)/(1+exp(coef(out1)[1]+coef(out1)[2]*x))
+
+#place fitted value in order of salinity
+fitted(out1)[order(solea$salinity)]
+#connect fitted values with line segments
+plot(sort(solea$salinity),fitted(out1)[order(solea$salinity)],type='l',xlab='salinity',ylab='probability',ylim=c(0,1))
+
+#produce same graph using curve function
+inv.logit<-function(x) exp(coef(out1)[1]+coef(out1)[2]*x)/(1+exp(coef(out1)[1]+coef(out1)[2]*x))
+curve(inv.logit,from=0,to=35,ylim=c(0,1),xlab='salinity',ylab='probability')
+
+#add rug plot to top and bottom of graph
+rug(solea$salinity[solea$Solea_solea==0],side=1)
+rug(solea$salinity[solea$Solea_solea==1],side=3)
+
+#add additional predictors
+out2<-update(out1,.~.+temperature+factor(month))
+#likelhood ratio tests
+anova(out2,test='Chisq')
+
+#arrange variables in different order
+out2.1<-update(out1,.~.+factor(month)+temperature)
+anova(out2.1,test='Chisq')
+
+#Wald tests
+summary(out2)
+
+#odds ratios for continuous variables
+exp(coef(out2)[2:3])
+exp(-coef(out2)[2:3])
+#confidence intervals
+confint(out2)
+
+#odds ratios for categorical variable
+exp(coef(out2)[4:7])
+coef(out2)[4:7]
+
+
+#confusion matrix with a cut-off of c=0.5
+fitted(out1)>.5
+as.numeric(fitted(out1)>.5)
+#first model
+table(as.numeric(fitted(out1)>.5),solea$Solea_solea)
+#second model
+table(as.numeric(fitted(out2)>.5),solea$Solea_solea)
+
+#generate ROC curve
+library(ROCR)
+pred1<-prediction(fitted(out1),solea$Solea_solea)
+perf1<-performance(pred1,'tpr','fpr')
+slotNames(perf1)
+perf1@x.name
+perf1@y.name
+perf1@alpha.name
+perf1@alpha.values
+perf1@x.values
+perf1@y.values
+
+#plot ROC curve
+plot(perf1@x.values[[1]],perf1@y.values[[1]],type='s',ylab='True positive rate',xlab='False positive rate')
+pred2<-prediction(fitted(out2),solea$Solea_solea)
+perf2<-performance(pred2,'tpr','fpr')
+lines(perf2@x.values[[1]],perf2@y.values[[1]],type='s',col=2)
+
+#calculate AUC for each model
+performance(pred1,'auc')
+performance(pred2,'auc')
+
+

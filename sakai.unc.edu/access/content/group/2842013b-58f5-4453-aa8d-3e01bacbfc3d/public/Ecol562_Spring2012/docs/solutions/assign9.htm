@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 9&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="assign9" id="assign6"></a>Assignment 9&mdash;Solution</h1>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">
+  ozone &lt;- read.table('ecol 562/ozone.txt', header=T)
+</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(ozone)</div>
+
+
+<span class="style24">  &nbsp;[1] &quot;O3&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;vh&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;wind&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;humidity&quot; &quot;temp&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;ibh&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;dpg&quot;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[8] &quot;ibt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;vis&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;day&quot;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<h2>Question 1</h2>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(mgcv)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.g0 &lt;- gam(O3~s(vh)+ s(wind)+ s(humidity)+ s(temp)+ s(ibh)+ s(dpg)+ s(ibt)+ s(vis)+ s(day), data=ozone)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out.g0)</div>
+<span class="style24">Family: gaussian <br>
+  Link function: identity </span>
+<p><span class="style24">Formula:<br>
+  O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(ibt) + s(vis) + s(day)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp; 11.776&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.198&nbsp;&nbsp;&nbsp; 59.3&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df&nbsp;&nbsp;&nbsp;&nbsp; F p-value&nbsp;&nbsp;&nbsp; <br>
+  s(vh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00&nbsp; 8.51 0.00380 ** <br>
+  s(wind)&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00&nbsp; 5.29 0.02214 *&nbsp; <br>
+  s(humidity) 3.60&nbsp;&nbsp; 4.48&nbsp; 2.78 0.02220 *&nbsp; <br>
+  s(temp)&nbsp;&nbsp;&nbsp;&nbsp; 4.80&nbsp;&nbsp; 5.88&nbsp; 5.03 7.0e-05 ***<br>
+  s(ibh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.03&nbsp;&nbsp; 3.71&nbsp; 1.28 </span><span class="style25">0.27957</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  s(dpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.23&nbsp;&nbsp; 4.11 10.74 2.6e-08 ***<br>
+  s(ibt)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.84&nbsp;&nbsp; 2.37&nbsp; 1.37 </span><span class="style25">0.25636</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  s(vis)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.26&nbsp;&nbsp; 2.82&nbsp; 6.26 0.00053 ***<br>
+  s(day)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.98&nbsp;&nbsp; 5.01 16.13 3.8e-14 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.797&nbsp;&nbsp; Deviance explained = 81.3%<br>
+  GCV score = 14.099&nbsp; Scale est. = 12.998&nbsp;&nbsp;&nbsp; n = 330</span>
+<h2>Question 2</h2>
+<p>There are four models to consider. Each of these models contains all the other smooths but they differ in whether <span class="style8">s(ibh)</span> and <span class="style8">s(ibt)</span> are present.</p>
+<ul>
+  <li>Model 0: both <span class="style8">s(ibh)</span> and <span class="style8">s(ibt)</span> are present</li>
+  <li>Model 1: <span class="style8">s(ibh)</span> is present, but <span class="style8">s(ibt)</span> is absent</li>
+  <li>Model 2: <span class="style8">s(ibt)</span> is present, but <span class="style8">s(ibh)</span> is absent</li>
+  <li>Model 3: both <span class="style8">s(ibh)</span> and <span class="style8">s(ibt)</span> are absent.</li>
+</ul>
+<p>I refit the first model using maximum likelihood.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g0a &lt;- gam(O3~s(vh)+ s(wind)+ s(humidity)+ s(temp)+ s(ibh)+ s(dpg)+s(ibt)+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(out.g0a)</div>
+<p><span class="style24">Family: gaussian <br>
+  Link function: identity </span>
+<p><span class="style24">Formula:<br>
+  O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(ibt) + s(vis) + s(day)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp; 11.776&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.201&nbsp;&nbsp;&nbsp; 58.7&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes: &nbsp;0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df&nbsp;&nbsp;&nbsp;&nbsp; F p-value&nbsp;&nbsp;&nbsp; <br>
+  s(vh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00 10.27 0.00149 ** <br>
+  s(wind)&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00&nbsp; 4.57 0.03325 *&nbsp; <br>
+  s(humidity) 1.00&nbsp;&nbsp; 1.00 10.68 0.00120 ** <br>
+  s(temp)&nbsp;&nbsp;&nbsp;&nbsp; 4.12&nbsp;&nbsp; 5.12&nbsp; 9.13 3.0e-08 ***<br>
+  s(ibh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00&nbsp; 0.01 </span><span class="style25">0.93549</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  s(dpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.70&nbsp;&nbsp; 4.68&nbsp; 9.70 3.0e-08 ***<br>
+  s(ibt)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.00&nbsp;&nbsp; 1.00&nbsp; 2.19 </span><span class="style25">0.14025</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  s(vis)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.03&nbsp;&nbsp; 2.54&nbsp; 6.76 0.00047 ***<br>
+  s(day)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.75&nbsp;&nbsp; 5.90 14.51 2.1e-14 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.793&nbsp;&nbsp; Deviance explained = 80.5%<br>
+  ML score = 910.51&nbsp; Scale est. = 13.297&nbsp;&nbsp;&nbsp; n = 330</span>
+<p><span class="style24">The p-values have changed but neither s(ibh) and s(ibt) yield statistically significant Wald tests.</span>
+<p>I fit the remaining three models by dropping terms from this model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g1a &lt;- update(out.g0a, .~.-s(ibt))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g2a &lt;- update(out.g0a, .~.-s(ibh))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g3a &lt;- update(out.g2a, .~.-s(ibt))</div>
+<p>There are a number of ways to proceed. We can start with both terms in the model and try to drop one of them. This is what the Wald tests are reporting.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#drop s(ibt) from the full model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out.g1a, out.g0a, test='F')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(vis) + s(day)<br>
+  Model 2: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(ibt) + s(vis) + s(day)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp; Df Deviance&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 310.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4143&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 309.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4114 1.011&nbsp;&nbsp;&nbsp; 28.98 2.155&nbsp; </span><span class="style25">0.143</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # drop s(ibh) from the full model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out.g2a, out.g0a, test='F')</div>
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(ibt) + <br>
+  &nbsp;&nbsp;&nbsp; s(vis) + s(day)<br>
+  Model 2: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(ibt) + s(vis) + s(day)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 310.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4115&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 309.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4114 0.9878&nbsp;&nbsp; 0.8801 0.067&nbsp; </span><span class="style25">0.793</span>
+<p> Both of these tests agree with the Wald tests. The tests say that we can legitimately drop either smooth given that the other is present in the model. Under each scenario we can then try to drop the remaining smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out.g3a,out.g1a,test='F')</div>
+
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(vis) + <br>
+  &nbsp;&nbsp;&nbsp; s(day)<br>
+  Model 2: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(vis) + s(day)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp; Df Deviance&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 310.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4154&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 310.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4143 0.537&nbsp;&nbsp;&nbsp; 10.84 1.512&nbsp; </span><span class="style25">0.198
+  </span>
+<p>So having dropped <span class="style8">s(ibt)</span> we can now also drop <span class="style8">s(ibt)</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(out.g3a,out.g2a,test='F')</div>
+
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(vis) + <br>
+  &nbsp;&nbsp;&nbsp; s(day)<br>
+  Model 2: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(ibt) + <br>
+  &nbsp;&nbsp;&nbsp; s(vis) + s(day)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)&nbsp; <br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 310.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4154&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 310.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4115 0.5603&nbsp;&nbsp;&nbsp; 38.94 5.242 </span><span class="style25">0.0408</span><span class="style24"> *<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+ 
+<p>This test tells us that having dropped <span class="style8">s(ibh)</span> we should not drop <span class="style8">s(ibt)</span>. When <span class="style8">s(ibt)</span> is in the model without <span class="style8">s(ibh)</span>, <span class="style8">s(ibt)</span> is statistically significant. Finally we could try to drop both terms simultaneously.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(out.g3a,out.g0a,test='F')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(vis) + <br>
+  &nbsp;&nbsp;&nbsp; s(day)<br>
+  Model 2: O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(ibh) + s(dpg) + <br>
+  &nbsp;&nbsp;&nbsp; s(ibt) + s(vis) + s(day)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp; Df Deviance&nbsp;&nbsp;&nbsp;&nbsp; F Pr(&gt;F)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 310.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4154&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 309.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4114 1.548&nbsp;&nbsp;&nbsp; 39.82 1.934&nbsp; </span><span class="style25">0.156
+  </span>
+<p>According to this test we could drop <span class="style8">s(ibh)</span> and <span class="style8">s(ibt)</span> together. Fig. 1 summarizes the different model comparisons we've made.</p>
+<p align="center"><img src="../../images/assignments/assignment9/comparisons.png" width="400" height="130" alt="comparisons"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;Model comparisons involving s(ibt) and s(ibh)</p>
+<p>The results of the partial F-tests are fairly clear. If you start with neither variable in the model model 3 in Fig. 1), then the partial F-test says you should add <span class="style8">s(ibt)</span> but not <span class="style8">s(ibh)</span>. If you start with both variables in the model (model 0 in Fig. 1) then the partial F-test says you can drop either one. If you drop <span class="style8">s(ibh)</span> first then the partial F-test says you should not drop <span class="style8">s(ibt)</span>. It&rsquo;s only in the case when you choose to drop <span class="style8">s(ibt)</span> first that the partial F-test tells you to drop <span class="style8">s(ibh)</span> too and end up with neither. That&rsquo;s why stepwise methods typically use forward and backward selection in selecting variables to deal exactly with this scenario. </p>
+<p>So what should we conclude? Clearly the terms <span class="style8">s(ibh)</span> and <span class="style8">s(ibt)</span> are correlated and their presence together in a model is influencing the significance test of the other. The tests of either one in isolation, separated from the other, are  more honest tests and tell us that we should retain<span class="style8"> s(ibt)</span> but drop <span class="style8">s(ibh)</span>. This conclusion is confirmed if we compare the four models using AIC.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.g0a,out.g1a,out.g2a,out.g3a)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.g0a 21.6084 1812.33<br>
+  out.g1a 20.5974 1812.63<br>
+</span><span class="style25">out.g2a 20.6207 1810.43</span><span class="style24"><br>
+out.g3a 20.0604 1812.41</span>
+<p>Thus we should retain <span class="style8">s(ibt)</span> and drop <span class="style8">s(ibh)</span>. </p>
+<h2>	Question 3</h2>
+<p>I refit the model without <span class="style8">s(ibh)</span> and plot the smooths.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g1 &lt;- gam(O3~s(vh)+ s(wind)+ s(humidity)+ s(temp)+ s(dpg)+ s(ibt)+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.g1, pages=1)</div>
+<p align="center"><img src="../../images/assignments/assignment9/fig2.png" width="610" height="430" alt="fig. 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2</strong> &nbsp;Partial response functions corresponding to the seven smoother terms</p>
+<p>We can obtain the estimated degrees of freedom for these smooths from the summary table of the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.g1)</div>
+<span class="style24">Family: gaussian <br>
+  Link function: identity </span>
+<p><span class="style24">Formula:<br>
+  O3 ~ s(vh) + s(wind) + s(humidity) + s(temp) + s(dpg) + s(ibt) + <br>
+  &nbsp;&nbsp;&nbsp; s(vis) + s(day)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp; 11.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.2&nbsp;&nbsp;&nbsp; 58.8&nbsp;&nbsp; &lt;2e-16 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df&nbsp;&nbsp;&nbsp;&nbsp; F p-value&nbsp;&nbsp;&nbsp; <br>
+  s(vh)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">1.00</span><span class="style24">&nbsp;&nbsp; 1.00 10.74 0.00117 ** <br>
+  s(wind)&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">1.00</span><span class="style24">&nbsp;&nbsp; 1.00&nbsp; 4.64 0.03192 *&nbsp; <br>
+  s(humidity) </span><span class="style25">1.00</span><span class="style24">&nbsp;&nbsp; 1.00 10.73 0.00117 ** <br>
+  s(temp)&nbsp;&nbsp;&nbsp;&nbsp; 4.12&nbsp;&nbsp; 5.12&nbsp; 9.80 7.4e-09 ***<br>
+  s(dpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.70&nbsp;&nbsp; 4.68&nbsp; 9.81 2.5e-08 ***<br>
+  s(ibt)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">1.00</span><span class="style24">&nbsp;&nbsp; 1.00&nbsp; 5.13 0.02419 *&nbsp; <br>
+  s(vis) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.03&nbsp;&nbsp; 2.54&nbsp; 6.80 0.00045 ***<br>
+  s(day)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.76&nbsp;&nbsp; 5.91 15.16 4.7e-15 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp; 0.793&nbsp;&nbsp; Deviance explained = 80.5%<br>
+  ML score = 910.52&nbsp; Scale est. = 13.258&nbsp;&nbsp;&nbsp; n = 330</span>
+<p>From the graph and the summary output, the smooths of <span class="style8">vh</span>, <span class="style8">wind</span>, <span class="style8">humidity</span>, and <span class="style8">ibt</span> are roughly linear. I refit the model with these as linear terms.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g2 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ s(dpg)+ ibt+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+
+<h2>Question 4</h2>
+<p>Fig. 3 displays plots of the partial response functions for the remaining smooths.</p>
+<p align="center"><img src="../../images/assignments/assignment9/fig3.png" width="600" height="385" alt="fig. 3"></p>
+<p align="center" class="styleArial"><strong>Fig. 3</strong> &nbsp;Partial response functions for the four remaining smooths</p>
+<p>Each graph is too asymmetric to be a quadratic but we could try replacing the smooths with a breakpoint regression model consisting of two connected line segments with different slopes. To proceed we need to obtain an estimate for the location of the breakpoints. By inspecting the graphs we can obtain a reasonable range of values over which to search. The code below carries out the search for each smooth separately. In each case we keep the rest of the model the same but replace one smooth with a breakpoint model. So, in each case I replace the given <span class="style1">s(x)</span> with <span class="style1">x + I((x-c)*(x&gt;c))</span>.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #replace s(temp)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for (i in 40:70){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> out.g12 &lt;- gam(O3~vh+ wind+ humidity+ temp+ I((temp-i)*(temp&gt;i))+ s(dpg)+ ibt+ s(vis)+ s(day),data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> my.aic &lt;- rbind(my.aic, c(i,AIC(out.g12)))}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic[which.min(my.aic[,2]),]</div>
+<span class="style24">  [1]&nbsp;&nbsp; 60.0 1809.2</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g13 &lt;- gam(O3~vh+ wind+ humidity+ temp+ I((temp-60)*(temp&gt;60))+ s(dpg)+ ibt+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+  <br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #replace s(dpg)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for (i in -10:40){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> out.g12 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ dpg+ I((dpg-i)*(dpg&gt;i))+ ibt+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> my.aic &lt;- rbind(my.aic, c(i,AIC(out.g12)))}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic[which.min(my.aic[,2]),]</div>
+ <span class="style24"> [1]&nbsp;&nbsp; 16.00 1808.91</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g14 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ dpg+ I((dpg-16)*(dpg&gt;16))+ ibt+ s(vis)+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+  <br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #replace s(vis)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">for (i in 100:250){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">out.g12 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ s(dpg)+ ibt+ vis+ I((vis-i)*(vis&gt;i))+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> my.aic &lt;- rbind(my.aic, c(i,AIC(out.g12)))}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic[which.min(my.aic[,2]),]</div>
+<span class="style24">  [1]&nbsp; 200.00 1808.78</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g15 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ s(dpg)+ ibt+ vis+ I((vis-200)*(vis&gt;200))+ s(day), data=ozone, method=&quot;ML&quot;)</div>
+  <br>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #replace s(day)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic &lt;- NULL</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> for (i in 100:200){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> out.g12 &lt;- gam(O3~vh+wind+humidity+s(temp)+s(dpg)+ibt+s(vis)+day+I((day-i)*(day&gt;i)),data=ozone, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> my.aic &lt;- rbind(my.aic, c(i,AIC(out.g12)))}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.aic[which.min(my.aic[,2]),]</div>
+<span class="style24">  [1]&nbsp; 144.00 1807.12</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.g16 &lt;- gam(O3~vh+ wind+ humidity+ s(temp)+ s(dpg)+ ibt+ s(vis)+ day+ I((day-144)*(day&gt;144)), data=ozone, method=&quot;ML&quot;)</div>
+<p>Table 1 summarizes the results of the search.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=500 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Breakpoint model results</td>
+  </tr>
+</table>
+<table width="600" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td><strong>Variable</strong></td>
+    <td><strong>Range examined</strong></td>
+    <td><strong>Estimated breakpoint</strong></td>
+    <td><strong>Reported AIC</strong></td>
+    <td><strong>Actual AIC</strong></td>
+  </tr>
+  <tr>
+    <td><div align="center">temp</div></td>
+    <td><div align="center">(40, 70)</div></td>
+    <td><div align="center">60</div></td>
+    <td><div align="center">1809.20</div></td>
+    <td><div align="center">1811.20</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">dpg</div></td>
+    <td><div align="center">(&ndash;10, 40)</div></td>
+    <td><div align="center">16</div></td>
+    <td><div align="center">1808.91</div></td>
+    <td><div align="center">1810.91</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">vis</div></td>
+    <td><div align="center">(100, 250)</div></td>
+    <td><div align="center">200</div></td>
+    <td><div align="center">1808.78</div></td>
+    <td><div align="center">1810.78</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">day</div></td>
+    <td><div align="center">(100, 200)</div></td>
+    <td><div align="center">144</div></td>
+    <td><div align="center">1807.12</div></td>
+    <td><div align="center">1809.12</div></td>
+  </tr>
+</table>
+<h2>Question 5</h2>
+<p>The AIC values returned by the AIC function on each of the breakpoint models underestimates the number of parameters by 1 because it doesn't count the breakpoint parameter that we estimated by hand. Thus we need to add 2 to each of the AIC values because AIC = &ndash;2*log-likelihood + 2<em>k</em>, where <em>k</em> is the number of parameters. I recalculate the AIC and add to the list the AIC of the model that contains all four of the smooths.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.AIC &lt;- AIC(out.g2, out.g13, out.g14, out.g15, out.g16)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.AIC[,2] &lt;- out.AIC[,2] + c(0,2,2,2,2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.AIC) &lt;- c('4 smooths','temp bp', 'dpg bp', 'vis bp', 'day bp')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.AIC</div>
+
+<span class="style24">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  4 smooths 20.620493 1810.4267<br>
+  temp bp&nbsp;&nbsp; 18.396195 1811.1987<br>
+  dpg bp&nbsp;&nbsp;&nbsp; 18.995947 1810.9062<br>
+  vis bp&nbsp;&nbsp;&nbsp; 20.561629 1810.7763<br>
+  day bp&nbsp;&nbsp;&nbsp; 17.905897 </span><span class="style25">1809.1247
+  </span>
+<p>The AIC values of the breakpoint models exceed that of the four-smooth model except for the breakpoint model involving <span class="style8">day</span>. Thus we can legitimately argue that only <span class="style8">s(day)</span> should be replaced with a breakpoint model.</p>
+<h2>Question 6</h2>
+<p><strong>Method 1</strong></p>
+<p>I start by plotting the smooth of <span class="style8">day</span>. To obtain just this smooth I plot the <span class="style4">gam</span> object and use the <span class="style22">select</span> argument to select the fourth smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(out.g2, select=4)</div>
+<p>To add the breakpoint model to this graph we need to know where to start it. The first value of <span class="style8">day</span> in the data set is 33.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> min(ozone$day)</div>
+<span class="style24">[1] 33</span>
+<p>To figure out what the <em>y</em>-coordinate of the smooth is at <span class="style8">day</span> = 33, I experiment by adding points to the graph with the <span class="style4">points</span> function. After trying a number of values near &ndash;5, I settle on &ndash;4.3. Fig. 4 shows the graph of the smooth with this point plotted.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.g2, select=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(33,-4.3)</div>
+<p align="center"><img src="../../images/assignments/assignment9/fig4.png" width="480" height="375" alt="fig. 4"></p>
+<p align="center" class="styleArial"><strong>Fig. 4</strong> &nbsp;Graph of s(day) with left-hand endpoint of the curve selected</p>
+<p>Next I write a function for the breakpoint model. The coefficients of the breakpoint terms are entries 6 and 7 of the coefficients vector.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(out.g16)[1:10]</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wind <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -86.5611388&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0150986&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.2873694 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; humidity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ibt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;day <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0580733&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0170034&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0807739 <br>
+  I((day - 144) * (day &gt; 144))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(temp).1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(temp).2 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.1213450&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.4457973&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;-0.2622498 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(temp).3 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.6804768</span>
+<p>The breakpoint function is the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> bp.func &lt;- function(day) coef(out.g16)[6]*day + coef(out.g16)[7] * (day-144) * (day&gt;144)</div>
+<p>If we evaluate the breakpoint function at <span class="style8">day</span> = 33 we don't get &ndash;4.3.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> bp.func(33)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; day <br>
+2.66554</span>
+<p>We need to add a constant to the breakpoint model so that we get &ndash;4.3 at day = 33. The amount we need is &ndash;6.96544.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> -4.3 - bp.func(33)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; day <br>
+-6.96554</span>
+<p>I rewrite the breakpoint function adding this constant to the expression and use the <span class="style4">curve</span> function to add the breakpoint function for <span class="style8">day</span> to the graph of the smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bp.func &lt;- function(day) coef(out.g16)[6]*day + coef(out.g16)[7] * (day-144) * (day&gt;144) - 6.96554</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(bp.func, add=T, col=2)</div>
+<p align="center"><img src="../../images/assignments/assignment9/fig5.png" width="480" height="375" alt="fig. 5"></p>
+<p align="center" class="styleArial"><strong>Fig. 5</strong> &nbsp;Graph of s(day) along with the breakpoint model using Method 1</p>
+<p ><strong>Method 2</strong></p>
+<p >A simpler method is to use the <span class="style22">shift</span> argument of <span class="style4">plot.gam</span> (the plot method for gam objects) and to specify for this argument the parametric portion of the gam model with all predictors set to their mean values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(out.g2, select=4, shift=coef(out.g2)[1] + coef(out.g2)[2]*mean(ozone$vh) + coef(out.g2)[3]*mean(ozone$wind) + coef(out.g2)[4]*mean(ozone$humidity) + coef(out.g2)[5]*mean(ozone$ibt))</div>
+<p >For the breakpoint function we do the same thing.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">bp.func &lt;- function(day) coef(out.g16)[6]*day + coef(out.g16)[7] * (day-144) * (day&gt;144) +
+coef(out.g16)[1] + coef(out.g16)[2]*mean(ozone$vh) + coef(out.g16)[3]*mean(ozone$wind) + coef(out.g16)[4]*mean(ozone$humidity) + coef(out.g16)[5]*mean(ozone$ibt)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(bp.func, add=T, col=2)</div>
+<p align="center"><img src="../../images/assignments/assignment9/fig6.png" width="500" height="360" alt="Fig. 6"></p>
+<p align="center" class="styleArial"><strong>Fig. 6</strong> &nbsp;Graph of s(day) along with the breakpoint model using Method 2
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/assignment9/hwscores.png" width="370" height="210" alt="hw scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 27, 2012<br>
+      URL: <a href="assign9.htm#assign9" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/assign9.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

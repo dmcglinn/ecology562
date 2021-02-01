@@ -1,0 +1,611 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 39&mdash;Wednesday, April 18, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style221 {color: #663366; font-weight: bold; }
+.style221 {color: #990099;
+	font-weight: bold;
+}
+.style41 {color: #CC0000;
+	font-weight: bold;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style91 {color: #339900;
+	font-weight: bold;
+}
+.style14 {font-family: "Courier New", Courier, mono;}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture39" id="lecture39"></a>Lecture 39&mdash;Wednesday, April 18, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture39.htm#hypothesis">Hypothesis testing in GAMs revisited</a>
+    <ul>
+      <li><a href="lecture39.htm#method1">Method 1: Increase the number of knots</a></li>
+      <li><a href="lecture39.htm#method2">Method 2: Use the same smoothing parameters in both models</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture39.htm#ordinal">Ordinal logistic regression</a></li>
+  <li><a href="lecture39.htm#taxonomy">A taxonomy of   ordinal regression models</a></li>
+  <li><a href="lecture39.htm#uniform">The proportional odds assumption</a></li>
+  <li><a href="lecture39.htm#discrete">Discrete choice models</a> </li>
+  <li><a href="lecture39.htm#references">Cited references</a></li>
+</ul>
+<h2><a name="hypothesis"></a>Hypothesis testing in GAMS revisited</h2>
+<p>In Final Exam, Part 2 I ask you to fit a GAM using all the predictors and then try to simplify it.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">setwd(&quot;C:/Users/jmweiss/Documents/ecol 562&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  elfin &lt;- read.csv('elfin.csv')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(mgcv)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gam1 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy)+ s(WildIndigoSize)+ s(NearestWildIndigo)+ s(DistanceNearestTree)+ 
+  s(DirectionTree,k=8)+ s(Slope)+ s(SlopeAspect,k=8), data=elfin, method=&quot;ML&quot;, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(gam1)</div>
+<span class="style24">Family: binomial <br>
+  Link function: logit </span>
+<p><span class="style24">Formula:<br>
+  Occupied_Unoccupied ~ s(TotalCanopy) + s(WildIndigoSize) + s(NearestWildIndigo) + <br>
+  &nbsp;&nbsp;&nbsp; s(DistanceNearestTree) + s(DirectionTree, k = 8) + s(Slope) + <br>
+  &nbsp;&nbsp;&nbsp; s(SlopeAspect, k = 8)</span>
+<p><span class="style24">Parametric coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)&nbsp; <br>
+  (Intercept)&nbsp; -0.6010&nbsp;&nbsp;&nbsp;&nbsp; 0.3566&nbsp; -1.685&nbsp;&nbsp; 0.0919 .<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Approximate significance of smooth terms:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf Ref.df Chi.sq&nbsp; p-value&nbsp;&nbsp;&nbsp; <br>
+  s(TotalCanopy)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.409&nbsp; 4.249 31.697 2.96e-06 ***<br>
+  s(WildIndigoSize)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000&nbsp; 1.000 32.884 9.79e-09 ***<br>
+  s(NearestWildIndigo)&nbsp;&nbsp; 1.000&nbsp; 1.000&nbsp; 9.586&nbsp; 0.00196 ** <br>
+  s(DistanceNearestTree) 2.091&nbsp; 2.629&nbsp; 4.592&nbsp; 0.16224&nbsp;&nbsp;&nbsp; <br>
+  s(DirectionTree)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000&nbsp; 1.000&nbsp; 3.928&nbsp; 0.04749 *&nbsp; <br>
+  s(Slope)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000&nbsp; 1.000&nbsp; 0.054&nbsp; </span><span class="style25">0.81608</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  s(SlopeAspect)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000&nbsp; 1.000&nbsp; 0.667&nbsp; </span><span class="style25">0.41416</span><span class="style24">&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">R-sq.(adj) =&nbsp;&nbsp; 0.58&nbsp;&nbsp; Deviance explained = 53.1%<br>
+  ML score = 116.83&nbsp; Scale est. = 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n = 328</span>
+<p>The summary table suggests that <span class="style8">Slope</span> and <span class="style8">SlopeAspect</span> are not significant, but we know that the <em>p</em>-values of the Wald tests for GAMs can be quite unreliable. The different reduced models we might fit and compare against this one are not all equivalent because the variable<span class="style8"> SlopeAspect</span> has a large number of missing values. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #check for missing values</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> apply(elfin,2,function(x) sum(is.na(x)))</div>
+<span class="style24"> Occupied_Unoccupied&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TotalCanopy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WildIndigoSize&nbsp;&nbsp; NearestWildIndigo <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 <br>
+  DistanceNearestTree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DirectionTree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Slope&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SlopeAspect <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 126</span>
+<p>The <span class="style1">gam</span> function will silently remove these missing values anytime <span class="style8">SlopeAspect</span> is a predictor in the model. Models that are fit to different sets of observations cannot be compared using significance testing or AIC. Fortunately the <span class="style1">anova</span> function warns us  if we try to compare models fit to different data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam2 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy)+ s(WildIndigoSize)+ s(NearestWildIndigo)+ s(DistanceNearestTree)+ 
+  + s(DirectionTree,k=8)+ s(Slope), data=elfin, method=&quot;ML&quot;, family=binomial)</div>
+ 
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #anova does not run because models fit to different data sets</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(gam2,gam1)</div>
+<span class="style24">  Error in anova.glmlist(c(list(object), dotargs), dispersion = dispersion,&nbsp; : <br>
+&nbsp; models were not all fitted to the same size of dataset</span>
+<p>It makes sense to test <span class="style8">SlopeAspect</span> first because if it can be dropped then the remaining variables can be examined using the full data set. To make  models with and without <span class="style8">SlopeAspect</span> comparable I need to explicitly remove the observations that have missing values for <span class="style8">SlopeAspect</span>  before fitting the model without <span class="style8">SlopeAspect</span>.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#remove observations with missing values of SlopeAspect</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> elfin2 &lt;- elfin[!is.na(elfin$SlopeAspect),]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> gam2 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy)+ s(WildIndigoSize)+ s(NearestWildIndigo)+ s(DistanceNearestTree)+ 
+s(DirectionTree,k=8)+ s(Slope), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+<p>If we try to use the <span class="style1">anova</span> function to compare this model against the full model we get a surprise. Depending on the order the models are entered we either get a negative value for the change in deviance or a negative value for the difference in degrees of freedom and no reported <em>p</em>-value.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #negative change in deviance and no p-value!</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(gam2, gam1, test='Chisq')</div>
+ <span class="style24">Analysis of Deviance Table</span>
+<p> <span class="style24">Model 1: Occupied_Unoccupied ~ s(TotalCanopy) + s(WildIndigoSize) + s(NearestWildIndigo) + <br>
+  &nbsp;&nbsp;&nbsp; s(DistanceNearestTree) + s(DirectionTree, k = 8) + s(Slope)<br>
+  Model 2: Occupied_Unoccupied ~ s(TotalCanopy) + s(WildIndigoSize) + s(NearestWildIndigo) + <br>
+  &nbsp;&nbsp;&nbsp; s(DistanceNearestTree) + s(DirectionTree, k = 8) + s(Slope) + <br>
+  &nbsp; &nbsp;&nbsp;s(SlopeAspect, k = 8)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 317.2&nbsp;&nbsp;&nbsp;&nbsp; 211.64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 316.5&nbsp;&nbsp;&nbsp;&nbsp; 212.64 0.70243&nbsp; </span><span class="style25">-1.0034</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #negative change in df and no p-value</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(gam1, gam2, test='Chisq')</div>
+ <span class="style24">  Analysis of Deviance Table</span>
+<p> <span class="style24">Model 1: Occupied_Unoccupied ~ s(TotalCanopy) + s(WildIndigoSize) + s(NearestWildIndigo) + <br>
+  &nbsp;&nbsp;&nbsp; s(DistanceNearestTree) + s(DirectionTree, k = 8) + s(Slope) + <br>
+  &nbsp;&nbsp;&nbsp; s(SlopeAspect, k = 8)<br>
+  Model 2: Occupied_Unoccupied ~ s(TotalCanopy) + s(WildIndigoSize) + s(NearestWildIndigo) + <br>
+  &nbsp;&nbsp;&nbsp; s(DistanceNearestTree) + s(DirectionTree, k = 8) + s(Slope)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 316.5&nbsp;&nbsp;&nbsp;&nbsp; 212.64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 317.2&nbsp;&nbsp;&nbsp;&nbsp; 211.64 </span><span class="style25">-0.70243</span><span class="style24">&nbsp;&nbsp; 1.0034&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span>
+<p>If we examine the log-likelihoods and AIC we see that we have apparently obtained the impossible. The more complicated of the two nested models has a lower log-likelihood.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #simpler model has better log-likelihood. Say what?</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(gam1)</div>
+ <span class="style24">  'log Lik.' -106.3202 (df=11.49988)</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(gam2)</div>
+ <span class="style24">  'log Lik.' -105.8185 (df=10.79745)</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #reported AIC is also impossible: AIC(gam1) &gt; AIC(gam2) + 2</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(gam1,gam2)</div>
+ <span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  gam1 11.49988 235.6402<br>
+gam2 10.79745 233.2319</span>
+<p>The explanation for this is that the models we're comparing are not truly nested. Each model has its own set of smoothing parameters and these  changed when the <span class="style8">SlopeAspect</span> variable was removed.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #examine summary table of smooths</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(gam1)$s.table</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf&nbsp;&nbsp; Ref.df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chi.sq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-value<br>
+  s(TotalCanopy)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.409316 4.249312 31.69727965 2.961970e-06<br>
+  s(WildIndigoSize)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000013 1.000026 32.88357833 9.785235e-09<br>
+  s(NearestWildIndigo)&nbsp;&nbsp; 1.000001 1.000002&nbsp; 9.58645567 1.960186e-03<br>
+  s(DistanceNearestTree) 2.090525 2.628994&nbsp; 4.59219736 1.622430e-01<br>
+  s(DirectionTree)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000006 1.000012&nbsp; 3.92812699 4.748563e-02<br>
+  s(Slope)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000014 1.000029&nbsp; 0.05410182 8.160832e-01<br>
+  s(SlopeAspect)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000006 1.000012&nbsp; 0.66684499 4.141582e-01</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(gam2)$s.table</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edf&nbsp;&nbsp; Ref.df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chi.sq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-value<br>
+  s(TotalCanopy)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.379264 4.212707 31.097803031 3.754913e-06<br>
+  s(WildIndigoSize)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.362175 1.637155 43.979340925 1.395259e-10<br>
+  s(NearestWildIndigo)&nbsp;&nbsp; 1.000001 1.000002&nbsp; 9.634214405 1.909866e-03<br>
+  s(DistanceNearestTree) 2.055991 2.585283&nbsp; 4.648182579 1.536022e-01<br>
+  s(DirectionTree)&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;1.000008 1.000016&nbsp; 3.880011753 4.886535e-02<br>
+s(Slope)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.000014 1.000028&nbsp; 0.002752108 9.581656e-01</span>
+<p>Apparently the presence of <span class="style8">SlopeAspect</span> put a constraint on the smoothing parameters of the other smooths that was lifted when <span class="style8">SlopeAspect</span> was excluded from the model. There are two ways to deal with this so that we can validly compare the models.</p>
+<ol>
+  <li>Increase the number of knots beyond the default value of 10 so that the smoothing parameters are not constrained by the presence or absence of <span class="style8">SlopeAspect</span>. Doing so will not make the models nested but it will make the models   approximately nested.</li>
+  <li>Force the second model to use the smoothing parameters of the first model. With this choice the models will be truly nested and the likelihood ratio test will be valid.</li>
+</ol>
+<h3><a name="method1"></a>Method 1: Increase the number of knots</h3>
+<p>To determine how many knots we should use, I fit both two models using a range  of knot settings, record the log-likelihood and difference in deviances that are obtained, and determine at what point we start getting reasonable results.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #function to fit smooths with different choices for number of knots</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> my.out &lt;- NULL</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> my.gam &lt;- function(k) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> gam1 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+
+  s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope)+ s(SlopeAspect,k=8), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  gam2 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+
+  s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> cur.results&lt;-c(gam1$deviance, gam1$df.residual, logLik(gam1), gam2$deviance, gam2$df.residual, logLik(gam2),
+  gam2$deviance-gam1$deviance, gam2$df.residual-gam1$df.residual, k)
+</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">   my.out &lt;- rbind(my.out,cur.results)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">   my.out</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div>
+
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #try knots = 10, 15, 20, and 25</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam.results &lt;- sapply(c(10,15,20,25),my.gam)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam.results &lt;- t(gam.results)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(gam.results) &lt;- c('gam1.dev', 'gam1.df', 'gam1.LL', 'gam2.dev', 'gam2.df', 'gam2.LL', 'dev change', 'df change', 'knots')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(gam.results,3)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; gam1.dev gam1.df&nbsp; gam1.LL gam2.dev gam2.df&nbsp; gam2.LL dev change df change knots<br>
+  [1,]&nbsp; 212.640 316.500 -106.320&nbsp; 211.637 317.203 -105.818&nbsp;&nbsp;&nbsp;&nbsp; -1.003&nbsp;&nbsp;&nbsp;&nbsp; 0.702&nbsp;&nbsp;&nbsp; 10<br>
+  [2,]&nbsp; 212.538 316.429 -106.269&nbsp; 211.875 317.209 -105.937&nbsp;&nbsp;&nbsp;&nbsp; -0.664&nbsp;&nbsp;&nbsp;&nbsp; 0.780&nbsp;&nbsp;&nbsp; 15<br>
+[3,]&nbsp; 212.525 316.419 -106.263&nbsp; 213.438 317.460 -106.719&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.913</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; 1.041&nbsp;&nbsp;&nbsp; </span><span class="style25">20</span><span class="style24"><br>
+[4,]&nbsp; 212.508 316.412 -106.254&nbsp; 213.423 317.454 -106.712&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.915</span><span class="style24">&nbsp;&nbsp;&nbsp;&nbsp; 1.042&nbsp;&nbsp;&nbsp; </span><span class="style25">25
+</span>
+<p>With the choice of 20 knots the change in deviance is positive and the log-likelihood of the larger model exceeds the log-likelihood of the simpler model. Increasing the number of knots to 25 has only a small additional effect. I refit both models using <em>k</em> = 20 for all of the smooths where it is possible to do so. Slope is clearly linear so I leave it alone.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #refit models with k=20</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> k &lt;- 20</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam1 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+<br>
++ s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope)+ s(SlopeAspect,k=8), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam2 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+<br>
++ s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #now test is correct</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(gam2, gam1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: Occupied_Unoccupied ~ s(TotalCanopy, k = k) + s(WildIndigoSize, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(NearestWildIndigo, k = k) + s(DistanceNearestTree, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(DirectionTree, k = 8) + s(Slope)<br>
+  Model 2: Occupied_Unoccupied ~ s(TotalCanopy, k = k) + s(WildIndigoSize, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(NearestWildIndigo, k = k) + s(DistanceNearestTree, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(DirectionTree, k = 8) + s(Slope) + s(SlopeAspect, <br>
+  &nbsp;&nbsp;&nbsp; k = 8)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp; 317.46&nbsp;&nbsp;&nbsp;&nbsp; 213.44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp; 316.42&nbsp;&nbsp;&nbsp;&nbsp; 212.53 1.0411&nbsp;&nbsp; 0.9129&nbsp;&nbsp; 0.3532</span>
+<p>The results are now reasonable and we can conclude that <span class="style8">SlopeAspect</span> should be dropped.</p>
+<h3><a name="method2"></a>Method 2: Use the same smoothing parameters in both models</h3>
+<p>We can make the models truly nested by forcing both models to use the same values of the smoothing parameters. The smoothing parameters are stored in the <span class="styleArial">$sp</span> component of the model object.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> k &lt;- 10</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam1 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+<br>
+  s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope)+ s(SlopeAspect,k=8), data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam1$sp</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(TotalCanopy)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(WildIndigoSize)&nbsp;&nbsp; s(NearestWildIndigo) s(DistanceNearestTree) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.139258e-03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.643231e+03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.401480e+04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.521201e-03 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(DirectionTree)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s(Slope)&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s(SlopeAspect) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.365879e+03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.227771e+03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.357435e+03</span>
+<p>What's reported is the value of &lambda; in the formula for smoothing splines.</p>
+<p align="center"><img src="../../images/lectures/lecture39/smoothspline.gif" width="288" height="50" alt="smoothin spline"></p>
+<p>Large values of &lambda; correspond to smooths whose graphs are nearly a straight lines. We can force the reduced model to use the smoothing parameters of the full model by specifying them in the <span class="style22">sp</span> argument of the GAM. Because <span class="style8">SlopeAspect</span> has been removed from the simpler model, I need to specify only the first six smoothing parameters of the full model. The likelihood ratio test now returns a positive change in deviance and both the log-likelihoods and AICs have changed in the correct direction.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> gam2 &lt;- gam(Occupied_Unoccupied~s(TotalCanopy,k=k)+ s(WildIndigoSize,k=k)+ s(NearestWildIndigo,k=k)+
+ s(DistanceNearestTree,k=k)+ s(DirectionTree,k=8)+ s(Slope), sp=gam1$sp[1:6], data=elfin2, method=&quot;ML&quot;, family=binomial)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(gam2, gam1, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: Occupied_Unoccupied ~ s(TotalCanopy, k = k) + s(WildIndigoSize, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(NearestWildIndigo, k = k) + s(DistanceNearestTree, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(DirectionTree, k = 8) + s(Slope)<br>
+  Model 2: Occupied_Unoccupied ~ s(TotalCanopy, k = k) + s(WildIndigoSize, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(NearestWildIndigo, k = k) + s(DistanceNearestTree, <br>
+  &nbsp;&nbsp;&nbsp; k = k) + s(DirectionTree, k = 8) + s(Slope) + s(SlopeAspect, <br>
+  &nbsp;&nbsp;&nbsp; k = 8)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp; 317.49&nbsp;&nbsp;&nbsp;&nbsp; 213.44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp; 316.50&nbsp;&nbsp;&nbsp;&nbsp; 212.64 0.99023&nbsp; 0.79671&nbsp;&nbsp; 0.3686</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(gam1)</div>
+
+<span class="style24">  'log Lik.' -106.3202 (df=11.49988)</span>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(gam2)</div>
+
+ <span class="style24"> 'log Lik.' -106.7186 (df=10.50965)</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(gam1,gam2)</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  gam1 11.49988 235.6402<br>
+ gam2 10.50965 234.4564</span>
+<p>In practice it is probably a good idea to use both of these approaches in combination. The number of knots should be set large enough so that the smooths are not being constrained and a common value of the smooths should be chosen to ensure that the models being compared are truly nested.
+</p>
+<h2><a name="ordinal" id="ordinal"></a>Ordinal logistic regression</h2>
+<p>Ordinal logistic regression is a  regression model for ordinal multinomial data that tries to take into account  the natural order of the categories. Ordinal data can be analyzed using the baseline category logit model but at the expense of losing information contained in the order of the categories. Historically ordinal data have been treated as weakly numeric data. Scores were assigned to individual categories and a mean score calculated for each multinomial observation. The mean scores were then modeled as a function of predictors. </p>
+<p>As an example Likert scales used in course evaluations often have numeric values associated with the categories (Table 1).  </p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=400 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Likert scale</td>
+  </tr>
+</table>
+<table width="550" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr >
+    <td bgcolor="#F1D2D8"><div align="center"><strong>Category</strong></div></td>
+    <td><div align="center">strongly disagree</div></td>
+    <td><div align="center">disagree</div></td>
+    <td><div align="center">neutral</div></td>
+    <td><div align="center">agree</div></td>
+    <td><div align="center">strongly agree</div></td>
+  </tr>
+  <tr>
+    <td bgcolor="#F1D2D8"><div align="center"><strong>Score</strong></div></td>
+    <td><div align="center">1</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">3</div></td>
+    <td ><div align="center">4</div></td>
+    <td><div align="center">5</div></td>
+  </tr>
+</table>
+<p>Associating  numeric scores  with  category labels  encourages raters to  assign ratings that are commensurate with the numeric values. Numeric scores for use in a regression analysis can also be developed post hoc. There are two problems with  treating ordinal data as if they were continuous.</p>
+<ol>
+  <li>Results can differ if a different scoring system is used. This places a burden on the analyst to demonstrate that the obtained results are score independent.</li>
+  <li>A scoring system imposes a distance metric on the categories that may not correspond to the metric that was used by the raters.</li>
+</ol>
+<p>Modern approaches account for the order of ordinal data but don't impose a distance metric on the categories. They all tend to be modifications of the baseline category logit model in which two adjustments that are made to take advantage of the ordinal nature of the data.</p>
+<ol>
+  <li>Odds are reformulated so that they are true odds, not &quot;odds-like&quot; quantities. These odds are created to capture the directionality of the categories.</li>
+  <li>Ordinal data make it possible to describe the effects of predictors more parsimoniously by using the same regression coefficients in different odds comparison. This is called the uniform association, proportional odds, or parallel assumption. </li>
+</ol>
+<p> Different odds formulations for ordinal data can be used  with or without the  assumption of parallelism, so these two adjustments are more or less independent of each other. Ordinal regression models are classified by the kind of odds they  model. The choice depends on selecting which event comparisons are considered interesting. Once this choice is made, true odds are calculated as the ratio of the probability in favor of the event to the probability against the event. </p>
+<h2><a name="taxonomy"></a>A taxonomy of ordinal regression models</h2>
+<p>Although a number of R packages exist that can fit one or more types of ordinal regression models, the most comprehensive among these is the VGAM package (Yee 2010). With VGAM all of the standard ordinal regression models can be fit using a common syntax. Table 2 lists the basic ordinal regression models, the probabilities and odds they choose to model, and the corresponding VGAM syntax needed to fit these models.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=400 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 2 &nbsp;</strong> Ordinal logistic regression models</td>
+  </tr>
+</table>
+<table width="650" border="1" align="center" cellpadding=2 cellspacing=0 frame="box" rules=groups>
+<colgroup>
+</colgroup>
+<colgroup>
+</colgroup>
+<colgroup>
+</colgroup>
+<colgroup>
+</colgroup>
+  <thead bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Model</strong></div></td>
+    <td><div align="center"><strong>Probability</strong></div></td>
+    <td><div align="center"><strong>Odds</strong></div></td>
+    <td><div align="center"><strong>VGAM family</strong></div></td>
+  </thead>
+  <tbody>
+  <tr>
+    <td><div align="center">Cumulative odds</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture39/cumprob1.gif" width="77" height="30" alt="cumulative probability"></div></td>
+    <td class="style11" style="padding-left: 30px; text-indent:-30px"><div align="center"><img src="../../images/lectures/lecture39/cumodds1.gif" width="80" height="58" alt="cumulative odds"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px">cumulative(reverse=T)</td>
+  </tr>
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture39/cumprob2.gif" width="77" height="30" alt="cumulative probability"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px"><div align="center"><img src="../../images/lectures/lecture39/cumodds2.gif" width="80" height="58" alt="cumulative odds"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px">cumulative</td>
+  </tr>
+  </tbody>
+ 
+ <tbody>
+  <tr>
+ 
+    <td><div align="center">Continuation ratio</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture39/cratioprob.gif" width="125" height="33" alt="cratioprob"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px"><div align="center"><img src="../../images/lectures/lecture39/cratioodds.gif" width="82" height="58" alt="cratio odds"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px">cratio</td>
+  </tr>
+  <tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture39/sratioprob.gif" width="125" height="33" alt="sratioprob"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px"><div align="center"><img src="../../images/lectures/lecture39/sratioodds.gif" width="82" height="58" alt="sratioodds"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px">sratio</td>
+  </tr></tbody>
+  <tr>
+    <td><div align="center">Adjacent category</div></td>
+    <td><div align="center"><img src="../../images/lectures/lecture39/acatprob.gif" width="245" height="33" alt="acat prob"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px"><div align="center"><img src="../../images/lectures/lecture39/acatodds.gif" width="107" height="58" alt="acat odds"></div></td>
+    <td class="style11"style="padding-left: 30px; text-indent:-30px">acat</td>
+  </tr>
+</table>
+<ol>
+  <li>In the cumulative odds models we collapse the multinomial categories into two categories in such a way that the order of the original categories is preserved. There are two ways to formulate the odds, as the probability of reaching and exceeding a given category divided by the probability of not achieving that category or what is essentially its reciprocal. For <em>J</em> categories there are <em>J</em> &ndash; 1 such comparisons one can make. For instance, if <em>Y</em> = 1, 2, 3, or 4 then we could make the following three comparisons: <em>Y</em> &le;&nbsp;1 versus <em>Y</em> &gt; 1, <em>Y</em> &le; 2 versus <em>Y</em> &gt; 2, and <em>Y</em> &le;&nbsp;3 versus <em>Y</em> &gt; 3.</li>
+  <li>The continuation ratio formulation yields a quantity that is analogous to the hazard function from survival analysis. In the version shown in Table 2 we restrict the set of interest to be those categories that equal or exceed the category of interest. So the reference group corresponds to those who do as well  better than you. If we think of the categories as indicating progress then the continuation ratio per se (VGAM <span class="style1">cratio</span>) yields the odds of progressing (moving on) versus staying where you are. The VGAM <span class="style1">sratio</span> (stopping ratio) yields the odds of not progressing given that we've made it this far. The continuation ratio formulation is popular in  educational research where, e.g.,  learning level is the ordinal categorical variable and the goal is estimate the probability of progressing beyond one's current level.</li>
+  <li>The adjacent category formulation focuses on the transition between adjacent categories. The  regression model attempts to find  predictors that affect this transition.</li>
+</ol>
+<h2><a name="uniform"></a>The proportional odds assumption</h2>
+<p>When we fit any of the ordinal models described in Table 2 to a response variable with <em>J</em> categories, we get <em>J</em> &ndash; 1 regression coefficients for each predictor. This is as many regression coefficients as we would get had we instead fit the baseline category logit model. The log odds for category <em>j</em> in a cumulative odds regression model with two predictors would be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture39/nonparallel.gif" width="480" height="37" alt="nonparallel"></p>
+<p>This yields <em>J</em> &ndash; 1 different intercepts, <em>J</em> &ndash; 1 different coefficients for <em>x</em>, and <em>J</em> &ndash; 1 different coefficients of <em>z</em>, one for each of the <em>J</em> &ndash; 1 odds comparisons we're making. </p>
+<p>The usual choice in ordinal logistic regression is to retain the <em>J</em> &ndash; 1 different intercepts, but to have just  single coefficients, &beta;<sub>1</sub> and &beta;<sub>2</sub>, for the predictors <em>x</em> and <em>z</em>. This is called the uniform association, proportional odds, or parallel hypothesis because it assumes the logit curves for the different category transitions are parallel.</p>
+<p align="center"><img src="../../images/lectures/lecture39/parallel.gif" width="467" height="37" alt="parallel"></p>
+<p>The proportional odds model  is directly analogous to the ordinary regression model. With it we can speak of &quot;the&quot; effect of <em>x</em> and &quot;the&quot; effect of <em>z</em> on the response variable rather than having a different effect at each category transition. When someone reports that they carried out ordinal logistic regression they almost always mean they fit a cumulative odds logit model in which  the assumption of parallelism was made.</p>
+<p>It is important to recognize that the uniform association hypothesis is an assumption that needs to be examined. Generally the more predictors there are in an ordinal logistic regression model, the more likely it is that the assumption is being violated by at least one of the predictors. In very simple regression models with a single dichotomous predictor an easy way to check the uniform association hypothesis is to calculate the raw empirical odds ratios to see if they are approximately the same for different category transitions. </p>
+<p>As an illustration consider the following toy example of  an ordinal response variable <em>Y</em> with three categories and a dichotomous predictor <em>X</em>. The tabulated data are shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture39/data.gif" width="183" height="137" alt="data"></p>
+<p>Suppose we consider probabilities of the form <img src="../../images/lectures/lecture39/cumprob2.gif" alt="cumulative probability" width="77" height="30" align="absmiddle">, <em>j</em> = 0, 1, with the goal of fitting a cumulative odds logit model with the parallelism assumption. Without the parallelism hypothesis our model is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture39/nonparallel&#32;model.gif" width="280" height="75" alt="nonparallel model"></p>
+<p>which yields two different odds ratios for <em>X</em>, exp(&beta;<sub>11</sub>) for the transition from <em>Y</em> = 0 to <em>Y</em> = 1 and exp(&beta;<sub>12</sub>) for the transition from <em>Y</em> = 1 to <em>Y</em> = 2. When <em>j</em> = 0 in the cumulative logit model we calculate the odds of <em>Y</em> &le; 0 versus <em>Y</em> &gt; 0. To obtain this the categories 1 and 2 of the contingency table are combined.</p>
+<p align="center"><img src="../../images/lectures/lecture39/data2.gif" width="198" height="112" alt="data"></p>
+<p>The odds ratio <em>X</em> = 1 versus <em>X</em> = 0 is calculated as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture39/oddsratio1.gif" width="598" height="122" alt="odds ratio 1"></p>
+<p>When <em>j</em> = 1, we calculate the odds of <em>Y</em> &le; 1 versus <em>Y</em> &gt; 1. This time categories 1 and 2 of the contingency table are collapsed.</p>
+<p align="center"><img src="../../images/lectures/lecture39/data3.gif" width="198" height="112" alt="data3"></p>
+<p>The odds ratio for <em>X</em> = 1 versus <em>X</em> = 0 is calculated as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture39/oddsratio2.gif" width="590" height="122" alt="odds ratio 2"></p>
+<p>We see that the two raw odds ratios are approximately the same suggesting that exp(&beta;<sub>11</sub>) &asymp;  exp(&beta;<sub>12</sub>) and hence that the separate coefficients  &beta;<sub>12</sub> and  &beta;<sub>12</sub> can be replaced by a single value &beta;<sub>1</sub>. This provides empirical evidence for the parallelism hypothesis for these data.</p>
+<p>In the  VGAM package we can test the parallelism hypothesis directly by comparing two ordinal regression models.</p>
+<ol>
+  <li> An ordinal regression model  in which a common regression parameter for a predictor <em>x</em> is used for all categories of <em>Y</em> (<span class="style22">parallel = T</span>).</li>
+  <li>An ordinal regression model  in which separate regression parameters for a predictor <em>x</em> are used for the different categories of <em>Y</em> (<span class="style22">parallel = F</span>). </li>
+</ol>
+<p>These two models can be compared with a likelihood ratio test and if the test statistic is significant  the parallel hypothesis is rejected. The general consensus is that this test may be overly conservative, rejecting the parallelism assumption too often. Given that a polytomous logit model will often fit the data better, it's probably prudent to examine the separate coefficients to see if the differences between them are substantive enough to reject parallelism.</p>
+<p>In the end parallelism may be rejected for some predictors in a regression model but not all. In such a case it is possible to fit a model in which some predictors have a single coefficient for all categories  of the response while other predictors have different coefficients. Such a model is called a partial proportional odds model and it too can be fit with the VGAM package. </p>
+<h2><a name="discrete"></a>Discrete choice models</h2>
+<p>In the typical discrete choice model we have a number of subjects making choices along with predictors that characterize the subjects as well as  predictors that characterize the choices. The choice sets may vary across subjects so that we don't have a fixed set of multinomial categories. A place where discrete choice models have been used in ecology is in animal resource allocation studies. Although different animals will  have  different  resources from which to choose, they are linked by a common set of predictors that  characterize the resources and a common set of predictors that characterize the choosers. The notation for discrete choice models is given in Table 3.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=400 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 3 &nbsp;</strong> Notation for the discrete choice model</td>
+  </tr>
+</table>
+<table width="650" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Term</strong></div></td>
+    <td><div align="center"><strong>Definition</strong></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><em>C<sub>i</sub></em><sub></sub></div></td>
+    <td >the set of choices available to subject <em>i</em></td>
+  </tr>
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture39/choicevector.gif" width="183" height="37" alt="choice vector"></div></td>
+    <td >the vector of values of the <em>p</em> explanatory variables describing subject <em>i</em> and choice <em>j</em></td>
+  </tr>
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture39/probchoice.gif" width="55" height="37"></div></td>
+    <td >the probability that subject <em>i </em>chooses choice <em>j</em></td>
+  </tr>
+</table>
+<p>The discrete choice model uses the following expression for <img src="../../images/lectures/lecture39/probchoice.gif" alt="" width="55" height="37" align="absmiddle">.</p>
+<p align="center"><img src="../../images/lectures/lecture39/discretechoice.gif" width="223" height="120" alt="discrete choice"></p>
+<p>This expression has its origin in  utility theory in economics. Notice that it has the same form as the Cox partial likelihood from survival analysis. Instead of summing over the risk set in the denominator we sum over the choice set. Because of the close similarities between the discrete choice model and the Cox model, we can use survival analysis software to specify the discrete choice likelihood and obtain parameter estimates. It's important to realize that this is just a device for obtaining parameter estimates. There is no survival function interpretation for the results.</p>
+<p>For example, suppose we have two subjects making choices. Subject 1 has a choice set {A, B, C} and subject 2 has a choice set {B, C, D}. Predictors <span class="style8">x1</span> and <span class="style8">x2</span> provide information about the choices and/or subjects. Suppose subject 1 chooses A and subject 2 chooses C. To determine how predictors <span class="style8">x1</span> and <span class="style8">x2</span> influence these choices we fit a discrete choice model in which we  organize the data as shown in Table 4.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=400 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 4 &nbsp;</strong> Data organization for fitting the discrete choice model</td>
+  </tr>
+</table>
+<table width="500" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>ID</strong></div></td>
+    <td><div align="center"><strong>Subject</strong></div></td>
+    <td><div align="center"><strong>Options</strong></div></td>
+    <td><div align="center"><strong>x1</strong></div></td>
+    <td><div align="center"><strong>x2</strong></div></td>
+    <td><div align="center"><strong>Choose</strong></div></td>
+    <td><div align="center"><strong>Bout</strong></div></td>
+    <td><div align="center"><strong>Time</strong></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">A</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">10</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">B</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">20</div></td>
+    <td ><div align="center">0</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">2</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">3</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">C</div></td>
+    <td ><div align="center">3</div></td>
+    <td ><div align="center">25</div></td>
+    <td ><div align="center">0</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">2</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">4</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">B </div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">20</div></td>
+    <td ><div align="center">0</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">2</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">5</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">C</div></td>
+    <td ><div align="center">3</div></td>
+    <td ><div align="center">25</div></td>
+    <td ><div align="center">1</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">6</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">D</div></td>
+    <td ><div align="center">4</div></td>
+    <td ><div align="center">27</div></td>
+    <td ><div align="center">0</div></td>
+    <td ><div align="center">2</div></td>
+    <td ><div align="center">2</div></td>
+  </tr>
+</table>
+<p>The variable <span class="style8">Choose</span> indicates the option that was selected  by the subject, <span class="style8">Choose</span> = 1, and the options that were rejected, <span class="style8">Choose</span> = 0. This variable plays the role of  the censor variable in survival analysis. The option that is chosen is assigned <span class="style8">Time</span> = 1, while all the  options not selected are assigned <span class="style8">Time</span> = 2. This forces all of the remaining choices to be in the risk set at the &quot;time&quot; the choice was made. To ensure that the probabilities and risk sets are calculated separately by subject, we make each subject a stratum here denoted by the variable <span class="style8">Bout</span>. This discrete choice model can be fit with the <span class="style1">coxph</span> function of the <span class="style19">survival</span> package as follows.</p>
+<blockquote>
+  <p class="style11">coxph(Surv(Time, Choose) ~ x1 + x2 + strata(Bout))</p>
+</blockquote>
+<p>A paper that introduces discrete choice modeling to ecologists is Cooper and Millspaugh (1999).</p>
+<h2><a name="references" id="references"></a>Cited references</h2>
+<ul>
+  <li>Cooper, A. B. and J. J. Millspaugh. 1999. The application of discrete choice models to wildlife resource selection studies. <em>Ecology</em> <strong>80</strong>: 566&ndash;575.</li>
+  <li>Yee, T. W. 2010. The VGAM package for categorical data analysis.<em> Journal of Statistical Software</em> <strong>32</strong>(10): 1&ndash;34. URL http://www.jstatsoft.org/v32/i10/.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 21, 2012<br>
+      URL: <a href="lecture39.htm#lecture39" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture39.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

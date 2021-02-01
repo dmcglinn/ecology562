@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 4&mdash;Wednesday, January 18, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture4" id="lecture4"></a>Lecture 4&mdash;Wednesday, January 18, 2012</h1>
+<h3>Topics</h3>
+<ul>
+  <li><a href="lecture4.htm#normal">The normal probability model in ordinary linear regression</a>
+    <ul>
+      <li><a href="lecture4.htm#signal">The signal plus noise interpretation of ordinary regression</a></li>
+      <li><a href="lecture4.htm#generating">The data-generating mechanism interpretation of ordinary regression</a></li>
+    </ul>
+  </li>
+  <li> <a href="lecture4.htm#statistical">Statistical tests in ordinary linear regression</a>
+    <ul>
+      <li><a href="lecture4.htm#summary">The summary table</a></li>
+      <li><a href="lecture4.htm#ANOVA">The ANOVA table</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture4.htm#interaction">The ANOVA and summary tables for an interaction model</a>
+    <ul>
+      <li><a href="lecture4.htm#intanova">The ANOVA table for the interaction model</a></li>
+      <li><a href="lecture4.htm#output">Using the ANOVA output</a></li>
+      <li><a href="lecture4.htm#intsummary">The summary table for the interaction model</a>
+        <ul>
+          <li><a href="lecture4.htm#slopes">Tests of slopes</a></li>
+          <li><a href="lecture4.htm#intercepts">Tests of intercepts</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="lecture4.htm#omnibus">An omnibus test for regression</a></li>
+  <li><a href="lecture4.htm#rcode">R code</a></li>
+</ul>
+<h3>Terminology </h3>
+<ul>
+  <li><a href="lecture4.htm#ANOVA">ANOVA table</a></li>
+  <li><a href="lecture4.htm#generating">data-generating mechanism</a></li>
+  <li><a href="lecture4.htm#Ftest">F-test</a></li>
+  <li><a href="lecture4.htm#summary">summary table</a></li>
+  <li><a href="lecture4.htm#summary">t-test</a></li>
+</ul>
+<h2><a name="normal" id="normal"></a>The normal probability model in ordinary linear regression</h2>
+<p>In ordinary regression we use ordinary least squares to obtain  estimates of the model parameters. If we wish to extend the results beyond the sample at hand, to obtain statistical tests and confidence intervals for the model parameters in the population from which the sample was taken, we need to make an additional assumption about the distribution of the response variable. Typically we assume the response variable has a normal distribution whose mean is given by the regression equation. This assumption can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture4/normalmodel.gif" width="123" height="67" alt="normal model"></p>
+<p>The first statement is shorthand notation for saying that for observation <em>i</em> the response <em>Y</em> is normally distributed with mean &mu; and variance &sigma;<sup>2</sup>. The mean can be different for different observations (and is given by the regression equation) but the variance is the same for all observations. We can combine these two statements and write the  simple linear regression model  as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture4/conditionalmean.gif" width="245" height="37" alt="conditional mean"></p>
+<p>The vertical bar is the usual notation for conditional probability. Thus conditional on the value of <em>x</em>, <em>Y</em> has a normal distribution with  mean &beta;<sub>0</sub> + &beta;<sub>1</sub><em>x</em> and variance &sigma;<sup>2</sup>.</p>
+<p>Having assumed that the response has a normal distribution, statistical theory tells us that both the intercept and slope, when estimated by least squares, will also have normal distributions and we can even derive a formula for their variances. This result becomes the basis for the statistical tests that appear in the summary tables of regression models. Because &sigma;<sup>2</sup> is unknown and has to be estimated too, the actual distribution of the regression parameters (at least for small sample sizes) is a <em>t</em>-distribution rather than a normal distribution. </p>
+<p>The normality assumption makes possible some new  interpretations of the regression model: the signal plus noise interpretation and the data-generating mechanism interpretation.</p>
+<h3><a name="signal"></a>The signal plus noise interpretation of ordinary regression</h3>
+<p>Least squares makes no assumption about an underlying probability model. Least squares finds the values of &beta;<sub>0</sub> and &beta;<sub>1</sub> that minimize the error we make when we use the model prediction, &beta;<sub>0</sub> + &beta;<sub>1</sub>x<sub>i</sub>, instead of the actual data value y<sub>i</sub>. Formally, least squares minimizes the sum of squared errors, SSE.</p>
+<p align="center"><img src="../../images/lectures/lecture4/SSE.gif" width="225" height="58" alt="SSE"></p>
+<p>The implication from ordinary least squares is that the response variable can be viewed as a signal (the regression line) contaminated by noise. The signal plus noise view of regression can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture4/signalnoise.gif" width="163" height="53" alt="signal noise"></p>
+<p>Typically the x<sub>i</sub> are viewed as being fixed (measured without error) and only the y<sub>i</sub> and &epsilon;<sub>i</sub> are random. Choosing a probability model for &epsilon;<sub>i</sub> automatically gives us a probability model for y<sub>i</sub>. </p>
+<p>According to the signal plus noise formulation least squares tries to find the values of &beta;<sub>0</sub> and &beta;<sub>1</sub> that minimize <img src="../../images/lectures/lecture4/SSE2.gif" alt="SSE2" width="103" height="58" align="absmiddle">, the sum of the  &quot;squared errors&quot;. Because  the errors are squared,  positive and negative deviations from the line are treated as being equally important. Consequently the only reasonable probability distributions for the errors are symmetric ones, making the normal distribution  an obvious choice. From the formula for the normal probability density, if the response Y<sub>i</sub> is  normally distributed with variance &sigma;<sup>2</sup> and a mean given by the regression line. </p>
+<p align="center"><img src="../../images/lectures/lecture4/normaldist2.gif" width="175" height="37" alt="normal distribution"></p>
+<p>then it follows that the errors are normally distributed with mean 0, </p>
+<p align="center"><img src="../../images/lectures/lecture4/errordistribution.gif" width="118" height="35" alt="error distribution"></p>
+<p>So a completely equivalent way of writing the normal probability model for the regression problem is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture4/errormodel.gif" width="142" height="67" alt="error model"></p>
+<h3><a name="generating" id="generating"></a>The data-generating mechanism interpretation of ordinary regression</h3>
+<p> Fig. 1 illustrates a second way of visualizing the role that the normal distribution plays in ordinary regression.  Using the signal plus noise interpretation and assuming <img src="../../images/lectures/lecture4/normalerrors.gif" width="113" height="35" align="absmiddle"> I generated observations of the form <img src="../../images/lectures/lecture4/linearmodel.gif" alt="linear model" width="128" height="27" align="absmiddle"> and then used ordinary least squares to estimate the regression line <img src="../../images/lectures/lecture4/estregmodel.gif" alt="estimated regression" width="72" height="33" align="absmiddle">&nbsp;. Fig. 1 displays the raw data as well as the regression line that was fit to those data.</p>
+<p align="center"><img src="../../images/lectures/lecture4/fig1.png" width="450" height="290" alt="fig. 1"></p>
+<p align="center" class="styleArial"><strong>Fig. 1</strong> &nbsp;The normal distribution as a data-generating mechanism. <a href="../../notes/lecture4&#32;Rcode.txt">R code for Fig. 1</a></p>
+<p> The estimated normal error distributions at four different locations are shown. Each normal distribution is centered on the regression line. The data values at these locations are the points that appear to just overlap the bottom edges (left sides) of the individual normal distributions. The estimated errors, denoted e<sub>i</sub>, are the vertical distances of  these individual points from the plotted regression line. I've drawn the normal distributions so that they extend &plusmn; 3 standard deviations above and below the regression line. (The pink normal curve extends &plusmn; 2 standard deviations with the gray tails then extending out the remaining 1 standard deviation.) </p>
+<p>Instead of thinking of the normal curves as   error distributions, we can think of them as  <span class="style8">data generating mechanisms</span>. At each point along the regression line in Fig. 1, the normal curve centered at that point gives the likely locations of data values for that specific value of <em>x</em> according to our model. Recall that  95% of the values of a normal distribution fall within &plusmn; 2 standard deviations of the mean while nearly all of the observations (approximately 99.9%) fall within &plusmn; 3 standard deviations of the mean. The four selected data values associated with the four displayed normal curves are all  well within &plusmn; 2 standard deviations of the regression line. Thus they could easily have been generated by the model.</p>
+<p>When we think of the probability model as a   data-generating mechanism, it immediately suggests a way to generalize ordinary linear regression: replace the normal curves by some other probability distribution and think of the new probability models as the data generating mechanisms. On Friday we'll see why we might want to do this for the data set we've been analyzing and starting next week we'll begin this task in earnest.</p>
+<h2><a name="statistical"></a>Statistical tests in ordinary linear regression</h2>
+<p>I refit the various regression models we considered for the rikz data set in <a href="lecture3.htm">lecture 3</a>.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table('ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style10"  style="padding-left: 30px; text-indent:-30px">apply(rikz[,2:76], 1, function(x) sum(x&gt;0)) -&gt; rikz$richness</div>
+<div class="style10"  style="padding-left: 30px; text-indent:-30px">lm(richness~NAP, data=rikz) -&gt; mod1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lm(richness~NAP + factor(week), data=rikz) -&gt; mod2</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lm(richness~NAP*factor(week), data=rikz) -&gt; mod3</div> 
+
+
+<p>We've seen that statistical tests for the fitted model are displayed in a summary table (obtained using the R <span class="style1">summary</span> function on the model) and in an ANOVA table (obtained using the R <span class="style1">anova</span> function on the model). We  investigate each of these in turn.</p>
+<h3><a name="summary"></a>The summary table</h3>
+<p>The R <span class="style8">summary table</span> reports  <span class="style8"><em>t</em>-statistics</span> and their associated two-tailed hypothesis tests of whether or not a given coefficient is equal to zero. Each test is a regressor added-last test. It compares a regression model with <em>q</em> parameters (where the intercept is one of the <em>q</em> parameters) to a regression model with only <em>q</em> &ndash; 1 parameters obtained by dropping the parameter being tested from the model. We start  with the summary table for <span class="style11">mod1</span>, a model in which NAP is the only predictor of the mean.</p>
+<p align="center"><img src="../../images/lectures/lecture4/mod1.gif" width="132" height="27" alt="mod1"></p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(mod1)</div>
+<span class="style24">Call:<br>
+  lm(formula = richness ~ NAP, data = rikz)</span>
+<p><span class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -5.0675 -2.7607 -0.8029&nbsp; 1.3534 13.8723 </span>
+<p><span class="style24">Coefficients:<br>
+  </span><span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  (Intercept)&nbsp;&nbsp; 6.6857&nbsp;&nbsp;&nbsp;&nbsp; 0.6578&nbsp; 10.164 5.25e-13 ***<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.8669&nbsp;&nbsp;&nbsp;&nbsp; 0.6307&nbsp; -4.545 4.42e-05 ***</span><span class="style24"><br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span class="style24">Residual standard error: 4.16 on 43 degrees of freedom<br>
+  Multiple R-squared: 0.3245,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.3088 <br>
+  F-statistic: 20.66 on 1 and 43 DF,&nbsp; p-value: 4.418e-05</span>
+<p>The highlighted line labeled &quot;NAP&quot; in the summary table tests the following hypothesis about the  model.</p>
+<blockquote>
+  <p>H<sub>0</sub>: &beta;<sub>1</sub> = 0<br>
+    H<sub>1</sub>: &beta;<sub>1</sub> &ne; 0
+  </p>
+</blockquote>
+<p>This is a test of whether the mean response is linearly related to NAP. Formally it compares a model with a  slope and intercept to a model with only an intercept and tests whether  the slope is equal to zero. If we fail to reject this hypothesis then  NAP can be dropped from the model. </p>
+<p>The line labeled &quot;(Intercept)&quot; in the highlighted output tests the following hypothesis.</p>
+<blockquote>
+  <p>H<sub>0</sub>: &beta;<sub>0</sub> = 0<br>
+    H<sub>1</sub>: &beta;<sub>0</sub> &ne; 0 </p>
+</blockquote>
+<p>Formally this compares a model with a  slope and an intercept to a model with just a slope (and no intercept, i.e., an intercept = 0) and asks whether we need an intercept. Graphically it tests whether the line passes through the origin. This is usually a useless test. For many data sets the origin is a point outside the range of the data making it just a fitting a constant with no practical interpretation. It turns out for the rikz data set that NAP = 0 is within the range of the data so the test of the intercept here isn't meaningless, but it is still probably uninteresting.</p>
+<h3><a name="ANOVA"></a>The ANOVA table</h3>
+<p>The <span class="style8">ANOVA table</span> compares a  series of nested models obtained by  adding  predictors one at a time to a starting model with only an intercept. Predictor here refers to a single variable so if the predictor is a categorical variable represented by dummy regressors in the model, we add the entire set of dummy regressors associated with that categorical variable. Two models are nested if the bigger model (the one with more terms) can be reduced to the smaller model (the one with fewer terms) by setting parameters in the bigger model equal to zero.  </p>
+<p><a name="Ftest"></a>R lists the models in an ANOVA table and tests them in a sequential fashion with the simplest model tested listed at the top of the output and the most complicated model listed at the bottom. Tests are based on <span class="style8"><em>F</em>-statistics</span> that  test  whether all the coefficients associated with that predictor are equal to zero. The <em>F</em>-statistic is a ratio: the average amount of variance explained by adding the predictor to the model (model mean squared) divided by the average amount of variance left unexplained (mean squared error)  estimated using the most complicated model that was considered. Because the mean squared error is assumed to be just random noise, we are assessing whether the variance reduction obtained by adding the predictor is better than we'd get by chance. Shown below is the ANOVA table for <span class="style11">mod1</span>, a model in which NAP is the only predictor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod1)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: richness<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  </span><span class="style25">NAP&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;1 357.53&nbsp; 357.53&nbsp;&nbsp; 20.66 4.418e-05</span><span class="style24"> ***<br>
+  Residuals 43 744.12&nbsp;&nbsp; 17.31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 <br>
+  </span>
+<p>Only one model is shown and tested in the output. An additional model not shown is always implicit in these tables and that's a model that contains only an intercept. According to the output the amount of variability that was accounted for by adding NAP to the intercept-only model is 357.53. Since only one parameter was added, the amount of variability explained per parameter added is also 357.53. The amount of variability that remains is given in the line labeled &quot;Residuals&quot; and is reported to be 744.12. This amount of variability is spread out over 43 dimensions, so the average amount of variability is 744.12 divided by 43 or 17.31. If we compare the amount of variability accounted for by the one parameter due to NAP, 357.53, to the average amount of variability remaining, 17.31, the ratio is quite large yielding the reported <em>F</em>-statistic of 20.66. The <em>F</em>-statistic can then be compared to an <em>F</em>-distribution with 1 and 43 degrees of freedom. Based on the reported <em>p</em>-value the <em>F</em>-statistic is statistically significant.</p>
+<p>For the simple case of a regression model with a single continuous predictor, the <em>p</em>-value of the <em>F</em>-test and the <em>p</em>-value for the <em>t</em>-test that the slope is equal to zero are exactly the same. The equivalence follows from the mathematical identity</p>
+<p align="center"><img src="../../images/lectures/lecture4/Ftrelationship.gif" width="108" height="32" alt="F versus t"></p>
+<p>We can verify this by extracting the <em>t</em>-statistic from the summary table and squaring it. The summary table is stored in the <span class="style22">coefficients</span> component of the <span class="style1">summary</span> object produced by R. This is a list object and the components can be accessed with the $ notation we've used previously.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(summary(mod1))</div>
+
+<span class="style24">  &nbsp;[1] &quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;terms&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;residuals&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;coefficients&quot; <br>
+  &nbsp;[5] &quot;aliased&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;sigma&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;df&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;r.squared&quot;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[9] &quot;adj.r.squared&quot; &quot;fstatistic&quot;&nbsp;&nbsp;&nbsp; &quot;cov.unscaled&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(mod1)$coefficients</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error&nbsp;&nbsp; t value&nbsp;&nbsp;&nbsp;&nbsp; Pr(&gt;|t|)<br>
+  (Intercept)&nbsp; 6.685662&nbsp; 0.6577579 10.164320 5.251419e-13<br>
+  NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.866853&nbsp; 0.6307186 -4.545376 4.417521e-05</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(mod1)$coefficients[2,3]</div>
+<span class="style24">  [1] -4.545376</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(mod1)$coefficients[2,3]^2</div>
+ <span class="style25"> [1] 20.66044</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod1)[1,4]</div>
+<span class="style25">[1] 20.66044</span>
+<h2><a name="interaction"></a>The ANOVA and summary tables for an interaction model</h2>
+<p>We next consider the interaction model <span class="style11">mod3</span> that was fit in R as follows.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lm(richness~NAP*factor(week), data=rikz) -&gt; mod3</div> 
+
+
+<p>Because week is a categorical variable with four levels, it is represented in the regression model with three dummy variables (as was discussed in <a href="lecture2.htm#categorical">lecture 2</a> and <a href="lecture3.htm#adding">lecture 3</a>). The regression model being fit here is the following one.</p>
+<p align="center"><img src="../../images/lectures/lecture4/interaction.gif" width="657" height="27" alt="interaction"></p>
+<h3><a name="intanova"></a>ANOVA table for the interaction model</h3>
+<p>The output from the <span class="style1">anova</span> function for this model is displayed below. I've added a row number in front of each row of the table for  reference.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod3)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Response: richness<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Df Sum Sq Mean Sq F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  </span><span class="style25">1 </span><span class="style24">NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 357.53&nbsp; 357.53 59.9605 2.967e-09 ***<br>
+  </span><span class="style25">2 </span><span class="style24">factor(week)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 387.11&nbsp; 129.04 21.6406 2.896e-08 ***<br>
+  </span><span class="style25">3 </span><span class="style24">NAP:factor(week)&nbsp; 3 136.38&nbsp;&nbsp; 45.46&nbsp; 7.6241 0.0004323 ***<br>
+  &nbsp;&nbsp;Residuals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37 220.62&nbsp;&nbsp;&nbsp; 5.96&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+  
+<p>There are three different models represented in the table: the interaction model in row 3, the additive model in row 2, and the NAP-only model in row 1. Not shown but used in the reported tests is the intercept-only model. These models form  a nested sequence of models with models becoming more complicated as we move down the rows. Models listed lower in the table can be reduced to models listed higher in the table by setting various regression parameters equal to zero. </p>
+<ol>
+  <li>The interaction model can be reduced to the additive model by setting &beta;<sub>5</sub> = &beta;<sub>6</sub> = &beta;<sub>7</sub> = 0 in the interaction model.</li>
+  <li>The additive model can be reduced to the NAP-only model by setting &beta;<sub>2</sub> = &beta;<sub>3</sub> = &beta;<sub>4</sub> = 0 in the additive model.</li>
+  <li>The NAP-only model can be reduced to the intercept-only model by setting &beta;<sub>1</sub> = 0 in the NAP-only model.</li>
+</ol>
+<p>Tests of whether these reductions should be performed are carried out in rows 3,  2, and  1 of the ANOVA table respectively. Each tests whether the parameters in question are  equal to zero versus the alternative that at least one or more of them is not zero. Table 1 summarizes these relationships.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 1 &nbsp;</strong> Tests carried out by  <span class="style11">anova(mod3)</span></td>
+  </tr>
+</table>
+<div align="center">
+  <table width="675" border="1" align="center" cellpadding=2 cellspacing=0>
+ <thead>
+      <tr  bgcolor="#F1D2D8">
+        <td width="48"><div align="center">Row of table</div></td>
+    <td width="54"><div align="center">Model tested</div></td>
+    <td width="178">Terms in model</td>
+    <td width="125">Test of &hellip;</td>
+    <td width="127">Hypothesis</td>
+    <td width="105"><div align="center"> Model comparison</div></td>
+  </tr></thead>
+  <tr>
+    <td><div align="center">&ndash;</div></td>
+    <td><div align="center">mod0</div></td>
+    <td>1</td>
+    <td>overall mean</td>
+    <td>&beta;<sub>0</sub> = 0</td>
+    <td><div align="center">&ndash;</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1</div></td>
+    <td><div align="center">mod1</div></td>
+    <td>1 + NAP</td>
+    <td>NAP </td>
+    <td>&beta;<sub>1</sub> = 0</td>
+    <td><div align="center">mod1 vs mod0</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">2</div></td>
+    <td><div align="center">mod2</div></td>
+    <td>1 + NAP + factor(week)</td>
+    <td>factor(week)</td>
+    <td>&beta;<sub>2</sub> = &beta;<sub>3</sub> = &beta;<sub>4</sub> = 0</td>
+    <td><div align="center">mod2 vs mod1</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">3</div></td>
+    <td><div align="center">mod3</div></td>
+    <td>1 + NAP + factor(week) + NAP:factor(week)</td>
+    <td>NAP:factor(week)</td>
+    <td>&beta;<sub>5</sub> = &beta;<sub>6</sub> = &beta;<sub>7</sub> = 0</td>
+    <td><div align="center">mod3 vs mod2</div></td>
+  </tr>
+</table></div>
+<p>The <span class="style1">anova</span> function can also be used to compare two nested models directly. For example,  the third line of the table generated by <span class="style11">anova(mod3)</span> can be obtained by comparing models <span class="style11">mod3</span> with <span class="style11">mod2</span> with the <span class="style1">anova</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mod2,mod3)</div>
+<span class="style24">Analysis of Variance Table</span>
+<p><span class="style24">Model 1: richness ~ NAP + factor(week)<br>
+  Model 2: richness ~ NAP * factor(week)<br>
+  &nbsp; Res.Df&nbsp;&nbsp;&nbsp; RSS Df Sum of Sq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F&nbsp;&nbsp; &nbsp;Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+  1&nbsp;&nbsp;&nbsp;&nbsp; 40 357.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; 37 220.62&nbsp; 3&nbsp;&nbsp;&nbsp; 136.38 7.6241 0.0004323 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>The  test computes the average change in the error sum of squares when the three interaction regressors are added to <span class="style11">mod2</span> and compares it with the average residual squared error in the bigger model <span class="style11">mod3</span>. The reported results are identical to what is reported in row three of the output produced by <span class="style11">anova(mod3)</span>. </p>
+<p>Row 3 is the only row of the <span class="style11">anova(mod3)</span> output that we can match by comparing two models in this way. When we use the <span class="style1">anova</span> function on two nested models it always uses the average residual squared error of the bigger of the two models as the denominator of the <em>F</em>-test, because this is the best estimate of residual noise that it has at its disposal. As a result <span class="style11">anova(mod1, mod2)</span>  uses the average residual squared error from <span class="style11">mod2</span>. On the other hand all the tests carried out by <span class="style11">anova(mod3)</span> use the average residual squared error from <span class="style11">mod3</span>.  As a result the <em>F</em>-statistics we get will be different.</p>
+<h3><a name="output"></a>Using the ANOVA output</h3>
+<p>The most sensible way to read the output from <span class="style11">anova(mod3)</span> is from the bottom up. Having decided to fit an interaction model at all we should probably test for the presence of an interaction first. If the interaction is significant in <span class="style11">mod3</span> we would   carry out no further tests and choose the interaction model as the final model. The usual recommendation is that if an interaction is  statistically significant then all of the individual terms that comprise that interaction should also be retained in the model  regardless of their  statistical significance. For instance, in the above ANOVA output the interaction between NAP and week is statistically significant. Consequently we should also keep the regression terms NAP and <span class="style11">factor(week)</span> because they make up the interaction.</p>
+<p>The component variables that make up an interaction are sometimes referred to as  main effects. Tests of the main effects  are not very interpretable when an interaction containing them is also present in the model. Suppose it was the case that the <span class="style11">factor(week):NAP</span> interaction was significant, but the <em>p</em>-value reported in row 2 of the ANOVA table was large suggesting that <span class="style11">factor(week</span>) by itself is not significant. Because the interaction is significant,  two models we might  compare are  a model containing the interaction along with both main effects (<span class="style11">mod3</span> from before) and a model containing the interaction and only one of the main effects (model 2.5 shown below).</p>
+<p>model 3: <img src="../../images/lectures/lecture4/interaction.gif" alt="interaction" width="657" height="27" align="absmiddle"></p>
+<p>model 2.5: <img src="../../images/lectures/lecture4/model2pt5.gif" alt="model 2.5" width="483" height="27" align="absmiddle"></p>
+<p>Model 2.5  doesn't appear in the output from <span class="style11">anova(mod3)</span>. It also doesn't make much sense. Graphically model 2.5 corresponds to four lines with  different slopes  that all happen to have the same intercept. The chance that four lines estimated from data all intersect in a single point is pretty small and  it's hard to imagine it  generalizing to new data.   Still, there are cases where carrying out such a test might be reasonable. For example, if the value NAP = 0 was of special interest, then comparing the mean richness values there might make sense.</p>
+<h3><a name="intsummary"></a>The summary table for the interaction model</h3>
+<p>The summary table for <span class="style11">mod3</span> is shown below. I've added a row number in front of each row of the table for  reference.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(mod3)$coefficients)</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value&nbsp; Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+</span><span class="style25">1 </span><span class="style24">(Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11.405614&nbsp;&nbsp; 0.777300 14.6734 &lt; 2.2e-16 ***<br>
+</span><span class="style25">2 </span><span class="style24">NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.900156&nbsp;&nbsp; 0.869998 -2.1841 0.0353693 *&nbsp; <br>
+</span><span class="style25">3 </span><span class="style24">factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; -8.040293&nbsp;&nbsp; 1.055194 -7.6197 4.304e-09 ***<br>
+</span><span class="style25">4 </span><span class="style24">factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; -6.371540&nbsp;&nbsp; 1.031684 -6.1759 3.630e-07 ***<br>
+</span><span class="style25">5 </span><span class="style24">factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.377214&nbsp;&nbsp; 1.600361&nbsp; 0.8606 0.3950204&nbsp;&nbsp;&nbsp; <br>
+</span><span class="style25">6 </span><span class="style24">NAP:factor(week)2&nbsp; 0.425579&nbsp;&nbsp; 1.120079&nbsp; 0.3800 0.7061515&nbsp;&nbsp;&nbsp; <br>
+</span><span class="style25">7 </span><span class="style24">NAP:factor(week)3 -0.013442&nbsp;&nbsp; 1.042462 -0.0129 0.9897816&nbsp;&nbsp;&nbsp; <br>
+</span><span class="style25">8 </span><span class="style24">NAP:factor(week)4 -7.000022&nbsp;&nbsp; 1.687214 -4.1489 0.0001877 ***</span>
+  <p>Once again, the model corresponding to this output is the following.</p>
+  <p align="center"><img src="../../images/lectures/lecture4/interaction.gif" width="657" height="27" alt="interaction"></p>
+  <p>The   summary table output can be split into  tests of slopes and  tests of intercepts. </p>
+  <p><strong><a name="slopes" id="slopes"></a>Tests of slopes</strong></p>
+  <p>Having discovered from the ANOVA table that the interaction of NAP and factor(week) is significant we  concluded that the relationship between   richness and  NAP varies by week, i.e., the slope of the line representing the relationship is different in different  weeks. The next obvious question is which of the weeks are driving this result? Rows 2,   6 7, and 8 of the summary table partially address this question as Table 2 explains.</p>
+  <table border=0 align="center" cellpadding=2 cellspacing=2>
+    <tr>
+      <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 2 &nbsp;</strong> Tests of slopes carried out in the R summary table</td>
+    </tr>
+</table>
+  <div align="center">
+    <table width="695" border="1" align="center" cellpadding=2 cellspacing=0>
+      <thead>
+        <tr  bgcolor="#F1D2D8">
+          <td width="39"><div align="center">Week</div></td>
+          <td width="57"><div align="center">Slope</div></td>
+          <td width="52"><div align="center">Row of table</div></td>
+          <td width="77">Hypothesis</td>
+          <td width="170">Interpretation of test</td>
+          <td width="60"><em>p</em>-value</td>
+          <td width="196">Conclusion</td>
+        </tr>
+      </thead>
+      <tr>
+        <td><div align="center">1</div></td>
+        <td><div align="center">&beta;<sub>1</sub></div></td>
+        <td><div align="center">2</div></td>
+        <td><div align="center">&beta;<sub>1</sub> = 0</div></td>
+        <td>Is slope in week 1  zero?</td>
+        <td><em>p</em> &lt; .05</td>
+        <td>Slope in week 1 is significantly different from zero</td>
+      </tr>
+      <tr>
+        <td><div align="center">2</div></td>
+        <td><div align="center">&beta;<sub>1</sub> + &beta;<sub>5</sub></div></td>
+        <td><div align="center">6</div></td>
+        <td><div align="center">&beta;<sub>5</sub> = 0</div></td>
+        <td><div align="left">Are the slopes in weeks 1 and  2  equal?</div></td>
+        <td><em>p</em> = .71</td>
+        <td>Slopes in weeks 1 and 2 <u>are not</u> significantly different</td>
+      </tr>
+      <tr>
+        <td><div align="center">3</div></td>
+        <td><div align="center">&beta;<sub>1</sub> + &beta;<sub>6</sub></div></td>
+        <td><div align="center">7</div></td>
+        <td><div align="center">&beta;<sub>6</sub> = 0</div></td>
+        <td><div align="left">Are the slopes in weeks 1 and  3  equal?</div></td>
+        <td><em>p</em> = .99</td>
+        <td>Slopes in weeks 1 and 3 <u>are not</u> significantly different</td>
+      </tr>
+      <tr>
+        <td><div align="center">4</div></td>
+        <td><div align="center">&beta;<sub>1</sub> + &beta;<sub>7</sub></div></td>
+        <td><div align="center">8</div></td>
+        <td><div align="center">&beta;<sub>7</sub> = 0</div></td>
+        <td><div align="left">Are the slopes in weeks 1 and  4  equal</div></td>
+        <td><em>p</em> &lt; .001</td>
+        <td>Slopes in weeks 1 and 4 <u>are</u> significantly different</td>
+      </tr>
+    </table>
+  </div>
+  <p>So, the dummy coding used in the model has allowed us to specifically carry out some tests of interest. The coefficients of the three interaction terms individually test whether the slopes in weeks 2, 3, and 4 are different from the slope in week 1. From the output we conclude that the slopes in weeks 1 and 4 are different, but  the slopes in weeks 1 and 2 and in weeks 1 and 3 are not. To make other comparisons we would need to refit the model using a different reference group or use the procedure that will be discussed in lecture 5.</p>
+  <p><strong><a name="intercepts" id="intercepts"></a>Tests of intercepts</strong></p>
+  <p>The summary table can also be used to carry out various tests about the intercepts. Although these tests are not especially interesting, they are described in Table 3.</p>
+  <table border=0 align="center" cellpadding=2 cellspacing=2>
+    <tr>
+      <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 3 &nbsp;</strong> Tests of intercepts carried out in the R summary table</td>
+    </tr>
+  </table>
+<div align="center">
+    <table width="695" border="1" align="center" cellpadding=2 cellspacing=0>
+      <thead>
+        <tr  bgcolor="#F1D2D8">
+          <td width="39"><div align="center">Week</div></td>
+          <td width="57"><div align="center">Intercept</div></td>
+          <td width="52"><div align="center">Row of table</div></td>
+          <td width="77">Hypothesis</td>
+          <td width="170">Interpretation of test</td>
+          <td width="60"><em>p</em>-value</td>
+          <td width="196">Conclusion</td>
+        </tr>
+      </thead>
+      <tr>
+        <td><div align="center">1</div></td>
+        <td><div align="center">&beta;<sub>0</sub></div></td>
+        <td><div align="center">1</div></td>
+        <td><div align="center">&beta;<sub>0</sub> = 0</div></td>
+        <td>Is the mean richness zero when NAP = 0?</td>
+        <td><em>p</em> &lt; .05</td>
+        <td>Intercept in week 1 is significantly different from zero</td>
+      </tr>
+      <tr>
+        <td><div align="center">2</div></td>
+        <td><div align="center">&beta;<sub>0</sub> + &beta;<sub>2</sub></div></td>
+        <td><div align="center">3</div></td>
+        <td><div align="center">&beta;<sub>2</sub> = 0</div></td>
+        <td><div align="left">Is the mean richness  when NAP = 0 the same in weeks 1 and 2?</div></td>
+        <td><em>p</em> &lt; .05</td>
+        <td>The intercepts in weeks 1 and 2  are significantly different</td>
+      </tr>
+      <tr>
+        <td><div align="center">3</div></td>
+        <td><div align="center">&beta;<sub>0</sub> + &beta;<sub>3</sub></div></td>
+        <td><div align="center">4</div></td>
+        <td><div align="center">&beta;<sub>3</sub> = 0</div></td>
+        <td><div align="left">Is the mean richness  when NAP = 0 the same in weeks 1 and 3?</div></td>
+        <td><em>p</em> &lt; .05</td>
+        <td>The intercepts in weeks 1 and 3  are significantly different</td>
+      </tr>
+      <tr>
+        <td><div align="center">4</div></td>
+        <td><div align="center">&beta;<sub>0</sub> + &beta;<sub>4</sub></div></td>
+        <td><div align="center">5</div></td>
+        <td><div align="center">&beta;<sub>4</sub> = 0</div></td>
+        <td><div align="left">Is the mean richness  when NAP = 0 the same in weeks 1 and 4?</div></td>
+        <td><em>p</em> = .40</td>
+        <td>The intercepts in weeks 1 and 4  are not significantly different</td>
+      </tr>
+    </table>
+  </div>
+  <h2><a name="omnibus"></a>An omnibus test for the regression</h2>
+  <p>One additional statistical test appears in the  output from regression packages. In  R  this test appears at the very bottom of the output from the <span class="style1">summary</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(mod3)</div>
+  <span class="style24">Call:<br>
+    lm(formula = richness ~ NAP * factor(week), data = rikz)</span>
+  <p><span class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+    -6.3022 -0.9442 -0.2946&nbsp; 0.3383&nbsp; 7.7103 </span>
+  <p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+    (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11.40561&nbsp;&nbsp;&nbsp; 0.77730&nbsp; 14.673&nbsp; &lt; 2e-16 ***<br>
+    NAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.90016&nbsp;&nbsp;&nbsp; 0.87000&nbsp; -2.184 0.035369 *&nbsp; <br>
+    factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; -8.04029&nbsp;&nbsp;&nbsp; 1.05519&nbsp; -7.620 4.30e-09 ***<br>
+    factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; -6.37154&nbsp;&nbsp;&nbsp; 1.03168&nbsp; -6.176 3.63e-07 ***<br>
+    factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.37721&nbsp;&nbsp;&nbsp; 1.60036&nbsp;&nbsp; 0.861 0.395020&nbsp;&nbsp;&nbsp; <br>
+    NAP:factor(week)2&nbsp; 0.42558&nbsp;&nbsp;&nbsp; 1.12008&nbsp;&nbsp; 0.380 0.706152&nbsp;&nbsp;&nbsp; <br>
+    NAP:factor(week)3 -0.01344&nbsp;&nbsp;&nbsp; 1.04246&nbsp; -0.013 0.989782&nbsp;&nbsp;&nbsp; <br>
+    NAP:factor(week)4 -7.00002&nbsp;&nbsp;&nbsp; 1.68721&nbsp; -4.149 0.000188 ***<br>
+    ---<br>
+    Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+  <p><span class="style24">Residual standard error: 2.442 on 37 degrees of freedom<br>
+    Multiple R-squared: 0.7997,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.7618 <br>
+    </span><span class="style25">F-statistic: 21.11 on 7 and 37 DF,&nbsp; p-value: 3.935e-11
+    </span>
+<p>The highlighted test is called the omnibus test of the regression. It tests  whether any of the coefficients in the model (other than the intercept) are different from zero. For the interaction model the omnibus test carries out the following hypothesis test.</p>
+<blockquote>
+  <p>H<sub>0</sub>:  &beta;<sub>1</sub> = &beta;<sub>2</sub>  = &beta;<sub>3</sub>  = &beta;<sub>4</sub>  = &beta;<sub>5</sub>  = &beta;<sub>6</sub>  = &beta;<sub>7</sub> =  0<br>
+    H<sub>1</sub>: one or more of the &beta;<sub>i</sub>s are different from zero</p>
+</blockquote>
+<p>Because the reported <em>p</em>-value of this test is small we reject the null hypothesis and conclude that at least one of the regression coefficients is different from zero. In brief then by rejecting the omnibus null hypothesis we can conclude that something is going on in the data set, i.e., at least one of the predictors is linearly related to the response.</p>
+<h2><a name="rcode"></a>R Code</h2>
+<p>The R code used to generate Fig. 1 is <a href="../../notes/lecture4&#32;Rcode.txt">here</a>.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum of the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 20, 2012<br>
+      URL: <a href="lecture4.htm#lecture4" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture4.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

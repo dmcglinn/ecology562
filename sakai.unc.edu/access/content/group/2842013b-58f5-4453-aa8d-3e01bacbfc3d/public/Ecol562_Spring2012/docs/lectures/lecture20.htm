@@ -1,0 +1,843 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 20 (lab 7)&mdash;Friday, February 25, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {	color: #660099;
+	font-weight: bold;
+}
+.style13 {font-size: smaller}
+.style331 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style91 {color: #FF0000; font-weight: bold; }
+.style191 {color: #009900; font-weight: bold; }
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+}
+.style241 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style26 {font-family: "Courier New", Courier, mono}
+.style361 {color: #3333CC;
+	font-weight: bold;
+}
+.style1911 {color: #339933;
+	font-weight: bold;}
+.style12 {	color: #CC0000;
+	font-weight: bold;
+}
+.style171 {	color: #993399;
+	font-weight: bold;
+}
+
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+-->
+
+</style>
+
+</head>
+
+<body>
+<h1 align="center"><a name="lecture20" id="lecture20"></a>Lecture 20 (lab 7)&mdash;Friday, February 25, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture20.htm#revisiting">Revisiting the coral cores data set</a></li>
+  <li><a href="lecture20.htm#mixed">Mixed effects models in R</a></li>
+  <li><a href="lecture20.htm#randomints">The random intercepts model</a>
+    <ul>
+      <li><a href="lecture20.htm#extracting">Extracting parameter estimates from an lme object</a></li>
+      <li><a href="lecture20.htm#obtaining">Obtaining predictions for individual observations</a></li>
+      <li><a href="lecture20.htm#graphing">Graphing the random intercepts model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture20.htm#residual">Adding a residual correlation structure to a mixed effects model</a></li>
+  <li><a href="lecture20.htm#randomslopeints">Random slopes and intercepts model</a></li>
+  <li><a href="lecture20.htm#noints">Random slopes without random intercepts</a></li>
+  <li><a href="lecture20.htm#adding">Adding level-2 predictors to the model</a>
+<ul>
+      <li><a href="lecture20.htm#intreef">Reef type as a predictor of the population intercept</a></li>
+      <li><a href="lecture20.htm#slopereef">Reef type as a predictor of the population slope</a></li>
+      <li><a href="lecture20.htm#intslopereef">Reef type as a predictor of both the population intercept and slope</a>  </li>
+</ul>
+  </li>
+  <li><a href="lecture20.htm#unconmeans">The variance components model</a></li>
+  <li><a href="lecture20.htm#fitting">Fitting mixed effects models with the lme4 package</a></li>
+  <li><a href="lecture20.htm#cited">Cited references</a></li>
+  <li><a href="lecture20.htm#appendix">Appendix: code for Figs. 2, 6, and 8</a></li>
+</ul>
+<h3>R functions and commands demonstrated</h3>
+<ul>
+  
+  <li><a href="lecture20.htm#ACF">ACF</a> (from <span class="style19">nlme</span>) calculates the autocorrelation function for the residuals from an <span class="style102">lme</span> or <span class="style12">gls</span> model  while at the same time accounting for the hierarchical structure of the data. It's advantage over <span class="style12">acf</span> is that it is designed to automatically work with grouped data.</li>
+  <li><a href="lecture20.htm#asnumeric">as.numeric</a> converts a variable's class to numeric. It's useful for obtaining  numerical values for factors and character data.</li>
+  <li><a href="lecture20.htm#detach">detach</a> is used to remove a previously loaded package from memory.</li>
+  <li><a href="lecture20.htm#fixef">fixef</a> (from <span class="style19">nlme</span>) extracts the fixed effects estimates from an <span class="style102">lme</span> object.</li>
+  <li><a href="lecture20.htm#lme">lme</a> (from <span class="style19">nlme</span>) sets up and fits linear mixed effects models.</li>
+  <li><a href="lecture20.htm#fitting">lmer</a> (from <span class="style19">lme4</span>) sets up and fits generalized linear mixed effects models.</li>
+  <li><a href="lecture20.htm#ranef">ranef</a> extracts predictions of the random effects from an <span class="style102">lme</span> model.</li>
+  <li><a href="lecture20.htm#VarCorr">VarCorr</a> (from <span class="style19">nlme</span>) extracts variance components from <span class="style102">lme</span> models.</li>
+</ul>
+<h3>R function options</h3>
+<ul>
+  <li><a href="lecture20.htm#alpha">alpha=</a> (option to <span class="style102">plot</span> when plotting ACF objects) is used to specify the &alpha;-level for confidence bands in plotting an <span class="style102">ACF</span> object.</li>
+  <li><a href="lecture20.htm#fixed">fixed=</a> (argument to <span class="style12">lme</span>) defines the fixed effects portion of a linear mixed effects model.</li>
+  <li><a href="lecture20.htm#key">key=</a> (argument to <span class="style102">xyplot</span> and other <span class="style1911">lattice</span> functions) defines characteristics of the legend of a lattice graph.</li>
+  <li><a href="lecture20.htm#level">level=</a> (argument to <span class="style12">predict</span>) specifies the level at which to compute predictions. The choice <span class="style22">level=0</span> corresponds to the population level.</li>
+  <li><a href="lecture20.htm#method">method=</a> (argument to <span class="style12">lme</span>) sets the estimation method used to obtain parameter estimates. The default setting is &quot;REML&quot;; maximum likelihood          estimates are obtained with <span class="style22">method=&quot;ML&quot;</span>.</li>
+  <li><a href="lecture20.htm#random">random=</a> (argument to <span class="style12">lme</span>) defines  the random effects portion of a linear mixed effects model.</li>
+  <li><a href="lecture20.htm#reml">REML=</a> (argument to <span class="style12">lmer</span>) is used to specify maximum likelihood estimation, <span class="style22">REML=FALSE</span>, or restricted maximum likelihood estimation, the default.</li>
+  <li><a href="lecture20.htm#restype">resType=</a> (option to <span class="style102">ACF</span>) is used to specify the type of residuals to extract for use in calculating the ACF.</li>
+  <li><a href="lecture20.htm#subscripts">subscripts</a> (argument to the panel function of <span class="style102">xyplot</span> and other lattice functions) passes to panel functions the value of the index that identifies the panel that is currently being drawn. </li>
+</ul>
+<h3>R packages used </h3>
+<ul>
+  <li><a href="lecture20.htm#lattice">lattice</a> for panel graph displays of mixed effects models.</li>
+  <li><a href="lecture20.htm#fitting">lme4</a> was used for the function <span class="style102">lmer</span> for fitting generalized linear mixed effects models.</li>
+  
+  <li><a href="lecture20.htm#nlme">nlme</a> was used for the functions <span class="style102">lme</span> and <span class="style102">VarCorr</span> for mixed effects models with a normal random component. </li>
+</ul>
+<h2><a name="revisiting" id="revisiting"></a>Revisiting the coral cores data set</h2>
+<p>The data for today's lecture are the coral extension rates that we previously examined in <a href="lecture17.htm">lecture 17</a>. They consist of the annual growth rings from coral cores extracted from 13 <em>Siderastrea siderea</em> colonies inhabiting the outer (forereef, backreef) and nearshore reefs of the Mesoamerican Barrier Reef System in southern Belize. The R commands from lecture 17 that we used to read in and process the data are listed below.</p>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#load and manipulate data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ext.temp &lt;- read.table( 'ecol 562/coral cores.txt', header=T, sep=',')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ext.rates.temp &lt;- data.frame(rep(ext.temp$Year,14), unlist(ext.temp[,2:15]), rep(names(ext.temp)[2:15], rep(nrow(ext.temp),14)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  names(ext.rates.temp) &lt;- c('Year','Ext.rate','Core')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ext.rates.temp$reef.type &lt;- substr(ext.rates.temp$Core,1,2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  ext.rates &lt;- ext.rates.temp[!is.na(ext.rates.temp$Ext.rate),]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rates2 &lt;- ext.rates[order(ext.rates$Core, ext.rates$Year),]</div>
+<p>The data frame that these commands generate is called <span class="style8">ext.rates2</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">names(ext.rates2)</div>
+<span class="style24">[1] "Core"       "Year"       "Ext.rate"   "reef.type"  "core.means"</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ext.rate2[1:4,]</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;Core Year Ext.rate reef.type core.means<br>
+1 BR.06 2008&nbsp;&nbsp;&nbsp;    0.809        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BR  &nbsp;0.5960875<br>
+2 BR.06 2007    &nbsp;&nbsp;&nbsp;0.740        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BR  &nbsp;0.5960875<br>
+3 BR.06 2006    &nbsp;&nbsp;&nbsp;0.705        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BR  &nbsp;0.5960875<br>
+4 BR.06 2005    &nbsp;&nbsp;&nbsp;0.628        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BR  &nbsp;0.5960875</span>
+<p>This is a structured data  set because although the observational units are the annual growth rings,  the rings were obtained from a random sample of coral cores rather than a random sample of annual  rings. Once a coral core was obtained it automatically brought with it all of the annual rings associated with that coral core. Such data are likely to exhibit observational heterogeneity because we have observations from different corals as well as multiple observations from the same coral core. Observations from the same core are likely to be more similar to each other than they are to observations from different cores. </p>
+<p>In <a href="lecture17.htm#fitting">lecture 17</a>  we fit a separate slopes and intercepts model using dummy variables to indicate the separate cores. We then accounted for temporal correlation in the separate time series of individual coral cores with generalized least squares. Today we replace the separate slopes and intercepts model with  a random intercepts model and a random slopes and intercepts model. Because we are dealing with temporal data we will need to investigate whether an additional correlation model for the residuals is needed beyond the one that is contributed  by the random effects.</p>
+<h2><a name="mixed"></a>Mixed effects models in R</h2>
+<p name="nlme"><a name="nlme"></a>There are two packages in R for fitting multilevel models. The older and more comprehensive package is <span class="style19">nlme</span>, an acronym for <strong>n</strong>on<strong>l</strong>inear <strong>m</strong>ixed <strong>e</strong>ffects models. Its workhorse function is <span class="style102">lme</span> whose limitation is that it only fits normal-based models and is not designed to fit mixed effects models to  data that are nonhierarchical. The newer R package for fitting mixed models is <span class="style19">lme4</span> with its workhorse function <span class="style102">lmer</span>.  The primary syntax differences between the <span class="style102">lme</span> and <span class="style102">lmer</span> functions lie in how the random effects component of the model is specified. The <span class="style19">lme4</span> package fits generalized linear mixed effects regression models such as logistic and Poisson models and permits the inclusion of both hierarchical and crossed random effects. It  currently lacks some of the nonlinear features and correlation functions of <span class="style19">nlme</span>. Because the <span class="style19">lme4</span> package is under active development this situation may change.  </p>
+<p>Because the example we consider today has a normally distributed response, we will focus on the <span class="style19">nlme</span> package. The <span class="style19">lme4</span> package will be considered again  when we discuss generalized linear mixed effects models. The primary reference for the <span class="style19">nlme</span> package is Pinheiro and Bates (2000). A book is currently being written to describe the <span class="style19">lme4</span> package. A preprint of the first five chapters is available <a href="http://lme4.r-forge.r-project.org/book/">here</a>.</p>
+<h2 ><a name="randomints"></a>The random intercepts model </h2>
+<p onMouseOver="MM_openBrWindow('lecture20.htm','','resizable=yes')">From a multilevel perspective, the coral cores data set consists of two levels. There is the annual ring level (level 1) and the core level (level 2). Any regression model that can be fit to a single level-2 unit, the individual core, is called a level-1 regression equation. The level-1 equation is our starting point for fitting a random intercepts model. </p>
+<p onMouseOver="MM_openBrWindow('lecture20.htm','','resizable=yes')">The random intercepts model is the simplest mixed effects model one can fit that still properly accounts for a data set's structure. For these data  the variables that vary within a core are <span class="style8">Ext.rate</span> (the width of an individual ring) and <span class="style8">Year</span> (the time period during which that growth occurred). Thus  the following regression equation could be fit separately to each individual coral core.</p>
+<p align="center"><img src="../../images/lectures/lecture20/level1.gif" width="247" height="30" alt="level1"></p>
+<p>where <img src="../../images/lectures/lecture20/espilsondist.gif" alt="epsilon distribution" width="150" height="37" align="absmiddle">. Here <em>i</em> denotes the coral core and <em>j</em> denotes a specific annual ring within that coral core. This is a level-1 equation. The equation says the width of the rings varies linearly with year. Because both &beta;<sub>0i</sub> and &beta;<sub>1i</sub>  have subscripts <em>i</em>, each can potentially have different values for different coral cores.</p>
+<p> In the random intercepts model we allow the intercept &beta;<sub>0i</sub> to vary, but &beta;<sub>1i</sub> is treated as a constant that is common to all of the cores.</p>
+<p align="center"><img src="../../images/lectures/lecture20/level2.gif" width="108" height="58" alt="level 2"></p>
+<p>where <img src="../../images/lectures/lecture20/u0idistribution.gif" alt="u0i distribution" width="150" height="37" align="absmiddle">. Here u<sub>0i</sub> denotes how much coral core <em>i</em> deviates from the population average intercept &beta;<sub>0</sub>. The random intercepts model formulated as a multilevel model can be written  as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture20/randomints.gif" width="353" height="73" alt="random ints"></p>
+<p>where <img src="../../images/lectures/lecture20/distribution.gif" width="306" height="35" align="absmiddle">. To understand how the R specification of this model works we need to substitute the level-2 equation into the level-1 equation to obtain the composite equation. </p>
+<p align="center"><img src="../../images/lectures/lecture20/randomints&#32;composite.gif" width="483" height="83" alt="random ints composite"></p>
+<p>From the composite equation we can directly construct the corresponding R code for fitting this model. The function in the <span class="style19">nlme</span> package for fitting linear mixed effect models is <span class="style102">lme</span>. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model1 &lt;- lme(fixed = Ext.rate~1+Year, random=~1|Core, data=ext.rates2, method=&quot;ML&quot;)</div>
+<ul>
+  <li><a name="fixed"></a>The first argument defines the fixed part of the model. It specifies the response and the predictor, in this case  an intercept, <span class="style8">1</span>, and <span class="style8">Year</span>. As is the case with all regression models in R it is unnecessary to specify an intercept explicitly because R automatically includes it. So we could write this as <span class="style1">fixed = Ext.rate ~ Year</span>. Because we will always list the fixed part of the model first, it is unnecessary to include the argument name <span class="style22">fixed=</span>, and I will omit it from now on.</li>
+  <li><a name="random"></a>The second argument <span class="style22">random=</span> defines the random part of the model. The required syntax  is </li>
+</ul>
+<p align="center" class="style1">random=~&quot;random variable&quot;|&quot;structural variable&quot;</p>
+<blockquote>
+  <p>Observe that the response is not specified  in the random part so the model statement begins with just a <span class="style22">~</span>. Because  the level-2 equations (one in our case) only include a random effect in the intercept equation, the intercept is identified as the only predictor on the right hand side of the model expression in the <span class="style22">random=</span> argument, <span class="style1">random=~1</span>. Another way to understand the origin of 1 in the <span class="style22">random</span> argument is that in the composite model  we can think of <img src="../../images/lectures/lecture20/ui0.gif" width="27" height="27" align="absmiddle"> as being a coefficient multiplying the intercept, which is denoted by 1. Finally the vertical bar is used to separate the model specification from the structural specification. The variable <span class="style8">Core</span> is listed as the variable that defines the level-2 units.</p>
+</blockquote>
+<ul>
+  <li>The third argument <span class="style1">data = ext.rates2</span> defines the data set that contains the variables.</li>
+  <li><a name="method"></a>The last argument <span class="style1">method=&quot;ML&quot;</span> requests that estimates be obtained using full maximum likelihood rather than the default estimation method of REML, restricted (residual) maximum likelihood. Choosing <span class="style1">method=&quot;ML&quot;</span> is required for carrying out likelihood ratio tests and is necessary if we wish to use AIC to compare models with different predictors. REML  provides better estimates of the variance components and standard errors than does ML. Having used <span class="style1">method=&quot;ML&quot;</span> to compare different models it is sometimes recommended that the final model be refit using <span class="style1">method=&quot;REML&quot;</span> and that the estimates and standard errors from the REML fit be used for the final inference.</li>
+</ul>
+<p>The summary output from the random intercepts model is displayed below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">summary(model1)</div>
+<span class="style24">Linear mixed-effects model fit by </span><span class="style25">maximum likelihood</span><span class="style24"><br>
+Data: ext.rates2 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="style25">AIC</span><span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIC   &nbsp;&nbsp;</span><span class="style25">logLik</span><span class="style24"><br>
+-1020.799 -1002.230 514.3997</span>
+<p><span class="style25">Random effects</span><span class="style24">:<br>
+  Formula: ~1 | Core<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Intercept)  &nbsp;Residual<br>
+  StdDev:  &nbsp;0.08384704 0.1203458</span>
+<p><span class="style25">Fixed effects</span><span class="style24">: Ext.rate ~ Year <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Std.Error  &nbsp;DF   &nbsp;&nbsp;t-value p-value<br>
+  (Intercept)  &nbsp;2.0263400 0.4010847 753  &nbsp;5.052150   &nbsp;&nbsp;0e+00<br>
+  Year        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.0008155 0.0002023 753 -4.030118   &nbsp;&nbsp;1e-04<br>
+  &nbsp;Correlation: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Intr)<br>
+  Year -0.998</span>
+<p><span class="style24">Standardized Within-Group Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q1        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Med         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q3        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max <br>
+  -3.5820921 -0.6203362 -0.0555163  0.5814467  3.2817378 </span>
+<p><span class="style24">Number of Observations: 767<br>
+  Number of Groups: 13 </span>
+<p>I've highlighted  the information of interest to us. </p>
+<ul>
+  <li>In the first line we're told that maximum likelihood is the estimation method that was used. Thus the AIC and log-likelihood that appear on lines 3 and 4 are correct and can be used to make comparisons between models with different fixed effects (or random effects). </li>
+  <li>The next section lists the estimates from the random effects part of the model. Recall that we don't actually estimate the random effects, we instead estimate the parameters of their distribution. For the random intercepts model these parameters are <img src="../../images/lectures/lecture20/tau2.gif" width="23" height="27" align="absmiddle"> and <img src="../../images/lectures/lecture20/sigma2.gif" width="27" height="27" align="absmiddle">. Notice that in the line where the numerical estimates appears the label is <span class="style8">StdDev</span>, so in fact what's displayed here are &tau; (Intercept) and &sigma; (Residual). </li>
+  <li>In the Fixed effects section are the reported values of the intercept and slope, their estimated standard errors, and  Wald tests that test whether each is significantly different from zero.</li>
+</ul>
+<h3><a name="extracting" id="extracting"></a>Extracting parameter estimates from an lme object</h3>
+<p name="VarCorr"><a name="VarCorr"></a>Variance components are extracted from the model with the <span class="style102">VarCorr</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(model1)</div>
+<span class="style24"> Core = pdLogChol(1) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Variance&nbsp;&nbsp;&nbsp; StdDev&nbsp;&nbsp;&nbsp; <br>
+(Intercept) 0.007030326 0.08384704<br>
+Residual&nbsp;&nbsp;&nbsp; 0.014483115 0.12034581</span>
+<p>What's reported in the first column are the squares of the values reported in the summary table, so these are variances. From the output we determine that <img src="../../images/lectures/lecture20/tauhat2.gif" width="23" height="27" align="absmiddle"> = 0.0070 and <img src="../../images/lectures/lecture20/sigmahat2.gif" width="27" height="27" align="absmiddle"> = 0.0145. It turns out that output from <span class="style102">VarCorr</span> is a matrix of character strings. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> VarCorr(model1)[1,1]</div>
+<span class="style24">[1] &quot;0.007030326&quot;</span>
+<p><a name="asnumeric"></a>So if we want to use the values from <span class="style102">VarCorr</span> directly in  calculations we need to convert them first to numbers with the <span class="style102">as.numeric</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> as.numeric(VarCorr(model1)[1,1])</div>
+<span class="style24">[1] 0.007030326 </span>
+<p><a name="fixef"></a>Previously we've used the <span class="style4">coef</span> function to extract the parameter estimates from regression objects. With an <span class="style4">lme</span> object there are three functions  available for this purpose: <span class="style4">coef</span>, <span class="style4">fixef</span>, and <span class="style4">ranef</span>. The <span class="style4">fixef</span> function returns the fixed effect parameter estimates from an <span class="style4">lme</span> model. In <span class="style8">model1</span> these are the estimates of the parameters we labeled &beta;<sub>0</sub>and &beta;<sub>1</sub>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fixef(model1)</div>
+<span class="style24">  &nbsp;(Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Year <br>
+  &nbsp;2.026340003 -0.000815468 </span>
+<p><a name="ranef"></a>The <span class="style4">ranef</span> function returns predictions of the random effects for each of the structural units in our model. The structural units are the individual cores. The random effects are the terms we've been labeling <img src="../../images/lectures/lecture20/ui0.gif" alt="u0i" width="27" height="27" align="absmiddle">. As was explained in <a href="lecture19.htm#ests">lecture 19</a>, the random effects are not parameters that are estimated when fitting the model, instead they are obtained after the fact using the estimates of the regression parameters and the variance components that were obtained. These estimates are referred to as empirical Bayes estimates, also called BLUPs (best linear unbiased predictors).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ranef(model1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)<br>
+  BR.06&nbsp; 0.17060294<br>
+  BR.07 -0.07687632<br>
+  BR.08 -0.06710188<br>
+  FR.02&nbsp; 0.01554065<br>
+  FR.04&nbsp; 0.13069457<br>
+  FR.05 -0.09064458<br>
+  FR.09 -0.03437241<br>
+  FR.11 -0.03181603<br>
+  FR.12&nbsp; 0.03395007<br>
+  FR.13 -0.04377088<br>
+  NS.14&nbsp; 0.10160275<br>
+  NS.15 -0.07635586<br>
+  NS.16 -0.03145303</span>
+<p>The <span class="style4">coef</span> function combines the fixed effects with the random effects. It returns the random intercepts <img src="../../images/lectures/lecture20/b0i.gif" alt="b0i" width="110" height="27" align="absmiddle">  in column 1 as well as the fixed effect coefficient &beta;<sub>1</sub> in column 2. Notice that the random intercepts vary by core while the   fixed coefficient is constant across all cores.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Year<br>
+  BR.06&nbsp;&nbsp;&nbsp; 2.196943 -0.000815468<br>
+  BR.07&nbsp;&nbsp;&nbsp; 1.949464 -0.000815468<br>
+  BR.08&nbsp;&nbsp;&nbsp; 1.959238 -0.000815468<br>
+  FR.02&nbsp;&nbsp;&nbsp; 2.041881 -0.000815468<br>
+  FR.04&nbsp;&nbsp;&nbsp; 2.157035 -0.000815468<br>
+  FR.05&nbsp;&nbsp;&nbsp; 1.935695 -0.000815468<br>
+  FR.09&nbsp;&nbsp;&nbsp; 1.991968 -0.000815468<br>
+  FR.11&nbsp;&nbsp;&nbsp; 1.994524 -0.000815468<br>
+  FR.12&nbsp;&nbsp;&nbsp; 2.060290 -0.000815468<br>
+  FR.13&nbsp;&nbsp;&nbsp; 1.982569 -0.000815468<br>
+  NS.14&nbsp;&nbsp;&nbsp; 2.127943 -0.000815468<br>
+  NS.15&nbsp;&nbsp;&nbsp; 1.949984 -0.000815468<br>
+  NS.16&nbsp;&nbsp;&nbsp; 1.994887 -0.000815468</span>
+<h3><a name="obtaining" id="extracting2"></a><a name="fixef"></a>Obtaining predictions for individual observations</h3>
+<p>We obtain predictions of the mean for individual observations in an ordinary regression model by using the values of the predictors for those observations in the regression equation. With a random intercepts model there are two different predictions for the mean that we could calculate. There is the prediction that includes only the fixed effect estimates, referred to as the population average value, and a prediction that includes both the fixed effects and the random effects, called the subject-specific value.</p>
+<p align="center"><img src="../../images/lectures/lecture20/predictions.gif" width="445" height="80" alt="predictions"></p>
+<p><a name="level"></a>We obtain these predictions by including the <span class="style22">level</span> argument in the <span class="style102">predict</span> function and assigning it  the value 0 (population average) or 1 (subject-specific).</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #population average</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(model1, level=0)[1:12]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+  0.4533023 0.4524869 0.4516714 0.4508559 0.4500404 0.4492250 0.4484095 0.4475940 0.4467786 <br>
+  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+  0.4459631 0.4451476 0.4443322 </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #subject specific</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> predict(model1, level=1)[1:12]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+  0.6239053 0.6230898 0.6222743 0.6214589 0.6206434 0.6198279 0.6190125 0.6181970 0.6173815 <br>
+  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+0.6165661 0.6157506 0.6149351 </span>
+<p>Observe that the difference between the population average and subject-specific predictions is equal to the random intercept for that core.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ranef(model1)[1,1]</div>
+<span class="style24">  [1] 0.1706029</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">predict(model1, level=1)[1:12] - predict(model1, level=0)[1:12]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+  0.1706029 0.1706029 0.1706029 0.1706029 0.1706029 0.1706029 0.1706029 0.1706029 0.1706029 <br>
+  &nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06&nbsp;&nbsp;&nbsp;&nbsp; BR.06 <br>
+0.1706029 0.1706029 0.1706029</span>
+<h3><a name="graphing"></a>Graphing the random intercepts model</h3>
+<p><a name="subscripts"></a><a name="lattice"></a>Because the random intercepts model yields a different subject-specific model for each core, an obvious way to display the model graphically is as a lattice graph. Because the observations were previously sorted in date order within each core we can graph the models by connecting the predicted values with line segments. In order to obtain the correct subject-specific predictions for each core we need to include the <span class="style22">subscripts</span> key word as an argument to the panel function and then use it in specific panel function calls to select the appropriate observations. In the code below the <span class="style22">key</span> argument is used to create a legend.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">
+  library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  xyplot(Ext.rate~Year|Core, layout=c(4,4), data=ext.rates2, panel=function(x, y, subscripts) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.xyplot(x, y, type='l', col='grey70')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(model1, level=0)[subscripts], col=1, lwd=2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(model1, level=1)[subscripts], col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, key=list(x=.6, y=.95, origin=c(0,0), text=list(c('raw data', 'population average', 'subject-specific'), cex=.9), lines=list(col=c('grey70',1,2), lwd=c(1,2,1), lty=c(1,1,2))))</div>
+<p><a name="key"></a>The <span class="style22">key</span> argument is mostly self-explanatory although a bit convoluted. </p>
+<ul>
+  <li>The  key itself is an R object called a list that is here created with the <span class="style12">list</span> function. A list object in R is one whose components can be of various types and of different lengths.</li>
+  <li>The <span class="style22">text=</span> and <span class="style22">lines=</span> arguments shown in the key are specified separately also using individual <span class="style12">list</span> functions. The elements of each list are the characteristics that we want the displayed text and symbols in the legend to have. For the <span class="style22">text</span> list I specify the vector of text that should appear in the legend and the size I want it to have. For the <span class="style22">lines</span> list I specify the line types, line widths, and colors.</li>
+  <li>To position the legend inside the panels I give relative coordinates with the <span class="style22">x=</span> and <span class="style22">y=</span> arguments. Because I specified <span class="style22">corner=c(0,0)</span>, the <span class="style171">x=</span> and <span class="style171">y=</span> arguments are measured with respect to this corner, the lower left corner. The  bottom of the figure is <em>y</em> = 0 and the top of the figure corresponds to<em> y</em> = 1. The left edge of the figure is <em>x</em> = 0 and the right edge of the figure corresponds to <em>x</em> = 1. By specifying <span class="style1">x=.6, y=.95</span> the legend is placed near the top right corner.</li>
+</ul>
+<p align="center"><img src="../../images/lectures/lecture20/fig1.png" width="590" height="450" alt="fig. 1"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 1 &nbsp;</strong>Random intercepts model</span> in separate panels</p>
+<p>What we see in Fig. 1 are the raw data for each core connected by line segments, the subject-specific model, and the population average model. The population average model is exactly the same for each core but the subject-specific model varies from core to core. Because this is a random intercepts model, the subject-specific model differs from the population average model only in the value of its intercept. Thus all the displayed regression lines are parallel. </p>
+<p>The variation of the actual observations about their individual subject-specific lines is the level-1 variance &sigma;<sup>2</sup>. The variation of the individual subject-specific lines about the population average line is the level-2 variance &tau;<sup>2</sup>. Fig. 2 shows all the data and regression lines in a single figure and tries to distinguish the different roles that &sigma;<sup>2</sup> and &tau;<sup>2</sup> have in the model.</p>
+<p align="center"><img src="../../images/lectures/lecture20/fig2.png" width="452" height="375" alt="fig 3"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 2 &nbsp;</strong>Random intercepts model</span> <a href="lecture20.htm#Figure3">(R code)</a></p>
+<h2><a name="residual" id="residual"></a>Adding a residual correlation structure to a mixed effects model</h2>
+<p>While including random effects in a model  induces a correlation structure in the response (see <a href="lecture19.htm#ICC">lecture 19</a>), with long time series, like we have here, the induced correlation structure is typically inadequate.  So, we should investigate whether the random intercepts model is  properly accounting for the correlation. The method for checking this is to plot the ACF of the level-1 residuals. </p>
+<p><a name="ACF"></a>Last week we used the <span class="style102">acf</span> function for this purpose, but to use it with grouped data we had to insert missing values between the residuals from the different groups to prevent  observations from two different groups  contributing to the correlations at the various lags. The <span class="style19">nlme</span> package has its own ACF function, <span class="style102">ACF</span>, that automatically accounts for the grouping that is specified when fitting an <span class="style102">lme</span> model. The <span class="style102">ACF</span> function assumes that the observations within a group are in their correct temporal order in the original data frame and that the time spacing of the  observations is the same. If this is not the case, the results returned by <span class="style102">ACF</span> will not be sensible. The <span class="style102">ACF</span> function will also get the wrong answer if there are gaps in the time sequence. Because the observations in the coral cores data set are ordered correctly and there are no missing values we can use the <span class="style102">ACF</span> function here. </p>
+<p><a name="alpha"></a>The <span class="style102">ACF</span> function acts on an <span class="style12">lme</span> model from which it extracts the level-1 residuals. To get a plot we use the output from <span class="style102">ACF</span> as the argument of the <span class="style102">plot</span> function. Confidence bands are displayed if a value for the <span class="style22">alpha</span> argument, the significance level for the bands, is given.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(ACF(model1), alpha=.05)</div>
+<p>Because 20 lags are displayed we can modify the confidence bands with a Bonferroni correction that assumes that 20 tests have been carried out. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(ACF(model1),alpha=.05/20)</div><br>
+<table width="675" border="0" align="center">
+  <tr>
+    <td><div align="center">(a)<img src="../../images/lectures/lecture20/fig3a.png" alt="fig 3a" width="295" height="230" align="texttop"></div></td>
+    <td>(b)<img src="../../images/lectures/lecture20/fig3b.png" alt="fig 3b" width="295" height="230" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"><p align="left" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3</strong> &nbsp;ACF for the random intercepts model using (a) alpha = .05 and (b) alpha = .05/20, a Bonferroni correction to account for testing at 20 different lags.</p></td>
+  </tr>
+</table>
+<p>The displayed ACF has the signature of an autoregressive process. There is no PACF function in <span class="style19">nlme</span> so to produce one here we'd have to use the <span class="style102">pacf</span> function and go through the same protocol that we used in <a href="lecture17.htm#determining">lecture 17</a>. Because we already know a low-order ARMA process worked there, I just try fitting an AR(1) and ARMA(1,1) process and compare them using AIC. The syntax for including a correlation structure in an <span class="style12">lme</span> model is the same as it was for the <span class="style102">gls</span> function. We need to include a <span class="style22">form</span> argument in which we indicate the &quot;time&quot; variable and optionally  a grouping term. Specifying the grouping structure is unnecessary here because we're updating a model and the group structure will be inherited from the model we're updating</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#AR(1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model1a &lt;- update(model1, correlation=corARMA(p=1,q=0, form=~Year|Core))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #explicitly indicate the groups
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model1a1 &lt;- update(model1, correlation=corARMA(p=1,q=0, form=~Year|Core))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#ARMA(1,1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model1b &lt;- update(model1, correlation=corARMA(p=1,q=1, form=~Year|Core))<br>
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model1, model1a, model1b)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+model1&nbsp;&nbsp; 4 -1020.799<br>
+model1a&nbsp; 5 -1051.789<br>
+model1b&nbsp; 6 -1085.985</span>
+<p><a name="restype"></a>The AIC indicates that the ARMA(1,1) model beats the AR(1) model and both beat a model with no correlation structure. To see if the correlation has been properly accounted for we can use the <span class="style22">resType</span> argument of <span class="style12">ACF</span>. Just like the <span class="style22">type</span> argument of residuals, <span class="style22">resType</span> can be used to tell <span class="style12">ACF</span> to extract normalized residuals. When we use the Bonferroni correction of Fig. 3b, both the AR(1) and ARMA(1,1) models appear to remove all the statistically significant correlations, but the correlation shows a much greater reduction with the ARMA(1,1) model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(ACF(model1b, resType='normalized'), alpha=.05/20)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(ACF(model1a, resType='normalized'), alpha=.05/20)</div>
+<br>
+<table width="675" border="0" align="center">
+  <tr>
+    <td><div align="center">(a)<img src="../../images/lectures/lecture20/fig4a.png" alt="fig 4a" width="295" height="230" align="texttop"></div></td>
+    <td>(b)<img src="../../images/lectures/lecture20/fig4b.png" alt="fig 4b" width="295" height="230" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"><p align="left" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4</strong> &nbsp;ACF for the normalized residuals of a random intercepts model with (a) an AR(1) model for the residuals and (b) an ARMA(1,1) model for the residuals. An experimentwise &alpha; = .05 rate was obtained using a Bonferroni correction under the assumption that  20 lags were examined.</p></td>
+  </tr>
+</table>
+<p>If we compare the summary table of the model without a correlation structure to the model with an ARMA(1,1) model for the residuals we observe that there is a big difference in the standard errors and <em>p</em>-values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(model1)$tTable)</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value&nbsp;&nbsp; Std.Error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DF&nbsp;&nbsp;&nbsp;&nbsp; t-value p-value<br>
+  (Intercept)&nbsp; 2.0263e+00&nbsp; 4.0108e-01&nbsp; 7.5300e+02&nbsp; 5.0522e+00&nbsp;&nbsp; 0e+00<br>
+  Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -8.1547e-04&nbsp; 2.0234e-04&nbsp; 7.5300e+02 -4.0301e+00&nbsp;&nbsp; 1e-04</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> printCoefmat(summary(model1b)$tTable)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp; Std.Error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DF&nbsp;&nbsp;&nbsp;&nbsp; t-value p-value<br>
+  (Intercept)&nbsp; 2.1305e+00&nbsp; 8.2271e-01&nbsp; 7.5300e+02&nbsp; 2.5896e+00&nbsp; 0.0098<br>
+Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -8.6679e-04&nbsp; 4.1578e-04&nbsp; 7.5300e+02 -2.0847e+00&nbsp; 0.0374</span>
+<p>Notice that the coefficient of <span class="style8">Year</span> has gone from being highly significant to being barely significant. The reason for that is simple. In <span class="style8">model1</span> we treated the observations as being independent when they weren't. Because the observations are  positively correlated the response variable exhibits much less variability than it should. When we account for this correlation we get a more honest estimate of the true variability of the response. Put another way, when we treat the observations as being independent we are exaggerating our sample size and hence our precision. When we properly account for the correlation the effective sample is much less than the naive sample size obtained assuming independence.
+</p>
+<h2 ><a name="randomslopeints"></a>The random slopes and intercepts model </h2>
+<p>The random slopes and intercepts model adds a second equation at level 2 to the random intercepts model by allowing slopes to vary across cores. The multilevel model formulation is shown below. </p>
+<p align="center"><img src="../../images/lectures/lecture20/random&#32;slopes.gif" width="355" height="103" alt="random slopes"></p>
+<p>where </p>
+<p align="center"><img src="../../images/lectures/lecture20/random&#32;slope&#32;dist.gif" width="560" height="83" alt="random slope dist"></p>
+<p>The equivalent composite equation formulation, obtained by plugging the two level-2 equations into the level-1 equation, is shown next.</p>
+<p align="center"><img src="../../images/lectures/lecture20/random&#32;slopes&#32;composite.gif" width="568" height="83" alt="random slopes composite"></p>
+<p>From this we can write down the R formulation of the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- lme(Ext.rate~1+Year, random=~1+Year|Core, data=ext.rates2, method=&quot;ML&quot;)</div>
+<p>or equivalently</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- lme(Ext.rate~Year, random=~Year|Core, data=ext.rates2, method=&quot;ML&quot;) </div>
+<p>The summary output from this model does not look unusual but in fact there is  a problem that manifests itself when we examine the variance components.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(model2)</div>
+<span class="style24"> Core = pdLogChol(1 + Year) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StdDev       &nbsp;&nbsp;Corr <br>
+(Intercept) 6.189482e-15 7.867326e-08 (Intr)<br>
+Year        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.799186e-09 4.241681e-05 0.419 <br>
+Residual    &nbsp;&nbsp;&nbsp;1.447072e-02 1.202943e-01</span>
+<p>Notice that the variance of the random intercepts is reported to be 10<sup>&ndash;15</sup>, essentially zero, whereas in <span class="style8">model1</span>, the model without random slopes, it was estimated to be 0.007. What happened is that the <span class="style4">lme</span> function was not able to estimate both a random slope and a random intercept variance in this model. Usually the symptoms of this are more obvious than they are here, but the solution is the same&mdash;center the predictor. In multilevel models it is crucial that predictors in the model be roughly on the same scale. The magnitude of <span class="style8">Year</span> is currently too big. As we remarked in <a href="lecture17.htm#ifunc">lecture 17</a> it's also the case that using a raw scale for <span class="style8">Year</span>  is crazy because then the intercept  corresponds to the extension rate in the year 0 A.D. </p>
+<p>In a multilevel model centering is almost always necessary in order to obtain valid solutions. I refit the model centering year at 1967. Notice that   centered year  gets used  in the random portion of the model too. This should be obvious because it is the coefficient of centered year, not year, that is being made random. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2.uncentered &lt;- lme(Ext.rate~Year, random=~Year|Core, data=ext.rates2, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- lme(Ext.rate~<span class="style42">I(Year-1967)</span>, random=~<span class="style42">I(Year-1967)</span>|Core, data=ext.rates2, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(model1, model2.uncentered, model2)</div>
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 -1020.799<br>
+  model2.uncentered&nbsp; 6 -1017.420<br>
+model2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 -1046.547</span>
+<p>We now have obtained sensible results.  The addition of random slopes has led to a large decrease in AIC. Notice that the variance components are also dramatically changed  from the uncentered model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(model2)</div>
+<span class="style24"> Core = pdLogChol(I(Year - 1967)) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StdDev      &nbsp;&nbsp;Corr <br>
+(Intercept)    &nbsp;&nbsp;&nbsp;6.769404e-03 0.082276386 (Intr)<br>
+I(Year - 1967) 2.131837e-06 0.001460081 0.009 <br>
+Residual       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.360657e-02 0.116647202 </span>
+<p>From the output we see that <img src="../../images/lectures/lecture20/tauhat0sq.gif" width="23" height="30" align="absmiddle"> = 0.00677, <img src="../../images/lectures/lecture20/tauhat1sq.gif" width="23" height="30" align="absmiddle"> = 0.000002, and <img src="../../images/lectures/lecture20/sigmahat2.gif" width="26" height="26" align="absmiddle"> = 0.0136. The reported correlation is the correlation between the random slopes and intercepts, which is now near zero. </p>
+<p>The <span class="style102">ranef</span> function  displays BLUPs of both the intercept and slope random effects.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ranef(model2)</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) I(Year - 1967)<br>
+  BR.06&nbsp; 0.15941823&nbsp;&nbsp; 2.940924e-03<br>
+  BR.07 -0.08429038&nbsp;&nbsp; 1.072531e-03<br>
+  BR.08 -0.06470105&nbsp; -8.377937e-05<br>
+  FR.02&nbsp; 0.00383491&nbsp; -5.583785e-04<br>
+  FR.04&nbsp; 0.13538494&nbsp; -1.518369e-03<br>
+  FR.05 -0.04938103&nbsp; -1.515433e-03<br>
+  FR.09 -0.02255652&nbsp; -5.097505e-04<br>
+  FR.11 -0.02862262&nbsp; -3.662648e-04<br>
+  FR.12&nbsp; 0.02754750&nbsp; -2.475086e-04<br>
+  FR.13 -0.02870880&nbsp; -8.749352e-04<br>
+  NS.14&nbsp; 0.09128868&nbsp;&nbsp; 4.128806e-04<br>
+  NS.15 -0.09687663&nbsp;&nbsp; 1.477382e-03<br>
+  NS.16 -0.04233724&nbsp; -2.292991e-04</span>
+
+<p>The <span class="style102">coef</span> function adds these values to the corresponding fixed effects to obtain estimates of the random slopes and intercepts.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fixef(model2)</div>
+<span class="style24">  &nbsp;&nbsp; (Intercept) I(Year - 1967) <br>
+  &nbsp;&nbsp; 0.429875436&nbsp;&nbsp; -0.001056583 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(model2)</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) I(Year - 1967)<br>
+  BR.06&nbsp;&nbsp; 0.5892937&nbsp;&nbsp; 1.884341e-03<br>
+  BR.07&nbsp;&nbsp; 0.3455851&nbsp;&nbsp; 1.594844e-05<br>
+  BR.08&nbsp;&nbsp; 0.3651744&nbsp; -1.140362e-03<br>
+  FR.02&nbsp;&nbsp; 0.4337103&nbsp; -1.614961e-03<br>
+  FR.04&nbsp;&nbsp; 0.5652604&nbsp; -2.574952e-03<br>
+  FR.05&nbsp;&nbsp; 0.3804944&nbsp; -2.572015e-03<br>
+  FR.09&nbsp;&nbsp; 0.4073189&nbsp; -1.566333e-03<br>
+  FR.11&nbsp;&nbsp; 0.4012528&nbsp; -1.422847e-03<br>
+  FR.12&nbsp;&nbsp; 0.4574229&nbsp; -1.304091e-03<br>
+  FR.13&nbsp;&nbsp; 0.4011666&nbsp; -1.931518e-03<br>
+  NS.14&nbsp;&nbsp; 0.5211641&nbsp; -6.437019e-04<br>
+  NS.15&nbsp;&nbsp; 0.3329988&nbsp;&nbsp; 4.208000e-04<br>
+NS.16&nbsp;&nbsp; 0.3875382&nbsp; -1.285882e-03</span>
+<p>Fig. 5 displays the population average and subject-specific random slopes and intercepts models. As was the case in Fig. 1, the population-average line is the same in each panel but the subject-specific model varies. This time both the slopes and intercepts of these lines vary across panels.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(Ext.rate~Year|Core,data=ext.rates2, layout=c(4,4), panel=function(x,y,subscripts) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.xyplot(x, y, type='l', col='grey70')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(model2, level=0)[subscripts], col=1, lwd=2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.lines(x, predict(model2, level=1)[subscripts], col=2, lty=2)</div
+>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  },
+key=list(x=.6, y=.95, origin=c(0,0), text=list(c('raw data', 'population average', 'subject-specific'), cex=.9), lines=list(col=c('grey70',1,2), lwd=c(1,2,1), lty=c(1,1,2))))</div>
+<p align="center"><img src="../../images/lectures/lecture20/fig5.png" width="590" height="445" alt="fig. 5"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 5 &nbsp;</strong>Random slopes and intercepts model</span> in separate panels</p>
+<p>Fig. 6 shows all the data and regression lines in a single figure and tries to distinguish the different roles the three variance components have in the model.</p>
+<p align="center"><img src="../../images/lectures/lecture20/fig6.png" width="450" height="375" alt="fig.4"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 6 &nbsp;</strong>Random slopes and intercepts model</span> <a href="lecture20.htm#Figure4">(R code)</a></p>
+<ul>
+  <li><img src="../../images/lectures/lecture20/tau02.gif" width="23" height="30" align="absmiddle"> is the variability in the intercepts of the subject-specific regression lines about the intercept of the population-average line (the line determined by the estimated fixed effects). This describes the spread of the lines in the vertical direction (keeping their slopes the same). </li>
+  <li><img src="../../images/lectures/lecture20/tau12.gif" width="23" height="30" align="absmiddle"> is the variability of the individual slopes about the slope of the population-average line. It can be thought of as describing the extent to which individual lines are rotated around the population-average line. </li>
+  <li><img src="../../images/lectures/lecture20/sigma2.gif" width="26" height="26" align="absmiddle"> is the average variability of the observations about their own individual core-level regression lines. It has the same interpretation as in ordinary regression.</li>
+</ul>
+<h2><a name="noints"></a>Random slopes without random intercepts</h2>
+<p>It is possible to fit a model in which the slopes are random (each core gets its own slope) but the intercepts are fixed. To accomplish this we have to remove the intercept from the random formula with the -1 notation we've used previously. Thus we would need to write: <span class="style1">random = ~I(Year-1967)-1|Core</span>. When we compare the random slopes, random intercepts, and random slopes and intercepts models for these data, the random slopes and intercepts model has the lowest AIC.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #fit a model with only random slopes</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model2.5 &lt;- lme(Ext.rate~I(Year-1967), data=ext.rates2, random=~I(Year-1967)-1|Core, method=&quot;ML&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(model2, model1, model2.5)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model2&nbsp;&nbsp;&nbsp; 6 -1046.5471<br>
+  model1&nbsp;&nbsp;&nbsp; 4 -1020.7995<br>
+model2.5&nbsp; 4&nbsp; -801.8022</span>
+<h2><a name="adding" id="adding"></a>Adding level-2 predictors to the model</h2>
+<p> The <span class="style8">reef.type</span> variable in the data set is a level-2 predictor because it varies only at the core level. It is a categorical variable with three levels so it needs to <span class="style22"></span> be converted to a factor  when included in a regression model. By default R constructs the dummy variables  alphabetically so that  forereef and nearshore coral colonies are contrasted with backreef coral colonies.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> contrasts(factor(ext.rates2$reef.type))</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;FR IR<br>
+BR  &nbsp;0  &nbsp;0<br>
+FR  &nbsp;1  &nbsp;0<br>
+IR  &nbsp;0  &nbsp;1</span>
+<p>Thus R has created two dummy variables of the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture20/Z1.gif" width="250" height="75" alt="z1"> <img src="../../images/lectures/lecture20/Z2.gif" width="253" height="75" alt="z2"></p>
+<p>To include <span class="style8">reef.type</span> in the model we have to decide in what way we think it alters the basic level-1 relationship between <span class="style8">Ext.rate</span> and centered <span class="style8">Year</span>. Does it modify the intercept, the slope, or both? The researchers hypothesized that it should modify the slope. We'll try all three possibilities.</p>
+<h3 ><a name="intreef"></a>Reef type as a predictor of the population intercept</h3>
+<p>If <span class="style8">reef.type</span> affects the intercept it should be entered into the level-2 equation for the intercept.</p>
+<p align="center"><img src="../../images/lectures/lecture20/random&#32;ints&#32;pred.gif" width="432" height="110" alt="random ints predictor"></p>
+<p>The corresponding composite equation is shown below. In it we see that reef type becomes part of the fixed effects portion of the model. </p>
+<p align="center"><img src="../../images/lectures/lecture20/composite&#32;ints.gif" width="625" height="97" alt="composite ints"></p>
+<p>To estimate this model in R we start with the random slopes and intercepts formulation and just add <span class="style8">reef.type</span> to the fixed part of the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model3&lt;- lme(Ext.rate~I(Year-1967) + factor(reef.type), random=~I(Year-1967)|Core, data=ext.rates2, method='ML')</div>
+<h3><a name="slopereef"></a>Reef type as a predictor of the population slope</h3>
+<p>To see if <span class="style8">reef.type </span>affects the slope we enter it into the level-2 equation for the slope.</p>
+<p align="center"><img src="../../images/lectures/lecture20/random&#32;slopes&#32;pred.gif" width="432" height="110" alt="random slopes predictor"></p>
+<p>or in composite form</p>
+<p align="center"><img src="../../images/lectures/lecture20/composite&#32;slopes&#32;pred.gif" width="682" height="195"></p>
+<p>In R we specify this model by entering a  term for the interaction between <span class="style8">reef.type</span> and <span class="style8">I(Year-1967)</span>. Thus we need to include the term <span class="style26">&nbsp;I(Year-1967):factor(reef.type)</span> &nbsp;in the fixed part of the model expression. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> model4 &lt;- lme(Ext.rate~I(Year-1967) + I(Year-1967):factor(reef.type), random=~I(Year-1967)|Core, data=ext.rates2, method='ML')</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"></div>
+<h3 > <a name="intslopereef"></a>Reef type as a predictor of both the population slope and intercept</h3>
+<p>If <span class="style8">reef.type</span> affects both the slope and intercept it should be entered into both of the level-2 equations.</p>
+<p align="center"><img src="../../images/lectures/lecture20/slopes&#32;and&#32;ints&#32;pred.gif" width="432" height="110" alt="slopes and ints predictor"></p>
+<p align="left">or in composite form</p>
+<p align="center"><img src="../../images/lectures/lecture20/composite&#32;both&#32;pred.gif" width="797" height="195" alt="composite both predictor"></p>
+<p name="shortcut"><a name="shortcut"></a>From the composite form the fixed part of the model should include <span class="style8">I(Year-19667)</span>, <span class="style8">factor(reef.type)</span> and the interaction between the two. We can obtain this in R as follows.</p>
+<div align="center"><span class="style1">fixed=Ext.rate~I(Year-1967)+factor(reef.type)+I(Year-1967):factor(reef.type)</span> </div>
+<p>or using R's shortcut notation</p>
+<div align="center"><span class="style1">fixed=Ext.rate~I(Year-1967)*factor(reef.type)</span> </div>
+<p>where the * notation automatically generates all three terms (plus the intercept). </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model5 &lt;- lme(Ext.rate~I(Year-1967)*factor(reef.type), random=~I(Year-1967)|Core, data=ext.rates2, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">AIC(model5, model4, model3, model2)</div>
+
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  model5 10 -1051.221<br>
+  model4&nbsp; 8 -1054.929<br>
+  model3&nbsp; 8 -1042.783<br>
+model2&nbsp; 6 -1046.547</span>
+<p>Based on AIC we should include <span class="style8">reef.type</span> as a predictor of the slopes but not the intercepts. Notice that in all three models the random portion of the model has remained the same. The random portion is determined by which coefficients in the level-1 model were declared to be random, not by predictors in the level-2 equations.</p>
+<p>It may seem a little strange to consider a model with an interaction but without the corresponding main effect. Usually we would test the terms in <span class="style8">model5</span> as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(model5)</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numDF denDF  &nbsp;F-value p-value<br>
+(Intercept)                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1   &nbsp;&nbsp;751 344.1075  &nbsp;&lt;.0001<br>
+I(Year - 1967)                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1   &nbsp;&nbsp;751   &nbsp;&nbsp;9.5658  &nbsp;0.0021<br>
+factor(reef.type)                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2    &nbsp;&nbsp;&nbsp;10   &nbsp;&nbsp;0.5458  &nbsp;0.5957<br>
+I(Year - 1967):factor(reef.type)     &nbsp;&nbsp;&nbsp;2   &nbsp;&nbsp;751  &nbsp;10.8099  &nbsp;&lt;.0001</span>
+<p>These are variables added in order tests. The basic level-1 model appears on line 2. Line 3 tests whether the single population model should instead be three population models (based on reef type) that are parallel lines but with different intercepts. Based on the <em>p</em>-value the answer is no. When we add an interaction term so that the three population lines also have different slopes, we obtain a significant improvement (line 4).</p>
+<p>In an ordinary regression model this is where we'd stop, but in a multilevel model removing the main effect of <span class="style8">reef.type</span> can make sense. Because this is a random slopes and intercepts model, individual cores already have different slopes and intercepts. So removing the reef type main effect does not lead to the silly constraint of forcing all the lines  to pass through a single point. From the multilevel formulation it is clear that we can choose to add <span class="style8">reef.type</span> to the slope equation and not the intercept equation. </p>
+<p>We can formally compare these models with a partial <em>F</em>-test because they're nested.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(model4,model5)</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model df       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIC       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIC   &nbsp;&nbsp;logLik   &nbsp;&nbsp;Test   &nbsp;&nbsp;L.Ratio p-value<br>
+model4     &nbsp;&nbsp;&nbsp;&nbsp;1  &nbsp;8 -1054.928 -1017.789 535.4643 <br>
+model5     &nbsp;&nbsp;&nbsp;&nbsp;2 10 -1051.221 -1004.796 535.6105 1 vs 2 0.2925490  &nbsp;0.8639</span>
+<p>The non-significant result is consistent with our conclusions based on AIC. Allowing the population value of the intercepts to vary by reef type is not supported by the data. Fig. 7 displays the final reef type model, <span class="style8">model4</span>,  as a panel graph. Unlike Figs. 1 and 5, now the population average model is not the same in each panel. Instead it varies by reef type.</p>
+<p align="center"><img src="../../images/lectures/lecture20/fig7.png" width="590" height="450" alt="fig. 7"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 7</strong> &nbsp;Random slopes and intercepts model with separate population slopes based on reef type</span></p>
+<p>Fig. 8 displays this same model now divided into only three panels corresponding to the three different reef types. In each case the set of subject-specific lines in that panel varies randomly (i.e. the slopes and intercepts vary randomly) about the displayed population line. </p>
+<div align="center">
+  <table width="700" border="0">
+    <tr>
+      <td><div align="center"><img src="../../images/lectures/lecture20/fig5a.png" width="327" height="302" alt="fig5a"></div></td>
+      <td><div align="center"><img src="../../images/lectures/lecture20/fig5b.png" width="327" height="302" alt="fig5b"></div></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><img src="../../images/lectures/lecture20/fig5c.png" width="327" height="302" alt="fig5c"></div></td>
+    </tr>
+  </table>
+</div>
+<p align="center" class="styleArial"><strong>Fig. 8</strong> &nbsp;Random slopes and intercepts model with separate population slopes based on reef type <a href="lecture20.htm#Figure5">(R code)</a><br>
+</p>
+<h2><a name="unconmeans"></a>The variance components model </h2>
+<p>A starting place when modeling hierarchical data is to first fit a variance components model, also called the unconditional means model. The variance components model is substantively uninteresting because it contains no predictors. It does however account for the structure in the data. Its value statistically is that it allows us to estimate variance components. In particular it allows us to determine how much variance lies within subjects versus how much variance lies between subjects. To allow for heterogeneity across level 2 units, it includes a random effect for each level 2 unit (core). The variance components model is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture20/uncond&#32;mean&#32;new.gif" width="273" height="73" alt="unconditional means"></p>
+<p align="left">where <img src="../../images/lectures/lecture20/distribution.gif" width="306" height="35" align="absmiddle">. To understand how the R specification of this model works, I substitute the level-2 equation into the level-1 equation to obtain the composite equation.</p>
+<p align="center"><img src="../../images/lectures/lecture20/uncond&#32;mean&#32;composite.gif" width="405" height="80" alt="composite unconditional means"></p>
+<p name="lme"><a name="lme"></a>This last equation maps directly into R code as shown next. </p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model0 &lt;- lme(fixed=Ext.rate~1, random=~1|Core, data=ext.rates2, method=&quot;ML&quot;)</div>
+<p name="VarCorr">Variance components are extracted from the model with the <span class="style102">VarCorr</span> function.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(model0)</div>
+  <span class="style24">Core = pdLogChol(1) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance    &nbsp;&nbsp;&nbsp;&nbsp;StdDev <br>
+(Intercept) 0.007738093 0.08796643<br>
+Residual    &nbsp;&nbsp;&nbsp;0.014771638 0.12153863</span>
+  <p>What's reported in the first column are the squares of the values reported in the summary table, so these are variances. From the output we determine that <img src="../../images/lectures/lecture20/tauhat2.gif" width="23" height="27" align="absmiddle"> = 0.0077 and <img src="../../images/lectures/lecture20/sigmahat2.gif" width="27" height="27" align="absmiddle"> = 0.0148. From this we learn a couple of things. </p>
+  <ol>
+    <li>Because <img src="../../images/lectures/lecture20/tauhat2.gif" width="23" height="27" align="absmiddle"> &gt; 0, heterogeneity is present. Put another way we have evidence of a correlation structure (as opposed to independent observations). </li>
+    <li>Furthermore because the variability between cores is roughly one half the variability within cores and hence is not negligible, level-2 modeling in which predictors are included to explain differences between cores is likely to be productive.</li>
+  </ol>
+  <p>We can use the output from <span class="style102">VarCorr</span> to calculate the intraclass correlation coefficient that was derived in <a href="lecture19.htm#ICC">lecture 19</a>.</p>
+<p align="center"><img src="../../images/lectures/lecture20/correlation.gif" width="102" height="55" alt="correlation"></p>
+<p><span class="style102">VarCorr</span> has not produced a matrix, but a table, and the elements of the table are actually character values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(model0)[1,1]</div>
+<span class="style24">[1] &quot;0.007738093&quot;</span>
+  </p>
+  <p>As a result our calculations of the correlation are rather awkward. I need to convert each character value to a numeric value before I can do arithmetic on it. (It's probably easier to just copy and paste the numbers.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">tau.sq &lt;- as.numeric(VarCorr(model0)[1,1])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sigma.sq &lt;- as.numeric(VarCorr(model0)[2,1])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">tau.sq/(tau.sq+sigma.sq)</div>
+  <span class="style24">[1] 0.3437666 </span>
+  </p>
+<p>So the correlation between observations coming from the same core is 0.34, a modest value and far from 0. The implication is that the independence assumption of ordinary linear regression is not valid for these data.</p>
+<h2><a name="fitting" id="fitting"></a>Fitting mixed effects models with the lme4 package</h2>
+<p> The <span class="style19">lme4</span> package is slated to eventually replace the <span class="style19">nlme</span> package. It extends normal mixed effects models to other members of the exponential family of distributions,  thus permitting the fitting of generalized linear mixed effects models. Not all features are fully implemented so at the moment the <span class="style19">nlme</span> package has  functionality not present in <span class="style19">lme4</span>. The <span class="style19">lme4</span> package is not part of the standard installation of R, so it must first be downloaded from the CRAN site.</p>
+<p> <a name="reml"></a>In <span class="style19">lme4</span> the <span class="style4">lmer</span> function replaces <span class="style4">lme</span>. The major change in syntax is that there is no longer a random argument; the random effects are now written as part of the model formula. A second change is that to obtain maximum likelihood estimates one must specify the argument <span class="style22">REML=FALSE</span>. </p>
+<p><a name="detach"></a>Here are how some of the earlier <span class="style4">lme</span> models would be fit using <span class="style4">lmer</span>. The functions in the <span class="style19">nlme</span> package conflict with those inside <span class="style19">lme4</span>, so it's a good idea to first <span class="style102">detach</span> the <span class="style19">nlme</span> package before loading <span class="style19">lme4</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">detach(package:nlme)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> library(lme4)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #random intercepts model, model1 from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out1.lmer &lt;- lmer(Ext.rate ~ Year + (1|Core), data=ext.rates2, REML=F)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #random slopes and intercepts, model2 from before</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out2.lmer &lt;- lmer(Ext.rate ~ I(Year-1967) + (I(Year-1967)|Core), data=ext.rates2, REML=F)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #reef.type as a predictor of random slopes, model4 from before</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out4.lmer &lt;- lmer(Ext.rate ~ I(Year-1967) + I(Year-1967):factor(reef.type) + (I(Year-1967)|Core), data=ext.rates2, REML=F)</div>
+<p>A number of additional models are readily fit with the <span class="style102">lmer</span> function. For example, we can fit a random slopes and intercepts model in which the correlation of the two sets of random effects is constrained to be zero. Fitting such a model is rarely a good idea. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#uncorrelated random slopes and intercepts model using centered year</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out5.lmer &lt;- lmer(Ext.rate~I(Year-1967) + (1|Core)+(I(Year-1967)-1|Core), data=ext.rates2, REML=FALSE) </div>
+<h2><a name="cited"></a>Cited References</h2>
+<ul>
+  <li>Pinheiro, J. C. and Bates, D. M. 2000. <em>Mixed-Effects Models in S and S-Plus</em>. Springer-Verlag, New York.</li>
+</ul>
+<h2><a name="appendix"></a>Appendix: Code for Figs. 2, 6, and 8</h2>
+<h3><a name="Figure3" id="Figure3"></a>Figure 2</h3>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(nlme)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#random intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model1 &lt;- lme(Ext.rate~Year, random=~1|Core, data=ext.rates2, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(Ext.rate~ Year, data=ext.rates2, type='n', ylab='Extension rate')</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> mycols &lt;- rep(c('grey80', 'seagreen1', 'grey60', 'bisque4', 'pink'), 5)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#vector of unique cores</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">core.list &lt;- unique(ext.rates2$Core)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#matrix of Year starts and stops</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">year.limits &lt;- matrix(unlist(tapply(ext.rates2$Year, ext.rates2$Core,range)), ncol=2, byrow=T)</div>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px">#draw observed trajectories</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> for(i in 1:length(core.list)) {</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> cur.core &lt;- ext.rates2[ext.rates2$Core==core.list[i],]</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> lines(cur.core$Year, cur.core$Ext.rate, lty=1, col=mycols[i])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#matrix of random intercepts</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">new.ran1 &lt;- cbind(year.limits, ranef(model1)+ fixef(model1)[1])</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#subject-specific curves</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">apply(new.ran1, 1,  function(y) curve(y[3]+ fixef(model1)[2]*x, col='dodgerblue4', add=T, from=y[1], to=y[2])) -&gt; my.curves</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#population averaged curve</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(c(fixef(model1)[1], fixef(model1)[2]), col='red', lwd=2)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mtext('random intercepts model', side=3, line=.5)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('population average', 'subject specific'), col=c(2, 'dodgerblue4'), lty=1, cex=.9, bty='n', lwd=c(2,1))</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add text and arrows</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  new.ran1[,1] -&gt; starts</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> new.ran1[,3] -&gt; ran.ints</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> y2.location &lt;- ran.ints[2]+ fixef(model1)[2]* starts[2]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  arrows(starts[2]+1, y2.location-.05, starts[2]+1, y2.location+.05, code=3, angle=45, length=.05, col=4, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(starts[2], y2.location-.05, expression(sigma^2), pos=4, cex=.9, col=4)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> y1.location &lt;- ran.ints[1]+ fixef(model1)[2]* starts[1]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> arrows(starts[1]+1, y1.location-.05, starts[1]+1, y1.location+.05, code=3, angle=45, length=.05, col=4, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(starts[1]-1, y1.location, expression(sigma^2), pos=3, cex=.9, col=4)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> par(xpd=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  y.location &lt;- fixef(model1)[1]+ fixef(model1)[2]* par(&quot;usr&quot;)[2]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  arrows(par(&quot;usr&quot;)[2]+2, y.location-.1, par(&quot;usr&quot;)[2]+2, y.location+.1, code=3, angle=45, length=.05, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(par(&quot;usr&quot;)[2]+2, y.location+.1, expression(tau^2), pos=3, cex=.9)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(xpd=F)</div>
+<h3><a name="Figure4"></a>Figure 6</h3>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(nlme)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#random slopes and intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">model2 &lt;- lme(Ext.rate~I(Year-1967), random=~I(Year-1967)| Core, data=ext.rates2, method='ML')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(Ext.rate~ Year, data=ext.rates2, type='n', ylab='Extension rate')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  mycols &lt;- rep(c('grey80', 'seagreen1', 'grey60', 'bisque4', 'pink'), 5)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#vector of unique cores</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">core.list &lt;- unique(ext.rates2$Core)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#matrix of Year starts and stops</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">year.limits &lt;- matrix(unlist(tapply(ext.rates2$Year, ext.rates2$Core,range)), ncol=2, byrow=T)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px">#draw observed trajectories</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">for(i in 1:length(core.list)) {</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  cur.core&lt;-ext.rates2[ext.rates2$Core==core.list[i],]</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> lines(cur.core$Year, cur.core$Ext.rate, lty=1, col=mycols[i])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#matrix of random slopes and intercepts</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">new.ran2&lt;-cbind(year.limits, ranef(model2)[,1]+ fixef(model2)[1]-1967* (ranef(model2)[,2]+ fixef(model2)[2]), ranef(model2)[,2]+ fixef(model2)[2])</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#subject-specific curves</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">apply(new.ran2, 1,  function(y) curve(y[3]+y[4]*x, col='dodgerblue4', add=T, from=y[1], to=y[2])) -&gt; my.curve</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#population averaged curve</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(c(fixef(model1)[1]-1967* fixef(model1)[2], fixef(model1)[2]), col='red', lwd=2)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mtext('random intercepts and slopes model', side=3, line=.5)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  legend('topright', c('population average', 'subject specific'), col=c(2, 'dodgerblue4'), lty=1, cex=.9, bty='n', lwd=c(2,1))</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add text and arrows</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  new.ran2[,1] -&gt; starts</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> new.ran2[,3] -&gt; ran.ints2</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> new.ran2[,4] -&gt; ran.slopes</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#random intercept variances</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  y1.location &lt;- ran.ints2[1]+ran.slopes[1]*1998</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> arrows(1998, y1.location-.05, 1998, y1.location+.05, code=3, angle=45, length=.05, col=4, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(1999.2, y1.location+.05, expression(sigma^2), pos=2, cex=.9, col=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">y2.location &lt;- ran.ints2[2]+ ran.slopes[2]* starts[2]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> arrows(starts[2]+1, y2.location-.05, starts[2]+1, y2.location+.05, code=3, angle=45, length=.05, col=4, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(starts[2]-1, y2.location, expression(sigma^2), pos=3, cex=.9, col=4)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#random slope variances</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> y3.location&lt;-ran.ints2[5]+ran.slopes[5]*(starts[5]+3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  arrows(starts[5]+2, y3.location-.07, starts[5]+4, y3.location+.07, code=3, angle=45, length=.05, lwd=2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> text(starts[5]+4, y3.location+.07, expression(tau[1]^2), pos=2, cex=.9)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">par(xpd=T)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> y.location &lt;- fixef(model1)[1]-1967* fixef(model1)[2]+ fixef(model1)[2]* par(&quot;usr&quot;)[2]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> arrows(par(&quot;usr&quot;)[2]+2, y.location-.1, par(&quot;usr&quot;)[2]+2, y.location+.1, code=3, angle=45, length=.05, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(par(&quot;usr&quot;)[2]+2.2, y.location+.1, expression(tau[0]^2), pos=3, cex=.9)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(xpd=F)</div>
+<h3><a name="Figure5"></a>Figure 8</h3>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(nlme)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#slopes vary by reef type: random slopes and intercepts</div>
+  <div class="style10" style="padding-left: 30px; text-indent:-30px"> model4&lt;-lme(Ext.rate~I(Year-1967) + I(Year-1967):factor(reef.type), random=~I(Year-1967)|Core, data=ext.rates2, method='ML')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#vector of unique cores</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">core.list &lt;- unique(ext.rates2$Core)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#matrix of Year starts and stops</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">year.limits &lt;- matrix(unlist(tapply(ext.rates2$Year, ext.rates2$Core,range)), ncol=2, byrow=T)</div>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px">#define function to draw graph for a given reef type</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> graph.reeftype&lt;-function(k) {</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">reef.vals &lt;- tapply(as.numeric(factor(ext.rates2$reef.type)), ext.rates2$Core, function(x) x[1])</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> reef.vals &lt;- reef.vals[!is.na(reef.vals)]</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">reef.names &lt;- c('Backreef', 'Forereef', 'Nearshore')</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> reeftype.list &lt;- c('BR', 'FR', 'NS')</div>
+   <div class="style15" style="padding-left: 50px; text-indent:-30px">#extract data for requested reef type</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> ext.rates4 &lt;- ext.rates2[ext.rates2$reef.type==reeftype.list[k],]</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">new.core.list &lt;- core.list[reef.vals==k]</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  plot(Ext.rate~ Year, data=ext.rates4, type='n', ylab='Extension rate', ylim=c(min(Ext.rate), max(Ext.rate)+.05))</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  mycols &lt;- rep(c('grey80', 'seagreen2', 'bisque4', 'pink', 'grey60'), 5)</div>
+
+  <div class="style15" style="padding-left: 50px; text-indent:-30px">#draw observed trajectories</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  for(i in 1:length(new.core.list)) {</div>
+<div class="style10" style="padding-left: 70px; text-indent:-30px">  cur.core &lt;- ext.rates4[ext.rates4$Core==new.core.list[i],]</div>
+ <div class="style10" style="padding-left: 70px; text-indent:-30px"> lines(cur.core$Year, cur.core$Ext.rate, lty=1, col=mycols[i])</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  }</div>
+<div class="style15" style="padding-left: 50px; text-indent:-30px">#matrix of random slopes and intercepts</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">new.ran2 &lt;- cbind(year.limits, ranef(model4)[,1]+ fixef(model4)[1]-1967* (ranef(model4)[,2] +fixef(model4)[2]+ (reef.vals==2)*fixef(model4)[3]+ (reef.vals==3)*fixef(model4)[4]), ranef(model4)[,2]+ fixef(model4)[2]+ (reef.vals==2)*fixef(model4)[3]+ (reef.vals==3)*fixef(model4)[4], reef.vals)</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">new.ran2a &lt;- new.ran2[new.ran2[,&quot;reef.vals&quot;]==k,]</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">sub.cols &lt;- c('grey40', 'dodgerblue4', 'tomato')</div>
+<div class="style15" style="padding-left: 50px; text-indent:-30px">#subject-specific curves</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">apply(new.ran2a, 1,  function(y) curve(y[3]+y[4]*x, add=T, from=y[1], to=y[2], col='dodgerblue4'))</div>
+<div class="style15" style="padding-left: 50px; text-indent:-30px">#population averaged line</div>
+<div class="style10" style="padding-left: 50px; text-indent:-30px">  sapply(k,function(x)
+abline(c(fixef(model4)[1]-1967* (fixef(model4)[2]+ (x==2)*fixef(model4)[3]+ (x==3)*fixef(model4)[4]), fixef(model4)[2]+ (x==2)*fixef(model4)[3]+ (x==3)*fixef(model4)[4]), col='red', lwd=2))</div>
+
+<div class="style10" style="padding-left: 50px; text-indent:-30px">mtext(reef.names[k], side=3, line=.5, cex=.9)</div>
+ <div class="style10" style="padding-left: 50px; text-indent:-30px"> legend('topright', c('population average', 'subject-specific'), col=c(2, 'dodgerblue4'), lty=1, cex=.85, bty='n', lwd=c(2,1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">graph.reeftype(1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">graph.reeftype(2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">graph.reeftype(3)
+</div>
+
+
+
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+
+<!--Standard footer follows -->
+
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 26, 2012<br>
+      URL: <a href="lecture20.htm#lecture20" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture20.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,164 @@
+rikz <- read.table( 'ecol 562/RIKZ.txt', header=TRUE)
+apply(rikz[,2:76], 1, function(x) sum(x>0)) -> rikz$richness
+lm(richness~NAP, data=rikz) -> mod1
+lm(richness~NAP + factor(week), data=rikz) -> mod2
+lm(richness~NAP*factor(week), data=rikz) -> mod3
+
+
+summary(mod3)
+#calculate the slope in week2
+c(0,1,0,0,0,1,0,0)%*%coef(mod3)
+#calculate the standard error of the slope in week 2
+sqrt(c(0,1,0,0,0,1,0,0)%*%vcov(mod3)%*%c(0,1,0,0,0,1,0,0))
+
+#calculate the difference in slopes week3 minus week2
+c(0,0,0,0,0,-1,1,0)%*%coef(mod3)
+#calculate the standard error of this difference
+sqrt(c(0,0,0,0,0,-1,1,0)%*%vcov(mod3)%*%c(0,0,0,0,0,-1,1,0))
+
+#calculate the t-statistic for testing this difference = 0
+c(0,0,0,0,0,-1,1,0)%*%coef(mod3)/sqrt(c(0,0,0,0,0,-1,1,0)%*%vcov(mod3)%*%c(0,0,0,0,0,-1,1,0))->tstat
+tstat
+#p-value for the test that the slopes in weeks 2 and 3 are equal
+2*pt(tstat,37)
+
+#shortcut method for obtaining intercepts and slopes (estimates and standard errors) for all four weeks
+lm(richness~factor(week)+NAP:factor(week)-1, data=rikz) -> mod3a
+summary(mod3a)
+#The reported standard error for week 2 matches what we got previously
+sqrt(c(0,1,0,0,0,1,0,0)%*%vcov(mod3)%*%c(0,1,0,0,0,1,0,0))
+
+#calculate confidence intervals (95% by default)
+confint(mod3a)
+#extract point estimates
+coef(mod3a)
+
+#assemble slopes and their 95% confidence intervals in a data frame
+slope.mat<-data.frame(est=coef(mod3a)[5:8], confint(mod3a)[5:8,])
+#rename CI columns
+names(slope.mat)[2:3]<-c('low95','up95')
+#add a week variable
+slope.mat$week<-1:4
+slope.mat
+
+#the default plot does not leave enough room for the confidence intervals
+plot(week~est,data=slope.mat)
+#add labels and include xlim argument to get x-axis limits correct
+plot(week~est,data=slope.mat,xlim=range(slope.mat[,2:3]),xlab='Slope', ylab='Week')
+
+#suppress axes and plotting of points
+plot(week~est,data=slope.mat,xlim=range(slope.mat[,2:3]),xlab='Slope', ylab='Week', axes=F,type='n')
+#use default x-axis
+axis(1)
+#alter tick mark location on y-axis
+axis(2,at=1:4)
+#place box around graph
+box()
+#the default line segments have rounded tips
+segments(slope.mat$low95,slope.mat$week, slope.mat$up95, slope.mat$week, lwd=5, col='grey70')
+
+#redo plot and draw bars with straight edges
+plot(week~est,data=slope.mat,xlim=range(slope.mat[,2:3]), xlab='Slope', ylab='Week', axes=F,type='n')
+axis(1)
+axis(2,at=1:4)
+box()
+#set bar ends to butted
+par(lend=1)
+segments(slope.mat$low95,slope.mat$week,slope.mat$up95, slope.mat$week, lwd=5, col='grey70')
+#reset bar ends back to its default value
+par(lend=0)
+#plot point as white dot surrounded by a black circle
+points(slope.mat$est,slope.mat$week,pch=16,col='white')
+points(slope.mat$est,slope.mat$week,pch=1,cex=1.1)
+#add vertical line passing though zero
+abline(v=0,lty=2,col=2)
+
+#none of the CIs include zero agrees with summary table all slope p-values < .05
+summary(mod3a)
+
+
+#repeat the same graph using the lattice package instead of base graphics
+library(lattice)
+#use of dotplot does not matter--we could use xyplot too
+dotplot(week~est,data=slope.mat, xlim=range(c(slope.mat$low95, slope.mat$up95)), xlab='Slope', ylab='Week', 
+panel=function(x,y,subscripts) {
+#the panel.dotplot function adds the gridlines and a plus symbol at the estimate
+panel.dotplot(x,y,col=4,pch='+',cex=1)})
+
+#each base graphics line has a panel graphics equivalent
+dotplot(week~est,data=slope.mat, xlim=range(c(slope.mat$low95, slope.mat$up95)), xlab='Slope', ylab='Week', panel=function(x,y,subscripts){
+panel.dotplot(x,y,col=4,pch='+',cex=.6)
+panel.segments(slope.mat$low95[subscripts], y, slope.mat$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)
+panel.points(x,y,col='white',pch=16,cex=1.1)
+panel.points(x,y,col='dodgerblue4',pch=1,cex=1.2)
+panel.abline(v=0,col=2,lty=2)})
+
+#redo plot but extend the x-limits further to the left and right
+dotplot(week~est,data=slope.mat, xlim=range(c(slope.mat$low95,slope.mat$up95))+c(-.5,.5), xlab='Slope', ylab='Week', panel=function(x,y,subscripts){
+panel.dotplot(x,y,col=4,pch='+',cex=.6)
+panel.segments(slope.mat$low95[subscripts], y, slope.mat$up95[subscripts], y, lwd=3,
+col='dodgerblue4',lineend=1)
+panel.points(x,y,col='white',pch=16,cex=1.1)
+panel.points(x,y,col='dodgerblue4',pch=1,cex=1.2)
+panel.abline(v=0,col=2,lty=2)})
+
+## Do a panel graph that displays both slope and intercept estimates and CIs
+
+#collect everything in a single data frame
+out.mod<-data.frame(est=coef(mod3a), confint(mod3a), week=rep(1:4,2), parm=rep(c('Intercept','Slope'),c(4,4)))
+names(out.mod)[2:3] <- c('low95','up95')
+out.mod
+
+#add conditioning variable and change the data set name
+dotplot(week~est|parm,data=out.mod, xlim=range(c(out.mod$low95, out.mod$up95))+c(-.5,.5), xlab='Slope', ylab='Week', panel=function(x,y,subscripts){
+panel.dotplot(x,y,col=4,pch='+',cex=.6)
+panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3,
+col='dodgerblue4', lineend=1)
+panel.points(x,y,col='white',pch=16, cex=1.1)
+panel.points(x,y,col='dodgerblue4', pch=1, cex=1.2)
+panel.abline(v=0,col=2,lty=2)})
+
+#remove xlim and add scales argument so each panel has different x-limits
+dotplot(week~est|parm,data=out.mod,xlab='Slope', ylab='Week', panel=function(x,y,subscripts){
+panel.dotplot(x,y,col=4,pch='+',cex=.6)
+panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3,
+col='dodgerblue4', lineend=1)
+panel.points(x,y,col='white',pch=16,cex=1.1)
+panel.points(x,y,col='dodgerblue4',pch=1,cex=1.2)
+panel.abline(v=0,col=2,lty=2)},scales=list(x='free'))
+
+#to get the x-limits correct in different panels we need a pre-panel function
+myprepanel.ci <- function(x,y,lx,ux,subscripts,...) {
+x<-as.numeric(x)
+lx<-as.numeric(lx[subscripts])
+ux<-as.numeric(ux[subscripts])
+list(xlim=range(x,ux,lx,finite=TRUE))
+}
+
+#use pre-panel function and specify values for lx and ux
+dotplot(week~est|parm,data=out.mod,xlab='Parameter', ylab='Week', prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(2,1), panel=function(x,y,subscripts){
+panel.dotplot(x,y,col=4,pch='+',cex=.6)
+panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3,
+col='dodgerblue4', lineend=1)
+panel.points(x,y,col='white',pch=16,cex=1.1)
+panel.points(x,y,col='dodgerblue4',pch=1,cex=1.2)
+panel.abline(v=0,col=2,lty=2)}, scales=list(x='free'))
+
+#check if final model yields sensible predictions
+
+#notice that one of the mean richness value predictions is negative
+predict(mod3)
+#calculate the probability of generating a negative value using normal model with the predicted mean
+pnorm(0,predict(mod3),summary(mod3)$sigma)
+max(pnorm(0,predict(mod3),summary(mod3)$sigma))
+
+#produce a boxplot of the probabilities
+boxplot(pnorm(0,predict(mod3),summary(mod3)$sigma),horizontal=T)
+#superimpose the data values on top of the boxplot
+boxplot(pnorm(0,predict(mod3), summary(mod3)$sigma), horizontal=T, outline=F, ylim=c(0,.8), xlab='P(X <= 0)')
+#jitter the points vertically to prevent overlap
+points(pnorm(0,predict(mod3), summary(mod3)$sigma), jitter(rep(1,45), a=.2), col='seagreen',cex=.8,pch=16)
+abline(v=.05,lty=2,col=2)
+
+
+

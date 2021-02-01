@@ -1,0 +1,94 @@
+
+#load data and fit GEE models
+burn <- read.csv('ecol 562/burn.csv') 
+library(gee)
+gee.un <- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + 
+zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr="unstructured", scale.fix=T)
+library(geepack)
+geeglm.un <- geeglm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + 
+zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr="unstructured", scale.fix=T)
+library(maptools)
+
+# residuals from 2004
+burn04<-burn[burn$year==2004,]
+res04<-residuals(geeglm.un,type='pearson')[burn$year==2004]
+newdat<-data.frame(x=burn04$X,y=burn04$Y,r=res04)
+
+library(geoR)
+geodat<-as.geodata(newdat)
+#empirical variograms
+geodat.v1<-variog(geodat,uvec=seq(75,4950,100),max.dist=3500,option='bin')
+geodat.v2<-variog(geodat,uvec=seq(75,14950,100),max.dist=10000,option='bin')
+
+#exponential model with different choices for range parameter
+ols2<-variofit(geodat.v1,ini=c(1.2,30),nugget=0,cov.model="exponential")
+ols2.1<-variofit(geodat.v1,ini=c(1.2,1500),nugget=0,cov.model="exponential")
+ols2.2<-variofit(geodat.v1,ini=c(1.2,3000),nugget=0,cov.model="exponential")
+#examine fit of models
+sapply(list(ols2,ols2.1,ols2.2),function(x) x$value)
+
+#display empirical semivariogram and exponential models
+plot(geodat.v1)
+lines(ols2,col='grey70',lwd=2)
+lines(ols2.1,col=4,lty=2)
+lines(ols2.2,col=3,lty=2)
+
+#display semivariance over greater distance
+plot(geodat.v2)
+lines(ols2,col='grey70',lwd=2)
+lines(ols2.1,col=4,lty=2)
+lines(ols2.2,col=3,lty=2)
+#fit a model to larger range of distances
+ols2a<-variofit(geodat.v2,ini=c(1.2,3000),nugget=0,cov.model="exponential")
+lines(ols2a,col=4)
+
+#extract parameters for spatial correlation model
+names(ols2)
+ols2$cov.pars
+?variofit
+exp.func<-function(x) exp(-x/ols2$cov.pars[2])
+
+#construct spatial correlation matrix
+out.dist<-as.matrix(dist.g)
+out.dist[1:4,1:4]
+spatial.mat<-exp.func(out.dist)
+
+round(spatial.mat[1:8,1:8],3)
+
+#obtain temporal correlation from gee model
+gee.un$working.correlation
+
+#obtain temporal correlation from geeglm model
+names(summary(geeglm.un))
+names(summary(geeglm.un)$geese)
+names(summary(geeglm.un)$geese$correlation)
+summary(geeglm.un)$geese$correlation$estimate
+time.mat<-matrix(0,nrow=4,ncol=4)
+time.mat[lower.tri(time.mat)]<-summary(geeglm.un)$geese$correlation$estimate
+time.mat<-time.mat+t(time.mat)
+diag(time.mat)<-1
+time.mat
+gee.un$working.correlation
+
+#construct spatio-temporal correlation matrix
+out.k<-kronecker(spatial.mat,time.mat)
+dim(spatial.mat)
+dim(out.k)
+round(out.k[1:8,1:8],3)
+
+#check that spatio-temporal correlation matrix is invertible
+inv.r<-solve(out.k)
+inv.r[1:4,1:4]
+#check that spatio-temporal correlation matrix is postive definite
+my.eig <- eigen(out.k)
+names(my.eig)
+min(my.eig$values)
+2764*2763/2
+
+#multivariate semivariogram
+
+my.model<-glm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn)
+my.resids<-residuals(my.model,type="pearson")
+#extract residuals separately by year
+r.dat<-data.frame(x=burn$X[burn$year==2004],y=burn$Y[burn$year==2004],r4=my.resids[burn$year==2004],r5=my.resids[burn$year==2005],r6=my.resids[burn$year==2006],r7=my.resids[burn$year==2007])
+r.dat[1:4,]

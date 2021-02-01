@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 33&mdash;Monday, April 2, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style221 {color: #663366; font-weight: bold; }
+.style221 {color: #990099;
+	font-weight: bold;
+}
+.style41 {color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture33" id="lecture33"></a>Lecture 33&mdash;Monday, April 2, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture33.htm#data">Data sets with both spatial and temporal correlation</a></li>
+  <li><a href="lecture33.htm#shapefile">Using shapefiles in R</a></li>
+  <li><a href="lecture33.htm#accounting">Accounting for spatio-temporal correlation</a></li>
+  <li><a href="lecture33.htm#methods">Methods for obtaining the spatio-temporal correlation matrix</a></li>
+  <li><a href="lecture33.htm#using">Using a single year to estimate the spatial correlation matrix</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture33.htm#density">density</a> to create kernel density estimates of a smoothed histogram. </li>
+  <li><a href="lecture33.htm#readshapepoly">readShapePoly</a> (from <span class="style19">maptools</span>) to read shapefiles into R.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture33.htm#gee">gee</a> for the gee function.</li>
+  <li><a href="lecture33.htm#geor">geoR</a> for the <span class="style41">as.geodata</span>,<span class="style41"> variog</span>, and<span class="style41"> variofit </span> functions for constructing the semivariogram. </li>
+  <li><a href="lecture33.htm#geepack">geepack</a> for the <span class="style41">geeglm</span><span class="style41"> </span>function.</li>
+  <li><a href="lecture33.htm#maptools">maptools</a> for the readShapePoly function.</li>
+  <li><a href="lecture33.htm#vegan">vegan</a> for the <span class="style41">mantel</span> function.</li>
+</ul>
+<h2 align="left"><strong><a name="data" id="data"></a>Data sets with both spatial and temporal correlation</strong></h2>
+<p>Our approach  has been to treat spatial and temporal correlation in data as a nuisance, problems to be addressed after we've fit the best model we can using the predictors at our disposal. Beginning in <a href="lecture15.htm">lecture 15</a> we examined data in which measurements were obtained over time on the same subject as well as on different subjects yielding  a hierarchical data structure with the potential for residual temporal correlation. Beginning in <a href="lecture30.htm">lecture 30</a> we turned to spatially referenced data where even after fitting a regression model with spatially referenced predictors the spatial correlation persisted. Today we examine  a data set in which the residuals of our best regression model exhibit both temporal and spatial correlation.</p>
+<p>To illustrate this we return to a data set that was analyzed in <a href="../assignments/assign8.htm">Assignment 8</a>. The data consist of repeated observations over a four year period on 691 different parcels of land in eastern North Carolina. The goal was to determine factors that affect the decision to use  burning as a land management tool. We  used GEE to fit a logistic regression model to the binary response. GEE provides marginal interpretations of the parameters rather than the subject-specific interpretations provided by mixed effects models, and was needed to deal with the unusual temporal correlation structure exhibited by the data. Observations separated by three years were positively correlated while observations separated by one or two years were negatively correlated. This  correlation structure is consistent with  the rule-of-thumb that recommends burning  every three years. </p>
+<p><a name="gee"></a><a name="geepack"></a>I load the data and fit a GEE model with an unstructured correlation matrix. For completeness I fit the model using both the <span class="style19">gee</span> and <span class="style19">geepack</span> packages.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">burn &lt;- read.csv('ecol 562/burn.csv') </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(gee)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  gee.un &lt;- gee(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;unstructured&quot;, scale.fix=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(geepack)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">geeglm.un &lt;- geeglm(burn50 ~ Hectares + factor(rx_cat3) + zmin_drd + prop_timb + Prop_no_b + zmin_dr + zmin_ddv + zmin_ddv:factor(rx_cat3), family = binomial, data = burn, id=PolyFID, corstr=&quot;unstructured&quot;, scale.fix=T)</div>
+<p>The data consist of repeated observations on parcels of land. Because the parcels are spatially referenced and have spatial extent there is the potential for spatial correlation. For instance, it's not unreasonable for  nearby parcels to have been burned at the same. As a first step toward  understanding this we  plot the physical locations of the parcels and examine their distance relationships. </p>
+<h2><a name="shapefile"></a>Using shapefiles in R</h2>
+<p><a name="maptools"></a><a name="readshapepoly"></a>To help display the spatial relationships between parcels I obtain a state and county boundary shapefile from the <a href="http://portal.ncdenr.org/web/lr/geodetic/official-boundaries">North Carolina Geodetic Survey web site.</a> Shapefiles can be read into R with functions from the <span class="style19">maptools</span> package. Below I use the <span class="style1">readShapePoly</span> function for this purpose.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#read in NC shape file</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(maptools)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nc1 &lt;- readShapePoly( &quot;ecol 562/NC_State_County_Boundary_NAD83HARN/NC_State_County_Boundary_NAD83HARN.shp&quot;) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(nc1)
+</div>
+<p align="center"><img src="../../images/lectures/lecture33/fig1.png" width="375" height="150" alt="Fig. 1"></p>
+<p align="center"><span class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 1 </strong>&nbsp;Plot of North Carolina shapefile</span></p>
+<p>Because the coordinates of each site appear multiple times in the data set (for each of the four years of measurement), I use the <span class="style1">tapply</span> function to extract one set of coordinates from each site.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#select one value from each PolyFID</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  x.un &lt;- tapply(burn$X, burn$PolyFID, function(x) x[1])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">y.un &lt;- tapply(burn$Y, burn$PolyFID, function(x) x[1])</div>
+<p>To zoom in on the portion of North Carolina where the data are, I use the ranges of the plot coordinates to set the <em>x</em>-limits and <em>y</em>-limits of the North Carolina shapefile map. We're told that the map is scaled in feet, while the coordinates in the burn data set are scaled in meters, so we need to  use a meters-to-feet conversion factor when plotting the sites. I also subtract and add a small amount to the lower and upper limits of the range when specifying the limits in the <span class="style1">plot</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> range(x.un)</div>
+<span class="style24">  [1] 707957.92 858158.03</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> range(y.un)</div>
+<span class="style24">[1]&nbsp; 70192.845 174379.181</span>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #conversion factor: meters to feet</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mult &lt;- 3.28083989501312</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(nc1, xlim=range(x.un)*mult + c(-100,100), ylim=range(y.un)*mult + c(-100, 100))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #add PolyFID locations</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">points(x.un*mult, y.un*mult, col=2, cex=.5)</div>
+<p>I also add a key showing the distance scale used on the map.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add distance scale to graph</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  segments(2500000, 234000, 2610000, 234000)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  text(2500000+seq(0,33000,2500)*mult, 234000, '|', cex=.5, col='grey50')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  text(2500000+seq(0,30000,10000)*mult, 234000,'|')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  text(2500000+seq(0,30000,10000)*mult, 234000, c(0,'10','20','30'), cex=.7, pos=1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">text(2610000, 234000, 'km', pos=4, cex=.7)</div>
+<br>
+<table width="600" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture33/fig2.png" width="540" height="320" alt="Parcel locations"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 2 </strong>&nbsp;Spatial distribution  of parcels (PolyFIDs) from the burn data set in  North Carolina</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+
+<p>The map reveals  a substantial amount of clustering of the parcels. Unlike the wheat yield data we examined in <a href="lecture32.htm">lecture 32</a> where the observations were equally spaced, the spatial distribution of the burn sites is quite patchy consisting of  both dense and loose clusters of points some with large gaps between them. To get a better  sense of the distances involved I calculate all the pairwise distances between sites and examine their distribution.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #calculate geographic distances</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.d &lt;- dist(cbind(x.un, y.un))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> range(out.d)</div>
+<span class="style24">[1]&nbsp;&nbsp;&nbsp;&nbsp; 21.786218 164640.824375</span>
+<p><a name="density"></a>So sites are as close as 22 meters and as far as part as 165 kilometers! I display a histogram of the distances and superimpose a kernel density estimate using the <span class="style1">density</span> function. Because the boundary value of zero will  distort the kernel density estimate, I append to the distances their negative values and fit the kernel density to both. I then discard the negative values and double the remaining <em>y</em>-coordinates so that the area under the kernel density still integrates to 1. I begin by converting the &quot;dist&quot; object created by the <span class="style1">dist</span> function to a matrix and extract the unique distances that lie in the lower triangle of the matrix. The distribution of distances turns out to be distinctly bimodal with a long tail. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dist.mat &lt;- as.matrix(out.d)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> unique.d &lt;- as.vector(dist.mat[lower.tri(dist.mat)])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">hist(unique.d, probability=T, xlab='distance', main='')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add kernel density estimate by reflecting data across y-axis</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  out.ker &lt;- density(c(-unique.d, unique.d))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(out.ker)</div>
+
+<span class="style24">   [1] &quot;x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;bw&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;call&quot;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&quot;data.name&quot;<br>
+ [7] &quot;has.na&quot;</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #throw away negative values and rescale density</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  new.x &lt;- out.ker$x[out.ker$x&gt;0]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  new.y &lt;- 2*out.ker$y[out.ker$x&gt;0]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(new.x, new.y, col=2)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture33/fig3.png" width="480" height="320" alt="fig. 3"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 3 </strong>&nbsp;Histogram and kernel density estimate of the distribution of inter-parcel distances</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<p>We next turn to assessing whether there is lingering spatial correlation in the residuals from the GEE model. Because the Mantel and semivariogram functions require that all the observations  have distinct coordinates so that none of the pairwise distances are zero, I restrict the analysis to just the residuals from 2004. I extract the spatial coordinates and Pearson residuals from the <span class="style1">geeglm</span> model and subset them by year.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#restrict data and results to 2004</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  burn04 &lt;- burn[burn$year==2004,]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #residuals from 2004</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  res04 &lt;- residuals(geeglm.un, type='pearson')[burn$year==2004]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">newdat &lt;- data.frame(x=burn04$X, y=burn04$Y, r=res04)</div>
+<p><a name="vegan"></a>I use the <span class="style1">mantel</span> function from <span class="style19">vegan</span> to obtain a randomization test of the Mantel correlation of the residual distances in 2004 with the geographic distances.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Mantel test</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  dist.g &lt;- dist(newdat[,1:2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  dist.r &lt;- dist(newdat[,3])</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> library(vegan)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel(dist.g, dist.r)</div>
+<span class="style24">Mantel statistic based on Pearson's product-moment correlation </span>
+<p><span class="style24">Call:<br>
+  mantel(xdis = dist.g, ydis = dist.r) </span>
+<p><span class="style24">Mantel statistic r: </span><span class="style25">0.05939</span><span class="style24"> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Significance: </span><span class="style25">0.001
+  </span>
+<p><span class="style24">Empirical upper confidence limits of r:<br>
+  &nbsp;&nbsp; 90%&nbsp;&nbsp;&nbsp; 95%&nbsp; 97.5%&nbsp;&nbsp;&nbsp; 99% <br>
+  0.0171 0.0230 0.0307 0.0397 </span>
+<p><span class="style24">Based on 999 permutations</span>
+<p>The correlation although small is statistically significant. As we'll see the small correlation is probably due to the very local nature  of the spatial correlation coupled with the very large spatial extent of the data. Only  nearby observations are correlated; the vast majority of the observations are uncorrelated.</p>
+<h2><a name="accounting"></a>Accounting for spatio-temporal correlation</h2>
+<p>So how do we account for the spatial correlation in a way that will also allows us to simultaneously account for the temporal correlation? In <a href="lecture32.htm#meanprocess">lecture 32</a> we had  success by including the spatial coordinates of the observations as predictors in the model, either in the form of a response surface or as nonparametric smoothers in a GAM. Using this approach here we would just need to add appropriate geographic terms to the regression equation in the GEE model for temporal correlation. Unfortunately this approach doesn't work here. Adding geographic terms to the mean process model does not substantially reduce the spatial correlation. This shouldn't be surprising because it's unlikely that the large-scale geographic location of a site has much to do with the decision to burn or not. Such decisions are likely to be very local affecting only whether adjacent sites  are burned together or not,  a decision that does not vary with latitude and longitude. Contrast this with the effect of geography  on  wheat yield in the experiment of <a href="lecture32.htm">lecture 32.</a> There unmeasured soil conditions that varied  geographically could easily have led to the spatial correlation in yield that was detected. </p>
+<p>Because the parcels have areal extent we could view these  as lattice data and define neighborhoods for each parcel consisting of those parcels that share boundaries with a given parcel. A frequently used spatial correlation model for lattice data is the ICAR model, an acronym for the intrinsic conditional autoregressive model. In a CAR model each parcel is assigned its own unique random effect but also receives the weighted inputs from the random effects of its neighbors. This is a kind of mixed effects model but because of its complicated nature it is most easily implemented using  Bayesian methods. Because we need to couple the spatial correlation with a temporal correlation that we saw in Assignment 8 was not correctly captured by including random effects, we can reject a CAR model for these data.</p>
+<p>Given that  GEE was able to effectively handle the temporal correlation it would be nice if we could add the spatial correlation  to the GEE model. When the data are sorted by parcel and there is only temporal correlation among observations from the same parcel, the correlation matrix of the full data set is a block diagonal matrix in which the temporal correlation matrix occurs repeatedly along the diagonal, once for each parcel, and there are zeros everywhere else. A straightforward way to extend a temporal correlation matrix to a spatio-temporal correlation matrix is to make the additional assumption that the space-time covariance is separable, meaning that it can be written as the product of a spatial covariance and a temporal covariance. See, e.g., Gumpertz et al. (2000) and Lin (2010). </p>
+<p>With the assumption of separability the spatio-temporal correlation matrix is obtained as the Kronecker product of the spatial correlation matrix estimated from a variogram, say, and the temporal correlation matrix estimated from GEE or directly from the model residuals. In the Kronecker product the temporal correlations appear repeatedly as identical 4 &times; 4 matrices along the block diagonal. These same blocks also appear in the off-diagonal positions but multiplied by an appropriate spatial decay constant that decreases as a function of the distance separating the plots. These off-diagonal elements describe how the temporal correlation pattern for observations from the same site is diminished by spatial extent when observations from different sites are considered. The main attraction of separability apart from its simplicity is that if the temporal matrix and the spatial matrix are both legitimate correlation matrices (i.e., they are both invertible and positive definite), then the Kronecker product of these two matrices will also be a legitimate correlation matrix. There is no guarantee of this happening when the matrix is assembled in a piecemeal fashion.</p>
+<p>As an illustration suppose <em>A</em> is a 2 &times; 2 spatial correlation matrix and <em>B</em> is a 3 &times; 3 temporal correlation matrix. </p>
+<p align="center"><img src="../../images/lectures/lecture33/amat.gif" alt="a matrix" width="135" height="75" align="absmiddle"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/lectures/lecture33/bmat.gif" alt="B matrix" width="172" height="107" align="absmiddle"></p>
+<p>Then the Kronecker product, <img src="../../images/lectures/lecture33/kronecker2.gif" alt="kronecker" width="53" height="22" align="absmiddle"> is defined to be the following 6 &times; 6 matrix.</p>
+<p align="center"><img src="../../images/lectures/lecture33/kronecker.gif" width="623" height="222" alt="kronecker"></p>
+<p>For the burn data set we would choose <em>A</em> to be a 691 &times; 691 matrix of spatial correlations between the 691 parcels and <em>B</em> to be the 4 &times; 4 matrix of temporal correlations among the four years 2004 through 2007. The final matrix <img src="../../images/lectures/lecture33/kronecker3.gif" alt="kronecker" width="88" height="22" align="absmiddle"> is 2764 &times; 2764, the dimensionality of the data set.</p>
+<h2><a name="methods"></a>Methods for obtaining the spatio-temporal correlation matrix</h2>
+<p>We can  construct the spatial correlation matrix <em>A</em> and/or the complete spatio-temporal correlation matrix <em>C</em>  in a number of ways. I list three.</p>
+<ol>
+  <li>Choose only one time period to estimate the spatial correlation, e.g. year 2004, and fit a parametric semivariogram model to the empirical semivariogram and use it to estimate a spatial correlation function. Evaluate the correlation function  on the matrix of pairwise distances  to obtain the spatial correlation matrix between parcels. Construct the spatio-temporal correlation matrix as the Kronecker product of the distance matrix and the temporal correlation matrix (estimated from GEE or as the correlation of the model residuals by year). Fit a GEE model using this matrix as the correlation matrix with  an <span class="style22">id</span> variable in which all observations are assigned to the same group. For example, to use a user-specified correlation matrix in the <span class="style1">geeglm</span> function set <span class="style22">corstr=&quot;fixed&quot;</span> option and use the <span class="style22">zcor</span> argument to list the entire lower triangle of the spatio-temporal correlation matrix as was done in <a href="../solutions/assign8.htm">assignment 8</a>. The process could then be repeated for a different year to hopefully demonstrate that estimating the spatial correlation using a different year does not substantively change the conclusions drawn from the model.</li>
+  <li>It is possible to analyze multiple dependent variables jointly in a multivariable semivariogram using the <span class="style19">gstat</span> package of R. The method for doing so is described beginning on p. 206 of <em>Applied Spatial Data Analysis with R</em> by Bivand et al. In a multivariable analysis the residuals from different years are treated as different variables measured from the same observational unit, the plot. The <span class="style1">fit.lmc</span> function in the <span class="style19">gstat</span> package calculates direct and cross semivariograms for variables individually and in pairs. What makes this approach especially attractive is that the <span class="style1">fit.lmc</span> function will constrain the matrix of all ten unique partial sill estimates to be positive definite, a property that is fundamental when using the cross-semivariograms to construct a correlation matrix. Using this approach there is no need to calculate a separate temporal correlation matrix because this method will return the spatio-temporal correlation directly as a function of distance. It also relaxes the separability assumption and allows for the simultaneous estimation of both the temporal and spatial correlation. Unfortunately given that the same initial parametric settings are used for all the semivariograms, the ten individual semivariogram models can be extremely difficult to fit in this fashion.</li>
+  <li>A third approach is a hybrid of these two. In it we estimate separate empirical semivariograms for each year  (direct semivariograms) and for each combination of years (cross-semivariograms). The next step is to fit a theoretical semivariogram model to the set of empirical semivariances using a nonlinear mixed effects model with the source of the empirical semivariogram as the grouping variable and in which one or more of the semivariogram parameters are allowed to vary by group.  This approach uses all the data from all four years simultaneously thus addressing one possible criticism of method 1. Furthermore the mixed effects model will yield more robust estimates of the correlation than  method 2 and avoid convergence problems. It turns out for these data that the semivariograms and cross-semivariograms from method 2 fall into two natural groups (of five semivariograms each) so that a good way to proceed is to obtain a separate set of correlation parameters for each group using two separate mixed effects models. As in method 1 the spatial extent of the spatio-temporal correlation matrix is populated by allowing the elements of the temporal correlation matrix   to decay with distance. Thus this is still a separable model but one in which the elements of the spatial matrix are obtained in a more general fashion.</li>
+</ol>
+<p>In all cases it is necessary to check the entries of the constructed spatio-temporal correlation matrix for feasibility. The Prentice bounds for binary data must still hold and the functions presented in <a href="lecture23.htm#checking">lecture 23</a> can be used to check this. Given the way in which the correlation matrix was  constructed, feasibility violations in the spatial part of the matrix  should be corrected by  adjusting the parameters of the overall semivariogram model that was used to generate the  matrix, rather than by  tweaking only the individual matrix entries that violate the bounds.</p>
+<h2><a name="using"></a>Using a single year to estimate  the spatial correlation matrix</h2>
+<p><a name="geor"></a>I use the 2004 residuals to estimate a semivariogram model. I start by generating the empirical semivariogram. I try bins with centers that are a distance 100 m apart and extend the calculations out to 5000 meters.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#obtain empirical semivariogram of residuals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  library(geoR)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  geodat &lt;- as.geodata(newdat)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  geodat.v1 &lt;- variog(geodat, uvec=seq(50,4950,100), max.dist=5000, option='bin')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1$n</div>
+<span class="style24">&nbsp;[1]&nbsp;&nbsp; 8&nbsp; 64 142 153 167 213 231 288 291 310 335 373 349 368 366 368 387 384 378 396<br>
+[21] 408 367 378 426 428 386 433 428 406 447 438 448 458 478 469 458 472 442 474 473<br>
+[41] 488 474 510 519 511 496 502 517 523 552</span>
+<p>The first bin clearly has too few observations so I try moving the center of the first bin to a larger value.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#move center of first bin so it has more data</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  geodat.v1 &lt;- variog(geodat, uvec=seq(75,4950,100), max.dist=3500, option='bin')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat.v1$n</div>
+<span class="style24">&nbsp;[1]&nbsp; 17&nbsp; 82 151 156 175 229 227 292 316 323 343 351 351 368 371 390 352 402 376 389<br>
+[21] 404 388 374 440 418 391 433 407 424 446 453 439 457 480 472 484 440 442 485 466<br>
+[41] 469 527 499 505 493 530 493 508 525 427</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(geodat.v1)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture33/fig4.png" width="480" height="330" alt="fig. 4"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 4 </strong>&nbsp;Semivariogram of 2004 residuals from a GEE model</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+
+<p>The graph seems to be turning back on itself after reaching what appears to be a sill of around 1.3. I try extending the graph out even further to see if this pattern persists.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#extend the distances out further</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  geodat.v2 &lt;- variog(geodat, uvec=seq(75,14950,100), max.dist=10000, option='bin')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(geodat.v2)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture33/fig5.png" width="480" height="325" alt="fig. 5"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 5 </strong>&nbsp;Semivariogram of 2004 residuals from a GEE model carried out to 10,000 meters.</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+
+<p>Now we see that at around 3000 m the graph becomes quite noisy and begins to oscillate around the putative sill of 1.3. Considering the arrangement of parcels shown in Fig. 2 the patchiness of the data set may be causing this. Once a certain distance is reached the  semivariances are being calculated between observations from  clusters that are geographically disjoint. The mean process model probably doesn't adequately account for all the spatial heterogeneity in the data set and this  is manifesting itself in the noisy semivariogram at greater distances. In any case it's pretty clear that the local correlation that we're trying to detect dissipates at around 3500 m, so we should stop calculating the  semivariances  at that point. We'll fit theoretical models to this semivariogram in the next lecture.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#cut calculations off at 3500</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">geodat.v1 &lt;- variog(geodat, uvec=seq(75,4950,100), max.dist=3500, option='bin')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(geodat.v1)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture33/fig6.png" width="480" height="330" alt="fig 6"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 6 </strong>&nbsp;Semivariogram of 2004 residuals from a GEE model</td>
+    <td class="styleArial">&nbsp;</td>
+  </tr>
+</table>
+<h2><a name="cited"></a>Cited Reference</h2>
+<ul>
+  <li>Bivand, Roger. 2008.<em> Applied Spatial Data Analysis with R</em>. New York: Springer.</li>
+  <li>Gumpertz, M. L., C.-T. Wu, and J. M. Pye. 2000. Logistic regression for southern pine beetle outbreaks with spatial and temporal autocorrelation. <em>Forest Science</em> <strong>46</strong>: 95&ndash;107. </li>
+  <li>Lin, P.-S. 2010. Estimating equations for separable spatial-temporal binary data. <em>Environmental and Ecological Statistics</em> <strong>17</strong>: 543&ndash;557.<br>
+  </li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 3, 2012<br>
+      URL: <a href="lecture33.htm#lecture33" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture33.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

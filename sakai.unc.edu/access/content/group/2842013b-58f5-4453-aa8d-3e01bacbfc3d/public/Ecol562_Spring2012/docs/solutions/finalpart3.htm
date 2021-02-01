@@ -1,0 +1,490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Final Part 3&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style12 {color: #008000}
+.style151 {	color: #990099;
+	font-weight: bold;
+}
+.style161 {	color: #CC0000;
+	font-weight: bold;
+}
+.style181 {color: #008000; font-weight: bold; }
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style9 {	font-size:small;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="finalpart3" id="assign6"></a>Final Part 3&mdash;Solution</h1>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fish &lt;- read.table( 'ecol 562/fish.txt', sep='\t', header=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(fish)</div>
+<span class="style24">[1] &quot;trial&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;day&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;position&quot;&nbsp; &quot;treatment&quot; &quot;freq&quot;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<h2>Question 1</h2>
+<p>There are many ways to do this. They all involve two operations that we then combine into a single step. Here are a few possibilities.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(tapply(fish$treatment, fish$trial, function(x) as.character(x)[1]))</div>
+<span class="style24">CN GR LF RH SM SQ YH YT <br>
+  14 14 14&nbsp; 7&nbsp; 6&nbsp; 7&nbsp; 7&nbsp; 7</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(tapply(fish$treatment, fish$trial, function(x) unique(as.character(x))))</div>
+<span class="style24">CN GR LF RH SM SQ YH YT <br>
+  14 14 14&nbsp; 7&nbsp; 6&nbsp; 7&nbsp; 7&nbsp; 7 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> apply(table(fish$trial, fish$treatment), 2, function(x) sum(x&gt;0))</div>
+<span class="style24">  CN GR LF RH SM SQ YH YT <br>
+  14 14 14&nbsp; 7&nbsp; 6&nbsp; 7&nbsp; 7&nbsp; 7</span>
+<h2>Question 2</h2>
+<p>We have a categorical response with three categories. I fit a multinomial model with <span class="style8">treatment</span> as the predictor. I then compare it to a model containing only an intercept using a likelihood ratio test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(nnet)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mult1 &lt;- multinom(position~treatment, data=fish, weights=freq)</div>
+<span class="style24"># weights:&nbsp; 27 (16 variable)<br>
+initial&nbsp; value 2877.265584 <br>
+iter&nbsp; 10 value 2746.459908<br>
+iter&nbsp; 20 value 2730.572541<br>
+final&nbsp; value 2730.564623 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mult0 &lt;- multinom(position~1, data=fish, weights=freq)</div>
+<span class="style24"># weights:&nbsp; 6 (2 variable)<br>
+initial&nbsp; value 2877.265584 <br>
+final&nbsp; value 2759.967497 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mult0,mult1)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: position<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 454&nbsp;&nbsp; 5519.935&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 treatment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 440&nbsp;&nbsp; 5461.129 1 vs 2&nbsp;&nbsp;&nbsp; 14 58.80575 </span><span class="style25">1.898106e-07
+  </span>
+<p>The test is highly significant. There is evidence of a treatment effect.</p>
+<h2>Question 3</h2>
+<p>A goodness of fit test can be obtained by comparing the current model to a saturated model, a model that estimates separate parameters for each multinomial observation. The variable <span class="style8">trial</span> in the data set identifies the 76 different multinomial observations in this experiment. I enter it as the sole predictor in a multinomial model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">mult.S &lt;- multinom(position~trial, data=fish, weights=freq)</div>
+<span class="style24"># weights:&nbsp; 231 (152 variable)<br>
+initial&nbsp; value 2877.265584 <br>
+iter&nbsp; 10 value 2574.368825<br>
+iter&nbsp; 20 value 2567.289077<br>
+iter&nbsp; 30 value 2567.225977<br>
+final&nbsp; value 2567.225814 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(mult1,mult.S)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: position<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat. Pr(Chi)<br>
+  1 treatment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 440&nbsp;&nbsp; 5461.129&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp; trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 304&nbsp;&nbsp; 5134.452 1 vs 2&nbsp;&nbsp; 136 </span><span class="style25">326.6776&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0
+  </span>
+<p>So it appears that we have a significant lack of fit. This test does have some minimal cell size restrictions that must be met in order for the chi-square distribution of the test statistic to be valid. The general rule is that the number of expected counts less than 5 should not exceed 20%. I obtain the totals for each trial and the predicted probabilities on each trial and then use these to obtain the expected counts.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.n &lt;- tapply(fish$freq,fish$trial,sum)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.treat &lt;- factor(tapply(fish$treatment, fish$trial, function(x) as.character(x[1])))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.p &lt;- predict(mult1, type=&quot;probs&quot;, newdata=data.frame(treatment=out.treat))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">exp.counts &lt;- out.p*as.vector(out.n)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(exp.counts&lt;5)/length(as.vector(exp.counts))</div>
+<span class="style24">[1] 0.01754386</span>
+<p>So only about 2% of the expected counts are less than 5. The goodness of fit test is valid.</p>
+<h2>Question 4</h2>
+<p> Different fish were used on different days and there may have been changes in protocol from day to day. Thus it makes sense to treat <span class="style8">day</span> as a blocking variable and include <span class="style8">day</span> as a factor in the model. The experiment was carried out over 14 days with not every treatment tested on each day. So, it's not possible to include an interaction between <span class="style8">treatment</span> and <span class="style8">day</span> with these data. <span class="style8">Day</span> has numeric values so I have to explicitly declare it as a factor when fitting the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mult2 &lt;- multinom(position~treatment + factor(day), data=fish, weights=freq)</div>
+<span class="style24"># weights:&nbsp; 66 (42 variable)<br>
+initial&nbsp; value 2877.265584 <br>
+iter&nbsp; 10 value 2703.954220<br>
+iter&nbsp; 20 value 2662.880771<br>
+iter&nbsp; 30 value 2661.383908<br>
+iter&nbsp; 40 value 2661.317292<br>
+final&nbsp; value 2661.314489 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">anova(mult2, mult.S)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: position<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pr(Chi)<br>
+  1 treatment + factor(day)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 414&nbsp;&nbsp; 5322.629&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 304&nbsp;&nbsp; 5134.452 1 vs 2&nbsp;&nbsp; 110 </span><span class="style25">188.1774 5.046884e-06</span>
+<p>The fit has improved but there is still a significant lack of fit.</p>
+<h2>Question 5</h2>
+<p> Two assumptions of a multinomial experiment are the following.</p>
+<ul>
+  <li>The observations making up the individual multinomial trials are independent.</li>
+  <li>The probabilities of the categories are constant except as dictated by predictors in the model.</li>
+</ul>
+<p>Independence is clearly violated. We are told that this is a repeated measures design. The same fish were observed 12 times and their positions at these times were recorded. Given this it's pretty clear the observations for a given trial are not independent because we are repeatedly using observations from the same fish as well as different fish. Furthermore the three fish used on each trial can observe and respond to each other. This also violates independence.</p>
+<p>It's also possible that the position selection probabilities of individual fish are not constant because if habituation occurs. If the fish grow accustomed to the presence of the predator fish during a trial their behavior may change. We're also told the same fish were reused during the course of the day, so it's possible that the fish  had different selection probabilities early in the day than late in the day.</p>
+<h2>Question 6</h2>
+<p>To fit a multinomial model as a Poisson model we need to include specific variables that enforce the multinomial constraints. Here's a portion of the what the raw data look like when organized as multinomial trials.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xtabs(freq~trial+position, data=fish)[1:10,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position<br>
+  trial&nbsp;&nbsp;&nbsp; 1&nbsp; 2&nbsp; 3<br>
+  &nbsp; CN.1&nbsp;&nbsp; 6&nbsp; 5 25<br>
+  &nbsp; CN.10 11 15 10<br>
+  &nbsp; CN.11&nbsp; 8 21&nbsp; 7<br>
+  &nbsp; CN.12&nbsp; 2&nbsp; 8 14<br>
+  &nbsp; CN.13&nbsp; 6 15 15<br>
+  &nbsp; CN.14 12 10 14<br>
+  &nbsp; CN.2&nbsp; 12 12 12<br>
+  &nbsp; CN.3&nbsp; 13 14&nbsp; 9<br>
+  &nbsp; CN.4&nbsp;&nbsp; 7 18 11<br>
+&nbsp; CN.5&nbsp; 12 10 14</span>
+<p>To obtain a multinomial model we  need to include the variable <span class="style8">trial</span> as a predictor (to fix the row sums) and the variable <span class="style8">position</span> as a predictor (to fix the column sums). The null multinomial model when fit as a Poisson model is the following. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm0 &lt;- glm(freq~factor(position) + trial, data=fish, family=poisson)</div>
+<p>This is called the independence model. It claims that <span class="style8">trial</span> and <span class="style8">position</span> are unrelated. So this is our &quot;nothing's going on&quot; model equivalent to the intercept-only multinomial model above. If we look at the predicted counts (fitted values) from this model we'd see that each trial is predicted to have the same fraction of 1s, 2s, and 3s. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.tab &lt;- xtabs(fitted(glm0)~fish$trial + fish$position)[1:10,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.tab</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fish$position<br>
+  fish$trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.1&nbsp; 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.10 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.11 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.12 5.727377 11.39061&nbsp; 6.882016<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.13 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.14 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.2&nbsp; 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.3&nbsp; 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.4&nbsp; 8.591065 17.08591 10.323024<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.5&nbsp; 8.591065 17.08591 10.323024</span>
+
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.tab/apply(out.tab, 1, sum)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fish$position<br>
+  fish$trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.1&nbsp; 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.10 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.11 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.12 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.13 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.14 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.2&nbsp; 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.3&nbsp; 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.4&nbsp; 0.2386407 0.4746086 0.2867507<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.5&nbsp; 0.2386407 0.4746086 0.2867507</span>
+
+<p>The two additive terms in the model just define the constraints of the experimental design so that our predictions have the same row and column totals as the data have. When you fit the multinomial model with the <span class="style161">multinom</span> function these constraints are already built in so you just need to include an intercept as the only predictor.</p>
+<p>The independence model is uninteresting. If we add <span class="style8">trial:factor(position)</span> to the independence model we let every trial have its own values for position (still subject to the constraints of the experiment). The fractions of 1s, 2s and 3s are now different in every trial. This is also an uninteresting model. It says everything is different from everything else. It is  the saturated model. It estimates one parameter for each cell of the table, a total of 228 parameters, and fits the data perfectly.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm.S &lt;- glm(freq~factor(position) + trial + trial*factor(position), data=fish, family=poisson</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xtabs(fitted(glm.S)~fish$trial + fish$position)[1:10,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fish$position<br>
+  fish$trial&nbsp; 1&nbsp; 2&nbsp; 3<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.1&nbsp;&nbsp; 6&nbsp; 5 25<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.10 11 15 10<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.11&nbsp; 8 21&nbsp; 7<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.12&nbsp; 2&nbsp; 8 14<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.13&nbsp; 6 15 15<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.14 12 10 14<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.2&nbsp; 12 12 12<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.3&nbsp; 13 14&nbsp; 9<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; CN.4&nbsp;&nbsp; 7 18 11<br>
+&nbsp;&nbsp;&nbsp;&nbsp; CN.5&nbsp; 12 10 14</span>
+<p>Our goal is to replace <span class="style8">trial:factor(position)</span> with something more interesting and still have a model that fits the data. Rather than letting each trial have its own unique fractions for each position, we could force those trials experiencing the same treatment to have the same fractions but different from the fractions in trials receiving different treatments. To fit this model we replace the term <span class="style8">trial:factor(position)</span> with <span class="style8">treatment:factor(position)</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm1 &lt;- glm(freq~factor(position) + trial + treatment:factor(position), data=fish, family=poisson)</div>
+<p>To include the blocking variable <span class="style8">day</span> in the model I add the interaction term <span class="style8">factor(day):factor(position)</span> to the model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm2 &lt;- glm(freq~factor(position) + trial + treatment:factor(position) + factor(day):factor(position), data=fish, family=poisson)</div>
+<p>We can verify these models are correct by carrying out the goodness of fit test we did previously and observe that we get the same likelihood ratio statistic here as we did using the <span class="style161">multinom</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(glm2, glm.S, test='Chisq')</div>
+<span class="style24">Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: freq ~ factor(position) + trial + treatment:factor(position) + <br>
+  &nbsp;&nbsp;&nbsp; factor(day):factor(position)<br>
+  Model 2: freq ~ factor(position) + trial + trial * factor(position)<br>
+  &nbsp; Resid. Df Resid. Dev&nbsp; Df Deviance&nbsp; Pr(&gt;Chi)&nbsp;&nbsp;&nbsp; <br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 110&nbsp;&nbsp;&nbsp;&nbsp; 188.18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00 110&nbsp;&nbsp; </span><span class="style25">188.18 5.047e-06</span><span class="style24"> ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span>
+<p>Finally then, to fit the desired quasi-Poisson model I change the <span class="style22">family</span> argument of this last model to <span class="style22">quasipoisson</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm.q &lt;- glm(freq~factor(position) + trial + treatment:factor(position) + factor(day):factor(position), data=fish, family=quasipoisson)</div>
+<h2>Question 7</h2>
+<p>To generate the estimates with the correct reference group for <span class="style8">treatment</span> we need to redefine <span class="style8">treatment</span> as a factor specifying &quot;LF&quot; as the reference group. As was explained in the hints it is unnecessary to to do this for <span class="style8">position</span>. The default order of <span class="style8">position</span> will surprisingly give us what we want. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> levels(fish$treatment)</div>
+<span class="style24">  [1] &quot;CN&quot; &quot;GR&quot; &quot;LF&quot; &quot;RH&quot; &quot;SM&quot; &quot;SQ&quot; &quot;YH&quot; &quot;YT&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fish$treat &lt;- factor(fish$treatment, levels=levels(fish$treatment)[c(3, 1:2, 4:8)])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> levels(fish$treat)</div>
+<span class="style24">[1] &quot;LF&quot; &quot;CN&quot; &quot;GR&quot; &quot;RH&quot; &quot;SM&quot; &quot;SQ&quot; &quot;YH&quot; &quot;YT&quot;</span>
+<p>I refit the model using the new <span class="style8">treatment</span> variable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm.q2 &lt;- glm(freq~factor(position) + trial + treat:factor(position) + factor(day):factor(position), data=fish, family=quasipoisson)</div>
+<p>We need the estimates that involve the interaction with <span class="style8">treatment</span>. I use the <span class="style161">grep</span> function to locate those rows in the coefficient table that contain the string 'treat'.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownums &lt;- grep('treat', rownames(summary(glm.q2)$coefficients))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownums</div>
+<span class="style24">  &nbsp;[1] 79 80 81 82 83 84 85 86 87 88 89 90 91 92</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(glm.q2)$coefficients[rownums,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error&nbsp;&nbsp;&nbsp;&nbsp; t value&nbsp;&nbsp; Pr(&gt;|t|)<br>
+  factor(position)1:treatCN -0.152556414&nbsp; 0.2211594 -0.68980314 0.49177071<br>
+  factor(position)2:treatCN -0.387261747&nbsp; 0.1979612 -1.95625106 0.05297074<br>
+  factor(position)1:treatGR&nbsp; 0.184645284&nbsp; 0.2334866&nbsp; 0.79081744 0.43075227<br>
+  factor(position)2:treatGR&nbsp; 0.344445238&nbsp; 0.2029892&nbsp; 1.69686476 0.09255017<br>
+  factor(position)1:treatRH&nbsp; 0.004268110&nbsp; 0.3366681&nbsp; 0.01267750 0.98990806<br>
+  factor(position)2:treatRH&nbsp; 0.550672237&nbsp; 0.2684590&nbsp; 2.05123385 0.04261984<br>
+  factor(position)1:treatSM -0.176331045&nbsp; 0.3563426 -0.49483572 0.62170302<br>
+  factor(position)2:treatSM&nbsp; 0.432508433&nbsp; 0.2768132&nbsp; 1.56245581 0.12105311<br>
+  factor(position)1:treatSQ&nbsp; 0.116005526&nbsp; 0.3016724&nbsp; 0.38454138 0.70131966<br>
+  factor(position)2:treatSQ&nbsp; 0.145488079&nbsp; 0.2556889&nbsp; 0.56900438 0.57051315<br>
+  factor(position)1:treatYH&nbsp; 0.036769045&nbsp; 0.2833507&nbsp; 0.12976513 0.89698925<br>
+  factor(position)2:treatYH -0.009626351&nbsp; 0.2597037 -0.03706666 0.97049904<br>
+  factor(position)1:treatYT -0.077797133&nbsp; 0.3065899 -0.25374983 0.80016252<br>
+factor(position)2:treatYT&nbsp; 0.074804924&nbsp; 0.2542904&nbsp; 0.29417126 0.76918142</span>
+<p>I extract just this portion of the coefficient summary table and the corresponding variance-covariance matrix.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef &lt;- summary(glm.q2)$coefficients[rownums,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.vcov &lt;- vcov(glm.q2)[rownums, rownums]</div>
+<p>The panel graph we want displays the two <span class="style8">position</span> comparisons in separate panels so it will be convenient to have things sorted so the position 1 estimates are together followed by the position 2 estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> neworder &lt;- order(rownames(out.coef))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef &lt;- out.coef[neworder,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.vcov &lt;- out.vcov[neworder, neworder]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error&nbsp;&nbsp;&nbsp;&nbsp; t value&nbsp;&nbsp; Pr(&gt;|t|)<br>
+  factor(position)1:treatCN -0.152556414&nbsp; 0.2211594 -0.68980314 0.49177071<br>
+  factor(position)1:treatGR&nbsp; 0.184645284&nbsp; 0.2334866&nbsp; 0.79081744 0.43075227<br>
+  factor(position)1:treatRH&nbsp; 0.004268110&nbsp; 0.3366681&nbsp; 0.01267750 0.98990806<br>
+  factor(position)1:treatSM -0.176331045&nbsp; 0.3563426 -0.49483572 0.62170302<br>
+  factor(position)1:treatSQ&nbsp; 0.116005526&nbsp; 0.3016724&nbsp; 0.38454138 0.70131966<br>
+  factor(position)1:treatYH&nbsp; 0.036769045&nbsp; 0.2833507&nbsp; 0.12976513 0.89698925<br>
+  factor(position)1:treatYT -0.077797133&nbsp; 0.3065899 -0.25374983 0.80016252<br>
+  factor(position)2:treatCN -0.387261747&nbsp; 0.1979612 -1.95625106 0.05297074<br>
+  factor(position)2:treatGR&nbsp; 0.344445238&nbsp; 0.2029892&nbsp; 1.69686476 0.09255017<br>
+  factor(position)2:treatRH&nbsp; 0.550672237&nbsp; 0.2684590&nbsp; 2.05123385 0.04261984<br>
+  factor(position)2:treatSM&nbsp; 0.432508433&nbsp; 0.2768132&nbsp; 1.56245581 0.12105311<br>
+  factor(position)2:treatSQ&nbsp; 0.145488079&nbsp; 0.2556889&nbsp; 0.56900438 0.57051315<br>
+  factor(position)2:treatYH -0.009626351&nbsp; 0.2597037 -0.03706666 0.97049904<br>
+factor(position)2:treatYT&nbsp; 0.074804924&nbsp; 0.2542904&nbsp; 0.29417126 0.76918142</span>
+<p>I begin to assemble the data frame we need for plotting purposes.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod &lt;- data.frame(expand.grid(1:7, 1:2), est=out.coef[,1], se=out.coef[,2])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Var1 Var2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; se<br>
+  factor(position)1:treatCN&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 1 -0.152556414 0.2211594<br>
+  factor(position)1:treatGR&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 1&nbsp; 0.184645284 0.2334866<br>
+  factor(position)1:treatRH&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 1&nbsp; 0.004268110 0.3366681<br>
+  factor(position)1:treatSM&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 1 -0.176331045 0.3563426<br>
+  factor(position)1:treatSQ&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp; 1&nbsp; 0.116005526 0.3016724<br>
+  factor(position)1:treatYH&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 1&nbsp; 0.036769045 0.2833507<br>
+  factor(position)1:treatYT&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 1 -0.077797133 0.3065899<br>
+  factor(position)2:treatCN&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 2 -0.387261747 0.1979612<br>
+  factor(position)2:treatGR&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 2&nbsp; 0.344445238 0.2029892<br>
+  factor(position)2:treatRH&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp; 2&nbsp; 0.550672237 0.2684590<br>
+  factor(position)2:treatSM&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 2&nbsp; 0.432508433 0.2768132<br>
+  factor(position)2:treatSQ&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp; 2&nbsp; 0.145488079 0.2556889<br>
+  factor(position)2:treatYH&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 2 -0.009626351 0.2597037<br>
+factor(position)2:treatYT&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 2&nbsp; 0.074804924 0.2542904</span>
+<p>I add the 95% confidence intervals.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low95 &lt;- out.mod$est - qnorm(.975) * out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up95 &lt;- out.mod$est + qnorm(.975) * out.mod$se</div>
+<p>Technically we should use a <em>t</em>-distribution with degrees of freedom taken from the model, but the difference here is slight.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> qt(.975,glm.q2$df.residual)</div>
+<span class="style24">[1] 1.981765</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> qnorm(.975)</div>
+<span class="style24">[1] 1.959964</span>
+<p>Next we need to compute the confidence levels for the pairwise comparisons. I collect the functions we've previously written for this purpose.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func1 &lt;- function(alpha, model, sig) 1 - pt(-qt(1-alpha/2, model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*%c (1,-1)), model$df.residual) - pt(qt(1-alpha/2, model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*% c(1,-1)), model$df.residual, lower.tail=F)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func2 &lt;- function(a,model,sigma) nor.func1(a, model, sigma)-.95</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.func &lt;- function(rowvals, glm.model, glm.vmat) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> n &lt;- length(rowvals)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> xvec1b &lt;- numeric(n*(n-1)/2)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> vmat &lt;- glm.vmat[rowvals,rowvals]</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> ind &lt;- 1</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  for(i in 1:(n-1)) {</div>
+ <div class="style10" style="padding-left: 90px; text-indent:-30px"> for(j in (i+1):n){</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px"> sig &lt;- vmat[c(i,j), c(i,j)]</div>
+<div class="style15" style="padding-left: 120px; text-indent:-30px"> #solve for alpha</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px"> xvec1b[ind] &lt;- uniroot(function(x) nor.func2(x, glm.model, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px"> ind &lt;- ind+1</div>
+  <div class="style10" style="padding-left: 60px; text-indent:-30px"> }}</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> 1-xvec1b</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> }</div>
+<p>We need to use this function one panel at a time specifying the corresponding rows from the coefficient matrix, first 1:7 and then 8:14. Each run involves pairwise comparisons between 7 estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">vals1 &lt;- ci.func(1:7, glm.q2, out.vcov)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals2 &lt;- ci.func(8:14, glm.q2, out.vcov)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> vals1</div>
+<span class="style24">[1] 0.6728149 0.7590149 0.7701199 0.7359922 0.7199309 0.7393951 0.7610261 0.7709923<br>
+[9] 0.7405050 0.7245067 0.7436374 0.7573342 0.7402503 0.7936049 0.7418959 0.7487930<br>
+[17] 0.7981490 0.7501636 0.7853993 0.7247910 0.7865266</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals2</div>
+<span class="style24">[1] 0.6772997 0.7418073 0.7482880 0.7317290 0.7324057 0.7304830 0.7436115 0.7492921<br>
+[9] 0.7340044 0.7339015 0.7329391 0.7381925 0.7283715 0.7896563 0.7277297 0.7330560<br>
+[17] 0.7915383 0.7326971 0.7868835 0.7187160 0.7865723  </span>
+<p> The confidence levels range from 0.67 to 0.79 so we're going to need to do some experimenting in setting the levels. I start by using the lowest confidence level in each panel.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val &lt;- c(rep(min(vals1),7), rep(min(vals2),7))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div>
+<p>We're ready to produce the panel graph. First I collect the names of the predator fish in the order they're being presented in the coefficients table, omitting the lionfish LF.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">preds &lt;- levels(fish$treatment)[c(1:2,4:8)]</div>
+<p>Next I produce the graph using the current choices for the pairwise confidence levels.</p>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dotplot(factor(Var1, levels=1:7, labels=paste(preds, ' vs LF', sep='')) ~ est|factor(Var2, levels=1:2, labels=paste('Position ',1:2,' vs 3', sep='')),  data=out.mod, xlab='log odds ratio', prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(2,1), panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low50[subscripts], y, out.mod$up50[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'),strip=strip.custom(par.strip.text = list(cex=0.9)))</div><br>
+<table width="650" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/assignments/finalpart3/fig1.png" width="595" height="370" alt="log odds ratio"></th>
+  </tr>
+  <tr>
+    <td><p class="styleArial" style="padding-left: 45px; text-indent:-45px" span><strong>Fig. 1</strong>&nbsp;&nbsp;Preliminary graph of the log odds ratios using the minimum confidence level for the pairwise comparisons confidence intervals.</td>
+  </tr>
+</table>
+<p>Everything overlaps in the first panel so we have nothing more to do there. If we increase the confidence levels the overlap will just increase. In the second panel we see that the first log odds ratio looks different from the next four. The confidence level we're using, 0.67, is only correct for the first comparison. The comparison that looks closest to being not significant is 1 vs 5. According to the <span class="style8">vals1</span> vector the confidence level for this comparison should be 0.73, so I try that next.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val &lt;- c(rep(min(vals1),7), rep(vals2[4],7))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val</div>
+<span class="style24">  &nbsp;[1] 0.6728149 0.6728149 0.6728149 0.6728149 0.6728149 0.6728149 0.6728149 0.7317290<br>
+&nbsp;[9] 0.7317290 0.7317290 0.7317290 0.7317290 0.7317290 0.7317290</span>
+<p>The  graph using this confidence level is shown below.</p>
+<table width="650" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/assignments/finalpart3/fig2.png" width="595" height="370" alt="log odds ratios"></th>
+  </tr>
+  <tr>
+    <td><p class="styleArial" style="padding-left: 45px; text-indent:-45px" span><strong>Fig. 2</strong>&nbsp;&nbsp;Point estimates, 95% confidence intervals (thin bar), and variable level confidence intervals suitable for making all pairwise comparisons of displayed estimates. A 67% confidence level is used for the position 1 vs 3  comparison and a 73% confidence level is used for the position 2 versus 3 comparison.</td>
+  </tr>
+</table>
+<p>With that choice nothing else looks different that would require raising the confidence level except perhaps a comparison of the RH vs LF and the YH vs LF intervals. If we look at the table of confidence levels (below I've labeled then by what comparison they correspond)  we see that the confidence level for the comparison of 3 versus 6 is 0.79 and is in position 14 of the vector.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(rbind(rep(1:6,6:1), unlist(sapply(2:7,function(i) i:7)), vals2), 2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15]<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.00 1.00 1.00 1.00 1.00 1.00 2.00 2.00 2.00&nbsp; 2.00&nbsp; 2.00&nbsp; 3.00&nbsp; 3.00&nbsp; 3.00&nbsp; 3.00<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.00 3.00 4.00 5.00 6.00 7.00 3.00 4.00 5.00&nbsp; 6.00&nbsp; 7.00&nbsp; 4.00&nbsp; 5.00&nbsp; 6.00&nbsp; 7.00<br>
+  vals2 0.68 0.74 0.75 0.73 0.73 0.73 0.74 0.75 0.73&nbsp; 0.73&nbsp; 0.73&nbsp; 0.74&nbsp; 0.73&nbsp; 0.79&nbsp; 0.73<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,16] [,17] [,18] [,19] [,20] [,21]<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.00&nbsp; 4.00&nbsp; 4.00&nbsp; 5.00&nbsp; 5.00&nbsp; 6.00<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.00&nbsp; 6.00&nbsp; 7.00&nbsp; 6.00&nbsp; 7.00&nbsp; 7.00<br>
+vals2&nbsp; 0.73&nbsp; 0.79&nbsp; 0.73&nbsp; 0.79&nbsp; 0.72&nbsp; 0.79</span>
+<p>If we change all the levels to 0.79 then the CN vs LF and SQ vs LF comparison is no longer significant. I instead change only the levels for the two observations involved in the comparison, RH and YH.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.val &lt;- c(rep(min(vals1),7), vals2[4], rep(vals2[14],3), vals2[4], rep(vals2[14],2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div>
+<p>The final graph is shown below.</p>
+<table width="650" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/assignments/finalpart3/fig4.png" width="595" height="375" alt="fig 4"></th>
+  </tr>
+  <tr>
+    <td><p class="styleArial" style="padding-left: 45px; text-indent:-45px" span><strong>Fig. 3</strong>&nbsp;&nbsp;Point estimates, 95% confidence intervals (thin bar), and variable level confidence intervals (thick bars) that are suitable for making all pairwise comparisons of displayed estimates. A 67% confidence level is used for all the position 1 vs 3  comparisons and  a 73% confidence level is used for the position 2 versus 3 comparisons. The only exceptions are for RH vs LF and YH vs LF intervals for which 79% confidence levels are shown.</td>
+  </tr>
+</table>
+<h2>Question 8</h2>
+<p>I exponentiate the point estimate and the confidence intervals and generate the new graph.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dotplot(factor(Var1, levels=1:7, labels=paste(preds, ' vs LF', sep='')) ~ exp(est)|factor(Var2, levels=1:2, labels=paste('Position ',1:2,' vs 3', sep='')),  data=out.mod, xlab='Odds ratio', prepanel=myprepanel.ci, lx=exp(out.mod$low95), ux=exp(out.mod$up95), layout=c(2,1), panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(exp(out.mod$low95)[subscripts], y, exp(out.mod$up95)[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.segments(exp(out.mod$low50)[subscripts], y, exp(out.mod$up50)[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.abline(v=1, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'),strip=strip.custom(par.strip.text = list(cex=0.9)))</div><br>
+<table width="650" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/assignments/finalpart3/fig3.png" width="619" height="383" alt="odds ratios"></th>
+  </tr>
+  <tr>
+    <td><p class="styleArial" style="padding-left: 45px; text-indent:-45px" span><strong>Fig. 4</strong>&nbsp;&nbsp;Odds ratios estimates for different predators versus lionfish separately for position 1 versus position 3 and position 2 versus position 3.</td>
+  </tr>
+</table>
+<h2>Question 9</h2>
+<p>None of the odds ratios for the position 1 versus position 3 comparison are significant. All of the 95% confidence intervals include an odds ratio of 1. Thus the ratio of times prey turn toward a predator or turn away from a predator are the same for any predator when compared to lionfish, even for the control in which no predator was present at all. The only significant odds ratios were found for the position 2 versus position 3 comparisons.   If position 2 indicates that the prey  are taking greater notice of the predator, then lionfish are significantly (in truth the <em>p</em>-value just exceeds 0.05) scarier than a control (a cage with nothing in it) while the red hind is significantly scarier than a lionfish. No other odds ratios were statistically significant. </p>
+<p>It's worth noting that if we had used a Poisson rather than a quasi-Poisson distribution here, we would have found the odds ratios of LF with CN, GR, RH, and SM to all be statistically significant for position 2 versus position 3. The quasi-Poisson gives us more conservative results, which is probably justified here given that we know the model has a significant lack of fit.</p>
+<p>Apparently the assumption that the fish would turn toward the predator when frightened is  incorrect. The ratio of times a fish is in position 1 versus position 3 is not affected by the predator's identity (at least when using lionfish as the reference group). This is true even when there is no predator present at all. What we see instead is that a frightened fish turns perpendicular to the predator (position 2). This  makes sense if the eyes of this fish are  laterally placed so that the fish lacks good binocular vision. What supports this is that the only time the empty cage (control) versus lionfish comparison yielded an .odds ratio that was less than 1 was for the position 2 versus position 3 comparison (and not for the position 1 versus position 3 comparison).</p>
+<p>The pairwise comparisons are not particularly interesting here. We see from the pairwise comparisons that individually the odds ratios for the different predators cannot  be distinguished from each other. Still, four of them are significantly greater than the lionfish vs control odds ratio (red hind, grouper, schoolmaster, and squirrelfish) but two were not (yellowtail and yellowhead). So even though only the red hind was significantly scarier than the lionfish, there is a weak suggestion that the predators perhaps fall into two groups: lionfish, yellowhead, yellowtail in one group and grouper, red hind, schoolmaster, and squirrelfish in a second group.</p>
+<p>Of the fish used in this experiment the red hind is the most imposing and was expected to be the scariest predator. It is interesting that although none of the other predator ORs are  significant, their point estimates do exceed 1. The only exception to this is the yellowhead (OR = 0.99) which mostly eats invertebrates anyway. The rankings are close to what the researchers would have guessed based on their knowledge of these fish. The results suggest that while lionfish are not ignored by their potential prey they do currently rank at the low end of their concerns. The lack of significance of most of the ORs  probably results from the inefficient experimental design (evidence for which is found in  the persistent lack of fit). Fortunately the researchers measured other behavioral attributes that confirmed the weak trends that are shown here.</p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/finalpart3/HWscores.png" width="430" height="220" alt="HW scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--May 4, 2012<br>
+      URL: <a href="finalpart3.htm#finalpart3" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/finalpart3.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

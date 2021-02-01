@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 21&mdash;Monday, February 27, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture21" id="lecture21"></a>Lecture 21&mdash;Monday, February 27, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture21.htm#correlated">Correlated data analysis III: Generalized estimating equations (GEE)</a></li>
+  <li><a href="lecture21.htm#transforming">Variable transformations versus  link functions</a>
+    <ul>
+      <li><a href="lecture21.htm#response">Transforming the response variable</a></li>
+      <li><a href="lecture21.htm#changing">Choosing a probability distribution and a link function</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture21.htm#marginal">Marginal and subject-specific interpretations of a mixed effects model</a>
+    <ul>
+      <li><a href="lecture21.htm#identity">Identity link</a></li>
+      <li><a href="lecture21.htm#logit">Logit link</a>
+        <ul>
+          <li><a href="lecture21.htm#subject">Subject-specific interpretation</a></li>
+          <li><a href="lecture21.htm#population">Marginal interpretation</a></li>
+        </ul>
+      </li>
+      <li><a href="lecture21.htm#difficulties">Problems with the subject-specific interpretation of a mixed effects logit model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture21.htm#references">Cited references</a></li>
+</ul>
+<h2 align="center"><a name="correlated" id="correlated"></a>Correlated data analysis III: Generalized estimating equations (GEE)</h2>
+<p>So far we've discussed generalized least squares and mixed effects models as methods for handling correlated data. A third approach to correlated data analysis is generalized estimating equations or GEE. GEE is to generalized linear models (GLM) as GLS is to ordinary least squares (OLS). Just like GLS, GEE can incorporate a correlation matrix of the response variable when estimating parameters.  With  hierarchical data sets GEE yields what's called a marginal  regression model. To understand  the ramifications of this we first need to review the concept of a link function and discuss how a link function differs from variable transformation.</p>
+<h2><a name="transforming"></a>Variable transformations  versus  link functions</h2>
+<p>Let <em>Y</em> be a positive, continuous response variable. For instance <em>Y</em> might denote biological size measured over time. If the full range of an organism's life span is under consideration some values of <em>Y</em> will be near zero (occurring early in the organism's life span), and others will be far removed from zero (occurring later in the life span). Suppose we fit an ordinary regression model in which we assume that the <em>i</em><sup>th</sup> individual's mean size<em> </em>varies linearly on the <em>j</em><sup>th</sup> occasion with a time-dependent predictor <em>x<sub>ij</sub></em> (such as its age) and perhaps other predictors.</p>
+<p align="center"><img src="../../images/lectures/lecture21/normal.gif" width="193" height="78" alt="normal"></p>
+<p>This is probably a  silly model. Because the normal distribution is an unbounded distribution, it  allows <em>Y</em> to take negative values. The probability that <em>Y</em> is negative could be non-negligible for small predicted values of the mean. The presence of a lower bound of zero will  also restrict the variability of the response. If <em>Y</em> is predicted to be close to the boundary for some values of <em>x</em>, its overall distribution will tend to be  heteroscedastic as a function of <em>x</em>. Because the normal distribution for <em>Y</em> assumes the variance is constant and independent of the mean, heteroscedasticity indicates yet another problem with a normal model for these data.</p>
+<h3><a name="response"></a>Transforming the response variable </h3>
+<p>The classical approach to handling this problem would be to transform the response and assume that the transformed variable has a  normal distribution with constant variance. For the scenario I've described a common choice would be a log transformation. Thus we would assume</p>
+<p align="center"><img src="../../images/lectures/lecture21/lognormal.gif" width="232" height="80" alt="lognormal"></p>
+<p>The notation used in the regression equation is meant to indicate that we are modeling the mean of  log <em>Y</em> rather than mean of <em>Y</em>. In the first regression model the regression equation yields the mean of the response on the original raw scale of the response. In the transformed regression model the regression equation yields the mean of the response on a log scale. These are obviously not the same. Furthermore there is no way to transform a mean on the log scale into a mean on the raw scale. </p>
+<p>Although exponentiating the regression equation for log <em>Y</em> does yield a value that is on the  scale of the  raw response,  it does not yield the mean of the response on the raw scale. The problem mathematically is that the &quot;mean function&quot; and the exponential function don't commute and so the exponential and logarithm operations can't cancel each other out.</p>
+<p align="center"><img src="../../images/lectures/lecture21/backtransform.gif" width="328" height="33" alt="backtransform"></p>
+<p>On the other hand, because </p>
+<ol>
+  <li>the mean and median of a normal distribution are the same, and</li>
+  <li>the logarithm is  a monotonic transformation,</li>
+</ol>
+<p>exponentiating the regression equation for mean log <em>Y</em> does yield an expression for the median response on the raw scale (but not the mean).</p>
+<h3><a name="changing" id="changing"></a>Choosing a probability distribution and a link function</h3>
+<p>The modern approach to handling data of this sort is to choose a probability distribution that is  more appropriate for a positive, continuous response variable. (In reality this is not really  so different from the classical approach. Log-transforming a response and assuming  the log is normally distributed is equivalent to assuming that the original response variable has a lognormal distribution. The lognormal distribution is a probability distribution that is appropriate for a positive, continuous response variable.) In the generalized linear model framework a reasonable choice for the probability distribution would be a gamma distribution. </p>
+<p align="center"><img src="../../images/lectures/lecture21/gamma.gif" width="150" height="32" alt="gamma"></p>
+<p>where <em>a</em> &gt; 0 and <em>b</em> &gt; 0. The parameters <em>a</em> and <em>b</em> are related to the mean and variance of the gamma distribution as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture21/gammamean.gif" width="235" height="52" alt="gamma mean"></p>
+<p>Because <em>a</em> and <em>b</em> are positive, the mean of the gamma distribution is positive. To guarantee that the regression equation only returns positive values for the mean, the usual approach is to formulate a regression equation for log &mu; rather than &mu;. The log function used in this way is referred to as a link function because it links the mean of a gamma distribution to the linear predictor of the regression model.</p>
+<p align="center"><img src="../../images/lectures/lecture21/gammadist.gif" width="210" height="72" alt="gamma distribution"></p>
+<p>Typically  one of <em>a</em> or <em>b,</em> usually<em> b,</em> is treated as a constant. </p>
+<p>Unlike the case of a log-transformed regression model, when a log link is used it is possible to recover the mean on the raw scale by exponentiating both sides of the regression equation.</p>
+<p align="center"><img src="../../images/lectures/lecture21/inverselink.gif" width="202" height="37" alt="inverse link"></p>
+<p>So, by choosing a log link function and a gamma distribution for positive data we do end up with a model for the mean on the raw scale. This makes using a generalized linear model an attractive alternative to  transforming the response variable. </p>
+<p>One possible drawback with both a log transformed response and the use of a log link function is that in the end our predictors have multiplicative effects rather than additive ones on the scale of the original response.</p>
+<p align="center"><img src="../../images/lectures/lecture21/multiplicative.gif" width="643" height="93" alt="multiplicative"></p>
+<h2><a name="marginal"></a>Marginal and subject-specific interpretations of a mixed effects model</h2>
+In a mixed effects model the use of a link function other than the identity link tends to complicate things. To see why this happens we begin  with a normal random intercepts model and an identity link and contrast this situation with a binomial random intercepts model and a logit link.
+<h3><a name="identity"></a>Identity link</h3>
+<p>A normal random intercepts model with an identity link is a multilevel model with two levels. We have</p>
+<p align="center"><img src="../../images/lectures/lecture21/randomints.gif" width="200" height="105" alt="random intercepts"></p>
+<p>Here <em>i</em> denotes the level-2 unit (the cluster) and <em>j</em> denotes the observation on that level-2 unit. The model for the mean is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture21/fixedeffects.gif" width="215" height="67" alt="fixed effect"></p>
+<p>So the mean consists of two components: a fixed effects portion and a random effects portion. The fixed effects portion can be interpreted in two distinct ways.</p>
+<ol>
+  <li>The fixed effects portion corresponds to the mean response of an individual for whom <em>u</em><sub>0<em>i</em></sub> = 0. So, the fixed effects portion is the  response of a typical individual, one that lies at the center of the random effects distribution. This is  a subject-specific interpretation of the mixed effects model because it focuses on the behavior of a specific subject.</li>
+  <li>A second interpretation can be obtained by averaging across subjects in the equation for the mean. Formally this is done by integrating both sides of the equation with respect to the probability density,<img src="../../images/lectures/lecture21/normaldensity.gif" alt="density" width="60" height="32" align="absmiddle">, of the random effects distribution. In the examples we've considered<img src="../../images/lectures/lecture21/normaldensity.gif" alt="density" width="60" height="32" align="absmiddle"> is a normal distribution.</li>
+</ol>
+<p align="center"><img src="../../images/lectures/lecture21/marginal.gif" width="325" height="112" alt="marginal"></p>
+<blockquote>
+  <p>The last step follows because the expectation (mean) of the random effects distribution is zero by assumption, <img src="../../images/lectures/lecture21/expectation.gif" alt="expectation" width="158" height="38" align="absmiddle">. Thus we see that the fixed effects  portion is also the average mean across subjects. This is referred to as the marginal interpretation of the mixed effects model. When the data are a random sample from a known population the marginal interpretation of the fixed effects portion is also called the population-averaged interpretation.</p>
+</blockquote>
+<p>So, in summary, in a mixed effects model with an identity link  there are two distinct models for the mean. There is the </p>
+<ol>
+  <li>marginal (population-averaged) model: <img src="../../images/lectures/lecture21/marginalmodel.gif" alt="marginal model" width="78" height="30" align="absmiddle">, and the  </li>
+  <li>subject-specific model: <img src="../../images/lectures/lecture21/subjectspecificmodel.gif" alt="subject-specific model" width="122" height="30" align="absmiddle"></li>
+</ol>
+<p>These models are different except for one particular subject, namely a subject for whom <em>u</em><sub>0<em>i</em></sub> = 0. In a similar vein the marginal model  has both </p>
+<ol>
+  <li>a marginal interpretation (it is the average across individuals) and </li>
+  <li>a subject-specific interpretation (it is the mean of the individual at the center of the random effects distribution). </li>
+</ol>
+<p>When we use an identity link we get both of these interpretations for the mean response. When the link function is something other than the identity link, the marginal interpretation of the mean breaks down.</p>
+<h3><a name="logit"></a>Logit link</h3>
+<p>Consider a generalized linear mixed effects model (GLMM) in which the response has a binomial distribution and we model the probability of success with a logit link. For simplicity we use the same random intercepts  model that was used for the normal model with identity link.</p>
+<p align="center"><img src="../../images/lectures/lecture21/subjectspecificlogit.gif" width="315" height="62" alt="subject-specific logit"></p>
+<p>Let's try once again  to interpret the fixed effects component of the model. With a logit link for the mean we can apply the inverse logit function</p>
+<p align="center"><img src="../../images/lectures/lecture21/inverselogit.gif" width="237" height="58" alt="inverse logit"></p>
+<p>to express the mean, the probability of success <em>p<sub>ij</sub></em>, as a function of the linear predictor.</p>
+<p align="center"><img src="../../images/lectures/lecture21/inversefixedeffect.gif" width="240" height="70" alt="inverse fixed effect"></p>
+<p><strong><a name="subject"></a>Subject-specific interpretation</strong></p>
+<p>If we set <em>u</em><sub>0<em>i</em></sub> = 0 in the logit link equation we see that the fixed effects portion, <img src="../../images/lectures/lecture21/marginalmodel.gif" alt="marginal model" width="78" height="30" align="absmiddle">, represents the logit of an individual that lies at the middle of the random effects distribution on the logit scale. </p>
+<p align="center"><img src="../../images/lectures/lecture21/subjectspecificlogit2.gif" width="173" height="37" alt="subject specific logit"></p>
+<p>Inverting the logit yields</p>
+<p align="center"><img src="../../images/lectures/lecture21/subjectspecificlogit3.gif" width="197" height="70" alt="subject specific inverse logit"></p>
+<p>In the subject-specific interpretation the inverse logit of the fixed effect portion is the probability of success of an individual that lies at the middle of the random effects distribution on a logit scale.</p>
+<strong><a name="population"></a>Marginal interpretation</strong>
+<p>To obtain the marginal interpretation we need to average across individuals, i.e., average over the random effects distribution. Thus we have</p>
+<p align="center"><img src="../../images/lectures/lecture21/marginallogit.gif" width="468" height="38"></p>
+<p>So the fixed effects portion represents the average individual logit. What is its relationship to the average probability of success, i.e., the average value of <em>p</em>? Now we're stuck because the inverse logit of this expression is not equal to the average value of <em>p</em>.</p>
+<p align="center"><img src="../../images/lectures/lecture21/marginallogit2.gif" width="460" height="185" alt="marginal logit"></p>
+<p>The problem is the same one we had when we tried to back-transform the regression equation for the mean of a transformed response variable. The operation of taking the mean (the integral in this case) lies between the link function and its inverse, and so  the logit and inverse logit do not formally cancel. As a result back-transforming the marginal logit of <em>p</em> does not yield the marginal value of <em>p</em>. </p>
+<p>The use of the logit link function in a mixed effects model  messes up the marginal interpretation of the fixed effect terms.  With an identity link the regression mean has both a subject-specific interpretation and a marginal interpretation. When the link is not the identity, the back-transformed linear predictor still has a subject-specific interpretation, but not a marginal one. This means that the <em>p</em> that corresponds to the mean of logit(<em>p</em>) is not also the mean of <em>p</em>. </p>
+<h3><a name="difficulties"></a>Problems with the subject-specific interpretation of a mixed effects logit model</h3>
+<p>Without a true  marginal interpretation for the fixed effects portion of the mixed effects model, is the subject-specific interpretation enough? In most cases the answer is no. Consider a hierarchical logit model that contains both a level-1 (individual-level) predictor <em>x</em> and a level-2 (group-level) predictor <em>z</em>.</p>
+<p align="center"><img src="../../images/lectures/lecture21/subjectspecificlogit4.gif" width="265" height="37" alt="subject specific"></p>
+<ul>
+  <li>The coefficient &beta;<sub>1</sub> of <em>x</em> has a useful subject-specific interpretation because <em>x</em> can vary within a subject. For a given subject (a fixed value of <em>u</em><sub>0</sub>) if the variable <em>x</em> increases by one unit then the logit increases by &beta;<sub>1</sub> units. exp(&beta;<sub>1</sub>) is the amount the odds of success is increased by a one unit increase in <em>x</em>. </li>
+  <li>The coefficient of <em>z</em> on the other hand does not have a sensible subject-specific interpretation. The variable <em>z</em> is constant within a subject, so unlike <em>x</em> it cannot change when <em>u</em><sub>0</sub> is held fixed. In order for <em>z</em> to change we need to switch to another subject, but if we do so  the random effect <em>u</em><sub>0</sub> also changes. As a result the observed change in the logit will be due to both a change in <em>z</em> and a change in <em>u</em><sub>0</sub>. To obtain a subject-specific interpretation of &beta;<sub>2</sub> we are forced to concoct a rather fanciful scenario. If two individuals  have exactly the same value of the random effect <em>u</em><sub>0</sub> but their value of <em>z</em> differs by one unit, then &beta;<sub>2</sub> tells us how much the logit is predicted to differ between those two individuals. Alternatively exp(&beta;<sub>2</sub>) is the ratio of their odds of success.</li>
+</ul>
+<p>Even if we're willing to engage in the  mental gymnastics needed to give a subject-specific interpretation to the coefficients of group-level variables, we still can't treat the coefficient as indicating a change in the population average. The logit transformation maps proportions in the interval (0, 1) to logits on the interval (&ndash;&infin;, &infin;). If the distribution of a set of proportions is skewed (lots of values near zero or lots of values near one), the distribution of the logits  will be even more skewed. This means that if we average the logits and back-transform this average to a proportion we end up with a value that is more extreme (closer to 0 or closer to 1) than if we just averaged the proportions. The upstart is that the marginal  value and  the subject-specific value of the regression coefficient of a group-level predictor in a logit model can be widely different. </p>
+<p>The difference in the  subject-specific and marginal interpretations of mixed effects models with non-identity links has received extensive treatment in  the statistical literature. A discussion of these issues aimed at ecologists can be found in Fieberg et al. (2009).</p>
+<h2><a name="references"></a>Cited references</h2>
+<ul>
+  <li>Fieberg, John, Randall H. Rieger, Michael C. Zicus, and Jonathan S. Schildcrout. 2009. Regression modelling of correlated data in ecology: subject-specific and population averaged response patterns. <em>Journal of Applied Ecology</em> <strong>46</strong>(5): 1018&ndash;1025.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--February 27, 2012<br>
+      URL: <a href="lecture21.htm#lecture21" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture21.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

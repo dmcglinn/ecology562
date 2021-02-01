@@ -1,0 +1,194 @@
+getwd()
+setwd("C:/Users/jmweiss/Documents/ecol 562")
+alligators<-read.csv('alligators.csv')
+alligators[1:12,]
+
+#create tabulated version of the data
+table(alligators$food,alligators$lake,alligators$size,alligators$gender)
+alli.dat<-data.frame(table(alligators$food,alligators$lake,alligators$size,alligators$gender))
+dim(alli.dat)
+alli.dat[1:8,]
+names(alli.dat)[1:4]<-c('food','lake','size','gender')
+alli.dat[1:8,]
+
+library(nnet)
+#null model
+fit0<-multinom(food~1,data=alligators)
+logLik(fit0)
+#gender model
+fit1<-multinom(food~gender,data=alligators)
+anova(fit0,fit1)
+
+#fitting the same model using the tabulated data set
+fit0a<-multinom(food~1,data=alli.dat,weight=Freq)
+fit1a<-multinom(food~gender,data=alli.dat,weight=Freq)
+anova(fit0a,fit1a)
+
+#fit additional main effects models
+fit1<-multinom(food~gender,data=alligators)
+fit2<-multinom(food~size,data=alligators)
+fit3<-multinom(food~lake,data=alligators)
+AIC(fit1,fit2,fit3)
+
+#test effects of size and lake
+anova(fit0,fit2)
+anova(fit0,fit3)
+
+#fit models additive in two variables
+fit4<-multinom(food~lake+size,data=alligators)
+fit5<-multinom(food~lake+gender,data=alligators)
+fit6<-multinom(food~size+gender,data=alligators)
+AIC(fit4,fit5,fit6)
+#test effect of lake controlling for size
+anova(fit2,fit4)
+#test effect of size controlling for lake
+anova(fit3,fit4)
+
+#model additive in all three variables
+fit7<-multinom(food~lake+size+gender,data=alligators)
+#test the effect of gender controlling for lake and size
+anova(fit4,fit7)
+
+summary(fit4)
+names(summary(fit4))
+#calcualte z-statistic for effects
+summary(fit4)$coefficients/summary(fit4)$standard.errors
+
+#fit multinomial models using a Poisson distribution
+#null model
+glm0<-glm(Freq~size*gender*lake+food,data=alli.dat,family=poisson)
+#gender only model
+glm1<-glm(Freq~size*gender*lake+food+food:gender,data=alli.dat,family=poisson)
+#test statistic is identical to multinomial test
+anova(glm0,glm1,test='Chisq')
+
+#Poisson model estimates a lot of extraneous effects
+summary(glm1)
+summary(fit1)
+
+#saturated model
+fitS<-multinom(food~lake*size*gender,data=alligators)
+#test if there is a significant lack of fit
+anova(fit4,fitS)
+
+#saturated Poisson model has residual deviance = 0
+glmS<-glm(Freq~size*gender*lake+food+food*gender*size*lake,data=alli.dat,family=poisson)
+anova(glmS)
+
+#create data frame for use in obtaining predictions
+mydat<-data.frame(table(alligators$lake,alligators$size,alligators$gender))
+names(mydat)[1:3]<-c('lake','size','gender')
+out.p<-predict(fit4,type='probs',newdata=mydat[,1:3])
+out.p
+#check that rows sum to 1
+apply(out.p,1,sum)
+#obtain expected values under the estimated model
+sapply(1:5,function(x) out.p[,x]*mydat$Freq)->out.freq
+out.freq
+#check that rows sum to the observed frequencies
+apply(out.freq,1,sum)
+
+#restructure the observed counts as a matrix organized like the expected values
+alli.dat[1:8,]
+out.obs<-matrix(alli.dat[,5],ncol=5,byrow=T)
+out.obs
+
+#G-test: LR test with the saturated model
+gtest.func<-function(O,E) {
+result<-ifelse(O==0,0,2*O*log(O/E))
+sum(result)}
+
+# try test on observed and expected values
+gtest.func(as.vector(out.obs),as.vector(out.freq))
+# should match output from anova
+anova(fit4,fitS)
+
+#percentage of expected values less than 5
+sum(out.freq<5)/length(as.vector(out.freq))
+
+my.simulation<-function(y) {
+out.sim<-
+t(sapply(1:16,function(x) rmultinom(1,size=mydat$Freq[x],prob=out.p[x,])))
+gtest.func(as.vector(out.sim),as.vector(out.freq))
+}
+
+#obtain simulation-based p-value of goodness of fit (GOF) test
+set.seed(10)
+sapply(1:999,my.simulation)->results
+
+#calculate actual GOF statistic
+gtest.func(as.vector(out.obs),as.vector(out.freq))->actual
+actual
+#add it to simulated values
+final.results<-c(actual,results)
+#calculate p-value
+sum(final.results>=actual)/1000
+
+#display results in a histogram
+hist(final.results)
+points(actual,0,col=2,pch=8)
+
+#lake + size model fit as a Poisson model
+glm4<-glm(Freq~size*gender*lake+food+food:lake+food:size,data=alli.dat,family=poisson)
+summary(glm4)$coefficients->out.coef
+out.coef
+#locate coefficients of interest in the summary table
+grep('food',rownames(out.coef))
+out.coef[grep('food',rownames(out.coef)),]
+
+#if GOF rejected we can estimate a quasi-Poisson model
+glm4a<-glm(Freq~size*gender*lake+food+food:lake+food:size,data=alli.dat,family=quasipoisson)
+summary(glm4a)$coefficients->out.coefa
+out.coefa[grep('food',rownames(out.coefa)),]
+
+#estimates are the same but the standard errors are larger
+out.coefa[grep('food',rownames(out.coefa))[5:10],]
+out.coef[grep('food',rownames(out.coef))[5:10],]
+
+#quasi-Poisson model is not a likelihood-based model
+AIC(glm4)
+AIC(glm4a)
+
+##### ordinal logistic regression #####
+
+trees<-read.csv('trees.csv')
+dim(trees)
+trees[1:8,]
+#extract data for flowering dogwood
+cornus<-trees[trees$SPP=='CORNFLO',]
+dim(cornus)
+#not all cover values are represented
+table(cornus$truecover)
+
+#proportional odds model using MASS package
+library(MASS)
+fit1<-polr(ordered(truecover)~W,data=cornus)
+fit1
+
+#proportional odds model using VGAM package
+library(VGAM)
+fit1a<-vglm(factor(truecover)~W,data=cornus,family=cumulative(reverse=T,parallel=T))
+fit1a
+#can fit cumulative logits with separate coefficients for predictor
+
+fit1a<-vglm(factor(truecover)~W,data=cornus,family=cumulative(reverse=T,parallel=F))
+
+#model does not converge--need to collapse categories
+cornus$ord2 <- ifelse(cornus$truecover<4, 1, ifelse(cornus$truecover>5,6,cornus$truecover))
+table(cornus$truecover) 
+table(cornus$ord2)
+
+fit1a<-vglm(factor(ord2)~W,data=cornus,family=cumulative(reverse=T,parallel=T))
+fit1b<-vglm(factor(ord2)~W,data=cornus,family=cumulative(reverse=T,parallel=F~W))
+
+#models can be compared using analysis of deviance to test proportional odds assumption
+deviance(fit1a)
+deviance(fit1b)
+
+#test suggests ordinal model does not fit
+1-pchisq(deviance(fit1a)-deviance(fit1b),df=df.residual(fit1a)-df.residual(fit1b))
+
+
+
+
+

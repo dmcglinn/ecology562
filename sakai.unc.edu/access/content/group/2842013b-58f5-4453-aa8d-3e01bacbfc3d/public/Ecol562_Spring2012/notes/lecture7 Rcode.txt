@@ -1,0 +1,55 @@
+rikz <- read.table( 'ecol 562/RIKZ.txt', header=TRUE)
+apply(rikz[,2:76], 1, function(x) sum(x>0)) -> rikz$richness
+lm(richness~NAP, data=rikz) -> mod1
+
+mu<-predict(mod1,newdata=data.frame(NAP=c(-1.5,0,1,2)))
+mu
+
+y1<-seq(-10,20,.1)
+z1a<-dnorm(y1,mu[1],summary(mod1)$sigma)
+length(y1)
+length(z1a)
+z1b<-dnorm(y1,mu[2],summary(mod1)$sigma)
+z1c<-dnorm(y1,mu[3],summary(mod1)$sigma)
+z1d<-dnorm(y1,mu[4],summary(mod1)$sigma)
+x1a<-rep(-1.5,length(y1))
+x1b<-rep(0,length(y1))
+x1c<-rep(1,length(y1))
+x1d<-rep(2,length(y1))
+x<-c(x1a,x1b,x1c,x1d)
+z<-c(z1a,z1b,z1c,z1d)
+y<-c(y1,y1,y1,y1)
+
+library(scatterplot3d)
+q1<-scatterplot3d(x,y,z,xlim=c(-1.5,2),ylim=c(-5,20), zlim=c(0,.2), xlab='NAP', ylab='Richness',zlab='Density',type='n',box=FALSE)
+
+# Fix y-axis label
+par(xpd=T)
+q1<-scatterplot3d(x,y,z,xlim=c(-1.5,2),ylim=c(-5,20), zlim=c(0,.2), xlab='NAP', ylab='', zlab='Density', type='n',box=FALSE)
+
+?par
+par(srt=40)
+text(6.4,0.8,'Richness',cex=1)
+par(xpd=F)
+par(srt=0)
+
+names(q1)
+# plot normal curves
+q1$points3d(x1a,y1,z1a,type='l')
+q1$points3d(x1b,y1,z1b,type='l')
+q1$points3d(x1c,y1,z1c,type='l')
+q1$points3d(x1d,y1,z1d,type='l')
+#add regression line
+newx<-c(-1.5,0,1,2)
+newz<-rep(0,length(newx))
+q1$points3d(newx,mu,newz,type='l',lwd=2)
+
+#identify zero boundary
+q1$points3d(newx,newz,newz,type='l',lty=2,col=2)
+q1$points3d(2,0,dnorm(0,mu[4],summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)
+q1$points3d(1,0,dnorm(0,mu[3],summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)
+q1$points3d(0,0,dnorm(0,mu[2],summary(mod1)$sigma), type='h', lty=2, col=4, pch=16, cex=.8)
+q1$points3d(-1.5,0,dnorm(0,mu[1],summary(mod1)$sigma), type='h',lty=2,col=4, pch=16, cex=.8)
+
+
+

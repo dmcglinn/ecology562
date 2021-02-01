@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 30&mdash;Monday, March 26, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture30" id="lecture30"></a>Lecture 30&mdash;Monday, March 26, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture30.htm#what">What are spatial data?</a> </li>
+  <li><a href="lecture30.htm#types">Types of spatial data</a>
+    <ul>
+      <li><a href="lecture30.htm#geostatistical">Geostatistical data</a></li>
+      <li><a href="lecture30.htm#lattice">Lattice data</a></li>
+      <li><a href="lecture30.htm#point">Point process data</a></li>
+      <li><a href="lecture30.htm#these">Converting one type of spatial data into another</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture30.htm#how">How are spatial data used?</a> </li>
+  <li><a href="lecture30.htm#measuring">Measuring spatial variation</a>
+<ul>
+      <li><a href="lecture30.htm#nonspatial">Non-spatial measures of variation</a></li>
+      <li><a href="lecture30.htm#stationarity">Stationarity and the replication problem</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture30.htm#types2">Types of stationarity</a></li>
+  <ul>
+    <li><a href="lecture30.htm#strong">Strong stationarity</a></li>
+    <li><a href="lecture30.htm#second">Second-order stationarity</a></li>
+    <li><a href="lecture30.htm#intrinsic">Intrinsic stationarity</a></li>
+  </ul>
+  <li><a href="lecture30.htm#cited">Cited references</a></li>
+</ul>
+<h2 align="left"><strong><a name="what"></a>What are spatial data</strong>?</h2>
+<p>Formally spatial data entail recording an attribute&rsquo;s value, <em>z</em>, along with the attribute&rsquo;s location, <strong>s</strong>. We  represent this as Z(<strong>s</strong>), where typically <img src="../../images/lectures/lecture30/image003a.gif" alt="domain" width="95" height="25" align="absbottom">. <em>D</em> is called the spatial domain and will usually be a subset of the Cartesian plane.  In data analysis there are two basic approaches to dealing with spatially referenced data and they influence what our sample size is.</p>
+<ol>
+  <li>Treat the  spatial dimension as a nuisance. If we take <em>n</em> spatially referenced samples then due to possible spatial correlation  among sites our observations are  unlikely to  be independent. Hence our sample size is less than we hoped for and statistical power is reduced.</li>
+  <li>Treat the  spatial process generating the data as the primary focus of the study. If we take <em>n</em> spatially referenced samples then in terms of the spatial process we are trying to study we have a sample of size 1. Our  estimates of the function Z(<strong>s</strong>) at different locations defines a three-dimensional spatial surface of which  our sample is a single realization. What&rsquo;s random from this viewpoint are the attribute values obtained at given locations, not the locations themselves. The randomness arises from measurement error, temporal changes in the spatial surface, etc., not from where we chose to sample.</li>
+</ol>
+<p>In the nuisance point of view  spatial correlation reduces our ability to draw valid inferences from our data.
+In a typical statistical experiment, say a simple linear regression, we  manipulate the levels of a variable <em>x</em> of different experimental units while observing the value of a second variable <em>y</em> (that we call the response). But in an observational study, which we carry out because  an experiment might be too difficult to perform or too unrealistic, we often use the natural variability in <em>x</em> as a surrogate for experimental manipulation. The natural variability is captured by obtaining observational units from  different spatial locations. What does such a study allow us to conclude? Because we didn't randomly assign treatments to  we can't legitimately infer that <em>x</em> causes <em>y</em>. Furthermore if <em>x</em> and <em>y</em> are seen to vary together it could be because an unmeasured spatially varying variable  is affecting  both of them. </p>
+<p>Spatial location  can serve as a catch-all for all the unmeasured variables in an analysis. Tobler&rsquo;s law of geography (Tobler 1970) states &ldquo;Everything is related to everything else, but near things are more related than distant things.&rdquo; So we expect the spatial dimension to be important in most observational studies. </p>
+<h2><a name="types"></a>Types of spatial data </h2>
+<p>Three distinct categories of spatial data are recognized: geostatistical data, lattice data, and point process data (spatial point patterns). </p>
+<h3><strong><a name="geostatistical"></a>Geostatistical data</strong></h3>
+<p>The spatial domain <em>D</em> here is fixed and continuous. With geostatistical data the number of locations at which observations can be made is uncountable. Between any two sample locations <strong>s</strong><sub>i</sub> and <strong>s</strong><sub>j</sub> are an infinite (in theory) number of other potential sample points. How we choose to obtain a sample from <em>D</em> has no bearing on whether the data are geostatistical or not. We can lay down a grid and sample at the intersection of grid lines, or we can randomly select points. Furthermore the attribute we measure, Z(<strong>s</strong>), can be categorical or continuous.</p>
+<h3><strong><a name="lattice"></a>Lattice data</strong></h3>
+<p> Here the set <em>D</em> is fixed but this time is only countable (and usually finite). Lattice data are sometimes called areal data. Examples of lattice data include the following.</p>
+<ul>
+  <li>Summary statistics obtained at the county level in a state  (e.g. number of cases of lyme disease by county).</li>
+  <li>Species richness measured on  quadrats. </li>
+</ul>
+<p>Because lattice data have areal extent there is no way  to obtain additional sample points between contiguous  lattice units. </p>
+<h3><strong><a name="point"></a>Point process data</strong></h3>
+<p> Unlike geostatistical and lattice data  the domain <em>D</em>  for point process data is random. With point process data the focus is on the locations at which the process occurs. The set of spatial locations of a plant species, i.e., the places where the plant species is observed to grow, is an example of a point process. Instead of analyzing the <em>Z</em> process (the attributes of the  points) we analyze the <em>D</em> process (the locations of the points). Having said that it is possible for the points to have additional attributes yielding what's called a marked point process.</p>
+<h3 align="left"><strong><a name="these" id="these"></a>Converting one type of spatial data into another</strong></h3>
+<p><strong>Geostatistical &rarr; point process.</strong> Geostatistical data under certain circumstances can be treated as point process data. Suppose we define</p>
+<p align="center"><img src="../../images/lectures/lecture30/image006a.gif" width="210" height="72" alt="dichotomize"></p>
+<p>Now suppose  we record the locations where <em>U</em>(<strong>s</strong>) = 1. These locations are clearly random and comprise a point process data set.
+</p>
+<p><strong>Geostatistical &rarr; lattce.</strong> We can choose to  aggregate geostatistical data by area and summarize the results over the area thus generating lattice data.</p>
+<p><strong>Lattice  &rarr; geostatistical.</strong> Going from lattice to geostatistical data is harder. Typically we have to pretend that the value of <em>Z</em>(<strong>s</strong>) on a lattice occurs at the center of the lattice units and then treat <em>D</em> as if it were continuous so that intermediate values are possible. </p>
+<h2 align="left"><strong><a name="how"></a>How are spatial data used? </strong></h2>
+<p><strong>Point process data</strong>
+</p>
+<ol>
+  <li>With point process data the first question is typically are the points distributed randomly? This amounts to looking at the distances between neighbors. For geostatistical data such a question would be nonsensical because the locations of points are determined by design.</li>
+  <li>If there is more than one point process present, the next obvious question is are the two processes related to each other in some way?</li>
+</ol>
+<p><strong>Geostatistical data</strong>
+</p>
+<ol>
+  <li>Typically the goal with geostatistical data is to characterize the spatial process that produced the data and to   predict values at locations not in the sample.</li>
+  <li>In  regression  the spatial process is often used to account for any lingering statistical dependence in the response after the basic regression model has been formulated.</li>
+</ol>
+<p><strong>Lattice data </strong>
+</p>
+<ol>
+  <li>The same objectives hold for lattice data as for geostatistical data except now questions of spatial connectivity and neighborhood structure arise too. </li>
+</ol>
+<h2><a name="measuring"></a>Measuring spatial variation</h2>
+<h3><strong><a name="nonspatial"></a>Non-spatial measures of variation</strong></h3>
+<p>The variance, denoted <img src="../../images/lectures/lecture30/image001.gif" alt="variance" width="22" height="30" align="absmiddle"> or <img src="../../images/lectures/lecture30/image002.gif" width="27" height="27" align="absmiddle"> to emphasize the identity of the variable in question, is the average squared deviation about the mean. </p>
+<p align="center"><img src="../../images/lectures/lecture30/image003.gif" width="142" height="82" alt="variance"></p>
+<p>An equivalent formula is the following. </p>
+<p align="center"><img src="../../images/lectures/lecture30/image004.gif" width="183" height="88" alt="pairwise variance"></p>
+<p>In this formula the variance is the average squared differences among all pairs of observations. The multiplier of one half accounts for the fact that the double sum counts each of these squared differences twice. Many spatial statistics use versions of this second variance formula.</p>
+<p>The covariance generalizes the variance to the case of two variables  measured on each observation. The covariance quantifies the direction and extent to which the two variables  co-vary on average. </p>
+<p align="center"><img src="../../images/lectures/lecture30/image006.gif" width="192" height="82" alt="covariance"></p>
+<p>To improve interpretability the covariance is often standardized by dividing  it by the product of the square root of the variances of each variable. This yields the Pearson correlation coefficient <em>r</em>,
+which has a range of &ndash;1 to 1.</p>
+
+<p align="center"><img src="../../images/lectures/lecture30/image009.gif" width="180" height="90"></p>
+<p>As we'll see these formulas can be extended in various ways with spatial data.</p>
+<h3><strong><a name="stationarity"></a>Stationarity and the  replication problem </strong></h3>
+<p>One of the purposes of a spatial analysis is to characterize the nature of the spatial process. This is made difficult by the fact that technically we have no replication of the process. A sample of a spatial process is a sample of size one regardless of how many spatial locations we've measured. Spatial data are like multivariate non-spatial data in which we obtain multiple measurements
+on the same individual. But spatial data pose a unique problem not shared by non-spatial data.</p>
+<ul>
+  <li>For non-spatial data if  we want to characterize an attribute of a typical subject we get more subjects. The different subjects thus comprise the sample. </li>
+  <li>If on the other hand we want to learn more about a particular subject we can sample that subject more intensely but in reality those are just subsamples. There really is no way to obtain replication of a single subject. The subject is unique. This is exactly the problem we face with spatial data. If we want to characterize a particular region of space where the characterization desired involves describing the internal relationships within that region of space, there are no replicates of that region of space.</li>
+</ul>
+<p>The standard &quot;solution&quot; is to substitute replication in the data for replication of the data. An  assumption that is made in spatial analysis is that the spatial process under study repeats itself over its domain <em>D</em>. Such a spatial process is said to be <strong><font color="#CC0000">stationary</font></strong>. For a stationary process the absolute coordinates at which we observe the process are unimportant. All that matters are the orientated distances between the points. If in addition the process is invariant to the direction of the displacement in that only the magnitude of the displacement matters, then the process is said to be <font color="#CC0000"><strong>isotropic</strong></font>.</p>
+<p> In a stationary process if we translate the entire set of coordinates by a specific amount in a specified direction, the entire process remains the same. This is the same assumption we make in time series analysis in order to estimate lag correlations over the entire time series.</p>
+<h2><strong><a name="types2" id="types2"></a>Types of stationarity</strong></h2>
+<h3><a name="strong"></a>Strong stationarity</h3>
+<p>The proper way to view spatial data is as multivariate data. Suppose we observe a spatial process at locations <strong>s</strong><sub>1</sub>, <strong>s</strong><sub>2</sub>, ..., <strong>s</strong><sub>k</sub>. The behavior of the spatial process <em>Z</em>(<strong>s</strong>) can be completely characterized by its joint probability distribution function.</p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture30/image012.gif" width="327" height="35" alt="probability"></p>
+</blockquote>
+<p>A very strong form of stationarity is one that requires that the joint probability distribution function be invariant under translation. Let <strong>h</strong> be any displacement vector. Formally <strong><font color="#CC0000">strong stationarity</font></strong> is defined as follows. </p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture30/image015.gif" width="458" height="72" alt="strong stationarity"></p>
+</blockquote>
+<h3><a name="second"></a>Second-order stationarity</h3>
+<p>For most applications strong stationarity is too restrictive a requirement. A weaker form of stationarity requires only that the moments of the joint distribution don&rsquo;t change under translation. This is called <strong><font color="#CC0000">second-order stationarity</font></strong>. Formally two conditions are required for second-order stationarity.
+</p>
+<ul>
+  <li>The mean is constant over the spatial domain <em>D</em>, i.e., <img src="../../images/lectures/lecture30/image018.gif" alt="expectation" width="107" height="35" align="absmiddle"> for all locations <strong>s</strong> in <em>D</em>. </li>
+  <li>The covariance depends on the separation between points but not on their absolute location, i.e., <img src="../../images/lectures/lecture30/image021.gif" alt="covariance" width="237" height="35" align="absmiddle">&nbsp;for all locations <strong>s</strong>.  C*(<strong>h</strong>) is called the <font color="#CC0000"><strong>covariogram</strong></font>. It is a function that depends only on the displacement vector <strong>h</strong>.</li>
+</ul>
+<p>If it turns out <img src="../../images/lectures/lecture30/image024.gif" alt="isotropy" width="243" height="35" align="absmiddle">, where <img src="../../images/lectures/lecture30/normh.gif" alt="norm of h" width="30" height="30" align="absmiddle">&nbsp;is the norm of the vector <strong>h</strong>, so that the covariance depends on the size of the displacement but not on its direction from <strong>s</strong>, the spatial process is said to be both second order stationary and <strong><font color="#CC0000">isotropic</font></strong>.</p>
+<h3><a name="intrinsic" id="intrinsic"></a>Intrinsic stationarity</h3>
+<p>A technique often used in time series analysis to remove absolute time references and to obtain stationarity is differencing, i.e., constructing the new variable &nbsp; <em>Z</em>(<strong>s</strong>) &ndash; <em>Z</em>(<strong>s</strong>+<strong>h</strong>). This leads to a third definition of stationarity, <font color="#CC0000"><strong>intrinsic stationarity</strong></font>. Formally a spatial process is intrinsic stationary if it has a constant mean and 
+    the variance of the differences of Z at pairs of locations only depends on <strong>h</strong>, the displacement between the locations. This leads us to the definition of the <strong><font color="#CC0000">semivariogram</font></strong>, &gamma;(<strong>h</strong>).</p>
+<blockquote>
+  <p align="center"><img src="../../images/lectures/lecture30/image027.gif" width="240" height="33" alt="semivariance"></p>
+</blockquote>
+<p>Because it derives from the weakest form of stationarity and is more generally applicable, the semivariogram is the preferred tool for characterizing geostatistical spatial processes. </p>
+<p>Although the semivariogram is less intuitive than the covariogram, it turns out the two are related and so it is easy to move from one to the other. If an intrinsic stationary process has the additional property of second-order stationarity, then the covariogram <em>C</em>(<strong>h</strong>) and semivariogram &gamma;(<strong>h</strong>) are related as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture30/image030.gif" width="160" height="30" alt="semivariance"></p>
+<p align="left">By definition <em>C</em>(<strong>0</strong>) is just the variance of the spatial process. </p>
+<p>Note: the terms semivariogram and variogram are often used interchangeably in the literature. Technically the semivariogram is as defined above, while the variogram is twice this quantity. The reason the distinction is important is that the semivariogram has the nice relationship to the covariogram shown above. Typically when someone speaks of the variogram (particularly in software documentation) they are actually referring to the semivariogram.</p>
+<h2><a name="cited"></a>Cited Reference</h2>
+<p>Tobler, W. 1970. A computer movie simulating urban growth in the Detroit region. <em>Economic Geography </em><strong>46</strong>: 234&ndash;240.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--March 28, 2012<br>
+      URL: <a href="lecture30.htm#lecture30" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture30.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Final Part 1&mdash;Solution</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-align: center;font-style:italic;}
+.style1 {font-family: "Courier New", Courier, mono}
+.style2 {
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	font-size: smaller;
+}
+.style7 {font-family: "Courier New", Courier, mono; color: #00CC00; }
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+.style16 {font-size: larger}
+.style18 {color: #009966; font-weight: bold; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style6 {color: #CC0033}
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style12 {color: #008000}
+.style151 {	color: #990099;
+	font-weight: bold;
+}
+.style161 {	color: #CC0000;
+	font-weight: bold;
+}
+.style181 {color: #008000; font-weight: bold; }
+-->
+</style>
+</head>
+
+
+<body>
+<h1 align="center"><a name="finalpart1" id="assign6"></a>Final Part 1&mdash;Solution</h1>
+<p>Read in the data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lakes &lt;- read.table('ecol 561/lakes.txt', header=T, sep='\t')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  names(lakes)</div>
+
+<span class="style24">[1] &quot;Lake&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Latitude&quot;&nbsp; &quot;Longitude&quot; &quot;X1976&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;X1977&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;X1978&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;X1981&quot;&nbsp;&nbsp;&nbsp;</span> 
+<h2>Question 1
+</h2>
+<p>The data are currently in &quot;lake-level&quot; format in which each lake has a single record. We need to put this into &quot;lake-period&quot; format with multiple records for each lake, in this case one record for each measurement occasion. This requires unlisting the records X1976, X1977, X1978, and X1981 stacking them into a single column, replicating the Lake, Latitude, and Longitude variables four times, and adding a new column that lists the year  the measurement was taken. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">newlakes &lt;- data.frame(rep(lakes$Lake,4), rep(lakes$Latitude,4), rep(lakes$Longitude,4), unlist(lakes[,4:7]), rep(c(1976:1978,1981), rep(dim(lakes)[1],4)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(newlakes) &lt;- c('lake', 'latitude', 'longitude', 'SO4', 'year')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> newlakes[1:10,]</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lake latitude longitude SO4 year<br>
+    X19761 &nbsp;&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;58.0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2 6.5 1976<br>
+    X19762 &nbsp;&nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;58.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3 5.5 1976<br>
+    X19763 &nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;58.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.9 4.8 1976<br>
+    X19764 &nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;58.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.9 7.4 1976<br>
+    X19765 &nbsp;&nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;58.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.6 3.7 1976<br>
+    X19766 &nbsp;&nbsp;&nbsp;&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;59.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5 1.8 1976<br>
+    X19767 &nbsp;&nbsp;&nbsp;&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;58.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3 2.7 1976<br>
+    X19768 &nbsp;&nbsp;&nbsp;&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;59.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.5 3.8 1976<br>
+    X19769 &nbsp;&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;58.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.3 8.4 1976<br>
+X197610 &nbsp;&nbsp;11 &nbsp;&nbsp;&nbsp;&nbsp;59.4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.4 1.6 1976</span></p>
+<h3>Choosing a probability model for the response </h3>
+<p>There are a number of guidelines for helping us choose a probability model for the response variable SO<sub>4</sub>. I repeat some of these here.</p>
+<ol>
+  <li>Is the quantity being measured discrete or continuous?</li>
+  <li> Are the possible values of the response constrained to some interval or are they unbounded?</li>
+  <li>If we group the values of the response variable with respect to the categories of a putative predictor, do the mean and variance of the response show a particular relationship?</li>
+  <li>Is there some obvious probabilistic mechanism that might have generated the data we obtained?</li>
+</ol>
+<p>Clearly SO<sub>4</sub> is a continuous variable and, being a concentration, is bounded below by zero (but in principle unbounded above). Three continuous distributions mentioned at various times in the course are the normal, lognormal, and gamma distributions. Both the lognormal and gamma are positive data distributions and are bounded below by zero, while the normal distribution is unbounded. Of course if the data are displaced far enough from zero, then the fact that the normal distribution is unbounded below may not be a problem. The easiest way to obtain a lognormal distribution is to log-transform a response variable and assume the log-transformed variable has a normal distribution.</p>
+<p>Because the goal is to model SO<sub>4</sub> concentration against year the probability model we're seeking must hold at each year separately rather than in the aggregate. Because both the lognormal and gamma distributions tend to be skewed while the normal is symmetric, a histogram of SO<sub>4</sub> concentration at each year is a useful display.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mar=c(5.1,3.1,1.1,1.1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mfrow=c(2,2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sapply(c(1976:1978,1981), function(x) hist(newlakes$SO4[newlakes$year==x], xlab=expression(&quot;SO&quot;[4]), main=x, col='lightblue'))</div>
+<p align="center"><img src="../../images/assignments/finalpart1/fig1.jpg" width="576" height="360"><br>
+  <span class="styleArial"><strong>Fig. 1</strong> &nbsp;Histograms of SO<sub>4</sub> concentration in each year </span></p>
+<p>From Fig. 1 it's pretty clear that a normal distribution is likely to be inappropriate. The actual distributions are skewed and have many values close to zero. Thus a model based on a normal distribution is likely to predict negative concentrations. Both the lognormal and gamma distributions have the same mean-variance relation (quadratic), so the best way to evaluate them is to actually use them in a model and compare the results with AIC. Even though we know a normal model is probably inappropriate I  include it among the candidate models.</p>
+<p>I start by fitting each model with <span class="style1">year</span> as a linear predictor. The normal and lognormal models can be fit with <span class="style161">lm</span>, the lognormal by first log-transforming the response SO<sub>4</sub>. The gamma distribution is fit with <span class="style161">glm</span> and the <span class="style22">family=Gamma</span> argument. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.norm &lt;- lm(SO4~year, data=newlakes)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gamma &lt;- glm(SO4~year, data=newlakes, family=Gamma)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.lnorm &lt;- lm(log(SO4)~year, data=newlakes)</div>
+<p>The log-likelihood of the log-transformed model is not directly comparable to models with an untransformed response without additional work. We wrote  a function in <a href="../lectures/lecture11.htm#comparing">lecture 11</a> called <span class="style8">norm.loglike5</span> that carries out the necessary steps and I reproduce it below. We did two versions of the function. Here we need the version that is based on a probability density function (rather than a probability) because we've comparing density functions.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> norm.loglike5 &lt;- function(model, k, y) {</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #MLE of sigma^2 </div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> sigma2 &lt;- (sum(residuals(model)^2))/length(y)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> prob &lt;- dnorm(log(y+k), mean=predict(model), sd=sqrt(sigma2)) * 1/(y+k)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#calculate log-likelihood</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike &lt;- sum(log(prob))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> loglike</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<p>To get this function to work we need to give it a version of the data set in which the missing values of the response are removed. (These observations are automatically removed by the <span class="style161">lm</span> function when a model involving them is fit.) We can do this by subsetting the data set using the <span class="style161">!is.na( )</span> construction. The first argument to the <span class="style8">norm.loglike5</span> function is the model, the second is 0 because we didn't add a constant to the response, and the third is the response variable with missing observations removed. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.loglike &lt;- norm.loglike5(out.lnorm, 0, newlakes$SO4[!is.na(newlakes$SO4)])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.loglike</div>
+<span class="style24">
+    [1] -342.0175</span>
+<p>Each of the models has three estimated parameters: (&beta;<sub>0</sub>, &beta;<sub>1</sub>, and &sigma;<sup>2</sup>) for the normal and lognormal and (&beta;<sub>0</sub>, &beta;<sub>1</sub>, and scale) for the gamma, so we could just as well  compare log-likelihoods rather than AIC. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> -2*out.loglike[[1]] + 2*3</div>
+  <span class="style24">[1] 690.0349</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.gamma)</div>
+  <span class="style24">[1] 705.6806</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.norm)</div>
+  <span class="style24">[1] 786.8488</span></p>
+<p>The lognormal model has the lowest AIC by a sizeable amount, so we'll proceed with a lognormal probability model for the response. Fig. 2 shows the three fitted distributions separately by year superimposed on histograms of the data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">histogram(~SO4|factor(year), data=newlakes, col='grey85', type='density', ylim=c(0,.35), xlab=expression(&quot;SO&quot;[4]), panel=function(x, subscripts, ...) {<br>
+  panel.histogram(x,...)</div>
+ <div class="style15" style="padding-left: 60px; text-indent:-30px">#gamma distribution</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> myscale &lt;- summary(out.gamma)$dispersion</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  cur.mu &lt;- fitted(out.gamma)[subscripts][1]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  myshape &lt;- cur.mu/myscale</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.mathdensity(dmath = dgamma, args = list(shape=myshape, scale=myscale), col=4, n=100)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#lognormal distribution</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> cur.mulog &lt;- predict(out.lnorm)[subscripts][1]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  lsigma &lt;- summary(out.lnorm)$sigma</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.mathdensity(dmath = dlnorm, args = list(meanlog=cur.mulog, sdlog=lsigma), col=2, n=100)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#normal distribution</div>
+
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> mu &lt;- predict(out.norm)[subscripts][1]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  sigma &lt;- summary(out.norm)$sigma</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  panel.mathdensity(dmath = dnorm, args = list(mean=mu, sd=sigma), col='seagreen', n=100)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">} , key=list(x=.7, y=.8, corner=c(0,0),  text=list(c('normal', 'lognormal', 'gamma'), cex=.85), lines=list(col=c('seagreen', 2, 4), lty=1)) )</div><br>
+<table width="450" border="0" align="center">
+  <tr>
+    <td><div align="center"><img src="../../images/assignments/finalpart1/fig1pt5.png" width="470" height="340" alt="fig. 2"></div></td>
+  </tr>
+  <tr>
+    <td class="styleArial"><p class="styleArial" style="padding-left: 47px; text-indent:-47px"><strong>Fig. 2 </strong>&nbsp;Different probability distributions fit to  sulfate concentration separately by year using a linear year model</td>
+  </tr>
+</table>
+<h3>Choosing the form of the linear predictor</h3>
+<p>The variable year has four unique values. Hence there are a limited number of choices for the linear predictor. Without any theory to guide us we can</p>
+<ol>
+  <li>Fit a linear model (2 regression parameters)</li>
+  <li>Fit a quadratic model (3 regression parameters)</li>
+  <li>Fit a cubic model (4 regression parameters) or equivalently treat year as a factor.</li>
+</ol>
+<p>Each model was fit assuming a lognormally distributed response. AIC can be used to compare the models without any adjustment because  all three models use the same response, log SO<sub>4</sub>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.lnorm2 &lt;- lm(log(SO4)~year+I(year^2), data=newlakes)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.lnorm3 &lt;- lm(log(SO4)~factor(year), data=newlakes)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(out.lnorm, out.lnorm2, out.lnorm3), AIC)</div>
+  <span class="style24">[1] 318.3179 320.3132 322.3114</span></p>
+<p>Clearly the linear model is to be preferred. It has both the lowest AIC and is simpler. To see what's going on I graph the data (jittered) and superimpose the three models. For the separate means model I just plot the estimated mean at each year as predicted by the model. The graphs of the three models are indistinguishable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(log(SO4)~jitter(year), data=newlakes, xlim=c(1975.5,1981.5), xlab='year', ylab=expression(log('SO'[4])))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">abline(out.lnorm, col='grey80', lwd=5)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(coef(out.lnorm2)[1]+ coef(out.lnorm2)[2]*x+ coef(out.lnorm2)[3]*x^2, col=2, lty=2, add=TRUE)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(c(1976:1978,1981), c(coef(out.lnorm3)[1], coef(out.lnorm3)[1]+ coef(out.lnorm3)[2], 
+  coef(out.lnorm3)[1]+ coef(out.lnorm3)[3], coef(out.lnorm3)[1]+coef(out.lnorm3)[4]), col=3, pch=16, cex=2) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend(1979,2.5, c('linear','quadratic','means'), lty=c(1,2,NA), lwd=c(3,1,1), pch=c(NA,NA,16), col=c('grey80',2,3), bty='n', cex=.9) </div>
+<p align="center"><img src="../../images/assignments/finalpart1/fig2.jpg" width="576" height="360"></p>
+<p align="center" class="styleArial"><strong>Fig. 3</strong>&nbsp;&nbsp;&nbsp;Three lognormal models using different versions of the linear predictor for year </p>
+<p>Our conclusions remaining the same  even if we use a normal or a gamma probability model for the response. A model linear in year is best.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gamma1 &lt;- glm(SO4~year+I(year^2), data=newlakes, family=Gamma)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gamma2 &lt;- glm(SO4~factor(year) ,data=newlakes, family=Gamma)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(out.gamma, out.gamma1, out.gamma2), AIC)</div>
+  <span class="style24">[1] 705.6806 707.4164 709.2101</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.norm1 &lt;- lm(SO4~year+I(year^2), data=newlakes)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.norm2 &lt;- lm(SO4~factor(year), data=newlakes)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(out.norm, out.norm1, out.norm2), AIC)</div>
+  <span class="style24">[1] 786.8488 788.6666 790.4781 </span></p>
+<p> For comparison I obtain the AIC of the lognormal models on the scale of the response variable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> LL.llnorm &lt;- sapply(list(out.lnorm, out.lnorm2, out.lnorm3), function(x) norm.loglike5(x, 0, newlakes$SO4[!is.na(newlakes$SO4)]))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">LL.llnorm</div>
+ <span class="style24"> [1] -342.0175 -342.0151 -342.0142</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lnorm.df &lt;- sapply(list(out.lnorm, out.lnorm2, out.lnorm3), function(x) length(coef(x)))+1</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lnorm.df</div>
+<span class="style24">  [1] 3 4 5</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> LL.AIC &lt;- -2*LL.llnorm + 2*lnorm.df</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> LL.AIC</div>
+<span class="style24">[1] 690.0349 692.0302 694.0284</span>
+<p>Table 1  summarizes the common pooling models that were fit. </p>
+<div align="center"><span class="styleArial"><strong>Table 1</strong> &nbsp;Comparing the fit of models</span><br>
+</div>
+<table width="500" border="1" align="center" cellpadding="1" cellspacing="0">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Model</strong></div></td>
+    <td><strong>Linear predictor </strong></td>
+    <td><div align="center"><strong>k</strong></div></td>
+    <td><div align="center"><strong>log-likelihood</strong></div></td>
+    <td><div align="center"><strong>AIC</strong></div></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><div align="center">lognormal</div></td>
+    <td>linear year </td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">&ndash;342.018</div></td>
+    <td><div align="center">690.035</div></td>
+  </tr>
+  <tr>
+    <td>quadratic year </td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">&ndash;342.015</div></td>
+    <td><div align="center">692.030</div></td>
+  </tr>
+  <tr>
+    <td>categorical year </td>
+    <td><div align="center">5</div></td>
+    <td><div align="center">&ndash;342.014</div></td>
+    <td><div align="center">694.028</div></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><div align="center">gamma</div></td>
+    <td>linear year </td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">&ndash;349.840</div></td>
+    <td><div align="center">705.681</div></td>
+  </tr>
+  <tr>
+    <td>quadratic year </td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">&ndash;349.708</div></td>
+    <td><div align="center">707.416</div></td>
+  </tr>
+  <tr>
+    <td>categorical year </td>
+    <td><div align="center">5</div></td>
+    <td><div align="center">&ndash;349.605</div></td>
+    <td><div align="center">709.210</div></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><div align="center">normal</div></td>
+    <td>linear year </td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">&ndash;390.424</div></td>
+    <td><div align="center">786.849</div></td>
+  </tr>
+  <tr>
+    <td>quadratic year </td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">&ndash;390.333</div></td>
+    <td><div align="center">788.667</div></td>
+  </tr>
+  <tr>
+    <td>categorical year </td>
+    <td><div align="center">5</div></td>
+    <td><div align="center">&ndash;390.239</div></td>
+    <td><div align="center">790.478</div></td>
+  </tr>
+</table>
+<p>Of course it is possible that some weird transformation of year is preferable to what we've done. To assess that possibility I plot the residuals from the linear model against year and superimpose a lowess curve. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(residuals(out.norm)~ jitter(newlakes$year[!is.na(newlakes$SO4)]), ylab='residuals', xlab='year')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(lowess(residuals(out.norm)~ jitter(newlakes$year[!is.na(newlakes$SO4)])), col=2) </div>
+<p align="center"><img src="../../images/assignments/finalpart1/fig3.jpg" width="468" height="360"></p>
+<p align="center" class="styleArial"><strong>Fig. 4 </strong>&nbsp;&nbsp;Plot of residuals from model linear in year against the predictor &quot;year&quot;</p>
+<p>The plot provides no evidence that form of the linear predictor is inadequate. It's worth noting at this point that the modeled relationship between log(SO<sub>4</sub>) and year is not statistically significant. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.lnorm)</div>
+<p class="style24">Call:<br>
+lm(formula = l4og(SO4) ~ year, data = newlakes)</p>
+<p class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1Q &nbsp;&nbsp;Median &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3Q &nbsp;&nbsp;&nbsp;&nbsp;Max <br>
+  -1.50496 -0.52462 -0.08062 0.52028 1.58027 </p>
+<p class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimate Std. Error t value Pr(&gt;|t|)<br>
+  (Intercept) 41.66739 &nbsp;&nbsp;49.32240 &nbsp;&nbsp;0.845 &nbsp;&nbsp;&nbsp;0.399<br>
+  year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.02051 &nbsp;&nbsp;&nbsp;0.02493 &nbsp;-0.822 &nbsp;&nbsp;&nbsp;<span class="style25">0.412</span></p>
+<p class="style24">Residual standard error: 0.6167 on 166 degrees of freedom<br>
+  Multiple R-Squared: 0.004057, Adjusted R-squared: -0.001942 <br>
+  F-statistic: 0.6763 on 1 and 166 DF, p-value: 0.4120 </p>
+<h2>Question 2 </h2>
+<p>The basic structure possessed by these these data is that they consist of repeated measures on individual lakes. Due to local geology and edaphic factors, we should expect measurements coming from the same lake, even separated by a time interval of a year or more, to be more similar to each other than to observations coming from other lakes. This  provides the potential for what we've called observational heterogeneity&mdash;differing degrees of variability in subsets of observations. Observe that the repeated measures aspect of these data was imposed at the design level. Structure that arises from the sampling design must be accounted for in the analysis.</p>
+<p>In addition to temporal correlation there is the possibility of spatial structure in these data as a function of their geographic proximities. We might expect lakes that are close to each other to share a similar chemistry. I  consider structure of this sort to be inadvertent structure in these data. It arises because lakes are fixed objects that occupy space and the problem of their varying proximities will be an issue in even the most well-designed random selection scheme. The  spatial structure may turn out to be important, but it is not  intrinsic to the experimental design. As a result we'll account for the designed structure first and then deal with the spatial structuring if necessary.</p>
+<p>The ideal way to display the temporal structure of these data is in a lattice graph in which we plot the SO<sub>4</sub> concentration versus year  separately for each lake. Because we've already seen that a log transformation of the SO<sub>4</sub> concentration is justified, the most useful lattice graph plots log(SO<sub>4</sub>) versus year.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">xyplot(log(SO4)~year|lake, data=newlakes, ylab=expression(paste(&quot;SO&quot;[4], ' Concentration', sep=' ')), 
+layout=c(8,6),  panel=function(x,y) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.xyplot(x,y)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.abline(lm(y~x), col=2)},</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  par.settings=list(axis.text=list(cex=.8))) </div>
+<p align="center"><img src="../../images/assignments/finalpart1/fig4.jpg" width="554" height="559"></p>
+<p align="center" class="styleArial"><strong>Fig. 5&nbsp;</strong>&nbsp;&nbsp;Lattice graph displaying the repeated measures structure of the data set </p>
+<h2>Question 3 </h2>
+<p>As Fig. 5 indicates there is a dramatic difference in baseline SO<sub>4</sub> concentrations across lakes. This is reflected in the widely different values of the intercepts in the different regression lines. We also see some evidence for heterogeneity in slopes across the lakes. The natural way to handle structured data such as these is with a multilevel model. Fig. 5 coupled with our early work using the complete pooling model suggests that a linear model relating log(SO<sub>4</sub>) concentration to continuous time should be an adequate starting point.</p>
+<h3><strong>Unconditional means model </strong></h3>
+<p>The correct place to begin when fitting a multilevel model is with the common pooling (unconditional means) model. The common pooling model  includes only an intercept but does allow that intercept to vary among the different lakes. It serves to partition the variance between and among lakes and acts as a benchmark that allows us to assess where most of the variability lies&mdash;between lakes or between years for the same lake. The common pooling model is formulated as follows.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/unconditional.gif" width="250" height="67" alt="unconditional means"></p>
+<p align="center">where <img src="../../images/assignments/finalpart1/distributions.gif" alt="distributions" width="305" height="37" align="absmiddle"></p>
+<p align="left">Written as a composite equation it takes the following form. </p>
+<p align="center"><img src="../../images/assignments/finalpart1/unconditional&#32;composite.gif" width="242" height="85" alt="unconditional composite"></p>
+<p align="left">It's the latter form that matches the syntax used by R's <span class="style161">lme</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(nlme)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> unc.mean &lt;- lme(log(SO4)~1, random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<p align="left">The unconditional means model is of interest only for its variance components. From these we can calculate the intraclass correlation coefficient.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/icc.gif" width="102" height="55" alt="icc"></p>
+<p align="left"> I calculate this for the lakes data using output from <span class="style161">VarCorr</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> VarCorr(unc.mean)</div>
+  <span class="style24">lake = pdLogChol(1) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance &nbsp;&nbsp;&nbsp;StdDev <br>
+    (Intercept) 0.33272801 0.5768258<br>
+    Residual &nbsp;&nbsp;&nbsp;0.03104858 0.1762061</span><br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">as.numeric(VarCorr(unc.mean)[1,1])/ (as.numeric(VarCorr(unc.mean)[1,1])+ as.numeric(VarCorr(unc.mean)[2,1]))</div>
+  <span class="style24">[1] 0.9146493 </span></p>
+<p>So we see that 91% of the variability in log(SO<sub>4</sub>) concentrations occurs between lakes rather than within lakes across years. Put another way measurements from the same lake exhibit a correlation of 0.91. This is dramatic evidence that a multilevel model is needed here and argues strongly against using a common pooling model.</p>
+<h3><strong>Random intercepts model </strong></h3>
+<p>The next step is to add the predictor year. As we've seen the individual trend  lines in Fig. 4 exhibit quite a bit of  variability in their intercepts. Thus a natural second model to consider is a random intercepts model, a linear population model in which the intercepts of the regression lines for individual lakes are allowed to vary but they still share a common slope.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/random&#32;ints.gif" width="330" height="95" alt="random ints"></p>
+<p align="center">where <img src="../../images/assignments/finalpart1/distributions.gif" alt="distributions" width="305" height="37" align="absmiddle"></p>
+<p align="left">Written in composite form random intercepts model is  the following.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/random&#32;ints&#32;composite.gif" width="328" height="90" alt="random ints"></p>
+<p align="left">Written this way it matches the syntax used by R's <span class="style161">lme</span> function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.ints &lt;- lme(log(SO4)~year, random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.lnorm, unc.mean, random.ints)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.lnorm&nbsp;&nbsp;&nbsp; 3 318.31792<br>
+  unc.mean&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 73.76328<br>
+random.ints&nbsp; 4&nbsp; 65.73269</span>
+<p>Observe the dramatic decrease in AIC relative to the common pooling model, strong evidence that we need to account for the repeated measures structure of the data set. (The AIC values are directly comparable here because all models use log(SO<sub>4</sub>) as the response.) The random intercepts model exhibits a more modest decrease in AIC relative to the unconditional means model indicating that the inclusion of year has improved the fit of the model somewhat. Next we examine the variance components. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">VarCorr(random.ints)</div>
+  <span class="style24">lake = pdLogChol(1) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance &nbsp;&nbsp;&nbsp;StdDev <br>
+    (Intercept) 0.33345020 0.5774515<br>
+    Residual &nbsp;&nbsp;&nbsp;0.02855946 0.1689954</span></p>
+<p>As measured by the small relative reduction in level-1  variance, year accounts for only a modest amount of within-lake variability.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> (as.numeric(VarCorr(unc.mean)[2,1]) - as.numeric(VarCorr(random.ints)[2,1])) / as.numeric(VarCorr(unc.mean)[2,1])</div>
+<span class="style24">[1] 0.08016856</span></p>
+<p>So we've explained only 8% of the within-lake variability by including year as a predictor. Still the predictor year is statistically significant. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(random.ints)</div>
+  <span class="style24">Linear mixed-effects model fit by maximum likelihood<br>
+    Data: newlakes <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIC &nbsp;&nbsp;&nbsp;logLik<br>
+    65.73269 78.22854 -28.86634</span></p>
+<p class="style24">Random effects:<br>
+  Formula: ~1 | lake<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Intercept)&nbsp; Residual<br>
+  StdDev: &nbsp;&nbsp;0.5774515 0.1689954</p>
+<p class="style24">Fixed effects: log(SO4) ~ year <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Std.Error &nbsp;DF &nbsp; t-value p-value<br>
+  (Intercept) 45.76822 13.897196 119 &nbsp;3.293342&nbsp; 0.0013<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year&nbsp;&nbsp;-0.02259 &nbsp;0.007026 119 -3.215169 &nbsp;0.0017<br>
+  Correlation: <br>
+  (Intr)<br>
+  year -1 </p>
+<p class="style24">Standardized Within-Group Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Med &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max <br>
+  -4.02214991 -0.47329909 -0.05670254 0.55159957 3.33206296 </p>
+<p class="style24">Number of Observations: 168<br>
+  Number of Groups: 48 </p>
+<h3><strong>Random slopes and intercepts  model </strong></h3>
+<p>Another model we might consider is a random slopes and intercepts model. The lattice graph of Fig. 5 suggests there is some variability in individual slopes. Unfortunately this model is very difficult to fit.  One of the pernicious features of fitting mixed effects models is that it's not always clear that there things have gone wrong. Recall that the random slopes and intercepts model takes the following form.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/random&#32;slopes.gif" width="330" height="95" alt="random slopes"></p>
+<p>where <img src="../../images/assignments/finalpart1/distributions&#32;2.gif" alt="distributions" width="558" height="83" align="absmiddle">.</p>
+<p>In composite form the equations reduce to the following.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/random&#32;slopes&#32;compositie.gif" width="415" height="90" alt="random slopes"></p>
+<p>The following function call fits the random slopes and intercepts model  in R.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.slopes &lt;- lme(log(SO4)~year,random=~year|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<p>If we look at the variance components of this model we see the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> VarCorr(random.slopes)</div>
+  <span class="style24">lake = pdLogChol(year) <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StdDev &nbsp;Corr <br>
+    (Intercept) 3.334502e-01 5.774515e-01 (Intr)<br>
+    year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.192613e-14 1.092068e-07 0 <br>
+    Residual &nbsp;&nbsp;&nbsp;2.855945e-02 1.689954e-01 </span></p>
+<p>Based on the displayed correlation of 0 between the random slopes and intercepts and the estimated variance component of the slopes that is approximately 0 we  see that R has converged to a solution in which the slopes don't vary. If we compare the log-likelihoods of the random slopes and intercepts model with that of the random intercepts model we see that they are identical!</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(list(random.ints, random.slopes), logLik)</div>
+  <span class="style24">[1] -28.86634 -28.86634</span></p>
+<p>It is extremely unlikely that introducing two additional parameters to the model has had no effect on the log-likelihood. Given that we've already seen from our lattice plot that the slopes do vary between lakes we should surmise that <span class="style161">lme</span> has converged to a local solution (the solution of the random intercepts model) rather than a global solution. </p>
+<p>To remedy the situation we can try reparameterizing the predictor, perhaps by centering, and if that doesn't work to modify some of the control settings of the maximization algorithm. In the next model run I shift the origin to 1976, increase the default iteration settings, and switch the optimization method to <span class="style161">optim</span>.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.intslopes &lt;- lme(log(SO4)~I(year-1976),random=~I(year-1976)|lake, data=newlakes, method='ML', na.action=na.omit, control=lmeControl(maxIter=5000, msMaxIter=5000, niterEM=1000, msMaxEval=1000, opt='optim'))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">logLik(random.slopes)</div>
+<span class="style24">  'log Lik.' -27.19156 (df=6)</span>
+<p>This time the log-likelihood has increases. However this model does not beat the random intercepts model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.lnorm, unc.mean, random.ints, random.intslopes)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.lnorm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 318.31792<br>
+  unc.mean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 73.76328<br>
+random.ints&nbsp;&nbsp;&nbsp; 4&nbsp; </span><span class="style25">65.73269</span><span class="style24"><br>
+random.slopes&nbsp; 6&nbsp; 66.38311</span>
+<h3><strong>Random slopes   model </strong></h3>
+<p>Another model we  might consider is a random slopes model although the lattice graph of Fig. 5 suggests there isn't much variability in the slopes. A random slopes model is one in which the slopes of the regression lines for individual lakes are allowed to vary but they  still share a common intercept.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/randomslopesnoints.gif" width="330" height="95" alt="random slopes"></p>
+<p align="center">where <img src="../../images/assignments/finalpart1/distributions1.gif" alt="distribution" width="302" height="37" align="absmiddle"></p>
+<p align="left">Written in composite form the random slopes model is the following.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/randomslopesnointscomp.gif" width="358" height="90" alt="random slopes composite"></p>
+<p align="left">To fit this model we need to explicitly remove the intercept from the <span class="style22">random</span> argument of <span class="style161">lme</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.slope &lt;- lme(log(SO4)~year, random=~year-1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(out.lnorm, unc.mean, random.ints, random.intslopes, random.slope)</div>
+  <span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  out.lnorm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 318.31792<br>
+  unc.mean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 73.76328<br>
+  random.ints&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; 65.73269<br>
+  random.intslopes&nbsp; 6&nbsp; 66.38311<br>
+  random.slope&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; 65.88985</span>
+<p>The table below summarizes the results. Because all the models being compared have log(SO4) as the response we can use AIC applied directly to the model object to compare them. The AIC values reported here cannot be used to compare these models against models with other probability models for the response. Note: the <span class="style8">norm.loglike5</span> function we used above does not return the correct AIC when random effects are involved. A different function is necessary.</p>
+<div align="center"><span class="styleArial"><strong>Table 2</strong> &nbsp;Model comparisons</span><br>
+</div>
+<table width="600" border="1" align="center" cellpadding="1" cellspacing="0">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Lognormal Model</strong></div></td>
+    <td><div align="center"><strong>Predictor</strong></div></td>
+    <td><div align="center"><strong># parameters </strong></div></td>
+    <td><div align="center"><strong>log-likelihood (for log y) </strong></div></td>
+    <td><div align="center">
+      <p><strong>AIC<br>
+        (for log y) </strong></p>
+    </div></td>
+  </tr>
+  <tr>
+    <td>common pooling </td>
+    <td><div align="center">year</div></td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">&ndash;159.159</div></td>
+    <td><div align="center">318.318</div></td>
+  </tr>
+  <tr>
+    <td>unconditional means </td>
+    <td><div align="center">&mdash;</div></td>
+    <td><div align="center">3</div></td>
+    <td><div align="center">&ndash;33.882</div></td>
+    <td><div align="center">73.763</div></td>
+  </tr>
+  <tr>
+    <td>random intercepts </td>
+    <td><div align="center">year</div></td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">&ndash;28.866</div></td>
+    <td><div align="center">65.732</div></td>
+  </tr>
+  <tr>
+    <td>random slopes and intercepts </td>
+    <td><div align="center">year</div></td>
+    <td><div align="center">6</div></td>
+    <td><div align="center">&ndash;27.192</div></td>
+    <td><div align="center">66.383</div></td>
+  </tr>
+  <tr>
+    <td>random slopes</td>
+    <td><div align="center">year</div></td>
+    <td><div align="center">4</div></td>
+    <td><div align="center">&ndash;28.945</div></td>
+    <td><div align="center">65.890</div></td>
+  </tr>
+</table>
+<h3><strong>Other  models</strong></h3>
+<p>A model I  don't include in the above list is the separate intercepts model, a model that estimates a separate intercept for each lake. This model would be fit as follows.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># the following model was not considered</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lm(log(SO4)~ year + factor(lake), data=newlakes)</div>
+<p>In this model  we would end up estimating 45 additional parameters, one intercept for each lake. Not surprisingly this model does turn to be far and away the best model in terms of log-likelihood and AIC, but given that we have at most four observations per lake using such a model is clearly an example of overfitting. </p>
+<p>Another model considered by some people was a factor year model with either random intercepts or a random factor.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.fact1 &lt;- lme(log(SO4)~factor(year), random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.fact2 &lt;- lme(log(SO4)~factor(year), random=~factor(year)|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(random.fact1, random.fact2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  random.fact1&nbsp; 6 68.02605<br>
+random.fact2 15 51.77516</span>
+<p>This random factor model is the best-ranked model of all the ones we've considered but it is a little difficult to interpret. We now have four random effects per lake, one for each year.</p>
+<h2>Question 4 </h2>
+<p>A multilevel model returns a population level model from which individual lakes are allowed to deviate.  The manner in which the lakes are allowed to deviate from the population model depends on how the random effects portion was specified. The population model we obtained is the following.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fixef(random.ints)</div>
+<span class="style24">(Intercept) year <br>
+  45.76822277 -0.02258819</span></p>
+<p align="center"><img src="../../images/assignments/finalpart1/meanlog.gif" width="342" height="32" alt="mean log"></p>
+<p>The population model states that for every one year increment the average log(SO<sub>4</sub>) concentrations are predicted to fall by 0.023. In a random intercepts model each of the lakes show this same trend but each lake is allowed to have its own intercept, a random deviation about the population intercept 45.768. </p>
+<p>To put this into more understandable terms we can express this in terms of concentration  units. If we exponentiate the population model equation we obtain an expression for the geometric mean (not the arithmetic mean) sulfate concentration.</p>
+<p align="center"><img src="../../images/assignments/finalpart1/geometric.gif" width="482" height="68" alt="geometric mean"></p>
+<p align="left">The geometric mean also corresponds to the median of the lognormal distribution so we can interpret things in terms of either one. So in each subsequent year the model predicts the geometric mean sulfate concentration will be 98% of what is was the year before. Because of the way the model was formulated the intercept is currently not interpretable. It actually represents the geometric mean sulfate concentration in year 0 AD!! To fix this we can refit the model centering year at the first measured year 1976.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.ints2 &lt;- lme(log(SO4)~I(year-1976), random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fixef(random.ints2)</div>
+<span class="style24">(Intercept) I(year - 1976) <br>
+    1.13395508 &nbsp;&nbsp;&nbsp;-0.02258819 </span>
+<p>So now we have the following.
+<p align="center"><span class="style1"> </span><img src="../../images/assignments/finalpart1/geometric2.gif" width="505" height="72" alt="geometric">
+<p>So the average lake in 1976 had a geometric mean sulfate concentration of 3.1  that will decrease by a factor of 0.98 with each subsequent year over the range of the data. </p>
+<p>The random factor model has a slightly more complicated interpretation. The factor model allows there to be a different mean log in each year.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fixef(random.fact2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; (Intercept) factor(year)1977 factor(year)1978 factor(year)1981 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11667922&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.04572370&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.03496463&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.10164302 </span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #mean log SO4 by year</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fixef(random.fact2)[1] + c(0,fixef(random.fact2)[2:4])</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factor(year)1977 factor(year)1978 factor(year)1981 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.116679&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.162403&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.081715&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.015036</span>
+<p>Exponentiating these values yields four separate geometric mean sulfate concentrations (or median sulfate concentrations) in each year.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(fixef(random.fact2)[1]+c(0,fixef(random.fact2)[2:4]))</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factor(year)1977 factor(year)1978 factor(year)1981 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.054693&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.197608&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.949733&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.759463 </span>
+<p>Table 3  summarizes the results.</p>
+
+<div align="center"><span class="styleArial"><strong>Table 3</strong> &nbsp;Predictions from the random factor model</span><br>
+</div>
+<table width="600" border="1" align="center" cellpadding="1" cellspacing="0">
+  <tr bgcolor="#F1D2D8">
+    <td><div align="center"><strong>Year</strong></div></td>
+    <td><div align="center"><strong>mean log(SO<sub>4</sub>)</strong></div></td>
+    <td><div align="center"><strong>median SO<sub>4</sub> (geometric mean)</strong></div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1976</div></td>
+    <td><div align="center">1.116679</div></td>
+    <td><div align="center">3.055</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1977</div></td>
+    <td><div align="center">1.162403</div></td>
+    <td><div align="center">3.198</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1978</div></td>
+    <td><div align="center">1.081715</div></td>
+    <td><div align="center">2.950</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">1981</div></td>
+    <td><div align="center">1.015036</div></td>
+    <td><div align="center">2.759</div></td>
+  </tr>
+</table>
+
+<h2>Questions 5&ndash;6</h2>
+<p>Because we have the geographic locations of the lakes we can use the semivariogram to assess spatial correlation. For question 5 we  use the residuals from the complete pooling model and for question 6 the residuals from the random intercepts model. We need to remove the missing values from the original data set so that the residual vector and the latitude and longitude vectors are the same length. This also needs to be done to the  vector of years. For the random intercepts model I use the Pearson residuals.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lakes.reduced &lt;- newlakes[!is.na(newlakes$SO4),]</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#assemble data in the form preferred by the geoR package </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> newdat1 &lt;- data.frame(x=lakes.reduced$latitude, y=lakes.reduced$longitude, r=residuals(out.lnorm))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> newdat2 &lt;- data.frame(x=lakes.reduced$latitude, y=lakes.reduced$longitude, r=residuals(random.ints, type='pearson'))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#remove years with missing concentrations </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> years.reduced &lt;- newlakes$year[!is.na(newlakes$SO4)] </div>
+<p>Technically we should convert latitude and longitude measured in degrees to distance units. Since we're only operating on a limited geographic scale, this should not have a big effect so I stick with degrees. I do some initial experimentation to determine how wide to make the bins and what the maximum distance between the lakes is. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(geoR)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curdata &lt;- newdat1[years.reduced==1976,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodat1 &lt;- as.geodata(curdata)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodata.v1 &lt;- variog(geodat1, uvec=seq(0,8,.25), max.dist=8, option='bin')</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodata.v1$n</div>
+<span class="style24">  &nbsp;[1] 20 31 45 56 46 60 67 54 49 54 53 66 50 39 49 45 33 39 34 27 27 16 13 23&nbsp; 6 11<br>
+  [27]&nbsp; 9&nbsp; 2 &nbsp;8&nbsp; 2</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> geodata.v1$u</div>
+<span class="style24">  &nbsp;[1] 0.25 0.50 0.75 1.00 1.25 1.50 1.75 2.00 2.25 2.50 2.75 3.00 3.25 3.50 3.75 4.00<br>
+  [17] 4.25 4.50 4.75 5.00 5.25 5.50 5.75 6.00 6.25 6.50 6.75 7.00 7.25 7.50</span>
+<p>From the output we see that by the time we reach a distance of 5 the number of observations per bin has dropped below 30, a number that's close to a minimum value for obtaining a reasonable estimate of the semivariogram. Thus we should not plot or calculate the semivariogram for distances beyond 5. </p>
+<p>I fit and plot a semivariogram separately for each year (because duplicate coordinates are not allowed and it probably makes sense to treat years separately). To facilitate things I write a generic function that calculates and plots the semivariogram separately by year that then I <span class="style161">sapply</span> to a list of year values.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mar=c(5.1,4.1,2.1,1.1))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> par(mfrow=c(2,2)) </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sapply(c(1976:1978, 1981), function(x) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  curdata &lt;- newdat1[years.reduced==x,]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  geodat1 &lt;- as.geodata(curdata)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  geodata.v1 &lt;- variog(geodat1,uvec=seq(0,5,.25), max.dist=5, option='bin')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  plot(geodata.v1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  mtext(side=3, line=.5, paste(x,': Complete Pooling Model Residuals', sep=''), cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  })</div>
+<p align="center" class="style1"><img src="../../images/assignments/finalpart1/fig5.jpg" width="468" height="360"></p>
+<p align="center" class="styleArial"><strong>Fig. 6</strong> &nbsp;Semivariograms by year for complete pooling model residuals </p>
+<p>Observe that each panel shows an increasing semivariance with distance that doesn't appear to level off. This is indicative of a non-stationary process, one in which the mean and variance are changing with distance. Nest I repeat these steps for the random intercepts model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(c(1976:1978, 1981), function(x) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  curdata &lt;- newdat2[years.reduced==x,]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  geodat1 &lt;- as.geodata(curdata)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> geodata.v1 &lt;- variog(geodat1, uvec=seq(0,5,.25), max.dist=5, option='bin')</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  plot(geodata.v1)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> mtext(side=3, line=.5, paste(x,': Random Intercepts Model Residuals', sep=''), cex=.8)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  }) </div>
+<p align="center" class="style1"><img src="../../images/assignments/finalpart1/fig7.png" width="480" height="350" alt="fig. 7"></p>
+<p align="center" class="styleArial"><strong>Fig. 7</strong> &nbsp;Semivariograms by year for random intercepts model residuals </p>
+<p>It's pretty clear that while there was serious spatial correlation among the residuals in the complete pooling model of Problem 1 (as evidenced by the clear increasing trend in the semivariogram plot), this has more or less disappeared in the residuals of the random intercepts model. In Fig. 7 there appears to be only random scatter with no clear trend except perhaps for a slight trend in the years 1976 and 1978. Thus by accounting for the hierarchical nature of the data using a mixed effects model we may have also managed to account for much of the spatial correlation. </p>
+<h2 align="left">Question 7</h2>
+<p align="left">A formal test of spatial correlation is the Mantel test. The Mantel correlation for this problem is the Pearson correlation of the  distance  between pairs of residuals and the geographic distance between pairs of  lakes. The null distribution is obtained by randomly permuting the residuals among the lakes. We can't do the permutation  to all of the residuals simultaneously because that would disrupt both their temporal and their spatial relationships. To do this correctly  we would need to permute each four year block of residuals at each lake as a unit to keep their temporal patterns intact. Alternatively we can carry out the Mantel test separately by year. I write a function that selects the appropriate observations by year and carries out the Mantel test for that year.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.mantel &lt;- function(year) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">temp &lt;- newdat2[years.reduced==year,]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">dist.spat &lt;- dist(temp[,1:2])</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">dist.r &lt;- dist(temp[,3])</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">mantel(dist.spat, dist.r)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> m.1976 &lt;- my.mantel(1976)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> m.1977 &lt;- my.mantel(1977)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> m.1978 &lt;- my.mantel(1978)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> m.1981 &lt;- my.mantel(1981)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out &lt;- t(sapply(list(m.1976, m.1977, m.1978, m.1981), function(x) cbind(x$statistic, x$signif)))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(out)&lt;-c('Mantel', 'p-value')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out</div>
+
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mantel p-value<br>
+  [1,]&nbsp; 0.1098195&nbsp;&nbsp; 0.110<br>
+  [2,] -0.0280379&nbsp;&nbsp; 0.629<br>
+  [3,]&nbsp; 0.1329619&nbsp;&nbsp; </span><span class="style25">0.034</span><span class="style24"><br>
+  [4,] -0.0832068&nbsp;&nbsp; 0.948</span>
+<p align="left">The Mantel test indicates that there is a significant residual spatial correlation in 1978.</p>
+<h2 align="left">Question 8</h2>
+<p align="left">Given that the Mantel test is only just significant and the fact that we've had some success in reducing spatial correlation by including random intercepts in the model (which are necessarily spatially referenced since we have one per lake), an obvious choice is to include latitude and longitude in the model. We can just add them as predictors, add them as a response surface, or add them as smooths. I try both an additive smooth of latitude and longitude as well as a symmetrical two-dimensional smooth.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">random.ints.add &lt;- lme(log(SO4)~year + latitude + longitude, random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">random.ints.resp &lt;- lme(log(SO4)~year + latitude + longitude + I(latitude^2) + I(longitude^2) + I(latitude*longitude), random=~1|lake, data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(mgcv)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> random.ints.gam &lt;- gamm(log(SO4)~year + s(latitude) + s(longitude), random=list(lake=~1), data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">random.ints.gam2 &lt;- gamm(log(SO4)~year + s(latitude,longitude), random=list(lake=~1), data=newlakes, method='ML', na.action=na.omit)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(random.ints,random.ints.add, random.ints.resp, random.ints.gam$lme, random.ints.gam2$lme)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  random.ints&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 65.732688<br>
+  random.ints.add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 25.280549<br>
+  random.ints.resp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 -6.209601<br>
+  random.ints.gam$lme&nbsp;&nbsp; 8 10.549903<br>
+  random.ints.gam2$lme&nbsp; 7 -3.249570</span>
+<p>All of the models that include latitude and longitude improve on the random intercepts model. I extract the Pearson residuals from each model and carry out the Mantel test. To facilitate doing this repeatedly I organize everything as a function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.mantel2 &lt;- function(year,r) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> temp &lt;- newdat2[years.reduced==year,]</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  res &lt;- r[years.reduced==year]</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> dist.spat &lt;- dist(temp[,1:2])</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> dist.r &lt;- dist(res)</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> mantel(dist.spat, dist.r)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#carry out test separately by year for each model</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel.add &lt;- t(sapply(list(1976, 1977, 1978, 1981), function(x) my.mantel2(x, residuals(random.ints.add, type='pearson'))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel.resp &lt;- t(sapply(list(1976, 1977, 1978, 1981), function(x) my.mantel2(x, residuals(random.ints.resp, type='pearson'))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel.gam1 &lt;- t(sapply(list(1976, 1977, 1978, 1981), function(x) my.mantel2(x, residuals(random.ints.gam$lme, type='pearson'))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mantel.gam2 &lt;- t(sapply(list(1976, 1977, 1978, 1981), function(x) my.mantel2(x, residuals(random.ints.gam2$lme, type='pearson'))))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mant &lt;- cbind(mantel.add, mantel.resp, mantel.gam1, mantel.gam2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.mant) &lt;- c(1976:1978,1981)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> colnames(out.mant) &lt;- c('add', 'p', 'resp', 'p', 'gam1', 'p', 'gam2', 'p')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(out.mant,4)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add&nbsp;&nbsp;&nbsp;&nbsp; p&nbsp;&nbsp;&nbsp; resp&nbsp;&nbsp;&nbsp;&nbsp; p&nbsp;&nbsp;&nbsp; gam1&nbsp;&nbsp;&nbsp;&nbsp; p&nbsp;&nbsp;&nbsp; gam2&nbsp; &nbsp;&nbsp;&nbsp;p<br>
+  1976&nbsp; 0.1262 0.075&nbsp; 0.1323 0.072&nbsp; 0.1219 0.084&nbsp; 0.1235 0.090<br>
+  1977 -0.0313 0.672 -0.0346 0.658 -0.0248 0.630 -0.0307 0.662<br>
+1978&nbsp; 0.1082 </span><span class="style25">0.055</span><span class="style24">&nbsp; 0.0926 </span><span class="style25">0.093</span><span class="style24">&nbsp; 0.0972 </span><span class="style25">0.085</span><span class="style24">&nbsp; 0.0834 </span><span class="style25">0.141</span><span class="style24"><br>
+1981 -0.0637 0.891 -0.0347 0.752 -0.0394 0.771 -0.0351 0.793</span>
+<p align="left">Now none of the correlations are statistically significant. Any of the models that include latitude and longitude will work here.
+</p>
+<hr align="center" width="75%">
+<p align="center"><img src="../../images/assignments/finalpart1/HWfinal1.png" width="350" height="205" alt="Scores"></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--May 2, 2012<br>
+      URL: <a href="finalpart1.htm#finalpart1" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/solutions/finalpart1.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 2&mdash;Wednesday, January 11, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {font-family: "Courier New", Courier, mono}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture2" id="lecture2"></a>Lecture 2&mdash;Wednesday, January 11, 2012</h1>
+<h3>Topics</h3>
+<ul>
+  <li><a href="lecture2.htm#example">An example of  confounding</a></li>
+  <li> <a href="lecture2.htm#interactions">Interactions in regression</a></li>
+  <li><a href="lecture2.htm#categorical">Categorical predictors in regression</a>
+    <ul>
+      <li><a href="lecture2.htm#coding">The wrong way to code categorical predictors</a></li>
+      <li><a href="lecture2.htm#dummy0">Dummy coding for categorical predictors</a></li>
+    <li><a href="lecture2.htm#dummy1">Dummy coding in an additive model</a></li>
+    <li><a href="lecture2.htm#dummy2">Dummy coding in an interaction model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture2.htm#rcode">R code</a></li>
+</ul>
+<h3>Terminology </h3>
+<ul>
+  <li><a href="lecture2.htm#additive">additive model</a></li>
+  <li><a href="lecture2.htm#ancova">ANCOVA</a></li>
+  <li><a href="lecture2.htm#anova">ANOVA</a></li>
+  <li><a href="lecture2.htm#dummy0">dummy variable</a></li>
+  <li><a href="lecture2.htm#categorical">levels</a></li>
+  <li><a href="lecture2.htm#baseline">reference category</a></li>
+  <li><a href="lecture2.htm#regressor">regressor</a></li>
+</ul>
+<h2 align="center"><a name="example" id="example"></a>An example of confounding</h2>
+
+<p>Consider the  artificial data set shown in Fig. 1. We plot <em>y</em> versus <em>x</em> and superimpose the estimated regression line. The response variable <em>y</em> appears to decrease as a function of the predictor <em>x</em> (Fig. 1a). </p>
+<table width="700" border="0" align="center" cellpadding=2 cellspacing=0>
+  <tr>
+    <td><div align="center">(a) <img src="../../images/lectures/lecture2/fig1a.png" alt="fig 1a" width="290" height="230" align="texttop"></div></td>
+    <td><div align="center">(b) <img src="../../images/lectures/lecture2/fig1b.png" alt="fig 1b" width="290" height="230" align="texttop"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 55px; text-indent:-45px"><strong>Fig. 1</strong> (a) Scatter plot of y versus <em>x</em> suggesting a linear relationship with regression line superimposed. (b) It turns out that the observations can be classified into five groups as denoted by the colored symbols.</td>
+  </tr>
+</table>
+<p>Indeed the statistical output from the fitted regression model indicates the relationship is statistically significant.</p>
+<table width="450" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr>
+    <td><p class="style24">Analysis of Variance Table</p>
+      <p class="style24">Response: y<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df Sum Sq Mean Sq F value&nbsp; Pr(&gt;F)&nbsp; <br>
+        x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 36.81&nbsp; 36.805&nbsp;&nbsp; 6.833 0.01118 *<br>
+    Residuals 63 339.34&nbsp;&nbsp; 5.386</p></td>
+  </tr>
+</table>
+
+<p>It turns out that these observations divide into groups and within these groups the relationship between <em>y</em> and <em>x</em> appears to be  quite different, positive rather than negative (Fig. 1b).  In practice the groups could be different taxa or the different treatment groups in an experiment. Fig 2a shows the results of estimating the regression relationship between <em>y</em> and <em>x</em> separately for each group.</p>
+<table width="700" border="0" align="center" cellpadding=2 cellspacing=0>
+  <tr>
+    <td><div align="center">(a) <img src="../../images/lectures/lecture2/fig2a.png" alt="fig 2a" width="290" height="230" align="texttop"></div></td>
+    <td><div align="center">(b) <img src="../../images/lectures/lecture2/fig2b.png" alt="fig 2b" width="290" height="230" align="texttop"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 55px; text-indent:-45px"><strong>Fig. 2</strong> (a) Separate regression lines fit to each group. (b) Separate regression lines fit to each group (interaction model) along with parallel regression lines fit to the groups (no interaction model).</td>
+  </tr>
+</table>
+<p> Let the groups be denoted by the categorical variable <em>z</em>. Fig 2a suggests that when we account for <em>z</em> our interpretation of the relationship between <em>y</em> and <em>x</em> changes. </p>
+<p>Formally Fig 2a is not a demonstration of confounding because we've done too much. In Fig. 2a we've allowed the relationship between <em>y</em> and <em>x</em> to be different for each level of <em>z</em>. Therefore Fig 2a is an example of what's called an interaction model. Confounding is a far simpler idea. To determine if <em>z</em> is a cofounder we just include <em>z</em> in the model to see if our interpretation of the relationship between <em>y</em> and <em>x</em> changes in a substantive fashion. The model we obtain is called an additive model and when <em>z</em> is a categorical variable it corresponds to  a set of parallel lines (Fig. 2b). </p>
+<p>For the additive model to make sense we should have first rejected an interaction model. In Fig. 2b where both the interaction model (separate lines) and the no interaction model (parallel lines) are compared, it's pretty clear that there is very little difference between them. The two sets of lines look about the same. A formal statistical test (Table 1)  demonstrates that the interaction terms are not statistically significant.</p>
+<table width="500" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td class="styleArial"><div align="left"><strong>Table 1</strong> &nbsp;Testing for an interaction</div></td>
+  </tr>
+  <tr>
+    <td><p class="style24">lm(formula = y ~ x + z + x:z, data = mydat)</p>
+      <p class="style24">Response: y<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Df&nbsp; Sum Sq Mean Sq&nbsp; F value&nbsp;&nbsp;&nbsp; Pr(&gt;F)&nbsp;&nbsp;&nbsp; <br>
+        x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 36.805&nbsp; 36.805&nbsp; 79.0488 3.159e-12 ***<br>
+        z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 313.237&nbsp; 78.309 168.1894 &lt; 2.2e-16 ***<br>
+        <span class="style25">x:z</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 0.500&nbsp;&nbsp; 0.125&nbsp;&nbsp; 0.2682&nbsp;&nbsp;&nbsp; <span class="style25">0.8972</span>&nbsp;&nbsp;&nbsp; <br>
+        Residuals 55&nbsp; 25.608&nbsp;&nbsp; 0.466&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    ---</p></td>
+  </tr>
+</table>
+<p>Having rejected the interaction model we can proceed to check for confounding. For that we compare the coefficient of <em>x</em> in a model that contains <em>z</em> with the coefficient of <em>x</em> in a model that omits <em>z</em>. The output from R for these two models is shown in Table 2 where  the coefficient of <em>x</em> is highlighted in yellow. The output confirms what we've already concluded from Fig. 2. The relationship between <em>y</em> and <em>x</em> changes from negative to positive when <em>z</em> is included in the model. Because there is no significant interaction between <em>x</em> and <em>z</em> it is legitimate to call <em>z</em> a confounder.</p>
+<table width="500" border="1" align="center" cellpadding=2 cellspacing=0 frame="box">
+  <tr bgcolor="#F1D2D8">
+    <td class="styleArial"><div align="left"><strong>Table 2</strong> &nbsp;Checking for confounding</div></td>
+  </tr>
+  <tr>
+    <td><p>Model without <em>z</em> </p>
+      <p class="style24">lm(formula = y ~ x, data = mydat)</p>
+      <p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+        (Intercept) 10.32638&nbsp;&nbsp;&nbsp; 0.67915&nbsp; 15.205&nbsp;&nbsp; &lt;2e-16 ***<br>
+        </span><span class="style25">x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.14618</span><span class="style24">&nbsp;&nbsp;&nbsp; 0.05592&nbsp; -2.614&nbsp;&nbsp; 0.0112 *&nbsp; <br>
+    ---</span></p></td>
+  </tr>
+
+  <tr>
+    <td><p>Model containing <em>z</em> </p>
+    <p><span class="style24">lm(formula = y ~ x + z, data = mydat)</span></p>
+      <p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+        (Intercept)&nbsp; 1.46197&nbsp;&nbsp;&nbsp; 0.39815&nbsp;&nbsp; 3.672&nbsp; 0.00052 ***<br>
+       </span><span class="style25"> x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.25469</span><span class="style24">&nbsp;&nbsp;&nbsp; 0.02205&nbsp; 11.550&nbsp; &lt; 2e-16 ***<br>
+        zb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.63143&nbsp;&nbsp;&nbsp; 0.26668&nbsp;&nbsp; 9.867 4.23e-14 ***<br>
+        zc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.56705&nbsp;&nbsp;&nbsp; 0.28326&nbsp; 16.123&nbsp; &lt; 2e-16 ***<br>
+        zd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.27443&nbsp;&nbsp;&nbsp; 0.30892&nbsp; 20.311&nbsp; &lt; 2e-16 ***<br>
+    ze&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.80147&nbsp;&nbsp;&nbsp; 0.34162&nbsp; 25.764&nbsp; &lt; 2e-16 ***</span></p></td>
+  </tr>
+</table>
+
+<h2 align="center"> <a name="interactions"></a>Interactions in regression </h2>
+<p><a name="additive"></a>Interactions are specified in regression models by including terms that are the products of the individual predictors. Suppose we have two predictors <em>x</em> and <em>z</em> where <em>x</em> is the variable of primary interest and <em>z</em> is a control variable. A model that includes <em>x</em> and <em>z</em> as predictors of a response <em>y</em> is referred to as an <span class="style8">additive model.</span></p>
+<p align="center"><img src="../../images/lectures/lecture2/additive.gif" width="158" height="27" alt="additive"></p>
+<p>A regression model with a single continuous predictor <em>x</em> represents a line in two-dimensional space. The above regression model with a continuous <em>x</em> and a continuous <em>z</em> represents a plane in 3-dimensional space. (If <em>z</em> is categorical then this model represents a set of parallel lines, one for each category of <em>z</em>. <a href="lecture2.htm#dummy1">See below</a>.)</p>
+<p>An interaction model must includes all of the terms of the additive model in addition to the product of the variables <em>x</em> and <em>z</em>.</p>
+<p align="center"><img src="../../images/lectures/lecture2/interaction.gif" width="222" height="27" alt="interaction"></p>
+<p>To understand what this equation represents I group the terms that involve <em>x</em> together.</p>
+<p align="center"><img src="../../images/lectures/lecture2/interaction2.gif" width="225" height="62" alt="interaction"></p>
+<p>Unlike the additive model, the coefficient of <em>x</em> is no longer constant. It changes depending on the value of <em>z</em>. This is the definition of interaction. The effect of one variable depends on the value we assign to another. </p>
+<p>The interaction model where both<em> x</em> and <em>z</em> are continuous can be represented geometrically as a curved surface in 3-dimensional space (as compared to a plane for the additive model). If on the other hand <em>x</em> is continuous but <em>z</em> is categorical then the interaction model represents a set of non-parallel lines in two-space (as compared to  a set of parallel lines for the additive model).</p>
+<h2 align="center"><a name="categorical"></a>Categorical predictors in regression</h2>
+<p>Categorical predictors pose special problems in regression models. By a categorical predictor I mean a variable that is measured on a nominal (or perhaps ordinal) scale whose values serve only to label the categories. The categories of a categorical variable are referred to as its <span class="style8">levels</span>. </p>
+<p>The common situation with experimental data is that the response variable is continuous but most if not all of the predictors are categorical. In this situation the categorical predictors are often referred to as treatments. The treatments may have been generated artificially by dividing the   scale of a continuous variable into discrete categories. Using categories we can get by with fewer observations and  avoid the need to  determine the exact functional  relationship between the response and the treatment (as would be necessary if it were treated as continuous). Categorization is helpful in preliminary work where the main goal is to determine if a treatment has any effect at all. </p>
+<p>Typical choices for the categories in experiments are:</p>
+<ul>
+  <li>presence, absence (corresponding to treatment and control) </li>
+  <li>high, low </li>
+  <li>high, medium, low</li>
+</ul>
+<p>It's also common for the treatment to be intrinsically categorical. For instance in a competition experiment the &quot;treatment&quot; might be the identity of the species that is introduced as the competitor. In this case the categories would be the different species.</p>
+<p name="anova"><a name="anova"></a>The analysis of the relationship between a continuous response and a set of categorical variables (predictors) is easily handled by standard regression techniques. Historically   the methodology developed to handle this situation was called <span class="style8">analysis of variance</span>, or <span class="style8">ANOVA</span>. In its modern implementation ANOVA is just regression although the usual way it is presented may not look like it. As an organizational tool ANOVA turns out to be a very clever way of extracting the maximal amount of information from a regression problem in which the response is continuous  and the predictors are categorical.</p>
+<p name="anova"><a name="ancova"></a>If the primary focus is still on the categorical predictors but we've also included one or more continuous predictors in the model to act as control variables, the model is referred to as an <span class="style8">analysis of covariance (ANCOVA)</span> model. The terms ANOVA and ANCOVA although a bit anachronistic are still  useful in identifying the primary focus of an analysis.</p>
+<h3><a name="coding"></a>The wrong way to code categorical predictors in regression</h3>
+<p>To say that analysis of variance is just  regression with categorical predictors avoids the obvious question: how do you include categorical predictors in a regression model? Categorical predictors are nominal variables, so their values serve merely as labels for the categories. Even if the categories happen to be assigned numerical values  such as 1, 2, 3, &hellip;, those values don't mean anything. They're just labels. They could just as well be 'a', 'b', 'c', etc. </p>
+<p> Suppose you were to ignore this fact and treat the categories as  numerical. Let the variable <em>z</em> have three categories, A, B, and C, that we choose to encode as 1, 2, and 3. We then fit the regression model</p>
+<p align="center"><img src="../../images/lectures/lecture2/additive.gif" width="158" height="27" alt="additive"></p>
+<p>This corresponds to three different equations, one for each value of <em>z</em> (Fig. 3).</p>
+<table width="650" border="0" align="center" cellpadding=2 cellspacing=0 >
+  <tr>
+    <td><img src="../../images/lectures/lecture2/badcode.gif" width="260" height="198" alt="bad code"></td>
+    <td><img src="../../images/lectures/lecture2/fig3.png" width="250" height="228" alt="fig 3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"><strong>Fig. 3</strong>&nbsp;&nbsp;&nbsp;The results of assigning numerical values to the categories of a categorical predictor</td>
+  </tr>
+</table>
+<p>Fig. 3 reveals  that this choice of coding has place some unnatural constraints on the lines we obtain. The effect of  <em>z</em> is to change the location of the intercepts of the three lines. While no constraint has been placed on the intercepts of  lines A and B, line C is forced to be the same distance from line B as line B is from line A. If we were to carry out a test of H<sub>0</sub>: &beta;<sub>2</sub> = 0 in this model it would be a test of whether the lines of all three groups have the same intercept (and hence the three lines coincide). There is no way with this choice of coding to test whether the intercepts of lines B and C are the same, but are different from line A.</p>
+<h3><a name="dummy0"></a>Dummy coding for categorical predictors</h3>
+<p>The most common way to include a categorical predictor in a regression model is with a dummy (indicator) coding scheme. In general, a categorical predictor with <em>m</em> categories requires that we include <em>m</em> &ndash; 1 <span class="style8">dummy variables</span>. One of the <em>m</em> categories is chosen as the reference category while the rest of the categories are indicated by  the individual dummy variables. </p>
+<p>For the example we've been considering, a categorical variable <em>z</em> with three categories A, B, and C, a dummy coding scheme in which A serves as the reference category is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture2/dummy2.gif" width="188" height="140" alt="dummy coding"></p>
+<p>This coding scheme uniquely identifies  the three categories as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture2/dummy3.gif" width="137" height="87" alt="dummy coding"></p>
+<p><a name="baseline" id="baseline"></a>Observe that the combination <em>z</em><sub>1</sub> = 1 and <em>z</em><sub>2</sub> = 1 is a logical impossibility here. The <span class="style8">reference</span> or <span class="style8">baseline category</span>  is obtained when all of the dummy variables are set equal to zero.</p>
+<h3><a name="dummy1"></a>Dummy coding in an additive model</h3>
+<p><a name="regressor"></a>To distinguish the concept of a predictor from the terms that are used to represent it in a regression model, we refer to the latter as <span class="style8">regressors</span>. So to include the 3-category predictor <em>z</em> in a regression model we need to include  two dummy regressors <em>z</em><sub>1</sub> and <em>z</em><sub>2</sub>. An additive regression model  that uses <em>x</em> and <em>z</em> to predict the value of <em>y</em> is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture2/regdummy2.gif" width="202" height="27" alt="regression"></p>
+<p>This regression model corresponds to three different equations, one for each of the categories of the original variable <em>z</em>. Table 3 summarizes the relationships between the categories, dummy variables, and model predictions. The three equations represent three lines with different intercepts but the same slope.</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 3 &nbsp;</strong> Regression model with a categorical predictor with three levels<a href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/code/R&#32;code&#32;hot&#32;days.html#gam"></a></td>
+  </tr>
+</table>
+<div align="center">
+  <table width="425" border="1" align="center" cellpadding=2 cellspacing=0 frame=box rules=groups>
+    <colgroup>
+    </colgroup>
+    <colgroup span=2>
+    </colgroup>
+    <thead>
+      <tr  bgcolor="#F1D2D8">
+        <td align="center" width="60" scope="col">z<sub></sub></td>
+        <td align="center" width="44" scope="col">z<sub>1</sub></td>
+        <td align="center" width="44" scope="col">z<sub>2</sub></td>
+        <td  width="209" scope="col" align="center"><img src="../../images/lectures/lecture2/regdummy2.gif" width="202" height="27" alt="equation"></td>
+      </tr>
+    </thead>
+    <tr>
+    <tbody>
+      <tr v>
+        <td align="center">A</td>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td align="center"><img src="../../images/lectures/lecture2/mua.gif" width="215" height="58" alt="group A"></td>
+      </tr>
+      <tr>
+        <td align="center">B</td>
+        <td align="center">1</td>
+        <td align="center">0</td>
+        <td align="center"><img src="../../images/lectures/lecture2/mub.gif" width="212" height="62" alt="group B"></td>
+      </tr>
+      <tr>
+        <td align="center">C</td>
+        <td align="center">0</td>
+        <td align="center">1</td>
+        <td align="center"><img src="../../images/lectures/lecture2/regdummy3.gif" width="212" height="62" alt="group C"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Fig. 4 shows the corresponding lines that we obtain. Unlike the situation in Fig. 3, now the intercept of each line is unconstrained. Furthermore testing whether the lines are different is easy. H<sub>0</sub>: &beta;<sub>2</sub> = 0 tests whether lines A and B coincide. H<sub>0</sub>: &beta;<sub>3</sub> = 0 tests whether lines A and C coincide, and H<sub>0</sub>: &beta;<sub>2</sub> = &beta;<sub>3</sub> tests whether lines B and C coincide.</p>
+<table width="530" border="0" align="center" cellpadding=2 cellspacing=0 >
+  <tr>
+    <td><img src="../../images/lectures/lecture2/goodcode.gif" width="190" height="97" alt="dummy coding"></td>
+    <td><img src="../../images/lectures/lecture2/fig4.png" width="250" height="230" alt="fig 4"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 55px; text-indent:-48px"><strong>Fig. 4</strong>&nbsp;&nbsp;&nbsp;The effect of using dummy variables to represent the categories of a categorical predictor in a regression model</td>
+  </tr>
+</table>
+<h3><a name="dummy2"></a>Dummy coding in an interaction model</h3>
+<p>To construct the interaction of two continuous variables we take their product. When one of the variables is categorical we instead take the product of the corresponding regressors. So in our example involving the predictors <em>x</em> and <em>z</em> where <em>z</em> is represented by the dummy variables <em>z</em><sub>1</sub> and <em>z</em><sub>2</sub>, the interaction model would take the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture2/regdummy4.gif" width="323" height="27" alt="interaction"></p>
+<p> As before the regression model corresponds to three different equations, one for each category of the original variable <em>z</em>. Table 4 summarizes the relationships between the categories, dummy variables, and model predictions. By including interactions between a continuous predictor and  dummy regressors, we allow the line for each group to have a different slope (as well as a different intercept).</p>
+<table border=0 align="center" cellpadding=2 cellspacing=2>
+  <tr>
+    <td width=420 valign=top  class="styleArial" style="padding-left: 72px; text-indent:-62px"><strong>Table 3 &nbsp;</strong> Interaction model with a categorical predictor with three levels<a href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/code/R&#32;code&#32;hot&#32;days.html#gam"></a></td>
+  </tr>
+</table>
+<div align="center">
+  <table width="550" border="1" align="center" cellpadding=2 cellspacing=0 frame=box rules=groups>
+    <colgroup>
+    </colgroup>
+    <colgroup span=2>
+    </colgroup>
+    <thead>
+      <tr  bgcolor="#F1D2D8">
+        <td align="center" width="60" scope="col">z<sub></sub></td>
+        <td align="center" width="44" scope="col">z<sub>1</sub></td>
+        <td align="center" width="44" scope="col">z<sub>2</sub></td>
+        <td align="center" width="209" scope="col"><img src="../../images/lectures/lecture2/regdummy4.gif" width="323" height="27" alt="interaction"></td>
+      </tr>
+    </thead>
+    <tr>
+    <tbody>
+      <tr>
+        <td align="center">A</td>
+        <td align="center">0</td>
+        <td align="center">0</td>
+        <td align="center"><img src="../../images/lectures/lecture2/mua1.gif" width="350" height="58" alt="A"></td>
+      </tr>
+      <tr>
+        <td align="center">B</td>
+        <td align="center">1</td>
+        <td align="center">0</td>
+        <td align="center"><img src="../../images/lectures/lecture2/mub1.gif" width="343" height="62" alt="B"></td>
+      </tr>
+      <tr>
+        <td align="center">C</td>
+        <td align="center">0</td>
+        <td align="center">1</td>
+        <td align="center"><img src="../../images/lectures/lecture2/regdummy31.gif" width="343" height="62" alt="C"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>To test whether all three lines have the same slope we would need to test the hypothesis H<sub>0</sub>: &beta;<sub>4</sub> = &beta;<sub>5</sub>= 0. If we fail to reject this hypothesis then we're reduced to the additive model discussed above.</p>
+<h3><a name="rcode"></a>R Code</h3>
+<p>The R code used to generate Figs. 1 and 2 appears <a href="../../notes/lecture1&#32;Rcode.txt">here</a>.</p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum of the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 12, 2012<br>
+      URL: <a href="lecture2.htm#lecture2" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture2.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

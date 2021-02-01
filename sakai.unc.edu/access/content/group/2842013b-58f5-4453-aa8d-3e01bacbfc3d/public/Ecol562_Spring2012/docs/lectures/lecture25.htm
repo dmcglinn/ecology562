@@ -1,0 +1,442 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 25&mdash;Wednesday, March 14, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+div.figure {float:none;width=25%;} 
+div.figure p {test-aligh: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureL p {test-aligh: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;} 
+div.figureR p {test-aligh: center;font-style:italic;}
+
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+
+.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style4 {color: #CCCCCC}
+.style7 {
+	font-family: "Courier New", Courier, mono;
+	font-weight: normal;
+}
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+.style9 {
+	color: #3333CC;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style23 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style11 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	
+}
+
+.style22 {color: #663366; font-weight: bold; }
+
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	background-color:#FFFC9A;
+	font-size:small;
+}
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+.style100 {
+	background-color:#FFFC9A;
+}
+
+
+
+.style19 {color: #339933;
+	font-weight: bold;}
+
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style12 {color: #CC0000;
+	font-weight: bold;
+}
+.style31 {color: #336699; font-weight: bold; }
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size:11.0pt;
+}
+.styleArial1 {	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style242 {color: #009966;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+.style13 {	color: #CC0000;
+	font-weight: bold;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture25" id="lecture25"></a>Lecture 25&mdash;Wednesday, March 14, 2012</h1>
+<h2>Topics </h2>
+<ul>
+  <li><a href="lecture25.htm#local1">Local polynomial regression (continued)</a>
+    <ul>
+      <li><a href="lecture25.htm#kernel">Kernel estimation</a></li>
+      <li><a href="lecture25.htm#local2">Local polynomial regression (in strictu)</a></li>
+      <li><a href="lecture25.htm#robust">Robustness</a></li>
+      <li><a href="lecture25.htm#local3">Local polynomial regression in R</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture25.htm#splinemodel">Spline models</a>
+    <ul>
+      <li><a href="lecture25.htm#nonlocal">Global polynomial regression</a></li>
+      <li><a href="lecture25.htm#polynomial">Polynomial splines</a>
+<ul>
+          <li><a href="lecture25.htm#truncated">Truncated power series basis</a></li>
+          <li><a href="lecture25.htm#bspline">B-spline basis</a></li>
+        </ul>
+      </li>
+      <li><a href="lecture25.htm#penalized">Penalized splines</a></li>
+      <li><a href="lecture25.htm#smoothing">Smoothing splines</a></li>
+      <li><a href="lecture25.htm#rspline">Splines in R</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture25.htm#references">References</a></li>
+</ul>
+<h2><a name="local1" id="local1"></a>Local polynomial regression (continued)</h2>
+<p>We continue our discussion of  local polynomial regression, also known as lowess.  Lowess can provide a  faithful local snapshot of the relationship between a response variable and a predictor. As we noted last time lowess is based on the following five ideas.</p>
+<ol>
+  <li>Binning</li>
+  <li>Local averaging</li>
+  <li>Kernel estimation</li>
+  <li>Local polynomial regression (in strictu)</li>
+  <li>Robust regression</li>
+</ol>
+<p>So far we've discussed binning and local averaging. </p>
+<ul>
+  <li><strong>Binning</strong>. We use the predictor to construct a set of bins,  a collection of intervals that form a partition of the <em>x</em>-axis. We average the values of the response variable of all observations assigned to a bin. The mean is then used as the predicted response at the <em>x</em>-value that corresponds to the midpoint of the bin.</li>
+  <li><strong>Local averaging</strong>. Local averaging is a modification of simple binning that allows observations to be used more than once. We replace the  bin with a moving window that we move from observation to observation. Each time we average the observations contained in that window to obtain the predicted value of an observation. Unlike simple binning local averaging yields a prediction for each observation.</li>
+</ul>
+<h3><a name="kernel"></a>Kernel estimation</h3>
+<p>Local averaging typically yields a curve that is rather choppy as observations enter and leave the window. Furthermore while points near  <em>x</em><sub>0</sub> are indeed informative about <em>f</em>(<em>x</em><sub>0</sub>), they are not equally informative. We can obtain a smoother curve if we replace local averaging with locally weighted averaging, also known as kernel estimation. A kernel function is a function that weights observations that are close to the focal value <em>x</em><sub>0</sub> more heavily than observations that are far away. If <em>K</em> is the kernel function then the weights at locations <em>x</em><sub>i</sub> near <em>x</em><sub>0</sub> take the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture25/kernel.gif" width="160" height="57" alt="kernel"></p>
+<p>Here <em>h</em> is called the bandwidth. Functions typically used as kernel functions are the tricube kernel, the Gaussian kernel, and the rectangular kernel. The tricube function is defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/tricube.gif" width="227" height="93"></p>
+<p>Each kernel function <em>K</em> satisfies the following properties.</p>
+<ol>
+  <li><img src="../../images/lectures/lecture25/Kprop1.gif" alt="property 1" width="110" height="38" align="absmiddle"></li>
+  <li><img src="../../images/lectures/lecture25/Kprop2.gif" alt="property 2" width="122" height="30" align="absmiddle"></li>
+  <li><img src="../../images/lectures/lecture25/Kprop3.gif" alt="property 3" width="245" height="57" align="absmiddle"></li>
+</ol>
+<p>With the  weights calculated from the kernel we  estimate   <em>f</em>(<em>x</em><sub>0</sub>) using the <em>n</em> observed values of <em>y</em><sub>i</sub> as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/kernel&#32;estimate.gif" width="130" height="112" alt="kernel estimate"></p>
+<p>where <em>w</em><sub>i</sub> = 0 for observations whose distance from <em>x</em><sub>0</sub> exceeds the band width. By adjusting the band width or equivalently the span, the proportion of  data that are assigned nonzero weights, we can adjust the smoothness of the displayed estimate of <em>f</em>. </p>
+<h3><a name="local2" id="local2"></a>Local polynomial regression (in strictu)</h3>
+<p>To improve  our estimate of   <em>f</em>(<em>x</em><sub>0</sub>) we can take advantage  of the relationship between <em>y</em> and <em>x</em>. Currently we are using the <em>x</em>-values only to determine the weights in the kernel function that are then used in a weighted sum of the neighboring <em>y</em>-values. Instead we can carry out a weighted regression of  <em>y</em> on  <em>x</em> for the observations contained  in each window with the weight given by the kernel function. So, in each window we fit the regression equation</p>
+<p align="center"><img src="../../images/lectures/lecture25/regeqn.gif" width="443" height="37" alt="regression equation"></p>
+<p> where typically <em>p</em> = 1, 2, or 3. We estimate the parameters <em>a</em>, <em>b</em><sub>1</sub>, &hellip;&nbsp;, <em>b</em><sub>p</sub> by minimizing <img src="../../images/lectures/lecture25/OLS.gif" alt="OLS" width="48" height="35" align="absmiddle"> (ordinary least squares)  or by minimizing <img src="../../images/lectures/lecture25/wOLS.gif" alt="weighted OLS" width="65" height="35" align="absmiddle">  (weighted least squares). The  regression equation then provides us with an estimate of <em>f</em>(<em>x</em><sub>0</sub>).</p>
+<h3><a name="robust" id="robust"></a>Robustness</h3>
+<p>While local polynomial regression yields a perfectly legitimate estimate of <em>f</em>, the estimate can be sensitive to outliers. To  minimize the effect of outlying values most local polynomial regression routines carry out an additional step. From the local polynomial regression we  obtain the estimated residual, <img src="../../images/lectures/lecture25/residual.gif" alt="residual" width="85" height="27" align="absmiddle">, for each observation. Using the residual we calculate a second weight,<em> <img src="../../images/lectures/lecture25/residualweight.gif" alt="residual weight" width="95" height="32" align="absmiddle"></em>, where <em>W</em> is a kernel function. Typical choices for <em>W</em> are the bisquare function or the Huber weight function (in which the weight is  constant in a neighborhood of zero outside of which it decreases with distance). The weight function <em>W</em> serves as a tuning constant so that the influence of an observation on the regression model varies inversely with how far its residual is removed from   zero.</p>
+<p>We  refit the local polynomial regression model but this time we minimize  the objective function<img src="../../images/lectures/lecture25/wWOLS.gif" alt="reweighted weighted OLS" width="85" height="35" align="absmiddle"> where <em>w</em><sub><em>i</em></sub> is the kernel neighborhood weight and <em>W</em><sub><em>i</em></sub> is the robustness weight. This whole process is then repeated. Typically two bouts of reweighting are  sufficient.</p>
+<h3><a name="local3" id="local"></a>Local polynomial regression in R</h3>
+<p>Local polynomial regression can be carried out in R with the <span class="style1">lowess</span> and <span class="style1">loess</span> functions of base R. These functions differ in their defaults, syntax, and the organization of their return values but otherwise they do the same thing. Additive models with  loess smoothers of multiple predictors can be fit  using the <span class="style19">gam</span> package. The syntax takes the form: <span class="style11">y ~ gam(lo(x1) + lo(x2) + lo(x1, x2).</span></p>
+<h2><a name="splinemodel" id="splinemodel"></a>Spline models</h2>
+<p>Spline models are piecewise regression functions in which the pieces are  constrained to connect at their endpoints (yielding a continuous curve). Usually we require that both the first and second derivatives of the resulting curve be continuous at the join points (yielding a smooth curve). A popular example of a spline model is a cubic regression spline. Although cubic regression splines tend to yield results that are nearly indistinguishable from lowess they do so using a very different approach, one that readily generalizes to more complicated regression models such as those for structured and/or correlated data. </p>
+<h3><a name="nonlocal"></a>Global polynomial regression</h3>
+<p>Fig. 1 displays some data values along with the nonlinear model that was used to generate them. The observations are normally distributed with a mean given by the  nonlinear model and a standard deviation of 0.3. Given the complicated pattern that is shown we might consider approximating the relationship between <em>y</em> and <em>x</em> with a polynomial. The graph of the true model has four critical points (places with horizontal tangents) over the range of the data suggesting that we would need at minimum a 5th degree polynomial to duplicate this. Fig. 1 shows a 5th degree and a 12th degree polynomial that were fit to these data using least squares.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">set.seed(1)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myfunc &lt;- function(x) sin(2*(4*x-2)) + 2*exp(-16^2*(x-0.5)^2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">x &lt;- seq(0, 1, length=1001)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">y &lt;- myfunc(x) + rnorm(1001, mean=0, sd=0.3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y ~ x, col='grey80', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(myfunc, col='grey30', lwd=2, add=T)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># 5th degree polynomial</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.poly &lt;- lm(y~x+ I(x^2)+ I(x^3)+ I(x^4)+ I(x^5))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># 12th degree polynomial
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.poly2 &lt;- lm(y~x+ I(x^2)+ I(x^3)+ I(x^4)+ I(x^5)+ I(x^6)+ I(x^7)+ I(x^8)+ I(x^9)+ I(x^10)+ I(x^11)+ I(x^12))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(x,fitted(out.poly), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">lines(x,fitted(out.poly2), col='dodgerblue', lty=2, lwd=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('topleft', c('true model', '5th degree polynomial', '12th degree polynomial'), col=c('grey30', 2, 'dodgerblue'), lty=c(1,2,2), lwd=c(2,1,2), cex=.8, bty='n')</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig1.png" width="455" height="300" alt="Fig. 1"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 1&nbsp;</strong>&nbsp;Nonlinear function along with two different approximating polynomial regression models</td>
+  </tr>
+</table>
+<p>The 5th degree polynomial has correctly detected only two of the four actual critical points and has completely missed the global maximum at <em>x</em> &asymp; 0.5. In addition it has found a completely spurious local minimum near the right hand endpoint of the data range.  The 12th degree polynomial, on the other hand, detects all four critical points but not at the correct locations. It has also introduced a number of extra wiggles and inflection points that are not seen in the true model. </p>
+<p>Higher order polynomial regression models tend to have numerical problems. Below is just a portion of the summary table output of the 5th degree polynomial model showing the correlations of the coefficient estimates. Over half the correlations exceed 0.90 in absolute value and none of the rest are small.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(out.poly, cor=T)</div>
+<span class="style11"> &lt; snip &gt; </span><br>
+<span class="style24">Correlation of Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) x&nbsp;&nbsp;&nbsp;&nbsp; I(x^2) I(x^3) I(x^4)<br>
+  x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.86&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  I(x^2)&nbsp; 0.74&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.97&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  I(x^3) -0.66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.92 -0.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  I(x^4)&nbsp; 0.60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.87&nbsp; 0.96&nbsp; -0.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+I(x^5) -0.55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.82 -0.93&nbsp;&nbsp; 0.97&nbsp; -0.99</span>
+<p>The situation is even worse with the 12th degree polynomial. In addition to having highly correlated  coefficient estimates, the estimates are also highly unstable. Eight of the coefficient estimates exceed 1 million (in absolute value) even though the predictor lies in the interval (0, 1) and the response variable does not exceed 3 in absolute value.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(summary(out.poly2)$coefficients,2)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.14&nbsp;&nbsp;&nbsp; 7.98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -66.14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13.60&nbsp;&nbsp; -4.86&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2715.77&nbsp;&nbsp;&nbsp;&nbsp; 438.03&nbsp;&nbsp;&nbsp; 6.20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -51618.39&nbsp;&nbsp;&nbsp; 6610.70&nbsp;&nbsp; -7.81 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+  I(x^4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 512233.94&nbsp;&nbsp; 55903.10&nbsp;&nbsp;&nbsp; 9.16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -3000123.89&nbsp; 291778.47&nbsp; -10.28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11095738.00&nbsp; 992749.67&nbsp;&nbsp; 11.18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^7)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -26854130.42 2265140.83&nbsp; -11.86&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43093813.27 3492640.24&nbsp;&nbsp; 12.34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^9)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -45434744.54 3590409.63&nbsp; -12.65&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^10)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30248270.34 2356911.60&nbsp;&nbsp; 12.83&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+  I(x^11)&nbsp;&nbsp;&nbsp;&nbsp; -11530274.86&nbsp; 893471.84&nbsp; -12.91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+I(x^12)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1918185.30&nbsp; 148782.41&nbsp;&nbsp; 12.89&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</span>
+<p>The correlation of the coefficient estimates is so severe that if we try to fit a polynomial of a higher degree, the design matrix ends up being singular and we obtain missing values for some of the coefficient estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.poly3 &lt;- lm(y~x+ I(x^2)+ I(x^3)+ I(x^4)+ I(x^5)+ I(x^6)+ I(x^7)+ I(x^8)+ I(x^9)+ I(x^10)+ I(x^11)+ I(x^12)+ I(x^13))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(out.poly3)</div>
+<span class="style24"> &nbsp; (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^6) <br>
+  &nbsp;1.108066e+00 -6.614309e+01&nbsp; 2.715772e+03 -5.161839e+04&nbsp; 5.122339e+05 -3.000124e+06&nbsp; 1.109574e+07 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^7)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^9)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^10)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^11)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I(x^12)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">I(x^13)</span><span class="style24"> <br>
+-2.685413e+07&nbsp; 4.309381e+07 -4.543474e+07&nbsp; 3.024827e+07 -1.153027e+07&nbsp; 1.918185e+06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">NA
+</span>
+<h3><a name="polynomial"></a>Polynomial splines</h3>
+<p>With quadratic and cubic polynomial regression models correlations between coefficient estimates can be reduced by centering the predictor. This is typically accomplished by subtracting the mean of the predictor from each observed value and then carrying out regression on the centered values. For higher order polynomial models centering doesn't work and the correlations can be severe. From a modeling standpoint the basic problem with polynomials is that they are non-local: changing  a single data value affects the fit of the model over the entire range of the data. We see this in Fig. 1 where in order to constrain the polynomials to have critical values at the correct places, additional critical values and inflection points had to be introduced in places where none should exist.</p>
+<p>A solution to the intractability of global polynomial models is to parallel what we did with lowess. Instead of fitting a single high order polynomial model to all the data simultaneously we bin the data and fit separate lower order polynomials  (cubic is the typical choice)   to the data in each bin. We do this in such a way that the separate pieces link up smoothly. The boundaries of the bins are referred to as <strong>knots</strong>. This raises two questions.</p>
+<ol>
+  <li>How do we choose  an appropriate number of knots, and</li>
+  <li>how do we choose  the locations of the knots?</li>
+</ol>
+<p> Once we've decided on the number of knots then two popular choices are to (1) place them at equally spaced locations over the range of the predictor, or (2) place them at quantiles of the predictor. To choose the number of knots we could fit a number of spline models with different numbers of knots and choose the one that visually provides an optimal degree of smoothness. This is analogous to fitting a sequence of lowess models and varying the span (or equivalently the fraction of observations used in each window). Certain kinds of splines manage to avoid the problem of knots altogether as will be discussed <a href="lecture25.htm#penalized">later</a>. </p>
+<p>There are three reasons why spline models are preferred over global polynomial models.</p>
+<ol>
+  <li>The analytical foundation of spline models is superior to global polynomial models.</li>
+  <li>Spline models can be fit in such a way so as to prevent overfitting.</li>
+  <li>Spline terms can readily be combined with parametric terms to yield what are called semiparametric models.</li>
+</ol>
+<p><strong><a name="truncated"></a>Truncated power  series (TP) basis</strong></p>
+<p>The easiest polynomial spline model to understand is one that uses a truncated power series basis. In linear algebra a basis for a set <em>V</em> is defined to be a linearly independent set of elements of <em>V</em> such that any element of <em>V</em> can be written as a linear combination of the members of the basis. A linear combination of truncated power series basis elements can be used to represent functions. </p>
+<p>The first few elements of a truncated power series basis are the individual terms of a non-local polynomial of order <em>l</em>, where typically we let <em>l</em> = 2 or 3. For <em>l </em>= 2 these terms would consist of a constant term, a linear term, and a quadratic term. For <em>l </em>= 2 the remaining elements of the truncated power series basis would be quadratic terms, <img src="../../images/lectures/lecture25/TPterm.gif" alt="TP term" width="72" height="37" align="absmiddle">, one for each knot <em>k</em><sub><em>i</em></sub>, such that each quadratic term is identically zero for <em>x</em> &lt; <em>k</em><sub><em>i</em></sub> but  nonzero for <em>x</em> &ge; <em>k</em><sub><em>i</em></sub>. The individual quadratic terms are defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/tpbasis.gif" width="257" height="82" alt="tp basis"></p>
+<p>Each represents a parabola with vertex at (<em>k</em><sub><em>i</em></sub>, 0) where we have only the right branch of the parabola.</p>
+<p>For the data in Fig. 1 suppose we choose ten equally spaced knots starting at 0.05 and ending at 0.95, each  0.10 units apart. For <em>l</em> = 2  a polynomial spline regression model using a TP basis would be the following.</p>
+<p align="center"><img src="../../images/lectures/lecture25/TPregression.gif" width="628" height="60" alt="TP regression"></p>
+<p>The R code below fits this model and displays a graph of the individual terms of the TP basis scaled by their estimated &gamma; values.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># truncated polynomial
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">f.c &lt;- function(x,c) ifelse(x&lt;c, 0, (x-c)^2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># regression model
+</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.yuk &lt;- lm(y~x+ I(x^2)+ f.c(x,.05)+ f.c(x,.15)+ f.c(x,.25)+ f.c(x,.35)+ f.c(x,.45)+ f.c(x,.55)+ f.c(x,.65)+ f.c(x,.75)+ f.c(x,.85)+ f.c(x,.95))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y ~ x, col='grey80', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(myfunc, col='grey30', lwd=2, add=T)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># global polynomial
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(coef(out.yuk)[1]+ coef(out.yuk)[2]*x+ coef(out.yuk)[3]*x^2, add=T, lty=3, col=2, lwd=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># truncated polynomials scaled by regression coefficients
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sapply(1:10, function(z) curve(coef(out.yuk)[z+3] * f.c(x, seq(.05,.95,.1)[z]), add=T, col=c(rep(c(1,3:4),3),1)[z], lty=2)) -&gt; hick</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('true model', 'global polynomial term', 'truncated polynomials'), col=c('grey30',2,1), lty=c(1,3,2), lwd=c(2,2,1), cex=.8, bty='n')</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig2.png" width="460" height="300" alt="Fig. 2"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 2&nbsp;</strong>&nbsp;Nonlinear function along with the estimated truncated power series basis terms from a quadratic polynomial spline model</td>
+  </tr>
+</table>
+<p>If we add the global polynomial term to the individual truncated polynomials at each value of the predictor <em>x</em> we obtain the  polynomial spline prediction of the function (Fig. 3). Observe that the fit is quite good and is  better than what was obtained with the 12th degree global polynomial model we fit earlier even though 13 parameters are estimated in both cases.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y ~ x, col='grey80', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(myfunc, col='grey60', lwd=3, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(x, fitted(out.yuk), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('topright', c('true model', 'polynomial spline (TP) model'), col=c('grey60',2), lty=c(1,2), lwd=c(3,1), cex=.8, bty='n')</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig3.png" width="460" height="300" alt="Fig. 3"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 3&nbsp;</strong>&nbsp;Nonlinear function along with the estimated   quadratic polynomial spline model using a TP basis and 10 knots.</td>
+  </tr>
+</table>
+<p><strong><a name="bspline"></a>B-spline basis</strong></p>
+<p>While the truncated polynomial basis avoids some of the problems associated with global polynomial regression models, it can still suffer from numerical instability because the elements of the TP basis are all unbounded above. Furthermore because each polynomial is nonzero for <em>x</em> &ge; <em>k</em><sub>i</sub> the domains of the different terms substantially overlap with each other. Because of this the TP basis is not the ideal choice for local polynomial regression. A better choice is to use a B-spline basis.</p>
+<p>A B-spline basis is not especially interpretable; its attraction comes from its analytical tractability. The B-spline basis can be obtained from a recurrence relation. The <em>j</em><sup>th</sup> B-spline of order <em>l</em> is defined as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/bspline.gif" width="353" height="60" alt="B spline"></p>
+<p>Here <em>k</em><sub><em>j</em>&ndash;<em>l</em></sub>, <em>k</em><sub><em>j</em></sub>, <em>k</em><sub><em>j</em>+1</sub>, and <em>k</em><sub><em>j</em>+1&ndash;<em>l</em></sub> are knots. Notice that the order <em>l </em>B-spline basis is defined in terms of  order <em>l </em>&ndash; 1 B-spline basis elements. To get things started we need an explicit expression for the order <em>l</em> = 0 B-spline basis.</p>
+<p align="center"><img src="../../images/lectures/lecture25/zerobspline.gif" width="352" height="77" alt="zero B-spline"></p>
+<p>where <em>d</em> is the number of knots. Each of these zero order B-splines is an example of a Haar function, a kind of step function. To obtain the first order B-spline basis we use the recurrence relation on the zero order B-spline basis elements. From  the formula each term will be linear in the variable <em>x</em>. The second order B-spline basis is also defined using the recurrence relation but this time in terms of the first order B-spline basis. Since each of the first order B-spline basis elements is multiplied by the variable <em>x</em> in the formula we end up with quadratic terms. Fig. 4 shows the entire second order B-spline basis for the data of Fig. 1.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(splines)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.bs10 &lt;- bs(x, knots = seq(0.05, 0.95, by = 0.1), degree=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  plot(y ~ x, col='grey80', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(myfunc, col='grey30', lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sapply(1:ncol(out.bs10), function(z) lines(x, out.bs10[,z], col=rep(1:4,3)[z], lty=2)) -&gt; yuk</div>
+<br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig4.png" width="460" height="300" alt="Fig. 4"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 4&nbsp;</strong>&nbsp;Nonlinear function along with the 12 elements of a quadratic B-spline basis with knots at 0.05, 0.15, &hellip; , 0.95. </td>
+  </tr>
+</table>
+<p>Using the second order B-spline basis as predictors in a linear regression model we can obtain the corresponding polynomial spline regression model (Fig. 5). </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">plot(y ~ x, col='grey80', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(myfunc, col='grey30', lwd=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mod3b &lt;- lm(y ~ bs(x, knots = seq(0.05, 0.95, by = 0.1), degree=2))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(x, fitted(mod3b), col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topright', c('true model', 'quadratic  B-spline basis model'), col=c('grey60',2), lty=c(1,2), lwd=c(3,1), cex=.8, bty='n')</div><br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig5.png" width="460" height="300" alt="Fig. 5"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 5&nbsp;</strong>&nbsp;Nonlinear function along with the estimated polynomial spline model using a quadratic B-spline basis and 10 knots. </td>
+  </tr>
+</table>
+<h3><a name="penalized"></a>Penalized splines</h3>
+<p>Penalized splines take a more systematic approach to the problem of knots. Consider the following  more general version of the truncated power series basis that we considered earlier. This time the number and placement of the knots is left unspecified.</p>
+<p align="center"><img src="../../images/lectures/lecture25/TPregression2.gif" width="582" height="60" alt="TP regression"></p>
+<p>Written  in matrix formulation this is the following.</p>
+<p align="center"><img src="../../images/lectures/lecture25/LSmatrix.gif" width="90" height="25" alt="LS matrix"></p>
+<p>Here <strong>X</strong> is the design matrix whose columns consist of the TP basis elements and <strong>&gamma;</strong> is a vector of regression coefficients. The number of knots is  <em>d</em>. Coefficient estimates can be obtained with the method of least squares by minimizing the following sum of squares.</p>
+<p align="center"><img src="../../images/lectures/lecture25/pLS.gif" width="370" height="107" alt="LS criterion"></p>
+<p>Here <img src="../../images/lectures/lecture25/basiselement.gif" alt="basis element" width="57" height="33" align="absmiddle"> are the elements of the TP basis and <img src="../../images/lectures/lecture25/TPexpression.gif" alt="TP terms" width="97" height="60" align="absmiddle"> corresponds to the full truncated power series regression model shown above. The <em>d</em> terms of this expression that correspond to the truncated polynomial terms contribute a local roughness to the model to compensate for the  smoothness imposed by the global polynomial portion. In matrix notation we can write the least squares solution as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/LSsolution.gif" width="142" height="40" alt="least squares solution"></p>
+<p>With penalized splines  we start with a large number of knots, so many knots that we're clearly overfitting the data. In the extreme case we would choose one knot for each unique value of <em>x</em> but in practice this causes  numerical problems and so some large subset is chosen instead. We then find <strong>&gamma;</strong> and &lambda; that minimize the following penalized least squares objective function.</p>
+<p align="center"><img src="../../images/lectures/lecture25/PLScrit.gif" width="338" height="68" alt="PLS criterion"></p>
+<p>&lambda; is the smoothing parameter and is used to control the roughness of the polynomial spline fit. When &lambda; = 0 the penalty term drops out and we obtain the ordinary least squares solution. For a fixed nonzero value of &lambda; the penalty term contributes a positive amount to the objective function and the coefficients of the truncated polynomial terms have to be adjusted  from their least squares values. The penalized least squares solution  finds the values of &gamma;<sub>1</sub>, &gamma;<sub>2</sub>, &hellip; &gamma;<sub>d+3</sub>, and &lambda; that minimize the penalized least squares criterion. With penalized splines we replace the problem of choosing the optimal number of knots with choosing an optimal value for &lambda;. </p>
+<p>When the TP basis is replaced with a B-spline basis the terms in the penalized least squares objective function don't neatly divide into a smooth component and a roughness component, so we need to take a more general approach. We choose the following as the penalty term.</p>
+<p align="center"><img src="../../images/lectures/lecture25/secondderiv.gif" width="122" height="40" alt="second derivative"></p>
+<p>The second derivative of a function is related to its curvature and the penalty term is the squared rate of change of the slope added up over the entire range of the estimates. So by using a penalty based on the second derivative we elect to penalize approximating functions that wiggle too much. For a function generated from a B-spline basis the second derivative can be approximated by taking second order differences of the coefficients of the B-spline basis. In general we can construct a penalized least squares criterion based on r<sup>th</sup> order differences as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/PLSBspline.gif" width="390" height="68" alt="PLS B spline"></p>
+<p>where </p>
+<p align="center"><img src="../../images/lectures/lecture25/differences.gif" width="407" height="97" alt="differences"></p>
+<p>The penalized least squares criterion can also be expressed in matrix notation.</p>
+<p align="center"><img src="../../images/lectures/lecture25/PLSmatrix.gif" width="320" height="35" alt="PLS matrix"></p>
+<p>where <strong>K</strong> is called the penalty matrix. The PLS solution for a fixed &lambda; takes the following form.</p>
+<p align="center"><img src="../../images/lectures/lecture25/PLSmatrixsolution.gif" width="190" height="40" alt="PLS matrix solution"></p>
+<p>and the spline model prediction of the vector of responses is given by</p>
+<p align="center"><img src="../../images/lectures/lecture25/smoothermatrix.gif" width="295" height="40" alt="smoother matrix"></p>
+<p>where<strong> S</strong> is called the smoothing matrix and is analogous to the hat matrix of ordinary linear regression. </p>
+<p>It's worth noting that the PLS solution takes the same form as the solution to a regression model with random effects when the variance components are known. Consequently it is possible to represent a penalized spline model as a mixed model. We think of the data that lie between a set of knots as comprising a group and one random coefficient is assigned to each knot. In a penalized spline model the random effects are used to model the nonlinearity rather than any unobserved heterogeneity. Continuing the analogy when &lambda; = &infin; we have the common pooling model and when &lambda; = 0 we have the separate slopes and intercepts model.</p>
+<h3><strong><a name="smoothing"></a>Smoothing splines</strong></h3>
+<p>We can  generalize  penalized splines even further by leaving the form  of the approximating function <em>f</em> unspecified. This leads to the following penalized least squares criterion.</p>
+<p align="center"><img src="../../images/lectures/lecture25/smoothingspline.gif" width="303" height="58" alt="smoothing spline"></p>
+<p>It turns out that the optimal choice for <em>f</em> in this expression is a special class of functions known as natural cubic splines, which are a subset of ordinary polynomial splines. A function <em>f</em> is a natural cubic spline with knots<em> a</em> &le; <em>k</em><sub>1</sub> &lt; <em>k</em><sub>2</sub> &lt; &hellip; &lt; <em>k</em><sub>d&ndash;1</sub> &lt; <em>k</em><sub>d</sub> &le; <em>b</em> if</p>
+<ol>
+  <li><em>f</em> is a cubic polynomial spline at the interior knots. </li>
+  <li><em>f</em> satisfies the boundary conditions, <img src="../../images/lectures/lecture25/boundary.gif" alt="boundary" width="152" height="30" align="absmiddle">. These boundary conditions constrains <em>f</em> to be linear on the intervals [<em>a</em>, <em>k</em><sub>2</sub>] and [ <em>k</em><sub>d&ndash;1</sub>, <em>b</em>].</li>
+</ol>
+<p>A natural spline basis can be obtained as only a slight modification of the B-spline basis we considered earlier. </p>
+<p>With penalized and smoothing splines we avoid the problem of choosing the number  and location of the knots by replacing it with the problem of estimating a single tuning parameter &lambda;. We use cross validation to estimate &lambda;  as follows. Fix &lambda; at some specific value. Remove one of the observations, call it <em>x<sub>i</sub></em>.  Use the remaining <em>n</em> &ndash; 1 observations and the formula for the penalized least squares solution given above to estimate the natural spline function. Obtain the prediction of the  value of the response for the deleted observation, <img src="../../images/lectures/lecture25/deleted.gif" alt="deleted estimate" width="67" height="32" align="absmiddle">. Repeat this for each of the <em>n </em>observations and then calculate the cross validation criterion shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture25/CV.gif" width="197" height="53" alt="CV"></p>
+<p>Choose &lambda; that minimizes this quantity.</p>
+<p>Fortunately it's unnecessary to carry out the regression <em>n</em> times for a given value of &lambda;. Instead we can estimate the smoother only once using all the data and obtain the cross validation criterion as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture25/CV2.gif" width="185" height="67" alt="cross validation"></p>
+<p>Here <img src="../../images/lectures/lecture25/estimate.gif" alt="estimate" width="47" height="32" align="absmiddle"> is the estimate of the smoother at <em>x<sub>i</sub></em> and <em>s<sub>ii</sub></em> is the i<sup>th</sup> diagonal element of the smoothing matrix <strong>S</strong> that was defined above. The matrix <strong>S</strong> can be difficult to calculate so the cross validation criterion is usually replaced with what's called the generalized cross validation criterion.</p>
+<p align="center"><img src="../../images/lectures/lecture25/GCV.gif" width="202" height="67" alt="GCV"></p>
+<p>In the GCV  we replace <em>s<sub>ii</sub></em> with the average of the diagonal elements of <strong>S</strong>. This is a savings because while calculating <strong>S</strong> may be difficult it is possible to calculate tr(<strong>S</strong>) from the component matrices of <strong>S</strong> without calculating <strong>S</strong> explicitly. </p>
+<p>The tr(<strong>S</strong>) is referred to as the equivalent degrees of freedom and is interpreted as the effective number of parameters of a smoother. It can be used to construct an AIC measure for comparing models. For an ordinary polynomial spline model the effective number of parameters is the number of elements of the basis. For penalized and smoothing splines the effective number of parameters decreases from this value as the smoothing parameter &lambda; is increased.</p>
+<h3><a name="rspline" id="rspline"></a>Splines in R</h3>
+<p>The functions <span class="style1">bs</span> and <span class="style1">ns</span> from the <span class="style19">splines</span> package of R can be used to generate a basis of B-splines and natural splines respectively that can then be used in regression models. As we've seen to use these two functions we need to specify the knot locations. There are other packages that implement penalized and smoothing splines. Two packages that permit the incorporation of a wide class of smoothing terms directly in regression models  are the <span class="style19">gam</span>  and  <span class="style19">mgcv</span> packages. Both of these packages fit what are called generalized additive models. The <span class="style19">gam</span> package uses a backfitting algorithm to estimate the models while the <span class="style19">mgcv</span> package (acronym for multiple generalized cross validation) uses iteratively reweighted least squares and maximum likelihood. </p>
+<p>The <span class="style1">s</span> function of <span class="style19">mgcv</span> calculates various smooths and offers an array of choices for the spline basis. All of these are  penalized splines so there is no need to specify knots. On the other hand there is an argument <em>k</em> that is sometimes needed to specify the dimension of the basis used to represent the smooth. The default value of this parameter can occasionally be too small yielding a less than optimal smooth. </p>
+<p>To illustrate the use of the <em>k</em> argument I fit a smooth to the data of Fig. 1 using the <span class="style19">mgcv</span> package. The default spline choice for the <span class="style1">s</span> function is a thin plate spline. If we specify instead a cubic spline we see that there is very little difference in the two choices (Fig. 6). Notice that neither model has tracked the true model very well. That's because the default dimension of the basis used to represent the smooth term is set too low. When we increase it by specifying <em>k</em> = 20 the resulting spline curve provides a closer fit to the true model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> plot(y ~ x, col='grey90', cex=.7)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(myfunc, col='grey70', lwd=2, add=T)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(mgcv)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # default is a thin plate spline
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gam &lt;- gam(y~s(x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(x,predict(out.gam), col='pink', lwd=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # switch to a cubic spline
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gam1 &lt;- gam(y~s(x, bs='cr'))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(x,predict(out.gam1), col='dodgerblue1', lwd=2, lty=2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # increase the  dimension of the basis
+</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.gam2 &lt;- gam(y~s(x, k=20))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> lines(x,predict(out.gam2), col=2, lty=2)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topleft',c('true model', 'thin plate spline (default k)', 'cubic spline (default k)', 'thin plate spline (k = 20)'), col=c('grey80', 'pink', 'dodgerblue1',2), lwd=c(2,2,2,1), lty=c(1,1,2,2), bty='n', cex=.8)</div><br>
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col"><img src="../../images/lectures/lecture25/fig6.png" width="460" height="300" alt="Fig. 6"></th>
+  </tr>
+  <tr>
+    <td class="styleArial"><p span style="padding-left: 44px; text-indent:-44px"><strong>Fig. 6&nbsp;</strong>&nbsp;Adjusting the basis dimension of the <span class="style12">s</span> function of the <span class="style242">mgcv</span> package</td>
+  </tr>
+</table> <br>
+
+<h2><a name="references"></a>References</h2>
+<ul>
+<li>Fahrmeir, L., T. Kneib, S. Lang, and B. Marx. 2013. <em>Regression: Models, Methods, and Applications</em>. New York: Springer. Chapter 8, Nonparametric regression, 413&ndash;533.</li>
+  <li>Keele, Luke. 2008. <em>Semiparametric Regression for the Social Sciences</em>. New York: Wiley.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--August 11, 2013<br>
+      URL: <a href="lecture25.htm#lecture25" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture25.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

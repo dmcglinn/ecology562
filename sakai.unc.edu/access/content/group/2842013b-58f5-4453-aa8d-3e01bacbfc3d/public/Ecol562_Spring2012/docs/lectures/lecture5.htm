@@ -1,0 +1,677 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 5 (lab 2)&mdash;Friday, January 20, 2012</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+.style245 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style3 {color: #CC0000;
+	font-weight: bold;
+}
+.style101 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style161 {	color: #660033;
+	font-weight: bold;
+}
+.style191 {color: #009900; font-weight: bold; }
+.style12 {	color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style91 {	color: #3333CC;
+	font-weight: bold;
+}
+.style171 {	color: #993399;
+	font-weight: bold;
+}
+.style102 {color: #CC0000;
+	font-weight: bold;
+}
+.style1911 {color: #339933;
+	font-weight: bold;}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture5" id="lecture5"></a>Lecture 5 (lab 2)&mdash;Friday, January 20, 2012</h1>
+<h2>Outline of lecture</h2>
+<ul>
+  <li><a href="lecture5.htm#overview">Overview</a></li>
+  <li><a href="lecture5.htm#variance">Variance of a sum of random variables</a>
+    <ul>
+      <li><a href="lecture5.htm#expressing">Expressing estimates as vector dot products</a></li>
+      <li><a href="lecture5.htm#dotprodvariance">The variance of a dot product</a></li>
+      <li><a href="lecture5.htm#testing">Testing slope differences between weeks</a></li>
+      <li><a href="lecture5.htm#shortcut">A shortcut method for obtaining the slopes and intercepts of individual weeks</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture5.htm#error">An error bar plot for the slopes using base graphics</a></li>
+  <li><a href="lecture5.htm#lattice">An error bar plot for the slopes using the lattice package</a></li>
+  <li><a href="lecture5.htm#plot">Error bar plots for the slopes and intercepts using the lattice package</a></li>
+  <li><a href="lecture5.htm#problems">Problems with the fitted model</a>  </li>
+  <li><a href="lecture5.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture5.htm#axis">axis</a> is a low-level graphics function for customizing the features of the axes of the currently displayed graph. Its first argument, 1, 2, 3, or 4, specifies which axis: bottom, left, top, or right. </li>
+  <li><a href="lecture5.htm#box">box</a> is a low-level graphics command that draws a box around a plot.</li>
+  <li><a href="lecture5.htm#boxplot">boxplot</a> produces a single box plot of a continuous variable  or side-by-side box plots of a  continuous variable stratified by a grouping variable. </li>
+  <li><a href="lecture5.htm#coef">coef</a> extracts the regression coefficients from an <span class="style12">lm</span> object.</li>
+  <li><a href="lecture5.htm#confint">confint</a> returns confidence intervals for the estimated parameters of a regression model.</li>
+  <li><a href="lecture5.htm#dataframe">data.frame</a> constructs a data frame from a collection of vectors of the same length (or from matrices with the same number of rows).</li>
+  <li><a href="lecture5.htm#dotplot">dotplot</a> is a graphics function from the <span class="style1911">lattice</span> package for producing a dot plot, a popular alternative to a bar plot.</li>
+  <li><a href="lecture5.htm#drop">drop</a> is used to delete the dimensions of an array that has only one level.</li>
+  <li><a href="lecture5.htm#grid">grid</a> is a low-level graphics command that adds a grid of horizontal and/or vertical lines to a plot.</li>
+  <li><a href="lecture5.htm#jitter">jitter</a> randomly adds a small numeric value (noise) to each element of its argument. </li>
+  <li><a href="lecture5.htm#scales">list</a> concatenates objects of diverse types together as a single object.</li>
+  <li><a href="lecture5.htm#names">names</a> extracts the names of the elements comprising an object or is used to set those names.</li>
+  <li><a href="lecture5.htm#panel">panel.abline</a> (from <span class="style1911">lattice</span>) is the panel function that draws vertical lines (<span class="style22">v=</span> ), horizontal lines (<span class="style22">h=</span> ), or regression lines.</li>
+  <li><a href="lecture5.htm#panelsegments">panel.dotplot</a> (from <span class="style1911">lattice</span>) is the panel function that produces a dot plot.</li>
+  <li><a href="lecture5.htm#panel">panel.points</a> (from <span class="style1911">lattice</span>) is the panel function that plots points.</li>
+  <li><a href="lecture5.htm#panelsegments">panel.segments</a> (from <span class="style1911">lattice</span>) is the panel function that connects a pair of points with a line segment.</li>
+  <li><a href="lecture5.htm#par">par</a> sets global graphics parameters for base graphics.</li>
+  <li><a href="lecture5.htm#pnorm">pnorm</a> is the normal cumulative distribution function.</li>
+  <li><a href="lecture5.htm#points">points</a> is a low-level graphics command that adds individual points to the currently active plot. </li>
+  <li><a href="lecture5.htm#predict">predict</a> applied to an <span class="style102">lm</span> object returns the value of the mean predicted by the regression model for each observation.</li>
+  <li><a href="lecture5.htm#pt">pt</a> is the cumulative distribution function of a <em>t</em>-distribution.</li>
+  <li><a href="lecture5.htm#range">range</a> calculates the minimum and maximum values of its argument and returns the result as a vector.</li>
+  <li><a href="lecture5.htm#rep">rep</a> repeats a scalar or vector a specified number of time to create a new vector.</li>
+  <li><a href="lecture5.htm#segments">segments</a> is the base graphics function that connects a pair of points with a line segment.</li>
+  <li><a href="lecture5.htm#vcov">vcov</a> when applied to a regression model (<span class="style12">lm</span> object) returns the variance-covariance matrix of the parameter estimates.</li>
+</ul>
+<h2>Special symbols and characters in R</h2>
+<ul>
+  <li><a href="lecture5.htm#matrixmult">%*%</a> is the matrix multiplication operator in R.</li>
+  <li><a href="lecture5.htm#dotdotdot">...</a> is used in function calls so that  additional arguments are passed to that function as needed when that function is called.</li>
+  <li><a href="lecture5.htm#one">1</a> (the numeral one) is used to denote the intercept in regression models.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture5.htm#jitter">a=</a> (argument to <span class="style102">jitter</span>) controls the absolute amount that points are jittered.</li>
+  <li><a href="lecture5.htm#axis">at</a>= (argument to <span class="style12">axis</span>) is used to specify the locations of tick marks. </li>
+  <li><a href="lecture5.htm#axes">axes</a>= (argument to <span class="style12">plot</span> and other base graphics functions) can be used to prevent the <em>x</em>-axis and <em>y</em>-axis with their default settings from being drawn (by specifying <span class="style171">axes=F</span>).</li>
+  <li><a href="lecture5.htm#cex">cex</a>= (argument to many graphics functions) specifies the amount of character expansion to be used for plotting symbols; <span class="style171">cex=1</span> is the default.</li>
+  <li><a href="lecture5.htm#horizontal">horizontal</a>= (argument to <span class="style12">boxplot</span>) when set to TRUE causes box plots to be drawn horizontally. </li>
+  <li><a href="lecture5.htm#lineend">lineend</a>= (argument to panel functions of <span class="style1911">lattice</span>) is used to change the shape of the ends of line segments in lattice plots.</li>
+  <li><a href="lecture5.htm#par">lend</a>= (argument to <span class="style102">par</span>) is used to change the shape of the ends of line segments in base graphics.</li>
+  <li><a href="lecture5.htm#lwd">lwd=</a> (argument to many plot functions) specifies the thickness of lines that are drawn. The default setting is <span class="style22">lwd=1</span>. </li>
+  <li><a href="lecture5.htm#grid">nx=</a> (argument to the <span class="style102">grid</span> function) controls the number of grid lines perpendicular to the <em>x</em>-axis.</li>
+  <li><a href="lecture5.htm#grid">ny=</a> (argument to the <span class="style102">grid</span> function) controls the number of grid lines perpendicular to the <em>y</em>-axis.</li>
+  <li><a href="lecture5.htm#outline">outline=</a> (argument to <span class="style12">boxplot</span>) when set to FALSE  turns off the printing of outliers in a box plot. </li>
+  <li><a href="lecture5.htm#panel">panel</a>= (argument to <span class="style12">xyplot</span>) used to define a panel function that describes what is to be plotted in each panel.</li>
+  <li><a href="lecture5.htm#pch">pch</a>= stands for &quot;print&quot; (&quot;plot&quot;) character and is used to designate the plotting symbol to be used in various plotting functions: <span class="style12">plot</span>, <span class="style12">points</span>, etc. </li>
+  <li><a href="lecture5.htm#prepanel">prepanel=</a> (argument to <span class="style102">xyplot</span> and other <span class="style1911">lattice</span> functions) is used to specify a user-defined prepanel function for setting axis limits in individual panels.</li>
+  <li><a href="lecture5.htm#scales">scales</a>= (argument to <span class="style102">xyplot</span> and other <span class="style1911">lattice</span> functions) defines characteristics of the axis&mdash;the number of tick marks, position and labels of the ticks, etc.</li>
+  <li><a href="lecture5.htm#subscripts">subscripts</a> is a key word available in panel functions of <span class="style1911">lattice</span> for selecting the appropriate observations to be used in drawing the current panel.</li>
+  <li><a href="lecture5.htm#type">type=</a> (argument to many plot functions) was used as<span class="style22"> type='n'</span> to suppress the plotting of any points.</li>
+  <li><a href="lecture5.htm#xlab">xlab</a>= (argument of all plotting functions) a user-specified value to be used as the label for the <em>x</em>-axis.</li>
+  <li><a href="lecture5.htm#xlim">xlim</a>= (argument of all plotting functions) a vector that specifies the minimum and maximum values to display on the <em>x</em>-axis. </li>
+  <li><a href="lecture5.htm#ylab">ylab</a>= (argument of all plotting functions) a user-specified value to be used as the label for the <em>y</em>-axis.</li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture5.htm#lattice">lattice</a> for the function <span class="style4">dotplot</span>. The <span class="style19">lattice</span> package is the R implementation of trellis graphics.</li>
+</ul>
+<h2><a name="overview"></a>Overview of today's lab</h2>
+<p>Today we look at some other graphical displays to summarize regression results. One popular choice is an error bar graph in which parameter estimates plus some measure of their precision, a standard error or a 95% confidence interval, are displayed. A 95% confidence interval contains likely values for the parameter and can be used to carry out a hypothesis test that H<sub>0</sub>: &beta; = <em>b</em>, for some fixed value <em>b</em>, typically zero. Pairs of 95% confidence intervals are not useful for testing whether two different parameter estimates are equal because the tests they yield are too conservative: they fail to reject the null hypothesis  too often. An adjustment to the confidence level can be made that does allow the use of confidence intervals  for this purpose, a topic we'll explore in lecture 6. </p>
+<p>To illustrate we'll construct error bar graphs for the slopes and intercepts of the NAP &times; week interaction model we fit last time to the rikz data set. I begin by refitting this model.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">rikz &lt;- read.table( 'ecol 562/RIKZ.txt', header=TRUE)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  rikz$richness &lt;- apply(rikz[,2:76], 1, function(x) sum(x&gt;0))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">mod3 &lt;- lm(richness~NAP*factor(week), data=rikz)</div>
+<h2><a name="variance" id="variance"></a>The variance of a sum of random variables</h2>
+<p>Because the estimates and standard errors of the slopes and intercepts for all four weeks are not part of the standard regression output, we first explore various methods to obtain them.
+</p>
+<h3><a name="expressing"></a>Expressing estimates as vector dot products</h3>
+<p>Recall from matrix algebra that the dot product of two vectors is obtained by multiplying the corresponding entries together and then adding.</p>
+<p align="center"><img src="../../images/lectures/lecture5/dotproductexample.gif" width="253" height="32" alt="dot product example"></p>
+<p>The  
+interaction regression model fit last time can also be written as a vector dot product.</p>
+<p align="center"><img src="../../images/lectures/lecture5/dotprod.gif" width="727" height="67" alt="dot product"></p>
+<p>To obtain the slopes for different weeks we need to choose values for the dummy regressors and then sum the coefficients of NAP. This is equivalent to forming a different dot product for each week. </p>
+<blockquote>
+  <p>slope week 1: <img src="../../images/lectures/lecture5/b1.gif" alt="week1" width="467" height="32" align="absmiddle"></p>
+  <p>slope week 2: <img src="../../images/lectures/lecture5/week2.gif" alt="week2" width="500" height="32" align="absmiddle"></p>
+  <p>slope week 3: <img src="../../images/lectures/lecture5/week3.gif" alt="week3" width="500" height="32" align="absmiddle"></p>
+  <p>slope week 4: <img src="../../images/lectures/lecture5/week4.gif" alt="week4" width="503" height="32" align="absmiddle"></p>
+</blockquote>
+<p align="left">In general each of these sums is a vector dot product of the form <img src="../../images/lectures/lecture5/dotprodgeneral1.gif" alt="dot product" width="37" height="17" align="absmiddle"> where <strong>c</strong> is a vector of zeros and ones and <strong>x</strong> is the vector of coefficient estimates, <span class="style101">coef(mod3)</span>. A vector dot product can also be written as matrix multiplication where the first vector is  treated as a row matrix (a matrix with a single row) and the second vector is  treated as a column matrix (a matrix with a single column). Because the convention in matrix algebra is to treat vectors as column matrices,  row vectors are written as  transposed vectors. </p>
+<p align="center"><img src="../../images/lectures/lecture5/dotprodgeneral.gif" alt="general dot product" width="87" height="25" align="absmiddle"></p>
+<p>In our example the first vector, <strong>c</strong>, is used to select the appropriate coefficients depending on the week and can be written as a function with that tests the value of week.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> slope.ind &lt;- function(week) c(0, 1, 0, 0, 0, week==2, week==3, week==4)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> slope.ind(2)</div>
+<span  class="style24">  [1] 0 1 0 0 0 1 0 0</span>
+<p><a name="matrixmult"></a>The matrix multiplication operator in R is <span class="style12">%*%</span>. R isn't pedantic about treating vectors as column matrices so  we don't need to explicitly transpose the first vector when calculating the dot product as a matrix product. </p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> slope.ind(2) %*% coef(mod3)</div>
+
+<span  class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]<br>
+  [1,] -1.474577</span>
+<p><a name="drop"></a>Notice that R reports the result as a 1 &times; 1 matrix. The <span class="style102">drop</span> function can be used to delete the displayed dimensions of this object.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(slope.ind(2) %*% coef(mod3))</div>
+<span  class="style24">[1] -1.47457</span>
+<h3 align="left"><a name="dotprodvariance"></a>The variance of a dot product</h3>
+<p align="left">To obtain the standard errors of the slopes and intercepts in different weeks we need to appeal to some basic results from elementary probability theory. If <em>X</em> and <em>Y</em> are two random variables then the variance of their sum is the sum of their individual variances plus two times their covariance.</p>
+<p align="center"><img src="../../images/lectures/lecture5/sumvariance.gif" width="378" height="32"></p>
+<p align="left">(For independent random variables the covariance is zero and the variance of their sum is the sum of their variances.) With three random variables the variance of a sum formula is more complicated.</p>
+<p align="center"><img src="../../images/lectures/lecture5/sumvariance3.gif" width="490" height="67" alt="variance sum 3"></p>
+<p align="left">Fortunately there is a simple formula that underlies these seemingly different results. The original sum can be written as a dot product as was explained above. The two sums, <em>X</em> + <em>Y</em> and <em>X</em> + <em>Y</em> + <em>Z</em>,  can be written as  dot products as follows.</p>
+<p align="center"> &nbsp;<img src="../../images/lectures/lecture5/dotprods.gif" width="258" height="67" alt="dot products"></p>
+<p align="left">In general then any sum of random variables can be written as a vector dot product of the form <img src="../../images/lectures/lecture5/dotprodgeneral1.gif" alt="dot product" width="37" height="17" align="absmiddle"> where <strong>c</strong> is a vector of zeros and ones and <strong>x</strong> is a vector of random variables. When the sum is written in the form <img src="../../images/lectures/lecture5/dotprodgeneral1.gif" alt="dot product" width="37" height="17" align="absmiddle">, the formula for the variance of a sum of random variables can be written as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture5/vardotproduct.gif" width="245" height="35" alt="variance  of dot product"></p>
+<p align="left">The expression <img src="../../images/lectures/lecture5/quadform.gif" alt="quadratic form" width="52" height="30" align="absmiddle"> is an example of a mathematical object called a <span class="style91">quadratic form</span> and &Sigma; is the variance-covariance matrix of the elements of <strong>x</strong>. For our three variable example the variance-covariance matrix is organized as shown below.</p>
+<p align="center"><img src="../../images/lectures/lecture5/Sigma.gif" width="382" height="118" alt="Sigma"></p>
+<p align="left">So in this case Var(<em>X</em> + <em>Y</em>) could be computed as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture5/varxplusy.gif" width="617" height="118" alt="variance of x plus y"></p>
+<p align="left"> <a name="vcov"></a>The <span class="style12">vcov</span> function of R can be used to extract the variance-covariance matrix of the regression coefficients from an <span class="style12">lm</span> object and then  construct a quadratic form whose square root is the desired standard error. For example, here is how we can use these formulas to calculate the estimates of the slopes and their standard errors for weeks 2, 3, and 4.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># week 2 estimate</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(slope.ind(2) %*% coef(mod3))</div>
+
+ <span  class="style24"> [1] -1.474577</span>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"># week 2 standard error</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(sqrt(slope.ind(2) %*% vcov(mod3) %*% slope.ind(2)))</div>
+ <span  class="style24"> [1] 0.7054649</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> # week 3 estimate</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(slope.ind(3) %*% coef(mod3))</div>
+ <span  class="style24"> [1] -1.913598</span>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px"># week 3 standard error</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(sqrt(slope.ind(3) %*% vcov(mod3) %*% slope.ind(3)))</div>
+<span  class="style24">  [1] 0.5743072</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  # week 4 estimate</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(slope.ind(4) %*% coef(mod3))</div>
+<span  class="style24">  [1] -8.900178</span>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"># week 4 standard error</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(sqrt(slope.ind(4) %*% vcov(mod3) %*% slope.ind(4)))</div>
+<span  class="style24">[1] 1.445612</span>
+<h3><a name="testing"></a>Testing slope differences between weeks</h3>
+<p>As we saw last time, the dummy variable parameterization used for factor(week) hardwires a number of statistical tests into the regression output. For instance, in the interaction model the parameter estimates of &beta;<sub>5</sub>, &beta;<sub>6</sub>, and &beta;<sub>7</sub> can be used to test whether the slopes in weeks 2, 3, and 4 respectively are different from the slope in week 1 (the reference group). To obtain  tests of other comparisons we would need to choose a different reference group and refit the model. Alternatively we can use the output from the model we've fit to carry out these tests as is demonstrated next.</p>
+<p>For example, suppose we want to test if the slope in week 3 is different from the slope in week 2. According to our regression model the two slopes are parameterized as follows.</p>
+<p><img src="../../images/lectures/lecture5/weekdiff.gif" width="513" height="92" alt="week difference"></p>
+<p>From R the point estimate of this difference and its standard error are the following.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> est &lt;- c(0,0,0,0,0,-1,1,0) %*% coef(mod3)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(est)</div>
+<span  class="style24">  [1] -0.4390208</span>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> se.est &lt;- sqrt(c(0,0,0,0,0,-1,1,0) %*% vcov(mod3) %*% c(0,0,0,0,0,-1,1,0))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(se.est)</div>
+<span  class="style24">[1] 0.9096755</span>
+<p><a name="pt"></a>To test whether this difference is equal to zero we take the ratio of the estimate to its standard error and compare it to a <em>t</em>-statistic with degrees of freedom equal to the residual degrees of freedom of the model. Since this ratio is negative, the <em>p</em>-value of the statistic is </p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">2*pt(est/se.est, mod3$df.residual)</div>
+<span  class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]<br>
+[1,] 0.632214</span>
+<p>where <span class="style102">pt</span> is the cumulative probability distribution function for a <em>t</em>-distribution. Because the <em>p</em>-value is large we conclude that the slopes in weeks 2 and 3 are not different. More generally we can disregard  the sign of the test statistic and use absolute values to calculate the <em>p</em>-value as follows.<br>
+</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> 2*(1-pt(abs(est/se.est), mod3$df.residual))</div>
+<span  class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,1]<br>
+[1,] 0.632214</span>
+<p>For each probability distribution in R there are four basic probability functions available. A probability function begins with one of four prefixes&mdash;<span class="style3">d</span>, <span class="style3">p</span>, <span class="style3">q</span>, or <span class="style3">r</span>&mdash;followed by a root name that identifies the probability distribution. For the normal distribution the root name is &quot;norm&quot;. For the <em>t</em>-distribution the root name is &quot;t&quot;. Thus the <em>t</em>-distribution probability functions are <span class="style102">dt</span>, <span class="style102">pt</span>, <span class="style102">qt</span>, and <span class="style102">rt</span>. The meaning attached to the prefixes is as follows. </p>
+<ul>
+  <li><span class="style3">d</span> is for &quot;density&quot; and the corresponding function returns the value of the probability density function (continuous distributions) or the probability mass function (discrete distributions). </li>
+  <li><span class="style3">p</span> is for &quot;probability&quot; and the corresponding function returns a value from the cumulative distribution function, i.e., <em>P</em>(<em>X</em> &le; <em>x</em>)</li>
+  <li><span class="style3">q</span> is for &quot;quantile&quot; and the corresponding function returns a value from the inverse cumulative distribution function, also know as the quantile function.</li>
+  <li><span class="style3">r</span> is for &quot;random&quot; and the corresponding function returns a  randomly drawn value   from the given distribution.</li>
+</ul>
+<h3><a name="shortcut"></a>A shortcut method for obtaining the slopes and intercepts of individual weeks</h3>
+<p><a name="one"></a>The long-hand R notation for the interaction model we've been fitting is the following.</p>
+<p class="style1">richness ~ 1 + NAP + factor(week) + NAP:factor(week)</p>
+<p>The intercept, denoted by a <span class="style22">1</span>, is always included so it doesn't have to be explicitly specified.  We are allowed to remove it though. When there is a factor variable  in the model, removing the intercept causes R to estimate a parameter for each level of the factor. Similarly when there is an interaction between a continuous variable and a factor, removing the continuous variable term from the model causes R to estimate an interaction coefficient for each level of the factor variable. To remove NAP from the model we just leave it out of the formula. To remove the intercept we have to do so explicitly by subtracting it off.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> mod3a &lt;- lm(richness~factor(week)+factor(week):NAP - 1, data=rikz)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> summary(mod3a)</div>
+<span  class="style24">Call:<br>
+  lm(formula = richness ~ factor(week) + factor(week):NAP - 1, <br>
+  &nbsp;&nbsp;&nbsp; data = rikz)</span>
+<p><span  class="style24">Residuals:<br>
+  &nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max <br>
+  -6.3022 -0.9442 -0.2946&nbsp; 0.3383&nbsp; 7.7103 </span>
+<p><span  class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)&nbsp;&nbsp;&nbsp; <br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11.4056&nbsp;&nbsp;&nbsp;&nbsp; 0.7773&nbsp; 14.673&nbsp; &lt; 2e-16 ***<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3653&nbsp;&nbsp;&nbsp;&nbsp; 0.7136&nbsp;&nbsp; 4.716 3.38e-05 ***<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.0341&nbsp;&nbsp;&nbsp;&nbsp; 0.6784&nbsp;&nbsp; 7.421 7.85e-09 ***<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12.7828&nbsp;&nbsp;&nbsp;&nbsp; 1.3989&nbsp;&nbsp; 9.138 5.05e-11 ***<br>
+  factor(week)1:NAP&nbsp; -1.9002&nbsp;&nbsp;&nbsp;&nbsp; 0.8700&nbsp; -2.184&nbsp; 0.03537 *&nbsp; <br>
+  factor(week)2:NAP&nbsp; </span><span class="style25">-1.4746&nbsp;&nbsp;&nbsp;&nbsp; 0.7055</span><span  class="style24">&nbsp; -2.090&nbsp; 0.04353 *&nbsp; <br>
+  factor(week)3:NAP&nbsp; -1.9136&nbsp;&nbsp;&nbsp;&nbsp; 0.5743&nbsp; -3.332&nbsp; 0.00197 ** <br>
+  factor(week)4:NAP&nbsp; -8.9002&nbsp;&nbsp;&nbsp;&nbsp; 1.4456&nbsp; -6.157 3.85e-07 ***<br>
+  ---<br>
+  Signif. codes:&nbsp; 0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05 &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1 </span>
+<p><span  class="style24">Residual standard error: 2.442 on 37 degrees of freedom<br>
+  Multiple R-squared: 0.9138,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjusted R-squared: 0.8951 <br>
+  F-statistic:&nbsp;&nbsp;&nbsp; 49 on 8 and 37 DF,&nbsp; p-value: &lt; 2.2e-16</span>
+<p>This is the same model we fit before, just parameterized differently so that now we get the estimates for each week. In the new parameterization the first four lines test whether individual intercepts are equal to zero, while the last four lines test whether individual slopes are equal to zero. If we compare the estimate of the slope in week 2 and its reported standard error in the table to what we obtained previously we see that they match.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(slope.ind(2)%*%coef(mod3))</div>
+<span  class="style24">  [1] -1.474577</span>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> drop(sqrt(slope.ind(2)%*%vcov(mod3)%*%slope.ind(2)))</div>
+<span  class="style24">[1] 0.7054649</span>
+<h2><a name="error"></a>An error bar plot for the slopes using base graphics</h2>
+<p><a name="confint"></a>We next display the point estimates of the slopes for each week along with 95% confidence intervals for those estimates in an error bar plot. We can calculate the confidence intervals by hand or use the R <span class="style102">confint</span> function on the model <span class="style1">mod3a</span>, the re-parameterized version of <span class="style1">mod3</span>. The default is to calculate 95% confidence intervals.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> confint(mod3a)</div>
+<span  class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.5 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 97.5 %<br>
+  factor(week)1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9.830654 12.98057382<br>
+  factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.919411&nbsp; 4.81123200<br>
+  factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.659578&nbsp; 6.40856863<br>
+  factor(week)4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9.948359 15.61729647<br>
+  factor(week)1:NAP&nbsp; -3.662941 -0.13737206<br>
+  factor(week)2:NAP&nbsp; -2.903985 -0.04516933<br>
+  factor(week)3:NAP&nbsp; -3.077255 -0.74994090<br>
+factor(week)4:NAP -11.829266 -5.97108970</span>
+
+<p><a name="coef"></a>The confidence intervals for the slopes are in rows 5 through 8. The point estimates can be extracted from the <span class="style102">lm</span> object with the <span class="style102">coef</span> function where we see that the slopes occupy positions 5 through 8.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> coef(mod3a)</div>
+<span  class="style24">  &nbsp;&nbsp;&nbsp; factor(week)1&nbsp;&nbsp;&nbsp;&nbsp; factor(week)2&nbsp;&nbsp;&nbsp;&nbsp; factor(week)3&nbsp;&nbsp;&nbsp;&nbsp; factor(week)4 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.405614&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.365321&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.034074&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12.782828 <br>
+  factor(week)1:NAP factor(week)2:NAP factor(week)3:NAP factor(week)4:NAP <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.900156&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.474577&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1.913598&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -8.900178</span>
+<p><a name="dataframe"></a>I begin by collecting the information  needed to create the error bar plot in a single data frame using the <span class="style102">data.frame</span> function. We are allowed to name the elements as we assemble them.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#assemble slopes and their 95% confidence intervals in a data frame</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">slope.mat &lt;- data.frame(est=coef(mod3a)[5:8], confint(mod3a)[5:8,])</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> slope.mat</div>
+<span  class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp; X2.5..&nbsp;&nbsp;&nbsp;&nbsp; X97.5..<br>
+factor(week)1:NAP -1.900156&nbsp; -3.662941 -0.13737206<br>
+factor(week)2:NAP -1.474577&nbsp; -2.903985 -0.04516933<br>
+factor(week)3:NAP -1.913598&nbsp; -3.077255 -0.74994090<br>
+factor(week)4:NAP -8.900178 -11.829266 -5.97108970</span>
+<p><a name="names"></a>I use the <span class="style102">names</span> function to rename columns 2 and 3 and I add a week identifier as an additional column.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#rename CI columns</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  names(slope.mat)[2:3] &lt;- c('low95','up95')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #add a week variable</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  slope.mat$week &lt;- 1:4</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> slope.mat</div>
+<span  class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up95 week<br>
+factor(week)1:NAP -1.900156&nbsp; -3.662941 -0.13737206&nbsp;&nbsp;&nbsp; 1<br>
+factor(week)2:NAP -1.474577&nbsp; -2.903985 -0.04516933&nbsp;&nbsp;&nbsp; 2<br>
+factor(week)3:NAP -1.913598&nbsp; -3.077255 -0.74994090&nbsp;&nbsp;&nbsp; 3<br>
+factor(week)4:NAP -8.900178 -11.829266 -5.97108970&nbsp;&nbsp;&nbsp; 4</span>
+<p>The general strategy with base graphics is to create a minimal plot using a higher-level graphics command, and then  add to that plot using lower level graphics commands building up the graph incrementally with multiple function calls. I generally use the first higher-level graphics command  to set up axis limits and labels but   use lower-level graphics commands to plot the points. I want the error bars to be horizontal so I set up the formula using <span class="style1">week</span> as the <em>y</em>-variable and <span class="style1">est</span> as the <em>x</em>-variable.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#the default plot does not leave enough room for the confidence intervals</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  plot(week~est, data=slope.mat)</div>
+
+<p><a name="range"></a><a name="xlim"></a><a name="ylab" id="ylab"></a><a name="xlab"></a>The <span class="style102">plot</span> function uses the values of the observations specified in the formula to set up limits on the <em>x</em>- and <em>y</em>-axes. Because the error bars will extend beyond the estimates, we will need to specify the <em>x</em>-limits explicitly ourselves. The <span class="style22">xlim</span> argument expects a two-element vector giving the minimum and maximum values for the limits on the <em>x</em>-axis. I use the <span class="style102">range</span> function of R to calculate these limits from the confidence interval columns. I also use the <span class="style22">xlab</span> and <span class="style22">ylab</span> arguments to specify  names for the axes.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> range(slope.mat[,2:3])</div>
+<span  class="style24">[1] -11.82926616&nbsp; -0.04516933</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #add labels and include xlim argument to get x-axis limits correct</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">plot(week~est, data=slope.mat, xlim=range(slope.mat[,2:3]), xlab='Slope', ylab='Week')</div>
+<p>The labeling on the <em>y</em>-axis is not ideal (Fig. 1a). Because week is a numerical variable, the <span class="style102">plot</span> function treats it as  continuous, displaying a decimal point as well as secondary tick marks. To override this we need to set up the axes ourselves. I add two additional arguments: <span class="style22">type = 'n'</span> and <span class="style22">axes = F</span>.</p>
+<ul>
+  <li><a name="type"></a>Specifying <span class="style171">type='n' </span>, 'n' for nothing,  suppresses the display of any points.</li>
+  <li><a name="axes"></a>The <span class="style171">axes=F</span> argument prevents the display of the <em>x</em>- and the <em>y</em>-axes.</li>
+</ul>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#suppress axes and plotting of points</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">plot(week~est, data=slope.mat, xlim=range(slope.mat[,2:3]), xlab='Slope', ylab='Week', axes=F, type='n')</div>
+<p><a name="axis"></a>The <span class="style12">axis</span> functions are used to add axes to a plot. The first argument of <span class="style12">axis</span> is the desired axis. The axes are numbered 1 (bottom), 2 (left), 3 (top), and 4 (right). If you want to use default settings for the axis just enter the number and nothing more. To specify locations and labels for tick marks, add the <span class="style171">at=</span> and <span class="style171">labels=</span> arguments. I use the default settings for the <em>x</em>-axis, but I specify my own locations for the tick marks on the <em>y</em>-axis.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#use default x-axis</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> axis(1)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #alter tick mark location on y-axis</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  axis(2, at=1:4)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #place box around graph</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  box()</div>
+<p><a name="box"></a>The <span class="style12">box</span> function with no arguments connects the axes and draws a box around the graph (Fig. 1b). </p>
+<table width="685" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/lectures/lecture5/fig1a.png" alt="fig. 1a" width="310" height="240" align="texttop"></td>
+    <td scope="col">(b) <img src="../../images/lectures/lecture5/fig1b.png" alt="fig. 1b" width="310" height="240" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 68px; text-indent:-68px"><strong>Fig. 1&nbsp;</strong>&nbsp;(a) Default axes treating the variable week as  continuous.  (b) Customized axes treating week as categorical</td>
+  </tr>
+</table>
+<p><a name="lwd"></a><a name="segments"></a>With the limits and labels for the graph set up we're ready to add points and line segments. I start by drawing the error bars using the <span class="style12">segments</span> function. The syntax for <span class="style12">segments </span>is <span class="style101">segments(x1,y1,x2,y2)</span> where (x1, y1) and (x2, y2) are the two endpoints of the line segment to be drawn. I draw line segments from the lower 95% limits to the upper 95% limits. The <span class="style12">segments</span> function works with vectors so I give it  entire columns from the data frame. The <span class="style12">segments</span> function does not have a data argument so I have to specify the data frame name as part of the variable name. I include the <span class="style22">lwd</span> argument to make the segments thicker than normal (the default setting is <span class="style22">lwd=1</span>) and color them 'gray70' which is 70% of the way from black to white.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#the default line segments have rounded tips</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> segments(slope.mat$low95, slope.mat$week, slope.mat$up95, slope.mat$week, lwd=5, col='grey70')</div>
+<p><a name="par"></a>The default setting when drawing lines is to given them rounded tips. These tips are added to the end of the line segments and have the effect of making the 95% confidence intervals appear wider than they should. A better choice here is &quot;butted&quot; which draws a straight edge exactly at the end of the line. This choice is controlled by the <span class="style22">lend</span> argument of the <span class="style102">par</span> function. The <span class="style102">par</span> function assigns values to global graphics parameters. The default setting is <span class="style102">par(lend=0)</span> whereas to get butted we need <span class="style102">par(lend=1)</span>. In order for this to have an effect I have to issue the <span class="style102">par</span> command before I use the <span class="style12">segments</span> function, so I  need to first redraw the graph.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#redo plot and draw bars with straight edges</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> plot(week~est, data=slope.mat, xlim=range(slope.mat[,2:3]), xlab='Slope', ylab='Week', axes=F, type='n')</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  axis(1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  axis(2,at=1:4)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  box()</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #set bar ends to butted</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  par(lend=1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  segments(slope.mat$low95, slope.mat$week, slope.mat$up95, slope.mat$week, lwd=5, col='grey70')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #reset bar ends back to its default value</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">par(lend=0)</div><br>
+<table width="695" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/lectures/lecture5/fig2a.png" alt="fig. 2a" width="310" height="240" align="texttop"></td>
+    <td scope="col">(b) <img src="../../images/lectures/lecture5/fig2b.png" alt="fig. 2b" width="310" height="240" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial"><strong>Fig. 2&nbsp;</strong>&nbsp;Error bars with  (a) round ends and (b) butted ends</td>
+  </tr>
+</table>
+<p><a name="cex"></a><a name="points"></a><a name="pch"></a>Finally I use the <span class="style102">points</span> function to add the point estimates on top of the error bars. I use it twice, first to draw a filled white circle, <span class="style22">pch=16</span> and <span class="style22">col='white'</span>, and second to give the white circle a black circumference, <span class="style22">pch=1</span>. I use the <span class="style22">cex</span> argument to control the size of the plotted points. The default value is <span class="style22">cex=1</span>.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">points(slope.mat$est, slope.mat$week, pch=16, col='white', cex=1.1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">points(slope.mat$est, slope.mat$week, pch=1, cex=1.2)</div>
+<p>Next I add a vertical line at <em>x</em> = 0 with the <span class="style102">abline</span> function so that we can visually assess whether a given confidence interval includes the value 0.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#add vertical line passing though zero</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> abline(v=0, lty=2, col=2)</div>
+<p><a name="grid"></a>We can add grid lines, if desired, with the <span class="style12">grid</span> function.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">grid(nx=NA, ny=NULL)</div>
+<p>The arguments <span class="style171">nx</span> and <span class="style171">ny</span> denote the number of grid lines perpendicular to the <em>x</em>- and <em>y</em>-axes respectively. If we specify <span class="style171">nx=NA</span> we get no grid lines. If we specify <span class="style171">nx=NULL</span> we get grid lines at the tick marks. I redo the entire graph drawing the grid lines first so they don't overwrite what has already been plotted. </p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">plot(week~est, data=slope.mat, xlim=range(slope.mat[,2:3]), xlab='Slope', ylab='Week', axes=F, type='n')</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> axis(1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  axis(2,at=1:4)</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> box()</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #add grid lines</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> grid(nx=NA, ny=NULL)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #set bar ends to butted</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> par(lend=1)</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> segments(slope.mat$low95, slope.mat$week, slope.mat$up95, slope.mat$week, lwd=5, col='grey70')</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #reset bar ends back to its default value</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  par(lend=0)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #plot point as white dot surrounded by a black circle</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  points(slope.mat$est, slope.mat$week, pch=16, col='white', cex=1.1)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">  points(slope.mat$est, slope.mat$week, pch=1, cex=1.2)</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">  #add vertical line passing though zero</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">abline(v=0, lty=2, col=2)</div>
+<p>The final result appears in Fig. 3. Observe that none of the 95% confidence intervals include 0. This is consistent with the summary table for this model that we saw earlier. The reported <em>p</em>-values for the four  hypothesis tests for the slopes all are less than .05.</p>
+
+<p align="center"><img src="../../images/lectures/lecture5/fig3.png" width="450" height="325" alt="fig. 3"></p>
+<p align="center" class="styleArial"><strong>Fig. 3&nbsp;</strong>&nbsp;Final error bar graph for the slopes using base graphics</p>
+<h2><a name="lattice"></a>An error bar plot for the slopes using the lattice package</h2>
+<p><span class="style12"><a name="panel" id="panel"></a></span>Lattice graphs are generated with a single line of code. Each lattice plotting function has a default panel function that controls the features that will be displayed in the graph. If you want additional features beyond the default you  need to construct your own panel function like we did in <a href="lecture3.htm#panel">lecture 3</a>. The panel function must identify everything that is to be plotted including what you would otherwise get by default. When you write your own panel function it doesn't really matter what basic lattice plot function you use because the default panel function for that plot function is not used. Panel functions are begun with the keyword <span class="style171">panel=function(x,y)</span> followed by a pair of curly braces<span class="style171"> { }</span>. Special <span class="style191">lattice</span> panel graphing functions are then listed on separate lines within the curly braces. Each panel graphing function adds a specific feature to the graph. Typically the names of these functions begin with the word &quot;panel&quot; followed by the operation they are to perform, e.g., <span class="style12">panel.xyplot</span>, <span class="style12">panel.abline</span>,<span class="style12"> panel.points</span>, etc., although recently <span class="style191">lattice</span> has  been moving away from this convention. </p>
+<p><a name="panelsegments" id="panelsegments"></a><a name="dotplot"></a>Each of the functions we used to draw the graph using base graphics has a lattice panel function equivalent. The  <span class="style191">lattice</span> call shown below uses a panel function and plots the point estimates with <span class="style12">panel.points</span>, adds a vertical line at 0 with <span class="style12">panel.abline</span>,  adds the 95% confidence intervals with <span class="style12">panel.segments</span>, and draws grid lines with <span class="style12">panel.dotplot</span>. The <span class="style171">xlim</span> argument is needed to make enough room for the error bars. It uses the minimum value of the lower 95% intervals and the maximum of the 95% confidence intervals to define the plot range. I then subtract and add .5 to these values to increase this range a little bit. The <em>x</em> and <em>y</em> that appear in the  declaration of the panel function correspond to the <em>x</em> and <em>y</em>-variables in the original <span class="style12">dotplot</span> call, in this case <span class="style101">est</span> and <span class="style101">week</span> respectively. Although I use the <span class="style12">dotplot</span> function as the main function call,  I could just as well have used <span class="style102">xyplot</span>.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">library(lattice)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">dotplot(week~est, data=slope.mat, xlim=range(c(slope.mat$low95, slope.mat$up95)) + c(-.5,.5), xlab='Slope', ylab='Week', panel=function(x, y){</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.segments(slope.mat$low95, y, slope.mat$up95, y, lwd=3,
+  col='dodgerblue4', lineend=1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white',pch=16, cex=1.1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">panel.abline(v=0, col=2, lty=2)})</div>
+
+<ul>
+  <li><span class="style12">panel.dotplot</span> plots the estimates using a '+' symbol and adds grid lines. The error bars drawn next will cover up the symbols so I'm really using <span class="style12">panel.dotplot</span> here  just to draw the grid lines.</li>
+  <li><a name="lineend"></a>The syntax for <span class="style12">panel.segments </span>is <span class="style101">panel.segments(x1,y1,x2,y2)</span> where (x1, y1) and (x2, y2) are the two endpoints of the line segment to be drawn. The <span class="style102">par</span> function has no effect on lattice graphs so in order to get butted line ends I use the argument <span class="style22">lineend=1</span> in the <span class="style12">panel.segments</span> call.  </li>
+  <li><span class="style12">panel.points</span> plots the points twice the first time using white filled circles, <span class="style101">pch=16</span>, and the second time using open circles, <span class="style1">pch=1</span>, with blue borders.</li>
+  <li><span class="style12">panel.abline</span> draws a vertical line at 0, <span class="style101">v=0</span>, using a dashed line, <span class="style101">lty=2</span>, colored red, <span class="style101">col=2</span>.</li>
+</ul>
+<p>Fig. 4 shows the result.</p>
+<p align="center"><img src="../../images/lectures/lecture5/fig4.png" width="460" height="335" alt="fig. 4"></p>
+<p align="center" class="styleArial"><strong>Fig. 4&nbsp;</strong>&nbsp;Lattice graph with error bars (95% confidence intervals)</p>
+<h2 align="left" ><a name="plot" id="plot"></a>Error bar plots for the slopes and intercepts using the lattice package</h2>
+<p>The primary use of the <span class="style19">lattice</span> package is to produce panel graphs, a set of graphs that repeat the same elements using different subsets of the data set that are selected according to the values of a conditioning variable. With <span class="style19">lattice</span> it is easy to produce side-by-side error bar plots for both the slopes and intercepts. </p>
+<p>I collect the estimates and confidence intervals again, create a variable identifying the week, and add another variable that indicates if the observation corresponds to a  slope or an intercept.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">out.mod &lt;- data.frame(est=coef(mod3a), confint(mod3a), week=rep(1:4,2), parm=rep(c('Intercept', 'Slope'), c(4,4)))</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> names(out.mod)[2:3] &lt;- c('low95','up95')</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> out.mod</div>
+<span  class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; est&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; low95&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; up95 week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm<br>
+factor(week)1&nbsp;&nbsp;&nbsp; &nbsp;11.405614&nbsp;&nbsp; 9.830654 12.98057382&nbsp;&nbsp;&nbsp; 1 Intercept<br>
+factor(week)2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.365321&nbsp;&nbsp; 1.919411&nbsp; 4.81123200&nbsp;&nbsp;&nbsp; 2 Intercept<br>
+factor(week)3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.034074&nbsp;&nbsp; 3.659578&nbsp; 6.40856863&nbsp;&nbsp;&nbsp; 3 Intercept<br>
+factor(week)4&nbsp;&nbsp;&nbsp;&nbsp; 12.782828&nbsp;&nbsp; 9.948359 15.61729647&nbsp;&nbsp;&nbsp; 4 Intercept<br>
+factor(week)1:NAP -1.900156&nbsp; -3.662941 -0.13737206&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+factor(week)2:NAP -1.474577&nbsp; -2.903985 -0.04516933&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+factor(week)3:NAP -1.913598&nbsp; -3.077255 -0.74994090&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; Slope<br>
+factor(week)4:NAP -8.900178 -11.829266 -5.97108970&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; Slope</span>
+
+<p><a name="rep"></a>I use two variations of the <span class="style102">rep</span> function to create the <span class="style1">week</span> and <span class="style1">parm</span> variables. </p>
+<ol>
+  <li>In the first call, <span class="style1">rep(1:4, 2)</span> the second argument of <span class="style102">rep</span> is a single number 2. The effect is to repeat the sequences of numbers 1 through 4 in order twice. </li>
+  <li>In the second call, <span class="style1">rep(c('Intercept','Slope'),c(4,4))</span>, the second  argument of <span class="style102">rep</span> is a vector,<span class="style1"> c(4,4),</span> of the same length as the first argument, <span class="style1">c('Intercept','Slope')</span>. The effect is to repeat 'Intercept' four times followed by 'Slope' repeated four times.</li>
+</ol>
+<p>To produce the desired lattice graph requires four  modifications of the code we've already used.</p>
+<ol>
+  <li>We need to include the conditioning variable <span class="style1">parm</span> in the formula: <span class="style1">week~est|parm</span>.</li>
+  <li>We need to include the keyword <span class="style22">subscripts</span> as an argument of the panel function and then use it to correctly subset the <span class="style1">low95</span> and <span class="style1">up95</span> variables in the <span class="style102">panel.segments</span> function.</li>
+  <li><a name="scales"></a>We need to include the <span class="style22">scales</span> argument with value <span class="style1">list(x='free')</span> to specify that the <em>x</em>-limits should be different in the two panels (necessary here because the slopes and intercepts are not on the same scale).</li>
+  <li>We need to replace the <span class="style22">xlim</span> argument used previously with a user-defined prepanel function to get the limits right in each panel.</li>
+</ol>
+<p>I first produce a graph without using a prepanel function <span class="style40">highlighting</span> the changes that were made to the code from before (Fig. 5a).</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">dotplot(week~est<span class="style42">|parm</span>,data=<span class="style42">out.mod</span>, xlim=range(c(out.mod$low95, out.mod$up95)) + c(-.5,.5), xlab='Estimate', ylab='Week', <span class="style42">layout=c(2,1)</span>, panel=function(x, y, <span class="style42">subscripts</span>){</div>
+  <div class="style23" style="padding-left: 60px; text-indent:-30px">panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.segments(<span class="style42">out.mod</span>$low95<span class="style42">[subscripts]</span>, y, <span class="style42">out.mod</span>$up95<span class="style42">[subscripts]</span>, y, lwd=3,
+  col='dodgerblue4', lineend=1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">panel.abline(v=0, col=2, lty=2)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">}, <span class="style42">scales=list(x='free')</span>)</div>
+<p><a name="subscripts"></a>The main new feature in this code is the use of the <span class="style22">subscripts</span> in the list of arguments of  the panel function. When the panel function is called upon to draw a panel the variable <span class="style22">subscripts</span> indicates the  value of <span class="style101">parm</span> (the variable that defines the panels) that is being used for the current panel. It takes the form of a Boolean vector of TRUEs and FALSEs. So, in the above code the expressions <span class="style101">out.mod$low95[subscripts]</span> and <span class="style101">out.mod$up95[subscripts]</span> extract a vector of lower 95% endpoints and a vector of upper 95% endpoints corresponding to the level of <span class="style101">parm</span> that is currently being plotted. This is the same role the arguments <em>x</em> and <em>y</em> have in the function. By default each time a panel is drawn the correct set of <span class="style101"> est</span> and <span class="style101">week</span> values (the <em>x</em> and <em>y</em> variables) are selected. Because <span class="style101">low95</span> and <span class="style101">up95</span> were not part of the original function call we have to extract the correct set of observations  for the panel ourselves explicitly.</p>
+<p>Currently the <span class="style22">xlim</span> argument is overriding the <span class="style22">scales</span> argument and  forcing the <em>x</em>-limits to be the same in both panels. If we remove it then the <span class="style22">scales</span> argument kicks in but now the error bars are truncated because the <em>x</em>-limits in the panels are controlled by the variables that appear in the formula <span class="style1">week~est|parm</span> rather than the confidence limits <span class="style1">low95</span> and <span class="style1">up95</span> (Fig. 5b).</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">dotplot(week~est|parm, data=out.mod, xlab='Estimate', ylab='Week', layout=c(2,1), panel=function(x, y, subscripts){</div>
+ <div class="style23" style="padding-left: 60px; text-indent:-30px"> panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3,
+  col='dodgerblue4', lineend=1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white',pch=16, cex=1.1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">panel.abline(v=0, col=2, lty=2),</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'))</div>
+<br>
+<table width="695" border="0" align="center" cellpadding="3">
+  <tr valign="top">
+    <td scope="col">(a) <img src="../../images/lectures/lecture5/fig5a.png" alt="fig 5a" width="280" height="210" align="texttop"></td>
+    <td scope="col">(b) <img src="../../images/lectures/lecture5/fig5b.png" alt="fig 5b" width="280" height="210" align="texttop"></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 46px; text-indent:-46px"><strong>Fig. 5&nbsp;</strong>&nbsp;Panel graph using (a) the xlim argument which causes the x-limits to be the same in both panels, and (b)  the scales argument and x='free'. In (b) the x-limits are different in each panel but the error bars are truncated because the x-limits are chosen using the point estimates rather than the confidence limits.</td>
+  </tr>
+</table>
+<p><a name="dotdotdot"></a>The way to get the limits right is to write a prepanel function. According to the documentation on lattice,&quot;The prepanel function is responsible for determining a minimal rectangle big enough to contain the graphical encoding of a given packet.&quot; (Sarkar, 2008, p. 140) The function we need here is quite simple. It takes the same arguments as the panel function plus additionally the lower and upper confidence limit variables, denoted in the function as <span class="style1">lx</span> and <span class="style1">ux</span>. The use of <span class="style22">...</span> as an argument in the prepanel function is so that  any additional arguments are passed to the prepanel function if they are needed when the function is called. The main body of the function  uses the <span class="style102">range</span> function to obtain the minimum and maximum values of the confidence limits for the panel currently being plotted and stores them as the variable <span class="style22">xlim</span> which it then returns to the plotting function.</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">}</div>
+<p><a name="prepanel"></a>To use it we need to specify a <span class="style22">prepanel</span> argument set equal to this function and also define the variables <span class="style1">lx</span> and <span class="style1">ux</span>, the arguments of the prepanel function. This produces the desired plot (Fig. 6).</p>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">dotplot(week~est|parm, data=out.mod, xlab='Estimate', ylab='Week', <span class="style42">prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95</span>, layout=c(2,1), panel=function(x, y, subscripts){</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3,
+  col='dodgerblue4', lineend=1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">  panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style23" style="padding-left: 60px; text-indent:-30px">panel.abline(v=0, col=2, lty=2) </div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'))</div>
+<p align="center"><img src="../../images/lectures/lecture5/fig6.png" width="450" height="275" alt="fig 6"></p>
+<p align="center" class="styleArial"><strong>Fig. 6&nbsp;</strong>&nbsp;Lattice graph with error bars (95% confidence intervals) for slopes and intercepts</p>
+<h2><a name="problems"></a>Problems with the fitted model</h2>
+<p><a name="predict"></a>Using the <span class="style102">predict</span> function we can obtain the  mean response as predicted by the regression model for each observation in the data set. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #one of the  mean richness value predictions is negative</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> predict(mod3)</div>
+<span  class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 <br>
+  11.3201070 13.3741760 13.9442229 10.2351177 12.7053209&nbsp; 9.1444280 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12 <br>
+  &nbsp;9.8474858 10.1990147 11.2897045 13.9404226&nbsp; 4.8045085&nbsp; 1.1623031 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18 <br>
+  &nbsp;3.6617113&nbsp; 4.0760674&nbsp; 3.1190669&nbsp; 0.7582690&nbsp; 3.4095586&nbsp; 2.6870158 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24 <br>
+  &nbsp;1.3495744&nbsp; 4.5612033&nbsp; 2.8413289 17.2596171&nbsp; 6.2945979 </span><span class="style25">-1.6977619</span><span  class="style24"> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 <br>
+  12.3022180&nbsp; 6.1401331&nbsp; 5.7000056&nbsp; 0.7820590&nbsp; 6.7429164&nbsp; 3.5682576 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36 <br>
+  &nbsp;2.0632697&nbsp; 0.7317266&nbsp; 1.3377778&nbsp; 3.4537959&nbsp; 2.8241515&nbsp; 1.8364515 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42 <br>
+  &nbsp;5.7516727&nbsp; 6.9572394&nbsp; 4.7087619&nbsp; 1.1073707&nbsp; 5.7153144&nbsp; 4.8541953 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45 <br>
+  &nbsp;5.0379007&nbsp; 0.7189103&nbsp; 3.3788114 </span>
+</p>
+<p><a name="pnorm"></a>Observation 24 is predicted to have a negative mean richness, an impossible value. But things are even worse than this. As was explained in <a href="lecture4.htm#generating">lecture 4</a> once we assume a probability distribution for the response the regression model becomes a data-generating mechanism. In ordinary regression  the probability distribution used is normal with a mean given by the regression model and a standard deviation estimated from the mean squared error of the model,  stored in  <span class="style22">summary(mod3)$sigma</span>. Using a normal distribution with this mean and standard deviation we can calculate the probability that the observed response is predicted to take on any set of values. Species richness is an inherently non-negative quantity so if our model is any good, negative values should be nearly impossible to obtain. We can check this by calculating the probability of a negative value using the predicted mean for each observation in the data set. A function call of the form <span class="style102">pnorm(0, mu, sigma)</span> returns the P(<em>X</em> &le; 0) if <em>X</em> has a normal distribution with mean <span class="style1">mu</span> and standard deviation <span class="style1">sigma</span>. </p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #probability of generating  negative values by observation</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> pnorm(0, predict(mod3), summary(mod3)$sigma)</div>
+<span  class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 <br>
+  1.777547e-06 2.162803e-08 5.633509e-09 1.385565e-05 9.799336e-08 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 <br>
+  9.025385e-05 2.756291e-05 1.478729e-05 1.887697e-06 5.685258e-09 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15 <br>
+  2.455990e-02 3.170413e-01 6.686548e-02 4.753511e-02 1.007437e-01 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20 <br>
+  3.780799e-01 8.131387e-02 1.355808e-01 2.902413e-01 3.088719e-02 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25 <br>
+  1.222960e-01 7.848524e-13 4.971946e-03 7.565570e-01 2.351800e-07 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 <br>
+  5.959767e-03 9.790641e-03 3.743818e-01 2.877967e-03 7.196947e-02 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35 <br>
+  1.990683e-01 3.822191e-01 2.918978e-01 7.862161e-02 1.237279e-01 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40 <br>
+  2.260055e-01 9.250525e-03 2.191877e-03 2.690642e-02 3.250971e-01 <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45 <br>
+  9.627805e-03 2.341147e-02 1.955016e-02 3.842226e-01 8.322570e-02 </span>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> max(pnorm(0, predict(mod3), summary(mod3)$sigma))</div>
+<span  class="style24">  [1] 0.756557</span>
+</p>
+<p><a name="outline"></a><a name="jitter"></a><a name="boxplot"></a><a name="horizontal"></a>For one observation,  the one with a predicted negative mean, this probability is 0.76! To get a better sense of how severe the problem is I generate a box plot of the probabilities using the R <span class="style102">boxplot</span> function. Because there are only 45 observations I also superimpose the individual values on top of the box plot jittering them vertically to minimize overlap. I orient the box plot horizontally, <span class="style22">horizontal=T</span>, and turn off display of the outliers using <span class="style22">outline=F</span> so that they don't get plotted twice. The <span class="style102">points</span> function then plots the data on top of the box plot. Numerically the <em>y</em>-coordinate of the midline of the box plot is <em>y</em> = 1 so I use the <span class="style102">rep</span> function to generate 45  values of one to serve as the <em>y</em>-coordinates of the probabilities. The <span class="style22">a=</span> argument in <span class="style102">jitter</span> controls the absolute amount of the <span class="style102">jitter</span>. <br>
+</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #produce a boxplot of the probabilities</div>
+ <div class="style23" style="padding-left: 30px; text-indent:-30px"> boxplot(pnorm(0, predict(mod3), summary(mod3)$sigma), horizontal=T)</div>
+ <div class="style15" style="padding-left: 30px; text-indent:-30px"> #superimpose the data values on top of the boxplot</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> boxplot(pnorm(0, predict(mod3), summary(mod3)$sigma), horizontal=T, outline=F, ylim=c(0,.8), xlab='P(X &lt;= 0)')</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #jitter the points vertically to prevent overlap</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> points(pnorm(0, predict(mod3), summary(mod3)$sigma), jitter(rep(1,45), a=.2), col='seagreen', cex=.8, pch=16)</div>
+<div class="style23" style="padding-left: 30px; text-indent:-30px"> abline(v=.05, lty=2, col=2)</div><br>
+<table width="500" border="0" align="center" cellpadding="1" cellspacing="0">
+  <tr>
+    <td><div align="center"><img src="../../images/lectures/lecture5/fig7.png" width="390" height="230" alt="fig. 7"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="styleArial" style="padding-left: 45px; text-indent:-45px"><strong>Fig. 7</strong> &nbsp;Box plot of the probabilities of obtaining a negative value according to the regression model. </td>
+  </tr>
+</table>
+<p>A vertical line is placed at a probability of .05. Observe that for many observations the probability of obtaining a negative richness value is not negligible (and is greater than .05).</p>
+<h2><a name="cited"></a>Cited references</h2>
+<p><a name="zuur"></a>Sarkar, Deepayan. 2008. <em>Lattice: Multivariate Data Visualization with R.</em> Springer, New York. <a href="http://www.springerlink.com/content/kr8v78/#section=159855&page=1">UNC e-book</a></p>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum of the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 23, 2012<br>
+      URL: <a href="lecture5.htm#lecture5" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture5.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

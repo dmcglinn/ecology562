@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Assignment 1</title>
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/green.css" title="green" /> 
+<link rel="stylesheet" type="text/css" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/calendar.css" title="calendar" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/purple.css" title="purple" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/large.css" title="large" /> 
+<link rel="alternate stylesheet" type="text/css" media="all" href="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/css/reverse.css" title="reverse" /> 
+<!-- the @import method only works from 5.0 and upwards  -->
+<!-- so, using @import would "hide" the more sophisticated sheet from < 5.0 browsers -->
+<!-- <style type="text/css" media="all">@import "fancy_style.css";</style> -->
+<script language="JavaScript" type="text/javascript" src="https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/js/styleswitcher.js"></script> 
+<style type="text/css">
+<!--
+.style2 {
+	color: #990000;
+	font-weight: bold;
+}
+.style17 {
+	color: #993399;
+	font-weight: bold;
+}
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+
+.style10 {font-family: "Courier New", Courier, mono}
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #009900; }
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"> <a name="assign1" id="assign1"></a>Assignment 1 </h1>
+<h2>Due Date </h2>
+
+  <p>Friday, January 20, 2012</p>
+
+<h2>Data Source </h2>
+
+  <p>The data for this assignment is the <a href="../../data/RIKZ.txt">RIKZ data set</a>, the same data set that was used in class during Lab 1. It is a tab-delimited text file.</p>
+<h2 align="left">Questions</h2>
+<ol>
+  <li>Download the <span class="style9">vegan</span> package of the CRAN site using the <span class="styleArial">Package &gt; Install package(s)</span> menu selections (Windows) or <span class="styleArial">Package &amp; Data &gt; Package Installer</span> menu choices (Mac OS X). Use the <span class="style2">diversity</span> function of the <span class="style9">vegan</span> package to calculate  Simpson's diversity index for the species abundance counts in the RIKZ data set for each site. Simpson's diversity index reports the probability that two randomly chosen individuals from the site are different species.</li>
+  <li>Determine if the Simpson index varies systematically with NAP and whether the relationship is affected by the week that the sample was collected. Carry out formal tests to justify your answer.</li>
+  <li>Graph your final model from step 2 showing as much detail as you can.</li>
+</ol>
+<h2>Hints</h2>
+<ul>
+  <li>Remember that even with <span class="style9">vegan</span> installed in your copy of R you still need to enter the command <span class="style10">library(vegan)</span> in order to load its functions into memory for use during the current R session.</li>
+  <li>The <span class="style2">diversity</span> function from <span class="style9">vegan</span> expects the data to be organized in the following format:  species are the columns and sites are the rows. Enter <span class="style10">?diversity</span> to get help on the syntax for this function. Most of the displayed defaults will work for the RIKZ data. The <span class="style17">MARGIN</span> argument acts just like the second argument of the <span class="style2">apply</span> function: <span class="style17">1</span> means calculate the statistic separately by row, <span class="style17">2</span> means calculate the statistic separately by column.</li>
+  <li>Your graph in part 3 should show the raw data as well as the regression model.</li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a> </p>
+<hr align="left" width="75%">
+<!--Standard footer follows -->
+<p></p>
+<table width="586" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+          <i>Phone: </i>(919) 962-5930<br>
+          <i>E-Mail:</i> jack_weiss@unc.edu<br>
+          <i>Address: </i>Curriculum in Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--Jan 13, 2012<br>
+      URL: <a href="assign1.htm#assign1" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/assignments/assign1.htm</a></font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

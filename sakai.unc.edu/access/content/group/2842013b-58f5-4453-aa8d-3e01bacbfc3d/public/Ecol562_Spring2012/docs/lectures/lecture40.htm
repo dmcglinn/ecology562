@@ -1,0 +1,1235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Lecture 40&mdash;Friday, April 20, 2012</title>
+
+<style type="text/css">
+<!--
+a:link {color: #0000CC; text-decoration:none}
+a:visited {color: #0000CC; text-decoration:none}
+a:hover {color: green; text-decoration:underline; background:#F9EDED}
+a:active {color: red; text-decoration:none}
+div.figure {float:none;width=25%;}
+div.figure p {test-align: center;font-style:italic;}
+div.figureL {float:left;width=50%; margin:1.5em;padding:4px 4px 4px 0px;}
+div.figureL p {test-align: center;font-style:italic;}
+div.figureR {float:right;width=50%;margin:1.5em;padding:3px 4px 4px 0px;}
+div.figureR p {test-align: center;font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;}
+
+.subtd {margin-left: 2em;}
+
+.subtd2 {margin-left: 2em;
+   margin-right: 2em;}
+.eq { width: 100%; }
+.eq th { text-align: right;
+         vertical-align: absolute middle;
+		 font-weight: normal; }
+		 
+.style4 {	color: #CC0000;
+	font-weight: bold;
+}
+.style11 {font-family: "Courier New", Courier, mono;}
+.style22 {color: #663366; font-weight: bold; }
+.style10 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#F0F0F0;
+}
+.style33 {
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	background-color:#FFFACD;
+}
+
+.style34 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#FFFACD; }
+.style43 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#FFFACD;}
+
+
+
+.style25 {
+	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+	background-color:#FFFC9A;
+}
+
+.style35 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style15 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; background-color:#F0F0F0; }
+
+.style16 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold;background-color:#C5E9EB; }
+.style17 {font-family: "Courier New", Courier, mono; color: #339933; font-weight: bold; }
+
+.style19 {color: #339933;
+	font-weight: bold;}
+.style40 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;}
+.style42 {color: #0000FF; font-weight: bold; font-family: "Courier New", Courier, mono;  background-color:#F0F0F0;}
+
+.style1 {font-family: "Courier New", Courier, mono;}
+
+.sasnavy {font-size:11.0pt;font-family:"Courier New"; font-weight: bold;
+color:navy;background:white; }
+
+.sasblack {font-size:11.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue {font-size:11.0pt;font-family:"Courier New";
+color:blue;background:white; }
+
+.saspurple {font-size:11.0pt;font-family:"Courier New";
+color:purple;background:white; }
+
+.sasteal {font-size:11.0pt;font-family:"Courier New";
+color:teal;background:white; }
+
+.sasgreen {font-size:11.0pt;font-family:"Courier New";
+color:green;background:white; }
+
+.sasblack9 {font-size:9.0pt;font-family:"Courier New";
+color:black;background:white; }
+
+.sasblue9 {font-size:9.0pt;font-family:"Courier New";
+color:blue;background:white; }
+.style41 {	color: #00C;
+	font-weight: bold;
+}
+
+.style61 {	color: #000000;
+	font-weight: bold;
+}
+
+.styleArial {
+	font-family: Arial, Helvetica, sans-serif;font-size:11.0pt;
+}
+.styleArial2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style66 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.stylecayenne {
+	color: #800000;
+}
+.style44 {font-family: "Courier New", Courier, mono}
+.style9 {	color: #339900;
+	font-weight: bold;
+}
+.style101 {font-family: "Courier New", Courier, mono}
+
+
+.style24 {
+	font-family: "Courier New", Courier, mono;
+	color: #0000FF;
+	font-size:small;
+}
+
+
+
+
+.style8 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #810000;
+}
+
+.style14 {color: #0000FF; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style14 {color: blue;
+	font-family: "Courier New", Courier, mono;}
+.style151 {font-family: "Courier New", Courier, mono; color: #009900; }
+.style31 {color: #336699; font-weight: bold; }
+.style32 {color: #333333;
+	font-weight: bold;
+}
+.style3 {	color: #CC0000;
+	font-weight: bold;
+}
+.style36 {color: #CC0033; font-weight: bold; }
+.style102 {font-size: smaller}
+.style6 {	color: #0033CC;
+	font-size: smaller;
+}
+.style7 {	color: #CC0000;
+	font-weight: bold;
+}
+div.figureR1 {float:right;width=50%;margin:1.5em;padding:4px 4px 4px 0px;}
+.style103 {color: #0033CC; font-size: smaller; font-family: "Courier New", Courier, mono; }
+.style1021 {color: #CC0000;
+	font-weight: bold;
+}
+.style361 {color: #660099;
+	font-weight: bold;
+}
+.style104 {color: #CC0000;
+	font-weight: bold;
+}
+.style23 {	font-family: "Courier New", Courier, mono;
+	color: #000000;
+}
+.style241 {	font-family: "Courier New", Courier, mono;
+	color: #003399;
+	font-size:small;
+}
+.style331 {color: blue; font-family: "Courier New", Courier, mono; font-size: smaller; }
+.style37 {	color: #FF0000;
+	font-weight: bold;
+}
+.style431 {color: #339933; font-weight: bold; font-family: "Courier New", Courier, mono; }
+.style22 {	color: #990099;
+	font-weight: bold;
+}
+.style2 {	color: #CC0000;
+	font-size:large;
+}
+.style221 {color: #663366; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<h1 align="center"><a name="lecture40" id="lecture40"></a>Lecture 40 (lab 13)&mdash;Friday, April 20, 2012</h1>
+<h2>Topics</h2>
+<ul>
+  <li><a href="lecture40.htm#nominal">Nominal multinomial data</a>
+    <ul>
+      <li><a href="lecture40.htm#baseline">The baseline category multinomial logit model</a></li>
+      <li><a href="lecture40.htm#interpreting">Interpreting the output from a multinomial model</a></li>
+      <li><a href="lecture40.htm#weight">Fitting multinomial models with the weights argument</a></li>
+      <li><a href="lecture40.htm#vgam">Fitting the baseline logit model using the VGAM package</a></li>
+      <li><a href="lecture40.htm#fitting">Fitting multinomial models as Poisson models</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture40.htm#goodness">Goodness of fit for multinomial models</a>
+<ul>
+      <li><a href="lecture40.htm#simulation">A simulation-based goodness of fit test</a></li>
+      <li><a href="lecture40.htm#quasi">Quasi-Poisson model</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture40.htm#graphical">Graphical summary of the results</a></li>
+  <li><a href="lecture40.htm#ordinal">Ordinal logistic regression</a>
+    <ul>
+      <li><a href="lecture40.htm#cumulative">Cumulative logit model</a></li>
+      <li><a href="lecture40.htm#testing">Testing the proportional odds assumption</a></li>
+    </ul>
+  </li>
+  <li><a href="lecture40.htm#cited">Cited references</a></li>
+</ul>
+<h2>R functions and commands demonstrated</h2>
+<ul>
+  <li><a href="lecture40.htm#expandgrid">expand.grid</a> is a convenient function for generating all possible combinations of the levels of two factor variables.</li>
+  <li><a href="lecture40.htm#grep">grep</a> is used to search for text strings that match a certain pattern.</li>
+  <li><a href="lecture40.htm#matrix">matrix</a> creates a matrix of specified dimensions.</li>
+  <li><a href="lecture40.htm#multinom">multinom</a> (from the <span class="style19">nnet</span> package) fits baseline category multinomial logit models.</li>
+  <li><a href="lecture40.htm#polr">ordered</a> creates an ordered factor variable.</li>
+  <li><a href="lecture40.htm#polr">polr</a> (from the <span class="style19">MASS</span> package) estimates cumulative logit proportional odds multinomial regression models.</li>
+  <li><a href="lecture40.htm#rmultinom">rmultinom</a> generates random values from a multinomial distribution.</li>
+  <li><a href="lecture40.htm#vglm">vglm</a> (from the <span class="style19">VGAM</span> package) estimates multinomial regression models.</li>
+</ul>
+<h2>R function options</h2>
+<ul>
+  <li><a href="lecture40.htm#matrix">byrow=</a> argument to <span class="style4">matrix</span>. If <span class="style221">byrow=T</span> then the rows are populated with values one row at a time.</li>
+  <li><a href="lecture40.htm#vglm">cumulative</a> is the value needed in the  <span class="style221">family</span> argument of <span class="style4"> vglm  </span>in order   to estimate a cumulative logit multinomial model.</li>
+  <li><a href="lecture40.htm#vgam">multinomial </a>is the value needed in  the <span class="style221">family</span> argument of <span class="style4"> vglm </span>in order  to estimate a baseline logit multinomial model. </li>
+  <li><a href="lecture40.htm#vglm">parallel=</a> argument to <span class="style4">vglm</span> for determining if a proportional odds model should be fit, <span class="style221">parallel=T</span>, or not.</li>
+  <li><a href="lecture40.htm#vgam">reflevel</a>= argument to <span class="style4">vglm</span> for specifying the reference level in a baseline logit multinomial model.</li>
+  <li><a href="lecture40.htm#vglm">reverse=</a> argument to <span class="style3">vglm</span> controls how the log odds of the response variable is constructed.</li>
+  <li><a href="lecture40.htm#weight">weights=</a>  argument to <span class="style4">multinom</span> (and other regression functions)  for specifying the variable that records the frequency of occurrence of each observation. </li>
+</ul>
+<h2>R packages used </h2>
+<ul>
+  <li><a href="lecture40.htm#multinom">nnet</a> for the <span class="style104">multinom</span> function</li>
+  <li><a href="lecture40.htm#polr">MASS</a> for the <span class="style104">polr</span> function</li>
+  <li><a href="lecture40.htm#vglm">VGAM</a> for the <span class="style104">vglm</span> function</li>
+</ul>
+<h2>Data sets</h2>
+<ul>
+  <li><a href="../../data/alligators.csv">alligators.csv</a></li>
+  <li><a href="../../data/trees.csv">trees.csv</a></li>
+</ul>
+<h2><a name="nominal" id="nominal"></a>Nominal multinomial data</h2>
+<p>The  data set <a href="../../data/alligators.csv">alligators.csv</a> comes from Agresti (2002) but it is used in many other textbooks as an example of multinomial data. It's from a study by the Florida Game and Fresh Water Fish Commission of the types of food that alligators choose to eat in the wild. A sample of 219 alligators was obtained from four Florida lakes. For each alligator the primary food type (by volume) was determined from the animal's stomach contents. Food type categories used were birds, fish, invertebrates, reptiles, and other. The invertebrates were primarily apple snails, aquatic insects, and crayfish. The reptiles were primarily turtles although one stomach contained the tags of 23 baby alligators that had been released in the lake the previous year. The &quot;other&quot; category included amphibians, mammals, plant material, stones, and other debris. In addition to lake, the gender of the animal was noted and its size was recorded as either less than or equal to 2.3 meters or greater than 2.3 meters. The purpose of categorizing size in this way was to distinguish subadults from adults.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alligators &lt;- read.csv(&quot;ecol 562/alligators.csv&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(alligators)</div>
+<span class="style24">  [1] 219&nbsp;&nbsp; 4</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alligators[1:10,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; food size gender&nbsp;&nbsp;&nbsp; lake<br>
+  1&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  2&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  3&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  4&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  5&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  6&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  7&nbsp;&nbsp;&nbsp; fish &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  8&nbsp; invert &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+  9&nbsp;&nbsp; other &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock<br>
+10&nbsp; other &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m hancock</span>
+<p>Each line of the data file is the record of a single alligator listing the predominant food type in its stomach as well as its size, gender, and the lake where it was captured. This is the multinomial equivalent of   binary data. Without additional information an appropriate probability could be either  multinomial or Poisson. </p>
+<ul>
+  <li>If the researcher's instruction to his/her minions was to collect 219 alligators then we have a multinomial model. Although the number of observations in each of the five categories is random  they do have to sum to 219. </li>
+  <li>On the other hand if  as many animals as possible were collected over a period of time, then the total is also random and a Poisson distribution is appropriate.</li>
+</ul>
+<p>As we saw in <a href="lecture38.htm#connection">lecture 38</a>, the distinction between Poisson or multinomial doesn't really  matter here because by conditioning on the sample size a Poisson distribution becomes a multinomial distribution.</p>
+<p>I cross-tabulate the observations by food type, lake, size, and gender to see the distribution of observations across the categories.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">table(alligators$food, alligators$lake, alligators$size, alligators$gender)</div>
+<span class="style24">
+, ,&nbsp; = &lt;2.3,&nbsp; = f<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; george hancock oklawaha trafford<br>
+&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2<br>
+&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4<br>
+&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4<br>
+&nbsp; rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+<br>
+, ,&nbsp; = &gt;2.3,&nbsp; = f<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; george hancock oklawaha trafford<br>
+&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+&nbsp; rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+<br>
+, ,&nbsp; = &lt;2.3,&nbsp; = m<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; george hancock oklawaha trafford<br>
+&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7<br>
+&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+&nbsp; rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+<br>
+, ,&nbsp; = &gt;2.3,&nbsp; = m<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; george hancock oklawaha trafford<br>
+&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8<br>
+&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6<br>
+&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br>
+&nbsp; rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6<br>
+</span>
+<p>We see that  the data are rather sparse. Many of the possible combinations of food type, size, gender, and lake were not observed. </p>
+<h3><a name="baseline"></a>The baseline category multinomial logit model</h3>
+<p><a name="multinom"></a>The <span class="style104">multinom</span> function in the <span class="style19">nnet</span> package can be used to fit baseline category multinomial logit models. The multinomial variable is entered as the response and predictors are included  using the usual  formula notation of R. I start by fitting a null model, a multinomial model with no predictors. I then follow it up with separate models that include each of the the three predictors <span class="style8">lake</span>, <span class="style8">size</span>, and <span class="style8">gender</span> individually.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(nnet)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit0 &lt;- multinom(food~1, data=alligators)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit1 &lt;- multinom(food~gender, data=alligators)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fit2 &lt;- multinom(food~lake, data=alligators)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  fit3 &lt;- multinom(food~size, data=alligators)</div>
+
+<p>The <span class="style104">anova</span> function applied to two nested <span class="style104">multinom</span> models carries out a likelihood ratio test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit0, fit1)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 872&nbsp;&nbsp; 604.3629&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 868&nbsp;&nbsp; 602.2589 1 vs 2&nbsp;&nbsp;&nbsp;&nbsp; 4 2.104069 0.7166248</span>
+<p>From the output above we see that the effect of <span class="style8">gender</span> is not statistically significant. Nested and non-nested models can be compared using AIC.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(fit0, fit1, fit2, fit3)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  fit0&nbsp; 4 612.3629<br>
+  fit1&nbsp; 8 618.2589<br>
+fit2 16 </span><span class="style25">593.1677</span><span class="style24"><br>
+fit3&nbsp; 8 605.2134</span>
+<p>The <span class="style8">lake</span>-only model ranks best followed by the <span class="style8">size</span> model. Including both <span class="style8">lake</span> and <span class="style8">size</span> in the model leads to a further improvement in the AIC.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit4 &lt;- multinom(food~lake+size, data=alligators)</div>
+<span class="style24"># weights:&nbsp; 30 (20 variable)<br>
+initial&nbsp; value 352.466903 <br>
+iter&nbsp; 10 value 272.246275<br>
+iter&nbsp; 20 value 270.046891<br>
+final&nbsp; value 270.040139 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(fit4)</div>
+<span class="style24">[1] 580.0803</span>
+<p>Furthermore both terms are statistically significant in the presence of the other.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit2, fit4)</div>
+ <span class="style24"> Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lake&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 860&nbsp;&nbsp; 561.1677&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 lake + size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 856&nbsp;&nbsp; 540.0803 1 vs 2&nbsp;&nbsp;&nbsp;&nbsp; 4 21.08741 </span><span class="style25">0.0003042795
+  </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit3, fit4)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 868&nbsp;&nbsp; 589.2134&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 lake + size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 856&nbsp;&nbsp; 540.0803 1 vs 2&nbsp;&nbsp;&nbsp; 12 49.13308 </span><span class="style25">1.982524e-06
+  </span>
+<p>If we try to add <span class="style8">gender</span> to this model we find that it's not needed.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit5 &lt;- multinom(food~lake+size+gender, data=alligators)</div>
+<span class="style24"># weights:&nbsp; 35 (24 variable)<br>
+initial&nbsp; value 352.466903 <br>
+iter&nbsp; 10 value 270.228588<br>
+iter&nbsp; 20 value 268.944257<br>
+final&nbsp; value 268.932741 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit4, fit5)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lake + size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 856&nbsp;&nbsp; 540.0803&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 lake + size + gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 852&nbsp;&nbsp; 537.8655 1 vs 2&nbsp;&nbsp;&nbsp;&nbsp; 4 2.214796 </span><span class="style25">0.6963214
+  </span>
+<h3><a name="interpreting"></a>Interpreting the output from a multinomial model</h3>
+<p>The <span class="style104">summary</span> function applied to the model yields the coefficient estimates and their standard errors.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit4)</div>
+<span class="style24">Call:<br>
+multinom(formula = food ~ lake + size, data = alligators)</span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) lakehancock lakeoklawaha laketrafford&nbsp;&nbsp; size&gt;2.3<br>
+  fish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.723723&nbsp; -0.6950850&nbsp;&nbsp;&nbsp; 0.6531363&nbsp; -1.08768971 -0.6306971<br>
+  invert&nbsp;&nbsp;&nbsp; 2.632914&nbsp; -2.3534487&nbsp;&nbsp;&nbsp; 1.5903438&nbsp;&nbsp; 0.03428501 -2.0888952<br>
+  other&nbsp;&nbsp;&nbsp;&nbsp; 1.150998&nbsp;&nbsp; 0.1311222&nbsp;&nbsp;&nbsp; 0.6587950&nbsp;&nbsp; 0.42869526 -0.9622560<br>
+  rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.942082&nbsp;&nbsp; 0.5476742&nbsp;&nbsp;&nbsp; 3.1120046&nbsp;&nbsp; 1.84756421 -0.2794163</span>
+<p><span class="style24">Std. Errors:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) lakehancock lakeoklawaha laketrafford&nbsp; size&gt;2.3<br>
+  fish&nbsp;&nbsp;&nbsp;&nbsp; 0.7103906&nbsp;&nbsp; 0.7812574&nbsp;&nbsp;&nbsp;&nbsp; 1.202038&nbsp;&nbsp;&nbsp; 0.8416676 0.6424797<br>
+  invert&nbsp;&nbsp; 0.7266419&nbsp;&nbsp; 0.9337072&nbsp;&nbsp;&nbsp;&nbsp; 1.227725&nbsp;&nbsp;&nbsp; 0.8631499 0.6939064<br>
+  other&nbsp;&nbsp;&nbsp; 0.8059565&nbsp;&nbsp; 0.8919633&nbsp;&nbsp;&nbsp;&nbsp; 1.368529&nbsp;&nbsp;&nbsp; 0.9382990 0.7127082<br>
+  rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2411890 &nbsp;&nbsp;1.3715034&nbsp;&nbsp;&nbsp;&nbsp; 1.585983&nbsp;&nbsp;&nbsp; 1.3173183 0.8062283</span>
+<p><span class="style24">Residual Deviance: 540.0803 <br>
+  AIC: 580.0803</span>
+<p>Because the multinomial response has five categories four sets of coefficient estimates are reported. The category &quot;bird&quot; being first alphabetically was chosen as the reference group for <span class="style8">food</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> levels(alligators$food)</div>
+<span class="style24">  [1] &quot;bird&quot;&nbsp;&nbsp; &quot;fish&quot;&nbsp;&nbsp; &quot;invert&quot; &quot;other&quot;&nbsp; &quot;rep&quot;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> levels(alligators$lake)</div>
+<span class="style24">[1] &quot;george&quot;&nbsp;&nbsp; &quot;hancock&quot;&nbsp; &quot;oklawaha&quot; &quot;trafford&quot;</span>
+<p>The four rows of the coefficient table correspond to separate models  for the log odds (fish vs bird), the log odds (invert vs bird), the log odds (other vs bird), and the log odds (reptile vs bird). The reference group for <span class="style8">lake</span> is Lake George and the reference group for <span class="style8">size</span> is subadult. In the log odds (fish vs bird) equation we see that the log odds for subadult alligators (size &lt; 2.3) in Lake George is 2.72 (the value of the intercept). This log odds decreases in Lake Hancock and Lake Trafford, but increases in Lake Oklawaha. Because the model is additive in <span class="style8">lake</span> and <span class="style8">size</span>, the log odds of fish vs bird is decreased by 0.63 for adults relative to subadults in each of the four lakes.</p>
+<p>To obtain a formal statistical test of the <span class="style8">lake</span> and <span class="style8">size</span> effects for each of <span class="style8">food</span> log odds models we can divide the coefficients by their standard errors to obtain a Wald test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(summary(fit4))</div>
+<span class="style24">  &nbsp;[1] &quot;n&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;nunits&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;nconn&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;conn&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[5] &quot;nsunits&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;decay&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;entropy&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;softmax&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  &nbsp;[9] &quot;censored&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;value&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;wts&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;convergence&quot;&nbsp;&nbsp;&nbsp; <br>
+  [13] &quot;fitted.values&quot;&nbsp;&nbsp; &quot;residuals&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lev&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;call&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [17] &quot;terms&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weights&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;deviance&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;rank&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [21] &quot;lab&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;coefnames&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;vcoefnames&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;contrasts&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  [25] &quot;xlevels&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;edf&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;AIC&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;is.binomial&quot;&nbsp;&nbsp;&nbsp; <br>
+  [29] &quot;digits&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;coefficients&quot;&nbsp;&nbsp;&nbsp; &quot;standard.errors&quot;</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit4)$coefficients/ summary(fit4)$standard.errors</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) lakehancock lakeoklawaha laketrafford&nbsp;&nbsp; size&gt;2.3<br>
+  fish&nbsp;&nbsp;&nbsp;&nbsp; 3.8341209&nbsp; -0.8897003&nbsp;&nbsp;&nbsp; 0.5433576&nbsp; -1.29230324 -0.9816608<br>
+  invert&nbsp;&nbsp; 3.6234001&nbsp; -2.5205424&nbsp;&nbsp;&nbsp; 1.2953584&nbsp;&nbsp; 0.03972081 -3.0103415<br>
+  other&nbsp;&nbsp;&nbsp; 1.4281144&nbsp;&nbsp; 0.1470040&nbsp;&nbsp;&nbsp; 0.4813891&nbsp;&nbsp; 0.45688555 -1.3501402<br>
+rep&nbsp;&nbsp;&nbsp;&nbsp; -0.7590158&nbsp;&nbsp; 0.3993240&nbsp;&nbsp;&nbsp; 1.9621934&nbsp;&nbsp; 1.40251919 -0.3465721</span>
+<p>Coefficients larger than two in magnitude are statistically significant. Alternatively we can calculate a two-tailed <em>p</em>-value ourselves.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> 2*(1-pnorm(abs(summary(fit4)$coefficients/ summary(fit4)$standard.errors)))</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Intercept) lakehancock lakeoklawaha laketrafford&nbsp;&nbsp;&nbsp; size&gt;2.3<br>
+fish&nbsp;&nbsp; </span><span class="style25">0.0001260141</span><span class="style24">&nbsp; 0.37362683&nbsp;&nbsp; 0.58688360&nbsp;&nbsp;&nbsp; 0.1962521 0.326266988<br>
+ invert </span><span class="style25">0.0002907556</span><span class="style24">&nbsp; </span><span class="style25">0.01171741</span><span class="style24">&nbsp;&nbsp; 0.19519661&nbsp;&nbsp;&nbsp; 0.9683157 </span><span class="style25">0.002609541</span><span class="style24"><br>
+ other&nbsp; 0.1532589264&nbsp; 0.88312889&nbsp;&nbsp; 0.63023995&nbsp;&nbsp;&nbsp; 0.6477533 0.176971028<br>
+rep&nbsp;&nbsp;&nbsp; 0.4478431203&nbsp; 0.68965450&nbsp;&nbsp; </span><span class="style25">0.04973997</span><span class="style24">&nbsp;&nbsp;&nbsp; 0.1607603 0.728912781</span>
+<p>From the output we  determine that the log odds of fish or invertebrates relative to birds is statistically significant (greater than zero) in Lake George. The other two log odds are not significantly different from zero in Lake George. The log odds of invertebrates to birds is significantly lower in Lake Hancock than it is in Lake George, while the log odds of reptiles relative to birds is significantly higher in Lake Oklawaha than in Lake George. The only significant size effect is in the log odds of invertebrates to birds with higher odds being favored for subadults than for adults. The statements about log odds ratios can be made more interpretable by exponentiating the log odds coefficients to obtain odds ratios.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(-summary(fit4)$coefficients[2,2])</div>
+ <span class="style24"> [1] 10.52179</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(summary(fit4)$coefficients[4,3])</div>
+ <span class="style24"> [1] 22.46604</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> exp(-summary(fit4)$coefficients[2,5])</div>
+<span class="style24">[1] 8.075988</span>
+<p>Thus we see that the odds of invertebrates to birds being the predominant food type is ten times higher in Lake George than in Lake Hancock, the odds of reptiles to birds being the predominant food type is 22 times higher in Lake Oklawaha than in Lake George, and the odds of invertebrates to birds being the predominant food type is 8 times higher in subadults than in adults.</p>
+<h3><a name="weight"></a>Fitting multinomial models using the weights argument</h3>
+<p>In the alligator data set each observation is a single realization of a multinomial random variable. We can also fit models to grouped multinomial data, which  is the way multinomial data are commonly recorded. To reorganize the current data set in this way, I make a table of <span class="style8">food</span> by  <span class="style8">lake</span> by  <span class="style8">size</span> and by <span class="style8">gender</span> and reorganize it as a data frame, adding the appropriate variable names to the columns.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alli.dat &lt;- data.frame(table(alligators$food, alligators$lake, alligators$size, alligators$gender))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(alli.dat)</div>
+ <span class="style24"> [1] 80&nbsp; 5</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alli.dat[1:8,]</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp; Var1&nbsp;&nbsp;&nbsp; Var2 Var3 Var4 Freq<br>
+  1&nbsp;&nbsp; bird&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 0<br>
+  2&nbsp;&nbsp; fish&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3<br>
+  3 invert&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 9<br>
+  4&nbsp; other&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1<br>
+  5&nbsp;&nbsp;&nbsp; rep&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1<br>
+  6&nbsp;&nbsp; bird hancock &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 2<br>
+  7&nbsp;&nbsp; fish hancock &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 16<br>
+  8 invert hancock &lt;2.3&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3<br>
+</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(alli.dat)[1:4] &lt;- c('food', 'lake', 'size', 'gender')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alli.dat[1:8,]</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp; food&nbsp;&nbsp;&nbsp; lake size gender Freq<br>
+  1&nbsp;&nbsp; bird&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 0<br>
+  2&nbsp;&nbsp; fish&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3<br>
+  3 invert&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 9<br>
+  4&nbsp; other&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1<br>
+  5&nbsp;&nbsp;&nbsp; rep&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1<br>
+  6&nbsp;&nbsp; bird hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 2<br>
+  7&nbsp;&nbsp; fish hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 16<br>
+8 invert hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3</span>
+<p><a name="weight"></a>To fit a multinomial model to data organized in this fashion we have to include the variable that records the counts in the <span class="style221">weights</span> argument of <span class="style104">multinom</span>. The AIC and log-likelihood we obtain match those obtained with the ungrouped data set.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit4a &lt;- multinom(food~lake+size, data=alli.dat, weights=Freq)</div>
+<span class="style24"># weights:&nbsp; 30 (20 variable)<br>
+initial&nbsp; value 352.466903 <br>
+iter&nbsp; 10 value 272.246275<br>
+iter&nbsp; 20 value 270.046891<br>
+final&nbsp; value 270.040139 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(fit4a)</div>
+<span class="style24">[1] 580.0803</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(fit4a)</div>
+<span class="style24">'log Lik.' -270.0401 (df=20)</span>
+<h3><a name="vgam" id="vgam"></a>Fitting the baseline logit model using the VGAM package</h3>
+<p>The <span class="style1021">vglm</span> function of the <span class="style19">VGAM</span> package (which we'll use below for ordinal regression models) can also be used to fit the baseline category multinomial logit model. For this we need to specify <span class="style221">multinomial</span> in the <span class="style221">family</span> argument with the desired level to use as the reference level. To fit model <span class="style8">fit4</span> using <span class="style19">VGAM</span> we would proceed as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">library(VGAM)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fit4.vglm &lt;- vglm(food~size+lake, family=multinomial(refLevel=1), data=alligators)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> coef(fit4.vglm, matrix=T)</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; log(mu[,2]/mu[,1]) log(mu[,3]/mu[,1]) log(mu[,4]/mu[,1])<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.7237365&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.63292251&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;1.1510151<br>
+  size&gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.6306597&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.08886434&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.9622100<br>
+  lakehancock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.6951176&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.35347615&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.1310787<br>
+  lakeoklawaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.6532062&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.59042552&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.6588593<br>
+  laketrafford&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1.0877668&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.03421807&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.4286020<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; log(mu[,5]/mu[,1])<br>
+  (Intercept)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.9420566<br>
+  size&gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.2793969<br>
+  lakehancock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.5476566<br>
+  lakeoklawaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1120757<br>
+laketrafford&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.8474841</span>
+<p>The results are virtually identical to what we obtained with the <span class="style104">multinom</span> function.</p>
+<h3><a name="fitting"></a>Fitting multinomial models as Poisson models</h3>
+<p>As was explained in <a href="lecture38.htm#fitting">lecture 38</a>, multinomial models can be fit as Poisson models by fixing the margin totals. In formulating the model  this means including a large number of auxiliary variables. For instance, the null multinomial model <span class="style8">fit0</span> could be fit with a <span class="style221">weights</span> argument as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fit0a &lt;- multinom(food ~ 1, data=alli.dat, weights=Freq)</div>
+<p>Here is how you would fit the same model using a Poisson distribution.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm0 &lt;- glm(Freq~lake*size*gender + food, data=alli.dat, family=poisson)</div>
+<p>The count variable is the response and all the predictors and the response are entered as main effects. In addition all of the interactions between the predictors are included.</p>
+<div class="style11" style="padding-left: 30px; text-indent:-30px">Freq ~ lake + size + gender + lake:size + lake:gender + size:gender + lake:size:gender + food</div>
+<p>The logic behind this is as follows. There are 80 rows in the weighted version of the data set, one row per food type. If we divide by the number of food types (5) we get 16, the total number of multinomial observations. We need to constrain these 16 totals in order to get a multinomial distribution. Because these 16 observations are uniquely defined by their combined levels of <span class="style8">gender</span>, <span class="style8">size</span>, and <span class="style8">lake</span>, we can constrain the 16 marginal totals by including <span class="style8">gender*size*lake</span> in the model. </p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> nrow(alli.dat)</div>
+ <span class="style24">  [1] 80</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> nrow(alli.dat) / length(unique(alli.dat$food))</div>
+ <span class="style24">  [1] 16</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">length(unique(alli.dat$lake)) * length(unique(alli.dat$size)) * length(unique(alli.dat$gender))</div>
+ <span class="style24">[1] 16</span>
+<p>We also need to constrain the marginal totals for the five food categories, so we also include <span class="style8">food</span> in the model. Thus <span class="style1">lake*size*gender + food</span> must be included in every Poisson model we fit in order to match the results from the multinomial regression model.</p>
+<p>Whatever variable or combination of variables uniquely identifies the multinomial totals in a data set is what we need to include in the Poisson model. If there had been an <span class="style8">ID</span> variable numbered 1 through 16 that identified the 16 multinomial observations, we could have used that as the predictor instead of <span class="style8">gender*size*lake</span>. The models we would get are the same, just parameterized differently.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># create ID variable that identifies multinomial observations</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">alli.dat$ID &lt;- rep(1:16, rep(5,16))<br>
+  </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> alli.dat[1:10,]</div>
+ <span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp; food&nbsp;&nbsp;&nbsp; lake size gender Freq ID<br>
+    1&nbsp;&nbsp;&nbsp; bird&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 0&nbsp; 1<br>
+    2&nbsp;&nbsp;&nbsp; fish&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3&nbsp; 1<br>
+    3&nbsp; invert&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 9&nbsp; 1<br>
+    4&nbsp;&nbsp; other&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1&nbsp; 1<br>
+    5&nbsp;&nbsp;&nbsp;&nbsp; rep&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 1&nbsp; 1<br>
+    6&nbsp;&nbsp;&nbsp; bird hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 2&nbsp; 2<br>
+    7&nbsp;&nbsp;&nbsp; fish hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 16&nbsp; 2<br>
+    8&nbsp; invert hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3&nbsp; 2<br>
+    9&nbsp;&nbsp; other hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 3&nbsp; 2<br>
+  10&nbsp;&nbsp;&nbsp; rep hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 2&nbsp; 2</span>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px">#fit model using factor(ID) rather than lake*size*gender </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm0a &lt;- glm(Freq~<span class="style42">factor(ID) + food</span>, data=alli.dat, family=poisson)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(glm0, glm0a)</div>
+ <span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  glm0&nbsp; 20 320.2464<br>
+glm0a 20 320.2464</span>
+<p>To test the effect of a predictor on food type in the Poisson model we have to add it to the null model as an interaction with <span class="style8">food</span>.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#including the effect of gender on food type</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm1 &lt;- glm(Freq~lake*size*gender + food <span class="style42">+ food:gender</span>, data=alli.dat, family=poisson)</div>
+<p>If we compare the null Poisson model with the <span class="style8">gender</span> Poisson model using a likelihood ratio test we get the same test statistic that we obtained with the multinomial models.<br>
+</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(glm0, glm1, test='Chisq')</div>
+<span class="style24">  Analysis of Deviance Table<br>
+  <br>
+  Model 1: Freq ~ lake * size * gender + food<br>
+  Model 2: Freq ~ lake * size * gender + food + food:gender<br>
+  &nbsp; Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60&nbsp;&nbsp;&nbsp;&nbsp; 116.76&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 56&nbsp;&nbsp;&nbsp;&nbsp; 114.66&nbsp; 4&nbsp;&nbsp; 2.1041&nbsp;&nbsp; </span><span class="style25">0.7166</span><span class="style24"><br>
+</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit1, fit0)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 872&nbsp;&nbsp; 604.3629&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 868&nbsp;&nbsp; 602.2589 1 vs 2&nbsp;&nbsp;&nbsp;&nbsp; 4 2.104069 </span><span class="style25">0.7166248
+  </span>
+<p>Our final multinomial model was one that included <span class="style8">lake</span> and <span class="style8">size</span> as predictors. To fit this as a Poisson model we need to add <span class="style8">food:size</span> and <span class="style8">food:lake</span>  to the null model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">
+  <p>glm4 &lt;- glm(Freq~lake*size*gender + food <span class="style42">+ food:lake + food:size</span>, data=alli.dat, family=poisson)</p>
+</div>
+
+<h2><a name="goodness"></a>Goodness of fit for multinomial models</h2>
+<p>When multinomial data come grouped it is possible to test the fit of the final model by comparing it to a model in which each observation is assigned its own parameter. This is called the saturated model. We have artificially grouped the multinomial data by cross-classifying observations by <span class="style8">lake</span>, <span class="style8">gender</span>, and <span class="style8">size</span>. This yields a distribution of food types for each combination of <span class="style8">lake</span>, <span class="style8">gender</span>, and <span class="style8">size</span>. As was explained above, when the data are organized in this way we have 80 rows of data but only 16 different multinomial observations.  Because there are four lakes, two genders, and two sizes, the saturated model requires 4 &times; 2 &times; 2 = 16 parameters per logit for a total of 64 parameters. We enter <span class="style1">lake*size*gender</span> as the predictor because the 16 multinomial observations are uniquely identified by the 16 different combinations of <span class="style8">lake</span>, <span class="style8">size</span>, and <span class="style8">gender</span>. Again, any variable that uniquely identifies these 16 multinomial observations could be used instead to fit the saturated model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit.S &lt;- multinom(food~lake*size*gender, data=alli.dat, weights=Freq)</div>
+<span class="style24"># weights:&nbsp; 85 (64 variable)<br>
+initial&nbsp; value 352.466903 <br>
+iter&nbsp; 10 value 264.578561<br>
+iter&nbsp; 20 value 249.742554<br>
+iter&nbsp; 30 value 244.525050<br>
+iter&nbsp; 40 value 243.820680<br>
+iter&nbsp; 50 value 243.801639<br>
+iter&nbsp; 60 value 243.800900<br>
+iter&nbsp; 60 value 243.800899<br>
+iter&nbsp; 60 value 243.800899<br>
+final&nbsp; value 243.800899 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(coef(fit.S))</div>
+<span class="style24">[1] 64</span>
+<p>Alternatively we could have used the <span class="style8">ID</span> variable created above to to fit a separate model to each multinomial observation.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit.S1 &lt;- multinom(food~factor(ID), data=alli.dat, weights=Freq)</div>
+<span class="style24">  # weights:&nbsp; 85 (64 variable)<br>
+  initial&nbsp; value 352.466903 <br>
+  iter&nbsp; 10 value 252.268864<br>
+  iter&nbsp; 20 value 245.629097<br>
+  iter&nbsp; 30 value 244.083777<br>
+  iter&nbsp; 40 value 243.833747<br>
+  iter&nbsp; 50 value 243.801023<br>
+  final&nbsp; value 243.800898 <br>
+converged</span>
+<p>In the Poisson version  the marginal constraints are enforced by entering <span class="style1">lake*size*gender + food</span>. To estimate the same effects shown in the saturated<strong> </strong>multinomial  model <span class="style8">fit.S</span> we need to interact <span class="style8">food</span> with all the individual terms shown there: <span class="style8">lake*size*gender</span>. So we would have to write the following.</p>
+<div class="style1" style="padding-left: 30px; text-indent:-30px">Freq ~ lake*size*gender + food + food:lake + food:size + food:gender + food:lake:size + food:lake:gender + food:size:gender + food:lake:size:gender</div>
+<p>We can obtain all these terms with the following simpler expression.</p>
+<p class="style1">Freq ~ lake*size*gender*food</p>
+<p>The total number of estimated parameters is 80, one for each observed count. With the Poisson version we can check to see that we've done things correctly because the residual deviance of the saturated model will be zero and the number of estimated coefficients is equal to the number of observations.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm.S &lt;- glm(Freq~lake*size*gender*food, data=alli.dat, family=poisson)</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># residual deviance is approximately zero</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> deviance(glm.S)</div>
+<span class="style24">[1] 4.925747e-10</span>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"># one estimated parameter per observation</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(coef(glm.S))</div>
+<span class="style24">[1] 80</span>
+<p>Alternatively we could have used the <span class="style8">ID</span> variable created above to identify the multinomial observations and fit the saturated model as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> glm.S1 &lt;- glm(Freq~factor(ID) + food + factor(ID):food, data=alli.dat, family=poisson)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> AIC(glm.S,glm.S1)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; df&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AIC<br>
+  glm.S&nbsp; 80 323.4853<br>
+glm.S1 80 323.4853</span>
+<p>A formal goodness of fit test uses a likelihood ratio test to compare the model of interest against the saturated model. If the <em>p</em>-value is significant then we have a significant lack of fit.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit.4 &lt;- multinom(food~lake+size, data=alli.dat, weights=Freq)</div>
+<span class="style24"># weights:&nbsp; 30 (20 variable)<br>
+initial&nbsp; value 352.466903 <br>
+iter&nbsp; 10 value 272.246275<br>
+iter&nbsp; 20 value 270.046891<br>
+final&nbsp; value 270.040139 <br>
+converged</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit.4, fit.S)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<span class="style24">Response: food<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lake + size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp; 540.0803&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 lake * size * gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 256&nbsp;&nbsp; 487.6018 1 vs 2&nbsp;&nbsp;&nbsp; 44 52.47848 </span><span class="style25">0.1783716
+  </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(glm4, glm.S, test='Chisq')</div>
+<span class="style24">  Analysis of Deviance Table</span>
+<p><span class="style24">Model 1: Freq ~ lake * size * gender + food + food:lake + food:size<br>
+  Model 2: Freq ~ lake * size * gender * food<br>
+  &nbsp; Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp; 52.478&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.000 44&nbsp;&nbsp; 52.478&nbsp;&nbsp; </span><span class="style25">0.1784
+  </span>
+<p>From the output it would appear that we don't have evidence of lack of fit. </p>
+<p>This goodness of fit test based on residual deviance is identical to the G-test of Sokal and Rohlf (2012), which in turn is asymptotically equivalent to the Pearson chi-squared goodness of fit test. If <em>O<sub>i</sub></em> is the observed count and<em> E<sub>i</sub> </em>is the expected count predicted by the model, then the G-test and Pearson test are the following.</p>
+<p align="center">G-test: <img src="../../images/lectures/lecture40/Gtest.gif" alt="G test" width="145" height="60" align="absmiddle"></p>
+<p align="center">Pearson test: <img src="../../images/lectures/lecture40/Pearsontest.gif" alt="Pearson test" width="153" height="65" align="absmiddle"></p>
+<p>Both test statistics have an asymptotic chi-squared distribution with <em>n</em> &ndash; <em>p</em> &ndash; 1 degrees of freedom where <em>p</em> is the number of estimated parameters in the model. Both of these tests have restrictions on how small the expected counts can be in order for the chi-squared distribution to still hold. A seat of the pants rule is that no more than 20% of the expected cell counts should be less than 5. We can readily check this by obtaining the predicted counts from the Poisson model. (I exponentiate the predictions because the Poisson model uses a log link. I could have used the <span class="style104">fitted</span> function instead, which inverts the link function after obtaining the predictions.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(exp(predict(glm4))&lt;5)</div>
+<span class="style24">  [1] 60</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(exp(predict(glm4))&lt;5)/length(predict(glm4))</div>
+<span class="style24">[1] 0.75</span>
+<p>So we see that 75% of the expected counts are less than 5. The chi-squared distribution of the goodness of fit test is questionable here, so we should not trust the conclusion of the test that the fit is adequate.</p>
+<h3><a name="simulation"></a>A simulation-based goodness of fit test</h3>
+<p>When the theoretical distribution of a test statistic is suspect we can turn to Monte Carlo methods. The idea behind a Monte Carlo test is simple. Since we don't know what the theoretical distribution of our test statistic should be, we generate an empirical approximation to the distribution instead. For the current problem that means using our fitted multinomial model to generate new data. Treating the generated data as a new set of  observations we carry out the G-test to obtain the G statistic for the simulated data. We then do this repeatedly to obtain a distribution of G-statistics for data that we know are consistent with our model (because the model generated them). We then check to see if the G-statistic obtained using the actual data  looks like a typical member of this distribution. If it looks anomalous then we have evidence for lack of fit.</p>
+<p>I start by using the model to obtain the predicted probability distributions for each of the 16 multinomial observations. To do this I create a new data frame that contains the values of the predictors for each multinomial observation along with the number of observations in the data set that have this predictor combination.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mydat &lt;- data.frame(table(alligators$lake, alligators$size, alligators$gender))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> names(mydat)[1:3] &lt;- c('lake', 'size', 'gender')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mydat</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lake size gender Freq<br>
+1&nbsp;&nbsp;&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 14<br>
+2&nbsp;&nbsp; hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 26<br>
+3&nbsp; oklawaha &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 15<br>
+4&nbsp; trafford &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 12<br>
+5&nbsp;&nbsp;&nbsp; george &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp; 10<br>
+6&nbsp;&nbsp; hancock &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 9<br>
+7&nbsp; oklawaha &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; 2<br>
+8&nbsp; trafford &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f &nbsp;&nbsp;&nbsp;1<br>
+9&nbsp;&nbsp;&nbsp; george &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 27<br>
+10&nbsp; hancock &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 13<br>
+11 oklawaha &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp;&nbsp; 5<br>
+12 trafford &lt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 12<br>
+13&nbsp;&nbsp; george &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 12<br>
+14&nbsp; hancock &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp;&nbsp; 7<br>
+15 oklawaha &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 26<br>
+16 trafford &gt;2.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m&nbsp;&nbsp; 28</span>
+<p>Using the first three columns of this data frame as the value of the <span class="style221">newdata</span> argument of <span class="style104">predict</span>, I use the <span class="style221">type='probs'</span> setting to obtain the probabilities of each of the food type categories.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p &lt;- predict(fit4, type=&quot;probs&quot;, newdata=mydat[,1:3])</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.p</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rep<br>
+  1&nbsp; 0.029671502 0.4521032 0.41285699 0.09380190 0.01156641<br>
+  2&nbsp; 0.070400215 0.5353040 0.09309885 0.25374163 0.04745531<br>
+  3&nbsp; 0.008818267 0.2581872 0.60189518 0.05387241 0.07722691<br>
+  4&nbsp; 0.035892547 0.1842997 0.51683770 0.17420330 0.08876673<br>
+  5&nbsp; 0.081071082 0.6574394 0.13967877 0.09791193 0.02389880<br>
+  6&nbsp; 0.140898571 0.5701968 0.02307179 0.19400899 0.07182382<br>
+  7&nbsp; 0.029419560 0.4584368 0.24864408 0.06866206 0.19483754<br>
+  8&nbsp; 0.108222209 0.2957526 0.19296148 0.20066241 0.20240133<br>
+  9&nbsp; 0.029671502 0.4521032 0.41285699 0.09380190 0.01156641<br>
+  10 0.070400215 0.5353040 0.09309885 0.25374163 0.04745531<br>
+  11 0.008818267 0.2581872 0.60189518 0.05387241 0.07722691<br>
+  12 0.035892547 0.1842997 0.51683770 0.17420330 0.08876673<br>
+  13 0.081071082 0.6574394 0.13967877 0.09791193 0.02389880<br>
+  14 0.140898571 0.5701968 0.02307179 0.19400899 0.07182382<br>
+  15 0.029419560 0.4584368 0.24864408 0.06866206 0.19483754<br>
+16 0.108222209 0.2957526 0.19296148 0.20066241 0.20240133</span>
+<p>Next I obtain the expected counts. For this I need to multiply the probabilities in each row of <span class="style8">out.p</span> by the  number of observations that were observed to have that predictor combination, <span class="style8">mydat$Freq</span>. To accomplish this I  multiply the matrix by the vector (yielding the so-called Hadamard product of two matrices).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.freq &lt;- out.p*mydat$Freq</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.freq</div>
+<span class="style24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bird&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fish&nbsp;&nbsp;&nbsp;&nbsp; invert&nbsp;&nbsp;&nbsp;&nbsp; other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rep<br>
+1&nbsp; 0.41540103&nbsp; 6.3294448&nbsp; 5.7799978 1.3132266 0.1619297<br>
+2&nbsp; 1.83040560 13.9179036&nbsp; 2.4205701 6.5972825 1.2338381<br>
+3&nbsp; 0.13227400&nbsp; 3.8728086&nbsp; 9.0284277 0.8080861 1.1584036<br>
+4&nbsp; 0.43071057&nbsp; 2.2115967&nbsp; 6.2020524 2.0904396 1.0652007<br>
+5&nbsp; 0.81071082&nbsp; 6.5743942&nbsp; 1.3967877 0.9791193 0.2389880<br>
+6&nbsp; 1.26808714&nbsp; 5.1317715&nbsp; 0.2076461 1.7460809 0.6464144<br>
+7&nbsp; 0.05883912&nbsp; 0.9168735&nbsp; 0.4972882 0.1373241 0.3896751<br>
+8&nbsp; 0.10822221&nbsp; 0.2957526&nbsp; 0.1929615 0.2006624 0.2024013<br>
+9&nbsp; 0.80113055 12.2067864 11.1471387 2.5326514 0.3122930<br>
+10 0.91520280&nbsp; 6.9589518&nbsp; 1.2102851 3.2986412 0.6169191<br>
+11 0.04409133&nbsp; 1.2909362&nbsp; 3.0094759 0.2693620 0.3861345<br>
+12 0.43071057&nbsp; 2.2115967&nbsp; 6.2020524 2.0904396 1.0652007<br>
+13 0.97285298&nbsp; 7.8892731&nbsp; 1.6761452 1.1749432 0.2867855<br>
+14 0.98628999&nbsp; 3.9913778&nbsp; 0.1615025 1.3580629 0.5027667<br>
+15 0.76490855 11.9193557&nbsp; 6.4647461 1.7852136 5.0657761<br>
+16 3.03022184&nbsp; 8.2810720&nbsp; 5.4029214 5.6185474 5.6672374</span>
+<p>I verify that this was done correctly by summing across each row to see if I get the correct total.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> apply(out.freq, 1, sum)</div>
+<span class="style24">  &nbsp;1&nbsp; 2&nbsp; 3&nbsp; 4&nbsp; 5&nbsp; 6&nbsp; 7&nbsp; 8&nbsp; 9 10 11 12 13 14 15 16 <br>
+  14 26 15 12 10&nbsp; 9&nbsp; 2&nbsp; 1 27 13&nbsp; 5 12 12&nbsp; 7 26 28 </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> mydat$Freq</div>
+<span class="style24">  &nbsp;[1] 14 26 15 12 10&nbsp; 9&nbsp; 2&nbsp; 1 27 13&nbsp; 5 12 12&nbsp; 7 26 28</span>
+<p><a name="matrix"></a>Next I organize the observed counts in a matrix so that they are arranged in the same manner as the expected counts. For this I use the <span class="style8">Freq</span> variable, column 5, of the <span class="style8">alli.dat </span>data frame created earlier. The five columns of the matrix need to be populated with values one row at a time. This can be accomplished with the <span class="style221">byrow=T</span> argument of <span class="style104">matrix</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.obs &lt;- matrix(alli.dat[,5], ncol=5, byrow=T)</div>
+<p>Next I write a function to calculate the G-statistic. We need to treat the occurrences of <em>O<sub>i</sub></em> = 0 as special cases because the log of zero is undefined. Using the fact that <img src="../../images/lectures/lecture40/loglimit.gif" alt="log limit" width="117" height="33" align="absmiddle"> we see that these observations  contribute zero to the lack of fit . Thus we can carry out the calculation using the <span class="style104">ifelse</span> function as follows.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">gtest.func &lt;- function(O,E) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">result &lt;- ifelse(O==0, 0, 2*O*log(O/E))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">sum(result)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>I verify that the function returns the actual value of the test statistic when it is given the actual data.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">actual &lt;- gtest.func(out.obs, out.freq)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> actual</div>
+<span class="style24">[1] </span><span class="style25">52.47849</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> anova(fit.4,fit.S)</div>
+<span class="style24">Likelihood ratio tests of Multinomial Models</span>
+<p><span class="style24">Response: food<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Resid. df Resid. Dev&nbsp;&nbsp; Test&nbsp;&nbsp;&nbsp; Df LR stat.&nbsp;&nbsp; Pr(Chi)<br>
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lake + size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp; 540.0803&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+  2 lake * size * gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 256&nbsp;&nbsp; 487.6018 1 vs 2&nbsp;&nbsp;&nbsp; 44 </span><span class="style25">52.47848</span><span class="style24"> 0.1783716</span>
+<p><a name="rmultinom" id="rmultinom"></a>The results agree so we're ready to do the simulation. To generate new multinomial data I use the <span class="style1021">rmultinom</span> function. It takes  three arguments: </p>
+<ol>
+  <li>the number of observations to generate, </li>
+  <li><span class="style221">size</span> the value of <em>n</em> for the multinomial distribution, and </li>
+  <li><span class="style221">prob</span> a vector of probabilities. </li>
+</ol>
+<p>We need to carry out this calculation on the matrix of predicted probabilities one row at a time using the corresponding value of <span class="style8">mydat$Freq</span> for <em>n</em>. Written as a function this takes the following form.</p>
+<div class="style11" style="padding-left: 30px; text-indent:-30px">function(x) rmultinom(1, size=mydat$Freq[x], prob=out.p[x,])</div>
+<p>To apply this separately to each of the sixteen rows of <span class="style8">out.p</span> we can use <span class="style104">sapply.</span></p>
+<div class="style11" style="padding-left: 30px; text-indent:-30px">sapply(1:16,function(x) rmultinom(1, size=mydat$Freq[x], prob=out.p[x,]))</div>
+<p>The <span class="style104">sapply</span> function stores the results in columns whereas we need them stored as rows, so we need to transpose the result.</p>
+<div class="style11" style="padding-left: 30px; text-indent:-30px">t(sapply(1:16, function(x) rmultinom(1, size=mydat$Freq[x], prob=out.p[x,])))</div>
+<p>Finally we need to use the simulated counts to replace the <em>O<sub>i</sub></em> term in the <span class="style8">gtest.func</span> function in order to calculate the G-statistic for the simulated data. Here's the complete version of the final function. The variable <em>y</em> is just a place holder and doesn't actually get used anywhere in the function.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">my.simulation &lt;- function(y) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  out.sim &lt;- t(sapply(1:16, function(x) rmultinom(1, size=mydat$Freq[x], prob=out.p[x,])))</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">  gtest.func(out.sim, out.freq)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>I run the simulation 9999 times and store the results. I first set the random seed so I can recreate the results  later if desired.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">set.seed(10)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sim.results &lt;- sapply(1:9999, my.simulation)</div>
+<p>I append the actual G-statistic calculated using the observed data to the simulation results and calculate the fraction of the simulated results that are equal to or exceed this actual value. This is the simulation-based <em>p</em>-value of the test.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> sum(c(sim.results, actual) &gt;= actual)/10000</div>
+<span class="style24">[1] 0.9123</span>
+<p>Because the <em>p</em>-value is large we fail to find evidence for lack of fit. Fig. 1 shows the distribution of the simulated G-statistics along with location of the observed value of the test statistic in this distribution.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> hist(c(sim.results, actual), xlab=&quot;G-statistic&quot;, main=&quot;Monte Carlo results&quot;)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> points(actual, 0, col=2, pch=8)</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig1.png" width="395" height="305" alt="Fig. 1"></p>
+<p align="center"><span class="styleArial"><strong>Fig. 1</strong> &nbsp;Distribution of simulated G-statistics (</span><span class="style2">*</span><span class="styleArial"> denotes actual value)</span><br>
+</p>
+<h3><a name="quasi"></a>Quasi-Poisson model</h3>
+<p>If a multinomial model exhibits a significant lack of fit, it  means  that one or more of the assumptions of the multinomial model have been violated. These are the same assumptions that are required for the binomial model. </p>
+<ol>
+  <li> Among the trials that comprise a multinomial observation, the category probabilities are constant. The probabilities should not change from trial to trial.</li>
+  <li>The trials making up a multinomial observation are independent.</li>
+  <li>If two  multinomial observations have the same values of the predictors then their category probabilities should be the same.</li>
+</ol>
+<p>The third violation can be partially addressed by including additional predictors to differentiate some of those observations or by including interactions of existing predictors. But beyond making the means model more complicated, dealing with lack of fit problems in a multinomial model is hard because software implementations of standard corrective measures are limited for multinomial models. </p>
+<p>If we formulate the multinomial model as a Poisson model a number of additional options become possible. Violations of the multinomial assumptions translate into overdispersion in the Poisson model. Typical corrections of Poisson overdispersion include replacing the Poisson model with a negative binomial model, adding random effects, or  fitting what's called a quasi-Poisson model. Because of the large number of auxiliary terms that are needed to make the conversion from multinomial model to Poisson, fitting a negative binomial model or a mixed effects model can be difficult. A quasi-Poisson model on the other hand is easy to fit. It just involves making a post hoc adjustment to the standard errors of the Poisson model by inflating them with a measure of the overdispersion, the Pearson deviance divided by its degrees of freedom.</p>
+<p>In our current example, if we had found that the  multinomial model did not fit, and assuming that  adding  more predictors and  interactions did not help, we could refit the  model as a quasi-Poisson model using the <span class="style221">family=quasipoisson</span> argument of <span class="style104">glm</span>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">glm4.quasi &lt;- glm(Freq ~ lake * size * gender + food + food:lake + food:size, <span class="style42">family = quasipoisson</span>, data = alli.dat)</div>
+<p><a name="grep"></a>To avoid looking at all of the coefficients in the summary table I use the <span class="style1021">grep</span> function to locate those coefficients that contain &quot;food&quot; in their name. The first argument to <span class="style1021">grep</span> is the pattern to search for and the second argument is the object to be searched. In the call below I search the row names of the coefficient matrix for the string 'food'.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> grep('food', rownames(summary(glm4)$coefficients))</div>
+<span class="style24">[1]  7  8  9 10 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33</span>
+<p>The first four listed occurrences correspond to the main effects of food, so I skip those and extract  the remaining entries from both the Poisson and quasi-Poisson models.</p>
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#Poisson model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(summary(glm4)$coefficients[18:33,],3)</div>
+ <span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error z value Pr(&gt;|z|)<br>
+  lakehancock:foodfish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.695&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.781&nbsp; -0.890&nbsp;&nbsp;&nbsp; 0.374<br>
+  lakeoklawaha:foodfish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.653&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.202&nbsp;&nbsp; 0.543&nbsp;&nbsp;&nbsp; 0.587<br>
+  laketrafford:foodfish&nbsp;&nbsp;&nbsp;&nbsp; -1.088&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.842&nbsp; -1.292&nbsp;&nbsp;&nbsp; 0.196<br>
+  lakehancock:foodinvert&nbsp;&nbsp;&nbsp; -2.353&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.934&nbsp; -2.521&nbsp;&nbsp;&nbsp; 0.012<br>
+  lakeoklawaha:foodinvert&nbsp;&nbsp;&nbsp; 1.590&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.228&nbsp;&nbsp; 1.295&nbsp;&nbsp;&nbsp; 0.195<br>
+  laketrafford:foodinvert&nbsp;&nbsp;&nbsp; 0.034&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.863&nbsp;&nbsp; 0.040&nbsp;&nbsp;&nbsp; 0.968<br>
+  lakehancock:foodother&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.131&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.892&nbsp;&nbsp; 0.147&nbsp;&nbsp;&nbsp; 0.883<br>
+  lakeoklawaha:foodother&nbsp;&nbsp;&nbsp;&nbsp; 0.659&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.368&nbsp;&nbsp; 0.481&nbsp;&nbsp;&nbsp; 0.630<br>
+  laketrafford:foodother&nbsp;&nbsp;&nbsp;&nbsp; 0.429&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.938&nbsp;&nbsp; 0.457&nbsp;&nbsp;&nbsp; 0.648<br>
+  lakehancock:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.548&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.372&nbsp;&nbsp; 0.399&nbsp;&nbsp;&nbsp; 0.690<br>
+  lakeoklawaha:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.112&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.586&nbsp;&nbsp; 1.962&nbsp;&nbsp;&nbsp; 0.050<br>
+  laketrafford:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.847&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.317&nbsp;&nbsp; 1.402&nbsp;&nbsp;&nbsp; 0.161<br>
+  size&gt;2.3:foodfish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.631&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.642&nbsp; -0.982&nbsp;&nbsp;&nbsp; 0.326<br>
+  size&gt;2.3:foodinvert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.089&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.694&nbsp; -3.010&nbsp;&nbsp;&nbsp; 0.003<br>
+  size&gt;2.3:foodother&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.962&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.713&nbsp; -1.350&nbsp;&nbsp;&nbsp; 0.177<br>
+  size&gt;2.3:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.279&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.806&nbsp; -0.347&nbsp;&nbsp;&nbsp; 0.729</span>
+  <div class="style15" style="padding-left: 30px; text-indent:-30px">#Quasi-Poisson model </div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> round(summary(glm4.quasi)$coefficients[18:33,],3)</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error t value Pr(&gt;|t|)<br>
+  lakehancock:foodfish &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0.695&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.897&nbsp; -0.775&nbsp;&nbsp;&nbsp; 0.443<br>
+  lakeoklawaha:foodfish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.653&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.380&nbsp;&nbsp; 0.473&nbsp;&nbsp;&nbsp; 0.638<br>
+  laketrafford:foodfish&nbsp;&nbsp;&nbsp;&nbsp; -1.088&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.967&nbsp; -1.125&nbsp;&nbsp;&nbsp; 0.266<br>
+  lakehancock:foodinvert&nbsp;&nbsp;&nbsp; -2.353&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.072&nbsp; -2.195&nbsp;&nbsp;&nbsp; 0.033<br>
+  lakeoklawaha:foodinvert&nbsp;&nbsp;&nbsp; 1.590 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.410&nbsp;&nbsp; 1.128&nbsp;&nbsp;&nbsp; 0.265<br>
+  laketrafford:foodinvert&nbsp;&nbsp;&nbsp; 0.034&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.991&nbsp;&nbsp; 0.035&nbsp;&nbsp;&nbsp; 0.973<br>
+  lakehancock:foodother&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.131&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.024&nbsp;&nbsp; 0.128&nbsp;&nbsp;&nbsp; 0.899<br>
+  lakeoklawaha:foodother&nbsp;&nbsp;&nbsp;&nbsp; 0.659&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.571&nbsp;&nbsp; 0.419&nbsp;&nbsp;&nbsp; 0.677<br>
+  laketrafford:foodother&nbsp;&nbsp;&nbsp;&nbsp; 0.429&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.077&nbsp; &nbsp;0.398&nbsp;&nbsp;&nbsp; 0.693<br>
+  lakehancock:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.548&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.575&nbsp;&nbsp; 0.348&nbsp;&nbsp;&nbsp; 0.730<br>
+  lakeoklawaha:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.112&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.821&nbsp;&nbsp; 1.709&nbsp;&nbsp;&nbsp; 0.095<br>
+  laketrafford:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.847&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.513&nbsp;&nbsp; 1.221&nbsp;&nbsp;&nbsp; 0.228<br>
+  size&gt;2.3:foodfish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.631&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.738&nbsp; -0.855&nbsp;&nbsp;&nbsp; 0.397<br>
+  size&gt;2.3:foodinvert&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -2.089&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.797&nbsp; -2.621&nbsp;&nbsp;&nbsp; 0.012<br>
+  size&gt;2.3:foodother&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.962&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.818&nbsp; -1.176&nbsp;&nbsp;&nbsp; 0.246<br>
+size&gt;2.3:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.279&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.926&nbsp; -0.302&nbsp;&nbsp;&nbsp; 0.764</span>
+<p>What we see is that the coefficient estimates of the two models are identical, but the reported standard errors of the quasi-Poisson model are larger to account for the overdispersion. This is a very crude correction but it is better than doing nothing. Of course for the current model we've already demonstrated that making this correction is unnecessary.</p>
+<h2><a name="graphical"></a>Graphical summary of the results</h2>
+<p>Because multinomial models generate a  large number of parameter estimates, it is almost mandatory that we try to summarize the results using graphs. Panel graphs are ideally suited for this. There are a number of ways the results could be presented and in practice it might be useful to consider more than one. </p>
+<ol>
+  <li>Both lake and food type have multiple categories. It might be interesting to compare  food type preference within a lake. On the other hand we could also compare the effect of lake on food type preference. This choice switches which variable plays the role of a conditioning variable in a panel graph. </li>
+  <li>The natural way to describe the effects of predictors in  logistic regression is with odds ratios. One can display  odds ratios  or log odds ratios. While odds ratios are more interpretable they are also more variable and the confidence intervals of odds ratios that are imprecisely measured will tend to obscure the rest.</li>
+</ol>
+<p>As an illustration I summarize the lake effect on food choice using the results from the Poisson fit. As we discovered above these coefficients occupy rows 18:29 of the coefficient table. I extract that portion of the coefficient table as well as the corresponding portion of the variance-covariance matrix of the parameter estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.coef &lt;- summary(glm4)$coefficients[18:29,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.vcov &lt;- vcov(glm4)[18:29,18:29]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.coef)</div>
+<span class="style24">  &nbsp;[1] &quot;lakehancock:foodfish&quot;&nbsp;&nbsp;&nbsp; &quot;lakeoklawaha:foodfish&quot;&nbsp;&nbsp; &quot;laketrafford:foodfish&quot;&nbsp; <br>
+  &nbsp;[4] &quot;lakehancock:foodinvert&quot;&nbsp; &quot;lakeoklawaha:foodinvert&quot; &quot;laketrafford:foodinvert&quot;<br>
+  &nbsp;[7] &quot;lakehancock:foodother&quot;&nbsp;&nbsp; &quot;lakeoklawaha:foodother&quot;&nbsp; &quot;laketrafford:foodother&quot; <br>
+[10] &quot;lakehancock:foodrep&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lakeoklawaha:foodrep&quot;&nbsp;&nbsp;&nbsp; &quot;laketrafford:foodrep&quot;&nbsp;&nbsp; </span>
+<p>Currently the coefficients are organized in a way that facilitates comparisons across lakes for a given food preference. To compare food preferences within a lake we need to change this. We can sort the row names of the coefficient matrix or we can refit the model with the order of food and lake in the interaction term switched. I choose to sort the row names.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"></div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">sort(rownames(out.coef))</div>
+<span class="style24">  &nbsp;[1] &quot;lakehancock:foodfish&quot;&nbsp;&nbsp;&nbsp; &quot;lakehancock:foodinvert&quot;&nbsp; &quot;lakehancock:foodother&quot;&nbsp; <br>
+  &nbsp;[4] &quot;lakehancock:foodrep&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lakeoklawaha:foodfish&quot;&nbsp;&nbsp; &quot;lakeoklawaha:foodinvert&quot;<br>
+  &nbsp;[7] &quot;lakeoklawaha:foodother&quot;&nbsp; &quot;lakeoklawaha:foodrep&quot;&nbsp;&nbsp;&nbsp; &quot;laketrafford:foodfish&quot;&nbsp; <br>
+  [10] &quot;laketrafford:foodinvert&quot; &quot;laketrafford:foodother&quot;&nbsp; &quot;laketrafford:foodrep&quot;&nbsp;&nbsp; </span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> neworder &lt;- order(rownames(out.coef))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> neworder</div>
+<span class="style24">  &nbsp;[1]&nbsp; 1&nbsp; 4&nbsp; 7 10&nbsp; 2&nbsp; 5&nbsp; 8 11&nbsp; 3&nbsp; 6&nbsp; 9 12</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.coef &lt;- out.coef[neworder,]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.vcov &lt;- out.vcov[neworder, neworder]</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">out.coef</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estimate Std. Error&nbsp;&nbsp;&nbsp;&nbsp; z value&nbsp;&nbsp; Pr(&gt;|z|)<br>
+  lakehancock:foodfish&nbsp;&nbsp;&nbsp; -0.69511756&nbsp; 0.7812634 -0.88973524 0.37360807<br>
+  lakehancock:foodinvert&nbsp; -2.35347616&nbsp; 0.9337121 -2.52055866 0.01171687<br>
+  lakehancock:foodother&nbsp;&nbsp;&nbsp; 0.13107865&nbsp; 0.8919677&nbsp; 0.14695448 0.88316795<br>
+  lakehancock:foodrep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.54765906&nbsp; 1.3715027&nbsp; 0.39931315 0.68966248<br>
+  lakeoklawaha:foodfish&nbsp;&nbsp;&nbsp; 0.65320776&nbsp; 1.2019865&nbsp; 0.54344016 0.58682678<br>
+  lakeoklawaha:foodinvert&nbsp; 1.59042709&nbsp; 1.2276745&nbsp; 1.29547941 0.19515490<br>
+  lakeoklawaha:foodother&nbsp;&nbsp; 0.65886083&nbsp; 1.3684827&nbsp; 0.48145354 0.63019420<br>
+  lakeoklawaha:foodrep&nbsp;&nbsp;&nbsp;&nbsp; 3.11207973&nbsp; 1.5859426&nbsp; 1.96229032 0.04972869<br>
+  laketrafford:foodfish&nbsp;&nbsp; -1.08776676&nbsp; 0.8416687 -1.29239301 0.19622107<br>
+  laketrafford:foodinvert&nbsp; 0.03421807&nbsp; 0.8631505&nbsp; 0.03964323 0.96837756<br>
+  laketrafford:foodother&nbsp;&nbsp; 0.42860197&nbsp; 0.9382993&nbsp; 0.45678599 0.64782488<br>
+laketrafford:foodrep&nbsp;&nbsp;&nbsp;&nbsp; 1.84748655&nbsp; 1.3173176&nbsp; 1.40246100 0.16077763</span>
+<p><a name="expandgrid"></a>I collect the estimates and standard errors in a single data frame to which I add the two variables that make up the interaction term. An easy way of  generating the variables is with the <span class="style1021">expand.grid</span> function, It combines the different levels of two vectors in all possible ways.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> expand.grid(1:4, levels(alligators$lake)[2:4])</div>
+<span class="style24">&nbsp;&nbsp; Var1&nbsp;&nbsp;&nbsp;&nbsp; Var2<br>
+1&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; hancock<br>
+2&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp; hancock<br>
+3&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; hancock<br>
+4&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; hancock<br>
+5&nbsp;&nbsp;&nbsp;&nbsp; 1 oklawaha<br>
+6&nbsp;&nbsp;&nbsp;&nbsp; 2 oklawaha<br>
+7&nbsp;&nbsp;&nbsp;&nbsp; 3 oklawaha<br>
+8&nbsp;&nbsp;&nbsp;&nbsp; 4 oklawaha<br>
+9&nbsp;&nbsp;&nbsp;&nbsp; 1 trafford<br>
+10&nbsp;&nbsp;&nbsp; 2 trafford<br>
+11&nbsp;&nbsp;&nbsp; 3 trafford<br>
+12&nbsp;&nbsp;&nbsp; 4 trafford</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod &lt;- data.frame(expand.grid(1:4, levels(alligators$lake)[2:4]), est=out.coef[,1], se=out.coef[,2])</div>
+<p>The order created by <span class="style1021">expand.grid</span> matches the row labels of the coefficient table.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> rownames(out.mod)</div>
+<span class="style24">  &nbsp;[1] &quot;lakehancock:foodfish&quot;&nbsp;&nbsp;&nbsp; &quot;lakehancock:foodinvert&quot;&nbsp; &quot;lakehancock:foodother&quot;&nbsp; <br>
+  &nbsp;[4] &quot;lakehancock:foodrep&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;lakeoklawaha:foodfish&quot;&nbsp;&nbsp; &quot;lakeoklawaha:foodinvert&quot;<br>
+  &nbsp;[7] &quot;lakeoklawaha:foodother&quot;&nbsp; &quot;lakeoklawaha:foodrep&quot;&nbsp;&nbsp;&nbsp; &quot;laketrafford:foodfish&quot;&nbsp; <br>
+[10] &quot;laketrafford:foodinvert&quot; &quot;laketrafford:foodother&quot;&nbsp; &quot;laketrafford:foodrep&quot;</span>
+<p>I wish to display 95% confidence intervals for the log odds ratios as well as a second set of confidence intervals that permit making pairwise comparisons  between the log odds ratios displayed in the same panel. I extract the functions and code for doing this from <a href="lecture6.htm#implementing">lecture 6</a>.<br>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func1 &lt;- function(alpha, model, sig) 1 - pt(-qt(1-alpha/2, model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*%c (1,-1)), model$df.residual) - pt(qt(1-alpha/2, model$df.residual) * sum(sqrt(diag(sig))) / sqrt(c(1,-1) %*% sig %*% c(1,-1)), model$df.residual, lower.tail=F)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">nor.func2 &lt;- function(a,model,sigma) nor.func1(a, model, sigma)-.95</div>
+
+
+
+<p>I organize the remaining code as a function so that I can obtain confidence levels only for the estimates that will get displayed in a single panel. The four arguments of the function correspond to the row numbers of the <span class="style8">out.mod</span> data frame, the number of estimates being compared (4), the fitted <span class="style104">glm</span> model, and the variance-covariance matrix of the parameter estimates.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.func &lt;- function(rowvals, n, glm.model, glm.vmat) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">xvec1b &lt;- numeric(n*(n-1)/2)</div>
+  <div class="style10" style="padding-left: 60px; text-indent:-30px"> vmat &lt;- glm.vmat[rowvals,rowvals]</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px">  ind &lt;- 1</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px">  for(i in 1:(n-1)) {</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px"> for(j in (i+1):n){</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px">  sig &lt;- vmat[c(i,j), c(i,j)]</div>
+<div class="style15" style="padding-left: 120px; text-indent:-30px">  #solve for alpha</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px">  xvec1b[ind] &lt;- uniroot(function(x) nor.func2(x, glm.model, sig), c(.001,.999))$root</div>
+<div class="style10" style="padding-left: 120px; text-indent:-30px">  ind &lt;- ind+1</div>
+<div class="style10" style="padding-left: 90px; text-indent:-30px">  }} </div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> 1-xvec1b</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<p>Because each panel displays four food type odds ratios there are six pairwise comparisons  possible in each panel.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals1 &lt;- ci.func(1:4, 4, glm4, out.vcov)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals2 &lt;- ci.func(5:8, 4, glm4, out.vcov)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals3 &lt;- ci.func(9:12, 4, glm4, out.vcov)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals1</div>
+<span class="style24">  [1] 0.5248087 </span><span class="style25">0.4946145</span><span class="style24"> 0.7268751 0.5836296 0.7338971 0.7321855</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals2</div>
+<span class="style24">  [1] </span><span class="style25">0.3026384</span><span class="style24"> 0.4542485 0.5767233 0.4605825 0.5806192 0.6177434</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals3</div>
+<span class="style24">[1] </span><span class="style25">0.4350258</span><span class="style24"> 0.5146393 0.6969407 0.5128226 0.6965664 0.7062488</span>
+<p>The confidence levels are quite variable. I begin by producing the graph using the smallest reported confidence levels for each panel. If a pairwise comparison does not show up as  significant at this level then it will not be significant at any higher level either. On the other hand, pairwise comparisons that look to be significantly different at this setting could appear to be different only because the setting is too low relative to what it should be. Except for the changing the labels on the graph the code shown below is mostly unaltered from what was given in <a href="lecture6.htm#producing">lecture 6</a>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.val &lt;- c(rep(min(vals1),4), rep(min(vals2),4), rep(min(vals3),4))</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence intervals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low95 &lt;- out.mod$est - 1.96 * out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up95 &lt;- out.mod$est + 1.96 * out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div>
+<p>I generate the lattice plot.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(lattice)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dotplot(factor(Var1, levels=1:4, labels=paste(c(&quot;fish&quot;, &quot;invertebrate&quot;, &quot;other&quot;, &quot;reptile&quot;), ' vs bird', sep=''))~est|factor(Var2, levels=levels(Var2), labels=paste('Lake ', c('Hancock', 'Oklawaha', 'Trafford'),' vs Lake George', sep='')), data=out.mod, xlab='log odds ratio', prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(3,1),
+panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px"> #new line</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.segments(out.mod$low50[subscripts], y, out.mod$up50[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }, scales=list(x='free'),strip=strip.custom(par.strip.text = list(cex=0.9)))</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig2.png" width="620" height="360" alt="fig. 2"></p>
+<p align="center" class="styleArial"><strong>Fig. 2a</strong> &nbsp;Effect of lake on food choice log odds ratios (using smallest confidence levels)</p>
+<p>In the output from the <span class="style8">ci.func</span> function, the smallest confidence levels correspond to  the 1 vs 2 comparisons in  panels 2 and 3, and the 1 versus 3 comparison in panel 1 (number 1 corresponds to the bottom of the panel). I examine things one panel at a time.</p>
+<p><strong>Panel 1</strong></p>
+<p>The 1 versus 3 comparison is not significant so we can raise the confidence level to the next lowest value, 0.5248087. This means recalculating the confidence intervals and then redoing the plot. The result is shown below (leaving out the lattice code).</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> vals1</div>
+<span class="style24">[1] 0.5248087 0.4946145 0.7268751 0.5836296 0.7338971 0.7321855</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.val &lt;- c(rep(vals1[1],4), rep(min(vals2),4), rep(min(vals3),4))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig2pt1.png" width="620" height="360" alt="fig 2b"></p>
+<p align="center" class="styleArial"><strong>Fig. 2b</strong> &nbsp;Effect of lake on food choice log odds ratios (using 2nd smallest confidence level in panel 1)</p>
+<p>At this point we see that the fish and invertebrate intervals do not overlap using the correct confidence level, so these two log odds ratios are clearly significant. The 1 versus 4 comparison is not significant. Raising the the confidence level to 0.7268 (the suggested value in the <span class="style8">vals1</span> vector) will only increase the overlap, so we've completed the comparisons involving fish.</p>
+<p>Turning to the remaining comparisons the &quot;other&quot; versus bird interval overlaps the reptile vs bird interval with the confidence level set at 0.52. If we raise it to the recommended level of 0.73 they will overlap even more. So, we don't have to do anything more with this one either. The only comparisons left to consider are invertebrate versus bird compared with other versus bird and reptile versus bird. Currently they don't overlap but we have the confidence levels set too low to be able to make these comparisons. I try changing the levels to their proper values and see if the intervals are still distinct.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val &lt;- c(vals1[1], rep(vals1[5],3), rep(min(vals2),4), rep(min(vals3),4))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val</div>
+
+<span class="style24">  &nbsp;[1] 0.5248087 0.7338971 0.7338971 0.7338971 0.3026384 0.3026384 0.3026384 0.3026384<br>
+  &nbsp;[9] 0.4350258 0.4350258 0.4350258 0.4350258</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- out.mod$est + out.mod$se * qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- out.mod$est + out.mod$se * qnorm(1-(1-ci.val)/2)</div><br>
+
+<p align="center"><img src="../../images/lectures/lecture40/fig2pt2.png" width="620" height="360" alt="fig 2c"></p>
+<p align="center" class="styleArial"><strong>Fig. 2c</strong> &nbsp;Effect of lake on food choice log odds ratios (using the highest confidence level for panel 1)</p>
+<p>From the graph, invertebrates versus bird  is different from other versus bird as well as reptile versus bird. Changing this last level  screwed up the fish and invertebrate comparison; they now overlap. A solution is to just use the previous settings with the confidence level set at 0.524, vals1[4] for all four points. The actual choice of confidence levels is not important as long as the correct relationships between the estimates are shown. </p>
+<p><strong>Panels 2 and 3</strong></p>
+<p>We still have to do the same thing separately for panels 2 and 3. I spare you the details and just list the results. In panel 2 it turns out that 1 is different from 4 but nobody else is significantly different. In panel 3, 1 turns out to be different from 2, 3, and 4, but no one else is different. The  final settings I used to get all of these relationships to display correctly are given below and they are not unique. The specified levels  don't follow much of a pattern except that they do seem to yield the correct display of the relationships between the   different log odds ratios.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> ci.val &lt;- c(rep(vals1[1],4), vals2[1], rep(0.58,3), vals3[1], vals3[4], rep(vals3[5],2))<br>
+</div>
+<div class="style15" style="padding-left: 30px; text-indent:-30px"> #confidence intervals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low95 &lt;- out.mod$est-1.96*out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up95 &lt;- out.mod$est+1.96*out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$low50 &lt;- out.mod$est+out.mod$se*qnorm((1-ci.val)/2)</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> out.mod$up50 &lt;- out.mod$est+out.mod$se*qnorm(1-(1-ci.val)/2)</div>
+ <br>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+ <div class="style10" style="padding-left: 60px; text-indent:-30px"> list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dotplot(factor(Var1, levels=1:4, labels=paste(c(&quot;fish&quot;, &quot;invertebrate&quot;,&quot;other&quot;, &quot;reptile&quot;), ' vs bird', sep=''))~est|factor(Var2, levels=levels(Var2), labels=paste('Lake ',c('Hancock','Oklawaha', 'Trafford'),' vs Lake George', sep='')), data=out.mod, xlab='log odds ratio', prepanel=myprepanel.ci, lx=out.mod$low95, ux=out.mod$up95, layout=c(3,1),
+  panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.dotplot(x, y, col=4, pch='+', cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.segments(out.mod$low95[subscripts], y, out.mod$up95[subscripts], y, lwd=3, col='dodgerblue4', lineend=1)</div>
+ <div class="style15" style="padding-left: 60px; text-indent:-30px"> #new line</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.segments(out.mod$low50[subscripts], y, out.mod$up50[subscripts], y, lwd=6, col='dodgerblue1', lineend=1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='white', pch=16, cex=1.1)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.points(x, y, col='dodgerblue4', pch=1, cex=1.2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px"> panel.abline(v=0, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> }, scales=list(x='free'), strip=strip.custom(par.strip.text = list(cex=0.9)))</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig3.png" width="620" height="360" alt="fig. 3"></p>
+<p align="center" class="styleArial"><strong>Fig. 3</strong> &nbsp;Effect of lake on food choice log odds ratios (final choices for the confidence levels)</p>
+<p>From Fig. 3 we see that two of the 95% confidence intervals for the log odds ratios don't include zero. Thus we can say that the odds of choosing invertebrates over birds is significantly lower in Lake Hancock than in Lake George. On the other hand the odds of choosing reptiles over birds is significantly higher in Lake Oklawaha than in Lake George. None of the remaining log odds ratios are statistically significant.</p>
+<p>Using the pairwise confidence intervals we can look for differences among the food preference odds ratios for the same two lakes. We see that the odds ratio of choosing invertebrates over  birds in Lake Hancock versus Lake George is significantly lower than the other three odds ratios for these two lakes: fish versus  bird,  &quot;other&quot; versus  bird, and reptile versus bird. In the Lake Oklawaha versus Lake George comparison, the odds ratio for choosing fish over  bird is significantly lower than the odds ratio of  choosing reptile over  bird. Finally in the Lake Trafford versus Lake George comparisons the odds ratio for choosing fish over  bird is significantly lower than all three of the others: choosing invertebrate over  bird, &quot;other&quot; over bird, and reptile over  bird.</p>
+<p>To plot odds ratios instead of log odds ratios we need to exponentiate the individual estimates and their confidence intervals everywhere they appear in the above code. This doesn't provide a useful picture for this example because some of the estimates are very imprecise. When we exponentiate them they end up dominating the display and making it difficult to draw comparisons across groups. To generate a picture that is at least semi-useful I truncated the confidence levels for the odds ratios at 30 and changed the plotting symbol for the point estimate. The changes are highlighted in the code below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">ci.val &lt;- c(rep(vals1[1],4), vals2[1], rep(0.58,3), vals3[1], vals3[4], rep(vals3[5],2))</div>
+
+<div class="style15" style="padding-left: 30px; text-indent:-30px">#confidence intervals</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$low95 &lt;- out.mod$est-1.96*out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up95 &lt;- out.mod$est+1.96*out.mod$se</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$low50 &lt;- out.mod$est+out.mod$se*qnorm((1-ci.val)/2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">out.mod$up50 &lt;- out.mod$est+out.mod$se*qnorm(1-(1-ci.val)/2)</div>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">myprepanel.ci &lt;- function(x,y,lx,ux,subscripts,...) {</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">list(xlim=range(x, ux[subscripts], lx[subscripts], finite=TRUE))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">dotplot(factor(Var1, levels=1:4, labels=paste(c(&quot;fish&quot;, &quot;invertebrate&quot;,&quot;other&quot;, &quot;reptile&quot;), ' vs bird', sep=''))~<span class="style42">exp(est)</span>|factor(Var2, levels=levels(Var2), labels=paste('Lake ',c('Hancock','Oklawaha', 'Trafford'),' vs Lake George', sep='')), data=out.mod, <span class="style42">xlab='Odds ratio'</span>, prepanel=myprepanel.ci, lx=<span class="style42">exp(out.mod$low95)</span>, ux=<span class="style42">ifelse(exp(out.mod$up95)&lt;30, exp(out.mod$up95),30)</span>, layout=c(3,1), panel=function(x, y, subscripts){</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.dotplot(x, y, col=4, <span class="style42">pch='+'</span>, cex=.6)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.segments(<span class="style42">exp(out.mod$low95[subscripts])</span>, y, <span class="style42">exp(out.mod$up95[subscripts])</span>, y, lwd=3, col='dodgerblue4', lineend=1)</div>
+<div class="style15" style="padding-left: 60px; text-indent:-30px">#new line</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.segments(<span class="style42">exp(out.mod$low50[subscripts])</span>, y, <span class="style42">exp(out.mod$up50[subscripts])</span>, y, lwd=6, col='dodgerblue1', lineend=1)</div>
+
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.points(x, y, col='dodgerblue4', pch='|', cex=2, lwd=2)</div>
+<div class="style10" style="padding-left: 60px; text-indent:-30px">panel.abline(<span class="style42">v=1</span>, col=2, lty=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">}, scales=list(x='free'), strip=strip.custom(par.strip.text = list(cex=0.9)))</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig3pt5.png" width="620" height="360" alt="odds ratios"></p>
+<p align="center" class="styleArial"><strong>Fig. 4</strong> &nbsp;Effect of lake on food choice  odds ratios (truncated at the right)</p>
+<h2><a name="ordinal"></a>Ordinal logistic regression</h2>
+<p>The data set <a href="../../data/trees.csv">trees.csv</a> is a portion of the North Carolina Vegetation Survey database and consists of the canopy cover values of individual woody plant species from  various plots in North Carolina. Because of the difficulty of measuring canopy cover in the field, cover is often recorded on an ordinal scale. The categories used in this database and their roughly equivalent percentage values are: 1 = trace, 2 = 0&ndash;1%, 3 = 1&ndash;2%, 4 = 2&ndash;5%,  5=5&ndash;10%, 6 = 10&ndash;25%, 7 = 25-50%, 8 = 50&ndash;75%, 9 = 75&ndash;95%, 10=95&ndash;100%. A portion of the data set is shown below.
+<div class="style10" style="padding-left: 30px; text-indent:-30px">trees &lt;- read.csv('ecol 562/trees.csv')</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> trees[1:12,]</div>
+<span class="style24">&nbsp;&nbsp; Plot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPP&nbsp; U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W date truecover&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logw<br>
+1&nbsp;&nbsp; 503 ACERRUBR&nbsp; 2&nbsp;&nbsp; 2.952756&nbsp;&nbsp;&nbsp; 3.423852 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 1.23076622<br>
+2&nbsp;&nbsp; 506&nbsp; OSTRVIR 80 141.732283&nbsp; 462.600443 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 6.13686371<br>
+3&nbsp;&nbsp; 526&nbsp; CELTOCC&nbsp; 6&nbsp;&nbsp; 6.889764&nbsp;&nbsp; 16.358404 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 2.79474176<br>
+4&nbsp;&nbsp; 526&nbsp; FAGUGRA 13&nbsp; 10.334646&nbsp;&nbsp; 10.081342 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 2.31068638<br>
+5&nbsp;&nbsp; 532&nbsp; QUERFAL&nbsp; 1&nbsp; 50.000000 1963.495408 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 7.58248154<br>
+6&nbsp;&nbsp;&nbsp; 63&nbsp; QUERALB&nbsp; 6&nbsp; 13.779528&nbsp; 101.574275 2001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 4.62079030<br>
+7&nbsp;&nbsp;&nbsp; 67&nbsp; VIBURUF&nbsp; 5&nbsp;&nbsp; 2.460630&nbsp;&nbsp;&nbsp; 0.951070 2001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 -0.05016762<br>
+8&nbsp;&nbsp;&nbsp; 68&nbsp; ULMUALA&nbsp; 5&nbsp;&nbsp; 2.460630&nbsp;&nbsp;&nbsp; 0.951070 2001&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 -0.05016762<br>
+9&nbsp;&nbsp; 988&nbsp; ULMURUB&nbsp; 3&nbsp;&nbsp; 6.397638&nbsp;&nbsp; 11.222626 1999&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; 2.41793191<br>
+10&nbsp;&nbsp;&nbsp; 1&nbsp; FRAX1S1&nbsp; 1&nbsp;&nbsp; 1.476378&nbsp;&nbsp;&nbsp; 1.711926 2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp; 0.53761904<br>
+11&nbsp;&nbsp;&nbsp; 1&nbsp; JUNIVIR&nbsp; 9&nbsp; 12.303150&nbsp;&nbsp; 29.102742 2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp; 3.37083239<br>
+12&nbsp;&nbsp;&nbsp; 1&nbsp; ULMUALA&nbsp; 8&nbsp; 21.653543&nbsp;&nbsp; 50.216496 2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp; 3.91634357</span>
+<p>Because of inter-observer variability in  measuring canopy cover there is interest in developing a regression model that can take as inputs the values of variables that are easily measured at ground level and generate an estimate of canopy cover. The variables <em>U</em>, <em>V</em>, and <em>W</em> in the <span class="style8">trees</span> data frame are examples of such  variables.</p>
+<ul>
+  <li><em>U</em> = number of stems of a given woody plant species in the plot</li>
+  <li><em>V</em> = sum of the stem diameters of all individuals of a given species in the plot</li>
+  <li><em>W</em> = sum of the squared stem diameters of all individuals of a given species in the plot</li>
+</ul>
+<p>For the purpose of this lecture we'll use <em>W</em> alone as a predictor of plot canopy cover.</p>
+<p>As was discussed in <a href="lecture39.htm#ordinal">lecture 39</a>, one way to deal with ordinal data derived from an underlying continuous metric is to treat the scores as if they were measured on a ratio scale and then use them in an ordinary regression model. Based on the percentages these categories are supposed to represent it is pretty clear that the categories are not equally spaced (although they are approximately equally spaced on a log base 2 scale). Another approach is to assign to each category the midpoint of the underlying percentage range and again treat  the result as if it were a continuous measure. We'll pursue a third strategy which is to treat these data as purely ordinal and carry out one of the variations of ordinal logistic regression discussed in <a href="lecture39.htm#taxonomy">lecture 39</a>.</p>
+<p>To simplify things I focus on a single species that is well-represented in the data set. There are 88 different plots in the data frame of which nine species occur in 70% or more of them.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> length(unique(trees$Plot))</div>
+<span class="style24">[1] 88</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(trees$SPP)[table(trees$SPP)&gt;60]</div>
+<span class="style24">ACERRUBR&nbsp; CORNFLO&nbsp; FRAX1S1&nbsp; JUNIVIR&nbsp; LIQUSTY&nbsp; LIRITUL&nbsp; NYSSSYL&nbsp; QUERALB&nbsp; QUERRUB <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 85&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 63&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 67&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 71&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 61 </span>
+<p><em>Cornus florida</em> was found in 85 of the plots and was recorded as having six different cover values. I use it to demonstrate fitting an ordinal logistic regression model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(trees$truecover[trees$SPP==&quot;CORNFLO&quot;])</div>
+<span class="style24">&nbsp;2&nbsp; 3&nbsp; 4&nbsp; 5&nbsp; 6&nbsp; 7 <br>
+  &nbsp;8 22 24 15 11&nbsp; 5</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cornus &lt;- trees[trees$SPP==&quot;CORNFLO&quot;,]</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> dim(cornus)</div>
+<span class="style24">[1] 85&nbsp; 8</span>
+<h3><a name="cumulative"></a>Cumulative logit model</h3>
+<p><a name="polr"></a>A number of R packages can be used to fit the cumulative logit model. A straight-forward implementation is the <span class="style104">polr</span> function of the <span class="style19">MASS</span> package. The only new twist with this function is that it requires an ordered factor, created with <span class="style104">ordered</span> function, as the response variable.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(MASS)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit1 &lt;- polr(ordered(truecover)~W, data=cornus)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit1)</div>
+<span class="style24">Re-fitting to get Hessian</span>
+<p><span class="style24">Call:<br>
+  polr(formula = ordered(truecover) ~ W, data = cornus)</span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp; Value Std. Error t value<br>
+  </span><span class="style25">W 0.02684</span><span class="style24">&nbsp;&nbsp; 0.005049&nbsp;&nbsp; 5.316</span>
+<p><span class="style24">Intercepts:<br>
+  &nbsp;&nbsp;&nbsp; Value&nbsp;&nbsp; Std. Error t value<br>
+  2|3 -1.4356&nbsp; 0.3992&nbsp;&nbsp;&nbsp; -3.5961<br>
+  3|4&nbsp; 0.5211&nbsp; 0.3108&nbsp;&nbsp;&nbsp;&nbsp; 1.6764<br>
+  4|5&nbsp; 2.1478&nbsp; 0.3962&nbsp;&nbsp;&nbsp; &nbsp;5.4217<br>
+  5|6&nbsp; 3.4230&nbsp; 0.5075&nbsp;&nbsp;&nbsp;&nbsp; 6.7444<br>
+  6|7&nbsp; 4.9364&nbsp; 0.6753&nbsp;&nbsp;&nbsp;&nbsp; 7.3103</span>
+<p><span class="style24">Residual Deviance: 247.6201 <br>
+  AIC: 259.6201</span>
+<p>The <span class="style1021">polr</span> function parameterizes the cumulative logit model as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture40/polrlogit.gif" width="357" height="63" alt="polr logit"></p>
+<p>So, the <span class="style1021">polr</span> function models the odds of having a cover value <em>k</em> or less  versus having a cover value greater than <em>k</em>. Because of the negative sign in front  of the regression coefficient  a positive estimate for &beta; means that increased values of  <em>W</em> increase the odds of higher cover values. The reported value of &beta; is 0.027 so we can say that large values of <em>W</em> favor the log odds of being in a larger cover class.</p>
+<p>The cumulative logit model can also be fit with the <span class="style19">VGAM</span> package. This package is quite flexible in the variations of the cumulative logit model that it can fit. To match the sign of &beta; from the <span class="style1021">polr</span> function, we can use the following parameterization.</p>
+<p align="center"><img src="../../images/lectures/lecture40/vglmcumlogit.gif" width="357" height="63" alt="vglm logit"></p>
+<p align="left"><a name="vglm"></a>This parameterization is obtained with the <span class="style104">vglm</span> function by specifying <span class="style221">cumulative</span>  in the <span class="style221">family</span> argument along with the settings of <span class="style221">reverse</span> and <span class="style221">parallel</span> as shown below.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> library(VGAM)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit2 &lt;- vglm(factor(truecover)~W, family=cumulative(reverse=T, parallel=T), data=cornus)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit2)</div>
+<span class="style24">Call:<br>
+  vglm(formula = factor(truecover) ~ W, family = cumulative(reverse = T, <br>
+  &nbsp;&nbsp;&nbsp; parallel = T), data = cornus)</span>
+<p><span class="style24">Pearson Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp;&nbsp; Max<br>
+  logit(P[Y&gt;=2]) -2.2923&nbsp; 0.080029&nbsp; 0.168923&nbsp; 0.484102 0.65649<br>
+  logit(P[Y&gt;=3]) -4.5834 -0.908720&nbsp; 0.156884&nbsp; 0.645716 1.47533<br>
+  logit(P[Y&gt;=4]) -1.4444 -0.631251 -0.221531&nbsp; 0.369025 2.56225<br>
+  logit(P[Y&gt;=5]) -3.3772 -0.239888 -0.136126 -0.092288 4.10734<br>
+  logit(P[Y&gt;=6]) -1.7270 -0.169174 -0.088226 -0.060294 5.42472</span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value Std. Error t value<br>
+  (Intercept):1&nbsp; 1.435673&nbsp; 0.4145891&nbsp; 3.4629<br>
+  (Intercept):2 -0.520987&nbsp; 0.3087831 -1.6872<br>
+  (Intercept):3 -2.147748&nbsp; 0.3826250 -5.6132<br>
+  (Intercept):4 -3.422932&nbsp; 0.5032238 -6.8020<br>
+  (Intercept):5 -4.936144&nbsp; 0.7169688 -6.8847<br>
+  </span><span class="style25">W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.026834</span><span class="style24">&nbsp; 0.0050751&nbsp; 5.2873</span>
+<p><span class="style24">Number of linear predictors:&nbsp; 5 </span>
+<p><span class="style24">Names of linear predictors: logit(P[Y&gt;=2]), logit(P[Y&gt;=3]), logit(P[Y&gt;=4]), logit(P[Y&gt;=5]), logit(P[Y&gt;=6])</span>
+<p><span class="style24">Dispersion Parameter for cumulative family:&nbsp;&nbsp; 1</span>
+<p><span class="style24">Residual Deviance: 247.6201 on 419 degrees of freedom</span>
+<p><span class="style24">Log-likelihood: -123.8101 on 419 degrees of freedom</span>
+<p><span class="style24">Number of Iterations: 6 </span>
+<p>The <span class="style1021">vglm</span> function  returns the same estimates as did the <span class="style1021">polr</span> function except that while the sign of &beta; is the same  the signs of the individual intercepts are reversed. </p>
+<p>The two models we've fit are both proportional odds models: they use a single coefficient to describe the effect of the predictor <em>W</em>. If we invert the logits and plot the probability curves of the five modeled probabilities we see the characteristic graphical signature of the  proportional odds model. The curves are roughly parallel (except at their endpoints where they are constrained to be zero and one on a probability scale). The  intercept shifts the curve to the left or right but the nature of the relationship with the predictor <em>W</em> is the same in each curve.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">curve(exp(coef(fit2)[1] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[1] + coef(fit2)[6]*x)), from=0, to=215, ylab='Probability', xlab='W', ylim=c(0,1))</div>
+ <div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(coef(fit2)[2] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[2] + coef(fit2)[6]*x)), col=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(coef(fit2)[3] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[3] + coef(fit2)[6]*x)), col=3, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(coef(fit2)[4] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[4] + coef(fit2)[6]*x)), col=4, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(exp(coef(fit2)[5] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[5] + coef(fit2)[6]*x)), col=5, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">legend('bottomright', c(expression(P(X&gt;=3)), expression(P(X&gt;=4)), expression(P(X&gt;=5)), expression(P(X&gt;=6)), expression(P(X&gt;=7))), col=1:5, lty=1, bty='n', cex=.85)</div>
+<p align="center"><img src="../../images/lectures/lecture40/fig4.png" width="420" height="300" alt="fig. 4"></p>
+<p align="center" class="styleArial"><strong>Fig. 5</strong>&nbsp; &nbsp;Proportional odds assumption in the cumulative logit model</p>
+<p>How might we use these results to address the original problem&mdash;finding a regression model to predict canopy cover? The probability expressions shown in Fig. 4 can be used to calculate the probabilities of the individual cover classes as follows.</p>
+<p align="center"><img src="../../images/lectures/lecture40/probs.gif" width="268" height="193" alt="probs"></p>
+<p>The last expression follows because <em>Cornus florida </em>doesn't have a cover class greater than 7 in the data set. We can  plot the estimated probabilities against <em>W</em>.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> p.xk &lt;- 
+function(k,x) exp(coef(fit2)[k-2] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[k-2] + coef(fit2)[6]*x))-exp(coef(fit2)[k-1] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[k-1] + coef(fit2)[6]*x))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> curve(p.xk(3,x), from=0, to=215, ylab='Probability', xlab='W', ylim=c(0, 0.7))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(p.xk(4,x), add=T, col=2)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(p.xk(5,x), add=T, col=3)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(p.xk(6,x), add=T, col=4)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(exp(coef(fit2)[5] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[5] + coef(fit2)[6]*x)), col=5, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">  curve(1-exp(coef(fit2)[1] + coef(fit2)[6]*x)/ (1+exp(coef(fit2)[1] + coef(fit2)[6]*x)), col=1,lty=2, add=T)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> legend('topleft', c(expression(P('cover'==2)), expression(P('cover'==3)), expression(P('cover'==4)), expression(P('cover'==5)), expression(P('cover'==6)), expression(P('cover'==7))), col=c(1,1,2,3,4,5), lty=c(2,1,1,1,1,1), cex=.85, bty='n')</div>
+<div align="center"><br>
+  </p>
+  <img src="../../images/lectures/lecture40/fig5.png" width="420" height="300" alt="fig. 5">
+</div>
+<p align="center" class="styleArial"><strong>Fig. 6</strong>&nbsp; &nbsp;Proportional odds assumption in the cumulative logit model</p>
+<p>For each value of <em>W</em> we can pick the cover class with the highest probability or we can assign it a distribution of possible cover class values using the different probabilities shown. If we use the first option then, e.g., we would never assign cover class 2 to any observation.</p>
+<h3><a name="testing"></a>Testing the proportional odds assumption</h3>
+<p>The <span class="style19">VGAM</span> package provides a way to conduct an analytical test of the proportional odds assumption. We can fit the model that has separate slopes for each of the cumulative logit responses and compare it to the single slope model using a likelihood ratio test. The separate slopes model is obtained with the <span class="style221">parallel=F</span> argument. When we try to fit this model to the <span class="style8">truecover</span> response variable we receive a large number of warnings.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">fit3 &lt;- vglm(factor(truecover)~W, family=cumulative(reverse=T, parallel=F), data=cornus)</div>
+<span class="style24">  Warning messages:<br>
+  1: In checkwz(wz, M = M, trace = trace, wzeps = control$wzepsilon) :<br>
+  &nbsp; 4 elements replaced by 1.819e-12<br>
+  2: In checkwz(wz, M = M, trace = trace, wzeps = control$wzepsilon) :<br>
+  &nbsp; 9 elements replaced by 1.819e-12<br>
+  3: In checkwz(wz, M = M, trace = trace, wzeps = control$wzepsilon) :<br>
+  &nbsp; 11 elements replaced by 1.819e-12<br>
+  4: In checkwz(wz, M = M, trace = trace, wzeps = control$wzepsilon) :<br>
+  &nbsp; 11 elements replaced by 1.819e-12<br>
+  5: In Deviance.categorical.data.vgam(mu = mu, y = y, w = w, residuals = residuals,&nbsp; :<br>
+  &nbsp; fitted values close to 0 or 1<br>
+  6: In checkwz(wz, M = M, trace = trace, wzeps = control$wzepsilon) :<br>
+  &nbsp; 11 elements replaced by 1.819e-12<br>
+  7: In Deviance.categorical.data.vgam(mu = mu, y = y, w = w, residuals = residuals,&nbsp; :<br>
+  &nbsp; fitted values close to 0 or 1<br>
+8: In log(prob) : NaNs produced</span>
+<p>The warnings indicate that fitted values were obtained that were very close to zero. When we look at the summary output we see that the model apparently was estimated, but the log-likelihood is missing because a number of the estimated probabilities were  so close to zero that their log was undefined.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit3)</div>
+<span class="style24">Call:<br>
+  vglm(formula = factor(truecover) ~ W, family = cumulative(reverse = T, <br>
+&nbsp;&nbsp;&nbsp; parallel = F), data = cornus)</span>
+<p><span class="style24">Pearson Residuals:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1Q&nbsp;&nbsp;&nbsp;&nbsp; Median&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3Q&nbsp;&nbsp;&nbsp; Max<br>
+  logit(P[Y&gt;=2])&nbsp; -2.8037&nbsp; 3.0091e-06&nbsp; 0.0019349&nbsp; 0.059714 1.4146<br>
+  logit(P[Y&gt;=3]) -23.3977 -7.0585e-01&nbsp; 0.1071105&nbsp; 0.405207 2.2853<br>
+  logit(P[Y&gt;=4])&nbsp; -1.8237 -6.3842e-01 -0.1790875&nbsp; 0.262293 3.5736<br>
+  logit(P[Y&gt;=5])&nbsp; -1.9461 -3.0320e-01 -0.1732860 -0.127485 3.0425<br>
+  logit(P[Y&gt;=6])&nbsp; -1.2392 -2.0641e-01 -0.1447240 -0.114505 3.6850</span>
+<p><span class="style24">Coefficients:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value Std. Error&nbsp; t value<br>
+  (Intercept):1 -0.4925839&nbsp; 0.7012324 -0.70245<br>
+  (Intercept):2 -1.2911522&nbsp; 0.4262894 -3.02882<br>
+  (Intercept):3 -2.3210544&nbsp; 0.4317115 -5.37640<br>
+  (Intercept):4 -2.3009876&nbsp; 0.4302749 -5.34771<br>
+  (Intercept):5 -2.9251780&nbsp; 0.6338667 -4.61482<br>
+  W:1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.2699540</span><span class="style24">&nbsp; 0.1192624&nbsp; 2.26353<br>
+  W:2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.0592541</span><span class="style24">&nbsp; 0.0138522&nbsp; 4.27760<br>
+  W:3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.0357884</span><span class="style24">&nbsp; 0.0069295&nbsp; 5.16463<br>
+  W:4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.0149486</span><span class="style24">&nbsp; 0.0051945&nbsp; 2.87776<br>
+  W:5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="style25">0.0046051</span><span class="style24">&nbsp; 0.0080005&nbsp; 0.57560</span>
+<p><span class="style24">Number of linear predictors:&nbsp; 5 </span>
+<p><span class="style24">Names of linear predictors: logit(P[Y&gt;=2]), logit(P[Y&gt;=3]), logit(P[Y&gt;=4]), logit(P[Y&gt;=5]), logit(P[Y&gt;=6])</span>
+<p><span class="style24">Dispersion Parameter for cumulative family:&nbsp;&nbsp; 1</span>
+<p><span class="style24">Residual Deviance: 220.7533 on 415 degrees of freedom</span>
+<p><span class="style24">Log-likelihood: NA on 415 degrees of freedom</span>
+<p><span class="style24">Number of Iterations: 10 </span>
+<p>The output indicates that the coefficient of <em>W</em> decreases dramatically as we move up cover classes. Curiously, even though there is no log-likelihood a deviance is reported. We can  use the deviance to test the proportional odds assumption by comparing the deviance of this model with that of the proportional odds model.</p>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px">deviance(fit2)-deviance(fit3)</div>
+<span class="style24">  [1] 26.8668</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pchisq(deviance(fit2)-deviance(fit3), df=df.residual(fit2)-df.residual(fit3), lower.tail=F)</div>
+<span class="style24">  [1] 2.115029e-05</span>
+<p>The test is significant indicating a significant lack of fit. This result may be unreliable because of the warnings we obtained when fitting the model. Such warnings can arise if any of the categories have too few observations. That certainly could be the case here because the smallest and largest cover classes have only 8 and 5 observations respectively.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(cornus$truecover)</div>
+<span class="style24">&nbsp;2&nbsp; 3&nbsp; 4&nbsp; 5&nbsp; 6&nbsp; 7 <br>
+  &nbsp;8 22 24 15 11&nbsp; 5</span>
+<p>I try collapsing the two categories at the end with adjacent categories and refitting the two models.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cornus$ord2 &lt;- ifelse(cornus$truecover&lt;3, 1, ifelse(cornus$truecover&gt;=6, 6, cornus$truecover))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(cornus$ord2)</div>
+<span class="style24">&nbsp;1&nbsp; 3&nbsp; 4&nbsp; 5&nbsp; 6 <br>
+  &nbsp;8 22 24 15 16</span>
+
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit2a &lt;- vglm(factor(ord2)~W, family=cumulative(reverse=T, parallel=T), data=cornus)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit3a &lt;- vglm(factor(ord2)~W, family=cumulative(reverse=T, parallel=F), data=cornus)</div>
+<span class="style24">There were 15 warnings (use warnings() to see them)</span>
+<p>The model with <span class="style221">parallel=F</span> still yields warnings about small fitted values. This time  it did return a log-likelihood though.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(fit3a)</div>
+ <span class="style24"> [1] -100.5546</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> logLik(fit2a)</div>
+<span class="style24">[1] -111.6845</span>
+<p>The large difference in the log-likelihoods indicates that there is still a significant lack of fit. I carry out a formal test. (Note: the reported deviance is  &ndash;2 times the reported log-likelihood.)</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px">pchisq(deviance(fit2a)-deviance(fit3a), df=df.residual(fit2a)-df.residual(fit3a), lower.tail=F)</div>
+<span class="style24">[1] 5.759664e-05</span>
+<p>There is still a significant lack of fit. I try collapsing the categories even further.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> cornus$ord3 &lt;- ifelse(cornus$truecover&lt;4, 1, ifelse(cornus$truecover&gt;=5, 5, cornus$truecover))</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> table(cornus$ord3)</div>
+<span class="style24">&nbsp;1&nbsp; 4&nbsp; 5 <br>
+  30 24 31</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit2b &lt;- vglm(factor(ord3)~W, family=cumulative(reverse=T, parallel=T), data=cornus)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> fit3b &lt;- vglm(factor(ord3)~W, family=cumulative(reverse=T, parallel=F), data=cornus)</div>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> pchisq(deviance(fit2b)-deviance(fit3b), df=df.residual(fit2b)-df.residual(fit3b), lower.tail=F)</div>
+<span class="style24">[1] 0.2110906</span>
+<p>The lack of fit is no longer significant. If we examine the coefficient tables we see that the separate slope estimates are fairly similar to the estimate of the common slope from the proportional odds model.</p>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit2b)@coef3</div>
+<span class="style24">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value&nbsp; Std. Error&nbsp;&nbsp; t value<br>
+  (Intercept):1 -1.15270839 0.384852289 -2.995197<br>
+  (Intercept):2 -3.10338481 0.528154691 -5.875901<br>
+  W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.04977642 0.009317223&nbsp; 5.342409</span>
+<div class="style10" style="padding-left: 30px; text-indent:-30px"> summary(fit3b)@coef3</div>
+<span class="style24"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value&nbsp; Std. Error&nbsp;&nbsp; t value<br>
+  (Intercept):1 -1.40247413 0.451473949 -3.106434<br>
+  (Intercept):2 -2.70073170 0.549640061 -4.913637<br>
+  W:1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.06151160 0.014506732&nbsp; 4.240210<br>
+W:2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.04293498 0.009664812&nbsp; 4.442402</span>
+<h2><a name="cited"></a>Cited references</h2>
+<ul>
+  <li>
+    Agresti, Alan. 2002. <em>Categorical Data Analysis</em>. Wiley: New York.
+  </li>
+  <li>Sokal R. R. and F. J. Rohlf. 2012. <em>Biometry</em>. 4th ed. Freeman &amp; Co., New York </li>
+</ul>
+<p align="center"><a href="../../index.html">Course Home Page</a></p>
+<hr align="center" width="75%">
+<!--Standard footer follows -->
+<table width="650" border="3" cellspacing="2" cellpadding="2" align=
+"CENTER">
+  <tr bgcolor="#CCCCCC">
+    <td width="100%"><font size=-1>Jack Weiss<br>
+      <i>Phone: </i>(919) 962-5930<br>
+      <i>E-Mail:</i> jack_weiss@unc.edu<br>
+      <i>Address: </i>Curriculum for the Environment and Ecology, Box 3275, University of North Carolina, Chapel Hill, 27599<br>
+      Copyright &copy; 2012<br>
+      Last Revised--April 29, 2012<br>
+      URL: <a href="lecture40.htm#lecture40" target="_self">https://sakai.unc.edu/access/content/group/2842013b-58f5-4453-aa8d-3e01bacbfc3d/public/Ecol562_Spring2012/docs/lectures/lecture40.htm</a></font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>
